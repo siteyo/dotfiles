@@ -74,12 +74,12 @@ endif
 
 set tags=.tags;~
 
-set backupdir=~/nvimbackup
-set directory=~/nvimbackup
+set backupdir=~/vimfiles/vimbackup
+set directory=~/vimfiles/vimbackup
 
 set noundofile
 if has('persistent_undo')
-  set undodir=~/nvimundo
+  set undodir=~/vimfiles/vimundo
   set undofile
 endif
 
