@@ -1,4 +1,10 @@
-"""" vim-plug
+" ================================================
+" .vimrc {
+" ================================================
+
+" ========================
+" vim-plug {
+" ========================
 let s:plug_dir = expand('~/.vim/vim-plug')
 let s:plug_autoload_dir = s:plug_dir . '/autoload'
 let s:plug_repo_dir = expand('~/.vim/plugins')
@@ -15,59 +21,75 @@ if has('vim_starting')
   endif
 endif
 
+
 call plug#begin(s:plug_repo_dir)
-  Plug 'junegunn/vim-plug', {'dir': '~/.vim/vim-plug/autoload'}
-  Plug 'junegunn/vim-easy-align'
-  if has('win32')
-    Plug 'Shougo/denite.nvim' | Plug 'Shougo/neomru.vim'
+
+if has('win32')
+  if has('nvim')
+    Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
+    Plug 'Shougo/defx.nvim', {'do': ':UpdateRemotePlugins'}
   else
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
+    Plug 'Shougo/denite.nvim'
+    Plug 'Shougo/defx.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
   endif
-  Plug 'Shougo/defx.nvim'
-  " Plug 'Shougo/deoplete.nvim' | Plug 'tbodt/deoplete-tabnine'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  " Plug 'prabirshrestha/asyncomplete.vim'
-  " Plug 'prabirshrestha/async.vim'
-  " Plug 'prabirshrestha/vim-lsp'
-  " Plug 'prabirshrestha/asyncomplete-lsp.vim'
-  " Plug 'prabirshrestha/asyncomplete-necovim.vim' | Plug 'Shougo/neco-vim'
-  Plug 'cocopon/iceberg.vim', {'do': ':colorscheme iceberg'}
-  Plug 'joshdick/onedark.vim'
-  Plug 'sheerun/vim-polyglot'
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'kana/vim-submode'
-  Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-repeat'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'Yggdroot/indentLine'
-  Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-  Plug 'kshenoy/vim-signature'
-  Plug 'dense-analysis/ale'
-  Plug 'easymotion/vim-easymotion'
-  Plug 'lambdalisue/gina.vim'
-  Plug 'andymass/vim-matchup'
+  Plug 'Shougo/neomru.vim'
+else
+  if has('nvim')
+    Plug 'Shougo/defx.nvim', {'do': ':UpdateRemotePlugins'}
+  else
+    Plug 'Shougo/defx.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+  endif
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+endif
 
-  " Ondemand loading
-  Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
-  Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
-  Plug 'junegunn/gv.vim', {'on': 'GV'}
-  Plug 'junegunn/limelight.vim', {'on': 'Limelight'}
-  Plug 'mattn/emmet-vim', {'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'html'] }
-  " Plug 'Shougo/neco-vim', {'for': ['vim'] }
-  Plug 'majutsushi/tagbar', {'on': 'Tagbar'}
-  Plug 'previm/previm', {'on': 'PrevimOpen'} | Plug 'tyru/open-browser.vim'
-  Plug 'dhruvasagar/vim-table-mode', {'on': 'TableModeToggle'}
-  Plug 'ap/vim-css-color', {'for': ['css']}
-  Plug 'AndrewRadev/linediff.vim', {'on': 'Linediff'}
-  Plug 'schickling/vim-bufonly', {'on': 'BufOnly'}
-  Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesToggle'}
+Plug 'junegunn/vim-plug', {'dir': '~/.nvim/vim-plug/autoload'}
+Plug 'junegunn/vim-easy-align'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'cocopon/iceberg.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'jiangmiao/auto-pairs'
+Plug 'kana/vim-submode'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'airblade/vim-gitgutter'
+Plug 'Yggdroot/indentLine'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'kshenoy/vim-signature'
+Plug 'dense-analysis/ale'
+Plug 'easymotion/vim-easymotion'
+Plug 'lambdalisue/gina.vim'
+Plug 'andymass/vim-matchup'
+
+" Ondemand loading
+Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
+Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
+Plug 'junegunn/gv.vim', {'on': 'GV'}
+Plug 'junegunn/limelight.vim', {'on': 'Limelight'}
+Plug 'mattn/emmet-vim', {'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'html'] }
+Plug 'majutsushi/tagbar', {'on': 'Tagbar'}
+Plug 'previm/previm', {'on': 'PrevimOpen'} | Plug 'tyru/open-browser.vim'
+Plug 'dhruvasagar/vim-table-mode', {'on': 'TableModeToggle'}
+Plug 'ap/vim-css-color', {'for': ['css']}
+Plug 'AndrewRadev/linediff.vim', {'on': 'Linediff'}
+Plug 'schickling/vim-bufonly', {'on': 'BufOnly'}
+Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesToggle'}
+
 call plug#end()
+" ========================
+" }
+" ========================
 
-""" Plugins setting
-
+" ========================
+" Plugins setting {
+" ========================
 " denite
 if has_key(g:plugs, 'denite.nvim')
   source ~/dotfiles/vim/plugins/denite.rc.vim
@@ -174,3 +196,10 @@ if has_key(g:plugs, 'asyncomplete.vim')
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
   inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 endif
+" ========================
+" }
+" ========================
+
+" ================================================
+" }
+" ================================================
