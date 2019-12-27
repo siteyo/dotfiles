@@ -1,0 +1,30 @@
+[alias]
+    lg = log --graph --pretty=format:'-> %Cred%h%Creset : %s%n  %C(yellow)%d%Creset %C(bold blue)<%an>%Creset %C(cyan)[%ad]%Creset %Cgreen(%cr)%n' --abbrev-commit --date=format:'%Y/%m/%d %H:%M:%S'
+    lga = log --graph --all --pretty=format:'-> %Cred%h%Creset : %s%n  %C(yellow)%d%Creset %C(bold blue)<%an>%Creset %C(cyan)[%ad]%Creset %Cgreen(%cr)%n' --abbrev-commit --date=format:'%Y/%m/%d %H:%M:%S'
+    lo = log --graph --pretty=format:'%C(yellow)%d%Creset %Cred%h%Creset : %s %C(bold blue)<%an>%Creset %C(cyan)[%ad]%Creset %Cgreen(%cr)' --abbrev-commit --date=format:'%Y/%m/%d %H:%M:%S'
+    loa = log --graph --all --pretty=format:'%C(yellow)%d%Creset %Cred%h%Creset : %s %C(bold blue)<%an>%Creset %C(cyan)[%ad]%Creset %Cgreen(%cr)' --abbrev-commit --date=format:'%Y/%m/%d %H:%M:%S'
+    lb = log --graph --pretty=format:'-> %Cred%h%Creset : %s%n  %C(yellow)%d%Creset %C(bold blue)<%an>%Creset %C(cyan)[%ad]%Creset %Cgreen(%cr)%n %w(64,4,4)%b%n' --abbrev-commit --date=format:'%Y/%m/%d %H:%M:%S'
+    lba = log --graph --all --pretty=format:'-> %Cred%h%Creset : %s%n  %C(yellow)%d%Creset %C(bold blue)<%an>%Creset %C(cyan)[%ad]%Creset %Cgreen(%cr)%n %w(64,4,4)%b%n' --abbrev-commit --date=format:'%Y/%m/%d %H:%M:%S'
+    ap = add -p
+    fp = fetch --prune
+    f = fetch
+    b = branch
+    prom = pull --rebase origin master
+    rpo = remote prune origin
+    s = status
+    d = diff
+    dc = diff --cached
+    cm = commit -m 
+    ck = checkout
+    ckb = checkout -b
+    rh = reset --hard
+    rs = reset --soft
+    pushf = push --force-with-lease
+[core]
+    editor = nvim -c \"set fenc=utf-8\"
+[merge]
+	ff = false
+[pull]
+	ff = only
+[include]
+    path = ~/.gitconfig.local
