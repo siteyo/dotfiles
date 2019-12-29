@@ -1,8 +1,9 @@
-mkdir ~/.config/vim
-mkdir ~/.vim
-mkdir ~/vimfiles
-mkdir ~/vimfiles/vimbackup
-mkdir ~/vimfiles/vimundo
+#!/bin/sh
+mkdir -p ~/.config/vim
+mkdir -p ~/.vim
+mkdir -p ~/.vim/backup
+mkdir -p ~/.vim/swap
+mkdir -p ~/.vim/undo
 
 ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim/coc-settings.json ~/.config/vim/coc-settings.json
