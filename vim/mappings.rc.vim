@@ -1,6 +1,7 @@
 """" Key mapping
 
 " Normal mode
+" Disable arrow keys
 noremap <Up>    <Nop>
 noremap <Down>  <Nop>
 noremap <Left>  <Nop>
