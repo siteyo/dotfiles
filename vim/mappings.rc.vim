@@ -1,18 +1,29 @@
-"""" Key mapping
+" ========================================================================
+" KEY MAPPING
+" ========================================================================
 
-" Normal mode
 " Disable arrow keys
 noremap <Up>    <Nop>
 noremap <Down>  <Nop>
 noremap <Left>  <Nop>
 noremap <Right> <Nop>
+inoremap <Up>    <Nop>
+inoremap <Down>  <Nop>
+inoremap <Left>  <Nop>
+inoremap <Right> <Nop>
+
+" Jump in line
 noremap <S-h>   ^
+noremap <S-l>   $
+
+" Jump in paragraph
 " noremap <S-j>   }
 " noremap <S-k>   {
-noremap <S-l>   $
+
+" Disable s key
 nnoremap s <Nop>
-" noremap j gj
-" noremap k gk
+
+" Window & Tab
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
@@ -29,27 +40,25 @@ nnoremap sP :<C-u>bp<CR>
 nnoremap st :<C-u>tabnew<CR>
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
+
+" Quit
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>q!<CR>
 nnoremap sd :<C-u>bd<CR>
 nnoremap sD :<C-u>bd!<CR>
 nnoremap [q :cprevious<CR>
 nnoremap ]q :cnext<CR>
-nnoremap x "_x
 
-" Insert mode
-inoremap <Up>    <Nop>
-inoremap <Down>  <Nop>
-inoremap <Left>  <Nop>
-inoremap <Right> <Nop>
+" Do not yank when deleting character with x
+nnoremap x "_x
+vnoremap x "_x
+
+" ESC alias
 inoremap <silent> jj <ESC>
 inoremap <silent> j<Space> j
 
-" Terminal mode
+" Terminal
 tnoremap <C-n><C-n> <C-\><C-n>
-
-" Visual mode
-vnoremap x "_x
 
 " Operator
 onoremap 8 i(
