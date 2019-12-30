@@ -5,7 +5,8 @@ mkdir -p ~/.vim/backup
 mkdir -p ~/.vim/swap
 mkdir -p ~/.vim/undo
 
-ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
-ln -sf ~/dotfiles/vim/coc-settings.json ~/.config/vim/coc-settings.json
+touch ~/.vim/local_vimrc.vim
 
-touch ~/dotfiles/vim/local_vimrc.vim
+ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
+ln -sf ~/dotfiles/vim/gvimrc ~/.gvimrc
+ln -sf ~/dotfiles/vim/coc-settings.json ~/.config/vim/coc-settings.json

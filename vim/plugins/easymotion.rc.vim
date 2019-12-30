@@ -74,4 +74,3 @@ let g:EasyMotion_keys = 'ASDFGHJKL'
 let g:EasyMotion_use_upper = 1
 let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_space_jump_first = 1
-hi EasyMotionTarget guifg=#80a0ff ctermfg=81

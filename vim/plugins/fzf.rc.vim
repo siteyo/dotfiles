@@ -46,7 +46,7 @@ let g:fzf_history_dir = '~/.nvim/fzf-history'
 
 let g:fzf_buffers_jump = 1
 
-if has('nvim')
+if has('nvim') && has('mac')
   let $FZF_DEFAULT_OPTS .= ' --border --margin=0,2'
 
   function! FloatingFZF()
