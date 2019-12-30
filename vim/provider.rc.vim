@@ -6,7 +6,7 @@
 " PYTHON PROVIDER
 " ------------------------------------------------------------------------
 if has('mac')
-  let g:python3_host_prog = expand('~/.nvim/pynvim/bin/python')
+  let g:python3_host_prog = expand(g:vim_home . 'pynvim/bin/python')
 elseif has('win32')
   let g:python3_host_prog = $HOMEPATH.'\nvimenv\pynvim\Scripts\python'
 endif
