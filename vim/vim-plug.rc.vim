@@ -29,6 +29,7 @@ call plug#begin(s:plug_repo_dir)
 " ------------------------------------------------------------------------
 Plug 'Shougo/defx.nvim'
 Plug 'cocopon/vaffle.vim'
+" Plug 'scrooloose/nerdtree'
 
 " ------------------------------------------------------------------------
 " Edit
