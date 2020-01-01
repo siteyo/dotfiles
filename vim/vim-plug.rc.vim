@@ -45,12 +45,17 @@ Plug 'tpope/vim-repeat'
 " Completion
 " ------------------------------------------------------------------------
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Plug 'Shougo/deoplete.nvim'
-" Plug 'prabirshrestha/asyncomplete.vim'
+
 " Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " Plug 'prabirshrestha/vim-lsp'
 " Plug 'mattn/vim-lsp-settings'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'mattn/vim-lsp-icons'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
 
 " ------------------------------------------------------------------------
 " Interface
@@ -63,6 +68,7 @@ else
   Plug 'junegunn/fzf.vim'
 endif
 
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'kshenoy/vim-signature'
