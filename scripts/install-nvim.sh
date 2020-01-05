@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 mkdir -p ~/.config/nvim
 mkdir -p ~/.nvim
 mkdir -p ~/.nvim/backup

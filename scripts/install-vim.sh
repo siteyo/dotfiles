@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 mkdir -p ~/.config/vim
 mkdir -p ~/.vim
 mkdir -p ~/.vim/backup

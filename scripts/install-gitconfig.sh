@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Rename or create .gitconfig and gitconfig.local
 if [ -f ~/.gitconfig ]; then

@@ -23,3 +23,6 @@ PS1='\[\e[34m\]\w \[\e[37m\]$(__git_ps1)\[\033[00m\]\n\$ '
 
 # terminal vi mode
 set -o vi
+
+# Load local settings
+. ~/.bashrc.local

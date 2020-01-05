@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Rename/Create
 if [ -f ~/.bashrc ]; then
