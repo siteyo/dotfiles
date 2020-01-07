@@ -2,9 +2,9 @@
 " INSTALL VIM-PLUG {{{
 " ========================================================================
 
-let s:plug_dir = expand(g:vim_home . 'vim-plug/')
-let s:plug_autoload_dir = expand(s:plug_dir . 'autoload/')
-let s:plug_repo_dir = expand(g:vim_home . 'plugins/')
+let s:plug_dir = expand(g:vim_home . '/vim-plug')
+let s:plug_autoload_dir = expand(s:plug_dir . '/autoload')
+let s:plug_repo_dir = expand(g:vim_home . '/plugins')
 
 if has('vim_starting')
   let &runtimepath = s:plug_dir . ',' . &runtimepath

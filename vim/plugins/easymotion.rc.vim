@@ -33,9 +33,6 @@ vmap fk <Plug>(easymotion-k)
 
 " /
 nmap / <Plug>(easymotion-sn)
-nmap n <Plug>(easymotion-next)
-nmap N <Plug>(easymotion-prev)
-nmap * <Plug>(easymotion-sn)<C-r><C-w><CR>
 
 " w
 nmap fw <Plug>(easymotion-w)
