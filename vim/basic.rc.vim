@@ -32,7 +32,8 @@ set foldlevelstart=99
 set noswapfile
 set termguicolors
 set virtualedit+=block
-set nohlsearch
+set hlsearch
+set incsearch
 set updatetime=300
 set signcolumn=yes
 set cmdheight=2

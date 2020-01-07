@@ -32,7 +32,7 @@ nmap fk <Plug>(easymotion-k)
 vmap fk <Plug>(easymotion-k)
 
 " /
-nmap / <Plug>(easymotion-sn)
+nmap f/ <Plug>(easymotion-sn)
 
 " w
 nmap fw <Plug>(easymotion-w)
