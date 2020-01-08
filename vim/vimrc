@@ -55,6 +55,6 @@ source ~/dotfiles/vim/autocmd.rc.vim
 " ------------------------------------------------------------------------
 " Load local settings
 " ------------------------------------------------------------------------
-if filereadable(expand(g:vim_home . 'local_vimrc.vim'))
-  execute 'source' expand(g:vim_home . 'local_vimrc.vim')
+if filereadable(expand(g:vim_home . '/local_vimrc.vim'))
+  execute 'source' expand(g:vim_home . '/local_vimrc.vim')
 endif
