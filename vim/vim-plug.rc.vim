@@ -99,10 +99,17 @@ Plug 'dense-analysis/ale'
 " ------------------------------------------------------------------------
 Plug 'vim-jp/vimdoc-ja'
 Plug 'sheerun/vim-polyglot'
+Plug 'ap/vim-css-color', {'for': ['css']}
+
+" ------------------------------------------------------------------------
+" Util
+" ------------------------------------------------------------------------
 Plug 'previm/previm', {'on': 'PrevimOpen'} | Plug 'tyru/open-browser.vim'
 Plug 'mattn/emmet-vim', {'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'html'] }
+Plug 'mattn/sonictemplate-vim'
+Plug 'mattn/vim-maketable'
 Plug 'dhruvasagar/vim-table-mode', {'on': 'TableModeToggle'}
-Plug 'ap/vim-css-color', {'for': ['css']}
+Plug 'thinca/vim-quickrun'
 
 " ------------------------------------------------------------------------
 " Commands
