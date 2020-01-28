@@ -1,5 +1,5 @@
 " ========================================================================
-" INSTALL VIM-PLUG {{{
+" INSTALL VIM-PLUG
 " ========================================================================
 
 let s:plug_dir = expand(g:vim_home . '/vim-plug')
@@ -18,9 +18,8 @@ if has('vim_starting')
   endif
 endif
 
-" }}}
 " ========================================================================
-" LIST OF PLUGINS {{{
+" LIST OF PLUGINS
 " ========================================================================
 call plug#begin(s:plug_repo_dir)
 
@@ -29,7 +28,9 @@ call plug#begin(s:plug_repo_dir)
 " ------------------------------------------------------------------------
 Plug 'Shougo/defx.nvim'
 " Plug 'cocopon/vaffle.vim'
+" Plug 'lambdalisue/fern.vim'
 " Plug 'scrooloose/nerdtree'
+
 
 " ------------------------------------------------------------------------
 " Edit
@@ -142,9 +143,8 @@ endif
 
 call plug#end()
 
-" }}}
 " ========================================================================
-" PLUGINS SETTING {{{
+" PLUGINS SETTING
 " ========================================================================
 
 " ------------------------------------------------------------------------
@@ -153,6 +153,11 @@ call plug#end()
 " defx
 if has_key(g:plugs, 'defx.nvim')
   source ~/dotfiles/vim/plugins/defx.rc.vim
+endif
+
+" vaffle
+if has_key(g:plugs, 'vaffle.vim')
+  source ~/dotfiles/vim/plugins/vaffle.rc.vim
 endif
 
 " ------------------------------------------------------------------------
@@ -284,5 +289,4 @@ if has_key(g:plugs, 'iceberg.vim')
   colorscheme iceberg
 endif
 
-" }}}
 " ========================================================================
