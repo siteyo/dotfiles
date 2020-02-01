@@ -1,7 +1,6 @@
 " ========================================================================
 " INSTALL VIM-PLUG
 " ========================================================================
-
 let s:plug_dir = expand(g:vim_home . '/vim-plug')
 let s:plug_autoload_dir = expand(s:plug_dir . '/autoload')
 let s:plug_repo_dir = expand(g:vim_home . '/plugins')
@@ -31,7 +30,6 @@ Plug 'Shougo/defx.nvim'
 " Plug 'lambdalisue/fern.vim'
 " Plug 'scrooloose/nerdtree'
 
-
 " ------------------------------------------------------------------------
 " Edit
 " ------------------------------------------------------------------------
@@ -47,18 +45,6 @@ Plug 'tpope/vim-repeat'
 " Completion
 " ------------------------------------------------------------------------
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-emmet', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-vimlsp', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-spell-checker', {'do': 'yarn install --frozen-lockfile'}
 
 " Plug 'prabirshrestha/async.vim'
 " Plug 'prabirshrestha/asyncomplete.vim'
@@ -80,7 +66,7 @@ else
   Plug 'junegunn/fzf.vim'
 endif
 
-" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'kshenoy/vim-signature'
@@ -93,7 +79,7 @@ Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesToggle'}
 " ------------------------------------------------------------------------
 " Lint
 " ------------------------------------------------------------------------
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 
 " ------------------------------------------------------------------------
 " Language
@@ -123,7 +109,7 @@ Plug 'schickling/vim-bufonly', {'on': 'BufOnly'}
 " Git
 " ------------------------------------------------------------------------
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'lambdalisue/gina.vim'
 Plug 'junegunn/gv.vim', {'on': 'GV'}
 
@@ -132,6 +118,7 @@ Plug 'junegunn/gv.vim', {'on': 'GV'}
 " ------------------------------------------------------------------------
 Plug 'cocopon/iceberg.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 
 " ------------------------------------------------------------------------
 " Other

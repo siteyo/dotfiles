@@ -36,6 +36,7 @@ let g:ale_python_flake8_options = '--ignore=E501,W503,W504'
 
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
+let g:ale_javascript_eslint_options = '--fix'
 
 let g:ale_python_pyls_config = {
     \   'pyls': {

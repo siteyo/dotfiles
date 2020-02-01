@@ -1,4 +1,8 @@
 {
-  "diagnostic.enable": false,
-  "suggest.floatEnable": true
+  "diagnostic.enable": true,
+  "suggest.floatEnable": true,
+
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "coc.preferences.extensionUpdateCheck": "daily"
 }
