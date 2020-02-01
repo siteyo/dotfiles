@@ -204,6 +204,10 @@ if has_key(g:plugs, 'fzf.vim')
   source ~/dotfiles/vim/plugins/fzf.rc.vim
 endif
 
+if has_key(g:plugs, 'ctrlp.vim')
+  source ~/dotfiles/vim/plugins/ctrlp.rc.vim
+endif
+
 " vim-airline
 if has_key(g:plugs, 'vim-airline')
   source ~/dotfiles/vim/plugins/vim-airline.rc.vim
@@ -279,6 +283,11 @@ endif
 " vim-gitgutter
 if has_key(g:plugs, 'vim-gitgutter')
   source ~/dotfiles/vim/plugins/gitgutter.rc.vim
+endif
+
+" gina.vim
+if has_key(g:plugs, 'gina.vim')
+  source ~/dotfiles/vim/plugins/gina.rc.vim
 endif
 
 " ------------------------------------------------------------------------
