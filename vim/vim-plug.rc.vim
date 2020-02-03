@@ -27,7 +27,7 @@ call plug#begin(s:plug_repo_dir)
 " ------------------------------------------------------------------------
 Plug 'Shougo/defx.nvim'
 " Plug 'cocopon/vaffle.vim'
-" Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern.vim'
 " Plug 'scrooloose/nerdtree'
 
 " ------------------------------------------------------------------------
@@ -109,7 +109,7 @@ Plug 'schickling/vim-bufonly', {'on': 'BufOnly'}
 " Git
 " ------------------------------------------------------------------------
 Plug 'tpope/vim-fugitive'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'lambdalisue/gina.vim'
 Plug 'junegunn/gv.vim', {'on': 'GV'}
 

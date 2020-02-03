@@ -38,8 +38,7 @@ let g:coc_global_extensions=[
   \ 'coc-tabnine',
   \ 'coc-vimlsp',
   \ 'coc-explorer',
-  \ 'coc-git',
-  \ 'coc-spell-checker']
+  \ ]
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -47,11 +46,9 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gn <Plug>(coc-rename)
 imap <silent> <C-l> <Plug>(coc-snippets-expand)
+nmap <silent> [w <Plug>(coc-diagnostic-next)
+nmap <silent> ]w <Plug>(coc-diagnostic-prev)
 nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
 nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 hi! link CocErrorSign Error
-
-" coc-git
-nmap <silent> [g <Plug>(coc-git-prevchunk)
-nmap <silent> ]g <Plug>(coc-git-nextchunk)

@@ -2,7 +2,29 @@
   "diagnostic.enable": true,
   "suggest.floatEnable": true,
 
+  "eslint.run": "onType",
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
-  "coc.preferences.extensionUpdateCheck": "daily"
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnType": true,
+
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.venvFolders": [
+      "envs",
+      ".pyenv",
+      ".direnv",
+      ".env"
+  ],
+  "python.jediEnabled": false,
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": ["--ignore=E501,W503,W504"],
+  "python.linting.mypyEnabled": true,
+  "python.linting.mypyArgs": [
+      "--ignore-missing-imports",
+      "--follow-imports=silent",
+      "--show-column-numbers"
+  ],
+  "python.linting.pylintEnabled": false,
+  "python.formatting.provider": "black"
 }
