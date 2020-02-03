@@ -40,6 +40,13 @@ let g:coc_global_extensions=[
   \ 'coc-explorer',
   \ ]
 
+nnoremap [Coc] <Nop>
+nmap <Space>o [Coc]
+nnoremap <silent> [Coc]f :<C-u>call CocAction('format')
+nnoremap <silent> [Coc]e :<C-u>CocList diagnostics<CR>
+nnoremap <silent> [Coc]x :<C-u>CocList extensions<CR>
+nnoremap <silent> [Coc]c :<C-u>CocList commands<CR>
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)

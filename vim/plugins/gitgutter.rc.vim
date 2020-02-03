@@ -7,3 +7,6 @@ nnoremap <silent> [GitPlug]l :<C-u>GitGutterPreviewHunk<CR>
 
 omap ic <Plug>(GitGutterTextObjectInnerPending)
 omap ac <Plug>(GitGutterTextObjectOuterPending)
+
+nmap [g <Plug>(GitGutterPrevHunk)
+nmap ]g <Plug>(GitGutterNextHunk)
