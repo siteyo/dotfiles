@@ -2,11 +2,12 @@
   "diagnostic.enable": true,
   "suggest.floatEnable": true,
 
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnType": true,
+
   "eslint.run": "onType",
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
-  "coc.preferences.extensionUpdateCheck": "daily",
-  "coc.preferences.formatOnType": true,
 
   "python.envFile": "${workspaceFolder}/.env",
   "python.venvFolders": [
