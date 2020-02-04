@@ -42,7 +42,7 @@ let g:coc_global_extensions=[
 
 nnoremap [Coc] <Nop>
 nmap <Space>o [Coc]
-nnoremap <silent> [Coc]f :<C-u>call CocAction('format')
+nnoremap <silent> [Coc]f :<C-u>call CocAction('format')<CR>
 nnoremap <silent> [Coc]e :<C-u>CocList diagnostics<CR>
 nnoremap <silent> [Coc]x :<C-u>CocList extensions<CR>
 nnoremap <silent> [Coc]c :<C-u>CocList commands<CR>

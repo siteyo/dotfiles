@@ -60,9 +60,9 @@ vmap e <plug>(easymotion-e)
 omap e <plug>(easymotion-el)
 
 " E
-nmap fE <plug>(easymotion-E)
-vmap E <plug>(easymotion-E)
-omap E <plug>(easymotion-El)
+nmap fE <plug>(easymotion-gE)
+vmap E <plug>(easymotion-gE)
+omap E <plug>(easymotion-gel)
 
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
