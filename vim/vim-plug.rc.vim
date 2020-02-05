@@ -103,6 +103,7 @@ Plug 'thinca/vim-quickrun'
 " ------------------------------------------------------------------------
 Plug 'kana/vim-submode'
 Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/vim-edgemotion'
 Plug 'schickling/vim-bufonly', {'on': 'BufOnly'}
 
 " ------------------------------------------------------------------------
@@ -257,6 +258,12 @@ endif
 " vim-easymotion
 if has_key(g:plugs, 'vim-easymotion')
   source ~/dotfiles/vim/plugins/easymotion.rc.vim
+endif
+
+" vim-edgemotion
+if has_key(g:plugs, 'vim-edgemotion')
+  map <C-j> <Plug>(edgemotion-j)
+  map <C-k> <Plug>(edgemotion-k)
 endif
 
 " ------------------------------------------------------------------------

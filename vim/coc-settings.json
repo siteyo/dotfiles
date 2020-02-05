@@ -5,9 +5,10 @@
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.formatOnType": true,
 
-  "eslint.run": "onType",
+  "eslint.run": "onSave",
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
+  "eslint.packageManager": "yarn",
 
   "python.envFile": "${workspaceFolder}/.env",
   "python.venvFolders": [
