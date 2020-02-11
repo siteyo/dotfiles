@@ -10,3 +10,5 @@ if has_key(g:plugs, 'vim-easymotion')
   hi EasyMotionTarget2Second guifg=#f0a000 guibg=NONE
   hi EasyMotionShade guifg=#aaaaaa guibg=NONE
 endif
+
+hi LineNr guifg=#888888 guibg=NONE

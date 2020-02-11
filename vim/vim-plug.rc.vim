@@ -113,6 +113,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'lambdalisue/gina.vim'
 Plug 'junegunn/gv.vim', {'on': 'GV'}
+Plug 'rhysd/git-messenger.vim'
 
 " ------------------------------------------------------------------------
 " Colorscheme

@@ -11,7 +11,7 @@ mkdir %HOMEPATH%\.vim\swap
 mkdir %HOMEPATH%\.vim\undo
 
 rem Creates symbolic links
-mklink %HOMEPATH%\init.vim %REPOPATH%\vim\vimrc
-mklink %HOMEPATH%\ginit.vim %REPOPATH%\vim\gvimrc
+mklink %HOMEPATH%\init.vim %REPOPATH%\vimrc
+mklink %HOMEPATH%\ginit.vim %REPOPATH%\vimrc
 
 pause

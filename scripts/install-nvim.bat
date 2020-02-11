@@ -15,5 +15,6 @@ mkdir %HOMEPATH%\.nvim\undo
 rem Creates symbolic links
 mklink %NVIMPATH%\init.vim %REPOPATH%\vimrc
 mklink %NVIMPATH%\ginit.vim %REPOPATH%\gvimrc
+mklink %NVIMPATH%\coc-settings.json %REPOPATH%\coc-settings.json
 
 pause
