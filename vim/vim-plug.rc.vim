@@ -26,8 +26,7 @@ call plug#begin(s:plug_repo_dir)
 " Filer
 " ------------------------------------------------------------------------
 Plug 'Shougo/defx.nvim'
-" Plug 'cocopon/vaffle.vim'
-Plug 'lambdalisue/fern.vim'
+" Plug 'lambdalisue/fern.vim'
 " Plug 'scrooloose/nerdtree'
 
 " ------------------------------------------------------------------------
@@ -66,7 +65,8 @@ else
   Plug 'junegunn/fzf.vim'
 endif
 
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'mattn/ctrlp-register'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'kshenoy/vim-signature'
@@ -144,9 +144,9 @@ if has_key(g:plugs, 'defx.nvim')
   source ~/dotfiles/vim/plugins/defx.rc.vim
 endif
 
-" vaffle
-if has_key(g:plugs, 'vaffle.vim')
-  source ~/dotfiles/vim/plugins/vaffle.rc.vim
+" fern
+if has_key(g:plugs, 'fern.vim')
+  source ~/dotfiles/vim/plugins/fern.rc.vim
 endif
 
 " ------------------------------------------------------------------------
