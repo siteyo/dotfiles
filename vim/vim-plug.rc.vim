@@ -58,15 +58,15 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Interface
 " ------------------------------------------------------------------------
 if has('win32')
-  Plug 'Shougo/denite.nvim'
-  Plug 'Shougo/neomru.vim'
+  " Plug 'Shougo/denite.nvim'
+  " Plug 'Shougo/neomru.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'mattn/ctrlp-register'
 else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 endif
 
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'mattn/ctrlp-register'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'kshenoy/vim-signature'
