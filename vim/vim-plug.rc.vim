@@ -60,8 +60,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 if has('win32')
   " Plug 'Shougo/denite.nvim'
   " Plug 'Shougo/neomru.vim'
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'mattn/ctrlp-register'
+  Plug 'ctrlpvim/ctrlp.vim' | Plug 'mattn/ctrlp-register'
 else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
@@ -111,7 +110,7 @@ Plug 'schickling/vim-bufonly', {'on': 'BufOnly'}
 " ------------------------------------------------------------------------
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'lambdalisue/gina.vim'
+" Plug 'lambdalisue/gina.vim'
 Plug 'junegunn/gv.vim', {'on': 'GV'}
 Plug 'rhysd/git-messenger.vim'
 
