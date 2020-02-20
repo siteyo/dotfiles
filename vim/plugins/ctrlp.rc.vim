@@ -10,6 +10,7 @@ nnoremap [CtrlP]o :<C-u>CtrlPBookmarkDir<CR>
 nnoremap [CtrlP]r :<C-u>CtrlPRegister<CR>
 nnoremap [CtrlP]c :<C-u>CtrlPChange<CR>
 nnoremap [CtrlP]p :<C-u>CtrlP<CR>
+nnoremap [CtrlP]g :<C-u>CtrlPRoot<CR>
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
