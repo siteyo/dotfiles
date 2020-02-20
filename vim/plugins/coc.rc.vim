@@ -37,7 +37,6 @@ let g:coc_global_extensions=[
   \ 'coc-python',
   \ 'coc-tabnine',
   \ 'coc-vimlsp',
-  \ 'coc-explorer',
   \ ]
 
 nnoremap [Coc] <Nop>
