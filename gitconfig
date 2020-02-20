@@ -27,5 +27,7 @@
 	ff = false
 [pull]
 	ff = only
+[rebase]
+    autoStash = true
 [include]
     path = ~/.gitconfig.local
