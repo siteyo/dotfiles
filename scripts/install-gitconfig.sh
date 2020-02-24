@@ -4,7 +4,6 @@
 if [ -f ~/.gitconfig ]; then
     mv ~/.gitconfig ~/.gitconfig.local
 else
-    touch ~/.gitconfig
     touch ~/.gitconfig.local
 fi
 
