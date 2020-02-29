@@ -15,7 +15,8 @@
       "envs",
       ".pyenv",
       ".direnv",
-      ".env"
+      ".env",
+      "env"
   ],
   "python.jediEnabled": false,
   "python.linting.enabled": true,
