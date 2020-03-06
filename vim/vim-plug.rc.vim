@@ -92,7 +92,7 @@ Plug 'ap/vim-css-color', {'for': ['css']}
 " ------------------------------------------------------------------------
 Plug 'previm/previm', {'on': 'PrevimOpen'} | Plug 'tyru/open-browser.vim'
 Plug 'mattn/emmet-vim', {'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'html'] }
-Plug 'mattn/sonictemplate-vim'
+Plug 'mattn/vim-sonictemplate'
 Plug 'mattn/vim-maketable'
 Plug 'dhruvasagar/vim-table-mode', {'on': 'TableModeToggle'}
 Plug 'thinca/vim-quickrun'
@@ -230,7 +230,7 @@ if has_key(g:plugs, 'ale')
 endif
 
 " ------------------------------------------------------------------------
-" Language
+" Util
 " ------------------------------------------------------------------------
 " emmet-vim
 if has_key(g:plugs, 'emmet-vim')
@@ -245,6 +245,10 @@ endif
 " previm
 if has_key(g:plugs, 'previm')
   let g:previm_open_cmd = 'open -a Google\ Chrome'
+endif
+
+if has_key(g:plugs, 'vim-sonictemplate')
+  let g:sonictemplate_vim_template_dir = expand(g:vim_home . '/plugins/vim-sonictemplate/template')
 endif
 
 " ------------------------------------------------------------------------
