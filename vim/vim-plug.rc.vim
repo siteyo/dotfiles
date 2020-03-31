@@ -27,6 +27,7 @@ call plug#begin(s:plug_repo_dir)
 " ------------------------------------------------------------------------
 Plug 'Shougo/defx.nvim'
 " Plug 'lambdalisue/fern.vim'
+" Plug 'lambdalisue/fern-mapping-project-top.vim'
 " Plug 'scrooloose/nerdtree'
 
 " ------------------------------------------------------------------------
