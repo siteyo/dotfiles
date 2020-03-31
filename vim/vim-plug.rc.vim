@@ -96,6 +96,7 @@ Plug 'mattn/vim-sonictemplate'
 Plug 'mattn/vim-maketable'
 Plug 'dhruvasagar/vim-table-mode', {'on': 'TableModeToggle'}
 Plug 'thinca/vim-quickrun'
+Plug 'liuchengxu/vista.vim'
 
 " ------------------------------------------------------------------------
 " Commands
@@ -110,7 +111,7 @@ Plug 'schickling/vim-bufonly', {'on': 'BufOnly'}
 " ------------------------------------------------------------------------
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-" Plug 'lambdalisue/gina.vim'
+Plug 'lambdalisue/gina.vim'
 Plug 'junegunn/gv.vim', {'on': 'GV'}
 Plug 'rhysd/git-messenger.vim'
 
@@ -177,6 +178,11 @@ endif
 " vim-lsp
 if has_key(g:plugs, 'vim-lsp')
   source ~/dotfiles/vim/plugins/vim-lsp.rc.vim
+endif
+
+" vim-lsp-settings
+if has_key(g:plugs, 'vim-lsp-settings')
+  source ~/dotfiles/vim/plugins/vim-lsp-settings.rc.vim
 endif
 
 " ------------------------------------------------------------------------
@@ -273,6 +279,9 @@ endif
 " ------------------------------------------------------------------------
 " Git
 " ------------------------------------------------------------------------
+nnoremap [GitPlug] <Nop>
+nmap <Space>g [GitPlug]
+
 " vim-fugitive
 if has_key(g:plugs, 'vim-fugitive')
   source ~/dotfiles/vim/plugins/fugitive.rc.vim
@@ -286,6 +295,11 @@ endif
 " gina.vim
 if has_key(g:plugs, 'gina.vim')
   source ~/dotfiles/vim/plugins/gina.rc.vim
+endif
+
+" gv.vim
+if has_key(g:plugs, 'gv.vim')
+  nnoremap <silent> [GitPlug]v :<C-u>GV --all<CR>
 endif
 
 " ------------------------------------------------------------------------
