@@ -97,7 +97,6 @@ Plug 'mattn/vim-sonictemplate'
 Plug 'mattn/vim-maketable'
 Plug 'dhruvasagar/vim-table-mode', {'on': 'TableModeToggle'}
 Plug 'thinca/vim-quickrun'
-Plug 'liuchengxu/vista.vim'
 
 " ------------------------------------------------------------------------
 " Commands
