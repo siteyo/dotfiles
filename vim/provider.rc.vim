@@ -5,6 +5,7 @@
 " ------------------------------------------------------------------------
 " PYTHON PROVIDER
 " ------------------------------------------------------------------------
+" venv
 if has('mac')
   let g:python3_host_prog = expand(g:vim_home . '/pynvim/bin/python')
 elseif has('win32')
