@@ -25,9 +25,9 @@ call plug#begin(s:plug_repo_dir)
 " ------------------------------------------------------------------------
 " Filer
 " ------------------------------------------------------------------------
-Plug 'Shougo/defx.nvim'
-" Plug 'lambdalisue/fern.vim'
-" Plug 'lambdalisue/fern-mapping-project-top.vim'
+" Plug 'Shougo/defx.nvim'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-mapping-project-top.vim'
 " Plug 'scrooloose/nerdtree'
 
 " ------------------------------------------------------------------------
