@@ -97,6 +97,7 @@ Plug 'mattn/vim-sonictemplate'
 Plug 'mattn/vim-maketable'
 Plug 'dhruvasagar/vim-table-mode', {'on': 'TableModeToggle'}
 Plug 'thinca/vim-quickrun'
+Plug 'vim-test/vim-test'
 
 " ------------------------------------------------------------------------
 " Commands
@@ -113,7 +114,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'lambdalisue/gina.vim'
 Plug 'junegunn/gv.vim', {'on': 'GV'}
-Plug 'rhysd/git-messenger.vim'
 
 " ------------------------------------------------------------------------
 " Colorscheme
