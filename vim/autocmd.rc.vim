@@ -2,34 +2,6 @@
 " AUTOCMD
 " ========================================================================
 
-" " ------------------------------------------------------------------------
-" " pipenv(python)
-" " ------------------------------------------------------------------------
-" function! s:findRoot(target)
-"   let dir = getcwd()
-"   while 1
-"     let files = split(globpath(l:dir, '*'), '\n')
-"     for f in l:files
-"       if a:target == fnamemodify(f, ':t')
-"         return l:dir
-"       endif
-"     endfor
-"     if l:dir == "/"
-"       break
-"     endif
-"     let dir = fnamemodify(l:dir, ':h')
-"   endwhile
-"   return ""
-" endfunction
-
-" function! s:setVenv()
-"   let dir = s:findRoot('Pipfile')
-"   echo l:dir
-"   if dir != ""
-"     let $VIRTUAL_ENV = trim(system("cd " . l:dir . "; pipenv --venv"))
-"   endif
-" endfunction
-
 " ------------------------------------------------------------------------
 " vimrc
 " ------------------------------------------------------------------------
@@ -39,7 +11,7 @@ augroup vimrc
   au FileType typescript setlocal tabstop=2 shiftwidth=0 expandtab
   au FileType typescriptreact setlocal tabstop=2 shiftwidth=0 expandtab
   au FileType vim setlocal tabstop=2 shiftwidth=0 expandtab foldlevel=0 foldmethod=marker
-  " au FileType python call s:setVenv()
+  au FileType json setlocal tabstop=2 shiftwidth=0 expandtab
 augroup END
 
 " ------------------------------------------------------------------------
