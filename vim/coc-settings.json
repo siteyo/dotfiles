@@ -7,7 +7,7 @@
 
   "eslint.run": "onSave",
   "eslint.enable": true,
-  "eslint.autoFixOnSave": true,
+  "eslint.autoFixOnSave": false,
   "eslint.packageManager": "yarn",
 
   "python.envFile": "${workspaceFolder}/.env",
