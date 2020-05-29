@@ -28,3 +28,6 @@ set -o vi
 
 # Load local settings
 . ~/.bashrc.local
+
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
