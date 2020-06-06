@@ -1,27 +1,26 @@
 " s2
 nmap fs <Plug>(easymotion-s2)
 vmap s <Plug>(easymotion-s2)
-omap s <Plug>(easymotion-s2)
 
 " f
 nmap ff <Plug>(easymotion-f)
 vmap f <Plug>(easymotion-fl)
-omap f <Plug>(easymotion-fl)
+" omap f <Plug>(easymotion-fl)
 
 " F
 nmap fF <Plug>(easymotion-F)
 vmap F <Plug>(easymotion-Fl)
-omap F <Plug>(easymotion-Fl)
+" omap F <Plug>(easymotion-Fl)
 
 " t
 nmap ft <Plug>(easymotion-t)
 vmap t <Plug>(easymotion-tl)
-omap t <Plug>(easymotion-tl)
+" omap t <Plug>(easymotion-tl)
 
-" t
+" T
 nmap fT <Plug>(easymotion-T)
 vmap T <Plug>(easymotion-Tl)
-omap T <Plug>(easymotion-Tl)
+" omap T <Plug>(easymotion-Tl)
 
 " j
 nmap fj <Plug>(easymotion-j)
