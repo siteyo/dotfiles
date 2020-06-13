@@ -10,7 +10,7 @@ set lazyredraw
 set laststatus=2
 set showcmd
 set cursorline
-set tabstop=4
+set tabstop=2
 set shiftwidth=0
 set backup
 set number
