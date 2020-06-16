@@ -28,7 +28,6 @@ endfunction
 let g:coc_global_extensions=[
   \ 'coc-lists', 
   \ 'coc-emmet',
-  \ 'coc-snippets',
   \ 'coc-tsserver',
   \ 'coc-eslint',
   \ 'coc-json',
