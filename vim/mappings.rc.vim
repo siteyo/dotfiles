@@ -54,7 +54,7 @@ nnoremap x "_x
 vnoremap x "_x
 
 " ESC alias
-inoremap <silent> jj <ESC>
+inoremap <silent> jk <ESC>
 inoremap <silent> j<Space> j
 
 " Terminal
