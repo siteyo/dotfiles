@@ -13,7 +13,7 @@ augroup vimrc
   au FileType vim setlocal foldlevel=0 foldmethod=marker
   " au FileType json setlocal tabstop=2 shiftwidth=0 expandtab
   " au FileType css setlocal tabstop=2 shiftwidth=0 expandtab
-  au FileType python setlocal tabstop=4
+  au FileType python setlocal tabstop=4 foldmethod=indent foldlevel=1
 augroup END
 
 " ------------------------------------------------------------------------
