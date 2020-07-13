@@ -11,22 +11,20 @@
   "eslint.packageManager": "yarn",
 
   "python.envFile": "${workspaceFolder}/.env",
-  "python.venvFolders": [
-      "envs",
-      ".pyenv",
-      ".direnv",
-      ".env",
-      "env"
-  ],
+  "python.venvFolders": ["envs", ".pyenv", ".direnv", ".env", "env"],
   "python.jediEnabled": false,
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Args": ["--ignore=E501,W503,W504"],
   "python.linting.mypyEnabled": true,
   "python.linting.mypyArgs": [
-      "--ignore-missing-imports",
-      "--follow-imports=silent",
-      "--show-column-numbers"
+    "--ignore-missing-imports",
+    "--follow-imports=silent",
+    "--show-column-numbers",
+    "--strict-optional",
+    "--disallow-untyped-defs",
+    "--disallow-untyped-calls",
+    "--no-implicit-optional"
   ],
   "python.linting.pylintEnabled": false,
   "python.formatting.provider": "black"
