@@ -46,7 +46,6 @@ Plug 'tpope/vim-repeat'
 " ------------------------------------------------------------------------
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
