@@ -66,7 +66,9 @@ inoremap <silent> jk <ESC>
 inoremap <silent> j<Space> j
 
 " Terminal
-tnoremap <C-n><C-n> <C-\><C-n>
+if has('nvim')
+  tnoremap <C-n><C-n> <C-\><C-n>
+endif
 
 " Operator
 onoremap 8 i(
