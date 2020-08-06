@@ -39,6 +39,7 @@ set signcolumn=yes
 set cmdheight=2
 set shortmess+=c
 set showtabline=2
+set background=dark
 
 if has('nvim') && ( has('mac') || has('win32') )
   set winblend=15
