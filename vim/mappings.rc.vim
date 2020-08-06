@@ -23,6 +23,14 @@ noremap <S-l>   $
 " Disable s key
 nnoremap s <Nop>
 
+" Swap : and ;
+nnoremap ; :
+nnoremap : ;
+inoremap ; :
+inoremap : ;
+vnoremap ; :
+vnoremap : ;
+
 " Window & Tab
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
