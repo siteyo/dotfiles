@@ -2,5 +2,9 @@
 
 # Load .bashrc
 if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
+  . ~/.bashrc
+fi
+
+if [ -f ~/.bash_profile.local ]; then
+  . ~/.bash_profile.local
 fi

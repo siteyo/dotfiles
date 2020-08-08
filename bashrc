@@ -31,3 +31,12 @@ set -o vi
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# anyenv
+if [ -x $HOME/.anyenv/bin/anyenv ]; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+fi
+eval "$(anyenv init -)"
+
+# poetry
+export PATH="$HOME/.poetry/bin:$PATH"
