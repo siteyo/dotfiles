@@ -54,6 +54,8 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>q!<CR>
 nnoremap sd :<C-u>bd<CR>
 nnoremap sD :<C-u>bd!<CR>
+
+" Quickfix
 nnoremap [q :cprevious<CR>
 nnoremap ]q :cnext<CR>
 
@@ -71,13 +73,11 @@ if has('nvim')
 endif
 
 " Operator
-onoremap 8 i(
-onoremap 2 i"
-onoremap 7 i'
-onoremap @ i`
 onoremap [ i[
 onoremap { i{
-onoremap a8 a(
-onoremap a2 a"
-onoremap a7 a'
-onoremap a@ a`
+
+" Jump cursor position
+inoremap <silent> <C-f> <Right>
+inoremap <silent> <C-b> <Left>
+inoremap <silent> <C-e> <ESC>A
+inoremap <silent> <C-a> <ESC>I
