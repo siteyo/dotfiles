@@ -9,6 +9,11 @@ alias ls='ls -G'
 alias ll='ls -lG'
 alias la='ls -laG'
 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
 #terminal
 function add_line {
     if [[ -z "${PS1_NEWLINE_LOGIN}" ]]; then
