@@ -11,7 +11,7 @@ nnoremap <silent> [ALE]l :<C-u>ALELint<CR>
 nnoremap <silent> [ALE]i :<C-u>ALEDetail<CR>
 
 let g:ale_linters = {
-    \ 'python': ['flake8', 'pyls', 'mypy'],
+    \ 'python': ['flake8', 'mypy'],
     \ 'javascript': ['eslint', 'tsserver'],
     \ 'typescript': ['eslint', 'tsserver'],
     \ 'javascriptreact': ['eslint', 'tsserver'],
@@ -33,10 +33,14 @@ let g:ale_fixers = {
     \ }
 
 let g:ale_fix_on_save = 0
-let g:ale_completion_enabled = 0
+let g:ale_completion_enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ale#get_source_options({
+    \ 'priority': 10,
+    \ }))
 
 " javascript
-let g:ale_javascript_eslint_options = '--fix'
-
-" python
-let g:ale_python_flake8_options = '--ignore=E501,W503,W504'
+" let g:ale_javascript_eslint_options = '--fix'
