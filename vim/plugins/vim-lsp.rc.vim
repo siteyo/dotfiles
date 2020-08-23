@@ -36,6 +36,9 @@ if executable('pyls')
         \     'pyls': {
         \       'configurationSources': ['flake8'],
         \       'plugins': {
+        \         'pycodestyle': {
+        \           'enabled': v:false
+        \         },
         \         'pyls_mypy': {
         \           'enabled': v:true,
         \           'live_mode': v:false,
