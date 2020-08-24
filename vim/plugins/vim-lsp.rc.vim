@@ -26,32 +26,32 @@ let g:lsp_documentation_float = 1
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand(g:vim_home . '/vim-lsp.log')
 
-" python-language-server
-if executable('pyls')
-  au User lsp_setup call lsp#register_server({
-        \   'name': 'pyls',
-        \   'cmd': {server_info->['pyls']},
-        \   'whitelist': ['python'],
-        \   'workspace_config': {
-        \     'pyls': {
-        \       'configurationSources': ['flake8'],
-        \       'plugins': {
-        \         'pycodestyle': {
-        \           'enabled': v:false
-        \         },
-        \         'pyls_mypy': {
-        \           'enabled': v:true,
-        \           'live_mode': v:false,
-        \         },
-        \         'pyls_isort': {
-        \           'enabled': v:true,
-        \         },
-        \         'pyls_black': {
-        \           'enabled': v:true,
-        \         },
-        \       },
-        \     },
-        \   },
-        \ })
-  au FileType python setlocal omnifunc=lsp#complete
-endif
+" " python-language-server
+" if executable('pyls')
+"   au User lsp_setup call lsp#register_server({
+"         \   'name': 'pyls',
+"         \   'cmd': {server_info->['pyls']},
+"         \   'whitelist': ['python'],
+"         \   'workspace_config': {
+"         \     'pyls': {
+"         \       'configurationSources': ['flake8'],
+"         \       'plugins': {
+"         \         'pycodestyle': {
+"         \           'enabled': v:false,
+"         \         },
+"         \         'pyls_mypy': {
+"         \           'enabled': v:true,
+"         \           'live_mode': v:false,
+"         \         },
+"         \         'pyls_isort': {
+"         \           'enabled': v:true,
+"         \         },
+"         \         'pyls_black': {
+"         \           'enabled': v:true,
+"         \         },
+"         \       },
+"         \     },
+"         \   },
+"         \ })
+"   au FileType python setlocal omnifunc=lsp#complete
+" endif
