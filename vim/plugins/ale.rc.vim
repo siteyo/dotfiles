@@ -7,15 +7,20 @@ nnoremap <silent> [ALE]t :<C-u>ALETypeDefinitions<CR>
 nnoremap <silent> [ALE]l :<C-u>ALELint<CR>
 nnoremap <silent> [ALE]i :<C-u>ALEDetail<CR>
 
-" let g:ale_linters = {
-"     \ 'python': ['flake8', 'pyls', 'mypy'],
-"     \ 'javascript': ['eslint', 'tsserver'],
-"     \ 'typescript': ['eslint', 'tsserver'],
-"     \ 'javascriptreact': ['eslint', 'tsserver'],
-"     \ 'typescriptreact': ['eslint', 'tsserver'],
-"     \ 'css': ['stylelint'],
-"     \ 'scss': ['stylelint'],
-"     \ }
+nmap <silent> [e <Plug>(ale_previous_error)
+nmap <silent> ]e <Plug>(ale_next_error)
+nmap <silent> [w <Plug>(ale_previous)
+nmap <silent> ]w <Plug>(ale_next)
+
+let g:ale_linters = {
+    \ 'python': ['pydocstyle', 'pylint', 'pyright', 'flake8', 'mypy'],
+    \ 'javascript': ['eslint', 'tsserver'],
+    \ 'typescript': ['eslint', 'tsserver'],
+    \ 'javascriptreact': ['eslint', 'tsserver'],
+    \ 'typescriptreact': ['eslint', 'tsserver'],
+    \ 'css': ['stylelint'],
+    \ 'scss': ['stylelint'],
+    \ }
 
 let g:ale_fixers = {
     \ 'python': ['autopep8', 'black', 'isort', 'yapf'],
@@ -29,7 +34,7 @@ let g:ale_fixers = {
     \ 'html': ['prettier'],
     \ }
 
-let g:ale_enabled = 0
+let g:ale_enabled = 1
 let g:ale_fix_on_save = 0
 let g:ale_completion_enabled = 1
 let g:ale_echo_msg_error_str = 'E'

@@ -21,29 +21,7 @@ let g:lsp_settings = {
 \             'enabled': v:true,
 \           },
 \         },
-\       }
-\     }
-\   },
-\   'pyls': {
-\     'workspace_config': {
-\       'pyls': {
-\         'configurationSources': ['flake8'],
-\         'plugins': {
-\           'pycodestyle': {
-\             'enabled': v:false
-\           },
-\           'pyls_mypy': {
-\             'enabled': v:true,
-\             'live_mode': v:false,
-\           },
-\           'pyls_isort': {
-\             'enabled': v:true,
-\           },
-\           'pyls_black': {
-\             'enabled': v:true,
-\           },
-\         },
-\       }
-\     }
+\       },
+\     },
 \   },
 \}
