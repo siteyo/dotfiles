@@ -34,7 +34,7 @@ Plug 'lambdalisue/fern-mapping-project-top.vim'
 " Edit
 " ------------------------------------------------------------------------
 Plug 'junegunn/vim-easy-align'
-Plug 'jiangmiao/auto-pairs'
+Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'andymass/vim-matchup'
@@ -72,8 +72,6 @@ Plug 'kshenoy/vim-signature'
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/limelight.vim', {'on': 'Limelight'}
-Plug 'majutsushi/tagbar', {'on': 'Tagbar'}
-Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesToggle'}
 
 " ------------------------------------------------------------------------
 " Lint
