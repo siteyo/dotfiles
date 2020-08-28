@@ -88,7 +88,7 @@ Plug 'ap/vim-css-color', {'for': ['css']}
 " ------------------------------------------------------------------------
 " Util
 " ------------------------------------------------------------------------
-Plug 'previm/previm', {'on': 'PrevimOpen'} | Plug 'tyru/open-browser.vim'
+Plug 'previm/previm' | Plug 'tyru/open-browser.vim'
 Plug 'mattn/emmet-vim', {'for': ['javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'html'] }
 Plug 'mattn/vim-sonictemplate'
 Plug 'mattn/vim-maketable'
@@ -243,11 +243,6 @@ endif
 " vim-table-mode
 if has_key(g:plugs, 'vim-table-mode')
   let g:table_mode_corner = '|'
-endif
-
-" previm
-if has_key(g:plugs, 'previm')
-  let g:previm_open_cmd = 'open -a Google\ Chrome'
 endif
 
 if has_key(g:plugs, 'vim-sonictemplate')
