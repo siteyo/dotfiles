@@ -239,6 +239,7 @@ endif
 " ------------------------------------------------------------------------
 if has_key(g:plugs, 'vim-polyglot')
   let g:vim_markdown_conceal = 0
+  let g:vim_markdown_conceal_code_blocks = 0
 endif
 
 " ------------------------------------------------------------------------
