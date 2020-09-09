@@ -40,6 +40,8 @@ Plug 'tpope/vim-surround'
 Plug 'andymass/vim-matchup'
 Plug 'AndrewRadev/linediff.vim', {'on': 'Linediff'}
 Plug 'tpope/vim-repeat'
+Plug 'sgur/vim-editorconfig'
+Plug 'machakann/vim-highlightedyank'
 
 " ------------------------------------------------------------------------
 " Completion
@@ -230,6 +232,13 @@ endif
 " ale
 if has_key(g:plugs, 'ale')
   source ~/dotfiles/vim/plugins/ale.rc.vim
+endif
+
+" ------------------------------------------------------------------------
+" Language
+" ------------------------------------------------------------------------
+if has_key(g:plugs, 'vim-polyglot')
+  let g:vim_markdown_conceal = 0
 endif
 
 " ------------------------------------------------------------------------
