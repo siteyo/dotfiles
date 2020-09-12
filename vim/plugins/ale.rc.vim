@@ -29,7 +29,7 @@ let g:ale_fixers = {
     \ 'typescript': ['prettier'],
     \ 'javascriptreact': ['prettier'],
     \ 'typescriptreact': ['prettier'],
-    \ 'json': ['prettier'],
+    \ 'json': ['prettier', 'jq'],
     \ 'css': ['prettier'],
     \ 'scss': ['prettier'],
     \ 'html': ['prettier'],
