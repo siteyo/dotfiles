@@ -50,6 +50,8 @@ Plug 'machakann/vim-highlightedyank'
 
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-emmet.vim'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-lsp-icons'
@@ -173,6 +175,29 @@ endif
 if has_key(g:plugs, 'asyncomplete.vim')
   source ~/dotfiles/vim/plugins/asyncomplete.rc.vim
 endif
+
+" asyncomplete-emmet
+if has_key(g:plugs, 'asyncomplete-emmet.vim')
+  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emmet#get_source_options({
+        \ 'name': 'emmet',
+        \ 'whitelist': ['html'],
+        \ 'completor': function('asyncomplete#sources#emmet#completor'),
+        \ }))
+endif
+
+" asyncomplete-buffer
+if has_key(g:plugs, 'asyncomplete-buffer.vim')
+  call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+        \ 'name': 'buffer',
+        \ 'allowlist': ['*'],
+        \ 'blocklist': ['go'],
+        \ 'completor': function('asyncomplete#sources#buffer#completor'),
+        \ 'config': {
+        \    'max_buffer_size': 5000000,
+        \  },
+        \ }))
+endif
+
 
 " vim-lsp
 if has_key(g:plugs, 'vim-lsp')
