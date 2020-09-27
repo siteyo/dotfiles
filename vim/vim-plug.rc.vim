@@ -54,7 +54,6 @@ Plug 'prabirshrestha/asyncomplete-emmet.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
-Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
@@ -209,6 +208,10 @@ if has_key(g:plugs, 'vim-lsp-settings')
   source ~/dotfiles/vim/plugins/vim-lsp-settings.rc.vim
 endif
 
+if has_key(g:plugs, 'vim-vsnip')
+  source ~/dotfiles/vim/plugin/vim-vsnip.rc.vim
+endif
+
 " ------------------------------------------------------------------------
 " Interface
 " ------------------------------------------------------------------------
@@ -281,7 +284,10 @@ if has_key(g:plugs, 'vim-table-mode')
 endif
 
 if has_key(g:plugs, 'vim-sonictemplate')
-  let g:sonictemplate_vim_template_dir = expand(g:vim_home . '/plugins/vim-sonictemplate/template')
+  let g:sonictemplate_vim_template_dir = [
+    \ expand(g:vim_home . '/plugins/vim-sonictemplate/template'),
+    \ expand('~/dotfiles/vim/templates'),
+    \ ]
 endif
 
 " ------------------------------------------------------------------------
