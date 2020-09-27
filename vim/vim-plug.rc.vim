@@ -209,7 +209,7 @@ if has_key(g:plugs, 'vim-lsp-settings')
 endif
 
 if has_key(g:plugs, 'vim-vsnip')
-  source ~/dotfiles/vim/plugin/vim-vsnip.rc.vim
+  source ~/dotfiles/vim/plugins/vim-vsnip.rc.vim
 endif
 
 " ------------------------------------------------------------------------
