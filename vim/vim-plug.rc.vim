@@ -34,7 +34,8 @@ Plug 'lambdalisue/fern-mapping-project-top.vim'
 " Edit
 " ------------------------------------------------------------------------
 Plug 'junegunn/vim-easy-align'
-Plug 'cohama/lexima.vim'
+" Plug 'cohama/lexima.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'andymass/vim-matchup'
