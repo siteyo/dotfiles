@@ -158,6 +158,11 @@ if has_key(g:plugs, 'vim-easy-align')
   source ~/dotfiles/vim/plugins/easyalign.rc.vim
 endif
 
+" auto-pairs
+if has_key(g:plugs, 'auto-pairs')
+  let g:AutoPairsFlyMode = 1
+endif
+
 " ------------------------------------------------------------------------
 " Completion
 " ------------------------------------------------------------------------
