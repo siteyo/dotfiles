@@ -7,10 +7,10 @@ nnoremap <silent> [ALE]t :<C-u>ALETypeDefinitions<CR>
 nnoremap <silent> [ALE]l :<C-u>ALELint<CR>
 nnoremap <silent> [ALE]i :<C-u>ALEDetail<CR>
 
-" nmap <silent> [e <Plug>(ale_previous_error)
-" nmap <silent> ]e <Plug>(ale_next_error)
-" nmap <silent> [w <Plug>(ale_previous_wrap)
-" nmap <silent> ]w <Plug>(ale_next_wrap)
+nmap <silent> [e <Plug>(ale_previous_error)
+nmap <silent> ]e <Plug>(ale_next_error)
+nmap <silent> [w <Plug>(ale_previous_wrap)
+nmap <silent> ]w <Plug>(ale_next_wrap)
 
 let g:ale_linters = {
     \ 'python': ['pydocstyle', 'pylint', 'pyright', 'flake8', 'mypy'],
@@ -25,10 +25,10 @@ let g:ale_linters = {
 let g:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
     \ 'python': ['autopep8', 'black', 'isort', 'yapf'],
-    \ 'javascript': ['prettier'],
-    \ 'typescript': ['prettier'],
-    \ 'javascriptreact': ['prettier'],
-    \ 'typescriptreact': ['prettier'],
+    \ 'javascript': ['prettier', 'eslint'],
+    \ 'typescript': ['prettier', 'eslint'],
+    \ 'javascriptreact': ['prettier', 'eslint'],
+    \ 'typescriptreact': ['prettier', 'eslint'],
     \ 'json': ['prettier', 'jq'],
     \ 'css': ['prettier'],
     \ 'scss': ['prettier'],
@@ -51,4 +51,4 @@ let g:ale_sign_warning = '--'
 "     \ }))
 
 " javascript
-" let g:ale_javascript_eslint_options = '--fix'
+let g:ale_javascript_eslint_options = '--fix'
