@@ -53,6 +53,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/asyncomplete-emmet.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
+Plug 'prabirshrestha/asyncomplete-file.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'hrsh7th/vim-vsnip'
@@ -185,7 +186,7 @@ endif
 if has_key(g:plugs, 'asyncomplete-emmet.vim')
   au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emmet#get_source_options({
         \ 'name': 'emmet',
-        \ 'whitelist': ['html'],
+        \ 'whitelist': ['html', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'],
         \ 'completor': function('asyncomplete#sources#emmet#completor'),
         \ }))
 endif
@@ -203,6 +204,15 @@ if has_key(g:plugs, 'asyncomplete-buffer.vim')
         \ }))
 endif
 
+" asyncomplete-file
+if has_key(g:plugs, 'asyncomplete-file')
+  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+        \ 'name': 'file',
+        \ 'allowlist': ['*'],
+        \ 'priority': 10,
+        \ 'completor': function('asyncomplete#sources#file#completor')
+        \ }))
+endif
 
 " vim-lsp
 if has_key(g:plugs, 'vim-lsp')
