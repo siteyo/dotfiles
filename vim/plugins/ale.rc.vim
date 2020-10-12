@@ -30,8 +30,8 @@ let g:ale_fixers = {
     \ 'javascriptreact': ['prettier', 'eslint'],
     \ 'typescriptreact': ['prettier', 'eslint'],
     \ 'json': ['prettier', 'jq'],
-    \ 'css': ['prettier'],
-    \ 'scss': ['prettier'],
+    \ 'css': ['stylelint'],
+    \ 'scss': ['stylelint'],
     \ 'html': ['prettier'],
     \ }
 
