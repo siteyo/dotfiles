@@ -20,6 +20,7 @@ let g:ale_linters = {
     \ 'typescriptreact': ['eslint', 'tsserver'],
     \ 'css': ['stylelint'],
     \ 'scss': ['stylelint'],
+    \ 'markdown': ['textlint'],
     \ }
 
 let g:ale_fixers = {
