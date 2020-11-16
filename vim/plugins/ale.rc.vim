@@ -26,10 +26,10 @@ let g:ale_linters = {
 let g:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
     \ 'python': ['autopep8', 'black', 'isort', 'yapf'],
-    \ 'javascript': ['prettier', 'eslint'],
-    \ 'typescript': ['prettier', 'eslint'],
-    \ 'javascriptreact': ['prettier', 'eslint'],
-    \ 'typescriptreact': ['prettier', 'eslint'],
+    \ 'javascript': ['eslint'],
+    \ 'typescript': ['eslint'],
+    \ 'javascriptreact': ['eslint'],
+    \ 'typescriptreact': ['eslint'],
     \ 'json': ['prettier', 'jq'],
     \ 'css': ['stylelint'],
     \ 'scss': ['stylelint'],
@@ -52,4 +52,4 @@ let g:ale_sign_warning = '--'
 "     \ }))
 
 " javascript
-let g:ale_javascript_eslint_options = '--fix'
+" let g:ale_javascript_eslint_options = '--fix'
