@@ -1,23 +1,21 @@
 nnoremap [ALE] <Nop>
 nmap <Space>a [ALE]
 nnoremap <silent> [ALE]f :<C-u>ALEFix<CR>
-nnoremap <silent> [ALE]n :<C-u>ALERename<CR>
+nnoremap <silent> [ALE]r :<C-u>ALERename<CR>
 nnoremap <silent> [ALE]d :<C-u>ALEGoToDefinition<CR>
 nnoremap <silent> [ALE]t :<C-u>ALETypeDefinitions<CR>
 nnoremap <silent> [ALE]l :<C-u>ALELint<CR>
 nnoremap <silent> [ALE]i :<C-u>ALEDetail<CR>
+nnoremap <silent> [ALE]n :<C-u>ALENextWrap<CR>
+nnoremap <silent> [ALE]p :<C-u>ALEPreviousWrap<CR>
 
-nmap <silent> [e <Plug>(ale_previous_error)
-nmap <silent> ]e <Plug>(ale_next_error)
-nmap <silent> [w <Plug>(ale_previous_wrap)
-nmap <silent> ]w <Plug>(ale_next_wrap)
+" nmap <silent> [e <Plug>(ale_previous_error)
+" nmap <silent> ]e <Plug>(ale_next_error)
+" nmap <silent> [w <Plug>(ale_previous_wrap)
+" nmap <silent> ]w <Plug>(ale_next_wrap)
 
 let g:ale_linters = {
     \ 'python': ['pydocstyle', 'pylint', 'pyright', 'flake8', 'mypy'],
-    \ 'javascript': ['eslint', 'tsserver'],
-    \ 'typescript': ['eslint', 'tsserver'],
-    \ 'javascriptreact': ['eslint', 'tsserver'],
-    \ 'typescriptreact': ['eslint', 'tsserver'],
     \ 'css': ['stylelint'],
     \ 'scss': ['stylelint'],
     \ 'markdown': ['textlint'],

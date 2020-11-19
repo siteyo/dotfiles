@@ -46,6 +46,7 @@ nnoremap <silent> [Coc]f :<C-u>call CocAction('format')<CR>
 nnoremap <silent> [Coc]e :<C-u>CocList diagnostics<CR>
 nnoremap <silent> [Coc]x :<C-u>CocList extensions<CR>
 nnoremap <silent> [Coc]c :<C-u>CocList commands<CR>
+nnoremap <silent> [Coc]d :<C-u>CocDiagnostics<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
