@@ -1,0 +1,106 @@
+[
+    //----------------------------------------------------------
+    // * -> editor
+    //----------------------------------------------------------
+    {
+        "key": "escape",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "escape",
+        "command": "workbench.action.navigateEditorGroups",
+        "when": "!editorFocus"
+    },
+    //----------------------------------------------------------
+    // sidebar -> search UI
+    //----------------------------------------------------------
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.interactivePlayground.arrowDown",
+        "when": "interactivePlaygroundFocus && !editorTextFocus"
+    },
+    //----------------------------------------------------------
+    // select suggestions
+    //----------------------------------------------------------
+    {
+        "key": "tab",
+        "command": "selectNextSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "selectPrevSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "key": "tab",
+        "command": "showNextParameterHint",
+        "when": "editorTextFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+    {
+        "key": "tab",
+        "command": "list.focusDown",
+        "when": "listFocus"
+    },
+    {
+        "key": "tab",
+        "command": "search.focus.nextInputBox",
+        "when": "inputBoxFocus && searchViewletVisible"
+    },
+
+    {
+        "key": "tab",
+        "command": "settings.action.focusSettingsFile",
+        "when": "inSettingsSearch"
+    },
+    {
+        "key": "tab",
+        "command": "keybindings.editor.focusKeybindings",
+        "when": "inKeybindings && inKeybindingsSearch"
+    },
+    //----------------------------------------------------------
+    // edit filename in sidebar
+    //----------------------------------------------------------
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+        "key": "Enter",
+        "command": "explorer.openToSide",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    //----------------------------------------------------------
+    // open file
+    //----------------------------------------------------------
+    {
+        "key": "Enter",
+        "command": "explorer.openToSide",
+        "when": "explorerViewletFocus && explorerViewletVisible"
+    },
+    //----------------------------------------------------------
+    // * -> terminal
+    //----------------------------------------------------------
+    // {
+    //     "key": "ctrl+t",
+    //     "command": "workbench.action.terminal.toggleTerminal",
+    //     "when": "!terminalFocus && vim.mode != 'SearchInProgressMode' && vim.mode != 'Insert'"
+    // },
+    // {
+    //     "key": "ctrl+t",
+    //     "command": "workbench.action.terminal.toggleTerminal",
+    //     "when": "terminalFocus && vim.mode != 'SearchInProgressMode' && vim.mode != 'Insert'"
+    // },
+    // {
+    //     "key": "ctrl+k",
+    //     "command": "editor.action.triggerSuggest",
+    //     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    // },
+    // {
+    //     "key": "ctrl+space",
+    //     "command": "-editor.action.triggerSuggest",
+    //     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    // },
+]
