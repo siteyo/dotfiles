@@ -4,9 +4,10 @@ dbaeumer.vscode-eslint
 donjayamanne.githistory
 dsznajder.es7-react-js-snippets
 eamodio.gitlens
-esbenp.prettier-vscode
+EditorConfig.EditorConfig
 formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
+gamunu.vscode-yarn
 harg.iceberg
 mads-hartmann.bash-ide-vscode
 MS-CEINTL.vscode-language-pack-ja
@@ -14,8 +15,8 @@ ms-python.python
 ms-toolsai.jupyter
 patbenatar.advanced-new-file
 pnp.polacode
-shinnn.stylelint
 streetsidesoftware.code-spell-checker
+stylelint.vscode-stylelint
 TabNine.tabnine-vscode
 VisualStudioExptTeam.vscodeintellicode
 vscode-icons-team.vscode-icons

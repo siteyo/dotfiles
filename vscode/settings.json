@@ -13,6 +13,11 @@
     "editor.lineNumbers": "relative",
     "editor.formatOnSave": false,
     "editor.cursorBlinking": "smooth",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
+    },
 
     //----------------------------------------------------------
     // Search
@@ -315,6 +320,7 @@
         "javascript",
         "javascriptreact"
     ],
+    "eslint.packageManager": "yarn",
 
     //----------------------------------------------------------
     // vsicons
@@ -332,13 +338,9 @@
     "gitlens.views.repositories.enabled": true,
 
     //----------------------------------------------------------
-    // Enable per language
+    // Stylelint
     //----------------------------------------------------------
-    "[javascript]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[python]": {
-        "editor.formatOnSave": true
-    }
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false
 }
