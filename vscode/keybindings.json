@@ -55,37 +55,37 @@
     // Files Explorer
     //----------------------------------------------------------
     {
-        "key": "shift+k",
+        "key": "Shift+K",
         "command": "explorer.newFolder",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     {
-        "key": "shift+n",
+        "key": "Shift+N",
         "command": "explorer.newFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     {
-        "key": "shift+d",
+        "key": "Shift+D",
         "command": "moveFileToTrash",
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     },
     {
-        "key": "c",
+        "key": "C",
         "command": "filesExplorer.copy",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     {
-        "key": "p",
+        "key": "P",
         "command": "filesExplorer.paste",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     {
-        "key": "shift+r",
+        "key": "Shift+R",
         "command": "renameFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     },
     {
-        "key": "shift+m",
+        "key": "Shift+M",
         "command": "filesExplorer.cut",
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     },
@@ -95,18 +95,14 @@
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     {
-        "key": "/",
-        "command": "workbench.action.findInFiles",
+        "key": "Shift+Enter",
+        "command": "explorer.openToSide",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     {
-        "key": "shift+cmd+f",
-        "command": "-workbench.action.findInFiles"
-    },
-    {
-        "key": "enter",
-        "command": "-renameFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+        "key": "/",
+        "command": "workbench.action.findInFiles",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     //----------------------------------------------------------
     // * -> terminal
