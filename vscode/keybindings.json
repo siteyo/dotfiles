@@ -13,14 +13,6 @@
         "when": "!editorFocus"
     },
     //----------------------------------------------------------
-    // sidebar -> search UI
-    //----------------------------------------------------------
-    {
-        "key": "ctrl+n",
-        "command": "workbench.action.interactivePlayground.arrowDown",
-        "when": "interactivePlaygroundFocus && !editorTextFocus"
-    },
-    //----------------------------------------------------------
     // select suggestions
     //----------------------------------------------------------
     {
@@ -60,25 +52,61 @@
         "when": "inKeybindings && inKeybindingsSearch"
     },
     //----------------------------------------------------------
-    // edit filename in sidebar
+    // Files Explorer
     //----------------------------------------------------------
     {
-        "key": "r",
+        "key": "shift+k",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+n",
+        "command": "explorer.newFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+d",
+        "command": "moveFileToTrash",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "c",
+        "command": "filesExplorer.copy",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "p",
+        "command": "filesExplorer.paste",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+r",
         "command": "renameFile",
-        "when": "explorerViewletVisible && filesExplorerFocus"
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "shift+m",
+        "command": "filesExplorer.cut",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     },
     {
         "key": "Enter",
-        "command": "explorer.openToSide",
-        "when": "explorerViewletVisible && filesExplorerFocus"
+        "command": "filesExplorer.openFilePreserveFocus",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
-    //----------------------------------------------------------
-    // open file
-    //----------------------------------------------------------
     {
-        "key": "Enter",
-        "command": "explorer.openToSide",
-        "when": "explorerViewletFocus && explorerViewletVisible"
+        "key": "/",
+        "command": "workbench.action.findInFiles",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+cmd+f",
+        "command": "-workbench.action.findInFiles"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     },
     //----------------------------------------------------------
     // * -> terminal
