@@ -275,7 +275,10 @@
     "vim.insertModeKeyBindingsNonRecursive": [
         { "before": ["j", "k"], "after": ["<Esc>"] },
         { "before": [":"], "after": [";"] },
-        { "before": [";"], "after": [":"] }
+        { "before": [";"], "after": [":"] },
+        { "before": ["Ctrl", "f"], "after": ["<Right>"] },
+        { "before": ["Ctrl", "b"], "after": ["<Left>"] },
+        { "before": ["Ctrl", "y"], "commands": ["editor.emmet.action.expandAbbriviation"]}
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         { "before": [":"], "after": [";"] },
