@@ -1,20 +1,35 @@
 #!/bin/bash
 
-# git
-source /usr/local/etc/bash_completion.d/git-prompt.sh
-source /usr/local/etc/bash_completion.d/git-completion.bash
+# Environment variables
+# --------------------------------------------------------------------
 
-# alias
-alias ls='ls -G'
-alias ll='ls -lG'
-alias la='ls -laG'
+
+# Completion
+# --------------------------------------------------------------------
+[ -e ~/.git-completion.bash ] && source ~/.git-completion.bash
+
+
+# Aliaces
+# --------------------------------------------------------------------
+alias ll='ls -l'
+alias la='ls -al'
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-#terminal
+## Colored ls
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+fi
+
+# Prompt
+# --------------------------------------------------------------------
+[ -e ~/.git-prompt.sh ] && source ~/.git-prompt.sh
+
 function add_line {
     if [[ -z "${PS1_NEWLINE_LOGIN}" ]]; then
         PS1_NEWLINE_LOGIN=true
@@ -28,24 +43,17 @@ PROMPT_COMMAND="add_line"
 GIT_PS1_SHOWDIRTYSTATE=true
 PS1='\[\e[34m\]\w \[\e[37m\]$(__git_ps1)\[\033[00m\]\n\$ '
 
-# terminal vi mode
+
+# Other
+# --------------------------------------------------------------------
+## terminal vi mode
 set -o vi
 
-# Load local settings
-. ~/.bashrc.local
+## Load local settings
+[ -f ~/.bashrc.local ] && source ~/.bashrc.local
 
-# fzf
+## fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# anyenv
-if [ -x $HOME/.anyenv/bin/anyenv ]; then
-  export PATH="$HOME/.anyenv/bin:$PATH"
-fi
+## anyenv
 eval "$(anyenv init -)"
-
-# poetry
-export PATH="$HOME/.poetry/bin:$PATH"
-
-# docui
-export LC_CTYPE=en_US.UTF-8
-export TERM=xterm-256color
