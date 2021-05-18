@@ -11,3 +11,6 @@ touch ~/.gitconfig.local
 
 # Create a symbolic link to ~/.gitconfig
 ln -sfv ~/dotfiles/gitconfig ~/.gitconfig
+
+git config --global user.email "phicyanoc@gmail.com"
+git config --global user.name "Saito Yuki"
