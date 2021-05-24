@@ -55,6 +55,3 @@ set -o vi
 
 ## fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-## anyenv
-eval "$(anyenv init -)"
