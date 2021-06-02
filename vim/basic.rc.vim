@@ -56,3 +56,8 @@ if has('persistent_undo')
   let &undodir = expand(g:vim_home . '/undo')
   set undofile
 endif
+
+if executable('rg')
+  let &grepprg = 'rg --vimgrep --hidden'
+  set grepformat=%f:%l:%c:%m
+endif
