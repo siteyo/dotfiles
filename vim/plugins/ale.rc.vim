@@ -9,10 +9,10 @@ nnoremap <silent> [ALE]i :<C-u>ALEDetail<CR>
 nnoremap <silent> [ALE]n :<C-u>ALENextWrap<CR>
 nnoremap <silent> [ALE]p :<C-u>ALEPreviousWrap<CR>
 
-" nmap <silent> [e <Plug>(ale_previous_error)
-" nmap <silent> ]e <Plug>(ale_next_error)
-" nmap <silent> [w <Plug>(ale_previous_wrap)
-" nmap <silent> ]w <Plug>(ale_next_wrap)
+nmap <silent> [e <Plug>(ale_previous_wrap_error)
+nmap <silent> ]e <Plug>(ale_next_wrap_error)
+nmap <silent> [w <Plug>(ale_previous_wrap)
+nmap <silent> ]w <Plug>(ale_next_wrap)
 
 let g:ale_linters = {
     \ 'python': ['pydocstyle', 'pylint', 'pyright', 'flake8', 'mypy'],
