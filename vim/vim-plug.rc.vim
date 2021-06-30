@@ -205,7 +205,7 @@ if has_key(g:plugs, 'asyncomplete-buffer.vim')
 endif
 
 " asyncomplete-file
-if has_key(g:plugs, 'asyncomplete-file')
+if has_key(g:plugs, 'asyncomplete-file.vim')
   au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
         \ 'name': 'file',
         \ 'allowlist': ['*'],
