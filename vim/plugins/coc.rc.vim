@@ -44,6 +44,7 @@ nnoremap <silent> [Coc]e :<C-u>CocList diagnostics<CR>
 nnoremap <silent> [Coc]x :<C-u>CocList extensions<CR>
 nnoremap <silent> [Coc]c :<C-u>CocList commands<CR>
 nnoremap <silent> [Coc]d :<C-u>CocDiagnostics<CR>
+nnoremap <silent> [Coc]a :<C-u>CocAction<CR>
 
 " coc-snippets
 let g:coc_snippet_next = '<C-j>'
