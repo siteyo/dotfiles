@@ -1,21 +1,5 @@
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
-
-inoremap <silent><expr> <C-y> coc#refresh()
-
-let g:coc_snippet_next = '<tab>'
-
+" general
 inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -39,6 +23,20 @@ let g:coc_global_extensions=[
   \ 'coc-vimlsp',
   \ ]
 
+" mapping
+inoremap <silent><expr> <C-y> coc#refresh()
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gn <Plug>(coc-rename)
+nmap <silent> [w <Plug>(coc-diagnostic-prev)
+nmap <silent> ]w <Plug>(coc-diagnostic-next)
+nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
+nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
+
 nnoremap [Coc] <Nop>
 nmap <Space>o [Coc]
 nnoremap <silent> [Coc]f :<C-u>call CocAction('format')<CR>
@@ -47,15 +45,10 @@ nnoremap <silent> [Coc]x :<C-u>CocList extensions<CR>
 nnoremap <silent> [Coc]c :<C-u>CocList commands<CR>
 nnoremap <silent> [Coc]d :<C-u>CocDiagnostics<CR>
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gn <Plug>(coc-rename)
-imap <silent> <C-l> <Plug>(coc-snippets-expand)
-nmap <silent> [w <Plug>(coc-diagnostic-prev)
-nmap <silent> ]w <Plug>(coc-diagnostic-next)
-nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
-nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
+" coc-snippets
+let g:coc_snippet_next = '<C-j>'
+let g:coc_snippet_prev = '<C-k>'
+imap <C-l> <Plug>(coc-snippets-expand)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 hi! link CocErrorSign Error

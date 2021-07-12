@@ -10,9 +10,8 @@ inoremap <silent><expr> <TAB>
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 
-" let g:asyncomplete_auto_completeopt = 0
+let g:asyncomplete_auto_completeopt = 1
 " set completeopt=menuone,noinsert,noselect,preview
-
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 imap <C-y> <Plug>(asyncomplete_force_refresh)

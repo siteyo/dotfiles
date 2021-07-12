@@ -12,16 +12,16 @@ nmap <silent> gi <Plug>(lsp-peek-implementation)
 nmap <silent> gI <Plug>(lsp-implementation)
 nmap <silent> gn <Plug>(lsp-rename)
 nmap <silent> gr <Plug>(lsp-references)
-" nmap <silent> ]w <Plug>(lsp-next-diagnostic)
-" nmap <silent> [w <Plug>(lsp-previous-diagnostic)
-" nmap <silent> ]e <Plug>(lsp-next-error)
-" nmap <silent> [e <Plug>(lsp-previous-error)
+nmap <silent> ]w <Plug>(lsp-next-diagnostic)
+nmap <silent> [w <Plug>(lsp-previous-diagnostic)
+nmap <silent> ]e <Plug>(lsp-next-error)
+nmap <silent> [e <Plug>(lsp-previous-error)
 nmap <silent> K <Plug>(lsp-hover)
 
-let g:lsp_diagnostics_enabled = 0
+let g:lsp_diagnostics_enabled = 1
 let g:lsp_signs_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 0
-let g:lsp_diagnostics_float_cursor = 0
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_float_cursor = 1
 let g:lsp_documentation_float = 1
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand(g:vim_home . '/vim-lsp.log')

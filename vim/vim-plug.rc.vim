@@ -47,17 +47,17 @@ Plug 'machakann/vim-highlightedyank'
 " ------------------------------------------------------------------------
 " Completion
 " ------------------------------------------------------------------------
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/asyncomplete-emmet.vim'
-Plug 'prabirshrestha/asyncomplete-buffer.vim'
-Plug 'prabirshrestha/asyncomplete-file.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'prabirshrestha/asyncomplete-emmet.vim'
+" Plug 'prabirshrestha/asyncomplete-buffer.vim'
+" Plug 'prabirshrestha/asyncomplete-file.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
 
 " ------------------------------------------------------------------------
 " Interface
@@ -81,7 +81,7 @@ Plug 'junegunn/limelight.vim', {'on': 'Limelight'}
 " ------------------------------------------------------------------------
 " Lint
 " ------------------------------------------------------------------------
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 
 " ------------------------------------------------------------------------
 " Language
@@ -186,6 +186,7 @@ endif
 if has_key(g:plugs, 'asyncomplete-emmet.vim')
   au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emmet#get_source_options({
         \ 'name': 'emmet',
+        \ 'priority': 4,
         \ 'whitelist': ['html', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact'],
         \ 'completor': function('asyncomplete#sources#emmet#completor'),
         \ }))
@@ -195,6 +196,7 @@ endif
 if has_key(g:plugs, 'asyncomplete-buffer.vim')
   call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
         \ 'name': 'buffer',
+        \ 'priority': 5,
         \ 'allowlist': ['*'],
         \ 'blocklist': ['go'],
         \ 'completor': function('asyncomplete#sources#buffer#completor'),
@@ -208,8 +210,8 @@ endif
 if has_key(g:plugs, 'asyncomplete-file.vim')
   au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
         \ 'name': 'file',
+        \ 'priority': 3,
         \ 'allowlist': ['*'],
-        \ 'priority': 10,
         \ 'completor': function('asyncomplete#sources#file#completor')
         \ }))
 endif

@@ -6,9 +6,9 @@
   "coc.preferences.formatOnType": true,
 
   "eslint.run": "onSave",
-  "eslint.enable": true,
   "eslint.autoFixOnSave": false,
   "eslint.packageManager": "yarn",
+  "eslint.format.enable": true,
 
   "python.envFile": "${workspaceFolder}/.env",
   "python.venvFolders": ["envs", ".pyenv", ".direnv", ".env", "env"],
