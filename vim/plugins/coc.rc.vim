@@ -52,4 +52,7 @@ let g:coc_snippet_prev = '<C-k>'
 imap <C-l> <Plug>(coc-snippets-expand)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
-hi! link CocErrorSign Error
+" color
+hi! link CocErrorSign ErrorMsg
+" for iceberg
+hi! CocErrorFloat ctermfg=203 ctermbg=236 guifg=#e27878 guibg=#3d425b
