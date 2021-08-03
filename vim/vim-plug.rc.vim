@@ -144,6 +144,10 @@ call plug#end()
 " iceberg
 if has_key(g:plugs, 'iceberg.vim')
   colorscheme iceberg
+
+  if has_key(g:plugs, 'coc.nvim')
+    hi! CocErrorFloat ctermfg=203 ctermbg=236 guifg=#e27878 guibg=#3d425b
+  endif
 endif
 
 " ------------------------------------------------------------------------
