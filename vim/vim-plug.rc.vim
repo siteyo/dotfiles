@@ -172,9 +172,9 @@ if has_key(g:plugs, 'vim-easy-align')
 endif
 
 " auto-pairs
-if has_key(g:plugs, 'auto-pairs')
-  let g:AutoPairsFlyMode = 1
-endif
+" if has_key(g:plugs, 'auto-pairs')
+"   let g:AutoPairsFlyMode = 1
+" endif
 
 " ------------------------------------------------------------------------
 " Completion
