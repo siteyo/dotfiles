@@ -34,7 +34,7 @@ let g:ale_fixers = {
     \ 'html': ['prettier'],
     \ }
 
-let g:ale_enabled = 0
+let g:ale_enabled = 1
 let g:ale_fix_on_save = 0
 " let g:ale_completion_enabled = 1
 let g:ale_echo_msg_error_str = 'E'

@@ -19,8 +19,8 @@ nmap <silent> [e <Plug>(lsp-previous-error)
 nmap <silent> K <Plug>(lsp-hover)
 
 let g:lsp_diagnostics_enabled = 1
-let g:lsp_signs_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_signs_enabled = 0
+let g:lsp_diagnostics_echo_cursor = 0
 let g:lsp_diagnostics_float_cursor = 0
 let g:lsp_documentation_float = 1
 let g:lsp_log_verbose = 1
