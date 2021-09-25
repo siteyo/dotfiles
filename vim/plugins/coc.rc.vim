@@ -23,11 +23,16 @@ let g:coc_global_extensions=[
   \ 'coc-vimlsp',
   \ ]
 
+" commands
+command! -nargs=0 Format :call CocAction('format')
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
+
 " mapping
-inoremap <silent><expr> <C-y> coc#refresh()
+" inoremap <silent><expr> <C-y> coc#refresh()
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-nmap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gd :call CocAction('jumpDefinition', v:false)<CR>
+nmap <silent> gD <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -40,11 +45,13 @@ nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 nnoremap [Coc] <Nop>
 nmap <Space>o [Coc]
 nnoremap <silent> [Coc]f :<C-u>call CocAction('format')<CR>
-nnoremap <silent> [Coc]e :<C-u>CocList diagnostics<CR>
-nnoremap <silent> [Coc]x :<C-u>CocList extensions<CR>
-nnoremap <silent> [Coc]c :<C-u>CocList commands<CR>
+nnoremap <silent> [Coc]e :<C-u>CocFzfList diagnostics<CR>
+nnoremap <silent> [Coc]x :<C-u>CocFzfList extensions<CR>
+nnoremap <silent> [Coc]c :<C-u>CocFzfList commands<CR>
+nnoremap <silent> [Coc]o :<C-u>CocFzfList outline<CR>
 nnoremap <silent> [Coc]d :<C-u>CocDiagnostics<CR>
 nnoremap <silent> [Coc]a :<C-u>CocAction<CR>
+nnoremap <silent> [Coc]p :<C-u>CocFzfListResume<CR>
 
 " coc-snippets
 let g:coc_snippet_next = '<C-j>'
