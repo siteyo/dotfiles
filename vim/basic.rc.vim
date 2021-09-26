@@ -35,11 +35,16 @@ set virtualedit+=block
 set hlsearch
 set incsearch
 set updatetime=300
-set signcolumn=yes
 set cmdheight=2
 set shortmess+=c
 set showtabline=2
 set background=dark
+
+if has("nvim-0.5.0")
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 if has('nvim') && ( has('mac') || has('win32') )
   set winblend=15

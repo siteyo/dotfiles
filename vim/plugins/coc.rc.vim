@@ -1,5 +1,8 @@
 " general
-inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm()
+  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm()
+  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -13,6 +16,7 @@ let g:coc_global_extensions=[
   \ 'coc-css',
   \ 'coc-emmet',
   \ 'coc-eslint',
+  \ 'coc-prettier',
   \ 'coc-html',
   \ 'coc-json',
   \ 'coc-lists',
@@ -28,11 +32,11 @@ command! -nargs=0 Format :call CocAction('format')
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " mapping
-" inoremap <silent><expr> <C-y> coc#refresh()
+inoremap <silent><expr> <C-y> coc#refresh()
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-nnoremap <silent> gd :call CocAction('jumpDefinition', v:false)<CR>
-nmap <silent> gD <Plug>(coc-definition)
+nnoremap <silent> gD :call CocAction('jumpDefinition', v:false)<CR>
+nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -45,13 +49,14 @@ nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 nnoremap [Coc] <Nop>
 nmap <Space>o [Coc]
 nnoremap <silent> [Coc]f :<C-u>call CocAction('format')<CR>
+nnoremap <silent> [Coc]l :<C-u>CocFzfList<Cr>
 nnoremap <silent> [Coc]e :<C-u>CocFzfList diagnostics<CR>
 nnoremap <silent> [Coc]x :<C-u>CocFzfList extensions<CR>
 nnoremap <silent> [Coc]c :<C-u>CocFzfList commands<CR>
-nnoremap <silent> [Coc]o :<C-u>CocFzfList outline<CR>
+nnoremap <silent> [Coc]o :<C-u>CocFzfListResume<CR>
 nnoremap <silent> [Coc]d :<C-u>CocDiagnostics<CR>
 nnoremap <silent> [Coc]a :<C-u>CocAction<CR>
-nnoremap <silent> [Coc]p :<C-u>CocFzfListResume<CR>
+nnoremap <silent> [Coc]p :<C-u>CocFzfList outline<CR>
 
 " coc-snippets
 let g:coc_snippet_next = '<C-j>'
