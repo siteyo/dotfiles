@@ -46,7 +46,7 @@ else
   set signcolumn=yes
 endif
 
-if has('nvim') && ( has('mac') || has('win32') )
+if has('nvim')
   set winblend=15
   set pumblend=15
 endif

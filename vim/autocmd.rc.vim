@@ -17,6 +17,17 @@ augroup vimrc
 augroup END
 
 " ------------------------------------------------------------------------
+" yank
+" ------------------------------------------------------------------------
+if system('uname -a | grep microsoft') != ''
+  echo "Shared clipboard."
+  augroup myYank
+    autocmd!
+    autocmd TextYankPost * :call system('clip.exe', @")
+  augroup END
+endif
+
+" ------------------------------------------------------------------------
 " ctags
 " ------------------------------------------------------------------------
 function! s:execute_ctags() abort
@@ -35,3 +46,5 @@ augroup ctags
   autocmd!
   autocmd BufWritePost * call s:execute_ctags()
 augroup END
+
+
