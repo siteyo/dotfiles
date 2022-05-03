@@ -27,6 +27,9 @@ call plug#begin(s:plug_repo_dir)
 " ------------------------------------------------------------------------
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-mapping-project-top.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-mapping-git.vim'
+Plug 'yuki-yano/fern-preview.vim'
 
 " ------------------------------------------------------------------------
 " Edit
