@@ -8,6 +8,9 @@ function! s:fern_settings() abort
   " change default mapping
   nmap <silent> <buffer> <S-s> <Plug>(fern-action-open:select)
   nmap <silent> <buffer> s Nop
+  if has('unix')
+    nmap <silent> <buffer> <S-d> <Plug>(fern-action-remove)
+  endif
   " fern-preview
   nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
   nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
