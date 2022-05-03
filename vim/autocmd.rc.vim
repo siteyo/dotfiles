@@ -10,7 +10,7 @@ augroup vimrc
   " au FileType javascriptreact setlocal tabstop=2 shiftwidth=0 expandtab
   " au FileType typescript setlocal tabstop=2 shiftwidth=0 expandtab
   " au FileType typescriptreact setlocal tabstop=2 shiftwidth=0 expandtab
-  au FileType vim setlocal foldlevel=0 foldmethod=marker
+  au FileType vim setlocal tabstop=2 foldlevel=0 foldmethod=marker
   " au FileType json setlocal tabstop=2 shiftwidth=0 expandtab
   " au FileType css setlocal tabstop=2 shiftwidth=0 expandtab
   au FileType python setlocal tabstop=4 foldmethod=indent foldlevel=1
