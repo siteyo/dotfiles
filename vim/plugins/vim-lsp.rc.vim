@@ -1,15 +1,14 @@
 nnoremap [LSP] <Nop>
 nmap <Space>l [LSP]
 
-nnoremap <silent> [LSP]f :<C-u>LspDocumentFormat<CR>
 nnoremap <silent> [LSP]g :<C-u>LspDocumentDiagnostics<CR>
 
-nmap <silent> gd <Plug>(lsp-peek-definition)
-nmap <silent> gD <Plug>(lsp-definition)
-nmap <silent> gy <Plug>(lsp-peek-type-definition)
-nmap <silent> gY <Plug>(lsp-type-definition)
-nmap <silent> gi <Plug>(lsp-peek-implementation)
-nmap <silent> gI <Plug>(lsp-implementation)
+nmap <silent> gD <Plug>(lsp-peek-definition)
+nmap <silent> gd <Plug>(lsp-definition)
+nmap <silent> gY <Plug>(lsp-peek-type-definition)
+nmap <silent> gy <Plug>(lsp-type-definition)
+nmap <silent> gI <Plug>(lsp-peek-implementation)
+nmap <silent> gi <Plug>(lsp-implementation)
 nmap <silent> gn <Plug>(lsp-rename)
 nmap <silent> gr <Plug>(lsp-references)
 nmap <silent> ]w <Plug>(lsp-next-diagnostic)

@@ -25,16 +25,13 @@ call plug#begin(s:plug_repo_dir)
 " ------------------------------------------------------------------------
 " Filer
 " ------------------------------------------------------------------------
-" Plug 'Shougo/defx.nvim'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-mapping-project-top.vim'
-" Plug 'scrooloose/nerdtree'
 
 " ------------------------------------------------------------------------
 " Edit
 " ------------------------------------------------------------------------
 Plug 'junegunn/vim-easy-align'
-" Plug 'cohama/lexima.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -47,26 +44,24 @@ Plug 'machakann/vim-highlightedyank'
 " ------------------------------------------------------------------------
 " Completion
 " ------------------------------------------------------------------------
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
-" Plug 'prabirshrestha/asyncomplete.vim'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
-" Plug 'prabirshrestha/asyncomplete-emmet.vim'
-" Plug 'prabirshrestha/asyncomplete-buffer.vim'
-" Plug 'prabirshrestha/asyncomplete-file.vim'
-" Plug 'prabirshrestha/asyncomplete-emoji.vim'
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'mattn/vim-lsp-settings'
-" Plug 'hrsh7th/vim-vsnip'
-" Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-emmet.vim'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
+Plug 'prabirshrestha/asyncomplete-file.vim'
+Plug 'prabirshrestha/asyncomplete-emoji.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 
 " ------------------------------------------------------------------------
 " Interface
 " ------------------------------------------------------------------------
 if has('win32')
-  " Plug 'Shougo/denite.nvim'
-  " Plug 'Shougo/neomru.vim'
   Plug 'ctrlpvim/ctrlp.vim' | Plug 'mattn/ctrlp-register'
 else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -81,9 +76,10 @@ Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/limelight.vim', {'on': 'Limelight'}
 
 " ------------------------------------------------------------------------
-" Lint
+" Lint / Formatter
 " ------------------------------------------------------------------------
 " Plug 'dense-analysis/ale'
+Plug 'sbdchd/neoformat'
 
 " ------------------------------------------------------------------------
 " Language
@@ -155,11 +151,6 @@ endif
 " ------------------------------------------------------------------------
 " Filer
 " ------------------------------------------------------------------------
-" defx
-if has_key(g:plugs, 'defx.nvim')
-  source ~/dotfiles/vim/plugins/defx.rc.vim
-endif
-
 " fern
 if has_key(g:plugs, 'fern.vim')
   source ~/dotfiles/vim/plugins/fern.rc.vim
@@ -287,11 +278,16 @@ if has_key(g:plugs, 'limelight.vim')
 endif
 
 " ------------------------------------------------------------------------
-" Lint
+" Lint / Formatter
 " ------------------------------------------------------------------------
 " ale
 if has_key(g:plugs, 'ale')
   source ~/dotfiles/vim/plugins/ale.rc.vim
+endif
+
+" Neoformat
+if has_key(g:plugs, 'neoformat')
+  source ~/dotfiles/vim/plugins/neoformat.rc.vim
 endif
 
 " ------------------------------------------------------------------------
