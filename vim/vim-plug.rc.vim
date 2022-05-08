@@ -47,19 +47,19 @@ Plug 'machakann/vim-highlightedyank'
 " ------------------------------------------------------------------------
 " Completion
 " ------------------------------------------------------------------------
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/asyncomplete-emmet.vim'
-Plug 'prabirshrestha/asyncomplete-buffer.vim'
-Plug 'prabirshrestha/asyncomplete-file.vim'
-Plug 'prabirshrestha/asyncomplete-emoji.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'prabirshrestha/asyncomplete-emmet.vim'
+" Plug 'prabirshrestha/asyncomplete-buffer.vim'
+" Plug 'prabirshrestha/asyncomplete-file.vim'
+" Plug 'prabirshrestha/asyncomplete-emoji.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
 
 " ------------------------------------------------------------------------
 " Interface
@@ -241,16 +241,12 @@ endif
 " ------------------------------------------------------------------------
 " Interface
 " ------------------------------------------------------------------------
-" denite
-if has_key(g:plugs, 'denite.nvim')
-  source ~/dotfiles/vim/plugins/denite.rc.vim
-endif
-
 " fzf
 if has_key(g:plugs, 'fzf.vim')
   source ~/dotfiles/vim/plugins/fzf.rc.vim
 endif
 
+" ctrlp
 if has_key(g:plugs, 'ctrlp.vim')
   source ~/dotfiles/vim/plugins/ctrlp.rc.vim
 endif

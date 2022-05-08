@@ -1,7 +1,7 @@
 nnoremap [LSP] <Nop>
 nmap <Space>l [LSP]
 
-nnoremap <silent> [LSP]g :<C-u>LspDocumentDiagnostics<CR>
+nnoremap <silent> [LSP]d :<C-u>LspDocumentDiagnostics<CR>
 
 nmap <silent> gD <Plug>(lsp-peek-definition)
 nmap <silent> gd <Plug>(lsp-definition)
@@ -18,7 +18,7 @@ nmap <silent> [e <Plug>(lsp-previous-error)
 nmap <silent> K <Plug>(lsp-hover)
 
 let g:lsp_diagnostics_enabled = 1
-let g:lsp_signs_enabled = 0
+let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 0
 let g:lsp_diagnostics_float_cursor = 0
 let g:lsp_documentation_float = 1

@@ -6,3 +6,4 @@ My configuration files
 * neovim
 * bash
 * git
+* fzf

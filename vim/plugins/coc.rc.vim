@@ -47,7 +47,7 @@ nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
 nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 nnoremap [Coc] <Nop>
-nmap <Space>o [Coc]
+nmap <Space>l [Coc]
 nnoremap <silent> [Coc]f :<C-u>call CocAction('format')<CR>
 nnoremap <silent> [Coc]l :<C-u>CocFzfList<Cr>
 nnoremap <silent> [Coc]e :<C-u>CocFzfList diagnostics<CR>
