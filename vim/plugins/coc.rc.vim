@@ -48,7 +48,6 @@ nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 nnoremap [Coc] <Nop>
 nmap <Space>l [Coc]
-nnoremap <silent> [Coc]f :<C-u>call CocAction('format')<CR>
 nnoremap <silent> [Coc]l :<C-u>CocFzfList<Cr>
 nnoremap <silent> [Coc]e :<C-u>CocFzfList diagnostics<CR>
 nnoremap <silent> [Coc]x :<C-u>CocFzfList extensions<CR>
