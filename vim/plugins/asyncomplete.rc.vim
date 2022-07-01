@@ -14,9 +14,3 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 imap <C-y> <Plug>(asyncomplete_force_refresh)
 inoremap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
-
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emoji#get_source_options({
-    \ 'name': 'emoji',
-    \ 'allowlist': ['*'],
-    \ 'completor': function('asyncomplete#sources#emoji#completor'),
-    \ }))

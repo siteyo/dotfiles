@@ -225,6 +225,15 @@ if has_key(g:plugs, 'asyncomplete-file.vim')
         \ }))
 endif
 
+" asyncomplete-emoji
+if has_key(g:plugs, 'asyncomplete-emoji.vim')
+  au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emoji#get_source_options({
+      \ 'name': 'emoji',
+      \ 'allowlist': ['md'],
+      \ 'completor': function('asyncomplete#sources#emoji#completor'),
+      \ }))
+endif
+
 " vim-lsp
 if has_key(g:plugs, 'vim-lsp')
   source ~/dotfiles/vim/plugins/vim-lsp.rc.vim
