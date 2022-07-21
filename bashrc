@@ -12,20 +12,20 @@
 
 # Aliaces
 # --------------------------------------------------------------------
-alias ll='ls -l'
-alias la='ls -al'
+
+# exa
+if [[ $(command -v exa) ]]; then
+  alias ls='exa --icons --git'
+  alias ll='exa --icons --git -l'
+  alias la='exa --icons --git -a'
+  alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
+  alias ltl='exa -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
+fi
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-
-## Colored ls
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-fi
 
 # Prompt
 # --------------------------------------------------------------------
