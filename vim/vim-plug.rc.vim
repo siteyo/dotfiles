@@ -90,7 +90,9 @@ Plug 'sbdchd/neoformat'
 Plug 'vim-jp/vimdoc-ja'
 " Plug 'sheerun/vim-polyglot'
 Plug 'ap/vim-css-color', {'for': ['css']}
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+if has('nvim')
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+endif
 
 " ------------------------------------------------------------------------
 " Util

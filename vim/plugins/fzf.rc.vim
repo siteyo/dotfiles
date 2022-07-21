@@ -9,6 +9,7 @@ nnoremap <silent> [Fzf]c :<C-u>Commits<CR>
 nnoremap <silent> [Fzf]l :<C-u>Lines<CR>
 nnoremap <silent> [Fzf]m :<C-u>History<CR>
 nnoremap <silent> [Fzf]a :<C-u>Ag<CR>
+nnoremap <silent> [Fzf]r :<C-u>Rg<CR>
 nnoremap <silent> [Fzf]t :call #vim#tags("'" . expand('<cword>'))<CR>
 nnoremap <silent> [Fzf]h :<C-u>Helptags<CR>
 
