@@ -2,6 +2,7 @@ nnoremap [LSP] <Nop>
 nmap <Space>l [LSP]
 
 nnoremap <silent> [LSP]d :<C-u>LspDocumentDiagnostics<CR>
+nnoremap <silent> [LSP]a :<C-u>LspDocumentDiagnostics --bufers=*<CR>
 
 nmap <silent> gD <Plug>(lsp-peek-definition)
 nmap <silent> gd <Plug>(lsp-definition)
