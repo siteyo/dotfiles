@@ -44,6 +44,10 @@ Plug 'tpope/vim-repeat'
 Plug 'sgur/vim-editorconfig'
 Plug 'machakann/vim-highlightedyank'
 
+" if has('nvim')
+"   Plug 'numToStr/Comment.nvim'
+" endif
+
 " ------------------------------------------------------------------------
 " Completion
 " ------------------------------------------------------------------------
@@ -88,11 +92,11 @@ Plug 'sbdchd/neoformat'
 " Language
 " ------------------------------------------------------------------------
 Plug 'vim-jp/vimdoc-ja'
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'ap/vim-css-color', {'for': ['css']}
-if has('nvim')
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-endif
+" if has('nvim')
+"   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" endif
 
 " ------------------------------------------------------------------------
 " Util
@@ -174,6 +178,11 @@ endif
 " if has_key(g:plugs, 'auto-pairs')
 "   let g:AutoPairsFlyMode = 1
 " endif
+
+" Comment.nvim
+if has_key(g:plugs, 'Comment.nvim')
+  source ~/dotfiles/vim/plugins/comment.rc.vim
+endif
 
 " ------------------------------------------------------------------------
 " Completion
