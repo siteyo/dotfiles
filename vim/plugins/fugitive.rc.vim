@@ -1,8 +1,9 @@
-" nnoremap <silent> [GitPlug]s :<C-u>15Gstatus<CR>
+nnoremap <silent> [GitPlug]f :<C-u>Git<CR>
+nnoremap <silent> [GitPlug]s :<C-u>Git status -s<CR>
+nnoremap <silent> [GitPlug]c :<C-u>Git commit<CR>
+nnoremap <silent> [GitPlug]b :<C-u>Git blame<CR>
+nnoremap <silent> [GitPlug]m :<C-u>Git merge<CR>
+nnoremap <silent> [GitPlug]l :<C-u>Git log --graph --all<CR>
 nnoremap <silent> [GitPlug]w :<C-u>Gwrite<CR>
-" nnoremap <silent> [GitPlug]c :<C-u>Gcommit<CR>
 nnoremap <silent> [GitPlug]r :<C-u>Gread<CR>
-" nnoremap <silent> [GitPlug]d :<C-u>Gdiff<CR>
-" nnoremap <silent> [GitPlug]b :<C-u>Gblame<CR>
-" nnoremap <silent> [GitPlug]i :<C-u>Git init<CR>
-nnoremap <silent> [GitPlug]m :<C-u>Gmerge
+nnoremap <silent> [GitPlug]d :<C-u>Gdiffsplit<CR>

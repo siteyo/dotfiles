@@ -122,7 +122,7 @@ Plug 'schickling/vim-bufonly', {'on': 'BufOnly'}
 " ------------------------------------------------------------------------
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'lambdalisue/gina.vim'
+" Plug 'lambdalisue/gina.vim'
 Plug 'junegunn/gv.vim', {'on': 'GV'}
 
 " ------------------------------------------------------------------------
