@@ -1,10 +1,12 @@
-DOTPATH   := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
+DOTPATH := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 
 .DEFAULT_GOAL := help
 
 .PHONY: install
 install: brew nvim git bash ## Install all dotfiles in this repo.
-	@exec $$SHELL
+
+.PHONY: reinstall
+reinstall: clean install ## Run 'make clean' and 'make install'.
 
 .PHONY: update
 update: ## Fetch changes in this repo.
@@ -20,7 +22,7 @@ test: install update clean ## For GitHub Actions (DO NOT RUN LOCALLY)
 .PHONY: help
 help: ## Self-documented Makefile.
 	@echo 'Usage: make [target]'
-	@grep -E '^[0-9a-zA-Z_-]+[[:blank:]]*:.*?## .*$$' $(MAKEFILE_LIST) | sort \
+	@grep -E '^[0-9a-zA-Z_-]+[[:blank:]]*:.*?## .*$$' $(MAKEFILE_LIST) \
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[1;32m%-15s\033[0m %s\n", $$1, $$2}'
 
 
@@ -43,3 +45,7 @@ git: ## Create .gitconfig symlink to ~.
 .PHONY: bash
 bash: ## Create .bashrc symlink to ~.
 	@bash $(DOTPATH)/scripts/install-bash.sh
+
+.PHONY: tmux
+tmux: ## [TODO] Create .tmux.conf symlink to ~.
+	@echo ''

@@ -3,7 +3,7 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 cd "$(git rev-parse --show-toplevel)" || exit 1
 
-echo 'Installing Homebrew ...'
+echo 'Install Homebrew ...'
 command -v brew 1>/dev/null 2>&1 || 
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 echo ''

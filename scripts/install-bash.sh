@@ -3,6 +3,8 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 cd "$(git rev-parse --show-toplevel)" || exit 1
 
+echo '==> Install bash ...'
+
 mkdir -pv bak
 touch ~/.bashrc.local
 touch ~/.bash_profile.local
@@ -24,3 +26,5 @@ fi
 # Create a symbolic link
 ln -sfv ~/dotfiles/bashrc ~/.bashrc
 ln -sfv ~/dotfiles/bash_profile ~/.bash_profile
+
+echo ''

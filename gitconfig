@@ -22,7 +22,7 @@
     pushf = push --force-with-lease
 [core]
     editor = nvim -c \"set fenc=utf-8\"
-    excludefile = ~/dotfiles/gitignore
+    excludefile = ~/dotfiles/etc/gitignore
 [merge]
 	ff = false
 [pull]
