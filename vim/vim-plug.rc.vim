@@ -122,7 +122,6 @@ Plug 'schickling/vim-bufonly', {'on': 'BufOnly'}
 " ------------------------------------------------------------------------
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-" Plug 'lambdalisue/gina.vim'
 Plug 'junegunn/gv.vim', {'on': 'GV'}
 
 " ------------------------------------------------------------------------
@@ -376,11 +375,6 @@ endif
 " vim-gitgutter
 if has_key(g:plugs, 'vim-gitgutter')
   source ~/dotfiles/vim/plugins/gitgutter.rc.vim
-endif
-
-" gina.vim
-if has_key(g:plugs, 'gina.vim')
-  source ~/dotfiles/vim/plugins/gina.rc.vim
 endif
 
 " gv.vim

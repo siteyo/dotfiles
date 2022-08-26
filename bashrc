@@ -4,6 +4,8 @@
 # --------------------------------------------------------------------
 [ -d '/home/linuxbrew/.linuxbrew' ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
+export EDITOR=nvim
+
 
 # Completion
 # --------------------------------------------------------------------
@@ -17,7 +19,7 @@
 if [[ $(command -v exa) ]]; then
   alias ls='exa --icons --git'
   alias ll='exa --icons --git -l'
-  alias la='exa --icons --git -a'
+  alias la='exa --icons --git -al'
   alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
   alias ltl='exa -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
 fi
@@ -31,7 +33,7 @@ alias .....='cd ../../../..'
 # --------------------------------------------------------------------
 [ -e ~/.git-prompt.sh ] && source ~/.git-prompt.sh
 
-function add_line {
+add_line() {
     if [[ -z "${PS1_NEWLINE_LOGIN}" ]]; then
         PS1_NEWLINE_LOGIN=true
     else
@@ -56,6 +58,16 @@ set -o vi
 ## fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+export FZF_COMPLETION_TRIGGER='~~'
+export FZF_COMPLETION_OPTS='--border --info=inline'
+
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
 ## anyenv
 eval "$(anyenv init -)"
 
@@ -67,22 +79,8 @@ if command -v nodenv 1>/dev/null 2>&1; then
     eval "$(nodenv init -)"
 fi
 
-## z
-. `brew --prefix`/etc/profile.d/z.sh
-
-unalias z
-z() {
-  if [[ -z "$*" ]]; then
-    cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"
-  else
-    _last_z_args="$@"
-    _z "$@"
-  fi
-}
-
-zz() {
-  cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q "$_last_z_args")"
-}
+## zoxide
+eval "$(zoxide init bash)"
 
 ## git
 # fcoc - checkout git commit

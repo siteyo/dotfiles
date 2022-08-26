@@ -23,7 +23,7 @@ if [ "$(uname -s)" = 'Linux' || "$(uname -s)" = 'Darwin' ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   echo "Updateting Homebrew"
-  brew install anyenv bat fd jq lazydocker lazygit neovim ripgrep tmux tree 
+  brew install anyenv bat fd jq lazydocker lazygit neovim ripgrep tmux tree zoxide
   brew tap universal-ctags/universal-ctags
   brew install universal-ctags
 fi

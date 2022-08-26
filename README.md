@@ -6,4 +6,6 @@ My configuration files
 * neovim
 * bash
 * git
-* fzf
+
+## Font
+- [HackGen](https://github.com/yuru7/HackGen/releases)
