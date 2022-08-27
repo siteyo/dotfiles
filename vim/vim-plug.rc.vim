@@ -278,7 +278,7 @@ endif
 
 " vim-airline-themes
 if has_key(g:plugs, 'vim-airline-themes')
-  let g:airline_theme='onedark'
+  let g:airline_theme='iceberg'
 endif
 
 " indentLine

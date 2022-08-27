@@ -48,4 +48,4 @@ bash: ## Create .bashrc symlink to ~.
 
 .PHONY: tmux
 tmux: ## [TODO] Create .tmux.conf symlink to ~.
-	@echo ''
+	@bash $(DOTPATH)/scripts/install-tmux.sh
