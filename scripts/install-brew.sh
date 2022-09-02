@@ -9,6 +9,11 @@ command -v brew 1>/dev/null 2>&1 ||
 echo ''
 
 echo 'Install fomula using Homebrew ...'
-ln -sfv ~/dotfiles/Brewfile ~/.Brewfile
-brew bundle --global
+if [ "$(uname)" == 'Darwin' ]; then
+  ln -sfv ~/dotfiles/Brewfile-Darwin ~/.Brewfile
+elif [ "$(uname)" == 'Linux' ]; then
+  ln -sfv ~/dotfiles/Brewfile-Linux ~/.Brewfile
+fi
+
+[ -f ~/.Brewfile ] && brew bundle --global
 echo ''

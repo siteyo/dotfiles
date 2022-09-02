@@ -15,15 +15,17 @@ export EDITOR=nvim
 # Aliaces
 # --------------------------------------------------------------------
 
-# exa
+## exa
 if [[ $(command -v exa) ]]; then
   alias ls='exa --icons --git'
   alias ll='exa --icons --git -l'
-  alias la='exa --icons --git -al'
+  alias la='exa --icons --git -a'
+  alias lal='exa --icons --git -al'
   alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
   alias ltl='exa -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
 fi
 
+## cd
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -34,11 +36,11 @@ alias .....='cd ../../../..'
 [ -e ~/.git-prompt.sh ] && source ~/.git-prompt.sh
 
 add_line() {
-    if [[ -z "${PS1_NEWLINE_LOGIN}" ]]; then
-        PS1_NEWLINE_LOGIN=true
-    else
-        printf '\n'
-    fi
+  if [[ -z "${PS1_NEWLINE_LOGIN}" ]]; then
+    PS1_NEWLINE_LOGIN=true
+  else
+    printf '\n'
+  fi
 }
 
 PROMPT_COMMAND="add_line"
@@ -102,4 +104,9 @@ fcs() {
 
 ## Rust
 # cargo
-. "$HOME/.cargo/env"
+if [[ $(command -v exa) ]]; then
+  . "$HOME/.cargo/env"
+fi
+
+## asdf
+[ -f `brew --prefix`/opt/asdf/libexec/asdf.sh ] && source `brew --prefix`/opt/asdf/libexec/asdf.sh

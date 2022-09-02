@@ -3,7 +3,9 @@ DOTPATH := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 .DEFAULT_GOAL := help
 
 .PHONY: install
-install: brew nvim git bash ## Install all dotfiles in this repo.
+install: brew nvim git tmux bash zsh ## Install all dotfiles in this repo.
+	@echo "You can change to Bash or Zsh."
+	@echo "If you want to change it, check out the shells available in '/etc/shells'."
 
 .PHONY: reinstall
 reinstall: clean install ## Run 'make clean' and 'make install'.
@@ -13,8 +15,8 @@ update: ## Fetch changes in this repo.
 	git pull origin master
 
 .PHONY: clean
-clean: ## [TODO] Remove dotfiles.
-	@echo 'Remove dotfiles ...'
+clean: ## Remove dotfiles.
+	@bash $(DOTPATH)/scripts/uninstall.sh
 
 .PHONY: test
 test: install update clean ## For GitHub Actions (DO NOT RUN LOCALLY)
@@ -46,6 +48,10 @@ git: ## Create .gitconfig symlink to ~.
 bash: ## Create .bashrc symlink to ~.
 	@bash $(DOTPATH)/scripts/install-bash.sh
 
+.PHONY: zsh
+fish: ## Create config.fish symlink to ~/.config/fish/.
+	@bash $(DOTPATH)/scripts/install-zsh.sh
+
 .PHONY: tmux
-tmux: ## [TODO] Create .tmux.conf symlink to ~.
+tmux: ## Create .tmux.conf symlink to ~.
 	@bash $(DOTPATH)/scripts/install-tmux.sh
