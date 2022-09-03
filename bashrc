@@ -70,17 +70,6 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
-## anyenv
-eval "$(anyenv init -)"
-
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-fi
-
-if command -v nodenv 1>/dev/null 2>&1; then
-    eval "$(nodenv init -)"
-fi
-
 ## zoxide
 eval "$(zoxide init bash)"
 
@@ -109,4 +98,4 @@ if [[ $(command -v exa) ]]; then
 fi
 
 ## asdf
-[ -f `brew --prefix`/opt/asdf/libexec/asdf.sh ] && source `brew --prefix`/opt/asdf/libexec/asdf.sh
+[ -f $(brew --prefix)/opt/asdf/libexec/asdf.sh ] && source $(brew --prefix)/opt/asdf/libexec/asdf.sh
