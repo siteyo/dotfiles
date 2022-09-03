@@ -49,7 +49,7 @@ bash: ## Create .bashrc symlink to ~.
 	@bash $(DOTPATH)/scripts/install-bash.sh
 
 .PHONY: zsh
-fish: ## Create config.fish symlink to ~/.config/fish/.
+zsh: ## Create config.fish symlink to ~/.config/fish/.
 	@bash $(DOTPATH)/scripts/install-zsh.sh
 
 .PHONY: tmux
