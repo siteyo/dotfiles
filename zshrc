@@ -7,7 +7,9 @@ fi
 
 # Environment variables
 # --------------------------------------------------------------------
-export LANG=ja_JP.UTF-8
+# Homebrew for Linux (and WSL)
+[ -d '/home/linuxbrew/.linuxbrew' ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 export EDITOR=nvim
 
 ## history
