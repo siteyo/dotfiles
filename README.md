@@ -12,16 +12,19 @@
 
 ## How to Setup
 
-Requires
-- curl
-- git
-
 The following command will install all of the contents.
-```bash
+```shell
 make install
 ```
 
 For more information, please check the following.
-```bash
+```shell
 make help
 ```
+
+## Requirements
+
+Check out the following sites
+
+- [for macOS](https://docs.brew.sh/Installation#macos-requirements)
+- [for Linux](https://docs.brew.sh/Homebrew-on-Linux#requirements)

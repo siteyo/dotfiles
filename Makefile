@@ -3,7 +3,7 @@ DOTPATH := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 .DEFAULT_GOAL := help
 
 .PHONY: install
-install: brew nvim git tmux bash zsh ## Install all dotfiles in this repo.
+install: brew nvim vim git tmux bash zsh ## Install all dotfiles in this repo.
 	@echo "You can change to Bash or Zsh."
 	@echo "If you want to change it, check out the shells available in '/etc/shells'."
 
@@ -32,9 +32,9 @@ help: ## Self-documented Makefile.
 brew: ## Install Homebrew and formula.
 	@bash $(DOTPATH)/scripts/install-brew.sh
 
-# .PHONY: vim
-# vim: ## Create vimrc symlink to ~ and install plugin.
-# 	@bash $(DOTPATH)/scripts/install-vim.sh
+.PHONY: vim
+vim: ## Create vimrc symlink to ~ and install plugin.
+	@bash $(DOTPATH)/scripts/install-vim.sh
 
 .PHONY: nvim
 nvim: ## Create init.vim symlink to ~ and install plugin.
