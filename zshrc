@@ -102,7 +102,7 @@ alias .....='cd ../../../..'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## zoxide
-eval "$(zoxide init bash)"
+eval "$(zoxide init zsh)"
 
 ## Git
 # fcoc - checkout git commit
