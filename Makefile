@@ -55,3 +55,7 @@ zsh: ## Create config.fish symlink to ~/.config/fish/.
 .PHONY: tmux
 tmux: ## Create .tmux.conf symlink to ~.
 	@bash $(DOTPATH)/scripts/install-tmux.sh
+
+.PHONY: starship
+starship: ## Create starship.toml to ~/.config
+	@bash $(DOTPATH)/scripts/install-starship.sh

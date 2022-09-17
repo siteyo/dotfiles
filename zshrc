@@ -1,16 +1,11 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Environment variables
 # --------------------------------------------------------------------
 # Homebrew for Linux (and WSL)
 [ -d '/home/linuxbrew/.linuxbrew' ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 export EDITOR=nvim
+export LANG=en_US.utf8
+export LC_ALL=en_US.utf8
 
 ## history
 HISTSIZE=1000
@@ -31,7 +26,6 @@ bindkey -v
 export ZPLUG_HOME=`brew --prefix`/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug romkatv/powerlevel10k, as:theme, depth:1
 zplug zsh-users/zsh-syntax-highlighting, defer:2
 zplug zsh-users/zsh-autosuggestions
 
@@ -50,8 +44,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # Prompt
 # --------------------------------------------------------------------
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Completion
 # --------------------------------------------------------------------
@@ -87,6 +79,10 @@ if [[ $(command -v exa) ]]; then
   alias lal='exa --icons --git -al'
   alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
   alias ltl='exa -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
+else
+  alias ll='ls -l'
+  alias la='ls -a'
+  alias lal='ls -al'
 fi
 
 ## cd
@@ -130,3 +126,6 @@ fi
 
 ## asdf
 [ -f `brew --prefix`/opt/asdf/libexec/asdf.sh ] && source `brew --prefix`/opt/asdf/libexec/asdf.sh
+
+## Starship
+eval "$(starship init zsh)"

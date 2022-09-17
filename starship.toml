@@ -1,0 +1,103 @@
+format = """
+$username\
+[](bg:#2e3244 fg:#454b68)\
+$directory\
+[](fg:#2e3244 bg:#1e2132)\
+$git_branch\
+$git_status\
+[](fg:#454b68 bg:#1e2132)\
+$c\
+$golang\
+$java\
+$nodejs\
+$rust\
+[](fg:#454b68 bg:#1e2132)\
+$docker_context\
+[](fg:#1e2132 bg:#454b68)\
+$time\
+[ ](fg:#454b68)
+$character
+"""
+
+# Disable the blank line at the start of the prompt
+# add_newline = true
+
+[character]
+success_symbol = "[ ](#c6c8d1)"
+vicmd_symbol = "[ ](#b4be82)"
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bg:#454b68"
+style_root = "bg:#454b68"
+format = '[ $user ]($style)'
+
+[directory]
+style = "bg:#2e3244"
+format = "[   $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[c]
+symbol = " "
+style = "bg:#1e2132"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:#1e2132"
+format = '[ $symbol $context ]($style) $path'
+
+[git_branch]
+symbol = ""
+style = "fg:#84a0c6 bg:#1e2132"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "fg:#84a0c6 bg:#1e2132"
+format = '[$all_status$ahead_behind ]($style)'
+
+[golang]
+symbol = " "
+style = "bg:#1e2132"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = " "
+style = "bg:#1e2132"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = " "
+style = "bg:#1e2132"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = " "
+style = "bg:#1e2132"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = " "
+style = "bg:#1e2132"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#454b68"
+format = '[  $time ]($style)'

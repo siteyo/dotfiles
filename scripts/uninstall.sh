@@ -3,4 +3,6 @@
 echo '==> Uninstall ...'
 
 # Remove symlink
-find ~ -type l -maxdepth 1 -delete
+find ~ -maxdepth 1 -type l -delete
+
+find ~/.config -maxdepth 2 -type l -delete
