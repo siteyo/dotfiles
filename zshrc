@@ -27,6 +27,7 @@ export ZPLUG_HOME=`brew --prefix`/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug zsh-users/zsh-syntax-highlighting, defer:2
+zplug zsh-users/zsh-completions
 zplug zsh-users/zsh-autosuggestions
 
 # Install plugins if there are plugins that have not been installed
