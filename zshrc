@@ -21,30 +21,16 @@ setopt auto_cd
 
 bindkey -v
 
-# Plugin (zplug)
+# Plugin (Sheldon)
 # --------------------------------------------------------------------
-export ZPLUG_HOME=`brew --prefix`/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
-zplug zsh-users/zsh-syntax-highlighting, defer:2
-zplug zsh-users/zsh-completions
-zplug zsh-users/zsh-autosuggestions
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load
+eval "$(sheldon source)"
 
 # zsh-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # Prompt
 # --------------------------------------------------------------------
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Completion
 # --------------------------------------------------------------------
