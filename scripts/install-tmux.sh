@@ -7,3 +7,5 @@ echo '==> Install tmux ...'
 
 # Create a symbolic link
 ln -sfv ~/dotfiles/tmux.conf ~/.tmux.conf
+
+echo ''

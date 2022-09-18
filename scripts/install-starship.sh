@@ -10,3 +10,5 @@ mkdir -pv ~/.config/
 
 # Create symbolic link
 ln -sfv ~/dotfiles/starship.toml ~/.config/starship.toml
+
+echo ''
