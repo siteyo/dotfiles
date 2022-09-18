@@ -24,6 +24,7 @@ $character
 
 [character]
 success_symbol = "[ ](#c6c8d1)"
+error_symbol = "[ ](#e27878)"
 vicmd_symbol = "[ ](#b4be82)"
 
 # You can also replace your username with a neat symbol like  to save some space
