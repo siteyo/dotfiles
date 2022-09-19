@@ -112,7 +112,11 @@ if [[ $(command -v cargo) ]]; then
 fi
 
 ## asdf
-[ -f `brew --prefix`/opt/asdf/libexec/asdf.sh ] && source `brew --prefix`/opt/asdf/libexec/asdf.sh
+[ -f `brew --prefix`/opt/asdf/libexec/asdf.sh ] \
+  && source `brew --prefix`/opt/asdf/libexec/asdf.sh
+
+## thefuck
+eval $(thefuck --alias)
 
 ## Starship
 eval "$(starship init zsh)"
