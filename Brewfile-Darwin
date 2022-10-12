@@ -34,6 +34,8 @@ brew "tree"
 brew "vim"
 brew "zoxide"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
+cask "alacritty"
 cask "docker"
 cask "font-hackgen"
 cask "font-hackgen-nerd"
+cask "wezterm"
