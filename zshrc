@@ -1,7 +1,7 @@
 # Environment variables
 # --------------------------------------------------------------------
 # Homebrew for Linux (and WSL)
-[ -d '/home/linuxbrew/.linuxbrew' ] && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+[ -d '/home/linuxbrew/.linuxbrew' ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export EDITOR=nvim
 export LANG=en_US.utf8

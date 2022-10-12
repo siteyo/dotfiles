@@ -3,12 +3,12 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 cd "$(git rev-parse --show-toplevel)" || exit 1
 
-echo '==> Install starship ...'
+echo '==> Install alacritty ...'
 
 # Create directory
-mkdir -pv ~/.config
+mkdir -pv ~/.config/alacritty
 
 # Create symbolic link
-ln -sfv ~/dotfiles/config/starship.toml ~/.config/starship.toml
+ln -sfv ~/dotfiles/config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 echo ''

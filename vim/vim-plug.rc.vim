@@ -41,7 +41,7 @@ Plug 'tpope/vim-surround'
 Plug 'andymass/vim-matchup'
 Plug 'AndrewRadev/linediff.vim', {'on': 'Linediff'}
 Plug 'tpope/vim-repeat'
-Plug 'sgur/vim-editorconfig'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'machakann/vim-highlightedyank'
 
 " if has('nvim')

@@ -63,3 +63,11 @@ starship: ## Create starship.toml to ~/.config
 .PHONY: sheldon
 sheldon: ## Create sheldon's plugins.toml to ~/.sheldon
 	@bash $(DOTPATH)/scripts/install-sheldon.sh
+
+.PHONY: alacritty
+alacritty: ## Create alacritty.yml to ~/.config/alacritty
+	@bash $(DOTPATH)/scripts/install-alacritty.sh
+
+.PHONY: wezterm
+wezterm: ## Create wezterm.lua to ~/.config/wezterm
+	@bash $(DOTPATH)/scripts/install-wezterm.sh
