@@ -128,8 +128,8 @@ Plug 'junegunn/gv.vim', {'on': 'GV'}
 " Colorscheme
 " ------------------------------------------------------------------------
 Plug 'cocopon/iceberg.vim'
+Plug 'EdenEast/nightfox.nvim'
 Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
 
 " ------------------------------------------------------------------------
 " Other
