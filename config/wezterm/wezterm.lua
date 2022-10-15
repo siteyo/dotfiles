@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local act = wezterm.action
 local launch_menu = {}
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
@@ -67,10 +68,20 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 end
 
 local keybinds = {
-  { key = 'a', mods = 'LEADER', action = wezterm.action.SendString '\x01', },
-  { key = '|', mods = 'LEADER', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
-  { key = '-', mods = 'LEADER', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' }, },
-  { key = 'Space', mods = 'LEADER', action = wezterm.action.QuickSelect },
+  { key = 'v', mods = 'LEADER', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
+  { key = 's', mods = 'LEADER', action = act.SplitVertical { domain = 'CurrentPaneDomain' }, },
+  { key = 'Space', mods = 'LEADER', action = act.QuickSelect },
+  { key = 'l', mods = 'LEADER', action = act.ShowLauncher },
+  { key = 'j', mods = 'LEADER', action = act.ActivateTabRelative(-1) },
+  { key = 'k', mods = 'LEADER', action = act.ActivateTabRelative(1) },
+  { key = '[', mods = 'ALT', action = act.ActivateTabRelative(-1) },
+  { key = ']', mods = 'ALT', action = act.ActivateTabRelative(1) },
+  { key = 'u', mods = 'LEADER', action = act.CharSelect },
+  { key = 'p', mods = 'LEADER', action = act.PaneSelect },
+  { key = 'h', mods = 'ALT', action = act.AdjustPaneSize {"Left", 1} },
+  { key = 'j', mods = 'ALT', action = act.AdjustPaneSize {"Down", 1} },
+  { key = 'k', mods = 'ALT', action = act.AdjustPaneSize {"Up", 1} },
+  { key = 'l', mods = 'ALT', action = act.AdjustPaneSize {"Right", 1} },
 }
 
 return {
@@ -81,7 +92,7 @@ return {
   window_background_opacity = 0.9,
   color_scheme = "iceberg-dark",
   launch_menu = launch_menu,
-  leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 },
+  leader = { key = 'i', mods = 'CTRL', timeout_milliseconds = 1000 },
   keys = keybinds,
   use_ime = true,
   hide_tab_bar_if_only_one_tab = true,
