@@ -6,11 +6,11 @@ cd "$(git rev-parse --show-toplevel)" || exit 1
 echo '==> Install sheldon plugins ...'
 
 mkdir -pv bak
-mkdir -pv ~/.sheldon
+mkdir -pv ~/.config/sheldon
 
-[ -e ~/.sheldon/plugins.toml ] \
-  && mv -v ~/.sheldon/plugins.toml bak
+[ -f ~/.config/sheldon/plugins.toml ] \
+  && mv -v ~/.config/sheldon/plugins.toml bak
 
-ln -sfv ~/dotfiles/sheldon/plugins.toml ~/.sheldon/plugins.toml
+ln -sfv ~/dotfiles/config/sheldon/plugins.toml ~/.config/sheldon/plugins.toml
 
 echo ''

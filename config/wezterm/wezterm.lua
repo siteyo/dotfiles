@@ -71,7 +71,7 @@ local keybinds = {
   { key = 'v', mods = 'LEADER', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
   { key = 's', mods = 'LEADER', action = act.SplitVertical { domain = 'CurrentPaneDomain' }, },
   { key = 'Space', mods = 'LEADER', action = act.QuickSelect },
-  { key = 'l', mods = 'LEADER', action = act.ShowLauncher },
+  { key = 'm', mods = 'LEADER', action = act.ShowLauncher },
   { key = 'j', mods = 'LEADER', action = act.ActivateTabRelative(-1) },
   { key = 'k', mods = 'LEADER', action = act.ActivateTabRelative(1) },
   { key = '[', mods = 'ALT', action = act.ActivateTabRelative(-1) },
@@ -82,6 +82,7 @@ local keybinds = {
   { key = 'j', mods = 'ALT', action = act.AdjustPaneSize {"Down", 1} },
   { key = 'k', mods = 'ALT', action = act.AdjustPaneSize {"Up", 1} },
   { key = 'l', mods = 'ALT', action = act.AdjustPaneSize {"Right", 1} },
+  { key = 'x', mods = 'LEADER', action = act.ActivateCopyMode },
 }
 
 return {
