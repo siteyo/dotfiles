@@ -1,5 +1,9 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
+
+-----------------------------------------------------------
+-- Launch Menu
+-----------------------------------------------------------
 local launch_menu = {}
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
@@ -74,15 +78,19 @@ local keybinds = {
   { key = 'm', mods = 'LEADER', action = act.ShowLauncher },
   { key = 'j', mods = 'LEADER', action = act.ActivateTabRelative(-1) },
   { key = 'k', mods = 'LEADER', action = act.ActivateTabRelative(1) },
-  { key = '[', mods = 'ALT', action = act.ActivateTabRelative(-1) },
-  { key = ']', mods = 'ALT', action = act.ActivateTabRelative(1) },
   { key = 'u', mods = 'LEADER', action = act.CharSelect },
   { key = 'p', mods = 'LEADER', action = act.PaneSelect },
+  { key = 'x', mods = 'LEADER', action = act.ActivateCopyMode },
+  { key = 'w', mods = 'LEADER', action = act.RotatePanes 'Clockwise' },
+  { key = 'b', mods = 'LEADER', action = act.RotatePanes 'CounterClockwise' },
+  { key = 'n', mods = 'LEADER', action = act.SpawnWindow },
+  { key = 't', mods = 'LEADER', action = act.SpawnTab 'CurrentPaneDomain' },
+  { key = '[', mods = 'ALT', action = act.ActivateTabRelative(-1) },
+  { key = ']', mods = 'ALT', action = act.ActivateTabRelative(1) },
   { key = 'h', mods = 'ALT', action = act.AdjustPaneSize {"Left", 1} },
   { key = 'j', mods = 'ALT', action = act.AdjustPaneSize {"Down", 1} },
   { key = 'k', mods = 'ALT', action = act.AdjustPaneSize {"Up", 1} },
   { key = 'l', mods = 'ALT', action = act.AdjustPaneSize {"Right", 1} },
-  { key = 'x', mods = 'LEADER', action = act.ActivateCopyMode },
 }
 
 return {
