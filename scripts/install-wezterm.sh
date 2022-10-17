@@ -5,10 +5,15 @@ cd "$(git rev-parse --show-toplevel)" || exit 1
 
 echo '==> Install wezterm ...'
 
-# Create directory
-mkdir -pv ~/.config/wezterm
-
-# Create symbolic link
-ln -sfv ~/dotfiles/config/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
+if uname -a | grep -q microsoft
+then
+    WINHOME="$(wslpath "$(wslvar USERPROFILE)")"
+    mkdir -pv "${WINHOME}/.config/wezterm"
+    ln -sfv ~/dotfiles/config/wezterm/wezterm.lua "${WINHOME}/.config/wezterm/wezterm.lua"
+elif [ "$(uname)" == 'Darwin' ]
+then
+    mkdir -pv ~/.config/wezterm
+    ln -sfv ~/dotfiles/config/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
+fi
 
 echo ''

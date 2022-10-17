@@ -11,16 +11,17 @@ If you're using Linux, check out the following sites.
   https://docs.brew.sh/Homebrew-on-Linux
 
 "
-read -p "Ready? (y/N): " yn
+read -rp "Ready? (y/N): " yn
 case "$yn" in
   [yY]*) ;;
   *) echo "abort."; exit ;;
 esac
 
-if [ "$(uname -s)" = 'Linux' || "$(uname -s)" = 'Darwin' ]; then
+if [ "$(uname -s)" = 'Linux' ] || [ "$(uname -s)" = 'Darwin' ]
+then
   # Homebrew
-  [ -z "$(which brew)" ] &&
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  [ -z "$(which brew)" ] \
+    && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   echo "Updateting Homebrew"
   brew install anyenv bat fd jq lazydocker lazygit neovim ripgrep tmux tree zoxide
