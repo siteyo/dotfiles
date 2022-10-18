@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 -----------------------------------------------------------
--- Launch Menu
+--- Launch Menu
 -----------------------------------------------------------
 local launch_menu = {}
 
@@ -11,26 +11,6 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
     label = 'PowerShell',
     args = { 'powershell.exe', '-NoLogo' },
   })
-
-  -- Find installed visual studio version(s) and add their compilation
-  -- environment command prompts to the menu
-  for _, vsvers in
-    ipairs(
-      wezterm.glob('Microsoft Visual Studio/20*', 'C:/Program Files (x86)')
-    )
-  do
-    local year = vsvers:gsub('Microsoft Visual Studio/', '')
-    table.insert(launch_menu, {
-      label = 'x64 Native Tools VS ' .. year,
-      args = {
-        'cmd.exe',
-        '/k',
-        'C:/Program Files (x86)/'
-          .. vsvers
-          .. '/BuildTools/VC/Auxiliary/Build/vcvars64.bat',
-      },
-    })
-  end
 
   -- Enumerate any WSL distributions that are installed and add those to the menu
   local success, wsl_list, wsl_err =
@@ -71,6 +51,21 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
   end
 end
 
+-----------------------------------------------------------
+--- Default Prog
+-----------------------------------------------------------
+local default_prog = {}
+-- Windows
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+  default_prog = { 'wsl.exe', '--cd', '~' }
+end
+-- macOS
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+  default_prog = { '$SHELL', '-l' }
+end
+-----------------------------------------------------------
+--- Keybinds
+-----------------------------------------------------------
 local keybinds = {
   { key = 'v', mods = 'LEADER', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
   { key = 's', mods = 'LEADER', action = act.SplitVertical { domain = 'CurrentPaneDomain' }, },
@@ -98,6 +93,7 @@ return {
     'Fira Code',
     'HackGen Console NFJ',
   },
+  default_prog = default_prog,
   window_background_opacity = 0.9,
   color_scheme = "iceberg-dark",
   launch_menu = launch_menu,

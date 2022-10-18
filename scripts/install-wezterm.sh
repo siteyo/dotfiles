@@ -9,7 +9,7 @@ if uname -a | grep -q microsoft
 then
     WINHOME="$(wslpath "$(wslvar USERPROFILE)")"
     mkdir -pv "${WINHOME}/.config/wezterm"
-    ln -sfv ~/dotfiles/config/wezterm/wezterm.lua "${WINHOME}/.config/wezterm/wezterm.lua"
+    cp -fv ~/dotfiles/config/wezterm/wezterm.lua "${WINHOME}/.config/wezterm/wezterm.lua"
 elif [ "$(uname)" == 'Darwin' ]
 then
     mkdir -pv ~/.config/wezterm
