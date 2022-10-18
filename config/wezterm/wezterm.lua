@@ -60,8 +60,8 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
   default_prog = { 'wsl.exe', '--cd', '~' }
 end
 -- macOS
-if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-  default_prog = { '$SHELL', '-l' }
+if wezterm.target_triple == 'x86_64-apple-darwin' then
+  default_prog = { os.getenv("SHELL"), '-l' }
 end
 -----------------------------------------------------------
 --- Keybinds
