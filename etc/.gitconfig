@@ -14,7 +14,7 @@
     s = status
     d = diff
     dc = diff --cached
-    cm = commit -m 
+    cm = commit -m
     ck = checkout
     ckb = checkout -b
     rh = reset --hard
@@ -22,10 +22,9 @@
     pushf = push --force-with-lease
 [core]
     editor = nvim -c \"set fenc=utf-8\"
-    excludefile = ~/dotfiles/etc/gitignore
     pager = delta
 [merge]
-	  ff = false
+	ff = false
     conflictstyle = diff3
 [pull]
     ff = only

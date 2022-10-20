@@ -1,17 +1,19 @@
 #!/bin/bash
 
-cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
-cd "$(git rev-parse --show-toplevel)" || exit 1
+current_dir=$(dirname "${BASH_SOURCE[0]}")
+dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
 
 echo '==> Install zsh ...'
 
-mkdir -pv bak
-touch ~/.zshrc.local
+mkdir -pv "${dotfiles_dir}/bak"
+touch "${HOME}/.zshrc.local"
 
-[ -e ~/.zshrc ] && mv -v ~/.zshrc bak/.zshrc
-# [ -e ~/.p10k.zsh ] && mv -v ~/.p10k.zsh bak/.p10k.zsh
+[ -f "${HOME}/.zshrc" ] \
+    && mv -v "${HOME}/.zshrc" "${dotfiles_dir}/bak/.zshrc"
+# [ -e "${HOME}/.p10k.zsh" ] \
+#    && mv -v "%{HOME}/.p10k.zsh" "${dotfiles_dir}/bak/.p10k.zsh"
 
-ln -sfv ~/dotfiles/zshrc ~/.zshrc
-# ln -sfv ~/dotfiles/etc/.p10k.zsh ~/.p10k.zsh
+ln -sfv "${dotfiles_dir}/zshrc" "${HOME}/.zshrc"
+# ln -sfv "${dotfiles_dir}/etc/.p10k.zsh" "${HOME}/.p10k.zsh"
 
 echo ''

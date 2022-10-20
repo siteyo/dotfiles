@@ -1,18 +1,19 @@
 #!/bin/bash
 
-cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
-cd "$(git rev-parse --show-toplevel)" || exit 1
+current_dir=$(dirname "${BASH_SOURCE[0]}")
+dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
 
 echo '==> Install starship ...'
 
-# Create directory
-mkdir -pv bak
-mkdir -pv ~/.config
+# Create directories
+mkdir -pv "${dotfiles_dir}/bak"
+mkdir -pv "${HOME}/.config"
 
-[ -f ~/.config/starship.toml ] \
-    && mv -v ~/.config/starship.toml bak
+# Move to backup directory
+[ -f "${HOME}/.config/starship.toml" ] \
+    && mv -v "${HOME}/.config/starship.toml" "${dotfiles_dir}/bak"
 
 # Create symbolic link
-ln -sfv ~/dotfiles/config/starship.toml ~/.config/starship.toml
+ln -sfv "${dotfiles_dir}/config/starship.toml" "${HOME}/.config/starship.toml"
 
 echo ''

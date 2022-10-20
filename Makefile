@@ -3,7 +3,7 @@ DOTPATH := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 .DEFAULT_GOAL := help
 
 .PHONY: install
-install: brew nvim vim git tmux starship sheldon bash zsh ## Install all dotfiles in this repo.
+install: brew nvim git tmux starship sheldon bash zsh ## Install all dotfiles in this repo.
 	@echo "You can change to Bash or Zsh."
 	@echo "If you want to change it, check out the shells available in '/etc/shells'."
 

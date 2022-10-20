@@ -1,24 +1,23 @@
 #!/bin/bash
 
-cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
-cd "$(git rev-parse --show-toplevel)" || exit 1
+current_dir=$(dirname "${BASH_SOURCE[0]}")
+dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
 
 echo '==> Install nvim ...'
 
 # Create directories
-mkdir -pv ~/.config/nvim
-mkdir -pv ~/.nvim
-mkdir -pv ~/.nvim/backup
-mkdir -pv ~/.nvim/swap
-mkdir -pv ~/.nvim/undo
+mkdir -pv "${HOME}/.config/nvim"
+mkdir -pv "${HOME}/.nvim"
+mkdir -pv "${HOME}/.nvim/backup"
+mkdir -pv "${HOME}/.nvim/swap"
+mkdir -pv "${HOME}/.nvim/undo"
 
 # Create a local setting file
-touch ~/.nvim/local_vimrc.vim
+touch "${HOME}/.nvim/local_vimrc.vim"
 
 # Create symbolic links
-ln -sfv ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim
-# ln -sfv ~/dotfiles/vim/gvimrc ~/.config/nvim/ginit.vim
-ln -sfv ~/dotfiles/vim/coc-settings.json ~/.config/nvim/coc-settings.json
+ln -sfv "${dotfiles_dir}/vim/vimrc" "${HOME}/.config/nvim/init.vim"
+ln -sfv "${dotfiles_dir}/vim/coc-settings.json" "${HOME}/.config/nvim/coc-settings.json"
 
 # Install plugins
 nvim +PlugInstall +qall
