@@ -4,7 +4,7 @@
 [ -d '/home/linuxbrew/.linuxbrew' ] \
   && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-if builtin command -v nvim
+if builtin command -v nvim > /dev/null
 then
   export EDITOR=nvim
 else

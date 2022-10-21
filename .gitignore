@@ -50,6 +50,7 @@ tags
 
 ### zsh ###
 .zcompdump
+!/.zshenv
 
 ### Other ###
 # Backup directory
