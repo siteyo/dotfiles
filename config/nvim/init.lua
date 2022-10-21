@@ -1,0 +1,5 @@
+require('rc/basic')
+require('rc/options')
+require('rc/mappings')
+require('rc/packer')
+require('rc/plugins')

@@ -5,6 +5,8 @@ dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
 
 echo '==> Install wezterm ...'
 
+mkdir -pv "${dotfiles_dir}/bak"
+
 if uname -a | grep -q microsoft
 then
     WINHOME="$(wslpath "$(wslvar USERPROFILE)")"
@@ -12,8 +14,9 @@ then
     cp -fv "${dotfiles_dir}/config/wezterm/wezterm.lua" "${WINHOME}/.config/wezterm/wezterm.lua"
 elif [ "$(uname)" == 'Darwin' ]
 then
-    mkdir -pv "${HOME}/.config/wezterm"
-    ln -sfv "${dotfiles_dir}/config/wezterm/wezterm.lua" "${HOME}/.config/wezterm/wezterm.lua"
+    [ -d "${HOME}/.config/wezterm" ] \
+        && mv -v "${HOME}/.config/wezterm" "${dotfiles_dir}/bak"
+    ln -sfv "${dotfiles_dir}/config/wezterm" "${HOME}/.config/wezterm"
 fi
 
 echo ''
