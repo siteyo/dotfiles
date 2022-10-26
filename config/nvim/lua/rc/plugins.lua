@@ -111,6 +111,12 @@ return require('packer').startup(function(use)
       require('rc/plugins/mason-lspconfig')
     end,
   })
+  use({ 
+    "j-hui/fidget.nvim",
+    config = function()
+      require('fidget').setup({})
+    end
+  })
 
   ------------------------------------------------------------
   --- FuzzyFinder
@@ -171,6 +177,18 @@ return require('packer').startup(function(use)
   ------------------------------------------------------------
   --- Util
   ------------------------------------------------------------
+  -- toggleterm
+  use({
+    "akinsho/toggleterm.nvim",
+    config = function()
+      require("toggleterm").setup()
+    end
+  })
+  -- diffview
+  use({
+    'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim'
+  })
 
 end)
 
