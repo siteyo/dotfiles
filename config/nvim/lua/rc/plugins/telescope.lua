@@ -1,0 +1,6 @@
+vim.keymap.set('n', '[FuzzyFinder]<Space>', '<Cmd>Telescope<CR>')
+vim.keymap.set('n', '[FuzzyFinder]f', '<Cmd>Telescope find_files<CR>')
+vim.keymap.set('n', '[FuzzyFinder]g', '<Cmd>Telescope git_files<CR>')
+vim.keymap.set('n', '[FuzzyFinder]s', '<Cmd>Telescope git_status<CR>')
+vim.keymap.set('n', '[FuzzyFinder]b', '<Cmd>Telescope buffers<CR>')
+vim.keymap.set('n', '[FuzzyFinder]m', '<Cmd>Telescope frecency<CR>')

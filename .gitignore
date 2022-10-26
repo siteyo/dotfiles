@@ -52,6 +52,9 @@ tags
 .zcompdump
 !/.zshenv
 
+### Neovim ###
+config/nvim/plugin/*
+
 ### Other ###
 # Backup directory
 bak/
