@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
     'rcarriga/nvim-notify',
     config = function()
       vim.notify = require('notify')
+      require('telescope').load_extension('notify')
     end,
   })
 
@@ -77,7 +78,7 @@ return require('packer').startup(function(use)
   })
 
   -- cmp-nvim-lsp
-  use({ 'hrsh7th/cmp-nvim-lsp', module = 'cmp_nvim_lsp' })
+  use({ 'hrsh7th/cmp-nvim-lsp' })
   use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
   use({ 'hrsh7th/cmp-vsnip', after = "nvim-cmp" })
   use({ 'hrsh7th/vim-vsnip' })
@@ -88,7 +89,6 @@ return require('packer').startup(function(use)
   -- lspkind
 	use({
 		'onsails/lspkind-nvim',
-		module = 'lspkind',
 	})
   -- lspconfig
   use({ 'neovim/nvim-lspconfig', })
@@ -149,14 +149,15 @@ return require('packer').startup(function(use)
     'TimUntersberger/neogit',
     requires = 'nvim-lua/plenary.nvim',
     config = function ()
-      require('neogit').setup()
+      local neogit = require('neogit')
+      neogit.setup {}
     end
   })
   -- gitsigns
   use({
     'lewis6991/gitsigns.nvim',
     config = function ()
-      require('gitsigns').setup()
+      require('rc/plugins/gitsigns')
     end
   })
 
