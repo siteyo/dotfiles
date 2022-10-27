@@ -15,7 +15,11 @@ return require('packer').startup(function(use)
   -- Colorscheme
   use({
     'EdenEast/nightfox.nvim',
-    config = 'vim.cmd[[colorscheme nightfox]]',
+    -- config = 'vim.cmd[[colorscheme nightfox]]',
+  })
+  use({
+    'cocopon/iceberg.vim',
+    config = 'vim.cmd[[colorscheme iceberg]]'
   })
   -- nvim-notify
   use({
@@ -66,6 +70,7 @@ return require('packer').startup(function(use)
       require('nvim-autopairs').setup({})
     end,
   })
+
   ------------------------------------------------------------
   --- Completion
   ------------------------------------------------------------
@@ -76,11 +81,13 @@ return require('packer').startup(function(use)
       require('rc/plugins/nvim-cmp')
     end,
   })
-
   -- cmp-nvim-lsp
   use({ 'hrsh7th/cmp-nvim-lsp' })
+  -- cmp-buffer
   use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
+  -- cmp-vsnip
   use({ 'hrsh7th/cmp-vsnip', after = "nvim-cmp" })
+  -- vim-vsnip
   use({ 'hrsh7th/vim-vsnip' })
 
   ------------------------------------------------------------
@@ -111,7 +118,8 @@ return require('packer').startup(function(use)
       require('rc/plugins/mason-lspconfig')
     end,
   })
-  use({ 
+  -- fidget
+  use({
     "j-hui/fidget.nvim",
     config = function()
       require('fidget').setup({})
@@ -132,10 +140,10 @@ return require('packer').startup(function(use)
   -- telescope-frecency (MRU)
   use({
     'nvim-telescope/telescope-frecency.nvim',
+    requires = {'kkharji/sqlite.lua'},
     config = function()
       require('telescope').load_extension('frecency')
     end,
-    requires = {'kkharji/sqlite.lua'}
   })
 
   ------------------------------------------------------------
@@ -144,7 +152,19 @@ return require('packer').startup(function(use)
   -- lualine
   use({
     'nvim-lualine/lualine.nvim',
+    config = function ()
+      require('rc/plugins/lualine')
+    end,
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  })
+  -- bufferline
+  use({
+    'akinsho/bufferline.nvim',
+    config = function ()
+      require('rc/plugins/bufferline')
+    end,
+    tag = "v3.*",
+    requires = 'kyazdani42/nvim-web-devicons'
   })
 
   ------------------------------------------------------------
