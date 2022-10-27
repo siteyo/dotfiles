@@ -23,7 +23,4 @@ touch "${HOME}/.nvim/local_init.lua"
 # Create symbolic links
 ln -sfv "${dotfiles_dir}/config/nvim" "${HOME}/.config/nvim"
 
-# Install plugins
-nvim +PlugInstall +qall
-
 echo ''

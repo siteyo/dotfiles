@@ -175,8 +175,7 @@ return require('packer').startup(function(use)
     'TimUntersberger/neogit',
     requires = 'nvim-lua/plenary.nvim',
     config = function ()
-      local neogit = require('neogit')
-      neogit.setup {}
+      require('rc/plugins/neogit')
     end
   })
   -- gitsigns
@@ -208,6 +207,15 @@ return require('packer').startup(function(use)
   use({
     'sindrets/diffview.nvim',
     requires = 'nvim-lua/plenary.nvim'
+  })
+  -- hop
+  use({
+    'phaazon/hop.nvim',
+    branch = 'v2',
+    config = function()
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      require('rc/plugins/hop')
+    end
   })
 
 end)
