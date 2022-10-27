@@ -1,6 +1,6 @@
 require('mason-lspconfig').setup()
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
@@ -10,13 +10,25 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 end
 
+local lspconfig = require('lspconfig')
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 require('mason-lspconfig').setup_handlers({
   function (server_name) -- default handler (optional)
-    require("lspconfig")[server_name].setup({
+    lspconfig[server_name].setup({
       on_attach = on_attach,
       capabilities = capabilities,
+    })
+  end,
+  ['sumneko_lua'] = function ()
+    lspconfig.sumneko_lua.setup({
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { 'vim' }
+          }
+        }
+      }
     })
   end,
 })
