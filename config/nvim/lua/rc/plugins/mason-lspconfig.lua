@@ -1,8 +1,8 @@
 require('mason-lspconfig').setup()
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '[w', vim.diagnostics.goto_prev, opts)
-vim.keymap.set('n', ']w', vim.diagnostics.goto_next, opts)
+vim.keymap.set('n', '[w', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']w', vim.diagnostic.goto_next, opts)
 
 local on_attach = function(_, bufnr)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
