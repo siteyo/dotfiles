@@ -70,6 +70,8 @@ return require('packer').startup(function(use)
       require('nvim-autopairs').setup({})
     end,
   })
+  -- editorconfig
+  use({ 'gpanders/editorconfig.nvim' })
 
   ------------------------------------------------------------
   --- Completion
@@ -166,6 +168,15 @@ return require('packer').startup(function(use)
     tag = "v3.*",
     requires = 'kyazdani42/nvim-web-devicons'
   })
+  -- indent-blankline
+  use({
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require('indent_blankline').setup({
+        show_current_context = true,
+      })
+    end,
+  })
 
   ------------------------------------------------------------
   --- Git
@@ -190,7 +201,12 @@ return require('packer').startup(function(use)
   --- Language
   ------------------------------------------------------------
   -- nvim-treesitter
-  use({ 'nvim-treesitter/nvim-treesitter' })
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    config = function ()
+      require('rc/plugins/treesitter')
+    end,
+  })
   -- TODO: Formatter
 
   ------------------------------------------------------------
