@@ -55,12 +55,16 @@ vim.keymap.set('o', '{', 'i{')
 vim.keymap.set('t', '<C-n><C-n>', '<C-\\><C-n>')
 
 --- Plugins prefix
+local prefix_opts = { noremap = true, silent = true }
 -- Filer
-vim.api.nvim_set_keymap('n', '[Filer]', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '[Filer]', '<Nop>', prefix_opts)
 vim.api.nvim_set_keymap('n', '<Space>e', '[Filer]', {})
 -- FuzzyFinder
-vim.api.nvim_set_keymap('n', '[FuzzyFinder]', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '[FuzzyFinder]', '<Nop>', prefix_opts)
 vim.api.nvim_set_keymap('n', '<Space>f', '[FuzzyFinder]', {})
 -- Git
-vim.api.nvim_set_keymap('n', '[Git]', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '[Git]', '<Nop>', prefix_opts)
 vim.api.nvim_set_keymap('n', '<Space>g', '[Git]', {})
+-- Lsp
+vim.api.nvim_set_keymap('n', '[Lsp]', '<Nop>', prefix_opts)
+vim.api.nvim_set_keymap('n', '<Space>l', '[Lsp]', {})

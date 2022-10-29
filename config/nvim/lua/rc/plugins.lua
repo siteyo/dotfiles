@@ -15,11 +15,11 @@ return require('packer').startup(function(use)
   -- Colorscheme
   use({
     'EdenEast/nightfox.nvim',
-    -- config = 'vim.cmd[[colorscheme nightfox]]',
+    config = 'vim.cmd[[colorscheme nightfox]]',
   })
   use({
     'cocopon/iceberg.vim',
-    config = 'vim.cmd[[colorscheme iceberg]]'
+    -- config = 'vim.cmd[[colorscheme iceberg]]'
   })
   -- nvim-notify
   use({
@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
   -- neo-tree
   use({
     'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
     requires = {
       'nvim-lua/plenary.nvim',
       'kyazdani42/nvim-web-devicons',
