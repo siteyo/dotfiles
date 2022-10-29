@@ -34,16 +34,26 @@ return require('packer').startup(function(use)
   --- Filer
   ------------------------------------------------------------
   -- neo-tree
+  -- use({
+  --   'nvim-neo-tree/neo-tree.nvim',
+  --   branch = 'v2.x',
+  --   requires = {
+  --     'nvim-lua/plenary.nvim',
+  --     'kyazdani42/nvim-web-devicons',
+  --     'MunifTanjim/nui.nvim',
+  --   },
+  --   config = function()
+  --     require('rc/plugins/neo-tree')
+  --   end,
+  -- })
+  -- nvim-tree
   use({
-    'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v2.x',
+    'nvim-tree/nvim-tree.lua',
     requires = {
-      'nvim-lua/plenary.nvim',
-      'kyazdani42/nvim-web-devicons',
-      'MunifTanjim/nui.nvim',
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
-    config = function()
-      require('rc/plugins/neo-tree')
+    config = function ()
+      require('rc.plugins/nvim-tree')
     end,
   })
 
