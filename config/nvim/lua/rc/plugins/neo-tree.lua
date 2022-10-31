@@ -1,19 +1,19 @@
-require('neo-tree').setup({
+require("neo-tree").setup({
   use_default_mapping = false,
   source_selector = {
-    winbar = true
+    winbar = true,
   },
   window = {
     mappings = {
-      ["<Space>"] = { 'toggle_node', nowait = false },
+      ["<Space>"] = { "toggle_node", nowait = false },
       ["<ESC>"] = "revert_preview",
-      ["<CR>"] = { 'open' },
-      ["P"] = { 'toggle_preview', config = { use_float = true } },
-      ["h"] = { 'close_node' },
-      ["l"] = { 'open' },
+      ["<CR>"] = { "open" },
+      ["P"] = { "toggle_preview", config = { use_float = true } },
+      ["h"] = { "close_node" },
+      ["l"] = { "open" },
       ["w"] = "open_with_window_picker",
-      ["N"] = { 'add' },
-      ["K"] = { 'add_directory' },
+      ["N"] = { "add" },
+      ["K"] = { "add_directory" },
       ["r"] = "rename",
       ["d"] = "delete",
       ["y"] = "copy_to_clipboard",
@@ -24,12 +24,12 @@ require('neo-tree').setup({
       ["q"] = "close_window",
       ["<C-j>"] = "prev_source",
       ["<C-k>"] = "next_source",
-    }
+    },
   },
   filesystem = {
     window = {
       mappings = {
-        ["<C-h>"] = { 'navigate_up' },
+        ["<C-h>"] = { "navigate_up" },
         ["H"] = "toggle_hidden",
         ["/"] = "fuzzy_finder",
         ["D"] = "fuzzy_finder_directory",
@@ -56,87 +56,70 @@ require('neo-tree').setup({
 
 --- Mappings
 local opts = { noremap = true, silent = true }
-local command = require('neo-tree.command')
+local command = require("neo-tree.command")
 -- drawer
-vim.keymap.set('n', '[Filer]dd',
-  function ()
-    command.execute({
-      action = 'show',
-      source = 'filesystem',
-      position = 'left',
-      toggle = true,
-      reveal = true,
-    })
-  end,
-  opts
-)
-vim.keymap.set('n', '[Filer]dg',
-  function ()
-    command.execute({
-      action = 'show',
-      source = 'git_status',
-      position = 'left',
-      toggle = true,
-      reveal = true,
-    })
-  end,
-  opts
-)
-vim.keymap.set('n', '[Filer]db',
-  function ()
-    command.execute({
-      action = 'show',
-      source = 'buffers',
-      position = 'left',
-      toggle = true,
-      reveal = true,
-    })
-  end,
-  opts
-)
+vim.keymap.set("n", "[Filer]dd", function()
+  command.execute({
+    action = "show",
+    source = "filesystem",
+    position = "left",
+    toggle = true,
+    reveal = true,
+  })
+end, opts)
+vim.keymap.set("n", "[Filer]dg", function()
+  command.execute({
+    action = "show",
+    source = "git_status",
+    position = "left",
+    toggle = true,
+    reveal = true,
+  })
+end, opts)
+vim.keymap.set("n", "[Filer]db", function()
+  command.execute({
+    action = "show",
+    source = "buffers",
+    position = "left",
+    toggle = true,
+    reveal = true,
+  })
+end, opts)
 -- current
-vim.keymap.set('n', '[Filer]e',
-  function ()
-    command.execute({
-      action = 'focus',
-      source = 'filesystem',
-      position = 'current',
-      toggle = false,
-      reveal = true,
-    })
-  end
-)
-vim.keymap.set('n', '[Filer]b',
-  function ()
-    command.execute({
-      action = 'focus',
-      source = 'buffers',
-      position = 'current',
-      toggle = false,
-      reveal = true,
-    })
-  end
-)
-vim.keymap.set('n', '[Filer]g',
-  function ()
-    command.execute({
-      action = 'focus',
-      source = 'git_status',
-      position = 'current',
-      toggle = false,
-      reveal = true,
-    })
-  end
-)
+vim.keymap.set("n", "[Filer]e", function()
+  command.execute({
+    action = "focus",
+    source = "filesystem",
+    position = "current",
+    toggle = false,
+    reveal = true,
+  })
+end)
+vim.keymap.set("n", "[Filer]b", function()
+  command.execute({
+    action = "focus",
+    source = "buffers",
+    position = "current",
+    toggle = false,
+    reveal = true,
+  })
+end)
+vim.keymap.set("n", "[Filer]g", function()
+  command.execute({
+    action = "focus",
+    source = "git_status",
+    position = "current",
+    toggle = false,
+    reveal = true,
+  })
+end)
 -- float
-vim.keymap.set('n', '[Filer]f',
-  function ()
-    command.execute({
-      action = 'focus',
-      source = 'filesystem',
-      position = 'float',
-      toggle = false,
-      reveal = true,
-    })
-  end
-)
+vim.keymap.set("n", "[Filer]f", function()
+  command.execute({
+    action = "focus",
+    source = "filesystem",
+    position = "float",
+    toggle = false,
+    reveal = true,
+  })
+end)

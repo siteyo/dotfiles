@@ -1,4 +1,4 @@
-vim.g.leader = ' '
+vim.g.leader = " "
 
 -- for nvim-tree
 vim.g.loaded_netrw = 1

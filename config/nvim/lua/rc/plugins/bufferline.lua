@@ -1,12 +1,12 @@
-require('bufferline').setup({
+require("bufferline").setup({
   options = {
-    mode = 'buffers',
+    mode = "buffers",
     numbers = function(opts)
-      return string.format('%s.%s', opts.ordinal, opts.raise(opts.id))
+      return string.format("%s.%s", opts.ordinal, opts.raise(opts.id))
     end,
     indicator = {
-      icon = '▎',
-      style = 'underline',
+      icon = "▎",
+      style = "underline",
     },
     show_buffer_close_icons = false,
     show_close_icon = false,
@@ -19,6 +19,6 @@ require('bufferline').setup({
     numbers_selected = {
       bold = false,
       italic = false,
-    }
-  }
+    },
+  },
 })
