@@ -95,13 +95,17 @@ return require("packer").startup(function(use)
     end,
   })
   -- cmp-nvim-lsp
-  use({ "hrsh7th/cmp-nvim-lsp" })
+  use({ "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" })
   -- cmp-buffer
   use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
+  -- cmp-cmdline
+  use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" })
+  -- cmp-path
+  use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
+  -- cmp-cmdline-history
+  use({ "dmitmel/cmp-cmdline-history", after = "nvim-cmp" })
   -- cmp-vsnip
   use({ "hrsh7th/cmp-vsnip", after = "nvim-cmp" })
-  -- vim-vsnip
-  use({ "hrsh7th/vim-vsnip" })
 
   ------------------------------------------------------------
   --- LSP

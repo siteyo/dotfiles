@@ -27,11 +27,9 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "vsnip" }, -- For vsnip users.
-    -- { name = 'luasnip' }, -- For luasnip users.
-    -- { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
   }, {
     { name = "buffer" },
+    { name = "path" },
   }),
   formatting = {
     format = lspkind.cmp_format({
@@ -39,5 +37,36 @@ cmp.setup({
       maxwidth = 50,
       ellipsis_char = "...",
     }),
+  },
+})
+
+cmp.setup.cmdline("/", {
+  mapping = cmp.mapping.preset.cmdline(),
+  source = {
+    { name = "buffer" },
+  },
+})
+
+cmp.setup.cmdline(":", {
+  mapping = {
+    ["<C-n>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end, { "c" }),
+    ["<C-p>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end, { "c" }),
+  },
+  sources = {
+    { name = "path" },
+    { name = "cmdline" },
+    { name = "cmdline_history" },
   },
 })
