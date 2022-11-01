@@ -15,11 +15,11 @@ return require("packer").startup(function(use)
   -- Colorscheme
   use({
     "EdenEast/nightfox.nvim",
-    config = "vim.cmd[[colorscheme nightfox]]",
+    -- config = "vim.cmd[[colorscheme nightfox]]",
   })
   use({
     "cocopon/iceberg.vim",
-    -- config = 'vim.cmd[[colorscheme iceberg]]'
+    config = 'vim.cmd[[colorscheme iceberg]]'
   })
   -- nvim-notify
   use({
@@ -27,6 +27,9 @@ return require("packer").startup(function(use)
     config = function()
       vim.notify = require("notify")
       require("telescope").load_extension("notify")
+      require("notify").setup({
+        background_colour = "#000000",
+      })
     end,
   })
 
@@ -106,6 +109,8 @@ return require("packer").startup(function(use)
   use({ "dmitmel/cmp-cmdline-history", after = "nvim-cmp" })
   -- cmp-vsnip
   use({ "hrsh7th/cmp-vsnip", after = "nvim-cmp" })
+  -- vim-vsnip
+  use({ "hrsh7th/vim-vsnip" })
 
   ------------------------------------------------------------
   --- LSP
@@ -115,7 +120,12 @@ return require("packer").startup(function(use)
     "onsails/lspkind-nvim",
   })
   -- lspconfig
-  use({ "neovim/nvim-lspconfig" })
+  use({
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("rc/plugins/nvim-lspconfig")
+    end,
+  })
   -- mason
   use({
     "williamboman/mason.nvim",
@@ -134,6 +144,7 @@ return require("packer").startup(function(use)
     config = function()
       require("rc/plugins/mason-lspconfig")
     end,
+    after = { "mason.nvim", "nvim-lspconfig", "cmp-nvim-lsp" },
   })
   -- null-ls
   use({
@@ -144,10 +155,22 @@ return require("packer").startup(function(use)
     end,
   })
   -- fidget
+  -- use({
+  --   "j-hui/fidget.nvim",
+  --   config = function()
+  --     require("fidget").setup({})
+  --   end,
+  -- })
+  -- trouble
   use({
-    "j-hui/fidget.nvim",
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
     config = function()
-      require("fidget").setup({})
+      require("trouble").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
     end,
   })
 
@@ -178,7 +201,7 @@ return require("packer").startup(function(use)
   use({
     "folke/noice.nvim",
     config = function()
-      require("noice").setup()
+      require("rc/plugins/noice")
     end,
     requires = {
       "MunifTanjim/nui.nvim",
