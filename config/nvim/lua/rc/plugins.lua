@@ -109,6 +109,8 @@ return require("packer").startup(function(use)
   use({ "dmitmel/cmp-cmdline-history", after = "nvim-cmp" })
   -- cmp-vsnip
   use({ "hrsh7th/cmp-vsnip", after = "nvim-cmp" })
+  -- cmp-nvim-lua
+  use({ "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" })
   -- vim-vsnip
   use({ "hrsh7th/vim-vsnip" })
 
