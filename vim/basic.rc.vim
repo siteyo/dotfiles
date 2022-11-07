@@ -39,7 +39,7 @@ set cmdheight=2
 set shortmess+=c
 set showtabline=2
 set background=dark
-set scrolloff=8
+set scrolloff=4
 set signcolumn=yes
 
 if has('nvim')

@@ -28,7 +28,6 @@ cmp.setup({
     { name = "nvim_lsp" },
     { name = "vsnip" }, -- For vsnip users.
     { name = "nvim_lua" },
-  }, {
     { name = "buffer" },
     { name = "path" },
   }),
@@ -38,6 +37,9 @@ cmp.setup({
       maxwidth = 50,
       ellipsis_char = "...",
     }),
+  },
+  experimental = {
+    ghost_text = true,
   },
 })
 
