@@ -176,12 +176,12 @@ return require("packer").startup(function(use)
     end,
   })
   -- fidget
-  -- use({
-  --   "j-hui/fidget.nvim",
-  --   config = function()
-  --     require("fidget").setup({})
-  --   end,
-  -- })
+  use({
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup({})
+    end,
+  })
   -- trouble
   use({
     "folke/trouble.nvim",
@@ -307,6 +307,17 @@ return require("packer").startup(function(use)
     branch = "v2",
     config = function()
       require("rc/plugins/hop")
+    end,
+  })
+  --
+  use({
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+    config = function()
+      require("refactoring").setup({})
     end,
   })
 
