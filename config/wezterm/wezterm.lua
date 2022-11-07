@@ -52,7 +52,7 @@ local keybinds = {
   { key = "l", mods = "ALT", action = act.AdjustPaneSize({ "Right", 1 }) },
   { key = "LeftArrow", mods = "ALT|SHIFT", action = act.ActivatePaneDirection("Left") },
   { key = "RightArrow", mods = "ALT|SHIFT", action = act.ActivatePaneDirection("Right") },
-  { key = "DownArrow", mods = "ALT|SHIFT", action = act.ActivatePaneDirection("Down" ) },
+  { key = "DownArrow", mods = "ALT|SHIFT", action = act.ActivatePaneDirection("Down") },
   { key = "UpArrow", mods = "ALT|SHIFT", action = act.ActivatePaneDirection("Up") },
 }
 
