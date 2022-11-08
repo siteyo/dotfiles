@@ -34,11 +34,11 @@ return require("packer").startup(function(use)
   -- Colorscheme
   use({
     "EdenEast/nightfox.nvim",
-    config = "vim.cmd[[colorscheme nightfox]]",
+    -- config = "vim.cmd[[colorscheme nightfox]]",
   })
   use({
     "cocopon/iceberg.vim",
-    -- config = 'vim.cmd[[colorscheme iceberg]]'
+    config = "vim.cmd[[colorscheme iceberg]]",
   })
   -- nvim-notify
   use({
@@ -255,12 +255,11 @@ return require("packer").startup(function(use)
   ------------------------------------------------------------
   --- Git
   ------------------------------------------------------------
-  -- neogit
+  -- fugitive
   use({
-    "TimUntersberger/neogit",
-    requires = "nvim-lua/plenary.nvim",
+    "tpope/vim-fugitive",
     config = function()
-      require("rc/plugins/neogit")
+      require("rc/plugins/fugitive")
     end,
   })
   -- gitsigns

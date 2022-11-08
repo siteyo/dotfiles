@@ -1,4 +1,4 @@
-vim.g.leader = " "
+vim.g.mapleader = " "
 
 -- for nvim-tree
 vim.g.loaded_netrw = 1

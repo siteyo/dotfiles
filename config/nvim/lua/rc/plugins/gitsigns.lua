@@ -59,7 +59,7 @@ require("gitsigns").setup({
     map("n", "[Git]w", "<cmd>Gitsigns stage_buffer<CR>")
     map("n", "[Git]r", "<cmd>Gitsigns reset_buffer<CR>")
     map("n", "[Git]p", "<cmd>Gitsigns preview_hunk<CR>")
-    map("n", "[Git]b", '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
+    -- map("n", "[Git]b", '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
     map("n", "[Git]tb", "<cmd>Gitsigns toggle_current_line_blame<CR>")
     map("n", "[Git]td", "<cmd>Gitsigns toggle_deleted<CR>")
     map("n", "[Git]d", "<cmd>Gitsigns diffthis<CR>")
