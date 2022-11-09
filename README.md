@@ -7,7 +7,7 @@
 * [x] zsh
 * [x] git
 * [x] tmux
-* [ ] wezterm
+* [x] wezterm
 * [x] sheldon
 * [x] starship
 

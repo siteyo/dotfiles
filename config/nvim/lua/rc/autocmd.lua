@@ -1,3 +1,6 @@
-local group_name = 'vimrc_vimrc'
-vim.api.nvim_create_augroup(group_name, { clear = true })
-
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+  pattern = "*",
+  callback = function()
+    vim.highlight.on_yank({ higroup = "InSearch", timeout = 500 })
+  end,
+})

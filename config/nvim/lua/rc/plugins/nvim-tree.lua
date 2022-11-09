@@ -12,6 +12,7 @@ require("nvim-tree").setup({
         { key = "h", action = "close_node" },
         { key = { "<CR>", "l" }, action = "edit_in_place" },
         { key = "<C-h>", action = "dir_up" },
+        { key = "<C-l>", action = "refresh" },
         { key = "r", action = "rename" },
         { key = "R", action = "full_rename" },
       },
@@ -36,6 +37,7 @@ local function toggle_replace()
 end
 
 vim.keymap.set("n", "[Filer]e", toggle_replace)
+vim.keymap.set("n", "[Filer]f", "<Cmd>NvimTreeFocus<CR>")
 vim.keymap.set("n", "[Filer]d", function()
-  nt_api.tree.toggle(false, true)
+  nt_api.tree.toggle(true, true)
 end)

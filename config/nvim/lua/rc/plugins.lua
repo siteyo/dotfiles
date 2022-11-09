@@ -1,20 +1,4 @@
 ------------------------------------------------------------
---- Install packer.nvim
-------------------------------------------------------------
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-    vim.cmd([[packadd packer.nvim]])
-    return true
-  end
-  return false
-end
-
-local packer_bootstrap = ensure_packer()
-
-------------------------------------------------------------
 --- Plugins
 ------------------------------------------------------------
 return require("packer").startup(function(use)
@@ -44,12 +28,9 @@ return require("packer").startup(function(use)
   use({
     "rcarriga/nvim-notify",
     config = function()
-      vim.notify = require("notify")
-      require("telescope").load_extension("notify")
-      require("notify").setup({
-        background_colour = "#000000",
-      })
+      require("rc/plugins/notify")
     end,
+    after = "telescope.nvim",
   })
 
   ------------------------------------------------------------
@@ -72,7 +53,7 @@ return require("packer").startup(function(use)
   use({
     "nvim-tree/nvim-tree.lua",
     requires = {
-      "nvim-tree/nvim-web-devicons", -- optional, for file icons
+      "nvim-tree/nvim-web-devicons",
     },
     config = function()
       require("rc.plugins/nvim-tree")
@@ -103,8 +84,12 @@ return require("packer").startup(function(use)
       require("nvim-autopairs").setup({})
     end,
   })
-  -- editorconfig
+  -- editorconfig.nvim
   use({ "gpanders/editorconfig.nvim" })
+  -- vim-highlightedyank
+  use({ "machakann/vim-highlightedyank" })
+  -- neoformat
+  use({ "sbdchd/neoformat" })
 
   ------------------------------------------------------------
   --- Completion
@@ -168,13 +153,13 @@ return require("packer").startup(function(use)
     after = { "mason.nvim", "nvim-lspconfig", "cmp-nvim-lsp" },
   })
   -- null-ls
-  use({
-    "jose-elias-alvarez/null-ls.nvim",
-    after = "mason.nvim",
-    config = function()
-      require("rc/plugins/null-ls")
-    end,
-  })
+  -- use({
+  --   "jose-elias-alvarez/null-ls.nvim",
+  --   after = "mason.nvim",
+  --   config = function()
+  --     require("rc/plugins/null-ls")
+  --   end,
+  -- })
   -- fidget
   use({
     "j-hui/fidget.nvim",
@@ -315,10 +300,4 @@ return require("packer").startup(function(use)
       require("refactoring").setup({})
     end,
   })
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require("packer").sync()
-  end
 end)
