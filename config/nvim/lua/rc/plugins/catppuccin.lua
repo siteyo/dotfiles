@@ -24,6 +24,7 @@ require("catppuccin").setup({
     mason = true,
     notify = true,
     fidget = true,
+    lsp_saga = true,
     native_lsp = {
       enabled = true,
       virtual_text = {

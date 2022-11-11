@@ -20,12 +20,7 @@ return require("packer").startup(function(use)
   --- Colorscheme
   ------------------------------------------------------------
   local colorscheme = "catppuccin"
-  --- nightfox
-  use({
-    "EdenEast/nightfox.nvim",
-    as = "nightfox",
-    opt = true,
-  })
+  --- iceberg
   use({
     "cocopon/iceberg.vim",
     as = "iceberg",
@@ -160,6 +155,14 @@ return require("packer").startup(function(use)
     end,
     after = { "mason.nvim", "nvim-lspconfig", "cmp-nvim-lsp" },
   })
+  --- lspsaga
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+      require("rc/plugins/lspsaga")
+    end,
+  })
   --- null-ls
   use({
     "jose-elias-alvarez/null-ls.nvim",
@@ -207,7 +210,7 @@ return require("packer").startup(function(use)
   ------------------------------------------------------------
   --- Interface
   ------------------------------------------------------------
-  -- noice
+  --- noice
   -- use({
   --   "folke/noice.nvim",
   --   config = function()
@@ -218,7 +221,7 @@ return require("packer").startup(function(use)
   --     "rcarriga/nvim-notify",
   --   },
   -- })
-  -- lualine
+  --- lualine
   use({
     "nvim-lualine/lualine.nvim",
     config = function()
@@ -227,7 +230,7 @@ return require("packer").startup(function(use)
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
     after = colorscheme,
   })
-  -- bufferline
+  --- bufferline
   use({
     "akinsho/bufferline.nvim",
     config = function()
@@ -237,7 +240,7 @@ return require("packer").startup(function(use)
     requires = "kyazdani42/nvim-web-devicons",
     after = colorscheme,
   })
-  -- indent-blankline
+  --- indent-blankline
   use({
     "lukas-reineke/indent-blankline.nvim",
     config = function()
@@ -248,25 +251,32 @@ return require("packer").startup(function(use)
   ------------------------------------------------------------
   --- Git
   ------------------------------------------------------------
-  -- fugitive
+  --- fugitive
   use({
     "tpope/vim-fugitive",
     config = function()
       require("rc/plugins/fugitive")
     end,
   })
-  -- gitsigns
+  --- gitsigns
   use({
     "lewis6991/gitsigns.nvim",
     config = function()
       require("rc/plugins/gitsigns")
     end,
   })
+  --- git
+  -- use({
+  --   "dinhhuy258/git.nvim",
+  --   config = function()
+  --     require("git").setup()
+  --   end,
+  -- })
 
   ------------------------------------------------------------
   --- Language
   ------------------------------------------------------------
-  -- nvim-treesitter
+  --- nvim-treesitter
   use({
     "nvim-treesitter/nvim-treesitter",
     config = function()
@@ -278,7 +288,7 @@ return require("packer").startup(function(use)
   ------------------------------------------------------------
   --- Util
   ------------------------------------------------------------
-  -- nvim-notify
+  --- nvim-notify
   use({
     "rcarriga/nvim-notify",
     config = function()
@@ -286,19 +296,19 @@ return require("packer").startup(function(use)
     end,
     after = "telescope.nvim",
   })
-  -- toggleterm.nvim
+  --- toggleterm.nvim
   use({
     "akinsho/toggleterm.nvim",
     config = function()
       require("rc/plugins/toggleterm")
     end,
   })
-  -- diffview.nvim
+  --- diffview.nvim
   use({
     "sindrets/diffview.nvim",
     requires = "nvim-lua/plenary.nvim",
   })
-  -- hop.nvim
+  --- hop.nvim
   use({
     "phaazon/hop.nvim",
     branch = "v2",
@@ -306,15 +316,15 @@ return require("packer").startup(function(use)
       require("rc/plugins/hop")
     end,
   })
-  -- refactoring.nvim
-  use({
-    "ThePrimeagen/refactoring.nvim",
-    requires = {
-      { "nvim-lua/plenary.nvim" },
-      { "nvim-treesitter/nvim-treesitter" },
-    },
-    config = function()
-      require("refactoring").setup({})
-    end,
-  })
+  --- refactoring.nvim
+  -- use({
+  --   "ThePrimeagen/refactoring.nvim",
+  --   requires = {
+  --     { "nvim-lua/plenary.nvim" },
+  --     { "nvim-treesitter/nvim-treesitter" },
+  --   },
+  --   config = function()
+  --     require("refactoring").setup({})
+  --   end,
+  -- })
 end)
