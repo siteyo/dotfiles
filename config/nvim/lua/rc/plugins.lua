@@ -316,6 +316,13 @@ return require("packer").startup(function(use)
       require("rc/plugins/hop")
     end,
   })
+  -- colorizer
+  use({
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("rc/plugins/nvim-colorizer")
+    end,
+  })
   --- refactoring.nvim
   -- use({
   --   "ThePrimeagen/refactoring.nvim",
