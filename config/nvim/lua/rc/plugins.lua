@@ -205,6 +205,15 @@ return require("packer").startup(function(use)
     config = function()
       require("telescope").load_extension("frecency")
     end,
+    after = { "telescope.nvim" },
+  })
+  --- telescope-file-browser
+  use({
+    "nvim-telescope/telescope-file-browser.nvim",
+    config = function()
+      require("telescope").load_extension("file_browser")
+    end,
+    after = { "telescope.nvim" },
   })
 
   ------------------------------------------------------------
@@ -228,7 +237,7 @@ return require("packer").startup(function(use)
       require("rc/plugins/lualine")
     end,
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    after = colorscheme,
+    after = { colorscheme },
   })
   --- bufferline
   use({
@@ -238,7 +247,7 @@ return require("packer").startup(function(use)
     end,
     tag = "v3.*",
     requires = "kyazdani42/nvim-web-devicons",
-    after = colorscheme,
+    after = { colorscheme },
   })
   --- indent-blankline
   use({
@@ -294,7 +303,7 @@ return require("packer").startup(function(use)
     config = function()
       require("rc/plugins/notify")
     end,
-    after = "telescope.nvim",
+    after = { "telescope.nvim" },
   })
   --- toggleterm.nvim
   use({
