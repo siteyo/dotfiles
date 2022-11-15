@@ -14,7 +14,20 @@ require("telescope").setup({
           opts = { nowait = true, silent = true },
         },
       },
-      n = {},
+      n = {
+        ["q"] = {
+          actions.close,
+          type = "action",
+          opts = { nowait = true, silent = true },
+        },
+      },
+    },
+  },
+  extensions = {
+    frecency = {
+      ignore_patterns = { "*.git/*", "*/tmp/*", "*/node_modules/*" },
+      db_safe_mode = false,
+      auto_validate = true,
     },
   },
 })
