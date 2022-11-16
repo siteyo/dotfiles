@@ -343,4 +343,11 @@ return require("packer").startup(function(use)
   --     require("refactoring").setup({})
   --   end,
   -- })
+  --- colorful-winsep
+  use({
+    "nvim-zh/colorful-winsep.nvim",
+    config = function()
+      require("colorful-winsep").setup()
+    end,
+  })
 end)
