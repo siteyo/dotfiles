@@ -19,22 +19,27 @@ return require("packer").startup(function(use)
   ------------------------------------------------------------
   --- Colorscheme
   ------------------------------------------------------------
-  local colorscheme = "catppuccin"
+  local colorscheme = "iceberg"
   --- iceberg
   use({
     "cocopon/iceberg.vim",
     as = "iceberg",
-    opt = true,
-  })
-  --- catppuccin
-  use({
-    "catppuccin/nvim",
-    as = "catppuccin",
     config = function()
-      require("rc/plugins/catppuccin")
-      vim.cmd.colorscheme("catppuccin")
+      vim.cmd.colorscheme("iceberg")
     end,
   })
+  --- catppuccin
+  -- use({
+  --   "catppuccin/nvim",
+  --   as = "catppuccin",
+  --   config = function()
+  --     require("rc/plugins/catppuccin")
+  --   end,
+  -- })
+  --- nightfox
+  -- use({ "EdenEast/nightfox.nvim" })
+  -- --- tokyonight
+  -- use({ "folke/tokyonight.nvim" })
 
   ------------------------------------------------------------
   --- Filer
