@@ -6,9 +6,11 @@ local positions = require("hop.hint").HintPosition
 hop.setup({
   keys = "asdfghjkl",
   uppercase_labels = true,
+  quit_key = "q"
 })
 
 --- Mappings
+vim.keymap.set({ "n", "v" }, "f", "<Nop>", { remap = true })
 -- f: forward, current line only
 vim.keymap.set({ "n", "v" }, "ff", function()
   hop.hint_char1({
@@ -27,14 +29,14 @@ end, { remap = true })
 
 -- j: forward
 vim.keymap.set({ "n", "v" }, "fj", function()
-  hop.hint_lines({
+  hop.hint_vertical({
     direction = directions.AFTER_CURSOR,
   })
 end, { remap = true })
 
 -- k: backward
 vim.keymap.set({ "n", "v" }, "fk", function()
-  hop.hint_lines({
+  hop.hint_vertical({
     direction = directions.BEFORE_CURSOR,
   })
 end, { remap = true })

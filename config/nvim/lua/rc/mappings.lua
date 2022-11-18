@@ -2,7 +2,7 @@
 vim.keymap.set({ "n", "i", "v" }, ";", ":")
 vim.keymap.set({ "n", "i", "v" }, ":", ";")
 
--- Window & Tab
+-- Window & Tab & Buffer
 vim.keymap.set("n", "s", "<Nop>")
 vim.keymap.set("n", "sh", "<C-w>h")
 vim.keymap.set("n", "sj", "<C-w>j")
@@ -12,13 +12,15 @@ vim.keymap.set("n", "sH", "<C-w>H")
 vim.keymap.set("n", "sJ", "<C-w>J")
 vim.keymap.set("n", "sK", "<C-w>K")
 vim.keymap.set("n", "sL", "<C-w>L")
-vim.keymap.set("n", "sn", "gt")
-vim.keymap.set("n", "sp", "gT")
-vim.keymap.set("n", "sN", "<Cmd>bn<CR>")
-vim.keymap.set("n", "sP", "<Cmd>bp<CR>")
+vim.keymap.set("n", "sN", "gt")
+vim.keymap.set("n", "sP", "gt")
+vim.keymap.set("n", "sn", "<cmd>bn<cr>")
+vim.keymap.set("n", "sp", "<Cmd>bp<CR>")
 vim.keymap.set("n", "st", "<Cmd>tabnew<CR>")
-vim.keymap.set("n", "ss", "<Cmd>sp<CR>")
-vim.keymap.set("n", "sv", "<Cmd>vs<CR>")
+vim.keymap.set("n", "sb", "<Cmd>enew<CR>")
+vim.keymap.set("n", "ss", "<Cmd>sp<CR><C-w>w")
+vim.keymap.set("n", "sv", "<Cmd>vs<CR><C-w>w")
+vim.keymap.set("n", "s=", "<C-w>=")
 
 -- Quit
 vim.keymap.set("n", "sq", "<Cmd>q<CR>")
@@ -34,8 +36,12 @@ vim.keymap.set({ "n", "v", "o" }, "<S-l>", "$")
 -- vim.keymap.set('n', '<S-j>', '}')
 -- vim.keymap.set('n', '<S-k>', '{')
 
--- Quickfix
+-- Do not yank when deleting character with x
 vim.keymap.set({ "n", "v" }, "x", '"_x')
+
+-- Quickfix
+vim.keymap.set("n", "[q", "<Cmd>cprevious<CR>")
+vim.keymap.set("n", "]q", "<Cmd>cnext<CR>")
 
 -- ESC alias
 vim.keymap.set("i", "jk", "<ESC>")
