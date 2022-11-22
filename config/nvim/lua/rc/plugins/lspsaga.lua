@@ -22,6 +22,7 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "gh", "<Cmd>Lspsaga lsp_finder<CR>", opts)
 vim.keymap.set("n", "gn", "<Cmd>Lspsaga rename<CR>", opts)
 vim.keymap.set("n", "gd", "<Cmd>Lspsaga peek_definition<CR>", opts)
+vim.keymap.set("n", "gD", vim.lsp.buf.definition, opts)
 
 -- [Lsp]x
 vim.keymap.set({ "n", "v" }, "[Lsp]a", "<Cmd>Lspsaga code_action<CR>", opts)

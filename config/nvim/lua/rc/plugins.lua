@@ -84,6 +84,7 @@ return require("packer").startup(function(use)
     config = function()
       require("rc/plugins/Comment")
     end,
+    after = "nvim-treesitter"
   })
   --- nvim-autopairs
   use({
@@ -297,6 +298,11 @@ return require("packer").startup(function(use)
       require("rc/plugins/treesitter")
     end,
     run = ":TSUpdate",
+  })
+  -- nvim-ts-context-commentstring
+  use({
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    after = "nvim-treesitter",
   })
 
   ------------------------------------------------------------
