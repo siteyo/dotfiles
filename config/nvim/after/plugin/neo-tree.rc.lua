@@ -1,3 +1,10 @@
+local status, _ = pcall(require, "neo-tree")
+if not status then
+  return
+end
+
+print(status)
+
 require("neo-tree").setup({
   use_default_mapping = false,
   source_selector = {

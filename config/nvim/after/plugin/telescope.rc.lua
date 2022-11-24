@@ -1,5 +1,8 @@
+local status, telescope = pcall(require, "telescope")
+if not status then return end
+
 local actions = require("telescope.actions")
-require("telescope").setup({
+telescope.setup({
   defaults = {
     mappings = {
       i = {

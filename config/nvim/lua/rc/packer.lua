@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---- Install packer.nvim
+--- Install Packer.nvim
 ------------------------------------------------------------
 local packer_dir = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(packer_dir)) == 1 then

@@ -1,4 +1,7 @@
-require("nvim-tree").setup({
+local status, nt = pcall(require, "nvim-tree")
+if not status then return end
+
+nt.setup({
   hijack_cursor = true,
   view = {
     mappings = {
@@ -28,9 +31,9 @@ require("nvim-tree").setup({
 
 local nt_api = require("nvim-tree.api")
 local function toggle_replace()
-  local view = require("nvim-tree.view")
-  if view.is_visible() then
-    view.close()
+  local nt_view = require("nvim-tree.view")
+  if nt_view.is_visible() then
+    nt_view.close()
   else
     require("nvim-tree").open_replacing_current_buffer()
   end

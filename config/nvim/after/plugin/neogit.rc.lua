@@ -1,4 +1,6 @@
-local neogit = require("neogit")
+local status, neogit = pcall(require, "neogit")
+if not status then return end
+
 neogit.setup({
   kind = "split_above",
   mappings = {

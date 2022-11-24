@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+--- Install Packer.nvim
+------------------------------------------------------------
+local packer_dir = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(packer_dir)) == 1 then
+  vim.api.nvim_command("silent !git clone https://github.com/wbthomason/packer.nvim " .. packer_dir)
+end
+
+vim.cmd([[packadd packer.nvim]])
+
+------------------------------------------------------------
 --- Plugins
 ------------------------------------------------------------
 return require("packer").startup(function(use)
@@ -32,9 +42,6 @@ return require("packer").startup(function(use)
   -- use({
   --   "catppuccin/nvim",
   --   as = "catppuccin",
-  --   config = function()
-  --     require("rc/plugins/catppuccin")
-  --   end,
   -- })
   --- nightfox
   -- use({ "EdenEast/nightfox.nvim" })
@@ -53,9 +60,6 @@ return require("packer").startup(function(use)
   --     'kyazdani42/nvim-web-devicons',
   --     'MunifTanjim/nui.nvim',
   --   },
-  --   config = function()
-  --     require('rc/plugins/neo-tree')
-  --   end,
   -- })
   --- nvim-tree
   use({
@@ -63,9 +67,6 @@ return require("packer").startup(function(use)
     requires = {
       "nvim-tree/nvim-web-devicons",
     },
-    config = function()
-      require("rc.plugins/nvim-tree")
-    end,
   })
 
   ------------------------------------------------------------
@@ -74,24 +75,15 @@ return require("packer").startup(function(use)
   --- nvim-surround
   use({
     "kylechui/nvim-surround",
-    config = function()
-      require("rc/plugins/nvim-surround")
-    end,
   })
   --- Comment
   use({
     "numToStr/Comment.nvim",
-    config = function()
-      require("rc/plugins/Comment")
-    end,
-    after = "nvim-treesitter"
+    after = "nvim-treesitter",
   })
   --- nvim-autopairs
   use({
     "windwp/nvim-autopairs",
-    config = function()
-      require("rc/plugins/nvim-autopairs")
-    end,
   })
   --- editorconfig.nvim
   use({ "gpanders/editorconfig.nvim" })
@@ -104,12 +96,7 @@ return require("packer").startup(function(use)
   --- Completion
   ------------------------------------------------------------
   --- nvim-cmp
-  use({
-    "hrsh7th/nvim-cmp",
-    config = function()
-      require("rc/plugins/nvim-cmp")
-    end,
-  })
+  use({ "hrsh7th/nvim-cmp" })
   --- cmp-nvim-lsp
   use({ "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" })
   --- cmp-buffer
@@ -135,20 +122,9 @@ return require("packer").startup(function(use)
     "onsails/lspkind-nvim",
   })
   --- lspconfig
-  use({
-    "neovim/nvim-lspconfig",
-    config = function()
-      require("rc/plugins/nvim-lspconfig")
-    end,
-  })
+  use({ "neovim/nvim-lspconfig" })
   --- mason
-  use({
-    "williamboman/mason.nvim",
-    requires = { "neovim/nvim-lspconfig" },
-    config = function()
-      require("rc/plugins/mason")
-    end,
-  })
+  use({ "williamboman/mason.nvim", requires = "neovim/nvim-lspconfig" })
   --- mason-lspconfig
   use({
     "williamboman/mason-lspconfig.nvim",
@@ -156,42 +132,16 @@ return require("packer").startup(function(use)
       "williamboman/mason.nvim",
       "neovim/nvim-lspconfig",
     },
-    config = function()
-      require("rc/plugins/mason-lspconfig")
-    end,
     after = { "mason.nvim", "nvim-lspconfig", "cmp-nvim-lsp" },
   })
   --- lspsaga
-  use({
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-    config = function()
-      require("rc/plugins/lspsaga")
-    end,
-  })
+  use({ "glepnir/lspsaga.nvim", branch = "main" })
   --- null-ls
-  use({
-    "jose-elias-alvarez/null-ls.nvim",
-    after = "mason.nvim",
-    config = function()
-      require("rc/plugins/null-ls")
-    end,
-  })
+  use({ "jose-elias-alvarez/null-ls.nvim", after = "mason.nvim" })
   --- fidget
-  use({
-    "j-hui/fidget.nvim",
-    config = function()
-      require("rc/plugins/fidget")
-    end,
-  })
+  use({ "j-hui/fidget.nvim" })
   --- trouble
-  use({
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("rc/plugins/trouble")
-    end,
-  })
+  use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
 
   ------------------------------------------------------------
   --- FuzzyFinder
@@ -199,19 +149,16 @@ return require("packer").startup(function(use)
   --- Telescope
   use({
     "nvim-telescope/telescope.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("rc/plugins/telescope")
-    end,
+    requires = "nvim-lua/plenary.nvim",
   })
   --- telescope-frecency (MRU)
   use({
     "nvim-telescope/telescope-frecency.nvim",
-    requires = { "kkharji/sqlite.lua" },
+    requires = "kkharji/sqlite.lua",
     config = function()
       require("telescope").load_extension("frecency")
     end,
-    after = { "telescope.nvim" },
+    after = "telescope.nvim",
   })
   --- telescope-file-browser
   use({
@@ -228,9 +175,6 @@ return require("packer").startup(function(use)
   --- noice
   -- use({
   --   "folke/noice.nvim",
-  --   config = function()
-  --     require("rc/plugins/noice")
-  --   end,
   --   requires = {
   --     "MunifTanjim/nui.nvim",
   --     "rcarriga/nvim-notify",
@@ -239,66 +183,34 @@ return require("packer").startup(function(use)
   --- lualine
   use({
     "nvim-lualine/lualine.nvim",
-    config = function()
-      require("rc/plugins/lualine")
-    end,
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
     after = { colorscheme },
   })
   --- bufferline
   use({
     "akinsho/bufferline.nvim",
-    config = function()
-      require("rc/plugins/bufferline")
-    end,
     tag = "v3.*",
     requires = "kyazdani42/nvim-web-devicons",
     after = { colorscheme },
   })
   --- indent-blankline
-  use({
-    "lukas-reineke/indent-blankline.nvim",
-    config = function()
-      require("rc/plugins/indent-blankline")
-    end,
-  })
+  use({ "lukas-reineke/indent-blankline.nvim" })
 
   ------------------------------------------------------------
   --- Git
   ------------------------------------------------------------
   --- fugitive
-  use({
-    "tpope/vim-fugitive",
-    config = function()
-      require("rc/plugins/fugitive")
-    end,
-  })
+  use({ "tpope/vim-fugitive" })
   --- gitsigns
-  use({
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require("rc/plugins/gitsigns")
-    end,
-  })
+  use({ "lewis6991/gitsigns.nvim" })
   --- git
-  -- use({
-  --   "dinhhuy258/git.nvim",
-  --   config = function()
-  --     require("git").setup()
-  --   end,
-  -- })
+  -- use({ "dinhhuy258/git.nvim" })
 
   ------------------------------------------------------------
   --- Language
   ------------------------------------------------------------
   --- nvim-treesitter
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require("rc/plugins/treesitter")
-    end,
-    run = ":TSUpdate",
-  })
+  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   -- nvim-ts-context-commentstring
   use({
     "JoosepAlviste/nvim-ts-context-commentstring",
@@ -309,20 +221,9 @@ return require("packer").startup(function(use)
   --- Util
   ------------------------------------------------------------
   --- nvim-notify
-  use({
-    "rcarriga/nvim-notify",
-    config = function()
-      require("rc/plugins/notify")
-    end,
-    after = { "telescope.nvim" },
-  })
+  use({ "rcarriga/nvim-notify", after = "telescope.nvim" })
   --- toggleterm.nvim
-  use({
-    "akinsho/toggleterm.nvim",
-    config = function()
-      require("rc/plugins/toggleterm")
-    end,
-  })
+  use({ "akinsho/toggleterm.nvim" })
   --- diffview.nvim
   use({
     "sindrets/diffview.nvim",
@@ -332,17 +233,9 @@ return require("packer").startup(function(use)
   use({
     "phaazon/hop.nvim",
     branch = "v2",
-    config = function()
-      require("rc/plugins/hop")
-    end,
   })
   -- colorizer
-  use({
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("rc/plugins/nvim-colorizer")
-    end,
-  })
+  use({ "norcalli/nvim-colorizer.lua" })
   --- refactoring.nvim
   -- use({
   --   "ThePrimeagen/refactoring.nvim",

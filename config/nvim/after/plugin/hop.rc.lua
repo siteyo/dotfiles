@@ -1,4 +1,6 @@
-local hop = require("hop")
+local status, hop = pcall(require, "hop")
+if not status then return end
+
 local directions = require("hop.hint").HintDirection
 local positions = require("hop.hint").HintPosition
 

@@ -1,6 +1,8 @@
+local status, cmp = pcall(require, "cmp")
+if not status then return end
+
 vim.opt.completeopt = "menu,menuone,noselect"
 
-local cmp = require("cmp")
 local lspkind = require("lspkind")
 
 cmp.setup({

@@ -1,4 +1,5 @@
-local null_ls = require("null-ls")
+local status, null_ls = pcall(require, "null-ls")
+if not status then return end
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "[Lsp]f", function()
