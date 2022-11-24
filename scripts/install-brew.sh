@@ -15,5 +15,7 @@ elif [ "$(uname)" == 'Linux' ]; then
   ln -sfv "${dotfiles_dir}/Brewfile-Linux" "${HOME}/.Brewfile"
 fi
 
+eval "${SHELL}" -l
+
 [ -f "${HOME}/.Brewfile" ] && brew bundle --global
 echo ''
