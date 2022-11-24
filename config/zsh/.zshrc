@@ -119,8 +119,5 @@ fi
 [ -f `brew --prefix`/opt/asdf/libexec/asdf.sh ] \
   && source `brew --prefix`/opt/asdf/libexec/asdf.sh
 
-## thefuck
-eval $(thefuck --alias)
-
 ## Starship
 eval "$(starship init zsh)"
