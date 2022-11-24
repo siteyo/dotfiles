@@ -10,8 +10,8 @@ mkdir -pv "${dotfiles_dir}/bak"
 mkdir -pv "${HOME}/.config/sheldon"
 
 # Move to backup directory
-[ -f "${HOME}/.config/sheldon/plugins.toml" ] \
-  && mv -v "${HOME}/.config/sheldon/plugins.toml" "${dotfiles_dir}/bak"
+[ -f "${HOME}/.config/sheldon/plugins.toml" ] &&
+    mv -v "${HOME}/.config/sheldon/plugins.toml" "${dotfiles_dir}/bak"
 
 # Create symbolic link
 ln -sfv "${dotfiles_dir}/config/sheldon/plugins.toml" "${HOME}/.config/sheldon/plugins.toml"

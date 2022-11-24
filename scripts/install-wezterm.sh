@@ -7,15 +7,13 @@ echo '==> Install wezterm ...'
 
 mkdir -pv "${dotfiles_dir}/bak"
 
-if uname -a | grep -q microsoft
-then
+if uname -a | grep -q microsoft; then
     WINHOME="$(wslpath "$(wslvar USERPROFILE)")"
     mkdir -pv "${WINHOME}/.config/wezterm"
     cp -fv "${dotfiles_dir}/config/wezterm/wezterm.lua" "${WINHOME}/.config/wezterm/wezterm.lua"
-elif [ "$(uname)" == 'Darwin' ]
-then
-    [ -d "${HOME}/.config/wezterm" ] \
-        && mv -v "${HOME}/.config/wezterm" "${dotfiles_dir}/bak"
+elif [ "$(uname)" == 'Darwin' ]; then
+    [ -d "${HOME}/.config/wezterm" ] &&
+        mv -v "${HOME}/.config/wezterm" "${dotfiles_dir}/bak"
     ln -sfv "${dotfiles_dir}/config/wezterm" "${HOME}/.config/wezterm"
 fi
 

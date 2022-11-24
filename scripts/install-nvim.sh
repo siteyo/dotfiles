@@ -17,10 +17,13 @@ mkdir -pv "${HOME}/.nvim/undo"
 touch "${HOME}/.nvim/local_init.lua"
 
 # Backup
-[ -d "${HOME}/.config/nvim" ] \
-    && mv -v "${HOME}/.config/nvim" "${dotfiles_dir}/bak"
+[ -d "${HOME}/.config/nvim" ] &&
+    mv -v "${HOME}/.config/nvim" "${dotfiles_dir}/bak"
 
 # Create symbolic links
 ln -sfv "${dotfiles_dir}/config/nvim" "${HOME}/.config/nvim"
+
+# for Telescope frecency
+sudo apt install sqlite3 libsqlite3-dev
 
 echo ''

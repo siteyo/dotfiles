@@ -12,12 +12,12 @@ mkdir -pv "${dotfiles_dir}/bak"
 touch "${HOME}/.zshrc.local"
 
 # Backup
-[ -f "${HOME}/.zshenv" ] \
-    && mv -v "${HOME}/.zshenv" "${dotfiles_dir}/bak"
-[ -f "${HOME}/.zshrc" ] \
-    && mv -v "${HOME}/.zshrc" "${dotfiles_dir}/bak"
-[ -d "${HOME}/.config/zsh" ] \
-    && mv -v "${HOME}/.config/zsh" "${dotfiles_dir}/bak"
+[ -f "${HOME}/.zshenv" ] &&
+    mv -v "${HOME}/.zshenv" "${dotfiles_dir}/bak"
+[ -f "${HOME}/.zshrc" ] &&
+    mv -v "${HOME}/.zshrc" "${dotfiles_dir}/bak"
+[ -d "${HOME}/.config/zsh" ] &&
+    mv -v "${HOME}/.config/zsh" "${dotfiles_dir}/bak"
 
 # Create symlinks
 ln -sfv "${dotfiles_dir}/.zshenv" "${HOME}/.zshenv"

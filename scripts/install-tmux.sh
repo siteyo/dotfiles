@@ -9,8 +9,8 @@ echo '==> Install tmux ...'
 mkdir -pv "${dotfiles_dir}/bak"
 
 # Move to backup directory
-[ -f "${HOME}/.tmux.conf" ] \
-    && mv -v "${HOME}/.tmux.conf" "${dotfiles_dir}/bak/.tmux.conf"
+[ -f "${HOME}/.tmux.conf" ] &&
+    mv -v "${HOME}/.tmux.conf" "${dotfiles_dir}/bak/.tmux.conf"
 
 # Create a symbolic link
 ln -sfv "${dotfiles_dir}/etc/.tmux.conf" "${HOME}/.tmux.conf"
