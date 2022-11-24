@@ -9,7 +9,6 @@ tap "wez/wezterm"
 brew "asdf"
 brew "bash-completion"
 brew "bat"
-brew "deno"
 brew "docker", link: false
 brew "exa"
 brew "fd"
