@@ -1,5 +1,7 @@
 local status, hop = pcall(require, "hop")
-if not status then return end
+if not status then
+  return
+end
 
 local directions = require("hop.hint").HintDirection
 local positions = require("hop.hint").HintPosition
@@ -8,7 +10,7 @@ local positions = require("hop.hint").HintPosition
 hop.setup({
   keys = "asdfghjkl",
   uppercase_labels = true,
-  quit_key = "q"
+  quit_key = "q",
 })
 
 --- Mappings

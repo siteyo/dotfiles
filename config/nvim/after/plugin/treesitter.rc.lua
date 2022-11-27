@@ -1,5 +1,7 @@
 local status, treesitter_config = pcall(require, "nvim-treesitter.configs")
-if not status then return end
+if not status then
+  return
+end
 
 treesitter_config.setup({
   ensure_installed = { "lua" },
@@ -7,6 +9,9 @@ treesitter_config.setup({
     enable = true,
   },
   context_commentstring = {
+    enable = true,
+  },
+  autotag = {
     enable = true,
   },
 })

@@ -1,5 +1,7 @@
 local status, cmp = pcall(require, "cmp")
-if not status then return end
+if not status then
+  return
+end
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
