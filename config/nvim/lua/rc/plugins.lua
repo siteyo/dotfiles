@@ -9,6 +9,11 @@ end
 vim.cmd([[packadd packer.nvim]])
 
 ------------------------------------------------------------
+--- Set colorscheme
+------------------------------------------------------------
+Colorscheme = "catppuccin"
+
+------------------------------------------------------------
 --- Plugins
 ------------------------------------------------------------
 return require("packer").startup(function(use)
@@ -26,21 +31,10 @@ return require("packer").startup(function(use)
   ------------------------------------------------------------
   --- Colorscheme
   ------------------------------------------------------------
-  local colorscheme = "iceberg"
-  use({
-    "cocopon/iceberg.vim",
-    as = "iceberg",
-    config = function()
-      vim.cmd.colorscheme("iceberg")
-    end,
-  })
-  -- use({
-  --   "catppuccin/nvim",
-  --   as = "catppuccin",
-  -- })
-  -- use({ "EdenEast/nightfox.nvim" })
-  -- --- tokyonight
-  -- use({ "folke/tokyonight.nvim" })
+  use({ "cocopon/iceberg.vim", as = "iceberg" })
+  use({ "catppuccin/nvim", as = "catppuccin" })
+  use({ "EdenEast/nightfox.nvim", as = "nightfox" })
+  use({ "folke/tokyonight.nvim", as = "tokyonight" })
 
   ------------------------------------------------------------
   --- Filer
@@ -140,13 +134,13 @@ return require("packer").startup(function(use)
   use({
     "nvim-lualine/lualine.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    after = { colorscheme },
+    after = { Colorscheme },
   })
   use({
     "akinsho/bufferline.nvim",
     tag = "v3.*",
     requires = "kyazdani42/nvim-web-devicons",
-    after = { colorscheme },
+    after = { Colorscheme },
   })
   use({ "lukas-reineke/indent-blankline.nvim" })
 
@@ -161,6 +155,7 @@ return require("packer").startup(function(use)
   --- Language
   ------------------------------------------------------------
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+  use({ "nvim-treesitter/playground" })
   use({
     "JoosepAlviste/nvim-ts-context-commentstring",
     after = "nvim-treesitter",

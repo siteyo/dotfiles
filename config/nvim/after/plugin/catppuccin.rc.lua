@@ -4,8 +4,8 @@ if not status then
 end
 
 catppuccin.setup({
-  flavour = "macchiato",
-  transparent_background = true,
+  flavour = "mocha",
+  transparent_background = false,
   styles = {
     comments = {},
     conditionals = {},
@@ -47,3 +47,8 @@ catppuccin.setup({
     },
   },
 })
+
+print(Colorscheme)
+if Colorscheme == "catppuccin" then
+  vim.cmd.colorscheme("catppuccin")
+end
