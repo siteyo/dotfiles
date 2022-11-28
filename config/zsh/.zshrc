@@ -82,6 +82,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+if [[ $(uname -r) == *microsoft* ]]; then
+  alias whome='cd $(wslpath $(wslvar USERPROFILE))'
+fi
+
 # Other
 # --------------------------------------------------------------------
 
