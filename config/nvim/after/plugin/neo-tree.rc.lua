@@ -1,11 +1,9 @@
-local status, _ = pcall(require, "neo-tree")
+local status, neo_tree = pcall(require, "neo-tree")
 if not status then
   return
 end
 
-print(status)
-
-require("neo-tree").setup({
+neo_tree.setup({
   use_default_mapping = false,
   source_selector = {
     winbar = true,

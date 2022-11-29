@@ -4,7 +4,14 @@ if not status then
 end
 
 treesitter_config.setup({
-  ensure_installed = { "lua" },
+  ensure_installed = {
+    "lua",
+    "dockerfile",
+    "gitignore",
+    "make",
+    "markdown",
+    "yaml",
+  },
   highlight = {
     enable = true,
   },

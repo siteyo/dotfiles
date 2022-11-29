@@ -6,6 +6,7 @@ end
 catppuccin.setup({
   flavour = "mocha",
   transparent_background = false,
+  no_italic = true,
   styles = {
     comments = {},
     conditionals = {},
@@ -30,6 +31,7 @@ catppuccin.setup({
     notify = true,
     fidget = true,
     lsp_saga = true,
+    neotree = true,
     native_lsp = {
       enabled = true,
       virtual_text = {
@@ -48,7 +50,6 @@ catppuccin.setup({
   },
 })
 
-print(Colorscheme)
 if Colorscheme == "catppuccin" then
   vim.cmd.colorscheme("catppuccin")
 end

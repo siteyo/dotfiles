@@ -39,21 +39,21 @@ return require("packer").startup(function(use)
   ------------------------------------------------------------
   --- Filer
   ------------------------------------------------------------
-  -- use({
-  --   'nvim-neo-tree/neo-tree.nvim',
-  --   branch = 'v2.x',
-  --   requires = {
-  --     'nvim-lua/plenary.nvim',
-  --     'kyazdani42/nvim-web-devicons',
-  --     'MunifTanjim/nui.nvim',
-  --   },
-  -- })
   use({
-    "nvim-tree/nvim-tree.lua",
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v2.x',
     requires = {
-      "nvim-tree/nvim-web-devicons",
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons',
+      'MunifTanjim/nui.nvim',
     },
   })
+  -- use({
+  --   "nvim-tree/nvim-tree.lua",
+  --   requires = {
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  -- })
 
   ------------------------------------------------------------
   --- Edit
