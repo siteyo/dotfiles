@@ -40,12 +40,12 @@ return require("packer").startup(function(use)
   --- Filer
   ------------------------------------------------------------
   use({
-    'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v2.x',
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
     requires = {
-      'nvim-lua/plenary.nvim',
-      'kyazdani42/nvim-web-devicons',
-      'MunifTanjim/nui.nvim',
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
     },
   })
   -- use({
@@ -124,13 +124,13 @@ return require("packer").startup(function(use)
   ------------------------------------------------------------
   --- Interface
   ------------------------------------------------------------
-  -- use({
-  --   "folke/noice.nvim",
-  --   requires = {
-  --     "MunifTanjim/nui.nvim",
-  --     "rcarriga/nvim-notify",
-  --   },
-  -- })
+  use({
+    "folke/noice.nvim",
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  })
   use({
     "nvim-lualine/lualine.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },

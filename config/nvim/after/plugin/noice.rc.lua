@@ -3,4 +3,9 @@ if not status then
   return
 end
 
-noice.setup()
+noice.setup({
+  messages = {
+    enable = true,
+    view = "mini",
+  },
+})

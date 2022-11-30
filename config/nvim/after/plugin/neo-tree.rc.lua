@@ -13,7 +13,7 @@ neo_tree.setup({
       ["<Space>"] = { "toggle_node", nowait = false },
       ["<ESC>"] = "revert_preview",
       ["<CR>"] = { "open" },
-      ["P"] = { "toggle_preview", config = { use_float = true } },
+      ["v"] = { "toggle_preview", config = { use_float = true } },
       ["h"] = { "close_node" },
       ["l"] = { "open" },
       ["w"] = "open_with_window_picker",
