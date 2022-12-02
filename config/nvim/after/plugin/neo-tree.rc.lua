@@ -3,6 +3,17 @@ if not status then
   return
 end
 
+local cmds = require("neo-tree.sources.filesystem.commands")
+
+local open_or_setroot = function(state)
+  local node = state.tree:get_node()
+  if node and node.type == "file" then
+    cmds.open(state)
+  elseif node and node.type == "directory" then
+    cmds.set_root(state)
+  end
+end
+
 neo_tree.setup({
   use_default_mapping = false,
   source_selector = {
@@ -12,7 +23,7 @@ neo_tree.setup({
     mappings = {
       ["<Space>"] = { "toggle_node", nowait = false },
       ["<ESC>"] = "revert_preview",
-      ["<CR>"] = { "open" },
+      ["<CR>"] = open_or_setroot,
       ["v"] = { "toggle_preview", config = { use_float = true } },
       ["h"] = { "close_node" },
       ["l"] = { "open" },
@@ -29,6 +40,10 @@ neo_tree.setup({
       ["q"] = "close_window",
       ["<C-j>"] = "prev_source",
       ["<C-k>"] = "next_source",
+      ["A"] = "",
+      ["a"] = "",
+      ["s"] = "",
+      ["z"] = "",
     },
   },
   filesystem = {
