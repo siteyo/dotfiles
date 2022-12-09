@@ -180,4 +180,5 @@ return require("packer").startup(function(use)
   --   end,
   -- })
   use({ "nvim-zh/colorful-winsep.nvim" })
+  use({ "ellisonleao/glow.nvim" })
 end)
