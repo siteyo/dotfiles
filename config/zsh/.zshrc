@@ -34,7 +34,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # Prompt
 # --------------------------------------------------------------------
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[ -f "${ZDOTDIR}/.p10k.zsh" ] && source "${ZDOTDIR}/.p10k.zsh"
 
 # Completion
 # --------------------------------------------------------------------
@@ -90,7 +90,8 @@ fi
 # --------------------------------------------------------------------
 
 ## Fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "~/.fzf.zsh" ] \
+  && source "~/.fzf.zsh"
 
 ## zoxide
 eval "$(zoxide init zsh)"
@@ -124,4 +125,4 @@ fi
   && source `brew --prefix`/opt/asdf/libexec/asdf.sh
 
 ## Starship
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"

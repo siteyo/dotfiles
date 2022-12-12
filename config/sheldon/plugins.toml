@@ -24,8 +24,8 @@ use = ['{{ name }}.zsh']
 [plugins.zsh-syntax-highlighting]
 github = 'zsh-users/zsh-syntax-highlighting'
 
-# [plugins.powerlevel10k]
-# github = 'romkatv/powerlevel10k'
+[plugins.powerlevel10k]
+github = 'romkatv/powerlevel10k'
 
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
