@@ -49,7 +49,7 @@ return {
   },
   "gpanders/editorconfig.nvim",
   "machakann/vim-highlightedyank",
-  "sbdchd/neoformat",
+  { "sbdchd/neoformat", cmd = "Neoformat" },
 
   ------------------------------------------------------------
   --- Completion
@@ -62,44 +62,18 @@ return {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
-    end
+    end,
   },
-  -- {
-  --   "williamboman/mason-lspconfig.nvim",
-  --   dependencies = {
-  --     "williamboman/mason.nvim",
-  --     "neovim/nvim-lspconfig",
-  --     "hrsh7th/cmp-nvim-lsp",
-  --   },
-  -- },
-  -- { "glepnir/lspsaga.nvim", branch = "main" },
-  -- {
-  --   "jose-elias-alvarez/null-ls.nvim",
-  --   dependencies = { "williamboman/mason.nvim" },
-  -- },
   {
     "j-hui/fidget.nvim",
     config = function()
       require("fidget").setup({})
     end,
   },
-  -- {
-  --   "folke/trouble.nvim",
-  --   dependencies = { "kyazdani42/nvim-web-devicons" },
-  -- },
 
   ------------------------------------------------------------
   --- FuzzyFinder
   ------------------------------------------------------------
-  -- {
-  --   "nvim-telescope/telescope.nvim",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-telescope/telescope-frecency.nvim",
-  --     "kkharji/sqlite.lua",
-  --     "nvim-telescope/telescope-file-browser.nvim",
-  --   },
-  -- },
 
   ------------------------------------------------------------
   --- Interface
@@ -119,15 +93,6 @@ return {
       })
     end,
   },
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   dependencies = { "kyazdani42/nvim-web-devicons" },
-  -- },
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   -- tag = "v3.*",
-  --   dependencies = { "kyazdani42/nvim-web-devicons" },
-  -- },
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
@@ -140,29 +105,18 @@ return {
   ------------------------------------------------------------
   --- Git
   ------------------------------------------------------------
-  -- { "tpope/vim-fugitive" },
-  -- { "lewis6991/gitsigns.nvim" },
 
   ------------------------------------------------------------
   --- Language
   ------------------------------------------------------------
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   build = ":TSUpdate",
-  --   dependencies = {
-  --     "JoosepAlviste/nvim-ts-context-commentstring",
-  --     "nvim-treesitter/playground",
-  --     "windwp/nvim-ts-autotag",
-  --   },
-  -- },
 
   ------------------------------------------------------------
   --- Util
   ------------------------------------------------------------
-  -- { "rcarriga/nvim-notify", dependencies = "nvim-telescope/telescope.nvim" },
   {
     "akinsho/toggleterm.nvim",
     enabled = false,
+    cmd = "ToggleTerm",
     config = function()
       require("toggleterm").setup()
     end,
@@ -171,12 +125,10 @@ return {
     "sindrets/diffview.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
-  -- { "phaazon/hop.nvim", branch = "v2" },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup({
-
         "css",
         "javascript",
         "javascriptreact",
@@ -186,21 +138,11 @@ return {
       })
     end,
   },
-  -- {
-  --   "ThePrimeagen/refactoring.nvim",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-treesitter/nvim-treesitter",
-  --   },
-  --   config = function()
-  --     require("refactoring").setup({})
-  --   end,
-  -- },
   {
     "nvim-zh/colorful-winsep.nvim",
     config = function()
       require("colorful-winsep").setup({})
     end,
   },
-  "ellisonleao/glow.nvim",
+  { "ellisonleao/glow.nvim", cmd = "Glow" },
 }
