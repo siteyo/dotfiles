@@ -9,7 +9,6 @@ return {
   --- Colorscheme
   ------------------------------------------------------------
   "cocopon/iceberg.vim",
-  "EdenEast/nightfox.nvim",
   "folke/tokyonight.nvim",
 
   ------------------------------------------------------------
