@@ -3,4 +3,4 @@ if not status then
   return
 end
 
-colorful_winsep.setup()
+colorful_winsep.setup({})
