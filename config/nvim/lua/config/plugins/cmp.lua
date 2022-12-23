@@ -8,8 +8,9 @@ local M = {
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-path",
     "dmitmel/cmp-cmdline-history",
-    "hrsh7th/cmp-vsnip",
+    -- "hrsh7th/cmp-vsnip",
     "hrsh7th/cmp-nvim-lua",
+    "saadparwaiz1/cmp_luasnip",
   },
 }
 
@@ -17,13 +18,16 @@ function M.config()
   vim.opt.completeopt = "menu,menuone,noselect"
 
   local cmp = require("cmp")
+  local luasnip = require("luasnip")
 
   cmp.setup({
+    completion = {
+      completeopt = "menu,menuone,noselect",
+    },
     snippet = {
-      -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        luasnip.lsp_expand(args.body) -- For `luasnip` users.
         -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
         -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       end,
@@ -41,7 +45,8 @@ function M.config()
     }),
     sources = cmp.config.sources({
       { name = "nvim_lsp" },
-      { name = "vsnip" }, -- For vsnip users.
+      -- { name = "vsnip" }, -- For vsnip users.
+      { name = "luasnip" },
       { name = "nvim_lua" },
       { name = "buffer" },
       { name = "path" },
@@ -74,13 +79,13 @@ function M.config()
           fallback()
         end
       end, { "c" }),
-      -- ["<Tab>"] = cmp.mapping(function(fallback)
-      --   if cmp.visible() then
-      --     cmp.select_next_item()
-      --   else
-      --     fallback()
-      --   end
-      -- end, { "c" }),
+      ["<Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        else
+          fallback()
+        end
+      end, { "c" }),
       ["<C-p>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_prev_item()
