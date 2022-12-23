@@ -4,9 +4,9 @@ local M = {
   lazy = false,
 }
 
-function M.init()
-  vim.cmd.colorscheme("catppuccin")
-end
+-- function M.init()
+--   vim.cmd.colorscheme("catppuccin")
+-- end
 
 function M.config()
   local catppuccin = require("catppuccin")
