@@ -3,6 +3,7 @@ local M = {
   dependencies = {
     "kyazdani42/nvim-web-devicons",
     "folke/noice.nvim",
+    "folke/tokyonight.nvim",
   },
 }
 

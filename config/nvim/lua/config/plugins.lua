@@ -150,4 +150,10 @@ return {
     end,
   },
   { "ellisonleao/glow.nvim", cmd = "Glow" },
+  {
+    "iamcco/markdown-preview.nvim",
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
 }
