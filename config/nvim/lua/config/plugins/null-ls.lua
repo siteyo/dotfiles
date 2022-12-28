@@ -1,6 +1,7 @@
 local M = {
   "jose-elias-alvarez/null-ls.nvim",
   dependencies = { "williamboman/mason.nvim" },
+  lazy = false,
 }
 
 function M.config()

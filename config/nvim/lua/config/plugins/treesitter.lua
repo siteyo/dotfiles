@@ -1,10 +1,16 @@
 local M = {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  dependencies = {
-    "JoosepAlviste/nvim-ts-context-commentstring",
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    event = "BufReadPost",
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      "windwp/nvim-ts-autotag",
+    },
+  },
+  {
     "nvim-treesitter/playground",
-    "windwp/nvim-ts-autotag",
+    cmd = "TSPlaygroundToggle",
   },
 }
 

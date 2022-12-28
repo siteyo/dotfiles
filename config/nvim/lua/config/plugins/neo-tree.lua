@@ -2,11 +2,7 @@ local M = {
   "nvim-neo-tree/neo-tree.nvim",
   enabled = true,
   branch = "v2.x",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "kyazdani42/nvim-web-devicons",
-    "MunifTanjim/nui.nvim",
-  },
+  keys = "[Filer]",
 }
 
 function M.config()

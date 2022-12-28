@@ -1,10 +1,6 @@
 local M = {
   "nvim-lualine/lualine.nvim",
-  dependencies = {
-    "kyazdani42/nvim-web-devicons",
-    "folke/noice.nvim",
-    "folke/tokyonight.nvim",
-  },
+  event = "VeryLazy",
 }
 
 function M.config()
@@ -12,7 +8,7 @@ function M.config()
   lualine.setup({
     options = {
       icons_enabled = true,
-      theme = "tokyonight",
+      theme = "auto",
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
       disabled_filetypes = {

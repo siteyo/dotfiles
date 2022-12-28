@@ -1,10 +1,6 @@
 local M = {
   "akinsho/bufferline.nvim",
-  -- tag = "v3.*",
-  dependencies = {
-    "kyazdani42/nvim-web-devicons",
-    "catppuccin/nvim",
-  },
+  event = "BufAdd",
 }
 
 function M.config()

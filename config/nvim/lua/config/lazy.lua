@@ -12,6 +12,6 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup("config.plugins", {
-  defaults = { lazy = false },
+  defaults = { lazy = true },
   lockfile = vim.fn.expand("~/.nvim/lazy-lock.json"),
 })

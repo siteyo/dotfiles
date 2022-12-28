@@ -4,6 +4,7 @@ return {
   ------------------------------------------------------------
   "nvim-lua/plenary.nvim",
   "kyazdani42/nvim-web-devicons",
+  "MunifTanjim/nui.nvim",
 
   ------------------------------------------------------------
   --- Colorscheme
@@ -13,21 +14,15 @@ return {
   ------------------------------------------------------------
   --- Filer
   ------------------------------------------------------------
-  -- {
-  --   "nvim-tree/nvim-tree.lua",
-  --   dependencies = {
-  --     "nvim-tree/nvim-web-devicons",
-  --   },
-  -- },
+  { "nvim-tree/nvim-tree.lua", enabled = false },
 
   ------------------------------------------------------------
   --- Edit
   ------------------------------------------------------------
   {
     "kylechui/nvim-surround",
-    config = function()
-      require("nvim-surround").setup({})
-    end,
+    config = true,
+    event = "InsertEnter",
   },
   {
     "numToStr/Comment.nvim",
@@ -38,15 +33,11 @@ return {
         end,
       })
     end,
+    event = "BufReadPre",
   },
-  {
-    "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup({})
-    end,
-  },
-  "gpanders/editorconfig.nvim",
-  "machakann/vim-highlightedyank",
+  { "windwp/nvim-autopairs", config = true, event = "BufReadPre" },
+  { "gpanders/editorconfig.nvim", event = "BufReadPost" },
+  { "machakann/vim-highlightedyank", event = "BufReadPost" },
   { "sbdchd/neoformat", cmd = "Neoformat" },
 
   ------------------------------------------------------------
@@ -56,18 +47,8 @@ return {
   ------------------------------------------------------------
   --- LSP
   ------------------------------------------------------------
-  {
-    "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
-  },
-  {
-    "j-hui/fidget.nvim",
-    config = function()
-      require("fidget").setup({})
-    end,
-  },
+  { "williamboman/mason.nvim", config = true },
+  { "j-hui/fidget.nvim", config = true, enabled = false },
 
   ------------------------------------------------------------
   --- FuzzyFinder
@@ -80,7 +61,7 @@ return {
     "folke/noice.nvim",
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
+      -- "rcarriga/nvim-notify",
     },
     config = function()
       require("noice").setup({
@@ -90,6 +71,7 @@ return {
         },
       })
     end,
+    event = "VeryLazy",
   },
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -103,13 +85,7 @@ return {
   ------------------------------------------------------------
   --- Git
   ------------------------------------------------------------
-  {
-    "TimUntersberger/neogit",
-    cmd = "Neogit",
-    config = function()
-      require("neogit").setup({})
-    end,
-  },
+  { "TimUntersberger/neogit", cmd = "Neogit", config = true },
 
   ------------------------------------------------------------
   --- Language
@@ -122,14 +98,9 @@ return {
     "akinsho/toggleterm.nvim",
     enabled = false,
     cmd = "ToggleTerm",
-    config = function()
-      require("toggleterm").setup()
-    end,
+    config = true,
   },
-  {
-    "sindrets/diffview.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
+  { "sindrets/diffview.nvim" },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
@@ -143,12 +114,7 @@ return {
       })
     end,
   },
-  {
-    "nvim-zh/colorful-winsep.nvim",
-    config = function()
-      require("colorful-winsep").setup({})
-    end,
-  },
+  { "nvim-zh/colorful-winsep.nvim", config = true, event = "BufAdd" },
   { "ellisonleao/glow.nvim", cmd = "Glow" },
   {
     "iamcco/markdown-preview.nvim",

@@ -1,11 +1,11 @@
 local M = {
   "nvim-telescope/telescope.nvim",
   dependencies = {
-    "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-frecency.nvim",
     "kkharji/sqlite.lua",
     "nvim-telescope/telescope-file-browser.nvim",
   },
+  keys = "[FuzzyFinder]",
 }
 
 function M.config()
@@ -50,6 +50,9 @@ function M.config()
 
   -- telescope-file-browser
   telescope.load_extension("file_browser")
+
+  -- nvim-notify
+  telescope.load_extension("notify")
 
   --- Mappings
   vim.keymap.set("n", "[FuzzyFinder]<Space>", "<Cmd>Telescope<CR>")
