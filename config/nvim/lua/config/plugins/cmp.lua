@@ -7,6 +7,7 @@ local M = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-path",
+    "hrsh7th/cmp-emoji",
     "dmitmel/cmp-cmdline-history",
     -- "hrsh7th/cmp-vsnip",
     "hrsh7th/cmp-nvim-lua",
@@ -50,6 +51,7 @@ function M.config()
       { name = "nvim_lua" },
       { name = "buffer" },
       { name = "path" },
+      { name = "emoji" },
     }),
     formatting = {
       format = require("lspkind").cmp_format({
