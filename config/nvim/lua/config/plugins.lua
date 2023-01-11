@@ -80,6 +80,7 @@ return {
         show_current_context = true,
       })
     end,
+    event = "BufReadPost",
   },
 
   ------------------------------------------------------------

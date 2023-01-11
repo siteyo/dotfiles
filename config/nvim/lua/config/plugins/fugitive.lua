@@ -10,6 +10,7 @@ local M = {
     vim.keymap.set("n", "[Git]la", "<Cmd>Git log --graph --all --decorate=full<CR>")
     vim.keymap.set("n", "[Git]ll", "<Cmd>Git log --graph<CR>")
   end,
+  keys = "[Git]",
 }
 
 return M
