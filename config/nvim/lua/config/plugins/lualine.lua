@@ -29,10 +29,10 @@ function M.config()
       lualine_b = { "branch", "diff", "diagnostics" },
       lualine_c = { "filename" },
       lualine_x = {
-        {
-          require("noice").api.status.mode.get,
-          cond = require("noice").api.status.mode.has,
-        },
+        -- {
+        --   require("noice").api.status.mode.get,
+        --   cond = require("noice").api.status.mode.has,
+        -- },
         "encoding",
         "fileformat",
         "filetype",

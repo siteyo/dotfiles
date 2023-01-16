@@ -11,6 +11,7 @@ local M = {
     vim.keymap.set("n", "[Git]ll", "<Cmd>Git log --graph<CR>")
   end,
   keys = "[Git]",
+  enabled = false,
 }
 
 return M

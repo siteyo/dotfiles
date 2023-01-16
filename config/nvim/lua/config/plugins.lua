@@ -47,8 +47,9 @@ return {
   ------------------------------------------------------------
   --- LSP
   ------------------------------------------------------------
-  { "williamboman/mason.nvim", config = true },
+  { "williamboman/mason.nvim", config = true, cmd = "Mason" },
   { "j-hui/fidget.nvim", config = true, enabled = false },
+  { "jayp0521/mason-null-ls.nvim", config = true, cmd = "NullLsInstall" },
 
   ------------------------------------------------------------
   --- FuzzyFinder
@@ -68,11 +69,14 @@ return {
         messages = {
           enable = true,
           view = "mini",
+          view_error = "mini",
+          view_warn = "mini",
         },
       })
     end,
     event = "VeryLazy",
   },
+  { "stevearc/dressing.nvim", config = true, lazy = false },
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
