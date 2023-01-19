@@ -25,7 +25,7 @@ function M.config()
     current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
     current_line_blame_opts = {
       virt_text = true,
-      virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
+      virt_text_pos = "right_align", -- 'eol' | 'overlay' | 'right_align'
       delay = 1000,
       ignore_whitespace = false,
     },
@@ -56,21 +56,25 @@ function M.config()
       map("n", "[g", "&diff ? '[g' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true })
 
       -- Actions
-      map("n", "[Git]a", ":Gitsigns stage_hunk<CR>")
-      map("v", "[Git]a", ":Gitsigns stage_hunk<CR>")
-      -- map("n", "[Git]hw", ":Gitsigns stage_hunk<CR>")
-      -- map("v", "[Git]hw", ":Gitsigns stage_hunk<CR>")
-      -- map("n", "[Git]hr", ":Gitsigns reset_hunk<CR>")
-      -- map("v", "[Git]hr", ":Gitsigns reset_hunk<CR>")
+      map("n", "[Git]a", "<cmd>Gitsigns stage_hunk<CR>")
+      map("v", "[Git]a", "<cmd>Gitsigns stage_hunk<CR>")
+      map("n", "[Git]b", "<cmd>Gitsigns blame_line<CR>")
+      map("v", "[Git]b", "<cmd>Gitsigns blame_line<CR>")
+      map("n", "[Git]hw", ":Gitsigns stage_hunk<CR>")
+      map("v", "[Git]hw", ":Gitsigns stage_hunk<CR>")
+      map("n", "[Git]hr", ":Gitsigns reset_hunk<CR>")
+      map("v", "[Git]hr", ":Gitsigns reset_hunk<CR>")
       map("n", "[Git]u", "<cmd>Gitsigns undo_stage_hunk<CR>")
       map("n", "[Git]w", "<cmd>Gitsigns stage_buffer<CR>")
       map("n", "[Git]r", "<cmd>Gitsigns reset_buffer<CR>")
       map("n", "[Git]p", "<cmd>Gitsigns preview_hunk<CR>")
-      -- map("n", "[Git]b", '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
-      map("n", "[Git]tb", "<cmd>Gitsigns toggle_current_line_blame<CR>")
-      map("n", "[Git]td", "<cmd>Gitsigns toggle_deleted<CR>")
       map("n", "[Git]d", "<cmd>Gitsigns diffthis<CR>")
       map("n", "[Git]D", '<cmd>lua require"gitsigns".diffthis("~")<CR>')
+      map("n", "[Git]<Space>b", "<cmd>Gitsigns toggle_current_line_blame<CR>")
+      map("n", "[Git]<Space>d", "<cmd>Gitsigns toggle_deleted<CR>")
+      map("n", "[Git]<Space>l", "<cmd>Gitsigns toggle_linehl<CR>")
+      map("n", "[Git]<Space>n", "<cmd>Gitsigns toggle_numhl<CR>")
+      map("n", "[Git]<Space>w", "<cmd>Gitsigns toggle_word_diff<CR>")
 
       -- Text object
       map("o", "ih", ":<C-U>Gitsigns select_hunk<CR>")
