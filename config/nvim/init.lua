@@ -13,7 +13,7 @@ require("config.basic")
 require("config.options")
 
 ------------------------------------------------------------
---- Options
+--- Diagnostics
 ------------------------------------------------------------
 require("config.diagnostics")
 

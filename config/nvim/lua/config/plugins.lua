@@ -2,14 +2,14 @@ return {
   ------------------------------------------------------------
   --- Library
   ------------------------------------------------------------
-  "nvim-lua/plenary.nvim",
-  "kyazdani42/nvim-web-devicons",
-  "MunifTanjim/nui.nvim",
+  { "nvim-lua/plenary.nvim" },
+  { "kyazdani42/nvim-web-devicons" },
+  { "MunifTanjim/nui.nvim" },
 
   ------------------------------------------------------------
   --- Colorscheme
   ------------------------------------------------------------
-  "cocopon/iceberg.vim",
+  { "cocopon/iceberg.vim" },
 
   ------------------------------------------------------------
   --- Filer
@@ -35,7 +35,7 @@ return {
     end,
     event = "BufReadPre",
   },
-  { "windwp/nvim-autopairs", config = true, event = "BufReadPre" },
+  { "windwp/nvim-autopairs", config = true, event = "BufReadPost" },
   { "gpanders/editorconfig.nvim", event = "BufReadPost" },
   { "machakann/vim-highlightedyank", event = "BufReadPost" },
   { "sbdchd/neoformat", cmd = "Neoformat" },
@@ -88,6 +88,7 @@ return {
     end,
     event = "BufReadPost",
   },
+  { "nvim-zh/colorful-winsep.nvim", config = true, event = "BufAdd" },
 
   ------------------------------------------------------------
   --- Git
@@ -121,7 +122,6 @@ return {
       })
     end,
   },
-  { "nvim-zh/colorful-winsep.nvim", config = true, event = "BufAdd" },
   { "ellisonleao/glow.nvim", cmd = "Glow" },
   {
     "iamcco/markdown-preview.nvim",
