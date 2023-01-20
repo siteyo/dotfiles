@@ -58,24 +58,6 @@ return {
   ------------------------------------------------------------
   --- Interface
   ------------------------------------------------------------
-  {
-    "folke/noice.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      -- "rcarriga/nvim-notify",
-    },
-    config = function()
-      require("noice").setup({
-        messages = {
-          enable = true,
-          view = "mini",
-          view_error = "mini",
-          view_warn = "mini",
-        },
-      })
-    end,
-    event = "VeryLazy",
-  },
   { "stevearc/dressing.nvim", config = true, lazy = false },
   {
     "lukas-reineke/indent-blankline.nvim",
