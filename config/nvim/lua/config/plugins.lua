@@ -49,7 +49,6 @@ return {
   ------------------------------------------------------------
   { "williamboman/mason.nvim", config = true, cmd = "Mason" },
   { "j-hui/fidget.nvim", config = true, enabled = false },
-  { "jayp0521/mason-null-ls.nvim", config = true, cmd = "NullLsInstall" },
 
   ------------------------------------------------------------
   --- FuzzyFinder
@@ -64,6 +63,27 @@ return {
     config = function()
       require("indent_blankline").setup({
         show_current_context = true,
+      })
+    end,
+    event = "BufReadPost",
+  },
+  {
+    "petertriho/nvim-scrollbar",
+    config = function()
+      local colors = require("tokyonight.colors").setup()
+      require("scrollbar").setup({
+        handle = {
+          color = colors.bg_highlight,
+        },
+        excluded_filetypes = { "noice" },
+        marks = {
+          Search = { color = colors.orange },
+          Error = { color = colors.error },
+          Warn = { color = colors.warning },
+          Info = { color = colors.info },
+          Hint = { color = colors.hint },
+          Misc = { color = colors.purple },
+        },
       })
     end,
     event = "BufReadPost",
