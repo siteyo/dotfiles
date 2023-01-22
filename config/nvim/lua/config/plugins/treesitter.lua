@@ -1,4 +1,5 @@
 local M = {
+  -- treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -7,48 +8,51 @@ local M = {
       "JoosepAlviste/nvim-ts-context-commentstring",
       "windwp/nvim-ts-autotag",
     },
-    config = function()
-      local treesitter_config = require("nvim-treesitter.configs")
-      treesitter_config.setup({
-        ensure_installed = {
-          "bash",
-          "c",
-          "css",
-          "diff",
-          "dockerfile",
-          "gitcommit",
-          "gitignore",
-          "help",
-          "html",
-          "javascript",
-          "json",
-          "lua",
-          "make",
-          "markdown",
-          "markdown_inline",
-          "python",
-          "regex",
-          "rust",
-          "sql",
-          "todotxt",
-          "toml",
-          "tsx",
-          "typescript",
-          "vim",
-          "yaml",
-        },
-        highlight = {
-          enable = true,
-        },
-        context_commentstring = {
-          enable = true,
-        },
-        autotag = {
-          enable = true,
-        },
-      })
+    opts = {
+      ensure_installed = {
+        "bash",
+        "c",
+        "css",
+        "diff",
+        "dockerfile",
+        "gitcommit",
+        "gitignore",
+        "help",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "make",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "regex",
+        "rust",
+        "sql",
+        "todotxt",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "yaml",
+      },
+      highlight = { enable = true },
+      context_commentstring = { enable = true },
+      autotag = { enable = true },
+    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
     end,
   },
+
+  -- context
+{
+  "nvim-treesitter/nvim-treesitter-context",
+  event = "BufReadPre",
+  config = true,
+},
+
+  -- playground
   {
     "nvim-treesitter/playground",
     cmd = "TSPlaygroundToggle",
