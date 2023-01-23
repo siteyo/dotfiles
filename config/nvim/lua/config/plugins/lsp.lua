@@ -5,7 +5,9 @@ return {
     cmd = "Mason",
     opts = {
       ensure_installed = {
+        "bash-language-server",
         "editorconfig-checker",
+        "lua-language-server",
         "prettierd",
         "selene",
         "shellcheck",
@@ -121,6 +123,15 @@ return {
           --- diagnostics
           nls.builtins.diagnostics.zsh,
           nls.builtins.diagnostics.eslint,
+          nls.builtins.diagnostics.tsc.with({
+            command = function()
+              if vim.fn.executable("./node_modules/.bin/tsc") then
+                return "./node_modules/.bin/tsc"
+              else
+                return "tsc"
+              end
+            end
+          }),
           nls.builtins.diagnostics.textlint.with({
             filetypes = { "markdown" },
             command = function()
@@ -131,7 +142,6 @@ return {
               end
             end,
           }),
-          nls.builtins.diagnostics.cspell,
           --- completion
           nls.builtins.completion.spell,
         },
