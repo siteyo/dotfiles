@@ -5,16 +5,12 @@ return {
     cmd = "Mason",
     opts = {
       ensure_installed = {
-        "stylua",
+        "editorconfig-checker",
+        "prettierd",
+        "selene",
         "shellcheck",
         "shfmt",
-        "prettierd",
-        "luacheck",
-        "eslint_d",
-        "selene",
-        "black",
-        "isort",
-        "flake8",
+        "stylua",
       },
     },
     config = function(_, opts)
@@ -114,13 +110,28 @@ return {
       return {
         sources = {
           --- code action
-          -- null_ls.builtins.code_actions.refactoring,
+          -- nls.builtins.code_actions.refactoring,
+          nls.builtins.code_actions.eslint,
+          -- nls.builtins.code_actions.gitsigns,
           --- formatting
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.prettier,
           nls.builtins.formatting.shfmt,
+          nls.builtins.formatting.prettierd.with({ filetypes = { "markdown" } }),
           --- diagnostics
           nls.builtins.diagnostics.zsh,
+          nls.builtins.diagnostics.eslint,
+          nls.builtins.diagnostics.textlint.with({
+            filetypes = { "markdown" },
+            command = function()
+              if vim.fn.executable("./node_modules/.bin/textlint") then
+                return "./node_modules/.bin/textlint"
+              else
+                return "textlint"
+              end
+            end,
+          }),
+          nls.builtins.diagnostics.cspell,
           --- completion
           nls.builtins.completion.spell,
         },
