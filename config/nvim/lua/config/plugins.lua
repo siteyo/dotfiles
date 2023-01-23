@@ -43,7 +43,7 @@ return {
   ------------------------------------------------------------
   --- Interface
   ------------------------------------------------------------
-  { "stevearc/dressing.nvim", config = true, lazy = false },
+  { "stevearc/dressing.nvim", config = true, lazy = "VeryLazy" },
   { "nvim-zh/colorful-winsep.nvim", config = true, event = "BufAdd" },
 
   ------------------------------------------------------------
@@ -55,12 +55,6 @@ return {
   ------------------------------------------------------------
   --- Util
   ------------------------------------------------------------
-  {
-    "akinsho/toggleterm.nvim",
-    enabled = false,
-    cmd = "ToggleTerm",
-    config = true,
-  },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
@@ -74,11 +68,11 @@ return {
       })
     end,
   },
-  { "ellisonleao/glow.nvim", cmd = "Glow" },
   {
     "iamcco/markdown-preview.nvim",
     build = function()
       vim.fn["mkdp#util#install"]()
     end,
+    ft = "markdown"
   },
 }
