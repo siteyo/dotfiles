@@ -34,7 +34,7 @@ return {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
-      -- "jose-elias-alvarez/typescript.nvim"
+      -- "jose-elias-alvarez/typescript.nvim",
     },
     event = "BufReadPre",
     opts = {
@@ -44,7 +44,6 @@ return {
         virtual_text = { spacing = 4, prefix = "●" },
         severity_sort = true,
       },
-      autoformat = true,
       -- servers = {
       --   jsonls = {},
       --   sumneko_lua = {
@@ -64,13 +63,15 @@ return {
       --   },
       -- },
       -- setup = {
-      -- tsserver = function(_, opts)
-      --   require("typescript").setup({ server = opts })
-      --   return true
-      -- end,
+      --   tsserver = function(_, opts)
+      --     require("typescript").setup({ server = opts })
+      --     return true
+      --   end,
       -- },
     },
     config = function(plugin, opts)
+      -- local servers = opts.servers
+      -- local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
       local mason_lspconfig = require("mason-lspconfig")
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -115,32 +116,46 @@ return {
           -- nls.builtins.code_actions.refactoring,
           nls.builtins.code_actions.eslint,
           -- nls.builtins.code_actions.gitsigns,
+
           --- formatting
-          nls.builtins.formatting.stylua,
-          nls.builtins.formatting.prettier,
-          nls.builtins.formatting.shfmt,
-          nls.builtins.formatting.prettierd.with({ filetypes = { "markdown" } }),
+          nls.builtins.formatting.stylua.with({
+            condition = function()
+              return vim.fn.executable("stylua") > 0
+            end,
+          }),
+          nls.builtins.formatting.prettier.with({
+            only_local = "node_modules/.bin",
+            disabled_filetypes = { "markdown" },
+          }),
+          nls.builtins.formatting.shfmt.with({
+            condition = function()
+              return vim.fn.executable("shfmt") > 0
+            end,
+          }),
+          nls.builtins.formatting.prettierd.with({
+            condition = function()
+              return vim.fn.executable("prettierd") > 0
+            end,
+            filetypes = { "markdown" },
+          }),
+
           --- diagnostics
           nls.builtins.diagnostics.zsh,
-          nls.builtins.diagnostics.eslint,
+          nls.builtins.diagnostics.editorconfig_checker.with({
+            condition = function()
+              return vim.fn.executable("ec") > 0
+            end,
+          }),
+          nls.builtins.diagnostics.eslint.with({
+            only_local = "node_modules/.bin",
+          }),
           nls.builtins.diagnostics.tsc.with({
-            command = function()
-              if vim.fn.executable("./node_modules/.bin/tsc") then
-                return "./node_modules/.bin/tsc"
-              else
-                return "tsc"
-              end
-            end
+            only_local = "node_modules/.bin",
           }),
           nls.builtins.diagnostics.textlint.with({
+            prefer_local = "node_modules/.bin",
+            timeout = 15000,
             filetypes = { "markdown" },
-            command = function()
-              if vim.fn.executable("./node_modules/.bin/textlint") then
-                return "./node_modules/.bin/textlint"
-              else
-                return "textlint"
-              end
-            end,
           }),
           --- completion
           nls.builtins.completion.spell,
