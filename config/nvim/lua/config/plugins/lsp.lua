@@ -156,10 +156,12 @@ return {
             prefer_local = "node_modules/.bin",
             timeout = 15000,
             filetypes = { "markdown" },
+            extra_args = { "--cache" },
           }),
           --- completion
           nls.builtins.completion.spell,
         },
+        debug = true,
       }
     end,
   },

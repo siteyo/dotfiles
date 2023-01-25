@@ -59,7 +59,7 @@ local keybinds = {
 return {
   font = wezterm.font_with_fallback({
     "Fira Code",
-    "HackGen Console NFJ",
+    "HackGenNerd Console",
   }),
   default_prog = default_prog,
   window_background_opacity = 0.9,
