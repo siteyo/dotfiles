@@ -9,6 +9,7 @@ return {
         "editorconfig-checker",
         "lua-language-server",
         "prettierd",
+        "python-lsp-server",
         "selene",
         "shellcheck",
         "shfmt",
@@ -34,7 +35,7 @@ return {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
-      -- "jose-elias-alvarez/typescript.nvim",
+      "jose-elias-alvarez/typescript.nvim",
     },
     event = "BufReadPre",
     opts = {
@@ -44,57 +45,67 @@ return {
         virtual_text = { spacing = 4, prefix = "●" },
         severity_sort = true,
       },
-      -- servers = {
-      --   jsonls = {},
-      --   sumneko_lua = {
-      --     settings = {
-      --       Lua = {
-      --         workspace = {
-      --           checkThirdParty = false,
-      --         },
-      --         completion = {
-      --           callSnippet = "Replace",
-      --         },
-      --         -- diagnostics = {
-      --         --   globals = { "vim" },
-      --         -- },
-      --       },
-      --     },
-      --   },
-      -- },
-      -- setup = {
-      --   tsserver = function(_, opts)
-      --     require("typescript").setup({ server = opts })
-      --     return true
-      --   end,
-      -- },
-    },
-    config = function(plugin, opts)
-      -- local servers = opts.servers
-      -- local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-      local mason_lspconfig = require("mason-lspconfig")
-      local lspconfig = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      mason_lspconfig.setup()
-      mason_lspconfig.setup_handlers({
-        function(server_name) -- default handler (optional)
-          lspconfig[server_name].setup({
-            -- on_attach = on_attach,
-            capabilities = capabilities,
-          })
-        end,
-        ["sumneko_lua"] = function()
-          lspconfig.sumneko_lua.setup({
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = { "vim" },
-                },
+      servers = {
+        jsonls = {},
+        sumneko_lua = {
+          settings = {
+            Lua = {
+              workspace = {
+                checkThirdParty = false,
+              },
+              completion = {
+                callSnippet = "Replace",
+              },
+              diagnostics = {
+                globals = { "vim" },
               },
             },
-          })
+          },
+        },
+      },
+      setup = {
+        tsserver = function(_, opts)
+          require("typescript").setup({ server = opts })
+          return true
         end,
-      })
+      },
+    },
+    config = function(_, opts)
+      local servers = opts.servers
+      local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+      local function setup(server)
+        local server_opts = servers[server] or {}
+        server_opts.capabilities = capabilities
+        if opts.setup[server] then
+          if opts.setup[server](server, server_opts) then
+            return
+          end
+        elseif opts.setup["*"] then
+          if opts.setup["*"](server, server_opts) then
+            return
+          end
+        end
+        require("lspconfig")[server].setup(server_opts)
+      end
+
+      local mlsp = require("mason-lspconfig")
+      local available = mlsp.get_available_servers()
+
+      local ensure_installed = {}
+      for server, server_opts in pairs(servers) do
+        if server_opts then
+          server_opts = server_opts == true and {} or server_opts
+          if server_opts.mason == false or not vim.tbl_contains(available, server) then
+            setup(server)
+          else
+            ensure_installed[#ensure_installed + 1] = server
+          end
+        end
+      end
+
+      mlsp.setup({ ensure_installed = ensure_installed })
+      mlsp.setup_handlers({ setup })
     end,
   },
 
@@ -116,6 +127,7 @@ return {
           -- nls.builtins.code_actions.refactoring,
           nls.builtins.code_actions.eslint,
           -- nls.builtins.code_actions.gitsigns,
+          -- nls.builtins.code_actions.shellcheck,
 
           --- formatting
           nls.builtins.formatting.stylua.with({
@@ -123,14 +135,14 @@ return {
               return vim.fn.executable("stylua") > 0
             end,
           }),
-          nls.builtins.formatting.prettier.with({
-            only_local = "node_modules/.bin",
-            disabled_filetypes = { "markdown" },
-          }),
           nls.builtins.formatting.shfmt.with({
             condition = function()
               return vim.fn.executable("shfmt") > 0
             end,
+          }),
+          nls.builtins.formatting.prettier.with({
+            only_local = "node_modules/.bin",
+            disabled_filetypes = { "markdown" },
           }),
           nls.builtins.formatting.prettierd.with({
             condition = function()
@@ -140,28 +152,43 @@ return {
           }),
 
           --- diagnostics
-          nls.builtins.diagnostics.zsh,
           nls.builtins.diagnostics.editorconfig_checker.with({
             condition = function()
               return vim.fn.executable("ec") > 0
             end,
           }),
+          nls.builtins.diagnostics.zsh,
+          nls.builtins.diagnostics.shellcheck.with({
+            condition = function()
+              return vim.fn.executable("shellcheck") > 0
+            end,
+          }),
           nls.builtins.diagnostics.eslint.with({
             only_local = "node_modules/.bin",
           }),
-          nls.builtins.diagnostics.tsc.with({
-            only_local = "node_modules/.bin",
-          }),
+          -- nls.builtins.diagnostics.tsc.with({
+          --   only_local = "node_modules/.bin",
+          -- }),
           nls.builtins.diagnostics.textlint.with({
             prefer_local = "node_modules/.bin",
-            timeout = 15000,
+            timeout = 30000,
             filetypes = { "markdown" },
             extra_args = { "--cache" },
           }),
+          nls.builtins.diagnostics.markdownlint.with({
+            condition = function()
+              return vim.fn.executable("markdownlint") > 0
+            end,
+          }),
+          nls.builtins.diagnostics.selene.with({
+            condition = function()
+              return vim.fn.executable("selene") > 0
+            end,
+          }),
+
           --- completion
           nls.builtins.completion.spell,
         },
-        debug = true,
       }
     end,
   },
