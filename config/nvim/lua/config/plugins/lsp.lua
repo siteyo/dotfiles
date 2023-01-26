@@ -1,3 +1,5 @@
+local enabled = true
+
 return {
   -- mason
   {
@@ -10,7 +12,7 @@ return {
         "lua-language-server",
         "prettierd",
         "python-lsp-server",
-        "selene",
+        -- "selene",
         "shellcheck",
         "shfmt",
         "stylua",
@@ -26,6 +28,7 @@ return {
         end
       end
     end,
+    enabled = enabled,
   },
 
   -- lspconfig
@@ -68,6 +71,7 @@ return {
           require("typescript").setup({ server = opts })
           return true
         end,
+        ["*"] = function(_, _) end,
       },
     },
     config = function(_, opts)
@@ -107,6 +111,7 @@ return {
       mlsp.setup({ ensure_installed = ensure_installed })
       mlsp.setup_handlers({ setup })
     end,
+    enabled = enabled,
   },
 
   -- null-ls
@@ -191,5 +196,6 @@ return {
         },
       }
     end,
+    enabled = enabled,
   },
 }
