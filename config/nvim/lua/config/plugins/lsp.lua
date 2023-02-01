@@ -8,7 +8,7 @@ return {
     opts = {
       ensure_installed = {
         "bash-language-server",
-        "editorconfig-checker",
+        -- "editorconfig-checker",
         "lua-language-server",
         "prettierd",
         "python-lsp-server",
@@ -157,11 +157,11 @@ return {
           }),
 
           --- diagnostics
-          nls.builtins.diagnostics.editorconfig_checker.with({
-            condition = function()
-              return vim.fn.executable("ec") > 0
-            end,
-          }),
+          -- nls.builtins.diagnostics.editorconfig_checker.with({
+          --   condition = function()
+          --     return vim.fn.executable("ec") > 0
+          --   end,
+          -- }),
           nls.builtins.diagnostics.zsh,
           nls.builtins.diagnostics.shellcheck.with({
             condition = function()
