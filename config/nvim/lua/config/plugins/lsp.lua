@@ -13,7 +13,7 @@ return {
         "prettierd",
         "python-lsp-server",
         -- "selene",
-        "shellcheck",
+        -- "shellcheck",
         "shfmt",
         "stylua",
       },
@@ -163,11 +163,11 @@ return {
           --   end,
           -- }),
           nls.builtins.diagnostics.zsh,
-          nls.builtins.diagnostics.shellcheck.with({
-            condition = function()
-              return vim.fn.executable("shellcheck") > 0
-            end,
-          }),
+          -- nls.builtins.diagnostics.shellcheck.with({
+          --   condition = function()
+          --     return vim.fn.executable("shellcheck") > 0
+          --   end,
+          -- }),
           nls.builtins.diagnostics.eslint.with({
             only_local = "node_modules/.bin",
           }),
