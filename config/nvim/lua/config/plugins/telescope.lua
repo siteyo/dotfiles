@@ -38,7 +38,13 @@ function M.config()
     },
     extensions = {
       frecency = {
-        ignore_patterns = { "*.git/*", "*/tmp/*", "*/node_modules/*" },
+        ignore_patterns = {
+          "*.git/*",
+          "*/tmp/*",
+          "*/node_modules/*",
+          "*/.mind/*",
+          "*/mind.nvim/*",
+        },
         db_safe_mode = false,
         auto_validate = true,
       },
