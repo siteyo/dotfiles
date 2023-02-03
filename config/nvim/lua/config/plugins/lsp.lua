@@ -10,6 +10,7 @@ return {
         "bash-language-server",
         -- "editorconfig-checker",
         "lua-language-server",
+        "markdownlint",
         "prettierd",
         "python-lsp-server",
         -- "selene",
@@ -175,15 +176,20 @@ return {
           --   only_local = "node_modules/.bin",
           -- }),
           nls.builtins.diagnostics.textlint.with({
+            condition = function()
+              return vim.fn.executable("textlint") > 0 or vim.fn.executable("node_modules/.bin/textlint") > 0
+            end,
             prefer_local = "node_modules/.bin",
             timeout = 30000,
             filetypes = { "markdown" },
             extra_args = { "--cache" },
+            method = nls.methods.DIAGNOSTICS_ON_SAVE,
           }),
           nls.builtins.diagnostics.markdownlint.with({
             condition = function()
               return vim.fn.executable("markdownlint") > 0
             end,
+            method = nls.methods.DIAGNOSTICS_ON_SAVE,
           }),
           nls.builtins.diagnostics.selene.with({
             condition = function()
@@ -198,9 +204,9 @@ return {
     end,
     enabled = enabled,
   },
-  {
-    "j-hui/fidget.nvim",
-    event = "BufReadPre",
-    config = true,
-  },
+  -- {
+  --   "j-hui/fidget.nvim",
+  --   event = "BufReadPre",
+  --   config = true,
+  -- },
 }
