@@ -11,7 +11,7 @@ return {
         -- "editorconfig-checker",
         "lua-language-server",
         "markdownlint",
-        "prettierd",
+        -- "prettierd",
         "python-lsp-server",
         -- "selene",
         -- "shellcheck",
@@ -148,14 +148,14 @@ return {
           }),
           nls.builtins.formatting.prettier.with({
             only_local = "node_modules/.bin",
-            disabled_filetypes = { "markdown" },
+            -- disabled_filetypes = { "markdown" },
           }),
-          nls.builtins.formatting.prettierd.with({
-            condition = function()
-              return vim.fn.executable("prettierd") > 0
-            end,
-            filetypes = { "markdown" },
-          }),
+          -- nls.builtins.formatting.prettierd.with({
+          --   condition = function()
+          --     return vim.fn.executable("prettierd") > 0
+          --   end,
+          --   filetypes = { "markdown" },
+          -- }),
 
           --- diagnostics
           -- nls.builtins.diagnostics.editorconfig_checker.with({
