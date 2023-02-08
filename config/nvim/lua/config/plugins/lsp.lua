@@ -10,7 +10,7 @@ return {
         "bash-language-server",
         -- "editorconfig-checker",
         "lua-language-server",
-        "markdownlint",
+        -- "markdownlint",
         -- "prettierd",
         "python-lsp-server",
         -- "selene",
@@ -190,6 +190,12 @@ return {
               return vim.fn.executable("markdownlint") > 0
             end,
             method = nls.methods.DIAGNOSTICS_ON_SAVE,
+          }),
+          nls.builtins.diagnostics.markdownlint_cli2.with({
+            condition = function()
+              return vim.fn.executable("node_modules/.bin/markdownlint-cli2")
+            end,
+            only_local = "node_modules/.bin",
           }),
           nls.builtins.diagnostics.selene.with({
             condition = function()
