@@ -51,7 +51,16 @@ return {
     "echasnovski/mini.bufremove",
     event = "BufReadPre",
     config = function()
-      require("mini.bufremove").setup()
+      local mb = require("mini.bufremove")
+      mb.setup()
+      -- sd
+      vim.keymap.set("n", "sd", function()
+        mb.delete(0, false)
+      end)
+      -- sq
+      vim.keymap.set("n", "sq", function ()
+        mb.unshow()
+      end)
     end,
   },
 }
