@@ -14,7 +14,7 @@ return {
         -- "prettierd",
         "python-lsp-server",
         -- "selene",
-        -- "shellcheck",
+        "shellcheck",
         "shfmt",
         "stylua",
       },
@@ -51,7 +51,7 @@ return {
       },
       servers = {
         jsonls = {},
-        sumneko_lua = {
+        lua_ls = {
           settings = {
             Lua = {
               workspace = {
@@ -193,9 +193,10 @@ return {
           }),
           nls.builtins.diagnostics.markdownlint_cli2.with({
             condition = function()
-              return vim.fn.executable("node_modules/.bin/markdownlint-cli2")
+              return vim.fn.executable("node_modules/.bin/markdownlint-cli2") > 0
             end,
             only_local = "node_modules/.bin",
+            args = { "**/*.md", "#node_modules" },
           }),
           nls.builtins.diagnostics.selene.with({
             condition = function()
