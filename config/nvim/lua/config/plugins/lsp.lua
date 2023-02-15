@@ -7,12 +7,9 @@ return {
     cmd = "Mason",
     opts = {
       ensure_installed = {
-        "bash-language-server",
         -- "editorconfig-checker",
-        "lua-language-server",
         -- "markdownlint",
         -- "prettierd",
-        "python-lsp-server",
         -- "selene",
         "shellcheck",
         "shfmt",
@@ -50,8 +47,14 @@ return {
         severity_sort = true,
       },
       servers = {
-        jsonls = {},
         bashls = {},
+        docker_compose_language_service = {},
+        dockerls = {},
+        emmet_ls = {},
+        jsonls = {},
+        marksman = {},
+        pylsp = {},
+        sqlls = {},
         lua_ls = {
           settings = {
             Lua = {
