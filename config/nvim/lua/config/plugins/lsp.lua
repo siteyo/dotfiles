@@ -76,7 +76,8 @@ return {
           require("typescript").setup({ server = opts })
           return true
         end,
-        ["*"] = function(_, _) end,
+        ["*"] = function(_, _)
+        end,
       },
     },
     config = function(_, opts)
