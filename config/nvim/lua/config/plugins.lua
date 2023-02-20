@@ -22,7 +22,7 @@ return {
   {
     "kylechui/nvim-surround",
     config = true,
-    event = "InsertEnter",
+    event = "BufReadPost",
   },
   {
     "numToStr/Comment.nvim",

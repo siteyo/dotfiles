@@ -76,8 +76,7 @@ return {
           require("typescript").setup({ server = opts })
           return true
         end,
-        ["*"] = function(_, _)
-        end,
+        ["*"] = function(_, _) end,
       },
     },
     config = function(_, opts)
@@ -208,9 +207,6 @@ return {
               return vim.fn.executable("selene") > 0
             end,
           }),
-
-          --- completion
-          nls.builtins.completion.spell,
         },
       }
     end,

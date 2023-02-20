@@ -126,3 +126,6 @@ fi
 
 ## Starship
 # eval "$(starship init zsh)"
+
+## Local settings
+source ~/.zshrc.local

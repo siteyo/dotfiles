@@ -24,16 +24,36 @@ M.opts = {
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { "branch", "diff", "diagnostics" },
-    lualine_c = { "filename" },
+    lualine_b = { "branch", "diff" },
+    lualine_c = {
+      {
+        "filetype",
+        icon_only = true,
+        separator = "",
+        padding = { left = 1, right = 0 },
+      },
+      { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+    },
     lualine_x = {
-      -- {
-      --   require("noice").api.status.mode.get,
-      --   cond = require("noice").api.status.mode.has,
-      -- },
+      {
+        function()
+          return require("noice").api.status.command.get() or ""
+        end,
+        cond = function()
+          return package.loaded["noice"] and require("noice").api.status.command.has()
+        end,
+      },
+      {
+        function()
+          return require("noice").api.status.mode.get() or ""
+        end,
+        cond = function()
+          return package.loaded["noice"] and require("noice").api.status.mode.has()
+        end,
+      },
+      { require("lazy.status").updates, cond = require("lazy.status").has_updates },
       "encoding",
       "fileformat",
-      "filetype",
     },
     lualine_y = { "progress" },
     lualine_z = { "location" },

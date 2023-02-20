@@ -1,6 +1,6 @@
 local M = {
   "akinsho/bufferline.nvim",
-  event = "BufAdd",
+  event = "VeryLazy",
 }
 
 M.opts = {
@@ -21,6 +21,7 @@ M.opts = {
     show_close_icon = false,
     show_tab_indicators = true,
     separator_style = "slant",
+    always_show_bufferline = false,
   },
   -- highlights = require("catppuccin.groups.integrations.bufferline").get({ styles = { "bold" } }),
   highlights = {
