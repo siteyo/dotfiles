@@ -14,7 +14,7 @@ fi
 ## history
 HISTSIZE=1000
 SAVEHIST=1000
-HISTFILE=~/.zsh_history
+HISTFILE="${HOME}/.zsh_history"
 
 # Options
 # --------------------------------------------------------------------
@@ -90,8 +90,8 @@ fi
 # --------------------------------------------------------------------
 
 ## Fzf
-[ -f "~/.fzf.zsh" ] \
-  && source "~/.fzf.zsh"
+[ -f "${HOME}/.fzf.zsh" ] \
+  && source "${HOME}/.fzf.zsh"
 
 ## zoxide
 eval "$(zoxide init zsh)"
@@ -128,4 +128,4 @@ fi
 # eval "$(starship init zsh)"
 
 ## Local settings
-source ~/.zshrc.local
+source "${HOME}/.zshrc.local"
