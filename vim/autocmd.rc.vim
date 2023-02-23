@@ -15,7 +15,6 @@ augroup END
 " yank
 " ------------------------------------------------------------------------
 if system('uname -a | grep microsoft') != ''
-  echo "Shared clipboard."
   augroup myYank
     autocmd!
     autocmd TextYankPost * :call system('clip.exe', @")

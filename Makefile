@@ -6,7 +6,7 @@ DOTPATH := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 install: preinstall ## Install all dotfiles in this repo.
 	@bash $(DOTPATH)/scripts/install-brew.sh
 	@bash $(DOTPATH)/scripts/install-brew-formula.sh
-	@bash $(DOTPATH)/scripts/install-vim.sh
+	# @bash $(DOTPATH)/scripts/install-vim.sh
 	@bash $(DOTPATH)/scripts/install-nvim.sh
 	@bash $(DOTPATH)/scripts/install-git.sh
 	@bash $(DOTPATH)/scripts/install-bash.sh

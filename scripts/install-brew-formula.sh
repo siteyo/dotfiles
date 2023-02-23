@@ -7,3 +7,5 @@ main() {
     [ -f "${HOME}/.Brewfile" ] && brew bundle --global
     echo ''
 }
+
+main
