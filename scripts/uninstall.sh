@@ -1,8 +1,14 @@
 #!/bin/bash
 
-echo '==> Uninstall ...'
+set -euo pipfail
 
-# Remove symlink
-find "${HOME}" -maxdepth 1 -type l -delete
+main() {
+    echo '==> Uninstall ...'
 
-find "${HOME}/.config" -maxdepth 2 -type l -delete
+    # Remove symlink
+    find "${HOME}" -maxdepth 1 -type l -delete
+
+    echo ''
+}
+
+main

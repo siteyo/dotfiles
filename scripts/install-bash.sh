@@ -1,35 +1,46 @@
 #!/bin/bash
 
-current_dir=$(dirname "${BASH_SOURCE[0]}")
-dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
+set -euo pipefail
 
-echo '==> Install bash ...'
+main() {
+    echo '==> Install bash ...'
 
-# Create backup directory
-mkdir -pv "${dotfiles_dir}/bak"
+    local current_dir dotfiles_dir
 
-# Create local setting file
-touch "${HOME}/.bashrc.local"
-touch "${HOME}/.bash_profile.local"
+    # Change current directory
+    current_dir=$(dirname "${BASH_SOURCE[0]}")
+    dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
 
-# git-prompt
-if [ ! -f "${HOME}/.git-prompt.sh" ]; then
-    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o "${HOME}/.git-prompt.sh"
-fi
+    # Create backup directory
+    mkdir -pv "${dotfiles_dir}/bak"
 
-# git-completion
-if [ ! -f "${HOME}/.git-completion.bash" ]; then
-    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o "${HOME}/.git-completion.bash"
-fi
+    # Create local setting file
+    touch "${HOME}/.bashrc.local"
+    touch "${HOME}/.bash_profile.local"
 
-# Move to backup directory
-[ -f "${HOME}/.bashrc" ] &&
-    mv -v "${HOME}/.bashrc" "${dotfiles_dir}/bak/.bashrc"
-[ -f "${HOME}/.bash_profile" ] &&
-    mv -v "${HOME}/.bash_profile" "${dotfiles_dir}/bak/.bash_profile"
+    # git-prompt
+    if [ ! -f "${HOME}/.git-prompt.sh" ]; then
+        curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh \
+            -o "${HOME}/.git-prompt.sh"
+    fi
 
-# Create a symbolic link
-ln -sfv "${dotfiles_dir}/etc/.bashrc" "${HOME}/.bashrc"
-ln -sfv "${dotfiles_dir}/etc/.bash_profile" "${HOME}/.bash_profile"
+    # git-completion
+    if [ ! -f "${HOME}/.git-completion.bash" ]; then
+        curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash \
+            -o "${HOME}/.git-completion.bash"
+    fi
 
-echo ''
+    # Move to backup directory
+    [ -f "${HOME}/.bashrc" ] &&
+        mv -v "${HOME}/.bashrc" "${dotfiles_dir}/bak/.bashrc"
+    [ -f "${HOME}/.bash_profile" ] &&
+        mv -v "${HOME}/.bash_profile" "${dotfiles_dir}/bak/.bash_profile"
+
+    # Create a symbolic link
+    ln -sfv "${dotfiles_dir}/etc/.bashrc" "${HOME}/.bashrc"
+    ln -sfv "${dotfiles_dir}/etc/.bash_profile" "${HOME}/.bash_profile"
+
+    echo ''
+}
+
+main

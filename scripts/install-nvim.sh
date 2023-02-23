@@ -1,29 +1,24 @@
 #!/bin/bash
 
-current_dir=$(dirname "${BASH_SOURCE[0]}")
-dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
+main() {
+    echo '==> Install nvim ...'
 
-echo '==> Install nvim ...'
+    # Create directories
+    mkdir -pv "${HOME}/.nvim"
+    mkdir -pv "${HOME}/.nvim/backup"
+    mkdir -pv "${HOME}/.nvim/swap"
+    mkdir -pv "${HOME}/.nvim/undo"
 
-# Create directories
-mkdir -pv "${dotfiles_dir}/bak"
-mkdir -pv "${HOME}/.config/nvim"
-mkdir -pv "${HOME}/.nvim"
-mkdir -pv "${HOME}/.nvim/backup"
-mkdir -pv "${HOME}/.nvim/swap"
-mkdir -pv "${HOME}/.nvim/undo"
+    # Create a local setting file
+    touch "${HOME}/.nvim/local_init.lua"
 
-# Create a local setting file
-touch "${HOME}/.nvim/local_init.lua"
+    # for Telescope frecency
+    sudo apt install sqlite3 libsqlite3-dev
 
-# Backup
-[ -d "${HOME}/.config/nvim" ] &&
-    mv -v "${HOME}/.config/nvim" "${dotfiles_dir}/bak"
+    # Install plugins
+    nvim --headless -c 'Lazy sync' -c 'qall'
 
-# Create symbolic links
-ln -sfv "${dotfiles_dir}/config/nvim" "${HOME}/.config/nvim"
+    echo ''
+}
 
-# for Telescope frecency
-sudo apt install sqlite3 libsqlite3-dev
-
-echo ''
+main

@@ -1,25 +1,30 @@
 #!/bin/bash
 
-current_dir=$(dirname "${BASH_SOURCE[0]}")
-dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
+main() {
+    echo '==> Install vim ...'
 
-echo '==> Install vim ...'
+    local current_dir dotfiles_dir
 
-# Create directories
-mkdir -pv "${HOME}/.config/vim"
-mkdir -pv "${HOME}/.vim"
-mkdir -pv "${HOME}/.vim/backup"
-mkdir -pv "${HOME}/.vim/swap"
-mkdir -pv "${HOME}/.vim/undo"
+    # Change current directory
+    current_dir=$(dirname "${BASH_SOURCE[0]}")
+    dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
 
-# Create a local setting file
-touch "${HOME}/.vim/local_vimrc.vim"
+    # Create directories
+    mkdir -pv "${HOME}/.vim"
+    mkdir -pv "${HOME}/.vim/backup"
+    mkdir -pv "${HOME}/.vim/swap"
+    mkdir -pv "${HOME}/.vim/undo"
 
-# Create symbolic links
-ln -sfv "${dotfiles_dir}/vim/vimrc" "${HOME}/.vimrc"
-ln -sfv "${dotfiles_dir}/vim/coc-settings.json" "${HOME}/.config/vim/coc-settings.json"
+    # Create a local setting file
+    touch "${HOME}/.vim/local_vimrc.vim"
 
-# Install plugins
-vim +PlugInstall +qall
+    # Create symbolic links
+    ln -sfv "${dotfiles_dir}/vim/vimrc" "${HOME}/.vimrc"
 
-echo ''
+    # Install plugins
+    vim +PlugInstall +qall
+
+    echo ''
+}
+
+main

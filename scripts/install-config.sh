@@ -3,7 +3,7 @@
 set -euo pipefail
 
 main() {
-    echo '==> Install tmux ...'
+    echo '==> Install ... '
 
     local current_dir dotfiles_dir
 
@@ -11,15 +11,15 @@ main() {
     current_dir=$(dirname "${BASH_SOURCE[0]}")
     dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
 
-    # Create backup directory
+    # Create directory
     mkdir -pv "${dotfiles_dir}/bak"
 
     # Move to backup directory
-    [ -f "${HOME}/.tmux.conf" ] &&
-        mv -v "${HOME}/.tmux.conf" "${dotfiles_dir}/bak/.tmux.conf"
+    [ -d "${HOME}/.config" ] &&
+        mv -v "${HOME}/.config" "${dotfiles_dir}/bak"
 
-    # Create a symbolic link
-    ln -sfv "${dotfiles_dir}/etc/.tmux.conf" "${HOME}/.tmux.conf"
+    # Create symbolic link
+    ln -sfv "${dotfiles_dir}/config" "${HOME}/.config"
 
     echo ''
 }
