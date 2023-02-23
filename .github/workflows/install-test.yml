@@ -1,0 +1,23 @@
+name: Install Test
+
+on: [push]
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    container: ubuntu:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install required packages
+        run: sudo apt install build-essential procps curl file git
+      - name: Install dotfiles
+        run: make test
+  macos:
+    runs-on: macos-latest
+    container: macos:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install required packages
+        run: xcode-select --install
+      - name: Install dotfiles
+        run: make test
