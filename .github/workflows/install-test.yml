@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install required packages
-        run: sudo apt install build-essential procps curl file git
+        run: apt install build-essential procps curl file git
       - name: Install dotfiles
         run: make test
   macos:
