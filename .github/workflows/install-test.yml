@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install required packages
-        run: apt update && apt install -y build-essential procps curl file git sudo
+        run: apt-get update && apt-get install -y build-essential procps curl file git sudo
       - name: Install dotfiles
         run: make test
   macos:
