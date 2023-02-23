@@ -5,7 +5,6 @@ on: [push]
 jobs:
   ubuntu:
     runs-on: ubuntu-latest
-    container: ubuntu:latest
     steps:
       - uses: actions/checkout@v2
       - name: Install required packages
@@ -16,7 +15,5 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install required packages
-        run: xcode-select --install
       - name: Install dotfiles
         run: make test
