@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipfail
+set -euo pipefail
 
 main() {
     echo '==> Uninstall ...'
