@@ -76,7 +76,8 @@ return {
           require("typescript").setup({ server = opts })
           return true
         end,
-        ["*"] = function(_, _) end,
+        ["*"] = function(_, _)
+        end,
       },
     },
     config = function(_, opts)
@@ -181,12 +182,12 @@ return {
           -- }),
           nls.builtins.diagnostics.textlint.with({
             condition = function()
-              return vim.fn.executable("textlint") > 0 or vim.fn.executable("node_modules/.bin/textlint") > 0
+              return vim.fn.executable("node_modules/.bin/textlint") > 0
             end,
-            prefer_local = "node_modules/.bin",
+            only_local = "node_modules/.bin",
             timeout = 30000,
             filetypes = { "markdown" },
-            extra_args = { "--cache" },
+            args = { "-f", "json", "--cache", "$DIRNAME" },
             method = nls.methods.DIAGNOSTICS_ON_SAVE,
           }),
           nls.builtins.diagnostics.markdownlint.with({

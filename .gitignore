@@ -58,3 +58,4 @@ config/nvim/plugin/*
 ### Other ###
 # Backup directory
 bak/
+wslu/
