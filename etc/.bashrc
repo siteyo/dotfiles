@@ -99,3 +99,6 @@ fi
 
 ## asdf
 [ -f $(brew --prefix)/opt/asdf/libexec/asdf.sh ] && source $(brew --prefix)/opt/asdf/libexec/asdf.sh
+
+## .local
+export PATH="${HOME}/.local/bin:${PATH}"
