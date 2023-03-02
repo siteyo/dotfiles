@@ -18,4 +18,16 @@ indent_size = 2
 indent_size = 2
 
 [*.sh]
+indent_size = 2
+
+[*.toml]
+indent_size = 4
+
+[.zshrc]
+indent_size = 2
+
+[.bashrc]
+indent_size = 2
+
+[.gitconfig]
 indent_size = 4

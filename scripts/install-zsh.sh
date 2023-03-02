@@ -1,28 +1,29 @@
 #!/bin/bash
 
 main() {
-    echo '==> Install zsh ...'
+  set -euo pipefail
+  echo '==> Install zsh ...'
 
-    # Change current directory
-    current_dir=$(dirname "${BASH_SOURCE[0]}")
-    dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
+  # Change current directory
+  current_dir=$(dirname "${BASH_SOURCE[0]}")
+  dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
 
-    # Create directory
-    mkdir -pv "${dotfiles_dir}/bak"
+  # Create directory
+  mkdir -pv "${dotfiles_dir}/bak"
 
-    # Create local config file
-    touch "${HOME}/.zshrc.local"
+  # Create local config file
+  touch "${HOME}/.zshrc.local"
 
-    # Backup
-    [ -f "${HOME}/.zshenv" ] &&
-        mv -v "${HOME}/.zshenv" "${dotfiles_dir}/bak"
-    [ -f "${HOME}/.zshrc" ] &&
-        mv -v "${HOME}/.zshrc" "${dotfiles_dir}/bak"
+  # Backup
+  [ -f "${HOME}/.zshenv" ] &&
+    mv -v "${HOME}/.zshenv" "${dotfiles_dir}/bak"
+  [ -f "${HOME}/.zshrc" ] &&
+    mv -v "${HOME}/.zshrc" "${dotfiles_dir}/bak"
 
-    # Create symlinks
-    ln -sfv "${dotfiles_dir}/.zshenv" "${HOME}/.zshenv"
+  # Create symlinks
+  ln -sfv "${dotfiles_dir}/.zshenv" "${HOME}/.zshenv"
 
-    echo ''
+  echo ''
 }
 
 main
