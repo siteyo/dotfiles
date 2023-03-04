@@ -30,6 +30,11 @@ uninstall: ## Uninstall all dotfiles.
 clean: uninstall ## Remove dotfiles data(~/.local, ~/.cache, and so on).
 	@bash $(DOTPATH)/scripts/clean.sh
 
+.PHONY: setup
+setup:
+	@git config --global user.name "Saito Yuki"
+	@git config --global user.email "phicyanoc@gmial.com"
+
 .PHONY: test
 test: install clean ## For GitHub Actions (DO NOT RUN LOCALLY)
 
