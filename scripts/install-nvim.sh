@@ -14,7 +14,9 @@ main() {
   touch "${HOME}/.nvim/local_init.lua"
 
   # for Telescope frecency
-  sudo apt install sqlite3 libsqlite3-dev
+  if uname -a | grep -q -e 'microsoft' -e 'Ubuntu'; then
+    sudo apt-get install sqlite3 libsqlite3-dev
+  fi
 
   # Install plugins
   nvim --headless -c 'Lazy sync' -c 'qall'
