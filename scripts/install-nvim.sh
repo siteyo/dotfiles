@@ -18,9 +18,6 @@ main() {
     sudo apt-get install sqlite3 libsqlite3-dev
   fi
 
-  # Install plugins
-  nvim --headless -c 'Lazy sync' -c 'qall'
-
   echo ''
 }
 
