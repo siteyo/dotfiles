@@ -31,9 +31,13 @@ clean: uninstall ## Remove dotfiles data(~/.local, ~/.cache, and so on).
 	@bash $(DOTPATH)/scripts/clean.sh
 
 .PHONY: setup
-setup:
+setup: ## Setup git config
 	@git config --global user.name "Saito Yuki"
 	@git config --global user.email "phicyanoc@gmial.com"
+
+.PHONY: proxy
+proxy: ## Setup proxy
+	@bash $(DOTPATH)/scripts/setup-proxy.sh
 
 .PHONY: test
 test: install clean ## For GitHub Actions (DO NOT RUN LOCALLY)

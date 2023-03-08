@@ -23,6 +23,9 @@ main() {
   # Create symlinks
   ln -sfv "${dotfiles_dir}/.zshenv" "${HOME}/.zshenv"
 
+  # Install zsh
+  sudo apt-get install zsh
+
   echo ''
 }
 
