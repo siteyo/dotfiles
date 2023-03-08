@@ -60,3 +60,4 @@ config/nvim/plugin/*
 bak/
 wslu/
 config/lazygit/state.yml
+config/configstore/
