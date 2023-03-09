@@ -24,7 +24,9 @@ main() {
   ln -sfv "${dotfiles_dir}/.zshenv" "${HOME}/.zshenv"
 
   # Install zsh
-  sudo apt-get install zsh
+  if uname -a | grep -q microsoft; then
+    sudo apt-get install zsh
+  fi
 
   echo ''
 }
