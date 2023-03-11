@@ -54,6 +54,7 @@ return {
         jsonls = {},
         marksman = {},
         pylsp = {},
+        rust_analyzer = {},
         sqlls = {},
         lua_ls = {
           settings = {
@@ -76,8 +77,7 @@ return {
           require("typescript").setup({ server = opts })
           return true
         end,
-        ["*"] = function(_, _)
-        end,
+        ["*"] = function(_, _) end,
       },
     },
     config = function(_, opts)
@@ -161,6 +161,11 @@ return {
           --   end,
           --   filetypes = { "markdown" },
           -- }),
+          nls.builtins.formatting.rustfmt.with({
+            condition = function()
+              return vim.fn.executable("rustfmt") > 0
+            end,
+          }),
 
           --- diagnostics
           -- nls.builtins.diagnostics.editorconfig_checker.with({
