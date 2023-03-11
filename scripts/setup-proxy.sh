@@ -1,77 +1,57 @@
 #!/bin/bash
 
-yes_or_no_select() {
-  local answer
-  read -rp "(Y/n): " answer
-  case "${answer}" in
-  [nN]*)
-    return 1
-    ;;
-  *)
-    return 0
-    ;;
-  esac
-}
-
 main() {
   set -euo pipefail
-  echo '==> Setup proxy ...'
 
-  local url port user password user_auth_yn collect_yn
+  local url port user password yn
+
+  echo '==> Setup proxy ...'
   echo "http://<URL>:<Port>"
   read -rp "URL: " url
   read -rp "Port: " port
   echo ''
 
-  echo -n "==> User Authentication? "
-  yes_or_no_select
-  user_auth_yn=$?
+  echo "==> User Authentication? (Press enter to skip)"
+  read -rp "User: " user
+  [ -n "${user}" ] &&
+    read -rsp "Password" password
+  echo -e "\n"
 
-  case "$user_auth_yn" in
-  0)
-    read -rp "User: " user
-    read -rsp "Password: " password
-    echo ''
-    ;;
-  1) ;;
-  *)
+  read -rp "Collect? (Y/n)"
+  case "$yn" in
+  [nN]*)
     echo 'abort.'
-    exit 1
-    ;;
-  esac
-  echo ''
-
-  echo "==> Proxy setting entered"
-  echo "http://${url}:${port}"
-  [ "${user_auth_yn}" == '0' ] &&
-    echo -e "User: ${user}\nPassword: ********\n"
-
-  echo -n "Collect?"
-  yes_or_no_select
-  collect_yn=$?
-
-  case "${collect_yn}" in
-  0) ;;
-  *)
-    echo "abort."
     exit 0
     ;;
+  *) ;;
   esac
   echo ''
 
   # wget
   echo "==> ~/.wgetrc"
-  echo "http_proxy=http://${url}:${port}" >>"${HOME}/.wgetrc"
-  if [ "${user_auth_yn}" == '0' ]; then
-    echo "proxy_user=${user}" >>"${HOME}/.wgetrc"
-    echo "proxy_password=${password}" >>"${HOME}/.wgetrc"
+  local wgetrc="${HOME}/.wgetrc"
+  touch "${wgetrc}"
+  if grep -q 'http_proxy=' "${wgetrc}"; then
+    echo "Already set up."
+  else
+    echo "http_proxy=http://${url}:${port}" >>"${HOME}/.wgetrc"
+    [ -n "${user}" ] && (
+      echo "proxy_user=${user}"
+      echo "proxy_password=${password}"
+    ) >>"${wgetrc}"
   fi
 
   # curl
   echo "==> ~/.curlrc"
-  echo "proxy=http://${url}:${port}" >>"${HOME}/.curlrc"
-  if [ "${user_auth_yn}" == '0' ]; then
-    echo "proxy-user=${user}:${password}" >>"${HOME}/.curlrc"
+  local curlrc="${HOME}/.curlrc"
+  touch "${curlrc}"
+  if grep -q 'proxy=' "${curlrc}"; then
+    echo "Already set up."
+  else
+    echo "proxy=http://${url}:${port}" >>"${curlrc}"
+    [ -n "${user}" ] &&
+      echo "proxy-user=${user}:${password}" >>"${curlrc}"
+
   fi
 
   # bash
@@ -84,12 +64,20 @@ main() {
     bashrc="${HOME}/.bashrc"
   fi
 
-  if [ "${user_auth_yn}" == '0' ]; then
-    echo "http_proxy=http://${user}:${password}@${url}:${port}" >>"${bashrc}"
-    echo "https_proxy=http://${user}:${password}@${url}:${port}" >>"${bashrc}"
+  if grep -q 'http_proxy=' "${bashrc}"; then
+    echo 'Already set up.'
   else
-    echo "http_proxy=http://${url}:${port}" >>"${bashrc}"
-    echo "https_proxy=http://${url}:${port}" >>"${bashrc}"
+    if [ -n "${user}" ]; then
+      (
+        echo "http_proxy=http://${user}:${password}@${url}:${port}"
+        echo "https_proxy=http://${user}:${password}@${url}:${port}"
+      ) >>"${bashrc}"
+    else
+      (
+        echo "http_proxy=http://${url}:${port}"
+        echo "https_proxy=http://${url}:${port}"
+      ) >>"${bashrc}"
+    fi
   fi
 
   # zsh
@@ -102,27 +90,58 @@ main() {
     zshrc="${HOME}/.zshrc"
   fi
 
-  if [ "${user_auth_yn}" == '0' ]; then
-    echo "http_proxy=http://${user}:${password}@${url}:${port}" >>"${zshrc}"
-    echo "https_proxy=http://${user}:${password}@${url}:${port}" >>"${zshrc}"
+  if grep -q 'http_proxy=' "${zshrc}"; then
+    echo 'Already set up.'
   else
-    echo "http_proxy=http://${url}:${port}" >>"${zshrc}"
-    echo "https_proxy=http://${url}:${port}" >>"${zshrc}"
+    if [ -n "${user}" ]; then
+      (
+        echo "http_proxy=http://${user}:${password}@${url}:${port}"
+        echo "https_proxy=http://${user}:${password}@${url}:${port}"
+      ) >>"${zshrc}"
+    else
+      (
+        echo "http_proxy=http://${url}:${port}"
+        echo "https_proxy=http://${url}:${port}"
+      ) >>"${zshrc}"
+    fi
   fi
 
   # apt
   echo "==> /etc/apt/apt.conf.d/proxy.conf"
-  local apt_proxy
-  apt_proxy="${HOME}/proxy.conf"
-  touch "${apt_proxy}"
-  if [ "${user_auth_yn}" == '0' ]; then
-    echo "Acquire::http::Proxy http://${user}:${password}@${url}:${port}" >>"${apt_proxy}"
-    echo "Acquire::http::Proxy http://${user}:${password}@${url}:${port}" >>"${apt_proxy}"
+  local source_apt_proxy dest_apt_proxy
+  source_apt_proxy="${HOME}/proxy.conf"
+  dest_apt_proxy="/etc/apt/apt.conf.d/proxy.conf"
+  if [ -f "${dest_apt_proxy}" ]; then
+    echo 'Already set up.'
   else
-    echo "Acquire::http::Proxy http://${url}:${port}" >>"${apt_proxy}"
-    echo "Acquire::http::Proxy http://${url}:${port}" >>"${apt_proxy}"
+    touch "${source_apt_proxy}"
+    if [ -n "${user}" ]; then
+      (
+        echo "Acquire::http::Proxy http://${user}:${password}@${url}:${port}"
+        echo "Acquire::http::Proxy http://${user}:${password}@${url}:${port}"
+      ) >>"${source_apt_proxy}"
+    else
+      (
+        echo "Acquire::http::Proxy http://${url}:${port}"
+        echo "Acquire::http::Proxy http://${url}:${port}"
+      ) >>"${source_apt_proxy}"
+    fi
   fi
-  sudo mv "${apt_proxy}" /etc/apt/apt.conf.d/
+  sudo mv "${source_apt_proxy}" "${dest_apt_proxy}"
+
+  # git
+  echo "==> .gitconfig"
+  if grep -q 'proxy' "${HOME}/.gitconfig"; then
+    echo 'Already set up.'
+  else
+    if [ -n "${user}" ]; then
+      git config --global http.proxy "http://${user}:${password}@${url}:${port}"
+      git config --global https.proxy "http://${user}:${password}@${url}:${port}"
+    else
+      git config --global http.proxy "http://${url}:${port}"
+      git config --global https.proxy "http://${url}:${port}"
+    fi
+  fi
 }
 
 main
