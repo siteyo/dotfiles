@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 # Load .bashrc
 if [ -f ~/.bashrc ]; then
-  source ~/.bashrc
+  source "${HOME}/.bashrc"
 fi
 
 if [ -f ~/.bash_profile.local ]; then
-  source ~/.bash_profile.local
+  source "${HOME}/.bash_profile.local"
 fi

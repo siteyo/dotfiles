@@ -26,7 +26,7 @@ indent_size = 4
 [.zshrc]
 indent_size = 2
 
-[.bashrc]
+[{.bashrc,.bash_profile,.bashrc.local,.bash_profile.local}]
 indent_size = 2
 
 [.gitconfig]
