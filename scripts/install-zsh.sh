@@ -21,7 +21,7 @@ main() {
     mv -v "${HOME}/.zshrc" "${dotfiles_dir}/bak"
 
   # Create symlinks
-  ln -sfv "${dotfiles_dir}/.zshenv" "${HOME}/.zshenv"
+  ln -sfv "${dotfiles_dir}/etc/.zshenv" "${HOME}/.zshenv"
 
   # Install zsh
   if uname -a | grep -q microsoft; then

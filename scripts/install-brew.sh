@@ -10,9 +10,9 @@ main() {
   dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
 
   if [ "$(uname)" == 'Darwin' ]; then
-    ln -sfv "${dotfiles_dir}/Brewfile-Darwin" "${HOME}/.Brewfile"
+    ln -sfv "${dotfiles_dir}/etc/Brewfile-Darwin" "${HOME}/.Brewfile"
   elif [ "$(uname)" == 'Linux' ]; then
-    ln -sfv "${dotfiles_dir}/Brewfile-Linux" "${HOME}/.Brewfile"
+    ln -sfv "${dotfiles_dir}/etc/Brewfile-Linux" "${HOME}/.Brewfile"
     sudo apt install build-essential procps curl file git
   fi
 
