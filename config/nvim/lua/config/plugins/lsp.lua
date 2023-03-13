@@ -166,6 +166,18 @@ return {
               return vim.fn.executable("rustfmt") > 0
             end,
           }),
+          nls.builtins.formatting.black.with({
+            condition = function()
+              return vim.fn.executable(".venv/bin/black") > 0
+            end,
+            only_local = ".venv/bin",
+          }),
+          nls.builtins.formatting.isort.with({
+            condition = function()
+              return vim.fn.executable(".venv/bin/isort") > 0
+            end,
+            only_local = ".venv/bin",
+          }),
 
           --- diagnostics
           -- nls.builtins.diagnostics.editorconfig_checker.with({
@@ -212,6 +224,18 @@ return {
             condition = function()
               return vim.fn.executable("selene") > 0
             end,
+          }),
+          nls.builtins.diagnostics.flake8.with({
+            condition = function()
+              return vim.fn.executable(".venv/bin/flake8") > 0
+            end,
+            only_local = ".venv/bin",
+          }),
+          nls.builtins.diagnostics.mypy.with({
+            condition = function()
+              return vim.fn.executable(".venv/bin/mypy") > 0
+            end,
+            only_local = ".venv/bin",
           }),
         },
       }

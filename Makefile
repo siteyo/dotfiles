@@ -30,8 +30,8 @@ uninstall: ## Uninstall all dotfiles.
 clean: uninstall ## Remove dotfiles data(~/.local, ~/.cache, and so on).
 	@bash $(DOTPATH)/scripts/clean.sh
 
-.PHONY: setup
-setup: ## Setup git config
+.PHONY: git
+git: ## Setup git config
 	@git config --global user.name "Saito Yuki"
 	@git config --global user.email "phicyanoc@gmial.com"
 

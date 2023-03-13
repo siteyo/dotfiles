@@ -19,7 +19,7 @@ install_rust() {
 }
 
 install_asdf_plugins() {
-  echop '==> Install asdf plugins ...'
+  echo '==> Install asdf plugins ...'
   if ! command -v asdf; then
     echo 'asdf is not installed.'
   fi
@@ -41,6 +41,8 @@ install_asdf_plugins() {
 }
 
 main() {
+  set -euo pipefail
+
   while [ $# -gt 0 ]; do
     case ${1} in
     --poetry) install_poetry ;;
