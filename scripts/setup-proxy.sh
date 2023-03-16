@@ -31,7 +31,12 @@ main() {
   echo "==> ~/.wgetrc"
   local wgetrc="${HOME}/.wgetrc"
   touch "${wgetrc}"
-  if grep -q 'http_proxy=' "${wgetrc}"; then
+  if grep -qiE '^\s*#\s*http_proxy=' "${wgetrc}"; then
+    echo 'Environment variable was commented out.'
+    echo 'Uncomment them.'
+    sed -i -e '/^\s*#\s*http_proxy/s/#\s*//' "${wgetrc}"
+    sed -i -e '/^\s*#\s*proxy_/s/#\s*//' "${wgetrc}"
+  elif grep -qiE '^\s*http_proxy=' "${wgetrc}"; then
     echo "Already set up."
   else
     echo "http_proxy=http://${url}:${port}" >>"${HOME}/.wgetrc"
@@ -45,7 +50,11 @@ main() {
   echo "==> ~/.curlrc"
   local curlrc="${HOME}/.curlrc"
   touch "${curlrc}"
-  if grep -q 'proxy=' "${curlrc}"; then
+  if grep -qiE '^s*#\s*proxy=' "${curlrc}"; then
+    echo 'Environment variable was commented out.'
+    echo 'Uncomment them.'
+    sed -i -e '/^\s*#\s*proxy=/s/#\s*//' "${curlrc}"
+  elif grep -q 'proxy=' "${curlrc}"; then
     echo "Already set up."
   else
     echo "proxy=http://${url}:${port}" >>"${curlrc}"
@@ -64,18 +73,22 @@ main() {
     bashrc="${HOME}/.bashrc"
   fi
 
-  if grep -q 'http_proxy=' "${bashrc}"; then
+  if grep -qiE '^\s*#\s*export\shttp_proxy' "${bashrc}"; then
+    echo 'Environment variable was commented out.'
+    echo 'Uncomment them.'
+    sed -i -e '/^\s*#\s*export\shttp[s]*_proxy/s/#\s*//' "${bashrc}"
+  elif grep -qiE '^\s*http_proxy=' "${bashrc}"; then
     echo 'Already set up.'
   else
     if [ -n "${user}" ]; then
       (
-        echo "http_proxy=http://${user}:${password}@${url}:${port}"
-        echo "https_proxy=http://${user}:${password}@${url}:${port}"
+        echo "export http_proxy=http://${user}:${password}@${url}:${port}"
+        echo "export https_proxy=http://${user}:${password}@${url}:${port}"
       ) >>"${bashrc}"
     else
       (
-        echo "http_proxy=http://${url}:${port}"
-        echo "https_proxy=http://${url}:${port}"
+        echo "export http_proxy=http://${url}:${port}"
+        echo "export https_proxy=http://${url}:${port}"
       ) >>"${bashrc}"
     fi
   fi
@@ -90,18 +103,22 @@ main() {
     zshrc="${HOME}/.zshrc"
   fi
 
-  if grep -q 'http_proxy=' "${zshrc}"; then
+  if grep -qiE '^\s*#\s*export\shttp_proxy' "${zshrc}"; then
+    echo 'Environment variable was commented out.'
+    echo 'Uncomment them.'
+    sed -i -e '/^\s*#\s*export\shttp[s]*_proxy/s/#\s*//' "${zshrc}"
+  elif grep -qiE '^\s*http_proxy=' "${zshrc}"; then
     echo 'Already set up.'
   else
     if [ -n "${user}" ]; then
       (
-        echo "http_proxy=http://${user}:${password}@${url}:${port}"
-        echo "https_proxy=http://${user}:${password}@${url}:${port}"
+        echo "export http_proxy=http://${user}:${password}@${url}:${port}"
+        echo "export https_proxy=http://${user}:${password}@${url}:${port}"
       ) >>"${zshrc}"
     else
       (
-        echo "http_proxy=http://${url}:${port}"
-        echo "https_proxy=http://${url}:${port}"
+        echo "export http_proxy=http://${url}:${port}"
+        echo "export https_proxy=http://${url}:${port}"
       ) >>"${zshrc}"
     fi
   fi
@@ -126,8 +143,8 @@ main() {
         echo "Acquire::http::Proxy http://${url}:${port}"
       ) >>"${source_apt_proxy}"
     fi
+    sudo mv "${source_apt_proxy}" "${dest_apt_proxy}"
   fi
-  sudo mv "${source_apt_proxy}" "${dest_apt_proxy}"
 
   # git
   echo "==> .gitconfig"
