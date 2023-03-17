@@ -62,7 +62,7 @@ return {
     "HackGenNerd Console",
   }),
   default_prog = default_prog,
-  window_background_opacity = 0.9,
+  window_background_opacity = 0.95,
   color_scheme = "iceberg-dark",
   launch_menu = launch_menu,
   leader = { key = "i", mods = "CTRL", timeout_milliseconds = 1000 },
@@ -70,4 +70,5 @@ return {
   use_ime = true,
   hide_tab_bar_if_only_one_tab = true,
   adjust_window_size_when_changing_font_size = false,
+  window_decorations = "RESIZE",
 }

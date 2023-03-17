@@ -14,10 +14,10 @@ main() {
   echo "==> User Authentication? (Press enter to skip)"
   read -rp "User: " user
   [ -n "${user}" ] &&
-    read -rsp "Password" password
+    read -rsp "Password: " password
   echo -e "\n"
 
-  read -rp "Collect? (Y/n)"
+  read -rp "Collect? (Y/n)" yn
   case "$yn" in
   [nN]*)
     echo 'abort.'
@@ -77,7 +77,7 @@ main() {
     echo 'Environment variable was commented out.'
     echo 'Uncomment them.'
     sed -i -e '/^\s*#\s*export\shttp[s]*_proxy/s/#\s*//' "${bashrc}"
-  elif grep -qiE '^\s*http_proxy=' "${bashrc}"; then
+  elif grep -qiE '^\s*export\shttp_proxy=' "${bashrc}"; then
     echo 'Already set up.'
   else
     if [ -n "${user}" ]; then
@@ -107,7 +107,7 @@ main() {
     echo 'Environment variable was commented out.'
     echo 'Uncomment them.'
     sed -i -e '/^\s*#\s*export\shttp[s]*_proxy/s/#\s*//' "${zshrc}"
-  elif grep -qiE '^\s*http_proxy=' "${zshrc}"; then
+  elif grep -qiE '^\s*export\shttp_proxy=' "${zshrc}"; then
     echo 'Already set up.'
   else
     if [ -n "${user}" ]; then
