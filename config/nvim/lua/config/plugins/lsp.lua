@@ -56,6 +56,7 @@ return {
         pylsp = {},
         rust_analyzer = {},
         sqlls = {},
+        tsserver = {},
         lua_ls = {
           settings = {
             Lua = {
