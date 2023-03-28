@@ -20,7 +20,7 @@
     rh = reset --hard
     rpo = remote prune origin
     rs = reset --soft
-    s = status
+    s = status -s
 [core]
     editor = nvim -c \"set fenc=utf-8\"
     pager = delta
