@@ -38,7 +38,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # Completion
 # --------------------------------------------------------------------
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 autoload -Uz compinit
 compinit
