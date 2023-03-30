@@ -30,6 +30,6 @@ github = 'romkatv/powerlevel10k'
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 
-[plugins.docker-completion]
-remote = 'https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker'
-apply = ["fpath"]
+# [plugins.docker-completion]
+# remote = 'https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker'
+# apply = ["fpath"]
