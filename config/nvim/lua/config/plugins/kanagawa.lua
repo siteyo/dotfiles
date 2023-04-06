@@ -13,7 +13,7 @@ function M.config()
     keywordStyle = { italic = false },
     statementStyle = { bold = true },
     typeStyle = {},
-    transparent = false,
+    transparent = true,
     dimInactive = false,
     terminalColors = true,
     theme = "wave",
