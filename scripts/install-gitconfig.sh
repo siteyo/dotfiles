@@ -23,19 +23,6 @@ main() {
   git config --global include.path "${dotfiles_dir}/etc/.gitconfig"
   git config --global credential.helper store
 
-  # echo "Do you want to add username and email address to the .gitconfig?"
-  # read -rp "(y/N): " yn
-  # case "$yn" in
-  # [yY]*) ;;
-  # *)
-  #     echo "abort."
-  #     exit
-  #     ;;
-  # esac
-  #
-  # git config --global user.email "phicyanoc@gmail.com"
-  # git config --global user.name "Saito Yuki"
-
   echo ''
 }
 
