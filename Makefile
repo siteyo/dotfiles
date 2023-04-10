@@ -33,7 +33,7 @@ clean: uninstall ## Remove dotfiles data(~/.local, ~/.cache, and so on).
 .PHONY: git
 git: ## Setup git config
 	@git config --global user.name "Saito Yuki"
-	@git config --global user.email "phicyanoc@gmial.com"
+	@git config --global user.email "phicyanoc@gmail.com"
 
 .PHONY: proxy
 proxy: ## Setup proxy
