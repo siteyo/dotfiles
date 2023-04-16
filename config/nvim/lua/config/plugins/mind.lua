@@ -14,4 +14,5 @@ return {
     vim.keymap.set("n", "[Mind]r", "<Cmd>MindReloadState<CR>")
   end,
   keys = "[Mind]",
+  enabled = false,
 }

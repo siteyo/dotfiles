@@ -121,8 +121,8 @@ if [ -d "${HOME}/.cargo" ]; then
 fi
 
 ## asdf
-[ -f `brew --prefix`/opt/asdf/libexec/asdf.sh ] &&
-  source `brew --prefix`/opt/asdf/libexec/asdf.sh
+[ -f $(brew --prefix asdf)/libexec/asdf.sh ] &&
+  source $(brew --prefix asdf)/libexec/asdf.sh
 
 ## Starship
 # eval "$(starship init zsh)"

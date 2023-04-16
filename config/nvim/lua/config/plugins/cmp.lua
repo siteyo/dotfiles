@@ -72,36 +72,36 @@ function M.config()
     },
   })
 
-  cmp.setup.cmdline(":", {
-    mapping = {
-      ["<C-n>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        else
-          fallback()
-        end
-      end, { "c" }),
-      ["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        else
-          fallback()
-        end
-      end, { "c" }),
-      ["<C-p>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        else
-          fallback()
-        end
-      end, { "c" }),
-    },
-    sources = {
-      { name = "path" },
-      { name = "cmdline" },
-      { name = "cmdline_history" },
-    },
-  })
+  -- cmp.setup.cmdline(":", {
+  --   mapping = {
+  --     ["<C-n>"] = cmp.mapping(function(fallback)
+  --       if cmp.visible() then
+  --         cmp.select_next_item()
+  --       else
+  --         fallback()
+  --       end
+  --     end, { "c" }),
+  --     ["<Tab>"] = cmp.mapping(function(fallback)
+  --       if cmp.visible() then
+  --         cmp.select_next_item()
+  --       else
+  --         fallback()
+  --       end
+  --     end, { "c" }),
+  --     ["<C-p>"] = cmp.mapping(function(fallback)
+  --       if cmp.visible() then
+  --         cmp.select_prev_item()
+  --       else
+  --         fallback()
+  --       end
+  --     end, { "c" }),
+  --   },
+  --   sources = {
+  --     { name = "path" },
+  --     { name = "cmdline" },
+  --     { name = "cmdline_history" },
+  --   },
+  -- })
 end
 
 return M

@@ -38,7 +38,7 @@ return {
   { "windwp/nvim-autopairs", config = true, event = "BufReadPost" },
   { "gpanders/editorconfig.nvim", event = "BufReadPost" },
   { "machakann/vim-highlightedyank", event = "BufReadPost" },
-  { "sbdchd/neoformat", cmd = "Neoformat" },
+  -- { "sbdchd/neoformat", cmd = "Neoformat" },
 
   ------------------------------------------------------------
   --- Interface
