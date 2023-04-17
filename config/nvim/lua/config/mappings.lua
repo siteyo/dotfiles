@@ -79,4 +79,4 @@ vim.api.nvim_set_keymap("n", "<Space>l", "[Lsp]", {})
 -- vim.api.nvim_set_keymap("n", "<Space>m", "[Mind]", {})
 
 vim.api.nvim_set_keymap("n", "[Neorg]", "<Nop>", prefix_opts)
-vim.api.nvim_set_keymap("n", "<Space>o", "[Mind]", {})
+vim.api.nvim_set_keymap("n", "<Space>o", "[Neorg]", {})

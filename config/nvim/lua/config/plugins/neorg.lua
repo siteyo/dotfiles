@@ -10,6 +10,8 @@ return {
           workspaces = {
             notes = "~/notes",
           },
+          default_workspace = "notes",
+          index = "index.norg",
         },
       },
     },
@@ -17,5 +19,18 @@ return {
   dependencies = { { "nvim-lua/plenary.nvim" } },
   keys = "[Neorg]",
   ft = "norg",
-  config = function() end,
+  cmd = "Neorg",
+  config = function(_, opts)
+    --- config
+    require("neorg").setup(opts)
+    --- keymaps
+    -- journal
+    vim.keymap.set("n", "[Neorg]t", "<Cmd>Neorg journal toc open<CR>")
+    vim.keymap.set("n", "[Neorg]n", "<Cmd>Neorg journal tomorrow<CR>")
+    vim.keymap.set("n", "[Neorg]p", "<Cmd>Neorg journal yesterday<CR>")
+    vim.keymap.set("n", "[Neorg]j", "<Cmd>Neorg journal today<CR>")
+
+    vim.keymap.set("n", "[Neorg]i", "<Cmd>Neorg index<CR>")
+    vim.keymap.set("n", "[Neorg]o", "<Cmd>Neorg toc<CR>")
+  end,
 }
