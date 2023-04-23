@@ -38,7 +38,7 @@ return {
   { "windwp/nvim-autopairs", config = true, event = "BufReadPost" },
   { "gpanders/editorconfig.nvim", event = "BufReadPost" },
   { "machakann/vim-highlightedyank", event = "BufReadPost" },
-  -- { "sbdchd/neoformat", cmd = "Neoformat" },
+  { "uga-rosa/ccc.nvim", config = true, cmd = "CccPick" },
 
   ------------------------------------------------------------
   --- Interface
@@ -69,4 +69,5 @@ return {
     end,
     ft = "markdown",
   },
+  -- { "folke/which-key.nvim", config = true, cmd = "WhichKey" },
 }
