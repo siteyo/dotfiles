@@ -74,9 +74,6 @@ vim.api.nvim_set_keymap("n", "<Space>g", "[Git]", {})
 -- Lsp
 vim.api.nvim_set_keymap("n", "[Lsp]", "<Nop>", prefix_opts)
 vim.api.nvim_set_keymap("n", "<Space>l", "[Lsp]", {})
--- Mind
--- vim.api.nvim_set_keymap("n", "[Mind]", "<Nop>", prefix_opts)
--- vim.api.nvim_set_keymap("n", "<Space>m", "[Mind]", {})
-
--- vim.api.nvim_set_keymap("n", "[Neorg]", "<Nop>", prefix_opts)
--- vim.api.nvim_set_keymap("n", "<Space>o", "[Neorg]", {})
+-- Neorg
+vim.api.nvim_set_keymap("n", "[Neorg]", "<Nop>", prefix_opts)
+vim.api.nvim_set_keymap("n", "<Space>o", "[Neorg]", {})

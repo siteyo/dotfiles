@@ -23,4 +23,5 @@ return {
       org_default_notes_file = "~/org/refile.org",
     })
   end,
+  enabled = true,
 }
