@@ -12,6 +12,7 @@ local M = {
     -- "hrsh7th/cmp-vsnip",
     "hrsh7th/cmp-nvim-lua",
     "saadparwaiz1/cmp_luasnip",
+    "nvim-orgmode/orgmode",
   },
 }
 
@@ -52,6 +53,7 @@ function M.config()
       { name = "buffer" },
       { name = "path" },
       { name = "emoji" },
+      { name = "orgmode" },
     }),
     formatting = {
       format = require("lspkind").cmp_format({

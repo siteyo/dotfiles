@@ -2,6 +2,7 @@ local M = {
   "phaazon/hop.nvim",
   branch = "v2",
   event = "BufReadPost",
+  -- disabled = true,
 }
 
 function M.config()

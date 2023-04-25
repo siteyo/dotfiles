@@ -33,4 +33,5 @@ return {
     vim.keymap.set("n", "[Neorg]i", "<Cmd>Neorg index<CR>")
     vim.keymap.set("n", "[Neorg]o", "<Cmd>Neorg toc<CR>")
   end,
+  enabled = false,
 }
