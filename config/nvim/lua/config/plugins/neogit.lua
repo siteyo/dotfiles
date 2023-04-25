@@ -4,7 +4,7 @@ local M = {
     "sindrets/diffview.nvim",
   },
   keys = "[Git]",
-  enabled = false,
+  enabled = true,
 }
 
 M.config = function()
