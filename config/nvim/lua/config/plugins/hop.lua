@@ -2,7 +2,6 @@ local M = {
   "phaazon/hop.nvim",
   branch = "v2",
   event = "BufReadPost",
-  -- disabled = true,
 }
 
 function M.config()
@@ -37,14 +36,14 @@ function M.config()
   -- j: forward
   vim.keymap.set({ "n", "v" }, "fj", function()
     hop.hint_vertical({
-      direction = directions.AFTER_CURSOR,
+      -- direction = directions.AFTER_CURSOR,
     })
   end, { remap = true })
 
   -- k: backward
   vim.keymap.set({ "n", "v" }, "fk", function()
     hop.hint_vertical({
-      direction = directions.BEFORE_CURSOR,
+      -- direction = directions.BEFORE_CURSOR,
     })
   end, { remap = true })
 
@@ -81,11 +80,11 @@ function M.config()
   end, { remap = true })
 
   -- s: char2v
-  vim.keymap.set({ "n", "v" }, "fs", function()
-    hop.hint_char2({
-      multi_windows = true,
-    })
-  end, { remap = true })
+  -- vim.keymap.set({ "n", "v" }, "fs", function()
+  --   hop.hint_char2({
+  --     multi_windows = true,
+  --   })
+  -- end, { remap = true })
 
   -- p: pattern
   vim.keymap.set({ "n", "v" }, "fp", function()

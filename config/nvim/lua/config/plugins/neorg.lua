@@ -14,6 +14,10 @@ return {
           index = "index.norg",
         },
       },
+      ["core.completion"] = {
+        config = { engine = "nvim-cmp" },
+      },
+      ["core.integrations.nvim-cmp"] = {},
     },
   },
   dependencies = { { "nvim-lua/plenary.nvim" } },
