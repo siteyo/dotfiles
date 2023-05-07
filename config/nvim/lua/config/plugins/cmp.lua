@@ -53,6 +53,7 @@ function M.config()
       { name = "path" },
       { name = "emoji", max_item_count = 10 },
       { name = "neorg" },
+      { name = "orgmode" },
     }),
     formatting = {
       format = require("lspkind").cmp_format({

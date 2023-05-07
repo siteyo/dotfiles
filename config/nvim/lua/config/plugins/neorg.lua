@@ -11,7 +11,7 @@ return {
             notes = "~/notes",
           },
           default_workspace = "notes",
-          index = "index.norg",
+          index = "inbox.norg",
         },
       },
       ["core.completion"] = {
@@ -30,13 +30,13 @@ return {
     require("neorg").setup(opts)
     --- keymaps
     -- journal
-    vim.keymap.set("n", "[Neorg]t", "<Cmd>Neorg journal toc open<CR>")
-    vim.keymap.set("n", "[Neorg]n", "<Cmd>Neorg journal tomorrow<CR>")
-    vim.keymap.set("n", "[Neorg]p", "<Cmd>Neorg journal yesterday<CR>")
-    vim.keymap.set("n", "[Neorg]j", "<Cmd>Neorg journal today<CR>")
-
-    vim.keymap.set("n", "[Neorg]i", "<Cmd>Neorg index<CR>")
-    vim.keymap.set("n", "[Neorg]o", "<Cmd>Neorg toc<CR>")
+    -- vim.keymap.set("n", "[Neorg]t", "<Cmd>Neorg journal toc open<CR>")
+    -- vim.keymap.set("n", "[Neorg]n", "<Cmd>Neorg journal tomorrow<CR>")
+    -- vim.keymap.set("n", "[Neorg]p", "<Cmd>Neorg journal yesterday<CR>")
+    -- vim.keymap.set("n", "[Neorg]j", "<Cmd>Neorg journal today<CR>")
+    --
+    -- vim.keymap.set("n", "[Neorg]i", "<Cmd>Neorg index<CR>")
+    -- vim.keymap.set("n", "[Neorg]o", "<Cmd>Neorg toc<CR>")
   end,
   enabled = true,
 }
