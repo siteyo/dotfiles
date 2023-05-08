@@ -8,7 +8,7 @@ return {
       ["core.dirman"] = { -- Manages Neorg workspaces
         config = {
           workspaces = {
-            notes = "~/notes",
+            notes = "~/notes/neorg",
           },
           default_workspace = "notes",
           index = "inbox.norg",
@@ -30,12 +30,13 @@ return {
     require("neorg").setup(opts)
     --- keymaps
     -- journal
-    -- vim.keymap.set("n", "[Neorg]t", "<Cmd>Neorg journal toc open<CR>")
-    -- vim.keymap.set("n", "[Neorg]n", "<Cmd>Neorg journal tomorrow<CR>")
-    -- vim.keymap.set("n", "[Neorg]p", "<Cmd>Neorg journal yesterday<CR>")
-    -- vim.keymap.set("n", "[Neorg]j", "<Cmd>Neorg journal today<CR>")
+    vim.keymap.set("n", "[Neorg]t", "<Cmd>Neorg journal toc open<CR>")
+    vim.keymap.set("n", "[Neorg]n", "<Cmd>Neorg journal tomorrow<CR>")
+    vim.keymap.set("n", "[Neorg]p", "<Cmd>Neorg journal yesterday<CR>")
+    vim.keymap.set("n", "[Neorg]j", "<Cmd>Neorg journal today<CR>")
+    vim.keymap.set("n", "[Neorg]o", "<Cmd>Neorg journal custom<CR>")
     --
-    -- vim.keymap.set("n", "[Neorg]i", "<Cmd>Neorg index<CR>")
+    vim.keymap.set("n", "[Neorg]i", "<Cmd>Neorg inject-metadata<CR>")
     -- vim.keymap.set("n", "[Neorg]o", "<Cmd>Neorg toc<CR>")
   end,
   enabled = true,
