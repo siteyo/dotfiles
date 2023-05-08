@@ -21,7 +21,17 @@ return {
     require("orgmode").setup({
       org_agenda_files = { "~/org/*" },
       org_default_notes_file = "~/org/inbox.org",
-      org_todo_keywords = { "TODO", "TRASH", "NEXT", "WATING", "PROJECT", "|", "DONE", "DELEGATED" },
+      org_todo_keywords = {
+        "TODO",
+        "NEXT",
+        "TRASH",
+        "WAITING",
+        "PROJECT",
+        "|",
+        "DONE",
+        "CANCELED",
+        "DELEGATED",
+      },
     })
   end,
   enabled = true,
