@@ -12,6 +12,7 @@ local M = {
     -- "hrsh7th/cmp-vsnip",
     "hrsh7th/cmp-nvim-lua",
     "saadparwaiz1/cmp_luasnip",
+    "rinx/cmp-skkeleton",
   },
 }
 
@@ -54,6 +55,7 @@ function M.config()
       { name = "emoji", max_item_count = 10 },
       { name = "neorg" },
       { name = "orgmode" },
+      { name = "skkeleton" },
     }),
     formatting = {
       format = require("lspkind").cmp_format({
@@ -63,7 +65,7 @@ function M.config()
       }),
     },
     experimental = {
-      ghost_text = true,
+      ghost_text = false,
     },
   })
 

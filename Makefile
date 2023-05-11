@@ -35,6 +35,10 @@ git: ## Setup git config
 	@git config --global user.name "Saito Yuki"
 	@git config --global user.email "phicyanoc@gmail.com"
 
+.PHONY: skk
+skk: ## Setup skk
+	@bash $(DOTPATH)/scripts/install-skk-dict.sh
+
 .PHONY: proxy
 proxy: ## Setup proxy
 	@bash $(DOTPATH)/scripts/setup-proxy.sh
