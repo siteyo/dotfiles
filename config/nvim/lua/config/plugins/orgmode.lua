@@ -32,6 +32,14 @@ return {
         "CANCELED",
         "DELEGATED",
       },
+      org_todo_keyword_faces = {
+        TODO = ":foreground #db4b4b",
+        NEXT = ":foreground #e0af68",
+        WAITING = ":foreground #7dcfff",
+        PROJECT = ":foreground #9d7cd8",
+        TRASH = ":foreground #545c7e",
+        CANCELED = ":foreground #545c7e",
+      },
     })
   end,
   enabled = true,
