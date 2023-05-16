@@ -17,6 +17,7 @@ local M = {
         \ '~/.local/share/skk/SKK-JISYO.jinmei',
         \ ]
         \ })
+      call skkeleton#register_keymap('henkan', '<CR>', 'kakutei')
     ]])
   end,
 }

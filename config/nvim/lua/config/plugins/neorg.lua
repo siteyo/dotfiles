@@ -14,6 +14,8 @@ return {
           index = "inbox.norg",
         },
       },
+      ["core.export"] = {},
+      ["core.export.markdown"] = {},
       ["core.completion"] = {
         config = { engine = "nvim-cmp" },
       },
