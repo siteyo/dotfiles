@@ -58,6 +58,8 @@ function M.config()
       -- Actions
       map("n", "[Git]a", "<cmd>Gitsigns stage_hunk<CR>")
       map("v", "[Git]a", "<cmd>Gitsigns stage_hunk<CR>")
+      map("n", "[Git]e", "<cmd>Gitsigns reset_hunk<CR>")
+      map("v", "[Git]e", "<cmd>Gitsigns reset_hunk<CR>")
       map("n", "[Git]b", "<cmd>Gitsigns blame_line<CR>")
       map("v", "[Git]b", "<cmd>Gitsigns blame_line<CR>")
       map("n", "[Git]u", "<cmd>Gitsigns undo_stage_hunk<CR>")
