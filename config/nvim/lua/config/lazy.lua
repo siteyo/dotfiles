@@ -17,4 +17,7 @@ require("lazy").setup("config.plugins", {
     enabled = true,
     frequency = 10800,
   },
+  dev = {
+    path = "~/.nvim"
+  }
 })

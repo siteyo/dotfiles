@@ -10,7 +10,8 @@ local M = {
     vim.keymap.set("n", "[Git]la", "<Cmd>GinLog --all --graph --oneline<CR>")
     vim.keymap.set("n", "[Git]ll", "<Cmd>GinLog --graph --oneline<CR>")
     vim.keymap.set("n", "[Git]c", "<Cmd>Gin commit<CR>")
-  end
+  end,
+  enabled = false,
 }
 
 return M
