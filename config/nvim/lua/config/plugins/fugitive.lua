@@ -2,6 +2,7 @@ local M = {
   "tpope/vim-fugitive",
   keys = "[Git]",
   enabled = true,
+  cmd = { "Git", "G" },
 }
 
 M.config = function()

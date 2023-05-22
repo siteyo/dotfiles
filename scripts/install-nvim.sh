@@ -11,7 +11,7 @@ main() {
   mkdir -pv "${HOME}/.nvim/undo"
 
   # Create a local setting file
-  touch "${HOME}/.nvim/local_init.lua"
+  # touch "${HOME}/.nvim/local_init.lua"
 
   # for Telescope frecency
   if uname -a | grep -q -e 'microsoft' -e 'Ubuntu'; then
