@@ -43,6 +43,45 @@ return {
           TRASH = ":foreground #545c7e",
           CANCELED = ":foreground #545c7e",
         },
+        org_capture_templates = {
+          t = "Todo",
+          ti = {
+            description = "Inbox",
+            template = "* TODO %?\n %u",
+            target = "~/notes/org/inbox.org",
+            headline = "Todo",
+          },
+          tp = {
+            description = "Project",
+            template = "* TODO %?\n %u",
+            target = "~/notes/org/project.org",
+            headline = "Todo",
+          },
+          l = "Plan",
+          li = {
+            description = "Inbox",
+            template = "* PLAN %?\n %u",
+            target = "~/notes/org/inbox.org",
+            headline = "Plan",
+          },
+          lp = {
+            description = "Project",
+            template = "* PLAN %?\n %u",
+            target = "~/notes/org/project.org",
+            headline = "Plan",
+          },
+          s = "Starter",
+          si = {
+            description = "Inbox template",
+            template = "* Todo\n\n* Plan",
+            target = "~/notes/org/inbox.org",
+          },
+          sp = {
+            description = "Project template",
+            template = "* Todo\n\n* Plan",
+            target = "~/notes/org/project.org",
+          },
+        },
       })
     end,
     enabled = true,
