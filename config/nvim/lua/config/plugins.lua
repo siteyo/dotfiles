@@ -70,4 +70,5 @@ return {
     ft = "markdown",
   },
   -- { "folke/which-key.nvim", config = true, cmd = "WhichKey" },
+  -- { "folke/neodev.nvim", opts = {} },
 }
