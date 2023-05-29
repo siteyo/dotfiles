@@ -62,9 +62,9 @@ local M = {
             ["]s"] = { query = "@scope", query_group = "locals" },
           },
           goto_previous_start = {
-            ["[f]"] = "@function.outer",
+            ["[f"] = "@function.outer",
             ["[z"] = { query = "@fold", query_group = "folds" },
-            ["]s"] = { query = "@scope", query_group = "locals" },
+            ["[s"] = { query = "@scope", query_group = "locals" },
           },
         },
       },
