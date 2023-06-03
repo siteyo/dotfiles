@@ -58,11 +58,13 @@ local keybinds = {
 
 return {
   font = wezterm.font_with_fallback({
-    "Fira Code",
+    -- "Fira Code",
+    "0xProto",
     "HackGenNerd Console",
   }),
+  font_size = 11.0,
   default_prog = default_prog,
-  window_background_opacity = 0.95,
+  window_background_opacity = 0.90,
   color_scheme = "iceberg-dark",
   launch_menu = launch_menu,
   leader = { key = "i", mods = "CTRL", timeout_milliseconds = 1000 },
