@@ -38,7 +38,7 @@ vim.o.showtabline = 2
 vim.o.background = "dark"
 vim.o.scrolloff = 4
 vim.o.signcolumn = "yes"
-vim.o.mouse = ""
+vim.o.mouse = "a"
 vim.o.undofile = true
 
 vim.o.winblend = 15
