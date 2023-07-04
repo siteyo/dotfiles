@@ -11,7 +11,7 @@ local M = {
     vim.keymap.set("n", "[Git]ll", "<Cmd>GinLog --graph --oneline<CR>")
     vim.keymap.set("n", "[Git]c", "<Cmd>Gin commit<CR>")
   end,
-  enabled = true,
+  enabled = false,
 }
 
 return M
