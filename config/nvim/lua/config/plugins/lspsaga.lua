@@ -2,12 +2,16 @@ local M = {
   "glepnir/lspsaga.nvim",
   branch = "main",
   event = "BufRead",
+  dependencies = { { "nvim-tree/nvim-web-devicons" } },
 }
 
 function M.config()
   require("lspsaga").setup({
     ui = {
       code_action = " ",
+    },
+    symbol_in_winbar = {
+      enable = true,
     },
   })
   -- local saga = require("lspsaga")
@@ -39,6 +43,7 @@ function M.config()
   vim.keymap.set({ "n", "v" }, "[Lsp]a", "<Cmd>Lspsaga code_action<CR>")
   vim.keymap.set("n", "[Lsp]o", "<Cmd>Lspsaga outline<CR>")
   vim.keymap.set("n", "[Lsp]d", "<Cmd>Lspsaga show_cursor_diagnostics<CR>")
+  vim.keymap.set("n", "[Lsp]t", "<Cmd>Lspsaga term_toggle<CR>")
 
   -- other
   vim.keymap.set("n", "[w", "<Cmd>Lspsaga diagnostic_jump_prev<CR>")

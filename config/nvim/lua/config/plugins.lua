@@ -3,7 +3,7 @@ return {
   --- Library
   ------------------------------------------------------------
   { "nvim-lua/plenary.nvim" },
-  { "kyazdani42/nvim-web-devicons" },
+  { "nvim-tree/nvim-web-devicons" },
   { "MunifTanjim/nui.nvim" },
 
   ------------------------------------------------------------
@@ -44,7 +44,7 @@ return {
   --- Interface
   ------------------------------------------------------------
   { "stevearc/dressing.nvim", config = true, lazy = "VeryLazy" },
-  { "nvim-zh/colorful-winsep.nvim", config = true, event = "BufAdd" },
+  { "nvim-zh/colorful-winsep.nvim", config = true, event = "WinNew" },
 
   ------------------------------------------------------------
   --- Util
