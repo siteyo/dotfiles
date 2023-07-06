@@ -70,5 +70,5 @@ return {
     ft = "markdown",
   },
   -- { "folke/which-key.nvim", config = true, cmd = "WhichKey" },
-  -- { "folke/neodev.nvim", opts = {} },
+  -- { "folke/neodev.nvim", opts = {}, config = true, lazy = false },
 }

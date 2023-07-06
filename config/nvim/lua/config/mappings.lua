@@ -65,20 +65,18 @@ vim.keymap.set("o", "{", "i{")
 -- Terminal
 vim.keymap.set("t", "<C-n><C-n>", "<C-\\><C-n>")
 
---- Plugins prefix
-local prefix_opts = { noremap = true, silent = true }
 -- Filer
-vim.api.nvim_set_keymap("n", "[Filer]", "<Nop>", prefix_opts)
-vim.api.nvim_set_keymap("n", "<Space>e", "[Filer]", {})
+vim.keymap.set("n", "[Filer]", "<Nop>")
+vim.keymap.set("n", "<Space>e", "[Filer]", { remap = true })
 -- FuzzyFinder
-vim.api.nvim_set_keymap("n", "[FuzzyFinder]", "<Nop>", prefix_opts)
-vim.api.nvim_set_keymap("n", "<Space>f", "[FuzzyFinder]", {})
+vim.keymap.set("n", "[FuzzyFinder]", "<Nop>")
+vim.keymap.set("n", "<Space>f", "[FuzzyFinder]", { remap = true })
 -- Git
-vim.api.nvim_set_keymap("n", "[Git]", "<Nop>", prefix_opts)
-vim.api.nvim_set_keymap("n", "<Space>g", "[Git]", {})
+vim.keymap.set("n", "[Git]", "<Nop>")
+vim.keymap.set("n", "<Space>g", "[Git]", { remap = true })
 -- Lsp
-vim.api.nvim_set_keymap("n", "[Lsp]", "<Nop>", prefix_opts)
-vim.api.nvim_set_keymap("n", "<Space>l", "[Lsp]", {})
+vim.keymap.set("n", "[Lsp]", "<Nop>")
+vim.keymap.set("n", "<Space>l", "[Lsp]", { remap = true })
 -- Neorg
-vim.api.nvim_set_keymap("n", "[Neorg]", "<Nop>", prefix_opts)
-vim.api.nvim_set_keymap("n", "<Space>o", "[Neorg]", {})
+vim.keymap.set("n", "[Neorg]", "<Nop>")
+vim.keymap.set("n", "<Space>o", "[Neorg]", { remap = true })
