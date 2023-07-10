@@ -1,6 +1,7 @@
 local M = {
   "catppuccin/nvim",
   name = "catppuccin",
+  enabled = false,
 }
 
 -- function M.init()
