@@ -1,6 +1,6 @@
 local M = {
   "EdenEast/nightfox.nvim",
-  enabled = false,
+  enabled = true,
 }
 
 M.opts = {
