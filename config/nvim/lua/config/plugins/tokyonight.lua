@@ -8,7 +8,7 @@ function M.config()
   tokyonight.setup({
     style = "storm",
     light_style = "day",
-    transparent = true,
+    transparent = false,
     styles = {
       comments = { italic = false },
       keywords = { italic = false },
