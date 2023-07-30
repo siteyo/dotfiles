@@ -5,10 +5,10 @@ local M = {
     "onsails/lspkind-nvim",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-cmdline",
+    -- "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-emoji",
-    "dmitmel/cmp-cmdline-history",
+    -- "dmitmel/cmp-cmdline-history",
     -- "hrsh7th/cmp-vsnip",
     "hrsh7th/cmp-nvim-lua",
     "saadparwaiz1/cmp_luasnip",
@@ -76,50 +76,50 @@ function M.config()
     },
   })
 
-  cmp.setup.cmdline(":", {
-    mapping = {
-      ["<C-n>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        else
-          fallback()
-        end
-      end, { "c" }),
-      -- ["<Tab>"] = cmp.mapping(function(fallback)
-      --   if cmp.visible() then
-      --     cmp.select_next_item()
-      --   else
-      --     fallback()
-      --   end
-      -- end, { "c" }),
-      ["<C-p>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        else
-          fallback()
-        end
-      end, { "c" }),
-      ["<C-e>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.abort()
-        else
-          fallback()
-        end
-      end, { "c" }),
-      ["<C-y>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.complete()
-        else
-          fallback()
-        end
-      end, { "c" }),
-    },
-    sources = {
-      { name = "path" },
-      { name = "cmdline", max_item_count = 10 },
-      { name = "cmdline_history", max_item_count = 5 },
-    },
-  })
+  -- cmp.setup.cmdline(":", {
+  --   mapping = {
+  --     ["<C-n>"] = cmp.mapping(function(fallback)
+  --       if cmp.visible() then
+  --         cmp.select_next_item()
+  --       else
+  --         fallback()
+  --       end
+  --     end, { "c" }),
+  --     -- ["<Tab>"] = cmp.mapping(function(fallback)
+  --     --   if cmp.visible() then
+  --     --     cmp.select_next_item()
+  --     --   else
+  --     --     fallback()
+  --     --   end
+  --     -- end, { "c" }),
+  --     ["<C-p>"] = cmp.mapping(function(fallback)
+  --       if cmp.visible() then
+  --         cmp.select_prev_item()
+  --       else
+  --         fallback()
+  --       end
+  --     end, { "c" }),
+  --     ["<C-e>"] = cmp.mapping(function(fallback)
+  --       if cmp.visible() then
+  --         cmp.abort()
+  --       else
+  --         fallback()
+  --       end
+  --     end, { "c" }),
+  --     ["<C-y>"] = cmp.mapping(function(fallback)
+  --       if cmp.visible() then
+  --         cmp.complete()
+  --       else
+  --         fallback()
+  --       end
+  --     end, { "c" }),
+  --   },
+  --   sources = {
+  --     { name = "path" },
+  --     { name = "cmdline", max_item_count = 10 },
+  --     { name = "cmdline_history", max_item_count = 5 },
+  --   },
+  -- })
 end
 
 return M

@@ -1,6 +1,6 @@
 -- Swap : and ;
-vim.keymap.set({ "n", "i", "v" }, ";", ":")
-vim.keymap.set({ "n", "i", "v" }, ":", ";")
+vim.keymap.set({ "n", "i", "v", "x", "o", "c" }, ";", ":")
+vim.keymap.set({ "n", "i", "v", "x", "o", "c" }, ":", ";")
 
 -- Window & Tab & Buffer
 vim.keymap.set("n", "s", "<Nop>")
@@ -61,6 +61,10 @@ vim.keymap.set("i", "<C-a>", "<ESC>I")
 -- Operator
 vim.keymap.set("o", "[", "i[")
 vim.keymap.set("o", "{", "i{")
+
+-- Cmdline
+vim.keymap.set("c", "<C-p>", "<Up>")
+vim.keymap.set("c", "<C-n>", "<Down>")
 
 -- Terminal
 vim.keymap.set("t", "<C-n><C-n>", "<C-\\><C-n>")

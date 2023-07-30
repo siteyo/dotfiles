@@ -11,7 +11,7 @@ local M = {
     leap.opts.safe_labels = {}
     leap.labels = { "a", "s", "d", "f", "g", "h", "j", "k", "l" }
   end,
-  -- enabled = false,
+  enabled = false,
 }
 
 return M
