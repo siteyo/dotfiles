@@ -67,7 +67,7 @@ return {
   window_background_opacity = 0.90,
   color_scheme = "iceberg-dark",
   launch_menu = launch_menu,
-  leader = { key = "i", mods = "CTRL", timeout_milliseconds = 1000 },
+  leader = { key = ";", mods = "CTRL", timeout_milliseconds = 1000 },
   keys = keybinds,
   use_ime = true,
   hide_tab_bar_if_only_one_tab = true,
