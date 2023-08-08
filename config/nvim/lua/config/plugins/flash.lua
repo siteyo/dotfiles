@@ -20,6 +20,9 @@ local M = {
           ",",
         },
       },
+      search = {
+        enabled = false,
+      },
     },
   },
   -- stylua: ignore

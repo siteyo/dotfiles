@@ -2,6 +2,8 @@
 vim.keymap.set({ "n", "i", "v", "x", "o", "c" }, ";", ":")
 vim.keymap.set({ "n", "i", "v", "x", "o", "c" }, ":", ";")
 
+vim.keymap.set("c", "<C-k>", "\\")
+
 -- Window & Tab & Buffer
 vim.keymap.set("n", "s", "<Nop>")
 vim.keymap.set("n", "S", "<Nop>")
