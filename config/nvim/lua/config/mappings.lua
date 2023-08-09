@@ -2,7 +2,14 @@
 vim.keymap.set({ "n", "i", "v", "x", "o", "c" }, ";", ":")
 vim.keymap.set({ "n", "i", "v", "x", "o", "c" }, ":", ";")
 
+-- Backslash
 vim.keymap.set("c", "<C-k>", "\\")
+
+-- Insert the path of the current file
+vim.keymap.set("c", "%%", function()
+  return vim.fn.getcmdtype() == ":" and vim.fn.expand("%:h") or "%%"
+end, { expr = true })
+vim.keymap.set("c", "%<Space>", "%")
 
 -- Window & Tab & Buffer
 vim.keymap.set("n", "s", "<Nop>")
@@ -11,10 +18,10 @@ vim.keymap.set("n", "sh", "<C-w>h")
 vim.keymap.set("n", "sj", "<C-w>j")
 vim.keymap.set("n", "sk", "<C-w>k")
 vim.keymap.set("n", "sl", "<C-w>l")
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
+-- vim.keymap.set("n", "<C-h>", "<C-w>h")
+-- vim.keymap.set("n", "<C-j>", "<C-w>j")
+-- vim.keymap.set("n", "<C-k>", "<C-w>k")
+-- vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "sH", "<C-w>H")
 vim.keymap.set("n", "sJ", "<C-w>J")
 vim.keymap.set("n", "sK", "<C-w>K")
@@ -28,6 +35,9 @@ vim.keymap.set("n", "se", "<Cmd>enew<CR>")
 vim.keymap.set("n", "ss", "<Cmd>sp<CR><C-w>w")
 vim.keymap.set("n", "sv", "<Cmd>vs<CR><C-w>w")
 vim.keymap.set("n", "s=", "<C-w>=")
+
+-- Refresh & noh
+vim.keymap.set("n", "<C-l>", "<Cmd>noh<CR><C-l>")
 
 -- Quit
 vim.keymap.set("n", "sq", "<Cmd>q<CR>")
