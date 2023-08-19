@@ -96,3 +96,6 @@ vim.keymap.set("n", "<Space>l", "[Lsp]", { remap = true })
 -- Neorg
 vim.keymap.set("n", "[Neorg]", "<Nop>")
 vim.keymap.set("n", "<Space>o", "[Neorg]", { remap = true })
+-- Noice
+vim.keymap.set("n", "[Noice]", "<Nop")
+vim.keymap.set("n", "<Space>n", "[Noice]", { remap = true })
