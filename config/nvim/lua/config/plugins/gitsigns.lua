@@ -23,7 +23,7 @@ function M.config()
       follow_files = true,
     },
     attach_to_untracked = true,
-    current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+    current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
     current_line_blame_opts = {
       virt_text = true,
       virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
@@ -58,11 +58,11 @@ function M.config()
 
       -- Actions
       map("n", "[Git]a", "<cmd>Gitsigns stage_hunk<CR>")
-      map("v", "[Git]a", "<cmd>Gitsigns stage_hunk<CR>")
+      map("x", "[Git]a", "<cmd>Gitsigns stage_hunk<CR>")
       map("n", "[Git]e", "<cmd>Gitsigns reset_hunk<CR>")
-      map("v", "[Git]e", "<cmd>Gitsigns reset_hunk<CR>")
-      map("n", "[Git]b", "<cmd>Gitsigns blame_line<CR>")
-      map("v", "[Git]b", "<cmd>Gitsigns blame_line<CR>")
+      map("x", "[Git]e", "<cmd>Gitsigns reset_hunk<CR>")
+      -- map("n", "[Git]b", "<cmd>Gitsigns blame_line<CR>")
+      -- map("v", "[Git]b", "<cmd>Gitsigns blame_line<CR>")
       map("n", "[Git]u", "<cmd>Gitsigns undo_stage_hunk<CR>")
       map("n", "[Git]w", "<cmd>Gitsigns stage_buffer<CR>")
       map("n", "[Git]r", "<cmd>Gitsigns reset_buffer<CR>")
