@@ -38,6 +38,7 @@ M.opts = {
         any = {
           { event = "msg_show", find = "written" },
           { event = "msg_show", find = "yanked" },
+          { event = "msg_show", find = "^Hunk %d+ of %d+$" },
           { event = "msg_show", kind = "emsg", find = "E486" },
           { event = "msg_show", kind = "wmsg", find = "search hit .* continuing at" },
         },
