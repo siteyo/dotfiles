@@ -8,13 +8,13 @@ local M = {
 }
 
 M.opts = {
-  messages = {
-    enable = true,
-    view = "mini",
-    view_error = "mini",
-    view_warn = "mini",
-    view_search = false,
-  },
+  -- messages = {
+  --   enable = true,
+  --   view = "mini",
+  --   view_error = "mini",
+  --   view_warn = "mini",
+  --   view_search = "virtualtext",
+  -- },
   lsp = {
     override = {
       ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -26,6 +26,27 @@ M.opts = {
     bottom_search = true,
     command_palette = true,
     long_message_to_split = true,
+  },
+  routes = {
+    {
+      view = "notify",
+      filter = { event = "msg_showmode" },
+    },
+    {
+      view = "mini",
+      filter = {
+        any = {
+          { event = "msg_show", find = "written" },
+          { event = "msg_show", find = "yanked" },
+          { event = "msg_show", kind = "emsg", find = "E486" },
+          { event = "msg_show", kind = "wmsg", find = "search hit .* continuing at" },
+        },
+      },
+    },
+    {
+      view = "split",
+      filter = { event = "msg_show", cmdline = true },
+    },
   },
 }
 
