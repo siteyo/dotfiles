@@ -29,6 +29,17 @@ M.opts = {
   },
   routes = {
     {
+      filter = {
+        any = {
+          { event = "msg_showmode", find = "-- INSERT --" },
+          { event = "msg_showmode", find = "-- VISUAL --" },
+          { event = "msg_showmode", find = "-- VISUAL LINE --" },
+          { event = "msg_showmode", find = "-- VISUAL BLOCK --" },
+        },
+      },
+      opts = { skip = true },
+    },
+    {
       view = "notify",
       filter = { event = "msg_showmode" },
     },
@@ -38,6 +49,8 @@ M.opts = {
         any = {
           { event = "msg_show", find = "written" },
           { event = "msg_show", find = "yanked" },
+          { event = "msg_show", find = "more lines" },
+          { event = "msg_show", find = "fewer lines" },
           { event = "msg_show", find = "^Hunk %d+ of %d+$" },
           { event = "msg_show", kind = "emsg", find = "E%d+:" },
           { event = "msg_show", kind = "wmsg", find = "search hit .* continuing at" },
