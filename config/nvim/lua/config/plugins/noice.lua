@@ -29,14 +29,7 @@ M.opts = {
   },
   routes = {
     {
-      filter = {
-        any = {
-          { event = "msg_showmode", find = "-- INSERT --" },
-          { event = "msg_showmode", find = "-- VISUAL --" },
-          { event = "msg_showmode", find = "-- VISUAL LINE --" },
-          { event = "msg_showmode", find = "-- VISUAL BLOCK --" },
-        },
-      },
+      filter = { event = "msg_showmode", find = "--%s%p*%a+%p*%s--" },
       opts = { skip = true },
     },
     {
