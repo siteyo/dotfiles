@@ -42,8 +42,8 @@ M.opts = {
         any = {
           { event = "msg_show", find = "written" },
           { event = "msg_show", find = "yanked" },
-          { event = "msg_show", find = "more lines" },
-          { event = "msg_show", find = "fewer lines" },
+          { event = "msg_show", find = "more line" },
+          { event = "msg_show", find = "fewer line" },
           { event = "msg_show", find = "^Hunk %d+ of %d+$" },
           { event = "msg_show", kind = "emsg", find = "E%d+:" },
           { event = "msg_show", kind = "wmsg", find = "search hit .* continuing at" },
