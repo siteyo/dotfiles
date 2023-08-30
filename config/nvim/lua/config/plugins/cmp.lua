@@ -24,7 +24,7 @@ function M.config()
 
   cmp.setup({
     completion = {
-      completeopt = "menu,menuone,noinsert",
+      completeopt = "menu,menuone,noselect",
     },
     snippet = {
       expand = function(args)

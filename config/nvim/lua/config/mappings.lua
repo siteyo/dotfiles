@@ -75,8 +75,20 @@ vim.keymap.set("o", "[", "i[")
 vim.keymap.set("o", "{", "i{")
 
 -- Cmdline
-vim.keymap.set("c", "<C-p>", "<Up>")
-vim.keymap.set("c", "<C-n>", "<Down>")
+vim.keymap.set("c", "<C-p>", function()
+  if vim.fn.pumvisible() == 0 then
+    vim.api.nvim_input("<Up>")
+  else
+    vim.api.nvim_input("<S-Tab>")
+  end
+end)
+vim.keymap.set("c", "<C-n>", function()
+  if vim.fn.pumvisible() == 0 then
+    vim.api.nvim_input("<Down>")
+  else
+    vim.api.nvim_input("<Tab>")
+  end
+end)
 
 -- Terminal
 vim.keymap.set("t", "<C-n><C-n>", "<C-\\><C-n>")
