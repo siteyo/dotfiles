@@ -1,14 +1,5 @@
 #!/bin/bash
 
-install_poetry() {
-  echo '==> Install poetry ...'
-  if comnmand -v poetry; then
-    echo 'Already installed.'
-  else
-    curl -sSL https://install.python-poetry.org | python3 -
-  fi
-}
-
 install_rust() {
   echo '==> Install rust ...'
   if command -v rustc; then
@@ -45,7 +36,6 @@ main() {
 
   while [ $# -gt 0 ]; do
     case ${1} in
-    --poetry) install_poetry ;;
     --rust) install_rust ;;
     --asdf) install_asdf_plugins ;;
     *)
