@@ -1,7 +1,6 @@
 tap "beeftornado/rmtree"
 tap "homebrew/bundle"
 brew "gcc"
-brew "asdf"
 brew "bat"
 brew "deno"
 brew "exa"

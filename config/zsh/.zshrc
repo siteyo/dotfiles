@@ -38,7 +38,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # Completion
 # --------------------------------------------------------------------
-# FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+FPATH="$(brew --prefix)/share/zsh/site-functions:${COMPLETIONS_PATH}:${FPATH}"
 
 autoload -Uz compinit
 compinit
@@ -66,8 +66,10 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 if [[ $(command -v exa) ]]; then
   alias ls='exa --icons --git'
   alias ll='exa --icons --git -l'
+  alias llc='exa --icons --git -l -s changed'
   alias la='exa --icons --git -a'
   alias lal='exa --icons --git -al'
+  alias lalc='exa --icons --git -al -s changed'
   alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
   alias ltl='exa -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
 else
@@ -121,8 +123,19 @@ if [ -d "${HOME}/.cargo" ]; then
 fi
 
 ## asdf
-[ -f $(brew --prefix asdf)/libexec/asdf.sh ] &&
-  source $(brew --prefix asdf)/libexec/asdf.sh
+# [ -f $(brew --prefix asdf)/libexec/asdf.sh ] &&
+#   source $(brew --prefix asdf)/libexec/asdf.sh
+
+## volta (Node.js)
+if [ -d "${HOME}/.volta" ]; then
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
+fi
+
+## rye (Python)
+if [ -d "${HOME}/.rye" ]; then
+  source "${HOME}/.rye/env"
+fi
 
 ## Starship
 # eval "$(starship init zsh)"
