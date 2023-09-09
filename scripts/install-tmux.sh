@@ -2,7 +2,8 @@
 
 main() {
   set -euo pipefail
-  echo '==> Install tmux ...'
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
+  print_info '==> Install tmux ...'
 
   local current_dir dotfiles_dir
 
@@ -20,7 +21,7 @@ main() {
   # Create a symbolic link
   ln -sfv "${dotfiles_dir}/etc/.tmux.conf" "${HOME}/.tmux.conf"
 
-  echo ''
+  print_done
 }
 
 main

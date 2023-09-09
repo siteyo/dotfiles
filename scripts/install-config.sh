@@ -2,7 +2,8 @@
 
 main() {
   set -euo pipefail
-  echo '==> Install ... '
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
+  print_info '==> Install ... '
 
   local current_dir dotfiles_dir
 
@@ -20,7 +21,7 @@ main() {
   # Create symbolic link
   ln -sfv "${dotfiles_dir}/config" "${HOME}/.config"
 
-  echo ''
+  print_done
 }
 
 main

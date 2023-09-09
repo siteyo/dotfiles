@@ -2,7 +2,8 @@
 
 main() {
   set -euo pipefail
-  echo '==> Install git ...'
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
+  print_info '==> Install git ...'
 
   local current_dir dotfiles_dir
 
@@ -23,7 +24,7 @@ main() {
   git config --global include.path "${dotfiles_dir}/etc/.gitconfig"
   git config --global credential.helper store
 
-  echo ''
+  print_done
 }
 
 main

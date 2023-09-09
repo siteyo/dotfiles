@@ -2,7 +2,8 @@
 
 main() {
   set -euo pipefail
-  echo '==> Install vim ...'
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
+  print_info '==> Install vim ...'
 
   local current_dir dotfiles_dir
 
@@ -25,7 +26,7 @@ main() {
   # Install plugins
   vim +PlugInstall +qall
 
-  echo ''
+  print_done
 }
 
 main

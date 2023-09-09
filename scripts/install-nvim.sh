@@ -2,7 +2,8 @@
 
 main() {
   set -euo pipefail
-  echo '==> Install nvim ...'
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
+  print_info '==> Install nvim ...'
 
   # Create directories
   mkdir -pv "${HOME}/.nvim"
@@ -18,7 +19,7 @@ main() {
     sudo apt-get install sqlite3 libsqlite3-dev
   fi
 
-  echo ''
+  print_done
 }
 
 main

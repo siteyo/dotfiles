@@ -2,7 +2,8 @@
 
 main() {
   set -euo pipefail
-  echo '==> Install bash ...'
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
+  print_info '==> Install bash ...'
 
   local current_dir dotfiles_dir
 
@@ -39,7 +40,7 @@ main() {
   ln -sfv "${dotfiles_dir}/etc/.bashrc" "${HOME}/.bashrc"
   ln -sfv "${dotfiles_dir}/etc/.bash_profile" "${HOME}/.bash_profile"
 
-  echo ''
+  print_done
 }
 
 main

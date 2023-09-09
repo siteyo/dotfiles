@@ -2,7 +2,8 @@
 
 main() {
   set -euo pipefail
-  echo '==> Install wezterm ...'
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
+  print_info '==> Install wezterm ...'
 
   local current_dir dotfiles_dir winhome
 
@@ -16,7 +17,7 @@ main() {
     cp -fv "${dotfiles_dir}/config/wezterm/wezterm.lua" "${winhome}/.config/wezterm/wezterm.lua"
   fi
 
-  echo ''
+  print_done
 }
 
 main

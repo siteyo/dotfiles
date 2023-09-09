@@ -2,7 +2,8 @@
 
 main() {
   set -euo pipefail
-  echo 'Install Homebrew ...'
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
+  print_info 'Install Homebrew ...'
 
   local current_dir dotfiles_dir
 
@@ -18,11 +19,13 @@ main() {
 
   command -v brew 1>/dev/null 2>&1 ||
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo ''
+  print_default ''
 
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
   [ -f "${HOME}/.Brewfile" ] && brew bundle --global
+
+  print_done
 }
 
 main

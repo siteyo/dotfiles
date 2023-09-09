@@ -2,7 +2,8 @@
 
 main() {
   set -euo pipefail
-  echo '==> Install zsh ...'
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
+  print_info '==> Install zsh ...'
 
   # Change current directory
   current_dir=$(dirname "${BASH_SOURCE[0]}")
@@ -28,7 +29,7 @@ main() {
     sudo apt-get install zsh
   fi
 
-  echo ''
+  print_done
 }
 
 main

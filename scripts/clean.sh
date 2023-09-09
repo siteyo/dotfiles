@@ -6,7 +6,7 @@ set -euo pipefail
 ## Remove Functions                                         ##
 #------------------------------------------------------------#
 remove_neovim() {
-  echo '==> Remove neovim settings ...'
+  print_info '==> Remove neovim settings ...'
 
   # Remove directory
   [ -e "${HOME}/.nvim" ] &&
@@ -16,11 +16,11 @@ remove_neovim() {
   [ -e "${HOME}/.cache/nvim" ] &&
     rm -rfv "${HOME}/.cache/nvim"
 
-  echo ''
+  print_done
 }
 
 remove_wezterm() {
-  echo '==> Remove wezterm settings ...'
+  print_info '==> Remove wezterm settings ...'
 
   local winhome
   if uname -a | grep -q 'microsoft'; then
@@ -28,11 +28,11 @@ remove_wezterm() {
     rm -v "${winhome}/.config/wezterm/wezterm.lua"
   fi
 
-  echo ''
+  print_done
 }
 
 remove_zsh() {
-  echo '==> Remove zsh settings ...'
+  print_info '==> Remove zsh settings ...'
 
   [ -e "${HOME}/.zcompcache" ] &&
     rm -rfv "${HOME}/.zcompcache"
@@ -43,11 +43,11 @@ remove_zsh() {
   [ -e "${HOME}/.zshrc.local" ] &&
     rm -v "${HOME}/.zshrc.local"
 
-  echo ''
+  print_done
 }
 
 remove_gitconfig() {
-  echo '==> Remove git settings ...'
+  print_info '==> Remove git settings ...'
 
   [ -e "${HOME}/.git-completion.bash" ] &&
     rm -v "${HOME}/.git-completion.bash"
@@ -58,19 +58,24 @@ remove_gitconfig() {
   [ -e "${HOME}/.gitconfig" ] &&
     rm -v "${HOME}/.gitconfig"
 
-  echo ''
+  print_done
 }
 
 #------------------------------------------------------------#
 ## Main                                                     ##
 #------------------------------------------------------------#
 main() {
-  echo '==> Clean data(~/.local, ~/.cache, etc...)'
+  set -euo pipefail
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
+
+  print_info '==> Clean data(~/.local, ~/.cache, etc...)'
+
   remove_neovim
   remove_wezterm
   remove_zsh
   remove_gitconfig
-  echo ''
+
+  print_done
 }
 
 main

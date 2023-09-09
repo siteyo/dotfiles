@@ -2,42 +2,43 @@
 
 main() {
   set -euo pipefail
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
 
   local url port user password yn
 
-  echo '==> Setup proxy ...'
-  echo "http://<URL>:<Port>"
+  print_info '==> Setup proxy ...'
+  print_default "http://<URL>:<Port>"
   read -rp "URL: " url
   read -rp "Port: " port
-  echo ''
+  print_default ''
 
-  echo "==> User Authentication? (Press enter to skip)"
+  print_info "==> User Authentication? (Press enter to skip)"
   read -rp "User: " user
   [ -n "${user}" ] &&
     read -rsp "Password: " password
-  echo -e "\n"
+  print_default "\n"
 
   read -rp "Collect? (Y/n)" yn
   case "$yn" in
   [nN]*)
-    echo 'abort.'
+    print_notice 'abort.'
     exit 0
     ;;
   *) ;;
   esac
-  echo ''
+  print_default ''
 
   # wget
-  echo "==> ~/.wgetrc"
+  print_info "==> ~/.wgetrc"
   local wgetrc="${HOME}/.wgetrc"
   touch "${wgetrc}"
   if grep -qiE '^\s*#\s*http_proxy=' "${wgetrc}"; then
-    echo 'Environment variable was commented out.'
-    echo 'Uncomment them.'
+    print_notice 'Environment variable was commented out.'
+    print_notice 'Uncomment them.'
     sed -i -e '/^\s*#\s*http_proxy/s/#\s*//' "${wgetrc}"
     sed -i -e '/^\s*#\s*proxy_/s/#\s*//' "${wgetrc}"
   elif grep -qiE '^\s*http_proxy=' "${wgetrc}"; then
-    echo "Already set up."
+    print_notice "Already set up."
   else
     echo "http_proxy=http://${url}:${port}" >>"${HOME}/.wgetrc"
     [ -n "${user}" ] && (
@@ -47,15 +48,15 @@ main() {
   fi
 
   # curl
-  echo "==> ~/.curlrc"
+  print_info "==> ~/.curlrc"
   local curlrc="${HOME}/.curlrc"
   touch "${curlrc}"
   if grep -qiE '^s*#\s*proxy=' "${curlrc}"; then
-    echo 'Environment variable was commented out.'
-    echo 'Uncomment them.'
+    print_notice 'Environment variable was commented out.'
+    print_notice 'Uncomment them.'
     sed -i -e '/^\s*#\s*proxy=/s/#\s*//' "${curlrc}"
   elif grep -q 'proxy=' "${curlrc}"; then
-    echo "Already set up."
+    print_notice "Already set up."
   else
     echo "proxy=http://${url}:${port}" >>"${curlrc}"
     [ -n "${user}" ] &&
@@ -66,19 +67,19 @@ main() {
   # bash
   local bashrc
   if [ -f "${HOME}/.bashrc.local" ]; then
-    echo "==> ~/.bashrc.local"
+    print_info "==> ~/.bashrc.local"
     bashrc="${HOME}/.bashrc.local"
   else
-    echo "==> ~/.bashrc"
+    print_info "==> ~/.bashrc"
     bashrc="${HOME}/.bashrc"
   fi
 
   if grep -qiE '^\s*#\s*export\shttp_proxy' "${bashrc}"; then
-    echo 'Environment variable was commented out.'
-    echo 'Uncomment them.'
+    print_notice 'Environment variable was commented out.'
+    print_notice 'Uncomment them.'
     sed -i -e '/^\s*#\s*export\shttp[s]*_proxy/s/#\s*//' "${bashrc}"
   elif grep -qiE '^\s*export\shttp_proxy=' "${bashrc}"; then
-    echo 'Already set up.'
+    print_notice 'Already set up.'
   else
     if [ -n "${user}" ]; then
       (
@@ -96,19 +97,19 @@ main() {
   # zsh
   local zshrc
   if [ -f "${HOME}/.zshrc.local" ]; then
-    echo "==> ~/.zshrc.local"
+    print_info "==> ~/.zshrc.local"
     zshrc="${HOME}/.zshrc.local"
   else
-    echo "==> ~/.zshrc"
+    print_info "==> ~/.zshrc"
     zshrc="${HOME}/.zshrc"
   fi
 
   if grep -qiE '^\s*#\s*export\shttp_proxy' "${zshrc}"; then
-    echo 'Environment variable was commented out.'
-    echo 'Uncomment them.'
+    print_notice 'Environment variable was commented out.'
+    print_notice 'Uncomment them.'
     sed -i -e '/^\s*#\s*export\shttp[s]*_proxy/s/#\s*//' "${zshrc}"
   elif grep -qiE '^\s*export\shttp_proxy=' "${zshrc}"; then
-    echo 'Already set up.'
+    print_notice 'Already set up.'
   else
     if [ -n "${user}" ]; then
       (
@@ -124,12 +125,12 @@ main() {
   fi
 
   # apt
-  echo "==> /etc/apt/apt.conf.d/proxy.conf"
+  print_info "==> /etc/apt/apt.conf.d/proxy.conf"
   local source_apt_proxy dest_apt_proxy
   source_apt_proxy="${HOME}/proxy.conf"
   dest_apt_proxy="/etc/apt/apt.conf.d/proxy.conf"
   if [ -f "${dest_apt_proxy}" ]; then
-    echo 'Already set up.'
+    print_notice 'Already set up.'
   else
     touch "${source_apt_proxy}"
     if [ -n "${user}" ]; then
@@ -147,9 +148,9 @@ main() {
   fi
 
   # git
-  echo "==> .gitconfig"
+  print_info "==> .gitconfig"
   if grep -q 'proxy' "${HOME}/.gitconfig"; then
-    echo 'Already set up.'
+    print_notice 'Already set up.'
   else
     if [ -n "${user}" ]; then
       git config --global http.proxy "http://${user}:${password}@${url}:${port}"
@@ -159,6 +160,8 @@ main() {
       git config --global https.proxy "http://${url}:${port}"
     fi
   fi
+
+  print_done
 }
 
 main

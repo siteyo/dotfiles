@@ -2,7 +2,8 @@
 
 main() {
   set -euo pipefail
-  echo '==> Install skk dict ...'
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
+  print_info '==> Install skk dict ...'
 
   # Create directory
   mkdir -pv ~/.local/share/skk
@@ -13,7 +14,7 @@ main() {
   curl https://skk-dev.github.io/dict/SKK-JISYO.jinmei.gz |
     gunzip -c >"${HOME}/.local/share/skk/SKK-JISYO.jinmei"
 
-  echo ''
+  print_done
 }
 
 main
