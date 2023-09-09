@@ -15,7 +15,8 @@ install_volta() {
   if command -v volta >/dev/null; then
     print_notice 'Already installed.'
   else
-    curl https://get.volta.sh | bash -s --skip-setup
+    curl https://get.volta.sh | bash -s -- --skip-setup
+    ${HOME}/.volta/bin/volta completions zsh >"${COMPLETIONS_PATH}/_volta"
   fi
   print_done
 }

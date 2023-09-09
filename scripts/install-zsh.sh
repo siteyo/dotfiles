@@ -11,6 +11,7 @@ main() {
 
   # Create directory
   mkdir -pv "${dotfiles_dir}/bak"
+  mkdir -pv "${HOME}/.zsh-completions"
 
   # Create local config file
   touch "${HOME}/.zshrc.local"
