@@ -15,14 +15,14 @@ export EDITOR=nvim
 # Aliaces
 # --------------------------------------------------------------------
 
-## exa
-if [[ $(command -v exa) ]]; then
-  alias ls='exa --icons --git'
-  alias ll='exa --icons --git -l'
-  alias la='exa --icons --git -a'
-  alias lal='exa --icons --git -al'
-  alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
-  alias ltl='exa -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
+## eza
+if [[ $(command -v eza) ]]; then
+  alias ls='eza --icons --git'
+  alias ll='eza --icons --git -l'
+  alias la='eza --icons --git -a'
+  alias lal='eza --icons --git -al'
+  alias lt='eza -T -L 3 -a -I "node_modules|.git|.cache" --icons'
+  alias ltl='eza -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
 fi
 
 ## cd

@@ -62,16 +62,16 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # Aliaces
 # --------------------------------------------------------------------
 
-## exa
-if [[ $(command -v exa) ]]; then
-  alias ls='exa --icons --git'
-  alias ll='exa --icons --git -l'
-  alias llc='exa --icons --git -l -s changed'
-  alias la='exa --icons --git -a'
-  alias lal='exa --icons --git -al'
-  alias lalc='exa --icons --git -al -s changed'
-  alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache" --icons'
-  alias ltl='exa -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
+## eza
+if [[ $(command -v eza) ]]; then
+  alias ls='eza --icons --git'
+  alias ll='eza --icons --git -l'
+  alias llc='eza --icons --git -l -s changed'
+  alias la='eza --icons --git -a'
+  alias lal='eza --icons --git -al'
+  alias lalc='eza --icons --git -al -s changed'
+  alias lt='eza -T -L 3 -a -I "node_modules|.git|.cache" --icons'
+  alias ltl='eza -T -L 3 -a -I "node_modules|.git|.cache" -l --icons'
 else
   alias ll='ls -l'
   alias la='ls -a'
