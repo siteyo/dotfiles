@@ -12,19 +12,19 @@ local M = {
     -- "hrsh7th/cmp-vsnip",
     "hrsh7th/cmp-nvim-lua",
     "saadparwaiz1/cmp_luasnip",
-    -- "rinx/cmp-skkeleton",
+    "rinx/cmp-skkeleton",
     "hrsh7th/cmp-calc",
   },
 }
 
 function M.config()
-  vim.opt.completeopt = "menu,menuone,noinsert"
+  vim.opt.completeopt = "menu,menuone,noselect"
 
   local cmp = require("cmp")
 
   cmp.setup({
     completion = {
-      completeopt = "menu,menuone,noinsert",
+      completeopt = "menu,menuone,noselect",
     },
     snippet = {
       expand = function(args)
@@ -47,7 +47,7 @@ function M.config()
       { name = "emoji", max_item_count = 10 },
       { name = "neorg" },
       { name = "orgmode" },
-      -- { name = "skkeleton" },
+      { name = "skkeleton", max_item_count = 10 },
       { name = "calc" },
     }),
     formatting = {

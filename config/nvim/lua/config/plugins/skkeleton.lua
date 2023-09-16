@@ -7,17 +7,17 @@ return {
     },
     config = function()
       vim.cmd([[
-    imap <C-j> <Plug>(skkeleton-enable)
-    cmap <C-j> <Plug>(skkeleton-enable)
-    call skkeleton#config({
-      \ 'globalJisyo': '~/.local/share/skk/SKK-JISYO.L'
-      \ })
-      call skkeleton#config({
-        \ 'globalDictionaries': [
-        \ '~/.local/share/skk/SKK-JISYO.L',
-        \ '~/.local/share/skk/SKK-JISYO.jinmei',
-        \ ]
-        \ })
+        imap <C-j> <Plug>(skkeleton-enable)
+        cmap <C-j> <Plug>(skkeleton-enable)
+        call skkeleton#config({
+          \ 'globalJisyo': '~/.local/share/skk/SKK-JISYO.L'
+          \ })
+        call skkeleton#config({
+          \ 'globalDictionaries': [
+          \ '~/.local/share/skk/SKK-JISYO.L',
+          \ '~/.local/share/skk/SKK-JISYO.jinmei',
+          \ ]
+          \ })
         call skkeleton#register_keymap('henkan', '<CR>', 'kakutei')
         ]])
     end,
