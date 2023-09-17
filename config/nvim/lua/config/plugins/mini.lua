@@ -58,7 +58,7 @@ return {
         mb.delete(0, false)
       end)
       -- sq
-      vim.keymap.set("n", "sq", function ()
+      vim.keymap.set("n", "sq", function()
         mb.unshow()
       end)
     end,

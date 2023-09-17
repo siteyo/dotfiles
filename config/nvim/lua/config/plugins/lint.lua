@@ -8,7 +8,7 @@ local M = {
       typescriptreact = { "eslint" },
       javascript = { "eslint" },
       javascriptreact = { "eslint" },
-      python = { "flake8", "mypy" }
+      python = { "flake8", "mypy" },
     }
     vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {
       callback = function()
