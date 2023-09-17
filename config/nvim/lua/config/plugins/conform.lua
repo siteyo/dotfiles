@@ -8,6 +8,7 @@ local M = {
       javascriptreact = { "prettier" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
+      css = { "prettier" },
     },
   },
   event = "VeryLazy",
