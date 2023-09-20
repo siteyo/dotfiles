@@ -9,6 +9,7 @@ local M = {
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
       css = { "prettier" },
+      sh = { "shfmt" },
     },
   },
   event = "VeryLazy",
