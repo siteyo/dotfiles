@@ -10,6 +10,7 @@ local M = {
       typescriptreact = { "prettier" },
       css = { "prettier" },
       sh = { "shfmt" },
+      rust = { "rustfmt" },
     },
   },
   event = "VeryLazy",

@@ -3,7 +3,6 @@ local M = {
   event = "VeryLazy",
   config = function()
     require("lint").linters_by_ft = {
-      markdown = { "markdownlint" },
       typescript = { "eslint" },
       typescriptreact = { "eslint" },
       javascript = { "eslint" },
