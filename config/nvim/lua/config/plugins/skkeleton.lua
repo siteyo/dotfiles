@@ -19,7 +19,10 @@ return {
           \ ]
           \ })
         call skkeleton#register_keymap('henkan', '<CR>', 'kakutei')
-        ]])
+        call skkeleton#register_kanatable('rom', {
+          \ 'zx': ['ー'],
+          \ })
+      ]])
     end,
   },
   {
