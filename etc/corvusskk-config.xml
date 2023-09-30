@@ -22,8 +22,8 @@
     <key name="privatemodeauto" value="1" />
   </section>
   <section name="behavior">
-    <key name="defaultmode" value="0" />
-    <key name="defmodeascii" value="0" />
+    <key name="defaultmode" value="1" />
+    <key name="defmodeascii" value="1" />
     <key name="begincvokuri" value="1" />
     <key name="precedeokuri" value="0" />
     <key name="shiftnnokuri" value="1" />
@@ -625,6 +625,7 @@
       <row ro="zyw" hi="じぇい" ka="ジェイ" an="ｼﾞｪｲ" so="0" />
       <row ro="zyp" hi="じょう" ka="ジョウ" an="ｼﾞｮｳ" so="0" />
       <row ro="ja" hi="じゃ" ka="ジャ" an="ｼﾞｬ" so="0" />
+      <row ro="ji" hi="じ" ka="ジ" an="ｼﾞ" so="0" />
       <row ro="ju" hi="じゅ" ka="ジュ" an="ｼﾞｭ" so="0" />
       <row ro="je" hi="じぇ" ka="ジェ" an="ｼﾞｪ" so="0" />
       <row ro="jo" hi="じょ" ka="ジョ" an="ｼﾞｮ" so="0" />
