@@ -611,6 +611,19 @@
       <row ro="gyh" hi="ぎゅう" ka="ギュウ" an="ｷﾞｭｳ" so="0" />
       <row ro="gyw" hi="ぎぇい" ka="ギェイ" an="ｷﾞｪｲ" so="0" />
       <row ro="gyp" hi="ぎょう" ka="ギョウ" an="ｷﾞｮｳ" so="0" />
+      <row ro="gga" hi="ぎゃ" ka="ギャ" an="ｷﾞｬ" so="0" />
+      <row ro="ggu" hi="ぎゅ" ka="ギュ" an="ｷﾞｭ" so="0" />
+      <row ro="gge" hi="ぎぇ" ka="ギェ" an="ｷﾞｪ" so="0" />
+      <row ro="ggo" hi="ぎょ" ka="ギョ" an="ｷﾞｮ" so="0" />
+      <row ro="ggz" hi="ぎゃん" ka="ギャン" an="ｷﾞｬﾝ" so="0" />
+      <row ro="ggn" hi="ぎゃん" ka="ギャン" an="ｷﾞｬﾝ" so="0" />
+      <row ro="ggj" hi="ぎゅん" ka="ギュン" an="ｷﾞｭﾝ" so="0" />
+      <row ro="ggd" hi="ぎぇん" ka="ギェン" an="ｷﾞｪﾝ" so="0" />
+      <row ro="ggl" hi="ぎょん" ka="ギョン" an="ｷﾞｮﾝ" so="0" />
+      <row ro="ggq" hi="ぎゃい" ka="ギャイ" an="ｷﾞｬｲ" so="0" />
+      <row ro="ggh" hi="ぎゅう" ka="ギュウ" an="ｷﾞｭｳ" so="0" />
+      <row ro="ggw" hi="ぎぇい" ka="ギェイ" an="ｷﾞｪｲ" so="0" />
+      <row ro="ggp" hi="ぎょう" ka="ギョウ" an="ｷﾞｮｳ" so="0" />
       <row ro="zya" hi="じゃ" ka="ジャ" an="ｼﾞｬ" so="0" />
       <row ro="zyu" hi="じゅ" ka="ジュ" an="ｼﾞｭ" so="0" />
       <row ro="zye" hi="じぇ" ka="ジェ" an="ｼﾞｪ" so="0" />
@@ -652,6 +665,19 @@
       <row ro="byh" hi="びゅう" ka="ビュウ" an="ﾋﾞｭｳ" so="0" />
       <row ro="byw" hi="びぇい" ka="ビェイ" an="ﾋﾞｪｲ" so="0" />
       <row ro="byp" hi="びょう" ka="ビョウ" an="ﾋﾞｮｳ" so="0" />
+      <row ro="bga" hi="びゃ" ka="ビャ" an="ﾋﾞｬ" so="0" />
+      <row ro="bgu" hi="びゅ" ka="ビュ" an="ﾋﾞｭ" so="0" />
+      <row ro="bge" hi="びぇ" ka="ビェ" an="ﾋﾞｪ" so="0" />
+      <row ro="bgo" hi="びょ" ka="ビョ" an="ﾋﾞｮ" so="0" />
+      <row ro="bgz" hi="びゃん" ka="ビャン" an="ﾋﾞｬﾝ" so="0" />
+      <row ro="bgn" hi="びゃん" ka="ビャン" an="ﾋﾞｬﾝ" so="0" />
+      <row ro="bgj" hi="びゅん" ka="ビュン" an="ﾋﾞｭﾝ" so="0" />
+      <row ro="bgd" hi="びぇん" ka="ビェン" an="ﾋﾞｪﾝ" so="0" />
+      <row ro="bgl" hi="びょん" ka="ビョン" an="ﾋﾞｮﾝ" so="0" />
+      <row ro="bgq" hi="びゃい" ka="ビャイ" an="ﾋﾞｬｲ" so="0" />
+      <row ro="bgh" hi="びゅう" ka="ビュウ" an="ﾋﾞｭｳ" so="0" />
+      <row ro="bgw" hi="びぇい" ka="ビェイ" an="ﾋﾞｪｲ" so="0" />
+      <row ro="bgp" hi="びょう" ka="ビョウ" an="ﾋﾞｮｳ" so="0" />
       <row ro="pya" hi="ぴゃ" ka="ピャ" an="ﾋﾟｬ" so="0" />
       <row ro="pyu" hi="ぴゅ" ka="ピュ" an="ﾋﾟｭ" so="0" />
       <row ro="pye" hi="ぴぇ" ka="ピェ" an="ﾋﾟｪ" so="0" />
@@ -816,6 +842,15 @@
       <row ro="xxk" hi="↑" ka="↑" an="↑" so="0" />
       <row ro="xxl" hi="→" ka="→" an="→" so="0" />
       <row ro="xxL" hi="⇒" ka="⇒" an="⇒" so="0" />
+      <row ro="z1" hi="①" ka="①" an="①" so="0" />
+      <row ro="z2" hi="②" ka="②" an="②" so="0" />
+      <row ro="z3" hi="③" ka="③" an="③" so="0" />
+      <row ro="z4" hi="④" ka="④" an="④" so="0" />
+      <row ro="z5" hi="⑤" ka="⑤" an="⑤" so="0" />
+      <row ro="z6" hi="⑥" ka="⑥" an="⑥" so="0" />
+      <row ro="z7" hi="⑦" ka="⑦" an="⑦" so="0" />
+      <row ro="z8" hi="⑧" ka="⑧" an="⑧" so="0" />
+      <row ro="z9" hi="⑨" ka="⑨" an="⑨" so="0" />
     </list>
   </section>
   <section name="jlatin">
