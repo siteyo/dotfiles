@@ -2,7 +2,7 @@
 
 install_rust() {
   print_info '==> Install rust ...'
-  if command -v rustc >/dev/null; then
+  if command -v rustup >/dev/null; then
     print_notice 'Already installed.'
   else
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -16,7 +16,7 @@ install_volta() {
     print_notice 'Already installed.'
   else
     curl https://get.volta.sh | bash -s -- --skip-setup
-    ${HOME}/.volta/bin/volta completions zsh >"${COMPLETIONS_PATH}/_volta"
+    "${HOME}/.volta/bin/volta" completions zsh >"${COMPLETIONS_PATH}/_volta"
   fi
   print_done
 }
@@ -31,6 +31,57 @@ install_rye() {
   print_done
 }
 
+update() {
+  local cmdpath
+
+  # rust
+  cmdpath=$(command -v rustup)
+  if [ "${cmdpath}" != '' ]; then
+    print_notice 'Update rustup.'
+    ${cmdpath} self update
+  fi
+
+  # volta
+  cmdpath=$(command -v volta)
+  if [ "${cmdpath}" != '' ]; then
+    print_notice 'Update volta.'
+    curl https://get.volta.sh | bash -s -- --skip-setup
+  fi
+
+  # rye
+  cmdpath=$(command -v rye)
+  if [ "${cmdpath}" != '' ]; then
+    print_notice 'Update rye.'
+    ${cmdpath} self update
+  fi
+}
+
+setup_completion() {
+  local cmdpath
+
+  # rust
+  cmdpath=$(command -v rustup)
+  if [ "${cmdpath}" != '' ]; then
+    print_notice 'Setup rustup completions.'
+    ${cmdpath} completions zsh >"${COMPLETIONS_PATH}/_rustup"
+    ${cmdpath} completions zsh cargo >"${COMPLETIONS_PATH}/_cargo"
+  fi
+
+  # volta
+  cmdpath=$(command -v volta)
+  if [ "${cmdpath}" != '' ]; then
+    print_notice 'Setup volta completions.'
+    ${cmdpath} completions zsh >"${COMPLETIONS_PATH}/_volta"
+  fi
+
+  # rye
+  cmdpath=$(command -v rye)
+  if [ "${cmdpath}" != '' ]; then
+    print_notice 'Setup rye completions.'
+    ${cmdpath} self completion -s zsh >"${COMPLETIONS_PATH}/_rye"
+  fi
+}
+
 main() {
   set -euo pipefail
   source "$(git rev-parse --show-toplevel)/scripts/util.sh"
@@ -38,9 +89,10 @@ main() {
   while [ $# -gt 0 ]; do
     case ${1} in
     --rust) install_rust ;;
-    --asdf) install_asdf_plugins ;;
     --volta) install_volta ;;
     --rye) install_rye ;;
+    --update) update ;;
+    --completion) setup_completion ;;
     *)
       print_error "Invalid arguments ${1}"
       exit 1

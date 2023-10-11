@@ -30,6 +30,10 @@ uninstall: ## Uninstall all dotfiles.
 clean: uninstall ## Remove dotfiles data(~/.local, ~/.cache, and so on).
 	@bash $(DOTPATH)/scripts/clean.sh
 
+.PHONY: update
+update: ## Update formula and individually installed applications.
+	@bash $(DOTPATH)/scripts/update.sh
+
 .PHONY: git
 git: ## Setup git config
 	@git config --global user.name "Saito Yuki"
