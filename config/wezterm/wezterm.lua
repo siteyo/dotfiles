@@ -60,7 +60,7 @@ return {
   font = wezterm.font_with_fallback({
     -- "Fira Code",
     "0xProto",
-    "HackGenNerd Console",
+    "HackGen Console NF",
   }),
   font_size = 11.0,
   default_prog = default_prog,
