@@ -65,7 +65,7 @@
     <key name="verticalcand" value="1" />
     <key name="annotation" value="1" />
     <key name="annotatlst" value="1" />
-    <key name="showmodemark" value="1" />
+    <key name="showmodemark" value="0" />
     <key name="showroman" value="1" />
     <key name="showromanjlat" value="1" />
     <key name="showmodeinl" value="1" />
@@ -202,7 +202,6 @@
       <row st="X" al="x" ok="s" />
       <row st="Y" al="y" ok="y" />
       <row st="Z" al="z" ok="z" />
-      <row st="{" al="{" ok="" />
       <row st="&quot;" al="'" ok="t" />
     </list>
   </section>
@@ -817,7 +816,7 @@
       <row ro="," hi="、" ka="、" an="､" so="0" />
       <row ro="-" hi="ー" ka="ー" an="ｰ" so="0" />
       <row ro="." hi="。" ka="。" an="｡" so="0" />
-      <row ro="/" hi="/" ka="/" an="/" so="0" />
+      <row ro="x/" hi="/" ka="/" an="/" so="0" />
       <row ro="x:" hi=":" ka=":" an=":" so="0" />
       <row ro="x;" hi=";" ka=";" an=";" so="0" />
       <row ro="&lt;" hi="&lt;" ka="&lt;" an="&lt;" so="0" />
