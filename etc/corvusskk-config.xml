@@ -34,12 +34,12 @@
     <key name="addcandktkn" value="0" />
     <key name="entogglekana" value="1" />
     <key name="setbydirect" value="0" />
-    <key name="compmultinum" value="3" />
-    <key name="stacompmulti" value="0" />
+    <key name="compmultinum" value="5" />
+    <key name="stacompmulti" value="1" />
     <key name="dynamiccomp" value="0" />
     <key name="dyncompmulti" value="0" />
-    <key name="compuserdic" value="0" />
-    <key name="compincback" value="0" />
+    <key name="compuserdic" value="1" />
+    <key name="compincback" value="1" />
   </section>
   <section name="font">
     <key name="name" value="メイリオ" />
@@ -67,7 +67,7 @@
     <key name="annotatlst" value="1" />
     <key name="showmodemark" value="1" />
     <key name="showroman" value="1" />
-    <key name="showromanjlat" value="1" />
+    <key name="showromanjlat" value="0" />
     <key name="showmodeinl" value="1" />
     <key name="showmodeinltm" value="3000" />
     <key name="colormc" value="0xFFFFFF" />
@@ -130,7 +130,7 @@
     <key name="purgedic" value="X|\cx" />
     <key name="nextcomp" value="\ci" />
     <key name="prevcomp" value="\cu" />
-    <key name="compcand" value="\cc" />
+    <key name="compcand" value="\ck" />
     <key name="hint" value="" />
     <key name="convpoint" value=";" />
     <key name="direct" value="[0-9]" />
@@ -326,6 +326,7 @@
       <row ro="yl" hi="よん" ka="ヨン" an="ﾖﾝ" so="0" />
       <row ro="yq" hi="やい" ka="ヤイ" an="ﾔｲ" so="0" />
       <row ro="yh" hi="ゆう" ka="ユウ" an="ﾕｳ" so="0" />
+      <row ro="yy" hi="ゆう" ka="ユウ" an="ﾕｳ" so="0" />
       <row ro="yp" hi="よう" ka="ヨウ" an="ﾖｳ" so="0" />
       <row ro="ra" hi="ら" ka="ラ" an="ﾗ" so="0" />
       <row ro="ri" hi="り" ka="リ" an="ﾘ" so="0" />
@@ -599,6 +600,7 @@
       <row ro="mgp" hi="みょう" ka="ミョウ" an="ﾐｮｳ" so="0" />
       <row ro="rya" hi="りゃ" ka="リャ" an="ﾘｬ" so="0" />
       <row ro="ryu" hi="りゅ" ka="リュ" an="ﾘｭ" so="0" />
+      <row ro="ryy" hi="りゅ" ka="リュ" an="ﾘｭ" so="0" />
       <row ro="rye" hi="りぇ" ka="リェ" an="ﾘｪ" so="0" />
       <row ro="ryo" hi="りょ" ka="リョ" an="ﾘｮ" so="0" />
       <row ro="ryz" hi="りゃん" ka="リャン" an="ﾘｬﾝ" so="0" />
