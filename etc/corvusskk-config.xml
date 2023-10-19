@@ -600,7 +600,6 @@
       <row ro="mgp" hi="みょう" ka="ミョウ" an="ﾐｮｳ" so="0" />
       <row ro="rya" hi="りゃ" ka="リャ" an="ﾘｬ" so="0" />
       <row ro="ryu" hi="りゅ" ka="リュ" an="ﾘｭ" so="0" />
-      <row ro="ryy" hi="りゅ" ka="リュ" an="ﾘｭ" so="0" />
       <row ro="rye" hi="りぇ" ka="リェ" an="ﾘｪ" so="0" />
       <row ro="ryo" hi="りょ" ka="リョ" an="ﾘｮ" so="0" />
       <row ro="ryz" hi="りゃん" ka="リャン" an="ﾘｬﾝ" so="0" />
@@ -610,6 +609,7 @@
       <row ro="ryl" hi="りょん" ka="リョン" an="ﾘｮﾝ" so="0" />
       <row ro="ryq" hi="りゃい" ka="リャイ" an="ﾘｬｲ" so="0" />
       <row ro="ryh" hi="りゅう" ka="リュウ" an="ﾘｭｳ" so="0" />
+      <row ro="ryy" hi="りゅう" ka="リュウ" an="ﾘｭｳ" so="0" />
       <row ro="ryw" hi="りぇい" ka="リェイ" an="ﾘｪｲ" so="0" />
       <row ro="ryp" hi="りょう" ka="リョウ" an="ﾘｮｳ" so="0" />
       <row ro="gya" hi="ぎゃ" ka="ギャ" an="ｷﾞｬ" so="0" />
