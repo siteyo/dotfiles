@@ -4,6 +4,10 @@ return {
   opts = {
     indent = { char = "│" },
     whitespace = { highlight = { "Whitespace", "NonText" } },
+    scope = {
+      show_start = false,
+      show_end = false,
+    },
     exclude = {
       filetypes = {
         "lspinfo",

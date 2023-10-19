@@ -47,7 +47,10 @@ vim.keymap.set("n", "sD", "<Cmd>bd!<CR>")
 
 -- Jump in line
 vim.keymap.set({ "n", "v", "o" }, "<S-h>", "^")
-vim.keymap.set({ "n", "v", "o" }, "<S-l>", "$")
+vim.keymap.set({ "n", "v", "o" }, "<S-l>", "$l")
+
+-- For virtualedit
+vim.keymap.set({ "n", "v", "o" }, "$", "$l")
 
 -- -- Jump in paragraph
 -- vim.keymap.set('n', '<S-j>', '}')

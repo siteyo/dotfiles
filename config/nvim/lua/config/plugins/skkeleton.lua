@@ -1,14 +1,15 @@
 return {
   {
     "vim-skk/skkeleton",
-    event = "InsertEnter",
+    event = { "InsertEnter", "BufReadPost" },
     dependencies = {
       "vim-denops/denops.vim",
     },
     config = function()
       vim.cmd([[
-        imap <C-j> <Plug>(skkeleton-enable)
-        cmap <C-j> <Plug>(skkeleton-enable)
+        inoremap <C-j> <Plug>(skkeleton-enable)
+        cnoremap <C-j> <Plug>(skkeleton-enable)
+        nnoremap <C-j> i<Plug>(skkeleton-enable)
         call skkeleton#register_kanatable('azik', {}, v:true)
         call skkeleton#config({
           \ 'kanaTable': 'azik',
@@ -47,6 +48,6 @@ return {
         zenkakuHlName = "Search",
       })
     end,
-    event = "InsertEnter",
+    event = { "InsertEnter", "BufReadPost" },
   },
 }
