@@ -34,7 +34,7 @@ function M.config()
   -- })
 
   -- gx
-  vim.keymap.set("n", "gh", "<Cmd>Lspsaga lsp_finder<CR>")
+  vim.keymap.set("n", "gh", "<Cmd>Lspsaga finder<CR>")
   vim.keymap.set("n", "gn", "<Cmd>Lspsaga rename<CR>")
   vim.keymap.set("n", "gd", "<Cmd>Lspsaga peek_definition<CR>")
   vim.keymap.set("n", "gD", "<Cmd>Lspsaga goto_definition<CR>")

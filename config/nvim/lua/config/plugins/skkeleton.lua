@@ -9,7 +9,7 @@ return {
       vim.cmd([[
         inoremap <C-j> <Plug>(skkeleton-enable)
         cnoremap <C-j> <Plug>(skkeleton-enable)
-        nnoremap <C-j> i<Plug>(skkeleton-enable)
+        nnoremap <C-j> a<Plug>(skkeleton-enable)
         call skkeleton#register_kanatable('azik', {}, v:true)
         call skkeleton#config({
           \ 'kanaTable': 'azik',
