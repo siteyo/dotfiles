@@ -9,11 +9,11 @@ local M = {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-emoji",
     "dmitmel/cmp-cmdline-history",
-    "hrsh7th/cmp-vsnip",
-    "hrsh7th/vim-vsnip",
+    -- "hrsh7th/cmp-vsnip",
+    -- "hrsh7th/vim-vsnip",
     "hrsh7th/cmp-nvim-lua",
-    -- "saadparwaiz1/cmp_luasnip",
-    -- "L3MON4D3/LuaSnip",
+    "saadparwaiz1/cmp_luasnip",
+    "L3MON4D3/LuaSnip",
     "rinx/cmp-skkeleton",
     "hrsh7th/cmp-calc",
   },
@@ -30,8 +30,8 @@ function M.config()
     },
     snippet = {
       expand = function(args)
-        -- require("luasnip").lsp_expand(args.body)
-        vim.fn["vsnip#anonymous"](args.body)
+        require("luasnip").lsp_expand(args.body)
+        -- vim.fn["vsnip#anonymous"](args.body)
       end,
     },
     mapping = cmp.mapping.preset.insert({
@@ -43,8 +43,8 @@ function M.config()
     }),
     sources = cmp.config.sources({
       { name = "nvim_lsp" },
-      -- { name = "luasnip" },
-      { name = "vsnip" },
+      { name = "luasnip" },
+      -- { name = "vsnip" },
       { name = "nvim_lua" },
       { name = "buffer" },
       { name = "path" },

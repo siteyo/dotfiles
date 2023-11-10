@@ -41,7 +41,7 @@ git: ## Setup git config
 
 .PHONY: skk
 skk: ## Setup skk
-	@bash $(DOTPATH)/scripts/install-skk-dict.sh
+	@bash $(DOTPATH)/scripts/install-skk.sh
 
 .PHONY: proxy
 proxy: ## Setup proxy

@@ -12,7 +12,7 @@ return {
         nnoremap <C-j> a<Plug>(skkeleton-enable)
         call skkeleton#register_kanatable('azik', {}, v:true)
         call skkeleton#config({
-          \ 'kanaTable': 'azik',
+          \ 'kanaTable': 'rom',
           \ 'globalJisyo': '~/.local/share/skk/SKK-JISYO.L',
           \ 'globalDictionaries': [
           \   '~/.local/share/skk/SKK-JISYO.L',
