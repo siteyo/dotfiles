@@ -12,8 +12,8 @@ install: preinstall ## Install all dotfiles in this repo.
 	@bash $(DOTPATH)/scripts/install-tmux.sh
 	@bash $(DOTPATH)/scripts/install-wezterm.sh
 
-	@echo "You can change to Bash or Zsh."
-	@echo "If you want to change it, check out the shells available in '/etc/shells'."
+	@printf 'You can change to Bash or Zsh.\n'
+	@printf "If you want to change it, check out the shells available in '/etc/shells'.\n"
 
 .PHONY: preinstall
 preinstall: ## Setup symbolic link to ~/.config.
@@ -52,6 +52,6 @@ test: install clean ## For GitHub Actions (DO NOT RUN LOCALLY)
 
 .PHONY: help
 help: ## Self-documented Makefile.
-	@echo 'Usage: make [target]'
+	@printf 'Usage: make [target]\n'
 	@grep -E '^[0-9a-zA-Z_-]+[[:blank:]]*:.*?## .*$$' $(MAKEFILE_LIST) \
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[1;32m%-15s\033[0m %s\n", $$1, $$2}'

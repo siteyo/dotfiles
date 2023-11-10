@@ -40,10 +40,10 @@ main() {
   elif grep -qiE '^\s*http_proxy=' "${wgetrc}"; then
     print_notice "Already set up."
   else
-    echo "http_proxy=http://${url}:${port}" >>"${HOME}/.wgetrc"
+    printf 'http_proxy=http://%s:%s\n' "${url}" "${port}" >>"${HOME}/.wgetrc"
     [ -n "${user}" ] && (
-      echo "proxy_user=${user}"
-      echo "proxy_password=${password}"
+      printf 'proxy_user=%s\n' "${user}"
+      printf 'proxy_password=%s\n' "${password}"
     ) >>"${wgetrc}"
   fi
 
@@ -58,9 +58,9 @@ main() {
   elif grep -q 'proxy=' "${curlrc}"; then
     print_notice "Already set up."
   else
-    echo "proxy=http://${url}:${port}" >>"${curlrc}"
+    printf 'proxy=http://%s:%s\n' "${url}" "${port}" >>"${curlrc}"
     [ -n "${user}" ] &&
-      echo "proxy-user=${user}:${password}" >>"${curlrc}"
+      printf 'proxy-user=%s:%s\n' "${user}" "${password}" >>"${curlrc}"
 
   fi
 
@@ -83,13 +83,13 @@ main() {
   else
     if [ -n "${user}" ]; then
       (
-        echo "export http_proxy=http://${user}:${password}@${url}:${port}"
-        echo "export https_proxy=http://${user}:${password}@${url}:${port}"
+        printf 'export http_proxy=http://%s:%s@%s:%s\n' "${user}" "${password}" "${url}" "${port}"
+        printf 'export https_proxy=http://%s:%s@%s:%s\n' "${user}" "${password}" "${url}" "${port}"
       ) >>"${bashrc}"
     else
       (
-        echo "export http_proxy=http://${url}:${port}"
-        echo "export https_proxy=http://${url}:${port}"
+        printf 'export http_proxy=http://%s:%s\n' "${url}" "${port}"
+        printf 'export https_proxy=http://%s:%s\n' "${url}" "${port}"
       ) >>"${bashrc}"
     fi
   fi
@@ -113,13 +113,13 @@ main() {
   else
     if [ -n "${user}" ]; then
       (
-        echo "export http_proxy=http://${user}:${password}@${url}:${port}"
-        echo "export https_proxy=http://${user}:${password}@${url}:${port}"
+        printf 'export http_proxy=http://%s:%s@%s:%s\n' "${user}" "${password}" "${url}" "${port}"
+        printf 'export https_proxy=http://%s:%s@%s:%s\n' "${user}" "${password}" "${url}" "${port}"
       ) >>"${zshrc}"
     else
       (
-        echo "export http_proxy=http://${url}:${port}"
-        echo "export https_proxy=http://${url}:${port}"
+        printf 'export http_proxy=http://%s:%s\n' "${url}" "${port}"
+        printf 'export https_proxy=http://%s:%s\n' "${url}" "${port}"
       ) >>"${zshrc}"
     fi
   fi
@@ -135,13 +135,13 @@ main() {
     touch "${source_apt_proxy}"
     if [ -n "${user}" ]; then
       (
-        echo "Acquire::http::Proxy http://${user}:${password}@${url}:${port}"
-        echo "Acquire::http::Proxy http://${user}:${password}@${url}:${port}"
+        printf 'Acquire::http::Proxy http://%s:%s@%s:%s\n' "${user}" "${password}" "${url}" "${port}"
+        printf 'Acquire::https::Proxy http://%s:%s@%s:%s\n' "${user}" "${password}" "${url}" "${port}"
       ) >>"${source_apt_proxy}"
     else
       (
-        echo "Acquire::http::Proxy http://${url}:${port}"
-        echo "Acquire::http::Proxy http://${url}:${port}"
+        printf 'Acquire::http::Proxy http://%s:%s\n' "${url}" "${port}"
+        printf 'Acquire::https::Proxy http://%s:%s\n' "${url}" "${port}"
       ) >>"${source_apt_proxy}"
     fi
     sudo mv "${source_apt_proxy}" "${dest_apt_proxy}"

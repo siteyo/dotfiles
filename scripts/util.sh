@@ -1,27 +1,27 @@
 #!/bin/bash
 
 print_default() {
-	echo -e "$*"
+  printf '%s\n' "$*"
 }
 
 print_info() {
-	echo -e "\e[1;36m$*\e[m" # cyan
+  printf '\e[1;36m%s\e[m\n' "$*" # cyan
 }
 
 print_notice() {
-	echo -e "\e[1;35m$*\e[m" # magenta
+  printf '\e[1;35m%s\e[m\n' "$*" # magenta
 }
 
 print_success() {
-	echo -e "\e[1;32m$*\e[m" # green
+  printf '\e[1;32m%s\e[m' "$*" # green
 }
 
 print_warning() {
-	echo -e "\e[1;33m$*\e[m" # yellow
+  printf '\e[1;33m%s\e[m' "$*" # yellow
 }
 
 print_error() {
-	echo -e "\e[1;31m$*\e[m" # red
+  printf '\e[1;31m%s\e[m' "$*" # red
 }
 
 print_done() {

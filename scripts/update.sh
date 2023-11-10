@@ -20,8 +20,10 @@ main() {
   sudo -v
 
   # apt
-  print_notice 'Update packages managed by apt.'
-  sudo apt update && sudo apt upgrade "${yes}"
+  if [ "$(uname)" == 'Linux' ]; then
+    print_notice 'Update packages managed by apt.'
+    sudo apt update && sudo apt upgrade "${yes}"
+  fi
 
   # brew
   print_notice 'Update packages managed by homebrew.'
