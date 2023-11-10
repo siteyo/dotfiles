@@ -58,8 +58,8 @@ local keybinds = {
 
 return {
   font = wezterm.font_with_fallback({
-    -- "Fira Code",
-    "0xProto",
+    "Fira Code",
+    -- "0xProto",
     "HackGen Console NF",
   }),
   font_size = 11.0,

@@ -20,6 +20,7 @@ main() {
 
   # Setup azik
   ln -sfv "${dotfiles_dir}/etc/azik_us.rule" "${HOME}/.local/share/skk/azik_us.rule"
+  ln -sfv "${dotfiles_dir}/etc/kana-rule.conf" "${HOME}/.local/share/skk/kana-rule.conf"
 
   # Setup corvusskk
   if uname -a | grep -q microsoft; then
@@ -30,7 +31,7 @@ main() {
   fi
 
   if [ "$(uname)" == 'Darwin' ]; then
-    ln -sfv "${dotfiles_dir}/etc/azik_us_aqua.rule" "${HOME}/Library/Application Support/AquaSKK/azik_us.rule"
+    ln -sfv "${dotfiles_dir}/etc/azik_us.rule" "${HOME}/Library/Application Support/AquaSKK/azik_us.rule"
     ln -sfv "${dotfiles_dir}/etc/kana-rule.conf" "${HOME}/Library/Application Support/AquaSKK/kana-rule.conf"
     ln -sfv "${dotfiles_dir}/etc/keymap.conf" "${HOME}/Library/Application Support/AquaSKK/keymap.conf"
   fi

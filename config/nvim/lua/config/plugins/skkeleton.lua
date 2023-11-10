@@ -18,7 +18,10 @@ return {
           \   '~/.local/share/skk/SKK-JISYO.L',
           \   '~/.local/share/skk/SKK-JISYO.jinmei',
           \ ],
-          \ 'globalKanaTableFiles': ['~/.local/share/skk/azik_us.rule'],
+          \ 'globalKanaTableFiles': [
+          \   '~/.local/share/skk/kana-rule.conf',
+          \   '~/.local/share/skk/azik_us.rule',
+          \ ],
           \ })
         call skkeleton#register_keymap('henkan', '<CR>', 'kakutei')
         call skkeleton#register_keymap('input', '/', 'abbrev')
