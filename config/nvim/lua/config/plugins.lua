@@ -38,7 +38,6 @@ return {
   { "windwp/nvim-autopairs", config = true, event = "BufReadPost" },
   { "gpanders/editorconfig.nvim", event = "BufReadPost" },
   { "machakann/vim-highlightedyank", event = "BufReadPost" },
-  { "uga-rosa/ccc.nvim", config = true, cmd = "CccPick" },
 
   ------------------------------------------------------------
   --- Interface
