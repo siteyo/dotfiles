@@ -10,6 +10,7 @@ return {
         inoremap <C-j> <Plug>(skkeleton-enable)
         cnoremap <C-j> <Plug>(skkeleton-enable)
         nnoremap <C-j> a<Plug>(skkeleton-enable)
+        " call skkeleton#register_kanatable('azik', {}, v:true)
         call skkeleton#config({
           \ 'kanaTable': 'rom',
           \ 'globalJisyo': '~/.local/share/skk/SKK-JISYO.L',
@@ -23,10 +24,17 @@ return {
           \ ],
           \ })
         call skkeleton#register_keymap('henkan', '<CR>', 'kakutei')
-        call skkeleton#register_keymap('input', '/', 'abbrev')
         call skkeleton#register_keymap('input', '<S-l>', 'zenkaku')
         call skkeleton#register_keymap('input', 'q', '')
-        call skkeleton#register_keymap('input', ':', 'katakana')
+        call skkeleton#register_kanatable('rom', {
+          \ ',': ['、'],
+          \ '.': ['。'],
+          \ 'z,': ['/'],
+          \ 'l': 'disable',
+          \ '/': 'abbrev',
+          \ ';': 'henkanPoint',
+          \ ':': 'katakana',
+          \ })
       ]])
     end,
   },
