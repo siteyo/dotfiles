@@ -11,8 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-require("lazy").setup("config.plugins", {
+require("lazy").setup({
   defaults = { lazy = true },
+  spec = {
+    { import = "config.plugins" },
+    -- { import = "config.cli" },
+  },
   checker = {
     enabled = true,
     frequency = 10800,

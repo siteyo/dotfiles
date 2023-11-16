@@ -116,29 +116,37 @@ fcs() {
   echo -n $(echo "$commit" | sed "s/ .*//")
 }
 
-## Rust
-# cargo
-if [ -d "${HOME}/.cargo" ]; then
-  source "${HOME}/.cargo/env"
+# aqua cli version manager
+if command -v aqua > /dev/null; then
+  export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+  export AQUA_GLOBAL_CONFIG="${HOME}/.config/aqua/aqua.yaml"
+  aqua i -l -a
 fi
 
-## asdf
-# [ -f $(brew --prefix asdf)/libexec/asdf.sh ] &&
-#   source $(brew --prefix asdf)/libexec/asdf.sh
+## cargo (Rust)
+if [ -d "${HOME}/.cargo" ]; then
+  source "${HOME}/.cargo/env"
+  [ ! -f "${COMPLETIONS_PATH}/_rustup" ] &&
+    $(command -v rustup) completions zsh >"${COMPLETIONS_PATH}/_rustup"
+  [ ! -f "${COMPLETIONS_PATH}/_cargo" ] &&
+    $(command -v rustup) completions zsh cargo >"${COMPLETIONS_PATH}/_cargo"
+fi
 
 ## volta (Node.js)
 if [ -d "${HOME}/.volta" ]; then
   export VOLTA_HOME="$HOME/.volta"
   export PATH="$VOLTA_HOME/bin:$PATH"
+  [ ! -f "${COMPLETIONS_PATH}/_volta" ] &&
+    $(command -v volta) completions zsh >"${COMPLETIONS_PATH}/_volta"
+
 fi
 
 ## rye (Python)
 if [ -d "${HOME}/.rye" ]; then
   source "${HOME}/.rye/env"
+  [ ! -f "${COMPLETIONS_PATH}/_rye" ] &&
+    $(command -v rye) self completion -s zsh >"${COMPLETIONS_PATH}/_rye"
 fi
-
-## Starship
-# eval "$(starship init zsh)"
 
 ## Local settings
 source "${HOME}/.zshrc.local"
