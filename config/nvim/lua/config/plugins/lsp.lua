@@ -26,15 +26,15 @@ return {
         end
       end
     end,
-    enabled = enabled,
+    enabled = false,
   },
 
   -- lspconfig
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+      -- "williamboman/mason.nvim",
+      -- "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
       -- "jose-elias-alvarez/typescript.nvim",
     },
@@ -88,7 +88,7 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
       local function setup(server)
-        local server_opts = servers[server] or {}
+        local server_opts = servers[server] == true and {} or servers[server]
         server_opts.capabilities = capabilities
         if opts.setup[server] then
           if opts.setup[server](server, server_opts) then
@@ -102,23 +102,23 @@ return {
         require("lspconfig")[server].setup(server_opts)
       end
 
-      local mlsp = require("mason-lspconfig")
-      local available = mlsp.get_available_servers()
+      -- local mlsp = require("mason-lspconfig")
+      -- local available = mlsp.get_available_servers()
 
-      local ensure_installed = {}
+      -- local ensure_installed = {}
       for server, server_opts in pairs(servers) do
         if server_opts then
           server_opts = server_opts == true and {} or server_opts
-          if server_opts.mason == false or not vim.tbl_contains(available, server) then
-            setup(server)
-          else
-            ensure_installed[#ensure_installed + 1] = server
-          end
+          -- if server_opts.mason == false or not vim.tbl_contains(available, server) then
+          setup(server)
+          -- else
+          --   ensure_installed[#ensure_installed + 1] = server
+          -- end
         end
       end
 
-      mlsp.setup({ ensure_installed = ensure_installed })
-      mlsp.setup_handlers({ setup })
+      -- mlsp.setup({ ensure_installed = ensure_installed })
+      -- mlsp.setup_handlers({ setup })
     end,
     enabled = enabled,
   },

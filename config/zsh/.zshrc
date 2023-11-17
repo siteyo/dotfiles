@@ -91,6 +91,14 @@ fi
 # Other
 # --------------------------------------------------------------------
 
+# aqua cli version manager
+if command -v aqua > /dev/null; then
+  export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+  export AQUA_GLOBAL_CONFIG="${HOME}/.config/aqua/aqua.yaml"
+  export AQUA_PROGRESS_BAR=true
+  aqua i -l -a
+fi
+
 ## Fzf
 [ -f "${HOME}/.fzf.zsh" ] \
   && source "${HOME}/.fzf.zsh"
@@ -115,13 +123,6 @@ fcs() {
   commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
   echo -n $(echo "$commit" | sed "s/ .*//")
 }
-
-# aqua cli version manager
-if command -v aqua > /dev/null; then
-  export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
-  export AQUA_GLOBAL_CONFIG="${HOME}/.config/aqua/aqua.yaml"
-  aqua i -l -a
-fi
 
 ## cargo (Rust)
 if [ -d "${HOME}/.cargo" ]; then
