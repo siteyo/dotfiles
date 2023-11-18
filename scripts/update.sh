@@ -31,7 +31,7 @@ main() {
   brew upgrade
 
   # other
-  bash "$(git rev-parse --show-toplevel)/scripts/installer.sh" --update
+  # bash "$(git rev-parse --show-toplevel)/scripts/installer.sh" --update
 }
 
 main "$@"

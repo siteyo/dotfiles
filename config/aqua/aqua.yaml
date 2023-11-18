@@ -8,10 +8,10 @@
 #   - all
 registries:
 - type: standard
-  ref: v4.86.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.89.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: sharkdp/bat@v0.24.0
-- name: denoland/deno@v1.38.1
+- name: denoland/deno@v1.38.2
 - name: volta-cli/volta@v1.1.1
 - name: sharkdp/fd@v8.7.1
 - name: jesseduffield/lazygit@v0.40.2
@@ -25,3 +25,4 @@ packages:
 - name: mvdan/sh@v3.7.0
 - name: koalaman/shellcheck@v0.9.0
 - name: LuaLS/lua-language-server@3.7.3
+- name: rust-lang/rust-analyzer@2023-11-13
