@@ -1,8 +1,9 @@
 {
   "name": "node_servers",
   "dependencies": {
-    "bash-language-server": "^5.0.0",
+    "bash-language-server": "^3.3.1",
     "emmet-ls": "^0.4.2",
-    "typescript-language-server": "^4.1.2"
+    "typescript-language-server": "^4.1.2",
+    "vscode-json-languageservice": "^5.3.7"
   }
 }

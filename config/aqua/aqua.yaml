@@ -26,3 +26,4 @@ packages:
 - name: koalaman/shellcheck@v0.9.0
 - name: LuaLS/lua-language-server@3.7.3
 - name: rust-lang/rust-analyzer@2023-11-13
+- name: jqlang/jq@jq-1.7
