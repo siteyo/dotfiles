@@ -5,7 +5,6 @@ local M = {
     build = ":TSUpdate",
     event = "BufReadPre",
     dependencies = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
       "nvim-treesitter/nvim-treesitter-textobjects",
       "windwp/nvim-ts-autotag",
     },
@@ -38,7 +37,6 @@ local M = {
         "yaml",
       },
       highlight = { enable = true },
-      context_commentstring = { enable = true },
       autotag = { enable = true },
       textobjects = {
         select = {

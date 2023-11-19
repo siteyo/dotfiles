@@ -27,3 +27,5 @@ packages:
 - name: LuaLS/lua-language-server@3.7.3
 - name: rust-lang/rust-analyzer@2023-11-13
 - name: jqlang/jq@jq-1.7
+- name: rhysd/actionlint@v1.6.26
+- name: google/yamlfmt@v0.10.0

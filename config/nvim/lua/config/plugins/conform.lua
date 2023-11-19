@@ -2,15 +2,17 @@ local M = {
   "stevearc/conform.nvim",
   opts = {
     formatters_by_ft = {
-      lua = { "stylua" },
-      python = { "black", "isort" },
+      css = { "prettier" },
       javascript = { "prettier" },
       javascriptreact = { "prettier" },
+      json = { "fixjson" },
+      lua = { "stylua" },
+      python = { "black", "isort" },
+      rust = { "rustfmt" },
+      sh = { "shfmt" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
-      css = { "prettier" },
-      sh = { "shfmt" },
-      rust = { "rustfmt" },
+      yaml = { "yamlfmt" },
       ["_"] = { "trim_whitespace" },
     },
     -- format_on_save = {

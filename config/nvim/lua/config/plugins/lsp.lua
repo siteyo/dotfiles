@@ -49,8 +49,6 @@ return {
       servers = {
         bashls = {},
         cssls = {},
-        cssmodules_ls = {},
-        docker_compose_language_service = {},
         dockerls = {},
         emmet_ls = {},
         jsonls = {},

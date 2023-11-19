@@ -2,8 +2,11 @@
   "name": "node_servers",
   "dependencies": {
     "bash-language-server": "^3.3.1",
+    "dockerfile-language-server-nodejs": "^0.11.0",
     "emmet-ls": "^0.4.2",
+    "fixjson": "^1.1.2",
+    "sql-language-server": "^0.4.0",
     "typescript-language-server": "^4.1.2",
-    "vscode-json-languageservice": "^5.3.7"
+    "vscode-langservers-extracted": "^4.8.0"
   }
 }
