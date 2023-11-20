@@ -52,7 +52,7 @@ return {
         dockerls = {},
         emmet_ls = {},
         jsonls = {},
-        marksman = {},
+        -- marksman = {},
         pylsp = {},
         rust_analyzer = {},
         sqlls = {},

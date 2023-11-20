@@ -1,6 +1,5 @@
 local M = {
-  "jose-elias-alvarez/null-ls.nvim",
-  dependencies = { "williamboman/mason.nvim" },
+  "nvimtools/none-ls.nvim",
   event = "BufReadPre",
   opts = function()
     local opts = { noremap = true, silent = true }
