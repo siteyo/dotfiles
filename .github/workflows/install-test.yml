@@ -9,11 +9,14 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install required packages
         run: sudo apt-get update
+        shell: zsh {0}
       - name: Install dotfiles
         run: make test
+        shell: zsh {0}
   macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
       - name: Install dotfiles
         run: make test
+        shell: zsh {0}
