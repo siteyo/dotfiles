@@ -21,7 +21,7 @@ local M = {
     -- },
   },
   event = "VeryLazy",
-  -- enabled = false,
+  enabled = false,
 }
 
 M.config = function(_, opts)

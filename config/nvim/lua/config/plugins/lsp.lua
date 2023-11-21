@@ -47,16 +47,17 @@ return {
         severity_sort = true,
       },
       servers = {
-        bashls = {},
-        cssls = {},
-        dockerls = {},
-        emmet_ls = {},
-        jsonls = {},
-        -- marksman = {},
-        pylsp = {},
-        rust_analyzer = {},
-        sqlls = {},
-        tsserver = {},
+        bashls = true,
+        cssls = true,
+        dockerls = true,
+        emmet_ls = true,
+        jsonls = true,
+        -- marksman = true,
+        -- pylsp = true,
+        ruff_lsp = true,
+        rust_analyzer = true,
+        sqlls = true,
+        tsserver = true,
         lua_ls = {
           settings = {
             Lua = {

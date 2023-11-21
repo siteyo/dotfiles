@@ -10,13 +10,17 @@ local M = {
     local nls = require("null-ls")
     return {
       sources = {
+        --------------------
         --- code action
+        --------------------
         -- nls.builtins.code_actions.refactoring,
         nls.builtins.code_actions.eslint,
         -- nls.builtins.code_actions.gitsigns,
         -- nls.builtins.code_actions.shellcheck,
 
+        --------------------
         --- formatting
+        --------------------
         nls.builtins.formatting.stylua.with({
           condition = function()
             return vim.fn.executable("stylua") > 0
@@ -28,15 +32,12 @@ local M = {
           end,
         }),
         nls.builtins.formatting.prettier.with({
+          condition = function()
+            return vim.fn.executable("prettier") > 0
+          end,
           only_local = "node_modules/.bin",
           disabled_filetypes = { "markdown" },
         }),
-        -- nls.builtins.formatting.prettierd.with({
-        --   condition = function()
-        --     return vim.fn.executable("prettierd") > 0
-        --   end,
-        --   filetypes = { "markdown" },
-        -- }),
         nls.builtins.formatting.rustfmt.with({
           condition = function()
             return vim.fn.executable("rustfmt") > 0
@@ -55,42 +56,36 @@ local M = {
           only_local = ".venv/bin",
         }),
 
+        --------------------
         --- diagnostics
+        --------------------
         nls.builtins.diagnostics.zsh,
-        -- nls.builtins.diagnostics.shellcheck.with({
-        --   condition = function()
-        --     return vim.fn.executable("shellcheck") > 0
-        --   end,
-        -- }),
         nls.builtins.diagnostics.eslint.with({
           only_local = "node_modules/.bin",
         }),
-        -- nls.builtins.diagnostics.tsc.with({
+        -- nls.builtins.diagnostics.textlint.with({
+        --   condition = function()
+        --     return vim.fn.executable("node_modules/.bin/textlint") > 0
+        --   end,
         --   only_local = "node_modules/.bin",
+        --   timeout = 30000,
+        --   filetypes = { "markdown" },
+        --   args = { "-f", "json", "--cache", "$DIRNAME" },
+        --   method = nls.methods.DIAGNOSTICS_ON_SAVE,
         -- }),
-        nls.builtins.diagnostics.textlint.with({
-          condition = function()
-            return vim.fn.executable("node_modules/.bin/textlint") > 0
-          end,
-          only_local = "node_modules/.bin",
-          timeout = 30000,
-          filetypes = { "markdown" },
-          args = { "-f", "json", "--cache", "$DIRNAME" },
-          method = nls.methods.DIAGNOSTICS_ON_SAVE,
-        }),
-        nls.builtins.diagnostics.markdownlint.with({
-          condition = function()
-            return vim.fn.executable("markdownlint") > 0
-          end,
-          method = nls.methods.DIAGNOSTICS_ON_SAVE,
-        }),
-        nls.builtins.diagnostics.markdownlint_cli2.with({
-          condition = function()
-            return vim.fn.executable("node_modules/.bin/markdownlint-cli2") > 0
-          end,
-          only_local = "node_modules/.bin",
-          args = { "**/*.md", "#node_modules" },
-        }),
+        -- nls.builtins.diagnostics.markdownlint.with({
+        --   condition = function()
+        --     return vim.fn.executable("markdownlint") > 0
+        --   end,
+        --   method = nls.methods.DIAGNOSTICS_ON_SAVE,
+        -- }),
+        -- nls.builtins.diagnostics.markdownlint_cli2.with({
+        --   condition = function()
+        --     return vim.fn.executable("node_modules/.bin/markdownlint-cli2") > 0
+        --   end,
+        --   only_local = "node_modules/.bin",
+        --   args = { "**/*.md", "#node_modules" },
+        -- }),
         nls.builtins.diagnostics.selene.with({
           condition = function()
             return vim.fn.executable("selene") > 0
@@ -111,6 +106,6 @@ local M = {
       },
     }
   end,
-  enabled = false,
+  -- enabled = false,
 }
 return M

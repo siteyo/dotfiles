@@ -16,7 +16,7 @@ local M = {
       end,
     })
   end,
-  -- enabled = false,
+  enabled = false,
 }
 
 return M

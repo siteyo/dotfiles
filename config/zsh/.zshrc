@@ -1,8 +1,8 @@
 # Environment variables
 # --------------------------------------------------------------------
 # Homebrew for Linux (and WSL)
-[ -d '/home/linuxbrew/.linuxbrew' ] \
-  && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+[ -d '/home/linuxbrew/.linuxbrew' ] &&
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 if builtin command -v nvim > /dev/null
 then
@@ -39,6 +39,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 # Completion
 # --------------------------------------------------------------------
 FPATH="$(brew --prefix)/share/zsh/site-functions:${COMPLETIONS_PATH}:${FPATH}"
+[ ! -d "${COMPLETIONS_PATH}" ] && mkdir -p "${COMPLETIONS_PATH}"
 
 autoload -Uz compinit
 compinit

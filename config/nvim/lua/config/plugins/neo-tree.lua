@@ -1,7 +1,7 @@
 local M = {
   "nvim-neo-tree/neo-tree.nvim",
   enabled = true,
-  branch = "v2.x",
+  branch = "v3.x",
   keys = "[Filer]",
 }
 
@@ -110,43 +110,43 @@ function M.config()
     })
   end, opts)
   -- current
-  vim.keymap.set("n", "[Filer]e", function()
-    command.execute({
-      action = "focus",
-      source = "filesystem",
-      position = "current",
-      toggle = false,
-      reveal = true,
-    })
-  end)
-  vim.keymap.set("n", "[Filer]b", function()
-    command.execute({
-      action = "focus",
-      source = "buffers",
-      position = "current",
-      toggle = false,
-      reveal = true,
-    })
-  end)
-  vim.keymap.set("n", "[Filer]g", function()
-    command.execute({
-      action = "focus",
-      source = "git_status",
-      position = "current",
-      toggle = false,
-      reveal = true,
-    })
-  end)
-  -- float
-  vim.keymap.set("n", "[Filer]f", function()
-    command.execute({
-      action = "focus",
-      source = "filesystem",
-      position = "float",
-      toggle = false,
-      reveal = true,
-    })
-  end)
+  -- vim.keymap.set("n", "[Filer]e", function()
+  --   command.execute({
+  --     action = "focus",
+  --     source = "filesystem",
+  --     position = "current",
+  --     toggle = false,
+  --     reveal = true,
+  --   })
+  -- end)
+  -- vim.keymap.set("n", "[Filer]b", function()
+  --   command.execute({
+  --     action = "focus",
+  --     source = "buffers",
+  --     position = "current",
+  --     toggle = false,
+  --     reveal = true,
+  --   })
+  -- end)
+  -- vim.keymap.set("n", "[Filer]g", function()
+  --   command.execute({
+  --     action = "focus",
+  --     source = "git_status",
+  --     position = "current",
+  --     toggle = false,
+  --     reveal = true,
+  --   })
+  -- end)
+  -- -- float
+  -- vim.keymap.set("n", "[Filer]f", function()
+  --   command.execute({
+  --     action = "focus",
+  --     source = "filesystem",
+  --     position = "float",
+  --     toggle = false,
+  --     reveal = true,
+  --   })
+  -- end)
 end
 
 return M
