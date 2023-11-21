@@ -23,7 +23,7 @@
         "aquaproj/aqua-registry"
       ],
       "extends": [
-        "schedule:every weekend"
+        "schedule:weekends"
       ]
     }
   ]
