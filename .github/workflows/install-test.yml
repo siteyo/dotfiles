@@ -7,9 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install required packages
+      - name: Update packages
         run: sudo apt-get update
-        shell: zsh {0}
+      - name: Install required packages
+        run: sudo apt-get install zsh
       - name: Install dotfiles
         run: make test
         shell: zsh {0}
