@@ -14,9 +14,6 @@
   ],
   "dependencyDashboard": true,
   "automerge": true,
-  "assignees": [
-    "siteyo"
-  ],
   "packageRules": [
     {
       "matchPackageNames": [
