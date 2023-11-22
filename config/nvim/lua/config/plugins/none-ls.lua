@@ -14,7 +14,7 @@ local M = {
         --- code action
         --------------------
         -- nls.builtins.code_actions.refactoring,
-        nls.builtins.code_actions.eslint,
+        -- nls.builtins.code_actions.eslint,
         -- nls.builtins.code_actions.gitsigns,
         -- nls.builtins.code_actions.shellcheck,
 

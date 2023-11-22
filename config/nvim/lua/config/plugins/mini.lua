@@ -33,6 +33,7 @@ return {
         },
       })
     end,
+    enabled = vim.g.neovide == nil,
   },
 
   -- visualize indent scope
@@ -44,6 +45,7 @@ return {
         symbol = "│",
       })
     end,
+    enabled = vim.g.neovide == nil,
   },
 
   -- buffer Removing

@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: python-tools
-Version: 0.1.0
-Requires-Python: >=3.8
-Requires-Dist: ruff>=0.1.6
-Requires-Dist: ruff-lsp>=0.0.45
-Requires-Dist: pyright>=1.1.336

@@ -55,6 +55,7 @@ return {
         -- marksman = true,
         -- pylsp = true,
         ruff_lsp = true,
+        pyright = true,
         rust_analyzer = true,
         sqlls = true,
         tsserver = true,

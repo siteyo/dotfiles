@@ -30,6 +30,7 @@ return {
           \ ',': ['、'],
           \ '.': ['。'],
           \ 'z,': ['/'],
+          \ ' ': 'henkanFirst',
           \ 'l': 'disable',
           \ '/': 'abbrev',
           \ ';': 'henkanPoint',

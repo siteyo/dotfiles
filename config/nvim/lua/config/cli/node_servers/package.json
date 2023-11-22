@@ -5,7 +5,6 @@
     "dockerfile-language-server-nodejs": "^0.11.0",
     "emmet-ls": "^0.4.2",
     "fixjson": "^1.1.2",
-    "sql-language-server": "^1.0.0",
     "typescript-language-server": "^4.1.2",
     "vim-language-server": "^2.3.1",
     "vscode-langservers-extracted": "^4.8.0"

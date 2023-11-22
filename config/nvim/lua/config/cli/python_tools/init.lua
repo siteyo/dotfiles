@@ -3,7 +3,6 @@ local M = {
   dir = vim.fn.fnamemodify(debug.getinfo(1).source:sub(2), ":h"),
   dependencies = { "nvim-lua/plenary.nvim" },
   event = "VeryLazy",
-  build = "rye sync",
 }
 
 M.config = function(spec)
@@ -31,7 +30,7 @@ M.config = function(spec)
   local bin_dir = Path:new(dir, ".venv", "bin")
   vim.env.PATH = bin_dir:absolute() .. ":" .. vim.env.PATH
 
-  vim.api.nvim_create_user_command("PTInstall", function()
+  vim.api.nvim_create_user_command("PTSync", function()
     rye_sync_job:start()
   end, {})
 end

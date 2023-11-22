@@ -15,6 +15,7 @@ local M = {
       ["<C-h>"] = "actions.parent",
       ["H"] = "actions.toggle_hidden",
       ["gs"] = "actions.change_sort",
+      ["-"] = "actions.open_cwd",
     },
   },
   -- Optional dependencies
@@ -24,7 +25,7 @@ local M = {
 
 M.config = function(_, opts)
   require("oil").setup(opts)
-  vim.keymap.set("n", "[Filer]e", "<Cmd>Oil .<CR>")
+  vim.keymap.set("n", "[Filer]e", "<Cmd>Oil<CR>")
   vim.keymap.set("n", "[Filer]f", "<Cmd>Oil --float<CR>")
 end
 

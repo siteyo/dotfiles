@@ -35,6 +35,8 @@ vim.keymap.set("n", "se", "<Cmd>enew<CR>")
 vim.keymap.set("n", "ss", "<Cmd>sp<CR><C-w>w")
 vim.keymap.set("n", "sv", "<Cmd>vs<CR><C-w>w")
 vim.keymap.set("n", "s=", "<C-w>=")
+vim.keymap.set("n", "s-", "<C-w>_")
+vim.keymap.set("n", "s\\", "<C-w>|")
 
 -- Refresh & noh
 vim.keymap.set("n", "<C-l>", "<Cmd>noh<CR><C-l>")

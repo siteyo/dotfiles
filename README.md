@@ -11,6 +11,7 @@
 * [x] wezterm
 * [x] sheldon
 * [x] starship
+* [x] aqua
 
 ## Font
 
@@ -20,10 +21,14 @@
 * [HackGen](https://github.com/yuru7/HackGen/releases)
   * for macOS: Install using Homebrew. (Included in Brewfile-Darwin.)
   * for WSL: Install manually.
+* [0xProto](https://github.com/0xType/0xProto)
+  * for macOS: Install using Homebrew. (Included in Brewfile-Darwin.)
+  * for WSL: Install manually.
 
 ## How to Setup
 
 The following command will install all of the contents.
+However, in the case of macOS, it may be necessary to install Homebrew first.
 
 ```shell
 make install

@@ -14,6 +14,7 @@ local M = {
     "hrsh7th/cmp-nvim-lua",
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
+    "rafamadriz/friendly-snippets",
     "rinx/cmp-skkeleton",
     "hrsh7th/cmp-calc",
   },
@@ -65,6 +66,7 @@ function M.config()
       ghost_text = true,
     },
   })
+  require("luasnip.loaders.from_vscode").lazy_load()
 
   cmp.setup.cmdline({ "/", "?" }, {
     mapping = {

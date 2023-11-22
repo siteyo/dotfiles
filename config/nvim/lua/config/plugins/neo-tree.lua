@@ -82,7 +82,7 @@ function M.config()
   local opts = { noremap = true, silent = true }
   local command = require("neo-tree.command")
   -- drawer
-  vim.keymap.set("n", "[Filer]dd", function()
+  vim.keymap.set("n", "[Filer]d", function()
     command.execute({
       action = "show",
       source = "filesystem",
@@ -91,24 +91,24 @@ function M.config()
       reveal = true,
     })
   end, opts)
-  vim.keymap.set("n", "[Filer]dg", function()
-    command.execute({
-      action = "show",
-      source = "git_status",
-      position = "left",
-      toggle = true,
-      reveal = true,
-    })
-  end, opts)
-  vim.keymap.set("n", "[Filer]db", function()
-    command.execute({
-      action = "show",
-      source = "buffers",
-      position = "left",
-      toggle = true,
-      reveal = true,
-    })
-  end, opts)
+  -- vim.keymap.set("n", "[Filer]dg", function()
+  --   command.execute({
+  --     action = "show",
+  --     source = "git_status",
+  --     position = "left",
+  --     toggle = true,
+  --     reveal = true,
+  --   })
+  -- end, opts)
+  -- vim.keymap.set("n", "[Filer]db", function()
+  --   command.execute({
+  --     action = "show",
+  --     source = "buffers",
+  --     position = "left",
+  --     toggle = true,
+  --     reveal = true,
+  --   })
+  -- end, opts)
   -- current
   -- vim.keymap.set("n", "[Filer]e", function()
   --   command.execute({
