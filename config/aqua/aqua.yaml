@@ -29,3 +29,5 @@ packages:
 - name: jqlang/jq@jq-1.7
 - name: rhysd/actionlint@v1.6.26
 - name: google/yamlfmt@v0.10.0
+- name: cli/cli@v2.39.1
+- name: x-motemen/ghq@v1.4.2

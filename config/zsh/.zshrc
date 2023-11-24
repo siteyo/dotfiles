@@ -140,7 +140,6 @@ if [ -d "${HOME}/.volta" ]; then
   export PATH="$VOLTA_HOME/bin:$PATH"
   [ ! -f "${COMPLETIONS_PATH}/_volta" ] &&
     $(command -v volta) completions zsh >"${COMPLETIONS_PATH}/_volta"
-
 fi
 
 ## rye (Python)
@@ -148,6 +147,12 @@ if [ -d "${HOME}/.rye" ]; then
   source "${HOME}/.rye/env"
   [ ! -f "${COMPLETIONS_PATH}/_rye" ] &&
     $(command -v rye) self completion -s zsh >"${COMPLETIONS_PATH}/_rye"
+fi
+
+## gh
+if command -v gh >/dev/null; then
+  [ ! -f "${COMPLETIONS_PATH}/_gh" ] &&
+    $(command -v gh) completion -s zsh >"${COMPLETIONS_PATH}/_gh"
 fi
 
 ## Local settings
