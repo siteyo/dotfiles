@@ -19,7 +19,7 @@ packages:
 - name: ajeetdsouza/zoxide@v0.9.2
 - name: dandavison/delta@0.16.5
 - name: dalance/procs@v0.14.4
-- name: BurntSushi/ripgrep@13.0.0
+- name: BurntSushi/ripgrep@14.0.1
 - name: mitsuhiko/rye@0.15.2
 - name: JohnnyMorganz/StyLua@v0.19.1
 - name: mvdan/sh@v3.7.0
