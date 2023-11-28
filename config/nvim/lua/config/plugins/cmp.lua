@@ -15,7 +15,7 @@ local M = {
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
-    -- "rinx/cmp-skkeleton",
+    "uga-rosa/cmp-skkeleton",
     "hrsh7th/cmp-calc",
   },
 }
@@ -52,7 +52,7 @@ function M.config()
       { name = "emoji", max_item_count = 10 },
       { name = "neorg" },
       { name = "orgmode" },
-      -- { name = "skkeleton", max_item_count = 10 },
+      { name = "skkeleton", max_item_count = 20 },
       { name = "calc" },
     }),
     -- view = {

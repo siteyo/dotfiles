@@ -22,6 +22,8 @@ return {
           \   '~/.local/share/skk/kana-rule.conf',
           \   '~/.local/share/skk/azik_us.rule',
           \ ],
+          \ 'markerHenkan': '',
+          \ 'markerHenkanSelect': '',
           \ })
         call skkeleton#register_keymap('henkan', '<CR>', 'kakutei')
         call skkeleton#register_keymap('input', '<S-l>', 'zenkaku')
@@ -61,6 +63,22 @@ return {
       vim.api.nvim_set_hl(0, "SkkeletonIndicatorAbbrev", { fg = "#e5e9f0", bg = "#bf616a", bold = true })
       require("skkeleton_indicator").setup({})
     end,
+    event = { "InsertEnter", "BufReadPost" },
+    enabled = false,
+  },
+  {
+    "siteyo/skkeleton_pointer.nvim",
+    dependencies = {
+      "vim-skk/skkeleton",
+    },
+    opts = {
+      mode_win_opts = {
+        zindex = 1050,
+      },
+      state_win_opts = {
+        zindex = 1050,
+      },
+    },
     event = { "InsertEnter", "BufReadPost" },
   },
 }
