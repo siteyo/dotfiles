@@ -6,7 +6,7 @@ local M = {
 function M.config()
   local tokyonight = require("tokyonight")
   tokyonight.setup({
-    style = "storm",
+    style = "night",
     light_style = "day",
     transparent = not vim.g.neovide == nil,
     styles = {

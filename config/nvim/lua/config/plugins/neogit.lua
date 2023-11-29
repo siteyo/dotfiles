@@ -3,7 +3,7 @@ local M = {
   dependencies = {
     "sindrets/diffview.nvim",
   },
-  keys = "[Git]",
+  keys = "<Leader>g",
   enabled = false,
 }
 
@@ -17,16 +17,16 @@ M.config = function()
     },
   })
 
-  vim.keymap.set("n", "[Git]s", function()
+  vim.keymap.set("n", "<Leader>gs", function()
     neogit.open()
   end)
-  vim.keymap.set("n", "[Git]c", function()
+  vim.keymap.set("n", "<Leader>gc", function()
     neogit.open({ "commit" })
   end)
-  vim.keymap.set("n", "[Git]l", function()
+  vim.keymap.set("n", "<Leader>gl", function()
     neogit.open({ "log" })
   end)
-  vim.keymap.set("n", "[Git]h", function()
+  vim.keymap.set("n", "<Leader>gh", function()
     neogit.open({ "branch" })
   end)
 end

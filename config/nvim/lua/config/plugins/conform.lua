@@ -27,7 +27,7 @@ local M = {
 M.config = function(_, opts)
   local conform = require("conform")
   require("conform").setup(opts)
-  vim.keymap.set("n", "[Lsp]f", function()
+  vim.keymap.set("n", "<Leader>lf", function()
     conform.format()
   end)
 end

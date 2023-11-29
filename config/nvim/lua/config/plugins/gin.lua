@@ -3,7 +3,7 @@ local M = {
   dependencies = {
     "vim-denops/denops.vim",
   },
-  keys = "[Git]",
+  keys = "<Leader>g",
   config = function()
     -- vim.keymap.set("n", "[Git]s", "<Cmd>GinStatus<CR>")
     -- vim.keymap.set("n", "[Git]h", "<Cmd>GinBranch<CR>")

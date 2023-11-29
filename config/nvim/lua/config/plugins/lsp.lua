@@ -37,6 +37,7 @@ return {
       -- "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
       -- "jose-elias-alvarez/typescript.nvim",
+      { "folke/neodev.nvim", config = true },
     },
     event = "BufReadPre",
     opts = {

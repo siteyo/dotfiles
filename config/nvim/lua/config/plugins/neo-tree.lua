@@ -2,7 +2,7 @@ local M = {
   "nvim-neo-tree/neo-tree.nvim",
   enabled = true,
   branch = "v3.x",
-  keys = "[Filer]",
+  keys = "<Leader>e",
 }
 
 function M.config()
@@ -82,7 +82,7 @@ function M.config()
   local opts = { noremap = true, silent = true }
   local command = require("neo-tree.command")
   -- drawer
-  vim.keymap.set("n", "[Filer]d", function()
+  vim.keymap.set("n", "<Leader>ed", function()
     command.execute({
       action = "show",
       source = "filesystem",
@@ -91,7 +91,7 @@ function M.config()
       reveal = true,
     })
   end, opts)
-  -- vim.keymap.set("n", "[Filer]dg", function()
+  -- vim.keymap.set("n", "<Leader>edg", function()
   --   command.execute({
   --     action = "show",
   --     source = "git_status",
@@ -100,7 +100,7 @@ function M.config()
   --     reveal = true,
   --   })
   -- end, opts)
-  -- vim.keymap.set("n", "[Filer]db", function()
+  -- vim.keymap.set("n", "<Leader>edb", function()
   --   command.execute({
   --     action = "show",
   --     source = "buffers",
@@ -110,7 +110,7 @@ function M.config()
   --   })
   -- end, opts)
   -- current
-  -- vim.keymap.set("n", "[Filer]e", function()
+  -- vim.keymap.set("n", "<Leader>ee", function()
   --   command.execute({
   --     action = "focus",
   --     source = "filesystem",
@@ -119,7 +119,7 @@ function M.config()
   --     reveal = true,
   --   })
   -- end)
-  -- vim.keymap.set("n", "[Filer]b", function()
+  -- vim.keymap.set("n", "<Leader>eb", function()
   --   command.execute({
   --     action = "focus",
   --     source = "buffers",
@@ -128,7 +128,7 @@ function M.config()
   --     reveal = true,
   --   })
   -- end)
-  -- vim.keymap.set("n", "[Filer]g", function()
+  -- vim.keymap.set("n", "<Leader>eg", function()
   --   command.execute({
   --     action = "focus",
   --     source = "git_status",
@@ -138,7 +138,7 @@ function M.config()
   --   })
   -- end)
   -- -- float
-  -- vim.keymap.set("n", "[Filer]f", function()
+  -- vim.keymap.set("n", "<Leader>ef", function()
   --   command.execute({
   --     action = "focus",
   --     source = "filesystem",

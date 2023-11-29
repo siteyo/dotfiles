@@ -1,15 +1,31 @@
 local M = {
   "monaqa/dial.nvim",
-  event = "BufReadPost",
+  keys = {
+    {
+      "<C-a>",
+      "<Plug>(dial-increment)",
+      mode = { "n", "x" },
+      desc = "Dial increment",
+    },
+    {
+      "<C-x>",
+      "<Plug>(dial-decrement)",
+      mode = { "n", "x" },
+      desc = "Dial decrement",
+    },
+    -- {
+    --   "g<C-a>",
+    --   "g<Plug>(dial-increment)",
+    --   mode = { "v" },
+    --   desc = "Dial visual increment",
+    -- },
+    -- {
+    --   "g<C-x>",
+    --   "g<Plug>(dial-decrement)",
+    --   mode = { "x" },
+    --   desc = "Dial visual decrement",
+    -- },
+  },
 }
-
-M.config = function()
-  vim.keymap.set("n", "<C-a>", require("dial.map").inc_normal(), { noremap = true })
-  vim.keymap.set("n", "<C-x>", require("dial.map").dec_normal(), { noremap = true })
-  vim.keymap.set("v", "<C-a>", require("dial.map").inc_visual(), { noremap = true })
-  vim.keymap.set("v", "<C-x>", require("dial.map").dec_visual(), { noremap = true })
-  vim.keymap.set("v", "g<C-a>", require("dial.map").inc_gvisual(), { noremap = true })
-  vim.keymap.set("v", "g<C-x>", require("dial.map").dec_gvisual(), { noremap = true })
-end
 
 return M

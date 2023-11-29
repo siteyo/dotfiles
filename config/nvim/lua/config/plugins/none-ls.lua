@@ -3,7 +3,7 @@ local M = {
   event = "BufReadPre",
   opts = function()
     local opts = { noremap = true, silent = true }
-    vim.keymap.set("n", "[Lsp]f", function()
+    vim.keymap.set("n", "<Leader>lf", function()
       vim.lsp.buf.format({ async = true })
     end, opts)
 

@@ -39,11 +39,11 @@ function M.config()
   vim.keymap.set("n", "gd", "<Cmd>Lspsaga peek_definition<CR>")
   vim.keymap.set("n", "gD", "<Cmd>Lspsaga goto_definition<CR>")
 
-  -- [Lsp]x
-  vim.keymap.set({ "n", "v" }, "[Lsp]a", "<Cmd>Lspsaga code_action<CR>")
-  vim.keymap.set("n", "[Lsp]o", "<Cmd>Lspsaga outline<CR>")
-  vim.keymap.set("n", "[Lsp]d", "<Cmd>Lspsaga show_cursor_diagnostics<CR>")
-  vim.keymap.set("n", "[Lsp]t", "<Cmd>Lspsaga term_toggle<CR>")
+  -- <Leader>lx
+  vim.keymap.set({ "n", "v" }, "<Leader>la", "<Cmd>Lspsaga code_action<CR>")
+  vim.keymap.set("n", "<Leader>lo", "<Cmd>Lspsaga outline<CR>")
+  vim.keymap.set("n", "<Leader>ld", "<Cmd>Lspsaga show_cursor_diagnostics<CR>")
+  vim.keymap.set("n", "<Leader>lt", "<Cmd>Lspsaga term_toggle<CR>")
 
   -- other
   vim.keymap.set("n", "[w", "<Cmd>Lspsaga diagnostic_jump_prev<CR>")

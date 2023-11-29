@@ -94,23 +94,3 @@ end)
 
 -- Terminal
 vim.keymap.set("t", "<C-n><C-n>", "<C-\\><C-n>")
-
--- Filer
-vim.keymap.set("n", "[Filer]", "<Nop>")
-vim.keymap.set("n", "<Space>e", "[Filer]", { remap = true })
--- FuzzyFinder
-vim.keymap.set("n", "[FuzzyFinder]", "<Nop>")
-vim.keymap.set("n", "<Space>f", "[FuzzyFinder]", { remap = true })
--- Git
-vim.keymap.set("n", "[Git]", "<Nop>")
-vim.keymap.set("n", "<Space>g", "[Git]", { remap = true })
-vim.keymap.set("v", "<Space>g", "[Git]", { remap = true })
--- Lsp
-vim.keymap.set("n", "[Lsp]", "<Nop>")
-vim.keymap.set("n", "<Space>l", "[Lsp]", { remap = true })
--- Neorg
-vim.keymap.set("n", "[Neorg]", "<Nop>")
-vim.keymap.set("n", "<Space>o", "[Neorg]", { remap = true })
--- Noice
-vim.keymap.set("n", "[Noice]", "<Nop")
-vim.keymap.set("n", "<Space>n", "[Noice]", { remap = true })

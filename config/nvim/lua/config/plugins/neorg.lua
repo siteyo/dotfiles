@@ -24,7 +24,7 @@ return {
     },
   },
   dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
-  keys = "[Neorg]",
+  keys = "<Leader>o",
   ft = "norg",
   cmd = "Neorg",
   config = function(_, opts)
@@ -32,15 +32,15 @@ return {
     require("neorg").setup(opts)
     --- keymaps
     -- journal
-    vim.keymap.set("n", "[Neorg]t", "<Cmd>Neorg journal toc open<CR>")
-    vim.keymap.set("n", "[Neorg]n", "<Cmd>Neorg journal tomorrow<CR>")
-    vim.keymap.set("n", "[Neorg]p", "<Cmd>Neorg journal yesterday<CR>")
-    vim.keymap.set("n", "[Neorg]j", "<Cmd>Neorg journal today<CR>")
-    vim.keymap.set("n", "[Neorg]o", "<Cmd>Neorg journal custom<CR>")
+    vim.keymap.set("n", "<Leader>ot", "<Cmd>Neorg journal toc open<CR>")
+    vim.keymap.set("n", "<Leader>on", "<Cmd>Neorg journal tomorrow<CR>")
+    vim.keymap.set("n", "<Leader>op", "<Cmd>Neorg journal yesterday<CR>")
+    vim.keymap.set("n", "<Leader>oj", "<Cmd>Neorg journal today<CR>")
+    vim.keymap.set("n", "<Leader>oo", "<Cmd>Neorg journal custom<CR>")
     --
-    vim.keymap.set("n", "[Neorg]i", "<Cmd>Neorg index<CR>")
-    vim.keymap.set("n", "[Neorg]m", "<Cmd>Neorg inject-metadata<CR>")
-    -- vim.keymap.set("n", "[Neorg]o", "<Cmd>Neorg toc<CR>")
+    vim.keymap.set("n", "<Leader>oi", "<Cmd>Neorg index<CR>")
+    vim.keymap.set("n", "<Leader>om", "<Cmd>Neorg inject-metadata<CR>")
+    -- vim.keymap.set("n", "<Leader>oo", "<Cmd>Neorg toc<CR>")
   end,
   enabled = true,
 }

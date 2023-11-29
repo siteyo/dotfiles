@@ -36,12 +36,10 @@ return {
   },
   { "windwp/nvim-autopairs", config = true, event = "BufReadPost" },
   { "gpanders/editorconfig.nvim", event = "BufReadPost" },
-  { "machakann/vim-highlightedyank", event = "BufReadPost" },
 
   ------------------------------------------------------------
   --- Interface
   ------------------------------------------------------------
-  { "stevearc/dressing.nvim", config = true, lazy = "VeryLazy" },
   { "nvim-zh/colorful-winsep.nvim", config = true, event = "WinNew" },
 
   ------------------------------------------------------------

@@ -5,7 +5,7 @@ local M = {
     "kkharji/sqlite.lua",
     "nvim-telescope/telescope-file-browser.nvim",
   },
-  keys = "[FuzzyFinder]",
+  keys = "<Leader>f",
 }
 
 function M.config()
@@ -83,20 +83,20 @@ function M.config()
   -- end
 
   --- Mappings
-  vim.keymap.set("n", "[FuzzyFinder]<Space>", "<Cmd>Telescope<CR>")
-  vim.keymap.set("n", "[FuzzyFinder]f", "<Cmd>Telescope fd<CR>")
-  vim.keymap.set("n", "[FuzzyFinder]g", "<Cmd>Telescope git_files<CR>")
-  vim.keymap.set("n", "[FuzzyFinder]s", "<Cmd>Telescope git_status<CR>")
-  -- vim.keymap.set("n", "[FuzzyFinder]s", function()
+  vim.keymap.set("n", "<Leader>f<Space>", "<Cmd>Telescope<CR>")
+  vim.keymap.set("n", "<Leader>ff", "<Cmd>Telescope fd<CR>")
+  vim.keymap.set("n", "<Leader>fg", "<Cmd>Telescope git_files<CR>")
+  vim.keymap.set("n", "<Leader>fs", "<Cmd>Telescope git_status<CR>")
+  -- vim.keymap.set("n", "<Leader>fs", function()
   --   builtin.git_status({ previewer = delta })
   -- end)
-  vim.keymap.set("n", "[FuzzyFinder]b", "<Cmd>Telescope buffers<CR>")
-  vim.keymap.set("n", "[FuzzyFinder]m", "<Cmd>Telescope frecency<CR>")
-  vim.keymap.set("n", "[FuzzyFinder]r", "<Cmd>Telescope resume<CR>")
-  vim.keymap.set("n", "[FuzzyFinder]n", "<Cmd>Telescope notify<CR>")
-  vim.keymap.set("n", "[FuzzyFinder]?", "<Cmd>Telescope help_tags<CR>")
-  vim.keymap.set("n", "[FuzzyFinder]d", "<Cmd>Telescope diagnostics<CR>")
-  vim.keymap.set("n", "[FuzzyFinder]e", "<Cmd>Telescope file_browser<CR>")
+  vim.keymap.set("n", "<Leader>fb", "<Cmd>Telescope buffers<CR>")
+  vim.keymap.set("n", "<Leader>fm", "<Cmd>Telescope frecency<CR>")
+  vim.keymap.set("n", "<Leader>fr", "<Cmd>Telescope resume<CR>")
+  vim.keymap.set("n", "<Leader>fn", "<Cmd>Telescope notify<CR>")
+  vim.keymap.set("n", "<Leader>f?", "<Cmd>Telescope help_tags<CR>")
+  vim.keymap.set("n", "<Leader>fd", "<Cmd>Telescope diagnostics<CR>")
+  vim.keymap.set("n", "<Leader>fe", "<Cmd>Telescope file_browser<CR>")
 end
 
 return M

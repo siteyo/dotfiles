@@ -25,8 +25,8 @@ local M = {
 
 M.config = function(_, opts)
   require("oil").setup(opts)
-  vim.keymap.set("n", "[Filer]e", "<Cmd>Oil<CR>")
-  vim.keymap.set("n", "[Filer]f", "<Cmd>Oil --float<CR>")
+  vim.keymap.set("n", "<Leader>ee", "<Cmd>Oil<CR>")
+  vim.keymap.set("n", "<Leader>ef", "<Cmd>Oil --float<CR>")
 end
 
 return M

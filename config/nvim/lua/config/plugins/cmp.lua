@@ -17,6 +17,8 @@ local M = {
     "rafamadriz/friendly-snippets",
     "uga-rosa/cmp-skkeleton",
     "hrsh7th/cmp-calc",
+    "f3fora/cmp-spell",
+    "lukas-reineke/cmp-rg",
   },
 }
 
@@ -54,13 +56,23 @@ function M.config()
       { name = "orgmode" },
       { name = "skkeleton", max_item_count = 20 },
       { name = "calc" },
+      {
+        name = "spell",
+        option = {
+          keep_all_entries = false,
+          enable_in_context = function()
+            return true
+          end,
+        },
+      },
+      { name = "rg", keyword_length = 3 },
     }),
     -- view = {
     --   entries = "native",
     -- },
     formatting = {
       format = require("lspkind").cmp_format({
-        mode = "symbol",
+        mode = "symbol_text",
         maxwidth = 50,
         ellipsis_char = "...",
       }),
