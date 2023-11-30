@@ -69,9 +69,9 @@ return {
               completion = {
                 callSnippet = "Replace",
               },
-              diagnostics = {
-                globals = { "vim" },
-              },
+              -- diagnostics = {
+              --   globals = { "vim" },
+              -- },
             },
           },
         },

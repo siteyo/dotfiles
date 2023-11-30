@@ -55,7 +55,7 @@ tags
 
 
 ### Neovim ###
-config/nvim/plugin/*
+config/nvim/spell/*
 
 
 ### Node ###

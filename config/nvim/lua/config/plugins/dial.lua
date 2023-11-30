@@ -3,28 +3,61 @@ local M = {
   keys = {
     {
       "<C-a>",
-      "<Plug>(dial-increment)",
-      mode = { "n", "x" },
-      desc = "Dial increment",
+      function()
+        require("dial.map").manipulate("increment", "normal")
+      end,
+      mode = { "n" },
     },
     {
       "<C-x>",
-      "<Plug>(dial-decrement)",
-      mode = { "n", "x" },
+      function()
+        require("dial.map").manipulate("decrement", "normal")
+      end,
+      mode = { "n" },
+    },
+    {
+      "g<C-a>",
+      function()
+        require("dial.map").manipulate("increment", "gnormal")
+      end,
+      mode = { "n" },
+    },
+    {
+      "g<C-x>",
+      function()
+        require("dial.map").manipulate("decrement", "gnormal")
+      end,
+      mode = { "n" },
+    },
+    {
+      "<C-a>",
+      function()
+        require("dial.map").manipulate("increment", "visual")
+      end,
+      mode = { "x" },
+    },
+    {
+      "<C-x>",
+      function()
+        require("dial.map").manipulate("decrement", "visual")
+      end,
+      mode = { "x" },
       desc = "Dial decrement",
     },
-    -- {
-    --   "g<C-a>",
-    --   "g<Plug>(dial-increment)",
-    --   mode = { "v" },
-    --   desc = "Dial visual increment",
-    -- },
-    -- {
-    --   "g<C-x>",
-    --   "g<Plug>(dial-decrement)",
-    --   mode = { "x" },
-    --   desc = "Dial visual decrement",
-    -- },
+    {
+      "g<C-a>",
+      function()
+        require("dial.map").manipulate("increment", "gvisual")
+      end,
+      mode = { "x" },
+    },
+    {
+      "g<C-x>",
+      function()
+        require("dial.map").manipulate("decrement", "gvisual")
+      end,
+      mode = { "x" },
+    },
   },
 }
 

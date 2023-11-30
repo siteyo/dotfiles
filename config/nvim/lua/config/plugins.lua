@@ -5,6 +5,13 @@ return {
   { "nvim-lua/plenary.nvim" },
   { "nvim-tree/nvim-web-devicons" },
   { "MunifTanjim/nui.nvim" },
+  {
+    "vim-jp/vimdoc-ja",
+    event = "VeryLazy",
+    config = function()
+      vim.o.helplang = "ja,en"
+    end,
+  },
 
   ------------------------------------------------------------
   --- Colorscheme

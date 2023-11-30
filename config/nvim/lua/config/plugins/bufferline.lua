@@ -22,7 +22,7 @@ M.opts = {
     show_close_icon = false,
     show_tab_indicators = true,
     separator_style = "slant",
-    always_show_bufferline = false,
+    always_show_bufferline = true,
   },
   -- highlights = require("catppuccin.groups.integrations.bufferline").get({ styles = { "bold" } }),
   highlights = {
