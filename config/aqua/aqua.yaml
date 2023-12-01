@@ -11,7 +11,7 @@ registries:
   ref: v4.92.1 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: sharkdp/bat@v0.24.0
-- name: denoland/deno@v1.38.3
+- name: denoland/deno@v1.38.4
 - name: volta-cli/volta@v1.1.1
 - name: sharkdp/fd@v8.7.1
 - name: jesseduffield/lazygit@v0.40.2
