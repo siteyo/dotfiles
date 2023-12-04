@@ -102,12 +102,9 @@ function M.config()
       { name = "treesitter" },
       {
         name = "spell",
-        option = {
-          keep_all_entries = false,
-          enable_in_context = function()
-            return true
-          end,
-        },
+        entry_filter = function(entry, _)
+          return string.match(entry:get_word(), "^%w+$")
+        end,
       },
     }),
     -- view = {

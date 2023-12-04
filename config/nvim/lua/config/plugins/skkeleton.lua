@@ -64,7 +64,7 @@ return {
       require("skkeleton_indicator").setup({})
     end,
     event = { "InsertEnter", "BufReadPost" },
-    enabled = false,
+    enabled = true,
   },
   {
     "siteyo/skkeleton_pointer.nvim",
@@ -80,5 +80,6 @@ return {
       },
     },
     event = { "InsertEnter", "BufReadPost" },
+    enabled = false
   },
 }
