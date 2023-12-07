@@ -23,9 +23,9 @@ $character
 # add_newline = true
 
 [character]
-success_symbol = "[ ](#c6c8d1)"
-error_symbol = "[ ](#e27878)"
-vicmd_symbol = "[ ](#b4be82)"
+success_symbol = "[](#c6c8d1)"
+error_symbol = "[](#e27878)"
+vicmd_symbol = "[](#b4be82)"
 
 # You can also replace your username with a neat symbol like  to save some space
 [username]
@@ -37,7 +37,7 @@ format = '[ $user ]($style)'
 [directory]
 style = "bg:#2e3244"
 format = "[   $path ]($style)"
-truncation_length = 3
+truncation_length = 8
 truncation_symbol = "…/"
 
 # Here is how you can shorten some long paths by text replacement
