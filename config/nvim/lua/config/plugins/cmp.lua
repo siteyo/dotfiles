@@ -15,7 +15,7 @@ local M = {
     "rafamadriz/friendly-snippets",
     "uga-rosa/cmp-skkeleton",
     "hrsh7th/cmp-calc",
-    "f3fora/cmp-spell",
+    -- "f3fora/cmp-spell",
     "lukas-reineke/cmp-rg",
     "ray-x/cmp-treesitter",
   },
@@ -100,12 +100,12 @@ function M.config()
       { name = "buffer" },
       { name = "calc" },
       { name = "treesitter" },
-      {
-        name = "spell",
-        entry_filter = function(entry, _)
-          return string.match(entry:get_word(), "^%w+$")
-        end,
-      },
+      -- {
+      --   name = "spell",
+      --   entry_filter = function(entry, _)
+      --     return string.match(entry:get_word(), "^%w+$")
+      --   end,
+      -- },
     }),
     -- view = {
     --   entries = "native",
@@ -121,7 +121,7 @@ function M.config()
           luasnip = "[LuaSnip]",
           nvim_lua = "[NeovimLua]",
           path = "[Path]",
-          spell = "[Spell]",
+          -- spell = "[Spell]",
           emoji = "[Emoji]",
           calc = "[Calc]",
           rg = "[Rg]",

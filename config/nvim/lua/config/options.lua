@@ -48,5 +48,5 @@ vim.o.backupdir = vim.fn.expand("~/.nvim/backup")
 vim.o.directory = vim.fn.expand("~/.nvim/swap")
 vim.o.undodir = vim.fn.expand("~/.nvim/undo")
 
-vim.o.spell = true
-vim.o.spelllang = "en_us,cjk"
+-- vim.o.spell = true
+-- vim.o.spelllang = "en_us,cjk"

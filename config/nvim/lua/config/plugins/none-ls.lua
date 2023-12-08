@@ -2,10 +2,10 @@ local M = {
   "nvimtools/none-ls.nvim",
   event = "BufReadPre",
   opts = function()
-    local opts = { noremap = true, silent = true }
-    vim.keymap.set("n", "<Leader>lf", function()
-      vim.lsp.buf.format({ async = true })
-    end, opts)
+    -- local opts = { noremap = true, silent = true }
+    -- vim.keymap.set("n", "<Leader>lf", function()
+    --   vim.lsp.buf.format({ async = true })
+    -- end, opts)
 
     local nls = require("null-ls")
     return {
@@ -21,45 +21,46 @@ local M = {
         --------------------
         --- formatting
         --------------------
-        nls.builtins.formatting.stylua.with({
-          condition = function()
-            return vim.fn.executable("stylua") > 0
-          end,
-        }),
-        nls.builtins.formatting.shfmt.with({
-          condition = function()
-            return vim.fn.executable("shfmt") > 0
-          end,
-        }),
-        nls.builtins.formatting.prettier.with({
-          condition = function()
-            return vim.fn.executable("prettier") > 0
-          end,
-          only_local = "node_modules/.bin",
-          disabled_filetypes = { "markdown" },
-        }),
-        nls.builtins.formatting.rustfmt.with({
-          condition = function()
-            return vim.fn.executable("rustfmt") > 0
-          end,
-        }),
-        nls.builtins.formatting.black.with({
-          condition = function()
-            return vim.fn.executable(".venv/bin/black") > 0
-          end,
-          only_local = ".venv/bin",
-        }),
-        nls.builtins.formatting.isort.with({
-          condition = function()
-            return vim.fn.executable(".venv/bin/isort") > 0
-          end,
-          only_local = ".venv/bin",
-        }),
+        -- nls.builtins.formatting.stylua.with({
+        --   condition = function()
+        --     return vim.fn.executable("stylua") > 0
+        --   end,
+        -- }),
+        -- nls.builtins.formatting.shfmt.with({
+        --   condition = function()
+        --     return vim.fn.executable("shfmt") > 0
+        --   end,
+        -- }),
+        -- nls.builtins.formatting.prettier.with({
+        --   condition = function()
+        --     return vim.fn.executable("prettier") > 0
+        --   end,
+        --   only_local = "node_modules/.bin",
+        --   disabled_filetypes = { "markdown" },
+        -- }),
+        -- nls.builtins.formatting.rustfmt.with({
+        --   condition = function()
+        --     return vim.fn.executable("rustfmt") > 0
+        --   end,
+        -- }),
+        -- nls.builtins.formatting.black.with({
+        --   condition = function()
+        --     return vim.fn.executable(".venv/bin/black") > 0
+        --   end,
+        --   only_local = ".venv/bin",
+        -- }),
+        -- nls.builtins.formatting.isort.with({
+        --   condition = function()
+        --     return vim.fn.executable(".venv/bin/isort") > 0
+        --   end,
+        --   only_local = ".venv/bin",
+        -- }),
 
         --------------------
         --- diagnostics
         --------------------
         nls.builtins.diagnostics.zsh,
+        nls.builtins.diagnostics.actionlint,
         nls.builtins.diagnostics.eslint.with({
           only_local = "node_modules/.bin",
         }),

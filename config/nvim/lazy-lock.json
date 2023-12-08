@@ -19,6 +19,7 @@
   "cmp-treesitter": { "branch": "master", "commit": "b8bc760dfcc624edd5454f0982b63786a822eed9" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "colorful-winsep.nvim": { "branch": "main", "commit": "e1b72c498f25c1fc37a7e9913332c137f753a90a" },
+  "conform.nvim": { "branch": "master", "commit": "7711eae324e13c9e0d85a9469d906e310b7e6f24" },
   "denops.vim": { "branch": "main", "commit": "c50865d1dc2db392370f8b7070d21885f0867c5b" },
   "dial.nvim": { "branch": "master", "commit": "27eb570085db2ef44bff4f620d3806039184651c" },
   "dressing.nvim": { "branch": "master", "commit": "8b7ae53d7f04f33be3439a441db8071c96092d19" },
