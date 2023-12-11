@@ -8,7 +8,7 @@ function M.config()
   tokyonight.setup({
     style = "night",
     light_style = "day",
-    transparent = not vim.g.neovide == nil,
+    transparent = true,
     styles = {
       comments = { italic = false },
       keywords = { italic = false },

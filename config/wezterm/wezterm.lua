@@ -49,9 +49,9 @@ end
 
 return {
   font = wezterm.font_with_fallback(font),
-  font_size = 11.0,
+  font_size = 13.0,
   default_prog = default_prog,
-  window_background_opacity = 0.90,
+  window_background_opacity = 0.95,
   color_scheme = "iceberg-dark",
   launch_menu = launch_menu,
   leader = { key = ";", mods = "CTRL", timeout_milliseconds = 1000 },
