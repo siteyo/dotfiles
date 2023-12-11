@@ -118,7 +118,7 @@
     </list>
   </section>
   <section name="keymap">
-    <key name="kana" value="q" />
+    <key name="kana" value=":" />
     <key name="convchar" value="\cq" />
     <key name="jlatin" value="L" />
     <key name="ascii" value="l" />
@@ -193,6 +193,7 @@
       <row st="N" al="n" ok="n" />
       <row st="O" al="o" ok="o" />
       <row st="P" al="p" ok="p" />
+      <row st="Q" al="q" ok="n" />
       <row st="R" al="r" ok="r" />
       <row st="S" al="s" ok="s" />
       <row st="T" al="t" ok="t" />
@@ -741,8 +742,8 @@
       <row ro="mf" hi="む" ka="ム" an="ﾑ" so="0" />
       <row ro="yf" hi="ゆ" ka="ユ" an="ﾕ" so="0" />
       <row ro="wf" hi="わい" ka="ワイ" an="ﾜｲ" so="0" />
-      <row ro="zc" hi="ざ" ka="ザ" an="ｻﾞ" so="0" />
-      <row ro="zf" hi="ぜ" ka="ゼ" an="ｾﾞ" so="0" />
+      <row ro="zf" hi="ざ" ka="ザ" an="ｻﾞ" so="0" />
+      <row ro="zc" hi="ぜ" ka="ゼ" an="ｾﾞ" so="0" />
       <row ro="zv" hi="ざい" ka="ザイ" an="ｻﾞｲ" so="0" />
       <row ro="zx" hi="ぜい" ka="ゼイ" an="ｾﾞｲ" so="0" />
       <row ro="df" hi="で" ka="デ" an="ﾃﾞ" so="0" />
@@ -773,6 +774,10 @@
       <row ro="wt" hi="わた" ka="ワタ" an="ﾜﾀ" so="0" />
       <row ro="mn" hi="もの" ka="モノ" an="ﾓﾉ" so="0" />
       <row ro="ms" hi="ます" ka="マス" an="ﾏｽ" so="0" />
+      <row ro="sm" hi="さま" ka="サマ" an="ｻﾏ" so="0" />
+      <row ro="mr" hi="まる" ka="マル" an="ﾏﾙ" so="0" />
+      <row ro="ts" hi="てん" ka="テン" an="ﾃﾝ" so="0" />
+      <row ro="bb" hi="びん" ka="ビン" an="ﾋﾞﾝ" so="0" />
       <row ro="ds" hi="です" ka="デス" an="ﾃﾞｽ" so="0" />
       <row ro="km" hi="かも" ka="カモ" an="ｶﾓ" so="0" />
       <row ro="tm" hi="ため" ka="タメ" an="ﾀﾒ" so="0" />
@@ -866,6 +871,7 @@
       <row ro="z7" hi="⑦" ka="⑦" an="⑦" so="0" />
       <row ro="z8" hi="⑧" ka="⑧" an="⑧" so="0" />
       <row ro="z9" hi="⑨" ka="⑨" an="⑨" so="0" />
+      <row ro="q" hi="ん" ka="ン" an="ﾝ" so="0" />
     </list>
   </section>
   <section name="jlatin">
