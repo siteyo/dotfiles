@@ -15,6 +15,7 @@ main() {
     winhome="$(wslpath "$(wslvar USERPROFILE)")"
     mkdir -pv "${winhome}/.config/wezterm"
     cp -fv "${dotfiles_dir}/config/wezterm/wezterm.lua" "${winhome}/.config/wezterm/wezterm.lua"
+    cp -fv "${dotfiles_dir}/config/wezterm/keybinds.lua" "${winhome}/.config/wezterm/keybinds.lua"
   fi
 
   print_done
