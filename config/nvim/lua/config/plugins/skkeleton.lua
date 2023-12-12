@@ -73,6 +73,9 @@ return {
       "vim-skk/skkeleton",
     },
     opts = {
+      mode = {
+        latin = "",
+      },
       mode_win_opts = {
         zindex = 1050,
       },
