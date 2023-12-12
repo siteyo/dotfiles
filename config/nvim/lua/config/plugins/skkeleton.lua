@@ -1,7 +1,7 @@
 return {
   {
     "vim-skk/skkeleton",
-    event = { "InsertEnter", "BufReadPost" },
+    event = "VeryLazy",
     dependencies = {
       "vim-denops/denops.vim",
     },
@@ -64,8 +64,8 @@ return {
       vim.api.nvim_set_hl(0, "SkkeletonIndicatorAbbrev", { fg = "#e5e9f0", bg = "#bf616a", bold = true })
       require("skkeleton_indicator").setup({})
     end,
-    event = { "InsertEnter", "BufReadPost" },
-    enabled = true,
+    event = "VeryLazy",
+    enabled = false,
   },
   {
     "siteyo/skkeleton_pointer.nvim",
@@ -80,7 +80,7 @@ return {
         zindex = 1050,
       },
     },
-    event = { "InsertEnter", "BufReadPost" },
-    enabled = false
+    event = "VeryLazy",
+    enabled = true,
   },
 }

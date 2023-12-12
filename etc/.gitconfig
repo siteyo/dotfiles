@@ -2,8 +2,8 @@
     ap = add -p
     b = branch
     bd = branch -d
-    ck = checkout
-    ckb = checkout -b
+    ; ck = checkout
+    ; ckb = checkout -b
     cm = commit -m
     d = diff
     dc = diff --cached
@@ -17,10 +17,14 @@
     loa = log --graph --all --pretty=format:'%C(yellow)%d%Creset %Cred%h%Creset : %s %C(bold blue)<%an>%Creset %C(cyan)[%ad]%Creset %Cgreen(%cr)' --abbrev-commit --date=format:'%Y/%m/%d %H:%M:%S'
     prom = pull --rebase origin master
     pushf = push --force-with-lease
-    rh = reset --hard
+    ; rh = reset --hard
     rpo = remote prune origin
-    rs = reset --soft
+    ; rs = reset --soft
     s = status -s
+    sw = switch
+    swc = switch -c
+    re = restore
+    res = restore --staged
 [core]
     editor = nvim -c \"set fenc=utf-8\"
     pager = delta
