@@ -60,6 +60,7 @@ local M = {
         --- diagnostics
         --------------------
         nls.builtins.diagnostics.zsh,
+        nls.builtins.diagnostics.fish,
         nls.builtins.diagnostics.actionlint,
         nls.builtins.diagnostics.eslint.with({
           only_local = "node_modules/.bin",

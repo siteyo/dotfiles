@@ -15,6 +15,7 @@ local M = {
         "css",
         "diff",
         "dockerfile",
+        "fish",
         "gitcommit",
         "gitignore",
         "html",

@@ -3,6 +3,7 @@ local M = {
   opts = {
     formatters_by_ft = {
       css = { "prettier" },
+      fish = { "fish_indent" },
       javascript = { "prettier" },
       javascriptreact = { "prettier" },
       json = { "fixjson" },

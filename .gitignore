@@ -358,6 +358,13 @@ poetry.toml
 pyrightconfig.json
 
 
+### Fish ###
+fishd.*
+fish_history
+fish_variables
+config.local.fish
+
+
 ### Other ###
 # Backup directory
 bak/
