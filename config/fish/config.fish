@@ -1,5 +1,13 @@
+# Environment
+set -x EDITOR nvim
+set -x PATH $HOME/.local/bin $PATH
+
+set -x XDG_CONFIG_HOME $HOME/.config
+set -x XDG_DATA_HOME $HOME/.local/share
+set -x XDG_CACHE_HOME $HOME/.cache
+
+# Commands to run in interactive sessions
 if status is-interactive
-    # Commands to run in interactive sessions can go here
     set -g theme_display_git yes
     set -g theme_display_git_dirty yes
     set -g theme_display_git_untracked yes
@@ -34,4 +42,18 @@ if status is-interactive
     set -g theme_project_dir_length 1
     set -g theme_newline_cursor yes
     set -g theme_newline_prompt '$ '
+end
+
+# aqua cli version manager
+if command -v aqua &>/dev/null
+    set -x AQUA_ROOT_DIR $XDG_DATA_HOME/aquaproj-aqua
+    set -x PATH $AQUA_ROOT_DIR/bin $PATH
+end
+
+# fzf
+test -f $HOME/.fzf.fish && echo true || echo false
+
+## zoxide
+if command -v zoxide &>/dev/null
+    zoxide init fish | source
 end

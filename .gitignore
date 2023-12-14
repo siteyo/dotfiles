@@ -363,6 +363,9 @@ fishd.*
 fish_history
 fish_variables
 config.local.fish
+config/fish/functions
+config/fish/completions
+config/fish/conf.d
 
 
 ### Other ###

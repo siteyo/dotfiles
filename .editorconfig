@@ -21,6 +21,9 @@ indent_size = 2
 [*.sh]
 indent_size = 2
 
+[*.fish]
+indent_size = 4
+
 [config/fish/{completions,functions}/**.fish]
 max_line_length = off
 

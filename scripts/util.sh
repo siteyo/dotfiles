@@ -25,5 +25,5 @@ print_error() {
 }
 
 print_done() {
-  print_success "Done!"
+  print_success "Done!\n"
 }
