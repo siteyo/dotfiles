@@ -33,4 +33,3 @@ jobs:
       - name: Clean dotfiles
         run: make clean
         shell: zsh {0}
-        

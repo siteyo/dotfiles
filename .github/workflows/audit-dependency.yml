@@ -10,3 +10,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Audit Dependency
         run: npm -C config/nvim/lua/config/cli/node_servers audit --omit=dev
+
+  macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Audit Dependency
+        run: npm -C config/nvim/lua/config/cli/node_servers audit --omit=dev
