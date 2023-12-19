@@ -1,0 +1,12 @@
+name: Audit Dependency
+
+on: [push]
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Audit Dependency
+        run: npm -C config/nvim/lua/config/cli/node_servers audit --omit=dev
