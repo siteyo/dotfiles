@@ -159,9 +159,9 @@ if command -v gh >/dev/null; then
 fi
 
 ## Starship
-if command -v starship > /dev/null; then
-  eval "$(starship init zsh)"
-fi
+# if command -v starship > /dev/null; then
+#   eval "$(starship init zsh)"
+# fi
 
 ## Local settings
 source "${HOME}/.zshrc.local"
