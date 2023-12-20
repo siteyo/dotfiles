@@ -66,7 +66,7 @@
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
   "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "skkeleton": { "branch": "main", "commit": "b81fe61d0dafaf960be7c7e9a9cff79d0b0c792e" },
-  "skkeleton_pointer.nvim": { "branch": "main", "commit": "2c3b7359b6830067471b653e7a937d38f9fedbca" },
+  "skkeleton_pointer.nvim": { "branch": "main", "commit": "8b8040b1b4cb6d57284ccfab172414a0abcecc36" },
   "sqlite.lua": { "branch": "master", "commit": "b7e28c8463254c46a8e61c52d27d6a2040492fc3" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "8e0543365fe5781c9babea7db89ef06bcff3716d" },
   "telescope-frecency.nvim": { "branch": "master", "commit": "de410701811f4142315ce89183256a969a08ff9d" },
