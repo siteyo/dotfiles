@@ -1,6 +1,7 @@
 [alias]
     ap = add -p
     b = branch
+    bc = branch -c
     bd = branch -d
     cm = commit -m
     d = diff
