@@ -11,7 +11,6 @@ registries:
   ref: v4.110.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: denoland/deno@v1.39.1
-- name: volta-cli/volta@v1.1.1
 - name: mitsuhiko/rye@0.16.0
 - name: JohnnyMorganz/StyLua@v0.19.1
 - name: mvdan/sh@v3.7.0

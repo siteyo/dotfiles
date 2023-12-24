@@ -138,12 +138,12 @@ if [ -d "${HOME}/.cargo" ]; then
 fi
 
 ## volta (Node.js)
-if [ -d "${HOME}/.volta" ]; then
-  export VOLTA_HOME="$HOME/.volta"
-  export PATH="$VOLTA_HOME/bin:$PATH"
-  [ ! -f "${COMPLETIONS_PATH}/_volta" ] &&
-    $(command -v volta) completions zsh >"${COMPLETIONS_PATH}/_volta"
-fi
+# if [ -d "${HOME}/.volta" ]; then
+#   export VOLTA_HOME="$HOME/.volta"
+#   export PATH="$VOLTA_HOME/bin:$PATH"
+#   [ ! -f "${COMPLETIONS_PATH}/_volta" ] &&
+#     $(command -v volta) completions zsh >"${COMPLETIONS_PATH}/_volta"
+# fi
 
 ## rye (Python)
 if [ -d "${HOME}/.rye" ]; then
@@ -156,6 +156,11 @@ fi
 if command -v gh >/dev/null; then
   [ ! -f "${COMPLETIONS_PATH}/_gh" ] &&
     $(command -v gh) completion -s zsh >"${COMPLETIONS_PATH}/_gh"
+fi
+
+## rtx
+if command -v rtx >/dev/null; then
+  eval "$(rtx activate zsh)"
 fi
 
 ## Starship
