@@ -5,7 +5,7 @@ local M = {
     "kkharji/sqlite.lua",
     "nvim-telescope/telescope-file-browser.nvim",
   },
-  keys = "<Leader>f",
+  event = "VimEnter",
 }
 
 function M.config()
@@ -23,6 +23,11 @@ function M.config()
           },
           ["<C-k>"] = {
             actions.move_selection_previous,
+            type = "action",
+            opts = { nowait = true, silent = true },
+          },
+          ["<C-[>"] = {
+            actions.close,
             type = "action",
             opts = { nowait = true, silent = true },
           },
