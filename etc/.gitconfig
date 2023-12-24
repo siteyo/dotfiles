@@ -19,7 +19,9 @@
     rbi = rebase --interactive
     re = restore
     res = restore --staged
+    rh = reset --hard
     rpo = remote prune origin
+    rs = reset --soft
     s = status -s
     sw = switch
     swc = switch -c
