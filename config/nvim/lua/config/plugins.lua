@@ -42,7 +42,6 @@ return {
     event = "BufReadPre",
   },
   { "windwp/nvim-autopairs", config = true, event = "BufReadPost" },
-  { "gpanders/editorconfig.nvim", event = "BufReadPost" },
 
   ------------------------------------------------------------
   --- Interface
