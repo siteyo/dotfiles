@@ -14,6 +14,7 @@ local M = {
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
       yaml = { "yamlfmt" },
+      zsh = { "shfmt" },
       ["_"] = { "trim_whitespace" },
     },
     format_on_save = function(bufnr)
