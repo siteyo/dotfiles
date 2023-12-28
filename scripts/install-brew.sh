@@ -12,6 +12,7 @@ main() {
 
   if [ "$(uname)" == 'Darwin' ]; then
     ln -sfv "${dotfiles_dir}/etc/Brewfile-Darwin" "${HOME}/.Brewfile"
+    xcode-select --install
   elif [ "$(uname)" == 'Linux' ]; then
     ln -sfv "${dotfiles_dir}/etc/Brewfile-Linux" "${HOME}/.Brewfile"
     sudo apt install build-essential procps curl file git
@@ -21,7 +22,9 @@ main() {
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   print_default ''
 
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  if [ "$(uname)" == 'Linux' ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  fi
 
   [ -f "${HOME}/.Brewfile" ] && brew bundle --global
 
