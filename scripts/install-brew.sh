@@ -12,7 +12,6 @@ main() {
 
   if [ "$(uname)" == 'Darwin' ]; then
     ln -sfv "${dotfiles_dir}/etc/Brewfile-Darwin" "${HOME}/.Brewfile"
-    xcode-select --install
   elif [ "$(uname)" == 'Linux' ]; then
     ln -sfv "${dotfiles_dir}/etc/Brewfile-Linux" "${HOME}/.Brewfile"
     sudo apt install build-essential procps curl file git
