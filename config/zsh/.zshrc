@@ -166,9 +166,9 @@ if command -v gh >/dev/null; then
     $(command -v gh) completion -s zsh >"${COMPLETIONS_PATH}/_gh"
 fi
 
-## rtx
-if command -v rtx >/dev/null; then
-  eval "$(rtx activate zsh)"
+## mise
+if command -v mise >/dev/null; then
+  eval "$(mise activate zsh)"
 fi
 
 ## Starship
