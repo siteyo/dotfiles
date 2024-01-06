@@ -25,6 +25,9 @@ end
 if wezterm.target_triple == "x86_64-apple-darwin" then
   default_prog = { os.getenv("SHELL"), "-l" }
 end
+if wezterm.target_triple == "aarch64-apple-darwin" then
+  default_prog = { os.getenv("SHELL"), "-l" }
+end
 
 -----------------------------------------------------------
 --- Font
