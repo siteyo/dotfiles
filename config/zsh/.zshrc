@@ -1,8 +1,16 @@
 # Environment variables
 # --------------------------------------------------------------------
-# Homebrew for Linux (and WSL)
+# Homebrew
+## for Linux (and WSL)
 [ -d '/home/linuxbrew/.linuxbrew' ] &&
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+## for macOS
+if [ -f '/opt/homebrew/bin/brew' ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -f '/usr/local/bin/brew' ]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 
 if builtin command -v nvim > /dev/null
 then
