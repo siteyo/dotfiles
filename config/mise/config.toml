@@ -2,5 +2,5 @@
 node = "lts"
 python = ["3.11", "3.12"]
 
-[settings]
-plugin_autoupdate_last_check_duration = '1 week'
+# [settings]
+# plugin_autoupdate_last_check_duration = '1 week'
