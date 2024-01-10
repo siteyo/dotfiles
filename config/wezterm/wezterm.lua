@@ -49,6 +49,13 @@ if wezterm.target_triple == "x86_64-apple-darwin" then
     "HackGen Console NF",
   }
 end
+if wezterm.target_triple == "aarch64-apple-darwin" then
+  font = {
+    -- "Fira Code",
+    "0xProto Nerd Font",
+    "HackGen Console NF",
+  }
+end
 
 return {
   font = wezterm.font_with_fallback(font),
