@@ -31,7 +31,7 @@ main() {
     fi
   fi
 
-  [ -f "${HOME}/.Brewfile" ] && brew bundle --global
+  [ -f "${HOME}/.Brewfile" ] && brew bundle --global || true
 
   print_done
 }
