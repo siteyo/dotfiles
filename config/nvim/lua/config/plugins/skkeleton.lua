@@ -13,7 +13,6 @@ return {
         " call skkeleton#register_kanatable('azik', {}, v:true)
         call skkeleton#config({
           \ 'kanaTable': 'rom',
-          \ 'globalJisyo': '~/.local/share/skk/SKK-JISYO.L',
           \ 'globalDictionaries': [
           \   '~/.local/share/skk/SKK-JISYO.L',
           \   '~/.local/share/skk/SKK-JISYO.jinmei',
