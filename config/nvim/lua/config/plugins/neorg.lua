@@ -41,6 +41,9 @@ return {
     vim.keymap.set("n", "<Leader>oi", "<Cmd>Neorg index<CR>")
     vim.keymap.set("n", "<Leader>om", "<Cmd>Neorg inject-metadata<CR>")
     -- vim.keymap.set("n", "<Leader>oo", "<Cmd>Neorg toc<CR>")
+
+    vim.keymap.set("n", "<Leader>of", "<Cmd>Telescope neorg find_norg_files<CR>")
+    vim.keymap.set("n", "<Leader>ol", "<Cmd>Telescope neorg insert_file_link<CR>")
   end,
   enabled = true,
 }
