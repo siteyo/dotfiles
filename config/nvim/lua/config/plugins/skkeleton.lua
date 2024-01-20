@@ -17,10 +17,11 @@ return {
     dependencies = {
       "vim-denops/denops.vim",
     },
+    keys = {
+      { "<C-j>", "<Plug>(skkeleton-enable)", mode = { "i", "c" } },
+      { "<C-j>", "a<Plug>(skkeleton-enable)", mode = { "n" } },
+    },
     config = function()
-      vim.keymap.set({ "i", "c" }, "<C-j>", "<Plug>(skkeleton-enable)")
-      vim.keymap.set({ "n" }, "<C-j>", "a<Plug>(skkeleton-enable)")
-
       vim.fn["skkeleton#register_keymap"]("henkan", "<CR>", "kakutei")
       vim.fn["skkeleton#register_keymap"]("input", "<S-l>", "zenkaku")
       vim.fn["skkeleton#register_keymap"]("input", "q", "")
