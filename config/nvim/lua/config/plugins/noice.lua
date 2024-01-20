@@ -80,19 +80,4 @@ M.opts = {
   },
 }
 
--- M.config = function(_, opts)
---   local noice = require("noice")
---   noice.setup(opts)
---
---   vim.keymap.set("n", "<Leader>nl", function()
---     noice.cmd("last")
---   end)
---   vim.keymap.set("n", "<Leader>nt", function()
---     noice.cmd("telescope")
---   end)
---   vim.keymap.set("n", "<Leader>ne", function()
---     noice.cmd("errors")
---   end)
--- end
-
 return M
