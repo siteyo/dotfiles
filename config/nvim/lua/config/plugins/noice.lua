@@ -5,6 +5,29 @@ local M = {
     "rcarriga/nvim-notify",
   },
   event = "VeryLazy",
+  keys = {
+    {
+      "<Leader>nl",
+      function()
+        require("noice").cmd("last")
+      end,
+      mode = { "n" },
+    },
+    {
+      "<Leader>nt",
+      function()
+        require("noice").cmd("telescope")
+      end,
+      mode = { "n" },
+    },
+    {
+      "<Leader>ne",
+      function()
+        require("noice").cmd("errors")
+      end,
+      mode = { "n" },
+    },
+  },
 }
 
 M.opts = {
@@ -57,19 +80,19 @@ M.opts = {
   },
 }
 
-M.config = function(_, opts)
-  local noice = require("noice")
-  noice.setup(opts)
-
-  vim.keymap.set("n", "<Leader>nl", function()
-    noice.cmd("last")
-  end)
-  vim.keymap.set("n", "<Leader>nt", function()
-    noice.cmd("telescope")
-  end)
-  vim.keymap.set("n", "<Leader>ne", function()
-    noice.cmd("errors")
-  end)
-end
+-- M.config = function(_, opts)
+--   local noice = require("noice")
+--   noice.setup(opts)
+--
+--   vim.keymap.set("n", "<Leader>nl", function()
+--     noice.cmd("last")
+--   end)
+--   vim.keymap.set("n", "<Leader>nt", function()
+--     noice.cmd("telescope")
+--   end)
+--   vim.keymap.set("n", "<Leader>ne", function()
+--     noice.cmd("errors")
+--   end)
+-- end
 
 return M
