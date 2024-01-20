@@ -3,12 +3,43 @@ local M = {
   branch = "main",
   event = "BufRead",
   dependencies = { { "nvim-tree/nvim-web-devicons" } },
+  keys = {
+    -- gx
+    { "gh", "<Cmd>Lspsaga finder<CR>", mode = { "n" } },
+    { "gn", "<Cmd>Lspsaga rename<CR>", mode = { "n" } },
+    { "gd", "<Cmd>Lspsaga peek_definition<CR>", mode = { "n" } },
+    { "gD", "<Cmd>Lspsaga goto_definition<CR>", mode = { "n" } },
+    -- <Leaader>lx
+    { "<Leader>la", "<Cmd>Lspsaga code_action<CR>", mode = { "n", "v" } },
+    { "<Leader>lo", "<Cmd>Lspsaga outline<CR>", mode = { "n" } },
+    { "<Leader>ld", "<Cmd>Lspsaga show_cursor_diagnostics<CR>", mode = { "n" } },
+    { "<Leader>lt", "<Cmd>Lspsaga term_toggle<CR>", mode = { "n" } },
+    -- ]x / [x
+    { "[w", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", mode = { "n" } },
+    { "]w", "<Cmd>Lspsaga diagnostic_jump_next<CR>", mode = { "n" } },
+    {
+      "[e",
+      function()
+        require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+      end,
+      mode = { "n" },
+    },
+    {
+      "]e",
+      function()
+        require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+      end,
+      mode = { "n" },
+    },
+    -- other
+    { "K", "<Cmd>Lspsaga hover_doc<CR>", mode = { "n" } },
+  },
 }
 
 function M.config()
   require("lspsaga").setup({
     ui = {
-      code_action = " ",
+      code_action = " ",
     },
     symbol_in_winbar = {
       enable = true,
@@ -32,29 +63,6 @@ function M.config()
   --     quit = "q",
   --   },
   -- })
-
-  -- gx
-  vim.keymap.set("n", "gh", "<Cmd>Lspsaga finder<CR>")
-  vim.keymap.set("n", "gn", "<Cmd>Lspsaga rename<CR>")
-  vim.keymap.set("n", "gd", "<Cmd>Lspsaga peek_definition<CR>")
-  vim.keymap.set("n", "gD", "<Cmd>Lspsaga goto_definition<CR>")
-
-  -- <Leader>lx
-  vim.keymap.set({ "n", "v" }, "<Leader>la", "<Cmd>Lspsaga code_action<CR>")
-  vim.keymap.set("n", "<Leader>lo", "<Cmd>Lspsaga outline<CR>")
-  vim.keymap.set("n", "<Leader>ld", "<Cmd>Lspsaga show_cursor_diagnostics<CR>")
-  vim.keymap.set("n", "<Leader>lt", "<Cmd>Lspsaga term_toggle<CR>")
-
-  -- other
-  vim.keymap.set("n", "[w", "<Cmd>Lspsaga diagnostic_jump_prev<CR>")
-  vim.keymap.set("n", "]w", "<Cmd>Lspsaga diagnostic_jump_next<CR>")
-  vim.keymap.set("n", "[e", function()
-    require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-  end)
-  vim.keymap.set("n", "]e", function()
-    require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
-  end)
-  vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 end
 
 return M
