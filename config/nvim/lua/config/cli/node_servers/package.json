@@ -7,6 +7,7 @@
     "fixjson": "^1.1.2",
     "typescript-language-server": "^4.1.2",
     "vim-language-server": "^2.3.1",
+    "vscode-json-languageservice": "^5.3.7",
     "vscode-langservers-extracted": "^4.8.0"
   }
 }
