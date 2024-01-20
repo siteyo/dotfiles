@@ -21,12 +21,10 @@ local M = {
   -- Optional dependencies
   dependencies = { "nvim-tree/nvim-web-devicons" },
   lazy = false,
+  keys = {
+    { "<Leader>ee", "<Cmd>Oil<CR>", mode = { "n" } },
+    { "<Leader>ef", "<Cmd>Oil --float<CR>", mode = { "n" } },
+  },
 }
-
-M.config = function(_, opts)
-  require("oil").setup(opts)
-  vim.keymap.set("n", "<Leader>ee", "<Cmd>Oil<CR>")
-  vim.keymap.set("n", "<Leader>ef", "<Cmd>Oil --float<CR>")
-end
 
 return M
