@@ -25,7 +25,7 @@ local M = {
     {
       "<Leader>gf",
       function()
-        require("tinygit").ammendOnlyMsg({ forcePushIfDiverged = false })
+        require("tinygit").amendOnlyMsg({ forcePushIfDiverged = false })
       end,
       mode = { "n" },
     },
