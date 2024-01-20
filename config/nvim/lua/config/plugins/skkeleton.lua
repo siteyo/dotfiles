@@ -1,3 +1,15 @@
+local uv = vim.loop
+
+---@param fname string
+---@return string
+local file_read = function(fname)
+  local fd = assert(uv.fs_open(fname, "r", 292))
+  local stat = assert(uv.fs_fstat(fd))
+  local buffer = assert(uv.fs_read(fd, stat.size, 0))
+  assert(uv.fs_close(fd))
+  return buffer
+end
+
 return {
   {
     "vim-skk/skkeleton",
@@ -6,40 +18,32 @@ return {
       "vim-denops/denops.vim",
     },
     config = function()
-      vim.cmd([[
-        inoremap <C-j> <Plug>(skkeleton-enable)
-        cnoremap <C-j> <Plug>(skkeleton-enable)
-        nnoremap <C-j> a<Plug>(skkeleton-enable)
-        " call skkeleton#register_kanatable('azik', {}, v:true)
-        call skkeleton#config({
-          \ 'kanaTable': 'rom',
-          \ 'globalDictionaries': [
-          \   '~/.local/share/skk/SKK-JISYO.L',
-          \   '~/.local/share/skk/SKK-JISYO.jinmei',
-          \ ],
-          \ 'globalKanaTableFiles': [
-          \   '~/.local/share/skk/kana-rule.conf',
-          \   '~/.local/share/skk/azik_us.rule',
-          \ ],
-          \ 'markerHenkan': '',
-          \ 'markerHenkanSelect': '',
-          \ })
-        call skkeleton#register_keymap('henkan', '<CR>', 'kakutei')
-        call skkeleton#register_keymap('input', '<S-l>', 'zenkaku')
-        call skkeleton#register_keymap('input', 'q', '')
-        call skkeleton#register_kanatable('rom', {
-          \ ',': ['、'],
-          \ '.': ['。'],
-          \ 'z,': ['/'],
-          \ 'x,': [','],
-          \ '-': ['-'],
-          \ ' ': 'henkanFirst',
-          \ 'l': 'disable',
-          \ '/': 'abbrev',
-          \ ';': 'henkanPoint',
-          \ ':': 'katakana',
-          \ })
-      ]])
+      vim.keymap.set({ "i", "c" }, "<C-j>", "<Plug>(skkeleton-enable)")
+      vim.keymap.set({ "n" }, "<C-j>", "a<Plug>(skkeleton-enable)")
+
+      vim.fn["skkeleton#register_keymap"]("henkan", "<CR>", "kakutei")
+      vim.fn["skkeleton#register_keymap"]("input", "<S-l>", "zenkaku")
+      vim.fn["skkeleton#register_keymap"]("input", "q", "")
+
+      local path = vim.fn.stdpath("config") .. "/etc/azik_skkeleton.json"
+      local buffer = file_read(path)
+      local kanaTable = vim.json.decode(buffer)
+      kanaTable[" "] = "henkanFirst"
+      kanaTable["l"] = "disable"
+      kanaTable["/"] = "abbrev"
+      kanaTable[";"] = "henkanPoint"
+      kanaTable[":"] = "katakana"
+      vim.fn["skkeleton#register_kanatable"]("azik", kanaTable, true)
+
+      vim.fn["skkeleton#config"]({
+        kanaTable = "azik",
+        globalDictionaries = {
+          "~/.local/share/skk/SKK-JISYO.L",
+          "~/.local/share/skk/SKK-JISYO.jinmei",
+        },
+        markerHenkan = "",
+        markerHenkanSelect = "",
+      })
     end,
   },
   {

@@ -1,0 +1,3297 @@
+{
+  "'": {
+    "hira": "っ",
+    "katakana": "ッ",
+    "hankatakana": "ッ"
+  },
+  "a": {
+    "hira": "あ",
+    "katakana": "ア",
+    "hankatakana": "ア"
+  },
+  "ba": {
+    "hira": "ば",
+    "katakana": "バ",
+    "hankatakana": "バ"
+  },
+  "bb": {
+    "hira": "びん",
+    "katakana": "ビン",
+    "hankatakana": "ビン"
+  },
+  "bd": {
+    "hira": "べん",
+    "katakana": "ベン",
+    "hankatakana": "ベン"
+  },
+  "be": {
+    "hira": "べ",
+    "katakana": "ベ",
+    "hankatakana": "ベ"
+  },
+  "bf": {
+    "hira": "ぶ",
+    "katakana": "ブ",
+    "hankatakana": "ブ"
+  },
+  "bga": {
+    "hira": "びゃ",
+    "katakana": "ビャ",
+    "hankatakana": "ビャ"
+  },
+  "bgd": {
+    "hira": "びぇん",
+    "katakana": "ビェン",
+    "hankatakana": "ビェン"
+  },
+  "bge": {
+    "hira": "びぇ",
+    "katakana": "ビェ",
+    "hankatakana": "ビェ"
+  },
+  "bgh": {
+    "hira": "びゅう",
+    "katakana": "ビュウ",
+    "hankatakana": "ビュウ"
+  },
+  "bgj": {
+    "hira": "びゅん",
+    "katakana": "ビュン",
+    "hankatakana": "ビュン"
+  },
+  "bgl": {
+    "hira": "びょん",
+    "katakana": "ビョン",
+    "hankatakana": "ビョン"
+  },
+  "bgn": {
+    "hira": "びゃん",
+    "katakana": "ビャン",
+    "hankatakana": "ビャン"
+  },
+  "bgo": {
+    "hira": "びょ",
+    "katakana": "ビョ",
+    "hankatakana": "ビョ"
+  },
+  "bgp": {
+    "hira": "びょう",
+    "katakana": "ビョウ",
+    "hankatakana": "ビョウ"
+  },
+  "bgq": {
+    "hira": "びゃい",
+    "katakana": "ビャイ",
+    "hankatakana": "ビャイ"
+  },
+  "bgu": {
+    "hira": "びゅ",
+    "katakana": "ビュ",
+    "hankatakana": "ビュ"
+  },
+  "bgw": {
+    "hira": "びぇい",
+    "katakana": "ビェイ",
+    "hankatakana": "ビェイ"
+  },
+  "bgz": {
+    "hira": "びゃん",
+    "katakana": "ビャン",
+    "hankatakana": "ビャン"
+  },
+  "bh": {
+    "hira": "ぶう",
+    "katakana": "ブウ",
+    "hankatakana": "ブウ"
+  },
+  "bi": {
+    "hira": "び",
+    "katakana": "ビ",
+    "hankatakana": "ビ"
+  },
+  "bj": {
+    "hira": "ぶん",
+    "katakana": "ブン",
+    "hankatakana": "ブン"
+  },
+  "bk": {
+    "hira": "びん",
+    "katakana": "ビン",
+    "hankatakana": "ビン"
+  },
+  "bl": {
+    "hira": "ぼん",
+    "katakana": "ボン",
+    "hankatakana": "ボン"
+  },
+  "bn": {
+    "hira": "ばん",
+    "katakana": "バン",
+    "hankatakana": "バン"
+  },
+  "bo": {
+    "hira": "ぼ",
+    "katakana": "ボ",
+    "hankatakana": "ボ"
+  },
+  "bp": {
+    "hira": "ぼう",
+    "katakana": "ボウ",
+    "hankatakana": "ボウ"
+  },
+  "bq": {
+    "hira": "ばい",
+    "katakana": "バイ",
+    "hankatakana": "バイ"
+  },
+  "bt": {
+    "hira": "びと",
+    "katakana": "ビト",
+    "hankatakana": "ビト"
+  },
+  "bu": {
+    "hira": "ぶ",
+    "katakana": "ブ",
+    "hankatakana": "ブ"
+  },
+  "bw": {
+    "hira": "べい",
+    "katakana": "ベイ",
+    "hankatakana": "ベイ"
+  },
+  "bya": {
+    "hira": "びゃ",
+    "katakana": "ビャ",
+    "hankatakana": "ビャ"
+  },
+  "byd": {
+    "hira": "びぇん",
+    "katakana": "ビェン",
+    "hankatakana": "ビェン"
+  },
+  "bye": {
+    "hira": "びぇ",
+    "katakana": "ビェ",
+    "hankatakana": "ビェ"
+  },
+  "byh": {
+    "hira": "びゅう",
+    "katakana": "ビュウ",
+    "hankatakana": "ビュウ"
+  },
+  "byi": {
+    "hira": "びぃ",
+    "katakana": "ビィ",
+    "hankatakana": "ビィ"
+  },
+  "byj": {
+    "hira": "びゅん",
+    "katakana": "ビュン",
+    "hankatakana": "ビュン"
+  },
+  "byl": {
+    "hira": "びょん",
+    "katakana": "ビョン",
+    "hankatakana": "ビョン"
+  },
+  "byn": {
+    "hira": "びゃん",
+    "katakana": "ビャン",
+    "hankatakana": "ビャン"
+  },
+  "byo": {
+    "hira": "びょ",
+    "katakana": "ビョ",
+    "hankatakana": "ビョ"
+  },
+  "byp": {
+    "hira": "びょう",
+    "katakana": "ビョウ",
+    "hankatakana": "ビョウ"
+  },
+  "byq": {
+    "hira": "びゃい",
+    "katakana": "ビャイ",
+    "hankatakana": "ビャイ"
+  },
+  "byu": {
+    "hira": "びゅ",
+    "katakana": "ビュ",
+    "hankatakana": "ビュ"
+  },
+  "byw": {
+    "hira": "びぇい",
+    "katakana": "ビェイ",
+    "hankatakana": "ビェイ"
+  },
+  "byz": {
+    "hira": "びゃん",
+    "katakana": "ビャン",
+    "hankatakana": "ビャン"
+  },
+  "bz": {
+    "hira": "ばん",
+    "katakana": "バン",
+    "hankatakana": "バン"
+  },
+  "ca": {
+    "hira": "ちゃ",
+    "katakana": "チャ",
+    "hankatakana": "チャ"
+  },
+  "cd": {
+    "hira": "ちぇん",
+    "katakana": "チェン",
+    "hankatakana": "チェン"
+  },
+  "ce": {
+    "hira": "ちぇ",
+    "katakana": "チェ",
+    "hankatakana": "チェ"
+  },
+  "cf": {
+    "hira": "ちぇ",
+    "katakana": "チェ",
+    "hankatakana": "チェ"
+  },
+  "ch": {
+    "hira": "ちゅう",
+    "katakana": "チュウ",
+    "hankatakana": "チュウ"
+  },
+  "cj": {
+    "hira": "ちゅん",
+    "katakana": "チュン",
+    "hankatakana": "チュン"
+  },
+  "cl": {
+    "hira": "ちょん",
+    "katakana": "チョン",
+    "hankatakana": "チョン"
+  },
+  "cn": {
+    "hira": "ちゃん",
+    "katakana": "チャン",
+    "hankatakana": "チャン"
+  },
+  "co": {
+    "hira": "ちょ",
+    "katakana": "チョ",
+    "hankatakana": "チョ"
+  },
+  "cp": {
+    "hira": "ちょう",
+    "katakana": "チョウ",
+    "hankatakana": "チョウ"
+  },
+  "cq": {
+    "hira": "ちゃい",
+    "katakana": "チャイ",
+    "hankatakana": "チャイ"
+  },
+  "cu": {
+    "hira": "ちゅ",
+    "katakana": "チュ",
+    "hankatakana": "チュ"
+  },
+  "cw": {
+    "hira": "ちぇい",
+    "katakana": "チェイ",
+    "hankatakana": "チェイ"
+  },
+  "cya": {
+    "hira": "ちゃ",
+    "katakana": "チャ",
+    "hankatakana": "チャ"
+  },
+  "cye": {
+    "hira": "ちぇ",
+    "katakana": "チェ",
+    "hankatakana": "チェ"
+  },
+  "cyi": {
+    "hira": "ちぃ",
+    "katakana": "チィ",
+    "hankatakana": "チィ"
+  },
+  "cyo": {
+    "hira": "ちょ",
+    "katakana": "チョ",
+    "hankatakana": "チョ"
+  },
+  "cyu": {
+    "hira": "ちゅ",
+    "katakana": "チュ",
+    "hankatakana": "チュ"
+  },
+  "cz": {
+    "hira": "ちゃん",
+    "katakana": "チャン",
+    "hankatakana": "チャン"
+  },
+  "da": {
+    "hira": "だ",
+    "katakana": "ダ",
+    "hankatakana": "ダ"
+  },
+  "dch": {
+    "hira": "でゅ",
+    "katakana": "デュー",
+    "hankatakana": "デュー"
+  },
+  "dci": {
+    "hira": "でぃ",
+    "katakana": "ディ",
+    "hankatakana": "ディ"
+  },
+  "dck": {
+    "hira": "でぃん",
+    "katakana": "ディン",
+    "hankatakana": "ディン"
+  },
+  "dcp": {
+    "hira": "どぅ",
+    "katakana": "ドゥー",
+    "hankatakana": "ドゥー"
+  },
+  "dcu": {
+    "hira": "でゅ",
+    "katakana": "デュ",
+    "hankatakana": "デュ"
+  },
+  "dd": {
+    "hira": "でん",
+    "katakana": "デン",
+    "hankatakana": "デン"
+  },
+  "de": {
+    "hira": "で",
+    "katakana": "デ",
+    "hankatakana": "デ"
+  },
+  "df": {
+    "hira": "で",
+    "katakana": "デ",
+    "hankatakana": "デ"
+  },
+  "dg": {
+    "hira": "だが",
+    "katakana": "ダガ",
+    "hankatakana": "ダガ"
+  },
+  "dh": {
+    "hira": "づう",
+    "katakana": "ヅウ",
+    "hankatakana": "ヅウ"
+  },
+  "di": {
+    "hira": "ぢ",
+    "katakana": "ヂ",
+    "hankatakana": "ヂ"
+  },
+  "dj": {
+    "hira": "づん",
+    "katakana": "ヅン",
+    "hankatakana": "ヅン"
+  },
+  "dk": {
+    "hira": "ぢん",
+    "katakana": "ヂン",
+    "hankatakana": "ヂン"
+  },
+  "dl": {
+    "hira": "どん",
+    "katakana": "ドン",
+    "hankatakana": "ドン"
+  },
+  "dm": {
+    "hira": "でも",
+    "katakana": "デモ",
+    "hankatakana": "デモ"
+  },
+  "dn": {
+    "hira": "だん",
+    "katakana": "ダン",
+    "hankatakana": "ダン"
+  },
+  "do": {
+    "hira": "ど",
+    "katakana": "ド",
+    "hankatakana": "ド"
+  },
+  "dp": {
+    "hira": "どう",
+    "katakana": "ドウ",
+    "hankatakana": "ドウ"
+  },
+  "dq": {
+    "hira": "だい",
+    "katakana": "ダイ",
+    "hankatakana": "ダイ"
+  },
+  "dr": {
+    "hira": "である",
+    "katakana": "デアル",
+    "hankatakana": "デアル"
+  },
+  "ds": {
+    "hira": "です",
+    "katakana": "デス",
+    "hankatakana": "デス"
+  },
+  "dt": {
+    "hira": "だち",
+    "katakana": "ダチ",
+    "hankatakana": "ダチ"
+  },
+  "du": {
+    "hira": "づ",
+    "katakana": "ヅ",
+    "hankatakana": "ヅ"
+  },
+  "dw": {
+    "hira": "でい",
+    "katakana": "デイ",
+    "hankatakana": "デイ"
+  },
+  "dya": {
+    "hira": "ぢゃ",
+    "katakana": "ヂャ",
+    "hankatakana": "ヂャ"
+  },
+  "dye": {
+    "hira": "ぢぇ",
+    "katakana": "ヂェ",
+    "hankatakana": "ヂェ"
+  },
+  "dyi": {
+    "hira": "ぢぃ",
+    "katakana": "ヂィ",
+    "hankatakana": "ヂィ"
+  },
+  "dyo": {
+    "hira": "ぢょ",
+    "katakana": "ヂョ",
+    "hankatakana": "ヂョ"
+  },
+  "dyu": {
+    "hira": "ぢゅ",
+    "katakana": "ヂュ",
+    "hankatakana": "ヂュ"
+  },
+  "dz": {
+    "hira": "だん",
+    "katakana": "ダン",
+    "hankatakana": "ダン"
+  },
+  "e": {
+    "hira": "え",
+    "katakana": "エ",
+    "hankatakana": "エ"
+  },
+  "fa": {
+    "hira": "ふぁ",
+    "katakana": "ファ",
+    "hankatakana": "ファ"
+  },
+  "fd": {
+    "hira": "ふぇん",
+    "katakana": "フェン",
+    "hankatakana": "フェン"
+  },
+  "fe": {
+    "hira": "ふぇ",
+    "katakana": "フェ",
+    "hankatakana": "フェ"
+  },
+  "fh": {
+    "hira": "ふう",
+    "katakana": "フウ",
+    "hankatakana": "フウ"
+  },
+  "fi": {
+    "hira": "ふぃ",
+    "katakana": "フィ",
+    "hankatakana": "フィ"
+  },
+  "fj": {
+    "hira": "ふん",
+    "katakana": "フン",
+    "hankatakana": "フン"
+  },
+  "fk": {
+    "hira": "ふぃん",
+    "katakana": "フィン",
+    "hankatakana": "フィン"
+  },
+  "fl": {
+    "hira": "ふぉん",
+    "katakana": "フォン",
+    "hankatakana": "フォン"
+  },
+  "fn": {
+    "hira": "ふぁん",
+    "katakana": "ファン",
+    "hankatakana": "ファン"
+  },
+  "fo": {
+    "hira": "ふぉ",
+    "katakana": "フォ",
+    "hankatakana": "フォ"
+  },
+  "fp": {
+    "hira": "ふぉ",
+    "katakana": "フォー",
+    "hankatakana": "フォー"
+  },
+  "fq": {
+    "hira": "ふぁい",
+    "katakana": "ファイ",
+    "hankatakana": "ファイ"
+  },
+  "fu": {
+    "hira": "ふ",
+    "katakana": "フ",
+    "hankatakana": "フ"
+  },
+  "fw": {
+    "hira": "ふぇい",
+    "katakana": "フェイ",
+    "hankatakana": "フェイ"
+  },
+  "fya": {
+    "hira": "ふゃ",
+    "katakana": "フャ",
+    "hankatakana": "フャ"
+  },
+  "fye": {
+    "hira": "ふぇ",
+    "katakana": "フェ",
+    "hankatakana": "フェ"
+  },
+  "fyi": {
+    "hira": "ふぃ",
+    "katakana": "フィ",
+    "hankatakana": "フィ"
+  },
+  "fyo": {
+    "hira": "ふょ",
+    "katakana": "フョ",
+    "hankatakana": "フョ"
+  },
+  "fyu": {
+    "hira": "ふゅ",
+    "katakana": "フュ",
+    "hankatakana": "フュ"
+  },
+  "fz": {
+    "hira": "ふぁん",
+    "katakana": "ファン",
+    "hankatakana": "ファン"
+  },
+  "ga": {
+    "hira": "が",
+    "katakana": "ガ",
+    "hankatakana": "ガ"
+  },
+  "gd": {
+    "hira": "げん",
+    "katakana": "ゲン",
+    "hankatakana": "ゲン"
+  },
+  "ge": {
+    "hira": "げ",
+    "katakana": "ゲ",
+    "hankatakana": "ゲ"
+  },
+  "gga": {
+    "hira": "ぎゃ",
+    "katakana": "ギャ",
+    "hankatakana": "ギャ"
+  },
+  "ggd": {
+    "hira": "ぎぇん",
+    "katakana": "ギェン",
+    "hankatakana": "ギェン"
+  },
+  "gge": {
+    "hira": "ぎぇ",
+    "katakana": "ギェ",
+    "hankatakana": "ギェ"
+  },
+  "ggh": {
+    "hira": "ぎゅう",
+    "katakana": "ギュウ",
+    "hankatakana": "ギュウ"
+  },
+  "ggj": {
+    "hira": "ぎゅん",
+    "katakana": "ギュン",
+    "hankatakana": "ギュン"
+  },
+  "ggl": {
+    "hira": "ぎょん",
+    "katakana": "ギョン",
+    "hankatakana": "ギョン"
+  },
+  "ggn": {
+    "hira": "ぎゃん",
+    "katakana": "ギャン",
+    "hankatakana": "ギャン"
+  },
+  "ggo": {
+    "hira": "ぎょ",
+    "katakana": "ギョ",
+    "hankatakana": "ギョ"
+  },
+  "ggp": {
+    "hira": "ぎょう",
+    "katakana": "ギョウ",
+    "hankatakana": "ギョウ"
+  },
+  "ggq": {
+    "hira": "ぎゃい",
+    "katakana": "ギャイ",
+    "hankatakana": "ギャイ"
+  },
+  "ggu": {
+    "hira": "ぎゅ",
+    "katakana": "ギュ",
+    "hankatakana": "ギュ"
+  },
+  "ggw": {
+    "hira": "ぎぇい",
+    "katakana": "ギェイ",
+    "hankatakana": "ギェイ"
+  },
+  "ggz": {
+    "hira": "ぎゃん",
+    "katakana": "ギャン",
+    "hankatakana": "ギャン"
+  },
+  "gh": {
+    "hira": "ぐう",
+    "katakana": "グウ",
+    "hankatakana": "グウ"
+  },
+  "gi": {
+    "hira": "ぎ",
+    "katakana": "ギ",
+    "hankatakana": "ギ"
+  },
+  "gj": {
+    "hira": "ぐん",
+    "katakana": "グン",
+    "hankatakana": "グン"
+  },
+  "gk": {
+    "hira": "ぎん",
+    "katakana": "ギン",
+    "hankatakana": "ギン"
+  },
+  "gl": {
+    "hira": "ごん",
+    "katakana": "ゴン",
+    "hankatakana": "ゴン"
+  },
+  "gn": {
+    "hira": "がん",
+    "katakana": "ガン",
+    "hankatakana": "ガン"
+  },
+  "go": {
+    "hira": "ご",
+    "katakana": "ゴ",
+    "hankatakana": "ゴ"
+  },
+  "gp": {
+    "hira": "ごう",
+    "katakana": "ゴウ",
+    "hankatakana": "ゴウ"
+  },
+  "gq": {
+    "hira": "がい",
+    "katakana": "ガイ",
+    "hankatakana": "ガイ"
+  },
+  "gr": {
+    "hira": "がら",
+    "katakana": "ガラ",
+    "hankatakana": "ガラ"
+  },
+  "gt": {
+    "hira": "ごと",
+    "katakana": "ゴト",
+    "hankatakana": "ゴト"
+  },
+  "gu": {
+    "hira": "ぐ",
+    "katakana": "グ",
+    "hankatakana": "グ"
+  },
+  "gw": {
+    "hira": "げい",
+    "katakana": "ゲイ",
+    "hankatakana": "ゲイ"
+  },
+  "gya": {
+    "hira": "ぎゃ",
+    "katakana": "ギャ",
+    "hankatakana": "ギャ"
+  },
+  "gyd": {
+    "hira": "ぎぇん",
+    "katakana": "ギェン",
+    "hankatakana": "ギェン"
+  },
+  "gye": {
+    "hira": "ぎぇ",
+    "katakana": "ギェ",
+    "hankatakana": "ギェ"
+  },
+  "gyh": {
+    "hira": "ぎゅう",
+    "katakana": "ギュウ",
+    "hankatakana": "ギュウ"
+  },
+  "gyi": {
+    "hira": "ぎぃ",
+    "katakana": "ギィ",
+    "hankatakana": "ギィ"
+  },
+  "gyj": {
+    "hira": "ぎゅん",
+    "katakana": "ギュン",
+    "hankatakana": "ギュン"
+  },
+  "gyl": {
+    "hira": "ぎょん",
+    "katakana": "ギョン",
+    "hankatakana": "ギョン"
+  },
+  "gyn": {
+    "hira": "ぎゃん",
+    "katakana": "ギャン",
+    "hankatakana": "ギャン"
+  },
+  "gyo": {
+    "hira": "ぎょ",
+    "katakana": "ギョ",
+    "hankatakana": "ギョ"
+  },
+  "gyp": {
+    "hira": "ぎょう",
+    "katakana": "ギョウ",
+    "hankatakana": "ギョウ"
+  },
+  "gyq": {
+    "hira": "ぎゃい",
+    "katakana": "ギャイ",
+    "hankatakana": "ギャイ"
+  },
+  "gyu": {
+    "hira": "ぎゅ",
+    "katakana": "ギュ",
+    "hankatakana": "ギュ"
+  },
+  "gyw": {
+    "hira": "ぎぇい",
+    "katakana": "ギェイ",
+    "hankatakana": "ギェイ"
+  },
+  "gyz": {
+    "hira": "ぎゃん",
+    "katakana": "ギャン",
+    "hankatakana": "ギャン"
+  },
+  "gz": {
+    "hira": "がん",
+    "katakana": "ガン",
+    "hankatakana": "ガン"
+  },
+  "ha": {
+    "hira": "は",
+    "katakana": "ハ",
+    "hankatakana": "ハ"
+  },
+  "hd": {
+    "hira": "へん",
+    "katakana": "ヘン",
+    "hankatakana": "ヘン"
+  },
+  "he": {
+    "hira": "へ",
+    "katakana": "ヘ",
+    "hankatakana": "ヘ"
+  },
+  "hf": {
+    "hira": "ふ",
+    "katakana": "フ",
+    "hankatakana": "フ"
+  },
+  "hga": {
+    "hira": "ひゃ",
+    "katakana": "ヒャ",
+    "hankatakana": "ヒャ"
+  },
+  "hgd": {
+    "hira": "ひぇん",
+    "katakana": "ヒェン",
+    "hankatakana": "ヒェン"
+  },
+  "hge": {
+    "hira": "ひぇ",
+    "katakana": "ヒェ",
+    "hankatakana": "ヒェ"
+  },
+  "hgh": {
+    "hira": "ひゅう",
+    "katakana": "ヒュウ",
+    "hankatakana": "ヒュウ"
+  },
+  "hgj": {
+    "hira": "ひゅん",
+    "katakana": "ヒュン",
+    "hankatakana": "ヒュン"
+  },
+  "hgl": {
+    "hira": "ひょん",
+    "katakana": "ヒョン",
+    "hankatakana": "ヒョン"
+  },
+  "hgn": {
+    "hira": "ひゃん",
+    "katakana": "ヒャン",
+    "hankatakana": "ヒャン"
+  },
+  "hgo": {
+    "hira": "ひょ",
+    "katakana": "ヒョ",
+    "hankatakana": "ヒョ"
+  },
+  "hgp": {
+    "hira": "ひょう",
+    "katakana": "ヒョウ",
+    "hankatakana": "ヒョウ"
+  },
+  "hgq": {
+    "hira": "ひゃい",
+    "katakana": "ヒャイ",
+    "hankatakana": "ヒャイ"
+  },
+  "hgu": {
+    "hira": "ひゅ",
+    "katakana": "ヒュ",
+    "hankatakana": "ヒュ"
+  },
+  "hgw": {
+    "hira": "ひぇい",
+    "katakana": "ヒェイ",
+    "hankatakana": "ヒェイ"
+  },
+  "hgz": {
+    "hira": "ひゃん",
+    "katakana": "ヒャン",
+    "hankatakana": "ヒャン"
+  },
+  "hh": {
+    "hira": "ふう",
+    "katakana": "フウ",
+    "hankatakana": "フウ"
+  },
+  "hi": {
+    "hira": "ひ",
+    "katakana": "ヒ",
+    "hankatakana": "ヒ"
+  },
+  "hj": {
+    "hira": "ふん",
+    "katakana": "フン",
+    "hankatakana": "フン"
+  },
+  "hk": {
+    "hira": "ひん",
+    "katakana": "ヒン",
+    "hankatakana": "ヒン"
+  },
+  "hl": {
+    "hira": "ほん",
+    "katakana": "ホン",
+    "hankatakana": "ホン"
+  },
+  "hn": {
+    "hira": "はん",
+    "katakana": "ハン",
+    "hankatakana": "ハン"
+  },
+  "ho": {
+    "hira": "ほ",
+    "katakana": "ホ",
+    "hankatakana": "ホ"
+  },
+  "hp": {
+    "hira": "ほう",
+    "katakana": "ホウ",
+    "hankatakana": "ホウ"
+  },
+  "hq": {
+    "hira": "はい",
+    "katakana": "ハイ",
+    "hankatakana": "ハイ"
+  },
+  "ht": {
+    "hira": "ひと",
+    "katakana": "ヒト",
+    "hankatakana": "ヒト"
+  },
+  "hu": {
+    "hira": "ふ",
+    "katakana": "フ",
+    "hankatakana": "フ"
+  },
+  "hw": {
+    "hira": "へい",
+    "katakana": "ヘイ",
+    "hankatakana": "ヘイ"
+  },
+  "hya": {
+    "hira": "ひゃ",
+    "katakana": "ヒャ",
+    "hankatakana": "ヒャ"
+  },
+  "hyd": {
+    "hira": "ひぇん",
+    "katakana": "ヒェン",
+    "hankatakana": "ヒェン"
+  },
+  "hye": {
+    "hira": "ひぇ",
+    "katakana": "ヒェ",
+    "hankatakana": "ヒェ"
+  },
+  "hyh": {
+    "hira": "ひゅう",
+    "katakana": "ヒュウ",
+    "hankatakana": "ヒュウ"
+  },
+  "hyi": {
+    "hira": "ひぃ",
+    "katakana": "ヒィ",
+    "hankatakana": "ヒィ"
+  },
+  "hyj": {
+    "hira": "ひゅん",
+    "katakana": "ヒュン",
+    "hankatakana": "ヒュン"
+  },
+  "hyl": {
+    "hira": "ひょん",
+    "katakana": "ヒョン",
+    "hankatakana": "ヒョン"
+  },
+  "hyn": {
+    "hira": "ひゃん",
+    "katakana": "ヒャン",
+    "hankatakana": "ヒャン"
+  },
+  "hyo": {
+    "hira": "ひょ",
+    "katakana": "ヒョ",
+    "hankatakana": "ヒョ"
+  },
+  "hyp": {
+    "hira": "ひょう",
+    "katakana": "ヒョウ",
+    "hankatakana": "ヒョウ"
+  },
+  "hyq": {
+    "hira": "ひゃい",
+    "katakana": "ヒャイ",
+    "hankatakana": "ヒャイ"
+  },
+  "hyu": {
+    "hira": "ひゅ",
+    "katakana": "ヒュ",
+    "hankatakana": "ヒュ"
+  },
+  "hyw": {
+    "hira": "ひぇい",
+    "katakana": "ヒェイ",
+    "hankatakana": "ヒェイ"
+  },
+  "hyz": {
+    "hira": "ひゃん",
+    "katakana": "ヒャン",
+    "hankatakana": "ヒャン"
+  },
+  "hz": {
+    "hira": "はん",
+    "katakana": "ハン",
+    "hankatakana": "ハン"
+  },
+  "i": {
+    "hira": "い",
+    "katakana": "イ",
+    "hankatakana": "イ"
+  },
+  "ja": {
+    "hira": "じゃ",
+    "katakana": "ジャ",
+    "hankatakana": "ジャ"
+  },
+  "jd": {
+    "hira": "じぇん",
+    "katakana": "ジェン",
+    "hankatakana": "ジェン"
+  },
+  "je": {
+    "hira": "じぇ",
+    "katakana": "ジェ",
+    "hankatakana": "ジェ"
+  },
+  "jf": {
+    "hira": "じゅ",
+    "katakana": "ジュ",
+    "hankatakana": "ジュ"
+  },
+  "jh": {
+    "hira": "じゅう",
+    "katakana": "ジュウ",
+    "hankatakana": "ジュウ"
+  },
+  "ji": {
+    "hira": "じ",
+    "katakana": "ジ",
+    "hankatakana": "ジ"
+  },
+  "jj": {
+    "hira": "じゅん",
+    "katakana": "ジュン",
+    "hankatakana": "ジュン"
+  },
+  "jk": {
+    "hira": "じん",
+    "katakana": "ジン",
+    "hankatakana": "ジン"
+  },
+  "jl": {
+    "hira": "じょん",
+    "katakana": "ジョン",
+    "hankatakana": "ジョン"
+  },
+  "jn": {
+    "hira": "じゃん",
+    "katakana": "ジャン",
+    "hankatakana": "ジャン"
+  },
+  "jo": {
+    "hira": "じょ",
+    "katakana": "ジョ",
+    "hankatakana": "ジョ"
+  },
+  "jp": {
+    "hira": "じょう",
+    "katakana": "ジョウ",
+    "hankatakana": "ジョウ"
+  },
+  "jq": {
+    "hira": "じゃい",
+    "katakana": "ジャイ",
+    "hankatakana": "ジャイ"
+  },
+  "ju": {
+    "hira": "じゅ",
+    "katakana": "ジュ",
+    "hankatakana": "ジュ"
+  },
+  "jw": {
+    "hira": "じぇい",
+    "katakana": "ジェイ",
+    "hankatakana": "ジェイ"
+  },
+  "jya": {
+    "hira": "じゃ",
+    "katakana": "ジャ",
+    "hankatakana": "ジャ"
+  },
+  "jye": {
+    "hira": "じぇ",
+    "katakana": "ジェ",
+    "hankatakana": "ジェ"
+  },
+  "jyi": {
+    "hira": "じぃ",
+    "katakana": "ジィ",
+    "hankatakana": "ジィ"
+  },
+  "jyo": {
+    "hira": "じょ",
+    "katakana": "ジョ",
+    "hankatakana": "ジョ"
+  },
+  "jyu": {
+    "hira": "じゅ",
+    "katakana": "ジュ",
+    "hankatakana": "ジュ"
+  },
+  "jz": {
+    "hira": "じゃん",
+    "katakana": "ジャン",
+    "hankatakana": "ジャン"
+  },
+  "ka": {
+    "hira": "か",
+    "katakana": "カ",
+    "hankatakana": "カ"
+  },
+  "kd": {
+    "hira": "けん",
+    "katakana": "ケン",
+    "hankatakana": "ケン"
+  },
+  "ke": {
+    "hira": "け",
+    "katakana": "ケ",
+    "hankatakana": "ケ"
+  },
+  "kf": {
+    "hira": "き",
+    "katakana": "キ",
+    "hankatakana": "キ"
+  },
+  "kga": {
+    "hira": "きゃ",
+    "katakana": "キャ",
+    "hankatakana": "キャ"
+  },
+  "kgd": {
+    "hira": "きぇん",
+    "katakana": "キェン",
+    "hankatakana": "キェン"
+  },
+  "kge": {
+    "hira": "きぇ",
+    "katakana": "キェ",
+    "hankatakana": "キェ"
+  },
+  "kgh": {
+    "hira": "きゅう",
+    "katakana": "キュウ",
+    "hankatakana": "キュウ"
+  },
+  "kgl": {
+    "hira": "きょん",
+    "katakana": "キョン",
+    "hankatakana": "キョン"
+  },
+  "kgn": {
+    "hira": "きゃん",
+    "katakana": "キャン",
+    "hankatakana": "キャン"
+  },
+  "kgo": {
+    "hira": "きょ",
+    "katakana": "キョ",
+    "hankatakana": "キョ"
+  },
+  "kgp": {
+    "hira": "きょう",
+    "katakana": "キョウ",
+    "hankatakana": "キョウ"
+  },
+  "kgq": {
+    "hira": "きゃい",
+    "katakana": "キャイ",
+    "hankatakana": "キャイ"
+  },
+  "kgu": {
+    "hira": "きゅ",
+    "katakana": "キュ",
+    "hankatakana": "キュ"
+  },
+  "kgw": {
+    "hira": "きぇい",
+    "katakana": "キェイ",
+    "hankatakana": "キェイ"
+  },
+  "kgz": {
+    "hira": "きゃん",
+    "katakana": "キャン",
+    "hankatakana": "キャン"
+  },
+  "kh": {
+    "hira": "くう",
+    "katakana": "クウ",
+    "hankatakana": "クウ"
+  },
+  "ki": {
+    "hira": "き",
+    "katakana": "キ",
+    "hankatakana": "キ"
+  },
+  "kj": {
+    "hira": "くん",
+    "katakana": "クン",
+    "hankatakana": "クン"
+  },
+  "kk": {
+    "hira": "きん",
+    "katakana": "キン",
+    "hankatakana": "キン"
+  },
+  "kl": {
+    "hira": "こん",
+    "katakana": "コン",
+    "hankatakana": "コン"
+  },
+  "km": {
+    "hira": "かも",
+    "katakana": "カモ",
+    "hankatakana": "カモ"
+  },
+  "kn": {
+    "hira": "かん",
+    "katakana": "カン",
+    "hankatakana": "カン"
+  },
+  "ko": {
+    "hira": "こ",
+    "katakana": "コ",
+    "hankatakana": "コ"
+  },
+  "kp": {
+    "hira": "こう",
+    "katakana": "コウ",
+    "hankatakana": "コウ"
+  },
+  "kq": {
+    "hira": "かい",
+    "katakana": "カイ",
+    "hankatakana": "カイ"
+  },
+  "kr": {
+    "hira": "から",
+    "katakana": "カラ",
+    "hankatakana": "カラ"
+  },
+  "kt": {
+    "hira": "こと",
+    "katakana": "コト",
+    "hankatakana": "コト"
+  },
+  "ku": {
+    "hira": "く",
+    "katakana": "ク",
+    "hankatakana": "ク"
+  },
+  "kw": {
+    "hira": "けい",
+    "katakana": "ケイ",
+    "hankatakana": "ケイ"
+  },
+  "kya": {
+    "hira": "きゃ",
+    "katakana": "キャ",
+    "hankatakana": "キャ"
+  },
+  "kyd": {
+    "hira": "きぇん",
+    "katakana": "キェン",
+    "hankatakana": "キェン"
+  },
+  "kye": {
+    "hira": "きぇ",
+    "katakana": "キェ",
+    "hankatakana": "キェ"
+  },
+  "kyh": {
+    "hira": "きゅう",
+    "katakana": "キュウ",
+    "hankatakana": "キュウ"
+  },
+  "kyi": {
+    "hira": "きぃ",
+    "katakana": "キィ",
+    "hankatakana": "キィ"
+  },
+  "kyj": {
+    "hira": "きゅん",
+    "katakana": "キュン",
+    "hankatakana": "キュン"
+  },
+  "kyl": {
+    "hira": "きょん",
+    "katakana": "キョン",
+    "hankatakana": "キョン"
+  },
+  "kyn": {
+    "hira": "きゃん",
+    "katakana": "キャン",
+    "hankatakana": "キャン"
+  },
+  "kyo": {
+    "hira": "きょ",
+    "katakana": "キョ",
+    "hankatakana": "キョ"
+  },
+  "kyp": {
+    "hira": "きょう",
+    "katakana": "キョウ",
+    "hankatakana": "キョウ"
+  },
+  "kyq": {
+    "hira": "きゃい",
+    "katakana": "キャイ",
+    "hankatakana": "キャイ"
+  },
+  "kyu": {
+    "hira": "きゅ",
+    "katakana": "キュ",
+    "hankatakana": "キュ"
+  },
+  "kyw": {
+    "hira": "きぇい",
+    "katakana": "キェイ",
+    "hankatakana": "キェイ"
+  },
+  "kyz": {
+    "hira": "きゃん",
+    "katakana": "キャン",
+    "hankatakana": "キャン"
+  },
+  "kz": {
+    "hira": "かん",
+    "katakana": "カン",
+    "hankatakana": "カン"
+  },
+  "ma": {
+    "hira": "ま",
+    "katakana": "マ",
+    "hankatakana": "マ"
+  },
+  "md": {
+    "hira": "めん",
+    "katakana": "メン",
+    "hankatakana": "メン"
+  },
+  "me": {
+    "hira": "め",
+    "katakana": "メ",
+    "hankatakana": "メ"
+  },
+  "mf": {
+    "hira": "む",
+    "katakana": "ム",
+    "hankatakana": "ム"
+  },
+  "mga": {
+    "hira": "みゃ",
+    "katakana": "ミャ",
+    "hankatakana": "ミャ"
+  },
+  "mgd": {
+    "hira": "みぇん",
+    "katakana": "ミェン",
+    "hankatakana": "ミェン"
+  },
+  "mge": {
+    "hira": "みぇ",
+    "katakana": "ミェ",
+    "hankatakana": "ミェ"
+  },
+  "mgh": {
+    "hira": "みゅう",
+    "katakana": "ミュウ",
+    "hankatakana": "ミュウ"
+  },
+  "mgj": {
+    "hira": "みゅん",
+    "katakana": "ミュン",
+    "hankatakana": "ミュン"
+  },
+  "mgl": {
+    "hira": "みょん",
+    "katakana": "ミョン",
+    "hankatakana": "ミョン"
+  },
+  "mgn": {
+    "hira": "みゃん",
+    "katakana": "ミャン",
+    "hankatakana": "ミャン"
+  },
+  "mgo": {
+    "hira": "みょ",
+    "katakana": "ミョ",
+    "hankatakana": "ミョ"
+  },
+  "mgp": {
+    "hira": "みょう",
+    "katakana": "ミョウ",
+    "hankatakana": "ミョウ"
+  },
+  "mgq": {
+    "hira": "みゃい",
+    "katakana": "ミャイ",
+    "hankatakana": "ミャイ"
+  },
+  "mgu": {
+    "hira": "みゅ",
+    "katakana": "ミュ",
+    "hankatakana": "ミュ"
+  },
+  "mgw": {
+    "hira": "みぇい",
+    "katakana": "ミェイ",
+    "hankatakana": "ミェイ"
+  },
+  "mgz": {
+    "hira": "みゃん",
+    "katakana": "ミャン",
+    "hankatakana": "ミャン"
+  },
+  "mh": {
+    "hira": "むう",
+    "katakana": "ムウ",
+    "hankatakana": "ムウ"
+  },
+  "mi": {
+    "hira": "み",
+    "katakana": "ミ",
+    "hankatakana": "ミ"
+  },
+  "mj": {
+    "hira": "むん",
+    "katakana": "ムン",
+    "hankatakana": "ムン"
+  },
+  "mk": {
+    "hira": "みん",
+    "katakana": "ミン",
+    "hankatakana": "ミン"
+  },
+  "ml": {
+    "hira": "もん",
+    "katakana": "モン",
+    "hankatakana": "モン"
+  },
+  "mn": {
+    "hira": "もの",
+    "katakana": "モノ",
+    "hankatakana": "モノ"
+  },
+  "mo": {
+    "hira": "も",
+    "katakana": "モ",
+    "hankatakana": "モ"
+  },
+  "mp": {
+    "hira": "もう",
+    "katakana": "モウ",
+    "hankatakana": "モウ"
+  },
+  "mq": {
+    "hira": "まい",
+    "katakana": "マイ",
+    "hankatakana": "マイ"
+  },
+  "mr": {
+    "hira": "まる",
+    "katakana": "マル",
+    "hankatakana": "マル"
+  },
+  "ms": {
+    "hira": "ます",
+    "katakana": "マス",
+    "hankatakana": "マス"
+  },
+  "mt": {
+    "hira": "また",
+    "katakana": "マタ",
+    "hankatakana": "マタ"
+  },
+  "mu": {
+    "hira": "む",
+    "katakana": "ム",
+    "hankatakana": "ム"
+  },
+  "mw": {
+    "hira": "めい",
+    "katakana": "メイ",
+    "hankatakana": "メイ"
+  },
+  "mya": {
+    "hira": "みゃ",
+    "katakana": "ミャ",
+    "hankatakana": "ミャ"
+  },
+  "myd": {
+    "hira": "みぇん",
+    "katakana": "ミェン",
+    "hankatakana": "ミェン"
+  },
+  "mye": {
+    "hira": "みぇ",
+    "katakana": "ミェ",
+    "hankatakana": "ミェ"
+  },
+  "myh": {
+    "hira": "みゅう",
+    "katakana": "ミュウ",
+    "hankatakana": "ミュウ"
+  },
+  "myi": {
+    "hira": "みぃ",
+    "katakana": "ミィ",
+    "hankatakana": "ミィ"
+  },
+  "myj": {
+    "hira": "みゅん",
+    "katakana": "ミュン",
+    "hankatakana": "ミュン"
+  },
+  "myl": {
+    "hira": "みょん",
+    "katakana": "ミョン",
+    "hankatakana": "ミョン"
+  },
+  "myn": {
+    "hira": "みゃん",
+    "katakana": "ミャン",
+    "hankatakana": "ミャン"
+  },
+  "myo": {
+    "hira": "みょ",
+    "katakana": "ミョ",
+    "hankatakana": "ミョ"
+  },
+  "myp": {
+    "hira": "みょう",
+    "katakana": "ミョウ",
+    "hankatakana": "ミョウ"
+  },
+  "myq": {
+    "hira": "みゃい",
+    "katakana": "ミャイ",
+    "hankatakana": "ミャイ"
+  },
+  "myu": {
+    "hira": "みゅ",
+    "katakana": "ミュ",
+    "hankatakana": "ミュ"
+  },
+  "myw": {
+    "hira": "みぇい",
+    "katakana": "ミェイ",
+    "hankatakana": "ミェイ"
+  },
+  "myz": {
+    "hira": "みゃん",
+    "katakana": "ミャン",
+    "hankatakana": "ミャン"
+  },
+  "mz": {
+    "hira": "まん",
+    "katakana": "マン",
+    "hankatakana": "マン"
+  },
+  "na": {
+    "hira": "な",
+    "katakana": "ナ",
+    "hankatakana": "ナ"
+  },
+  "nb": {
+    "hira": "ねば",
+    "katakana": "ネバ",
+    "hankatakana": "ネバ"
+  },
+  "nd": {
+    "hira": "ねん",
+    "katakana": "ネン",
+    "hankatakana": "ネン"
+  },
+  "ne": {
+    "hira": "ね",
+    "katakana": "ネ",
+    "hankatakana": "ネ"
+  },
+  "nf": {
+    "hira": "ぬ",
+    "katakana": "ヌ",
+    "hankatakana": "ヌ"
+  },
+  "nga": {
+    "hira": "にゃ",
+    "katakana": "ニャ",
+    "hankatakana": "ニャ"
+  },
+  "ngd": {
+    "hira": "にぇん",
+    "katakana": "ニェン",
+    "hankatakana": "ニェン"
+  },
+  "nge": {
+    "hira": "にぇ",
+    "katakana": "ニェ",
+    "hankatakana": "ニェ"
+  },
+  "ngh": {
+    "hira": "にゅう",
+    "katakana": "ニュウ",
+    "hankatakana": "ニュウ"
+  },
+  "ngj": {
+    "hira": "にゅん",
+    "katakana": "ニュン",
+    "hankatakana": "ニュン"
+  },
+  "ngl": {
+    "hira": "にょん",
+    "katakana": "ニョン",
+    "hankatakana": "ニョン"
+  },
+  "ngn": {
+    "hira": "にゃん",
+    "katakana": "ニャン",
+    "hankatakana": "ニャン"
+  },
+  "ngo": {
+    "hira": "にょ",
+    "katakana": "ニョ",
+    "hankatakana": "ニョ"
+  },
+  "ngp": {
+    "hira": "にょう",
+    "katakana": "ニョウ",
+    "hankatakana": "ニョウ"
+  },
+  "ngq": {
+    "hira": "にゃい",
+    "katakana": "ニャイ",
+    "hankatakana": "ニャイ"
+  },
+  "ngu": {
+    "hira": "にゅ",
+    "katakana": "ニュ",
+    "hankatakana": "ニュ"
+  },
+  "ngw": {
+    "hira": "にぇい",
+    "katakana": "ニェイ",
+    "hankatakana": "ニェイ"
+  },
+  "ngz": {
+    "hira": "にゃん",
+    "katakana": "ニャン",
+    "hankatakana": "ニャン"
+  },
+  "nh": {
+    "hira": "ぬう",
+    "katakana": "ヌウ",
+    "hankatakana": "ヌウ"
+  },
+  "ni": {
+    "hira": "に",
+    "katakana": "ニ",
+    "hankatakana": "ニ"
+  },
+  "nj": {
+    "hira": "ぬん",
+    "katakana": "ヌン",
+    "hankatakana": "ヌン"
+  },
+  "nk": {
+    "hira": "にん",
+    "katakana": "ニン",
+    "hankatakana": "ニン"
+  },
+  "nl": {
+    "hira": "のん",
+    "katakana": "ノン",
+    "hankatakana": "ノン"
+  },
+  "nn": {
+    "hira": "ん",
+    "katakana": "ン",
+    "hankatakana": "ン"
+  },
+  "no": {
+    "hira": "の",
+    "katakana": "ノ",
+    "hankatakana": "ノ"
+  },
+  "np": {
+    "hira": "のう",
+    "katakana": "ノウ",
+    "hankatakana": "ノウ"
+  },
+  "nq": {
+    "hira": "ない",
+    "katakana": "ナイ",
+    "hankatakana": "ナイ"
+  },
+  "nr": {
+    "hira": "なる",
+    "katakana": "ナル",
+    "hankatakana": "ナル"
+  },
+  "nt": {
+    "hira": "にち",
+    "katakana": "ニチ",
+    "hankatakana": "ニチ"
+  },
+  "nu": {
+    "hira": "ぬ",
+    "katakana": "ヌ",
+    "hankatakana": "ヌ"
+  },
+  "nw": {
+    "hira": "ねい",
+    "katakana": "ネイ",
+    "hankatakana": "ネイ"
+  },
+  "nya": {
+    "hira": "にゃ",
+    "katakana": "ニャ",
+    "hankatakana": "ニャ"
+  },
+  "nyd": {
+    "hira": "にぇん",
+    "katakana": "ニェン",
+    "hankatakana": "ニェン"
+  },
+  "nye": {
+    "hira": "にぇ",
+    "katakana": "ニェ",
+    "hankatakana": "ニェ"
+  },
+  "nyh": {
+    "hira": "にゅう",
+    "katakana": "ニュウ",
+    "hankatakana": "ニュウ"
+  },
+  "nyi": {
+    "hira": "にぃ",
+    "katakana": "ニィ",
+    "hankatakana": "ニィ"
+  },
+  "nyj": {
+    "hira": "にゅん",
+    "katakana": "ニュン",
+    "hankatakana": "ニュン"
+  },
+  "nyl": {
+    "hira": "にょん",
+    "katakana": "ニョン",
+    "hankatakana": "ニョン"
+  },
+  "nyn": {
+    "hira": "にゃん",
+    "katakana": "ニャン",
+    "hankatakana": "ニャン"
+  },
+  "nyo": {
+    "hira": "にょ",
+    "katakana": "ニョ",
+    "hankatakana": "ニョ"
+  },
+  "nyp": {
+    "hira": "にょう",
+    "katakana": "ニョウ",
+    "hankatakana": "ニョウ"
+  },
+  "nyq": {
+    "hira": "にゃい",
+    "katakana": "ニャイ",
+    "hankatakana": "ニャイ"
+  },
+  "nyu": {
+    "hira": "にゅ",
+    "katakana": "ニュ",
+    "hankatakana": "ニュ"
+  },
+  "nyw": {
+    "hira": "にぇい",
+    "katakana": "ニェイ",
+    "hankatakana": "ニェイ"
+  },
+  "nyz": {
+    "hira": "にゃん",
+    "katakana": "ニャン",
+    "hankatakana": "ニャン"
+  },
+  "nz": {
+    "hira": "なん",
+    "katakana": "ナン",
+    "hankatakana": "ナン"
+  },
+  "o": {
+    "hira": "お",
+    "katakana": "オ",
+    "hankatakana": "オ"
+  },
+  "pa": {
+    "hira": "ぱ",
+    "katakana": "パ",
+    "hankatakana": "パ"
+  },
+  "pd": {
+    "hira": "ぺん",
+    "katakana": "ペン",
+    "hankatakana": "ペン"
+  },
+  "pe": {
+    "hira": "ぺ",
+    "katakana": "ペ",
+    "hankatakana": "ペ"
+  },
+  "pf": {
+    "hira": "ぽん",
+    "katakana": "ポン",
+    "hankatakana": "ポン"
+  },
+  "pga": {
+    "hira": "ぴゃ",
+    "katakana": "ピャ",
+    "hankatakana": "ピャ"
+  },
+  "pgd": {
+    "hira": "ぴぇん",
+    "katakana": "ピェン",
+    "hankatakana": "ピェン"
+  },
+  "pge": {
+    "hira": "ぴぇ",
+    "katakana": "ピェ",
+    "hankatakana": "ピェ"
+  },
+  "pgh": {
+    "hira": "ぴゅう",
+    "katakana": "ピュウ",
+    "hankatakana": "ピュウ"
+  },
+  "pgj": {
+    "hira": "ぴゅん",
+    "katakana": "ピュン",
+    "hankatakana": "ピュン"
+  },
+  "pgl": {
+    "hira": "ぴょん",
+    "katakana": "ピョン",
+    "hankatakana": "ピョン"
+  },
+  "pgn": {
+    "hira": "ぴゃん",
+    "katakana": "ピャン",
+    "hankatakana": "ピャン"
+  },
+  "pgo": {
+    "hira": "ぴょ",
+    "katakana": "ピョ",
+    "hankatakana": "ピョ"
+  },
+  "pgp": {
+    "hira": "ぴょう",
+    "katakana": "ピョウ",
+    "hankatakana": "ピョウ"
+  },
+  "pgq": {
+    "hira": "ぴゃい",
+    "katakana": "ピャイ",
+    "hankatakana": "ピャイ"
+  },
+  "pgu": {
+    "hira": "ぴゅ",
+    "katakana": "ピュ",
+    "hankatakana": "ピュ"
+  },
+  "pgw": {
+    "hira": "ぴぇい",
+    "katakana": "ピェイ",
+    "hankatakana": "ピェイ"
+  },
+  "pgz": {
+    "hira": "ぴゃん",
+    "katakana": "ピャン",
+    "hankatakana": "ピャン"
+  },
+  "ph": {
+    "hira": "ぷう",
+    "katakana": "プウ",
+    "hankatakana": "プウ"
+  },
+  "pi": {
+    "hira": "ぴ",
+    "katakana": "ピ",
+    "hankatakana": "ピ"
+  },
+  "pj": {
+    "hira": "ぷん",
+    "katakana": "プン",
+    "hankatakana": "プン"
+  },
+  "pk": {
+    "hira": "ぴん",
+    "katakana": "ピン",
+    "hankatakana": "ピン"
+  },
+  "pl": {
+    "hira": "ぽん",
+    "katakana": "ポン",
+    "hankatakana": "ポン"
+  },
+  "pn": {
+    "hira": "ぱん",
+    "katakana": "パン",
+    "hankatakana": "パン"
+  },
+  "po": {
+    "hira": "ぽ",
+    "katakana": "ポ",
+    "hankatakana": "ポ"
+  },
+  "pp": {
+    "hira": "ぽう",
+    "katakana": "ポウ",
+    "hankatakana": "ポウ"
+  },
+  "pq": {
+    "hira": "ぱい",
+    "katakana": "パイ",
+    "hankatakana": "パイ"
+  },
+  "pu": {
+    "hira": "ぷ",
+    "katakana": "プ",
+    "hankatakana": "プ"
+  },
+  "pw": {
+    "hira": "ぺい",
+    "katakana": "ペイ",
+    "hankatakana": "ペイ"
+  },
+  "pya": {
+    "hira": "ぴゃ",
+    "katakana": "ピャ",
+    "hankatakana": "ピャ"
+  },
+  "pyd": {
+    "hira": "ぴぇん",
+    "katakana": "ピェン",
+    "hankatakana": "ピェン"
+  },
+  "pye": {
+    "hira": "ぴぇ",
+    "katakana": "ピェ",
+    "hankatakana": "ピェ"
+  },
+  "pyh": {
+    "hira": "ぴゅう",
+    "katakana": "ピュウ",
+    "hankatakana": "ピュウ"
+  },
+  "pyi": {
+    "hira": "ぴぃ",
+    "katakana": "ピィ",
+    "hankatakana": "ピィ"
+  },
+  "pyj": {
+    "hira": "ぴゅん",
+    "katakana": "ピュン",
+    "hankatakana": "ピュン"
+  },
+  "pyl": {
+    "hira": "ぴょん",
+    "katakana": "ピョン",
+    "hankatakana": "ピョン"
+  },
+  "pyn": {
+    "hira": "ぴゃん",
+    "katakana": "ピャン",
+    "hankatakana": "ピャン"
+  },
+  "pyo": {
+    "hira": "ぴょ",
+    "katakana": "ピョ",
+    "hankatakana": "ピョ"
+  },
+  "pyp": {
+    "hira": "ぴょう",
+    "katakana": "ピョウ",
+    "hankatakana": "ピョウ"
+  },
+  "pyq": {
+    "hira": "ぴゃい",
+    "katakana": "ピャイ",
+    "hankatakana": "ピャイ"
+  },
+  "pyu": {
+    "hira": "ぴゅ",
+    "katakana": "ピュ",
+    "hankatakana": "ピュ"
+  },
+  "pyw": {
+    "hira": "ぴぇい",
+    "katakana": "ピェイ",
+    "hankatakana": "ピェイ"
+  },
+  "pyz": {
+    "hira": "ぴゃん",
+    "katakana": "ピャン",
+    "hankatakana": "ピャン"
+  },
+  "pz": {
+    "hira": "ぱん",
+    "katakana": "パン",
+    "hankatakana": "パン"
+  },
+  "q": {
+    "hira": "ん",
+    "katakana": "ン",
+    "hankatakana": "ン"
+  },
+  "ra": {
+    "hira": "ら",
+    "katakana": "ラ",
+    "hankatakana": "ラ"
+  },
+  "rd": {
+    "hira": "れん",
+    "katakana": "レン",
+    "hankatakana": "レン"
+  },
+  "re": {
+    "hira": "れ",
+    "katakana": "レ",
+    "hankatakana": "レ"
+  },
+  "rh": {
+    "hira": "るう",
+    "katakana": "ルウ",
+    "hankatakana": "ルウ"
+  },
+  "ri": {
+    "hira": "り",
+    "katakana": "リ",
+    "hankatakana": "リ"
+  },
+  "rj": {
+    "hira": "るん",
+    "katakana": "ルン",
+    "hankatakana": "ルン"
+  },
+  "rk": {
+    "hira": "りん",
+    "katakana": "リン",
+    "hankatakana": "リン"
+  },
+  "rl": {
+    "hira": "ろん",
+    "katakana": "ロン",
+    "hankatakana": "ロン"
+  },
+  "rn": {
+    "hira": "らん",
+    "katakana": "ラン",
+    "hankatakana": "ラン"
+  },
+  "ro": {
+    "hira": "ろ",
+    "katakana": "ロ",
+    "hankatakana": "ロ"
+  },
+  "rp": {
+    "hira": "ろう",
+    "katakana": "ロウ",
+    "hankatakana": "ロウ"
+  },
+  "rq": {
+    "hira": "らい",
+    "katakana": "ライ",
+    "hankatakana": "ライ"
+  },
+  "rr": {
+    "hira": "られ",
+    "katakana": "ラレ",
+    "hankatakana": "ラレ"
+  },
+  "ru": {
+    "hira": "る",
+    "katakana": "ル",
+    "hankatakana": "ル"
+  },
+  "rw": {
+    "hira": "れい",
+    "katakana": "レイ",
+    "hankatakana": "レイ"
+  },
+  "rya": {
+    "hira": "りゃ",
+    "katakana": "リャ",
+    "hankatakana": "リャ"
+  },
+  "ryd": {
+    "hira": "りぇん",
+    "katakana": "リェン",
+    "hankatakana": "リェン"
+  },
+  "rye": {
+    "hira": "りぇ",
+    "katakana": "リェ",
+    "hankatakana": "リェ"
+  },
+  "ryh": {
+    "hira": "りゅう",
+    "katakana": "リュウ",
+    "hankatakana": "リュウ"
+  },
+  "ryi": {
+    "hira": "りぃ",
+    "katakana": "リィ",
+    "hankatakana": "リィ"
+  },
+  "ryj": {
+    "hira": "りゅん",
+    "katakana": "リュン",
+    "hankatakana": "リュン"
+  },
+  "ryl": {
+    "hira": "りょん",
+    "katakana": "リョン",
+    "hankatakana": "リョン"
+  },
+  "ryn": {
+    "hira": "りゃん",
+    "katakana": "リャン",
+    "hankatakana": "リャン"
+  },
+  "ryo": {
+    "hira": "りょ",
+    "katakana": "リョ",
+    "hankatakana": "リョ"
+  },
+  "ryp": {
+    "hira": "りょう",
+    "katakana": "リョウ",
+    "hankatakana": "リョウ"
+  },
+  "ryq": {
+    "hira": "りゃい",
+    "katakana": "リャイ",
+    "hankatakana": "リャイ"
+  },
+  "ryu": {
+    "hira": "りゅ",
+    "katakana": "リュ",
+    "hankatakana": "リュ"
+  },
+  "ryw": {
+    "hira": "りぇい",
+    "katakana": "リェイ",
+    "hankatakana": "リェイ"
+  },
+  "ryy": {
+    "hira": "りゅう",
+    "katakana": "リュウ",
+    "hankatakana": "リュウ"
+  },
+  "ryz": {
+    "hira": "りゃん",
+    "katakana": "リャン",
+    "hankatakana": "リャン"
+  },
+  "rz": {
+    "hira": "らん",
+    "katakana": "ラン",
+    "hankatakana": "ラン"
+  },
+  "sa": {
+    "hira": "さ",
+    "katakana": "サ",
+    "hankatakana": "サ"
+  },
+  "sd": {
+    "hira": "せん",
+    "katakana": "セン",
+    "hankatakana": "セン"
+  },
+  "se": {
+    "hira": "せ",
+    "katakana": "セ",
+    "hankatakana": "セ"
+  },
+  "sf": {
+    "hira": "さい",
+    "katakana": "サイ",
+    "hankatakana": "サイ"
+  },
+  "sga": {
+    "hira": "しゃ",
+    "katakana": "シャ",
+    "hankatakana": "シャ"
+  },
+  "sgd": {
+    "hira": "しぇん",
+    "katakana": "シェン",
+    "hankatakana": "シェン"
+  },
+  "sge": {
+    "hira": "しぇ",
+    "katakana": "シェ",
+    "hankatakana": "シェ"
+  },
+  "sgh": {
+    "hira": "しゅう",
+    "katakana": "シュウ",
+    "hankatakana": "シュウ"
+  },
+  "sgj": {
+    "hira": "しゅん",
+    "katakana": "シュン",
+    "hankatakana": "シュン"
+  },
+  "sgl": {
+    "hira": "しょん",
+    "katakana": "ション",
+    "hankatakana": "ション"
+  },
+  "sgn": {
+    "hira": "しゃん",
+    "katakana": "シャン",
+    "hankatakana": "シャン"
+  },
+  "sgo": {
+    "hira": "しょ",
+    "katakana": "ショ",
+    "hankatakana": "ショ"
+  },
+  "sgp": {
+    "hira": "しょう",
+    "katakana": "ショウ",
+    "hankatakana": "ショウ"
+  },
+  "sgq": {
+    "hira": "しゃい",
+    "katakana": "シャイ",
+    "hankatakana": "シャイ"
+  },
+  "sgu": {
+    "hira": "しゅ",
+    "katakana": "シュ",
+    "hankatakana": "シュ"
+  },
+  "sgw": {
+    "hira": "しぇい",
+    "katakana": "シェイ",
+    "hankatakana": "シェイ"
+  },
+  "sgz": {
+    "hira": "しゃん",
+    "katakana": "シャン",
+    "hankatakana": "シャン"
+  },
+  "sh": {
+    "hira": "すう",
+    "katakana": "スウ",
+    "hankatakana": "スウ"
+  },
+  "si": {
+    "hira": "し",
+    "katakana": "シ",
+    "hankatakana": "シ"
+  },
+  "sj": {
+    "hira": "すん",
+    "katakana": "スン",
+    "hankatakana": "スン"
+  },
+  "sk": {
+    "hira": "しん",
+    "katakana": "シン",
+    "hankatakana": "シン"
+  },
+  "sl": {
+    "hira": "そん",
+    "katakana": "ソン",
+    "hankatakana": "ソン"
+  },
+  "sm": {
+    "hira": "さま",
+    "katakana": "サマ",
+    "hankatakana": "サマ"
+  },
+  "sn": {
+    "hira": "さん",
+    "katakana": "サン",
+    "hankatakana": "サン"
+  },
+  "so": {
+    "hira": "そ",
+    "katakana": "ソ",
+    "hankatakana": "ソ"
+  },
+  "sp": {
+    "hira": "そう",
+    "katakana": "ソウ",
+    "hankatakana": "ソウ"
+  },
+  "sq": {
+    "hira": "さい",
+    "katakana": "サイ",
+    "hankatakana": "サイ"
+  },
+  "sr": {
+    "hira": "する",
+    "katakana": "スル",
+    "hankatakana": "スル"
+  },
+  "ss": {
+    "hira": "せい",
+    "katakana": "セイ",
+    "hankatakana": "セイ"
+  },
+  "st": {
+    "hira": "した",
+    "katakana": "シタ",
+    "hankatakana": "シタ"
+  },
+  "su": {
+    "hira": "す",
+    "katakana": "ス",
+    "hankatakana": "ス"
+  },
+  "sw": {
+    "hira": "せい",
+    "katakana": "セイ",
+    "hankatakana": "セイ"
+  },
+  "sya": {
+    "hira": "しゃ",
+    "katakana": "シャ",
+    "hankatakana": "シャ"
+  },
+  "syd": {
+    "hira": "しぇん",
+    "katakana": "シェン",
+    "hankatakana": "シェン"
+  },
+  "sye": {
+    "hira": "しぇ",
+    "katakana": "シェ",
+    "hankatakana": "シェ"
+  },
+  "syh": {
+    "hira": "しゅう",
+    "katakana": "シュウ",
+    "hankatakana": "シュウ"
+  },
+  "syi": {
+    "hira": "しぃ",
+    "katakana": "シィ",
+    "hankatakana": "シィ"
+  },
+  "syj": {
+    "hira": "しゅん",
+    "katakana": "シュン",
+    "hankatakana": "シュン"
+  },
+  "syl": {
+    "hira": "しょん",
+    "katakana": "ション",
+    "hankatakana": "ション"
+  },
+  "syn": {
+    "hira": "しゃん",
+    "katakana": "シャン",
+    "hankatakana": "シャン"
+  },
+  "syo": {
+    "hira": "しょ",
+    "katakana": "ショ",
+    "hankatakana": "ショ"
+  },
+  "syp": {
+    "hira": "しょう",
+    "katakana": "ショウ",
+    "hankatakana": "ショウ"
+  },
+  "syq": {
+    "hira": "しゃい",
+    "katakana": "シャイ",
+    "hankatakana": "シャイ"
+  },
+  "syu": {
+    "hira": "しゅ",
+    "katakana": "シュ",
+    "hankatakana": "シュ"
+  },
+  "syw": {
+    "hira": "しぇい",
+    "katakana": "シェイ",
+    "hankatakana": "シェイ"
+  },
+  "syz": {
+    "hira": "しゃん",
+    "katakana": "シャン",
+    "hankatakana": "シャン"
+  },
+  "sz": {
+    "hira": "さん",
+    "katakana": "サン",
+    "hankatakana": "サン"
+  },
+  "ta": {
+    "hira": "た",
+    "katakana": "タ",
+    "hankatakana": "タ"
+  },
+  "tb": {
+    "hira": "たび",
+    "katakana": "タビ",
+    "hankatakana": "タビ"
+  },
+  "td": {
+    "hira": "てん",
+    "katakana": "テン",
+    "hankatakana": "テン"
+  },
+  "te": {
+    "hira": "て",
+    "katakana": "テ",
+    "hankatakana": "テ"
+  },
+  "tgi": {
+    "hira": "てぃ",
+    "katakana": "ティ",
+    "hankatakana": "ティ"
+  },
+  "tgu": {
+    "hira": "てゅ",
+    "katakana": "テュ",
+    "hankatakana": "テュ"
+  },
+  "th": {
+    "hira": "つう",
+    "katakana": "ツウ",
+    "hankatakana": "ツウ"
+  },
+  "ti": {
+    "hira": "ち",
+    "katakana": "チ",
+    "hankatakana": "チ"
+  },
+  "tj": {
+    "hira": "つん",
+    "katakana": "ツン",
+    "hankatakana": "ツン"
+  },
+  "tk": {
+    "hira": "ちん",
+    "katakana": "チン",
+    "hankatakana": "チン"
+  },
+  "tl": {
+    "hira": "とん",
+    "katakana": "トン",
+    "hankatakana": "トン"
+  },
+  "tm": {
+    "hira": "ため",
+    "katakana": "タメ",
+    "hankatakana": "タメ"
+  },
+  "tn": {
+    "hira": "たん",
+    "katakana": "タン",
+    "hankatakana": "タン"
+  },
+  "to": {
+    "hira": "と",
+    "katakana": "ト",
+    "hankatakana": "ト"
+  },
+  "tp": {
+    "hira": "とう",
+    "katakana": "トウ",
+    "hankatakana": "トウ"
+  },
+  "tq": {
+    "hira": "たい",
+    "katakana": "タイ",
+    "hankatakana": "タイ"
+  },
+  "tr": {
+    "hira": "たら",
+    "katakana": "タラ",
+    "hankatakana": "タラ"
+  },
+  "ts": {
+    "hira": "てん",
+    "katakana": "テン",
+    "hankatakana": "テン"
+  },
+  "tt": {
+    "hira": "たち",
+    "katakana": "タチ",
+    "hankatakana": "タチ"
+  },
+  "tu": {
+    "hira": "つ",
+    "katakana": "ツ",
+    "hankatakana": "ツ"
+  },
+  "tw": {
+    "hira": "てい",
+    "katakana": "テイ",
+    "hankatakana": "テイ"
+  },
+  "tya": {
+    "hira": "ちゃ",
+    "katakana": "チャ",
+    "hankatakana": "チャ"
+  },
+  "tyd": {
+    "hira": "ちぇん",
+    "katakana": "チェン",
+    "hankatakana": "チェン"
+  },
+  "tye": {
+    "hira": "ちぇ",
+    "katakana": "チェ",
+    "hankatakana": "チェ"
+  },
+  "tyh": {
+    "hira": "ちゅう",
+    "katakana": "チュウ",
+    "hankatakana": "チュウ"
+  },
+  "tyi": {
+    "hira": "ちぃ",
+    "katakana": "チィ",
+    "hankatakana": "チィ"
+  },
+  "tyj": {
+    "hira": "ちゅん",
+    "katakana": "チュン",
+    "hankatakana": "チュン"
+  },
+  "tyl": {
+    "hira": "ちょん",
+    "katakana": "チョン",
+    "hankatakana": "チョン"
+  },
+  "tyn": {
+    "hira": "ちゃん",
+    "katakana": "チャン",
+    "hankatakana": "チャン"
+  },
+  "tyo": {
+    "hira": "ちょ",
+    "katakana": "チョ",
+    "hankatakana": "チョ"
+  },
+  "typ": {
+    "hira": "ちょう",
+    "katakana": "チョウ",
+    "hankatakana": "チョウ"
+  },
+  "tyq": {
+    "hira": "ちゃい",
+    "katakana": "チャイ",
+    "hankatakana": "チャイ"
+  },
+  "tyu": {
+    "hira": "ちゅ",
+    "katakana": "チュ",
+    "hankatakana": "チュ"
+  },
+  "tyw": {
+    "hira": "ちぇい",
+    "katakana": "チェイ",
+    "hankatakana": "チェイ"
+  },
+  "tyz": {
+    "hira": "ちゃん",
+    "katakana": "チャン",
+    "hankatakana": "チャン"
+  },
+  "tz": {
+    "hira": "たん",
+    "katakana": "タン",
+    "hankatakana": "タン"
+  },
+  "u": {
+    "hira": "う",
+    "katakana": "ウ",
+    "hankatakana": "ウ"
+  },
+  "va": {
+    "hira": "う゛ぁ",
+    "katakana": "ヴァ",
+    "hankatakana": "ヴァ"
+  },
+  "vd": {
+    "hira": "う",
+    "katakana": "ヴェン",
+    "hankatakana": "ヴェン"
+  },
+  "ve": {
+    "hira": "う゛ぇ",
+    "katakana": "ヴェ",
+    "hankatakana": "ヴェ"
+  },
+  "vi": {
+    "hira": "う゛ぃ",
+    "katakana": "ヴィ",
+    "hankatakana": "ヴィ"
+  },
+  "vk": {
+    "hira": "う",
+    "katakana": "ヴィン",
+    "hankatakana": "ヴィン"
+  },
+  "vl": {
+    "hira": "う",
+    "katakana": "ヴォン",
+    "hankatakana": "ヴォン"
+  },
+  "vn": {
+    "hira": "う",
+    "katakana": "ヴァン",
+    "hankatakana": "ヴァン"
+  },
+  "vo": {
+    "hira": "う゛ぉ",
+    "katakana": "ヴォ",
+    "hankatakana": "ヴォ"
+  },
+  "vp": {
+    "hira": "う",
+    "katakana": "ヴォー",
+    "hankatakana": "ヴォー"
+  },
+  "vq": {
+    "hira": "う",
+    "katakana": "ヴァイ",
+    "hankatakana": "ヴァイ"
+  },
+  "vu": {
+    "hira": "う゛",
+    "katakana": "ヴ",
+    "hankatakana": "ヴ"
+  },
+  "vw": {
+    "hira": "う",
+    "katakana": "ヴェイ",
+    "hankatakana": "ヴェイ"
+  },
+  "vz": {
+    "hira": "う",
+    "katakana": "ヴァン",
+    "hankatakana": "ヴァン"
+  },
+  "wa": {
+    "hira": "わ",
+    "katakana": "ワ",
+    "hankatakana": "ワ"
+  },
+  "wd": {
+    "hira": "うぇん",
+    "katakana": "ウェン",
+    "hankatakana": "ウェン"
+  },
+  "we": {
+    "hira": "うぇ",
+    "katakana": "ウェ",
+    "hankatakana": "ウェ"
+  },
+  "wf": {
+    "hira": "わ",
+    "katakana": "ワ",
+    "hankatakana": "ワ"
+  },
+  "wi": {
+    "hira": "うぃ",
+    "katakana": "ウィ",
+    "hankatakana": "ウィ"
+  },
+  "wk": {
+    "hira": "うぃん",
+    "katakana": "ウィン",
+    "hankatakana": "ウィン"
+  },
+  "wl": {
+    "hira": "うぉん",
+    "katakana": "ウォン",
+    "hankatakana": "ウォン"
+  },
+  "wn": {
+    "hira": "わん",
+    "katakana": "ワン",
+    "hankatakana": "ワン"
+  },
+  "wo": {
+    "hira": "を",
+    "katakana": "ヲ",
+    "hankatakana": "ヲ"
+  },
+  "wp": {
+    "hira": "うぉ",
+    "katakana": "ウォー",
+    "hankatakana": "ウォー"
+  },
+  "wq": {
+    "hira": "わい",
+    "katakana": "ワイ",
+    "hankatakana": "ワイ"
+  },
+  "wr": {
+    "hira": "われ",
+    "katakana": "ワレ",
+    "hankatakana": "ワレ"
+  },
+  "wt": {
+    "hira": "わた",
+    "katakana": "ワタ",
+    "hankatakana": "ワタ"
+  },
+  "wu": {
+    "hira": "う",
+    "katakana": "ウ",
+    "hankatakana": "ウ"
+  },
+  "wz": {
+    "hira": "わん",
+    "katakana": "ワン",
+    "hankatakana": "ワン"
+  },
+  "xa": {
+    "hira": "しゃ",
+    "katakana": "シャ",
+    "hankatakana": "シャ"
+  },
+  "xd": {
+    "hira": "しぇん",
+    "katakana": "シェン",
+    "hankatakana": "シェン"
+  },
+  "xe": {
+    "hira": "しぇ",
+    "katakana": "シェ",
+    "hankatakana": "シェ"
+  },
+  "xh": {
+    "hira": "しゅう",
+    "katakana": "シュウ",
+    "hankatakana": "シュウ"
+  },
+  "xj": {
+    "hira": "しゅん",
+    "katakana": "シュン",
+    "hankatakana": "シュン"
+  },
+  "xl": {
+    "hira": "しょん",
+    "katakana": "ション",
+    "hankatakana": "ション"
+  },
+  "xn": {
+    "hira": "しゃん",
+    "katakana": "シャン",
+    "hankatakana": "シャン"
+  },
+  "xo": {
+    "hira": "しょ",
+    "katakana": "ショ",
+    "hankatakana": "ショ"
+  },
+  "xp": {
+    "hira": "しょう",
+    "katakana": "ショウ",
+    "hankatakana": "ショウ"
+  },
+  "xq": {
+    "hira": "しゃい",
+    "katakana": "シャイ",
+    "hankatakana": "シャイ"
+  },
+  "xu": {
+    "hira": "しゅ",
+    "katakana": "シュ",
+    "hankatakana": "シュ"
+  },
+  "xw": {
+    "hira": "しぇい",
+    "katakana": "シェイ",
+    "hankatakana": "シェイ"
+  },
+  "xxa": {
+    "hira": "ぁ",
+    "katakana": "ァ",
+    "hankatakana": "ァ"
+  },
+  "xxe": {
+    "hira": "ぇ",
+    "katakana": "ェ",
+    "hankatakana": "ェ"
+  },
+  "xxi": {
+    "hira": "ぃ",
+    "katakana": "ィ",
+    "hankatakana": "ィ"
+  },
+  "xxka": {
+    "hira": "ヵ",
+    "katakana": "ヵ",
+    "hankatakana": "ヵ"
+  },
+  "xxke": {
+    "hira": "ヶ",
+    "katakana": "ヶ",
+    "hankatakana": "ヶ"
+  },
+  "xxo": {
+    "hira": "ぉ",
+    "katakana": "ォ",
+    "hankatakana": "ォ"
+  },
+  "xxtu": {
+    "hira": "っ",
+    "katakana": "ッ",
+    "hankatakana": "ッ"
+  },
+  "xxu": {
+    "hira": "ぅ",
+    "katakana": "ゥ",
+    "hankatakana": "ゥ"
+  },
+  "xxya": {
+    "hira": "ゃ",
+    "katakana": "ャ",
+    "hankatakana": "ャ"
+  },
+  "xxyo": {
+    "hira": "ょ",
+    "katakana": "ョ",
+    "hankatakana": "ョ"
+  },
+  "xxyu": {
+    "hira": "ゅ",
+    "katakana": "ュ",
+    "hankatakana": "ュ"
+  },
+  "xz": {
+    "hira": "しゃん",
+    "katakana": "シャン",
+    "hankatakana": "シャン"
+  },
+  "ya": {
+    "hira": "や",
+    "katakana": "ヤ",
+    "hankatakana": "ヤ"
+  },
+  "ye": {
+    "hira": "いぇ",
+    "katakana": "イェ",
+    "hankatakana": "イェ"
+  },
+  "yf": {
+    "hira": "ゆ",
+    "katakana": "ユ",
+    "hankatakana": "ユ"
+  },
+  "yh": {
+    "hira": "ゆう",
+    "katakana": "ユウ",
+    "hankatakana": "ユウ"
+  },
+  "yi": {
+    "hira": "ゐ",
+    "katakana": "ヰ",
+    "hankatakana": "ヰ"
+  },
+  "yj": {
+    "hira": "ゆん",
+    "katakana": "ユン",
+    "hankatakana": "ユン"
+  },
+  "yl": {
+    "hira": "よん",
+    "katakana": "ヨン",
+    "hankatakana": "ヨン"
+  },
+  "yn": {
+    "hira": "やん",
+    "katakana": "ヤン",
+    "hankatakana": "ヤン"
+  },
+  "yo": {
+    "hira": "よ",
+    "katakana": "ヨ",
+    "hankatakana": "ヨ"
+  },
+  "yp": {
+    "hira": "よう",
+    "katakana": "ヨウ",
+    "hankatakana": "ヨウ"
+  },
+  "yq": {
+    "hira": "やい",
+    "katakana": "ヤイ",
+    "hankatakana": "ヤイ"
+  },
+  "yr": {
+    "hira": "よる",
+    "katakana": "ヨル",
+    "hankatakana": "ヨル"
+  },
+  "yu": {
+    "hira": "ゆ",
+    "katakana": "ユ",
+    "hankatakana": "ユ"
+  },
+  "yy": {
+    "hira": "ゆう",
+    "katakana": "ユウ",
+    "hankatakana": "ユウ"
+  },
+  "yz": {
+    "hira": "やん",
+    "katakana": "ヤン",
+    "hankatakana": "ヤン"
+  },
+  "za": {
+    "hira": "ざ",
+    "katakana": "ザ",
+    "hankatakana": "ザ"
+  },
+  "zc": {
+    "hira": "ぜ",
+    "katakana": "ゼ",
+    "hankatakana": "ゼ"
+  },
+  "zd": {
+    "hira": "ぜん",
+    "katakana": "ゼン",
+    "hankatakana": "ゼン"
+  },
+  "ze": {
+    "hira": "ぜ",
+    "katakana": "ゼ",
+    "hankatakana": "ゼ"
+  },
+  "zf": {
+    "hira": "ざ",
+    "katakana": "ザ",
+    "hankatakana": "ザ"
+  },
+  "zh": {
+    "hira": "ずう",
+    "katakana": "ズウ",
+    "hankatakana": "ズウ"
+  },
+  "zi": {
+    "hira": "じ",
+    "katakana": "ジ",
+    "hankatakana": "ジ"
+  },
+  "zj": {
+    "hira": "ずん",
+    "katakana": "ズン",
+    "hankatakana": "ズン"
+  },
+  "zk": {
+    "hira": "じん",
+    "katakana": "ジン",
+    "hankatakana": "ジン"
+  },
+  "zl": {
+    "hira": "ぞん",
+    "katakana": "ゾン",
+    "hankatakana": "ゾン"
+  },
+  "zn": {
+    "hira": "ざん",
+    "katakana": "ザン",
+    "hankatakana": "ザン"
+  },
+  "zo": {
+    "hira": "ぞ",
+    "katakana": "ゾ",
+    "hankatakana": "ゾ"
+  },
+  "zp": {
+    "hira": "ぞう",
+    "katakana": "ゾウ",
+    "hankatakana": "ゾウ"
+  },
+  "zq": {
+    "hira": "ざい",
+    "katakana": "ザイ",
+    "hankatakana": "ザイ"
+  },
+  "zr": {
+    "hira": "ざる",
+    "katakana": "ザル",
+    "hankatakana": "ザル"
+  },
+  "zu": {
+    "hira": "ず",
+    "katakana": "ズ",
+    "hankatakana": "ズ"
+  },
+  "zv": {
+    "hira": "ざい",
+    "katakana": "ザイ",
+    "hankatakana": "ザイ"
+  },
+  "zw": {
+    "hira": "ぜい",
+    "katakana": "ゼイ",
+    "hankatakana": "ゼイ"
+  },
+  "zx": {
+    "hira": "ぜい",
+    "katakana": "ゼイ",
+    "hankatakana": "ゼイ"
+  },
+  "zya": {
+    "hira": "じゃ",
+    "katakana": "ジャ",
+    "hankatakana": "ジャ"
+  },
+  "zyd": {
+    "hira": "じぇん",
+    "katakana": "ジェン",
+    "hankatakana": "ジェン"
+  },
+  "zye": {
+    "hira": "じぇ",
+    "katakana": "ジェ",
+    "hankatakana": "ジェ"
+  },
+  "zyh": {
+    "hira": "じゅう",
+    "katakana": "ジュウ",
+    "hankatakana": "ジュウ"
+  },
+  "zyi": {
+    "hira": "じぃ",
+    "katakana": "ジィ",
+    "hankatakana": "ジィ"
+  },
+  "zyj": {
+    "hira": "じゅん",
+    "katakana": "ジュン",
+    "hankatakana": "ジュン"
+  },
+  "zyl": {
+    "hira": "じょん",
+    "katakana": "ジョン",
+    "hankatakana": "ジョン"
+  },
+  "zyn": {
+    "hira": "じゃん",
+    "katakana": "ジャン",
+    "hankatakana": "ジャン"
+  },
+  "zyo": {
+    "hira": "じょ",
+    "katakana": "ジョ",
+    "hankatakana": "ジョ"
+  },
+  "zyp": {
+    "hira": "じょう",
+    "katakana": "ジョウ",
+    "hankatakana": "ジョウ"
+  },
+  "zyq": {
+    "hira": "じゃい",
+    "katakana": "ジャイ",
+    "hankatakana": "ジャイ"
+  },
+  "zyu": {
+    "hira": "じゅ",
+    "katakana": "ジュ",
+    "hankatakana": "ジュ"
+  },
+  "zyw": {
+    "hira": "じぇい",
+    "katakana": "ジェイ",
+    "hankatakana": "ジェイ"
+  },
+  "zyz": {
+    "hira": "じゃん",
+    "katakana": "ジャン",
+    "hankatakana": "ジャン"
+  },
+  "zz": {
+    "hira": "ざん",
+    "katakana": "ザン",
+    "hankatakana": "ザン"
+  },
+  "x&comma;": {
+    "hira": "&comma;",
+    "katakana": "&comma;",
+    "hankatakana": "&comma;"
+  },
+  "x'": {
+    "hira": "'",
+    "katakana": "'",
+    "hankatakana": "'"
+  },
+  "x.": {
+    "hira": ".",
+    "katakana": ".",
+    "hankatakana": "."
+  },
+  "x;": {
+    "hira": ":",
+    "katakana": ":",
+    "hankatakana": ":"
+  },
+  "xx'": {
+    "hira": "\"",
+    "katakana": "\"",
+    "hankatakana": "\""
+  },
+  "xx;": {
+    "hira": ";",
+    "katakana": ";",
+    "hankatakana": ";"
+  },
+  "xxL": {
+    "hira": "⇒",
+    "katakana": "⇒",
+    "hankatakana": "⇒"
+  },
+  "xxh": {
+    "hira": "←",
+    "katakana": "←",
+    "hankatakana": "←"
+  },
+  "xxj": {
+    "hira": "↓",
+    "katakana": "↓",
+    "hankatakana": "↓"
+  },
+  "xxk": {
+    "hira": "↑",
+    "katakana": "↑",
+    "hankatakana": "↑"
+  },
+  "xxl": {
+    "hira": "→",
+    "katakana": "→",
+    "hankatakana": "→"
+  },
+  "z ": {
+    "hira": "　",
+    "katakana": "　",
+    "hankatakana": "　"
+  },
+  "z\"": {
+    "hira": "〜",
+    "katakana": "〜",
+    "hankatakana": "〜"
+  },
+  "z&comma;": {
+    "hira": "/",
+    "katakana": "/",
+    "hankatakana": "/"
+  },
+  "z'": {
+    "hira": "ー",
+    "katakana": "ー",
+    "hankatakana": "ー"
+  },
+  "z(": {
+    "hira": "（",
+    "katakana": "（",
+    "hankatakana": "（"
+  },
+  "z)": {
+    "hira": "）",
+    "katakana": "）",
+    "hankatakana": "）"
+  },
+  "z-": {
+    "hira": "-",
+    "katakana": "-",
+    "hankatakana": "-"
+  },
+  "z.": {
+    "hira": "…",
+    "katakana": "…",
+    "hankatakana": "…"
+  },
+  "z/": {
+    "hira": "・",
+    "katakana": "・",
+    "hankatakana": "・"
+  },
+  "z[": {
+    "hira": "『",
+    "katakana": "『",
+    "hankatakana": "『"
+  },
+  "z]": {
+    "hira": "』",
+    "katakana": "』",
+    "hankatakana": "』"
+  },
+  "z{": {
+    "hira": "【",
+    "katakana": "【",
+    "hankatakana": "【"
+  },
+  "z}": {
+    "hira": "】",
+    "katakana": "】",
+    "hankatakana": "】"
+  },
+  "z~": {
+    "hira": "~",
+    "katakana": "~",
+    "hankatakana": "~"
+  },
+  "~": {
+    "hira": "〜",
+    "katakana": "〜",
+    "hankatakana": "〜"
+  },
+  "!": {
+    "hira": "！",
+    "katakana": "！",
+    "hankatakana": "！"
+  },
+  "\"": {
+    "hira": "っ",
+    "katakana": "ッ",
+    "hankatakana": "ッ"
+  },
+  "&comma;": {
+    "hira": "、",
+    "katakana": "、",
+    "hankatakana": "、"
+  },
+  ".": {
+    "hira": "。",
+    "katakana": "。",
+    "hankatakana": "。"
+  },
+  "?": {
+    "hira": "？",
+    "katakana": "？",
+    "hankatakana": "？"
+  },
+  "[": {
+    "hira": "「",
+    "katakana": "「",
+    "hankatakana": "「"
+  },
+  "]": {
+    "hira": "」",
+    "katakana": "」",
+    "hankatakana": "」"
+  }
+}

@@ -43,6 +43,10 @@ git: ## Setup git config
 skk: ## Setup skk
 	@bash $(DOTPATH)/scripts/install-skk.sh
 
+.PHONY: build-skk
+build-skk: ## Build skk mapping files
+	@bash $(DOTPATH)/scripts/build-skk.sh
+
 .PHONY: proxy
 proxy: ## Setup proxy
 	@bash $(DOTPATH)/scripts/setup-proxy.sh
