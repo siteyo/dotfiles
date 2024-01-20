@@ -24,26 +24,21 @@ return {
     },
   },
   dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
-  keys = "<Leader>o",
   ft = "norg",
   cmd = "Neorg",
-  config = function(_, opts)
-    --- config
-    require("neorg").setup(opts)
-    --- keymaps
+  keys = {
     -- journal
-    vim.keymap.set("n", "<Leader>ot", "<Cmd>Neorg journal toc open<CR>")
-    vim.keymap.set("n", "<Leader>on", "<Cmd>Neorg journal tomorrow<CR>")
-    vim.keymap.set("n", "<Leader>op", "<Cmd>Neorg journal yesterday<CR>")
-    vim.keymap.set("n", "<Leader>oj", "<Cmd>Neorg journal today<CR>")
-    vim.keymap.set("n", "<Leader>oo", "<Cmd>Neorg journal custom<CR>")
-    --
-    vim.keymap.set("n", "<Leader>oi", "<Cmd>Neorg index<CR>")
-    vim.keymap.set("n", "<Leader>om", "<Cmd>Neorg inject-metadata<CR>")
-    -- vim.keymap.set("n", "<Leader>oo", "<Cmd>Neorg toc<CR>")
-
-    vim.keymap.set("n", "<Leader>of", "<Cmd>Telescope neorg find_norg_files<CR>")
-    vim.keymap.set("n", "<Leader>ol", "<Cmd>Telescope neorg insert_file_link<CR>")
-  end,
+    { "<Leader>ot", "<Cmd>Neorg journal toc open<CR>", mode = { "n" } },
+    { "<Leader>on", "<Cmd>Neorg journal toc tomorrow<CR>", mode = { "n" } },
+    { "<Leader>op", "<Cmd>Neorg journal toc yesterday<CR>", mode = { "n" } },
+    { "<Leader>oj", "<Cmd>Neorg journal toc today<CR>", mode = { "n" } },
+    { "<Leader>oo", "<Cmd>Neorg journal toc custom<CR>", mode = { "n" } },
+    -- other
+    { "<Leader>oi", "<Cmd>Neorg index<CR>", mode = { "n" } },
+    { "<Leader>om", "<Cmd>Neorg inject-metadata<CR>", mode = { "n" } },
+    -- for Telescope
+    { "<Leader>of", "<Cmd>Telescope neorg find_norg_files<CR>", mode = { "n" } },
+    { "<Leader>ol", "<Cmd>Telescope neorg insert_file_link<CR>", mode = { "n" } },
+  },
   enabled = true,
 }
