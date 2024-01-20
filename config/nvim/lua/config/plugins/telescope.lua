@@ -6,6 +6,22 @@ local M = {
     "nvim-telescope/telescope-file-browser.nvim",
   },
   event = "VimEnter",
+  keys = {
+    -- for Telescope
+    { "<Leader>f<Space>", "<Cmd>Telescope<CR>", mode = { "n" } },
+    { "<Leader>ff", "<Cmd>Telescope fd<CR>", mode = { "n" } },
+    { "<Leader>fg", "<Cmd>Telescope git_files<CR>", mode = { "n" } },
+    { "<Leader>fb", "<Cmd>Telescope buffers<CR>", mode = { "n" } },
+    { "<Leader>fm", "<Cmd>Telescope frecency<CR>", mode = { "n" } },
+    { "<Leader>fr", "<Cmd>Telescope resume<CR>", mode = { "n" } },
+    { "<Leader>fn", "<Cmd>Telescope notify<CR>", mode = { "n" } },
+    { "<Leader>fh", "<Cmd>Telescope help_tags<CR>", mode = { "n" } },
+    { "<Leader>fd", "<Cmd>Telescope diagnostics<CR>", mode = { "n" } },
+    { "<Leader>fe", "<Cmd>Telescope file_browser<CR>", mode = { "n" } },
+    -- for Git
+    { "<Leader>gs", "<Cmd>Telescope git_status<CR>", mode = { "n" } },
+    { "<Leader>gb", "<Cmd>Telescope git_branchs<CR>", mode = { "n" } },
+  },
 }
 
 function M.config()
@@ -86,22 +102,6 @@ function M.config()
   --   opts.previewer = delta
   --   builtin.git_status(opts)
   -- end
-
-  --- Mappings
-  vim.keymap.set("n", "<Leader>f<Space>", "<Cmd>Telescope<CR>")
-  vim.keymap.set("n", "<Leader>ff", "<Cmd>Telescope fd<CR>")
-  vim.keymap.set("n", "<Leader>fg", "<Cmd>Telescope git_files<CR>")
-  vim.keymap.set("n", "<Leader>fs", "<Cmd>Telescope git_status<CR>")
-  -- vim.keymap.set("n", "<Leader>fs", function()
-  --   builtin.git_status({ previewer = delta })
-  -- end)
-  vim.keymap.set("n", "<Leader>fb", "<Cmd>Telescope buffers<CR>")
-  vim.keymap.set("n", "<Leader>fm", "<Cmd>Telescope frecency<CR>")
-  vim.keymap.set("n", "<Leader>fr", "<Cmd>Telescope resume<CR>")
-  vim.keymap.set("n", "<Leader>fn", "<Cmd>Telescope notify<CR>")
-  vim.keymap.set("n", "<Leader>f?", "<Cmd>Telescope help_tags<CR>")
-  vim.keymap.set("n", "<Leader>fd", "<Cmd>Telescope diagnostics<CR>")
-  vim.keymap.set("n", "<Leader>fe", "<Cmd>Telescope file_browser<CR>")
 end
 
 return M
