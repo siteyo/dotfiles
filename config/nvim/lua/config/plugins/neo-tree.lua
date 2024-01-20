@@ -2,7 +2,21 @@ local M = {
   "nvim-neo-tree/neo-tree.nvim",
   enabled = true,
   branch = "v3.x",
-  keys = "<Leader>e",
+  keys = {
+    {
+      "<Leader>ed",
+      function()
+        require("neo-tree.command").execute({
+          action = "show",
+          source = "filesystem",
+          position = "left",
+          toggle = true,
+          reveal = true,
+        })
+      end,
+      mode = { "n" },
+    },
+  },
 }
 
 function M.config()
@@ -79,18 +93,18 @@ function M.config()
   })
 
   --- Mappings
-  local opts = { noremap = true, silent = true }
-  local command = require("neo-tree.command")
+  -- local opts = { noremap = true, silent = true }
+  -- local command = require("neo-tree.command")
   -- drawer
-  vim.keymap.set("n", "<Leader>ed", function()
-    command.execute({
-      action = "show",
-      source = "filesystem",
-      position = "left",
-      toggle = true,
-      reveal = true,
-    })
-  end, opts)
+  -- vim.keymap.set("n", "<Leader>ed", function()
+  --   command.execute({
+  --     action = "show",
+  --     source = "filesystem",
+  --     position = "left",
+  --     toggle = true,
+  --     reveal = true,
+  --   })
+  -- end, opts)
   -- vim.keymap.set("n", "<Leader>edg", function()
   --   command.execute({
   --     action = "show",
