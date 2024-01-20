@@ -1,6 +1,6 @@
 local M = {
   "tpope/vim-fugitive",
-  enabled = true,
+  enabled = false,
   cmd = { "Git", "G" },
   keys = {
     { "<Leader>gs", "<Cmd>Git<CR>", mode = { "n" } },
