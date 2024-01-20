@@ -23,7 +23,7 @@ local M = {
       mode = { "n" },
     },
     {
-      "<Leader>gf",
+      "<Leader>gq",
       function()
         require("tinygit").amendOnlyMsg({ forcePushIfDiverged = false })
       end,
