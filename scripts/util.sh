@@ -25,5 +25,6 @@ print_error() {
 }
 
 print_done() {
-  print_success "Done!\n"
+  print_success "Done!"
+  printf '\n'
 }
