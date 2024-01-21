@@ -29,10 +29,10 @@ return {
   keys = {
     -- journal
     { "<Leader>ot", "<Cmd>Neorg journal toc open<CR>", mode = { "n" } },
-    { "<Leader>on", "<Cmd>Neorg journal toc tomorrow<CR>", mode = { "n" } },
-    { "<Leader>op", "<Cmd>Neorg journal toc yesterday<CR>", mode = { "n" } },
-    { "<Leader>oj", "<Cmd>Neorg journal toc today<CR>", mode = { "n" } },
-    { "<Leader>oo", "<Cmd>Neorg journal toc custom<CR>", mode = { "n" } },
+    { "<Leader>on", "<Cmd>Neorg journal tomorrow<CR>", mode = { "n" } },
+    { "<Leader>op", "<Cmd>Neorg journal yesterday<CR>", mode = { "n" } },
+    { "<Leader>oj", "<Cmd>Neorg journal today<CR>", mode = { "n" } },
+    { "<Leader>oo", "<Cmd>Neorg journal custom<CR>", mode = { "n" } },
     -- other
     { "<Leader>oi", "<Cmd>Neorg index<CR>", mode = { "n" } },
     { "<Leader>om", "<Cmd>Neorg inject-metadata<CR>", mode = { "n" } },
