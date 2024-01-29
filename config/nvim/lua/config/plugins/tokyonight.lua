@@ -1,6 +1,7 @@
 local M = {
   "folke/tokyonight.nvim",
   lazy = false,
+  cond = not vim.g.vscode,
 }
 
 function M.config()

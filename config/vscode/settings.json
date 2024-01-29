@@ -1,0 +1,41 @@
+{
+  // ----------------------------------------------------------------------
+  // Editor
+  // ----------------------------------------------------------------------
+  "editor.fontSize": 13,
+  "editor.fontFamily": "\"0xProto Nerd Font\", \"HackGen Console NF\", Menlo, Monaco, 'Courier New', monospace",
+  "editor.wordWrap": "off",
+  "editor.minimap.enabled": false,
+  "editor.insertSpaces": true,
+  "editor.renderWhitespace": "none",
+  "editor.renderLineHighlight": "gutter",
+  "editor.suggestSelection": "first",
+  "editor.lineNumbers": "relative",
+  "editor.formatOnSave": false,
+  "editor.tabCompletion": "onlySnippets",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+
+  // ----------------------------------------------------------------------
+  // Files
+  // ----------------------------------------------------------------------
+  "files.autoGuessEncoding": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+
+  // ----------------------------------------------------------------------
+  // Workbench
+  // ----------------------------------------------------------------------
+  "workbench.colorTheme": "Iceberg",
+
+  // ----------------------------------------------------------------------
+  // Extensions
+  // ----------------------------------------------------------------------
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+}

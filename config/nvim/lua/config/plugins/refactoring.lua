@@ -7,6 +7,7 @@ local M = {
   config = function()
     require("refactoring").setup({})
   end,
+  cond = not vim.g.vscode,
 }
 
 return M

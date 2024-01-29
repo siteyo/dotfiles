@@ -2,6 +2,7 @@ local M = {
   "mhartington/formatter.nvim",
   cmd = "Format",
   enabled = false,
+  cond = not vim.g.vscode,
 }
 
 M.config = function()

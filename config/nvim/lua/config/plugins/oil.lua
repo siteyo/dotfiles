@@ -25,6 +25,7 @@ local M = {
     { "<Leader>ee", "<Cmd>Oil<CR>", mode = { "n" } },
     { "<Leader>ef", "<Cmd>Oil --float<CR>", mode = { "n" } },
   },
+  cond = not vim.g.vscode,
 }
 
 return M

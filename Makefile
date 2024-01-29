@@ -11,6 +11,7 @@ install: preinstall ## Install all dotfiles in this repo.
 	@bash $(DOTPATH)/scripts/install-zsh.sh
 	@bash $(DOTPATH)/scripts/install-tmux.sh
 	@bash $(DOTPATH)/scripts/install-wezterm.sh
+	@bash $(DOTPATH)/scripts/install-vscode.sh
 
 	@printf 'You can change to Bash or Zsh.\n'
 	@printf "If you want to change it, check out the shells available in '/etc/shells'.\n"

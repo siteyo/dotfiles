@@ -1,3 +1,5 @@
+local cond = not vim.g.vscode
+
 return {
   -- common animation
   {
@@ -34,6 +36,7 @@ return {
       })
     end,
     enabled = vim.g.neovide == nil,
+    cond = cond,
   },
 
   -- visualize indent scope
@@ -46,6 +49,7 @@ return {
       })
     end,
     enabled = vim.g.neovide == nil,
+    cond = cond,
   },
 
   -- buffer Removing
@@ -64,6 +68,7 @@ return {
         mb.unshow()
       end)
     end,
+    cond = cond,
   },
 
   -- starter
@@ -86,5 +91,6 @@ return {
         },
       })
     end,
+    cond = cond,
   },
 }

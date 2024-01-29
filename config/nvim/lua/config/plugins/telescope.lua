@@ -22,6 +22,7 @@ local M = {
     { "<Leader>gs", "<Cmd>Telescope git_status<CR>", mode = { "n" } },
     { "<Leader>gb", "<Cmd>Telescope git_branchs<CR>", mode = { "n" } },
   },
+  cond = not vim.g.vscode,
 }
 
 function M.config()

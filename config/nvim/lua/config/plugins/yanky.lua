@@ -23,6 +23,7 @@ local M = {
     { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put before applying a filter" },
     -- stylua: ignore end
   },
+  cond = not vim.g.vscode,
 }
 
 return M

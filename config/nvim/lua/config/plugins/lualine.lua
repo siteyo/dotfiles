@@ -1,6 +1,7 @@
 local M = {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
+  cond = not vim.g.vscode,
 }
 
 M.opts = {

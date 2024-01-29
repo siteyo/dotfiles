@@ -3,4 +3,5 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   opts = {},
   event = "BufReadPre",
+  cond = not vim.g.vscode,
 }

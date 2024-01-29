@@ -2,6 +2,7 @@ local M = {
   "akinsho/bufferline.nvim",
   event = "VeryLazy",
   enabled = true,
+  cond = not vim.g.vscode,
 }
 
 M.opts = {

@@ -11,17 +11,18 @@ return {
     config = function()
       vim.o.helplang = "ja,en"
     end,
+    cond = not vim.g.vscode,
   },
 
   ------------------------------------------------------------
   --- Colorscheme
   ------------------------------------------------------------
-  { "cocopon/iceberg.vim" },
+  { "cocopon/iceberg.vim", cond = not vim.g.vscode },
 
   ------------------------------------------------------------
   --- Filer
   ------------------------------------------------------------
-  { "nvim-tree/nvim-tree.lua", enabled = false },
+  { "nvim-tree/nvim-tree.lua", enabled = false, cond = not vim.g.vscode },
 
   ------------------------------------------------------------
   --- Edit
@@ -46,7 +47,12 @@ return {
   ------------------------------------------------------------
   --- Interface
   ------------------------------------------------------------
-  { "nvim-zh/colorful-winsep.nvim", config = true, event = "WinNew" },
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    config = true,
+    event = "WinNew",
+    cond = not vim.g.vscode,
+  },
 
   ------------------------------------------------------------
   --- Util
@@ -63,6 +69,7 @@ return {
         "html",
       })
     end,
+    cond = not vim.g.vscode,
   },
   {
     "iamcco/markdown-preview.nvim",
@@ -70,6 +77,7 @@ return {
       vim.fn["mkdp#util#install"]()
     end,
     ft = "markdown",
+    cond = not vim.g.vscode,
   },
   -- { "folke/which-key.nvim", config = true, cmd = "WhichKey" },
   -- { "folke/neodev.nvim", opts = {}, config = true, lazy = false },

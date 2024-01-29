@@ -2,6 +2,7 @@ local M = {
   "lewis6991/gitsigns.nvim",
   event = "BufReadPre",
   enabled = true,
+  cond = not vim.g.vscode,
 }
 
 function M.config()

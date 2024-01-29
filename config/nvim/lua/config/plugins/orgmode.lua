@@ -1,3 +1,4 @@
+local cond = not vim.g.vscode
 return {
   {
     "nvim-orgmode/orgmode",
@@ -89,10 +90,12 @@ return {
       })
     end,
     enabled = true,
+    cond = cond,
   },
   {
     "akinsho/org-bullets.nvim",
     config = true,
     lazy = false,
+    cond = cond,
   },
 }

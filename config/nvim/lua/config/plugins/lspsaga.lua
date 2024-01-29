@@ -34,6 +34,7 @@ local M = {
     -- other
     { "K", "<Cmd>Lspsaga hover_doc<CR>", mode = { "n" } },
   },
+  cond = not vim.g.vscode,
 }
 
 function M.config()

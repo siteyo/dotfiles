@@ -18,4 +18,5 @@ return {
     })
   end,
   event = "BufReadPost",
+  cond = not vim.g.vscode,
 }

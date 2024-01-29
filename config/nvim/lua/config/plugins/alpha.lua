@@ -2,6 +2,7 @@ local M = {
   "goolord/alpha-nvim",
   lazy = false,
   enabled = false,
+  cond = not vim.g.vscode,
 }
 
 M.config = function()

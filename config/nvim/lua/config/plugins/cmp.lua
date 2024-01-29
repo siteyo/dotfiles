@@ -19,6 +19,7 @@ local M = {
     "lukas-reineke/cmp-rg",
     "ray-x/cmp-treesitter",
   },
+  cond = not vim.g.vscode,
 }
 
 function M.config()

@@ -1,4 +1,5 @@
 local enabled = true
+local cond = not vim.g.vscode
 
 return {
   -- mason
@@ -27,6 +28,7 @@ return {
       end
     end,
     enabled = false,
+    cond = cond,
   },
 
   -- lspconfig
@@ -122,6 +124,7 @@ return {
       -- mlsp.setup_handlers({ setup })
     end,
     enabled = enabled,
+    cond = cond,
   },
 
   -- {

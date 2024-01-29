@@ -5,6 +5,7 @@ local M = {
   },
   keys = "<Leader>g",
   enabled = false,
+  cond = not vim.g.vscode,
 }
 
 M.config = function()
