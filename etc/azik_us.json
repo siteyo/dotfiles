@@ -454,6 +454,11 @@
     "katakana": "デイ",
     "hankatakana": "デイ"
   },
+  "dx": {
+    "hira": "でした",
+    "katakana": "デシタ",
+    "hankatakana": "ﾃﾞｼﾀ"
+  },
   "dya": {
     "hira": "ぢゃ",
     "katakana": "ヂャ",
@@ -1518,6 +1523,11 @@
     "hira": "めい",
     "katakana": "メイ",
     "hankatakana": "メイ"
+  },
+  "mx": {
+    "hira": "ました",
+    "katakana": "マシタ",
+    "hankatakana": "ﾏｼﾀ"
   },
   "mya": {
     "hira": "みゃ",
