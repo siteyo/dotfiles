@@ -108,7 +108,6 @@ local M = {
       },
     }
   end,
-  cond = not vim.g.vscode,
   -- enabled = false,
 }
 return M

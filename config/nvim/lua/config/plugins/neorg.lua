@@ -41,5 +41,4 @@ return {
     { "<Leader>ol", "<Cmd>Telescope neorg insert_file_link<CR>", mode = { "n" } },
   },
   enabled = true,
-  cond = not vim.g.vscode,
 }

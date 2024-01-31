@@ -17,7 +17,6 @@ local M = {
     })
   end,
   enabled = false,
-  cond = not vim.g.vscode,
 }
 
 return M

@@ -41,7 +41,6 @@ local M = {
       mode = { "n" },
     },
   },
-  cond = not vim.g.vscode,
 }
 
 return M

@@ -17,7 +17,6 @@ local M = {
       mode = { "n" },
     },
   },
-  cond = not vim.g.vscode,
 }
 
 function M.config()

@@ -1,5 +1,4 @@
 local uv = vim.loop
-local cond = not vim.g.vscode
 
 ---@param fname string
 ---@return string
@@ -47,7 +46,6 @@ return {
         markerHenkanSelect = "",
       })
     end,
-    cond = cond,
   },
   {
     "delphinus/skkeleton_indicator.nvim",
@@ -73,7 +71,6 @@ return {
     end,
     event = "VeryLazy",
     enabled = false,
-    cond = cond,
   },
   {
     "siteyo/skkeleton_pointer.nvim",
@@ -93,6 +90,5 @@ return {
     },
     event = "VeryLazy",
     enabled = true,
-    cond = cond,
   },
 }

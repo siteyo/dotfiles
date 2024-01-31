@@ -28,7 +28,6 @@ local M = {
       mode = { "n" },
     },
   },
-  cond = not vim.g.vscode,
 }
 
 M.opts = {

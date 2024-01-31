@@ -5,7 +5,6 @@ local M = {
   },
   event = "VeryLazy",
   keys = { { "<Leader>gg", "<Cmd>LazyGit<CR>", mode = { "n" } } },
-  cond = not vim.g.vscode,
 }
 
 return M

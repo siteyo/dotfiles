@@ -11,7 +11,6 @@ local M = {
     { "<Leader>gll", "<Cmd>Git log --graph<CR>", mode = { "n" } },
     { "<Leader>gla", "<Cmd>Git log --graph --all --decorate=full<CR>", mode = { "n" } },
   },
-  cond = not vim.g.vscode,
 }
 
 return M

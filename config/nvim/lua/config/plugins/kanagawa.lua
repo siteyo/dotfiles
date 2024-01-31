@@ -1,7 +1,6 @@
 local M = {
   "rebelot/kanagawa.nvim",
   lazy = false,
-  cond = not vim.g.vscode,
 }
 
 function M.config()

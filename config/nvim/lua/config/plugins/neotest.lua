@@ -4,7 +4,6 @@ local M = {
     "nvim-lua/plenary.nvim",
     "antoinemadec/FixCursorHold.nvim",
   },
-  cond = not vim.g.vscode,
 }
 
 M.config = function()
