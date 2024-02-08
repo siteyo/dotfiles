@@ -10,7 +10,7 @@ registries:
 - type: standard
   ref: v4.128.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-- name: denoland/deno@v1.40.3
+- name: denoland/deno@v1.40.4
 - name: mitsuhiko/rye@0.21.0
 - name: JohnnyMorganz/StyLua@v0.20.0
 - name: mvdan/sh@v3.7.0
