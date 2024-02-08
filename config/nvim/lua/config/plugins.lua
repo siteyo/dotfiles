@@ -71,6 +71,15 @@ return {
     end,
     ft = "markdown",
   },
+  {
+    "3rd/image.nvim",
+    event = "VeryLazy",
+    config = function()
+      package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
+      package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
+      require("image").setup()
+    end,
+  },
   -- { "folke/which-key.nvim", config = true, cmd = "WhichKey" },
   -- { "folke/neodev.nvim", opts = {}, config = true, lazy = false },
 }
