@@ -11,7 +11,7 @@ registries:
   ref: v4.131.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: denoland/deno@v1.40.4
-- name: mitsuhiko/rye@0.21.0
+- name: mitsuhiko/rye@0.22.0
 - name: JohnnyMorganz/StyLua@v0.20.0
 - name: mvdan/sh@v3.7.0
 - name: koalaman/shellcheck@v0.9.0
