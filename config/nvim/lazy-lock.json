@@ -42,6 +42,7 @@
   "neodev.nvim": { "branch": "main", "commit": "a09881379ac7abddb8091c5edd292805a53ccf18" },
   "neorg": { "branch": "main", "commit": "bd12dacc9cf561cbffc8d6f8f4b76aa9d734665b" },
   "neorg-telescope": { "branch": "main", "commit": "418f8fd4bd7360d954613a2322b4eb2888ac3ad9" },
+  "neorg-templates": { "branch": "main", "commit": "2808ec9796e0ba89377e1eeb73bd25af3d10ef7f" },
   "neotest": { "branch": "master", "commit": "89a5b1fc22ee5d459262955fe564c3d14e35fd67" },
   "nightfox.nvim": { "branch": "main", "commit": "a408e6bb101066952b81de9c11be367114bd561f" },
   "noice.nvim": { "branch": "main", "commit": "bf67d70bd7265d075191e7812d8eb42b9791f737" },

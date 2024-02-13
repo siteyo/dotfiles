@@ -21,9 +21,14 @@ return {
       },
       ["core.integrations.nvim-cmp"] = {},
       ["core.integrations.telescope"] = {},
+      -- ["external.templates"] = {},
     },
   },
-  dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-neorg/neorg-telescope",
+    -- "pysan3/neorg-templates",
+  },
   ft = "norg",
   cmd = "Neorg",
   keys = {
