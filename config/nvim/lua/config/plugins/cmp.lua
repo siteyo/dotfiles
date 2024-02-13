@@ -1,6 +1,6 @@
 local M = {
   "hrsh7th/nvim-cmp",
-  event = "InsertEnter",
+  event = "VimEnter",
   dependencies = {
     "onsails/lspkind-nvim",
     "hrsh7th/cmp-nvim-lsp",
@@ -65,10 +65,8 @@ function M.config()
           fallback()
         end
       end, { "i", "c" }),
-      ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-      ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-      -- ["<C-y>"] = cmp.mapping.complete(),
-      -- ["<C-e>"] = cmp.mapping.abort(),
+      ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+      ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
       ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       ["<C-k>"] = cmp.mapping(function(fallback)
         if luasnip.expand_or_jumpable() then
@@ -134,6 +132,9 @@ function M.config()
     experimental = {
       ghost_text = true,
     },
+    window = {
+      documentation = cmp.config.window.bordered(),
+    },
   })
   require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -173,15 +174,16 @@ function M.config()
     },
   })
 
-  -- cmp.setup.cmdline(":", {
-  --   mapping = cmp.mapping.preset.cmdline(),
-  --   sources = cmp.config.sources({
-  --     { name = "path" },
-  --   }, {
-  --     { name = "cmdline", max_item_count = 10 },
-  --     { name = "cmdline_history", max_item_count = 5 },
-  --   }),
-  -- })
+  cmp.setup.cmdline(":", {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = "path" },
+    }, {
+      { name = "cmdline", max_item_count = 10 },
+    }, {
+      { name = "cmdline_history", max_item_count = 5 },
+    }),
+  })
 end
 
 return M
