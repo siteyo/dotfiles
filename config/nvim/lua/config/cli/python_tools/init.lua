@@ -30,7 +30,7 @@ M.config = function(spec)
   local bin_dir = Path:new(dir, ".venv", "bin")
   vim.env.PATH = bin_dir:absolute() .. ":" .. vim.env.PATH
 
-  vim.api.nvim_create_user_command("PTSync", function()
+  vim.api.nvim_create_user_command("InstallPythonTools", function()
     rye_sync_job:start()
   end, {})
 end

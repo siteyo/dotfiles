@@ -30,7 +30,7 @@ M.config = function(spec)
   local bin_dir = Path:new(dir, "node_modules", ".bin")
   vim.env.PATH = bin_dir:absolute() .. ":" .. vim.env.PATH
 
-  vim.api.nvim_create_user_command("NSInstall", function()
+  vim.api.nvim_create_user_command("InstallNodeServer", function()
     npm_install_job:start()
   end, {})
 end
