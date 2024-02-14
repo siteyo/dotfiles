@@ -1,0 +1,18 @@
+@document.meta
+title: {TODAY_OF_FILETREE}
+description:
+authors: {AUTHOR}
+categories:
+created: {TODAY_OF_FILETREE}
+updated: {TODAY}
+version: 1.0.0
+@end
+
+* {TODAY_OF_FILETREE}
+  {{:$notes/journal/{YESTERDAY_OF_DAY}:}}[Yesterday] - {{:$notes/journal/{TOMORROW_OF_DAY}:}}[Tomorrow]
+
+** Daily Review
+   - {CURSOR}
+
+** Weekly Review
+   - {CURSOR}

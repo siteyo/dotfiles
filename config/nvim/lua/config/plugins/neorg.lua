@@ -1,6 +1,28 @@
+local file_exists = function(name)
+  local f = io.open(name, "r")
+  if f ~= nil then
+    io.close(f)
+    return true
+  else
+    return false
+  end
+end
+
+local cp_sample = function()
+  local dest_file = vim.fn.expand("$HOME") .. "/notes/neorg/templates/journal.norg"
+  if not file_exists(dest_file) then
+    vim.fn.jobstart({ "mkdir", "-p", vim.fn.expand("$HOME") .. "/notes/neorg/templates" })
+    vim.fn.jobstart({
+      "cp",
+      vim.fn.stdpath("config") .. "/templates/norg/journal_sample.norg",
+      dest_file,
+    })
+  end
+end
+
 return {
   "nvim-neorg/neorg",
-  build = ":Neorg sync-parsers",
+  build = { ":Neorg sync-parsers", cp_sample },
   opts = {
     load = {
       ["core.defaults"] = {}, -- Loads default behaviour
@@ -21,13 +43,33 @@ return {
       },
       ["core.integrations.nvim-cmp"] = {},
       ["core.integrations.telescope"] = {},
-      -- ["external.templates"] = {},
+      ["external.templates"] = {
+        config = {
+          templates_dir = { vim.fn.expand("$HOME") .. "/notes/neorg/templates" },
+          keywords = {
+            YESTERDAY_OF_DAY = function()
+              local ls = require("luasnip")
+              local s = require("neorg.modules.external.templates.default_snippets")
+              return ls.text_node(s.parse_date(-1, s.file_tree_date(), [[%Y/%m/%d]]))
+            end,
+            TODAY_OF_DAY = function()
+              local ls = require("luasnip")
+              local s = require("neorg.modules.external.templates.default_snippets")
+              return ls.text_node(s.parse_date(0, s.file_tree_date(), [[%Y/%m/%d]]))
+            end,
+            TOMORROW_OF_DAY = function()
+              local ls = require("luasnip")
+              local s = require("neorg.modules.external.templates.default_snippets")
+              return ls.text_node(s.parse_date(1, s.file_tree_date(), [[%d]]))
+            end,
+          },
+        },
+      },
     },
   },
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-neorg/neorg-telescope",
-    -- "pysan3/neorg-templates",
+    { "nvim-neorg/neorg-telescope", dependencies = "nvim-lua/plenary.nvim" },
+    { "pysan3/neorg-templates", dependencies = "L3MON4D3/LuaSnip" },
   },
   ft = "norg",
   cmd = "Neorg",
@@ -37,7 +79,8 @@ return {
     { "<Leader>on", "<Cmd>Neorg journal tomorrow<CR>", mode = { "n" } },
     { "<Leader>op", "<Cmd>Neorg journal yesterday<CR>", mode = { "n" } },
     { "<Leader>oj", "<Cmd>Neorg journal today<CR>", mode = { "n" } },
-    { "<Leader>oo", "<Cmd>Neorg journal custom<CR>", mode = { "n" } },
+    -- neorg-templates
+    { "<Leader>oo", "<Cmd>Neorg templates fload journal<CR>", mode = { "n" } },
     -- other
     { "<Leader>oi", "<Cmd>Neorg index<CR>", mode = { "n" } },
     { "<Leader>om", "<Cmd>Neorg inject-metadata<CR>", mode = { "n" } },
