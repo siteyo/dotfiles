@@ -26,6 +26,10 @@ function M.config()
 
   local cmp = require("cmp")
   local luasnip = require("luasnip")
+  luasnip.config.setup({
+    history = true,
+    enable_autosnippets = true,
+  })
 
   cmp.setup({
     completion = {
@@ -110,7 +114,7 @@ function M.config()
     -- },
     formatting = {
       format = require("lspkind").cmp_format({
-        mode = "symbol_text",
+        mode = "symbol",
         maxwidth = 50,
         ellipsis_char = "...",
         menu = {
