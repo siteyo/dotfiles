@@ -6,6 +6,7 @@ main() {
   print_info '==> Install skk dict and setup azik ...'
 
   # Change current directory
+  local current_dir dotfiles_dir
   current_dir=$(dirname "${BASH_SOURCE[0]}")
   dotfiles_dir=$(builtin cd "${current_dir}" && git rev-parse --show-toplevel)
 
@@ -24,6 +25,7 @@ main() {
 
   # Setup corvusskk
   if uname -a | grep -q microsoft; then
+    local winhome
     winhome="$(wslpath "$(wslvar USERPROFILE)")"
     mkdir -pv "${winhome}/AppData/Roaming/CorvusSKK"
     mv -v "${winhome}/AppData/Roaming/CorvusSKK/config.xml" "${winhome}/AppData/Roaming/CorvusSKK/config-bk.xml"
