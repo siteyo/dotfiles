@@ -21,6 +21,12 @@ main() {
   [ -f "${HOME}/.simplebarrc" ] &&
     mv -v "${HOME}/.simplebarrc" "${dotfiles_dir}/bak"
 
+  # Clone simple-bar
+  local widgets_folder
+  widgets_folder="${HOME}/Library/Application Support/Übersicht/widgets"
+  [ ! -d "${widgets_folder}" ] &&
+    git cone https://github.com/Jean-Tinland/simple-bar "${widgets_folder}/simple-bar"
+
   # Create a symbolic link
   ln -sfv "${dotfiles_dir}/config/ubersicht/.simplebarrc" "${HOME}/.simplebarrc"
 
