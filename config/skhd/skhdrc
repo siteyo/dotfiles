@@ -1,26 +1,59 @@
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+# Normal Mode
+:: normal : yabai -m space --padding abs:6:6:6:6
 
-shift + alt - h : yabai -m window --warp west
-shift + alt - j : yabai -m window --warp south
-shift + alt - k : yabai -m window --warp north
-shift + alt - l : yabai -m window --warp east
+## Focus
+alt - h : yabai -m window --focus west || yabai -m display --focus west
+alt - j : yabai -m window --focus south || yabai -m display --focus south
+alt - k : yabai -m window --focus north || yabai -m display --focus north
+alt - l : yabai -m window --focus east || yabai -m display --focus east
 
-shift + alt - 1 : yabai -m window --space 1
-shift + alt - 2 : yabai -m window --space 2
-shift + alt - 3 : yabai -m window --space 3
-shift + alt - 4 : yabai -m window --space 4
-shift + alt - 5 : yabai -m window --space 5
-shift + alt - 9 : yabai -m window --space prev
-shift + alt - 0 : yabai -m window --space next
+## Move to monitor
+alt - p : yabai -m window --display prev
+alt - n : yabai -m window --display next
 
-shift + alt - f : yabai -m window --toggle native-fullscreen
+## Move to space
+# cmd + alt - p : yabai -m window --space prev
+# cmd + alt - n : yabai -m window --space next
 
-shift + alt - space : yabai -m window --toggle float && yabai -m window --grid 4:4:1:1:2:2
+## Warp windows
+cmd + alt - h : yabai -m window --warp west || yabai -m window --display west
+cmd + alt - j : yabai -m window --warp south || yabai -m window --display south
+cmd + alt - k : yabai -m window --warp north || yabai -m window --display north
+cmd + alt - l : yabai -m window --warp east || yabai -m window --display east
 
+## Toggle float
+alt - t : yabai -m window --toggle float && yabai -m window --grid 4:4:1:1:2:2
+## Toggle fullscreen
+alt - m : yabai -m window --toggle native-fullscreen
+alt - f : yabai -m window --toggle zoom-fullscreen
+## Toggle full-parent
+alt - d : yabai -m window --toggle zoom-parent
+
+## Rotate
 alt - r : yabai -m space --rotate 90
 
+## Mirror
 alt - y : yabai -m space --mirror y-axis
 alt - x : yabai -m space --mirror x-axis
+
+alt - 1 : yabai -m window --space 1
+alt - 2 : yabai -m window --space 2
+alt - 3 : yabai -m window --space 3
+alt - 4 : yabai -m window --space 4
+alt - 5 : yabai -m window --space 5
+alt - 9 : yabai -m window --space prev
+alt - 0 : yabai -m window --space next
+
+
+# Resize mode
+:: resize @ : yabai -m space --padding abs:18:18:18:18
+ctrl - space ; resize
+resize < ctrl - space ; normal
+resize < escape ; normal
+
+## Resize window
+resize < alt - h : yabai -m window --resize left:-20:0 || yabai -m window --resize right:-20:0
+resize < alt - j : yabai -m window --resize bottom:0:20 || yabai -m window --resize top:0:20
+resize < alt - k : yabai -m window --resize top:0:-20 || yabai -m window --resize bottom:0:-20
+resize < alt - l : yabai -m window --resize right:20:0 || yabai -m window --resize left:20:0
+resize < alt - 0 : yabai -m space --balance
