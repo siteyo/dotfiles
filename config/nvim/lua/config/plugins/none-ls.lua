@@ -108,6 +108,6 @@ local M = {
       },
     }
   end,
-  -- enabled = false,
+  enabled = false,
 }
 return M
