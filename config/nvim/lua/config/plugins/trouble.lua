@@ -2,6 +2,7 @@ local M = {
   "folke/trouble.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   cmd = "Trouble",
+  config = true,
 }
 
 function M.config()
@@ -9,11 +10,11 @@ function M.config()
   trouble.setup({
     signs = {
       -- icons / text used for a diagnostic
-      error = " ",
-      warning = " ",
-      hint = " ",
-      information = "﫠",
-      other = "﫠",
+      error = "",
+      warning = "",
+      hint = "",
+      information = "",
+      other = "",
     },
   })
 end
