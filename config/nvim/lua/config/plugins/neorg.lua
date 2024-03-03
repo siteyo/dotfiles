@@ -138,6 +138,7 @@ return {
     { "<Leader>otj", "<Cmd>Neorg templates fload journal<CR>", mode = { "n" } },
     { "<Leader>otd", "<Cmd>Neorg templates fload design_document<CR>", mode = { "n" } },
     { "<Leader>otc", "<Cmd>Neorg templates fload cornell_method<CR>", mode = { "n" } },
+    { "<Leader>oti", "<Cmd>Neorg templates fload index<CR>", mode = { "n" } },
     -- dirman
     { "<Leader>oed", create_file("notes", "documents", { no_open = false, force = false }), mode = { "n" } },
     { "<Leader>oei", create_file("notes", "index", { no_open = false, force = false }), mode = { "n" } },
