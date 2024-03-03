@@ -12,8 +12,8 @@
 * [x] sheldon
 * [x] starship
 * [x] aqua
-- [ ] Ubersicht
-- [ ] yabai
+- [x] yabai
+- [x] skhd
 
 ## Font
 
