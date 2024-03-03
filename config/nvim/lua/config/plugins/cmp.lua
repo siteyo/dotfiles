@@ -97,11 +97,11 @@ function M.config()
       { name = "neorg" },
       { name = "orgmode" },
       { name = "skkeleton", max_item_count = 20 },
-      { name = "rg", keyword_length = 3 },
     }, {
       { name = "buffer" },
       { name = "calc" },
       { name = "treesitter" },
+      { name = "rg", keyword_length = 3 },
       -- {
       --   name = "spell",
       --   entry_filter = function(entry, _)
