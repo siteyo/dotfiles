@@ -1,0 +1,24 @@
+@document.meta
+title: {TITLE_INPUT}
+description:
+authors: {AUTHOR}
+categories: docs
+created: {TODAY_OF_FILETREE}
+updated: {TODAY}
+version: 1.1.1
+@end
+
+* Scope
+  > 💡 このデザインドキュメントの範囲を書く。
+
+  {CURSOR}
+
+* Background
+  > 💡 なぜこのプロポーザルを行なっているかという背景を書く。
+
+* Problem Statement
+  > 💡 解決したい問題を書く。
+
+* Proposal
+  > 💡 どういうデザインにするか、またその選択を選んだ理由をロジカルに書く。
+  >    分量は2〜10ページくらいの簡潔なものにする。
