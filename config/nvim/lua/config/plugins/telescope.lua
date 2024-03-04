@@ -32,12 +32,13 @@ function M.config()
     defaults = {
       mappings = {
         i = {
-          ["<C-j>"] = {
+          ["<C-j>"] = { "<Plug>(skkeleton-enable)", type = "command" },
+          ["<C-n>"] = {
             actions.move_selection_next,
             type = "action",
             opts = { nowait = true, silent = true },
           },
-          ["<C-k>"] = {
+          ["<C-p>"] = {
             actions.move_selection_previous,
             type = "action",
             opts = { nowait = true, silent = true },
