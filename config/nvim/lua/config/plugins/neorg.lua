@@ -56,12 +56,10 @@ local setup = function()
 end
 
 local create_file = function(workspace, directory, opts)
-  return function()
-    local prompt = "[" .. workspace .. ":" .. directory .. "] File name"
-    vim.ui.input({ prompt = prompt }, function(input)
-      require("neorg").modules.get_module("core.dirman").create_file(directory .. "/" .. input, workspace, opts)
-    end)
-  end
+  local prompt = "[" .. workspace .. ":" .. directory .. "] File name"
+  vim.ui.input({ prompt = prompt }, function(input)
+    require("neorg").modules.get_module("core.dirman").create_file(directory .. "/" .. input, workspace, opts)
+  end)
 end
 
 return {
@@ -136,13 +134,29 @@ return {
     { "<Leader>op", "<Cmd>Neorg journal yesterday<CR>", mode = { "n" } },
     { "<Leader>oj", "<Cmd>Neorg journal today<CR>", mode = { "n" } },
     -- neorg-templates
-    { "<Leader>otj", "<Cmd>Neorg templates fload journal<CR>", mode = { "n" } },
-    { "<Leader>otd", "<Cmd>Neorg templates fload design_document<CR>", mode = { "n" } },
-    { "<Leader>otc", "<Cmd>Neorg templates fload cornell_method<CR>", mode = { "n" } },
-    { "<Leader>oti", "<Cmd>Neorg templates fload index<CR>", mode = { "n" } },
+    {
+      "<Leader>ot",
+      function()
+        vim.ui.select(
+          { "journal", "design_document", "cornell_method", "index" },
+          { prompt = "Select template" },
+          function(choice)
+            vim.cmd("Neorg templates fload " .. choice)
+          end
+        )
+      end,
+      mode = { "n" },
+    },
     -- dirman
-    { "<Leader>oed", create_file("notes", "documents", { no_open = false, force = false }), mode = { "n" } },
-    { "<Leader>oei", create_file("notes", "index", { no_open = false, force = false }), mode = { "n" } },
+    {
+      "<Leader>oe",
+      function()
+        vim.ui.select({ "documents", "index" }, { prompt = "Select directory" }, function(choice)
+          create_file("notes", choice, { no_open = false, force = false })
+        end)
+      end,
+      mode = { "n" },
+    },
     -- other
     -- { "<Leader>oe", "<Cmd>Neorg export directory neorg markdown<CR>", mode = { "n" } },
     { "<Leader>oi", "<Cmd>Neorg index<CR>", mode = { "n" } },
