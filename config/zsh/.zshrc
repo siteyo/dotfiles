@@ -171,6 +171,18 @@ if command -v mise >/dev/null; then
   eval "$(mise activate zsh)"
 fi
 
+## yazi
+if command -v yazi >/dev/null; then
+  function ya() {
+  	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+  	yazi "$@" --cwd-file="$tmp"
+  	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+  		cd -- "$cwd"
+  	fi
+  	rm -f -- "$tmp"
+  }
+fi
+
 ## Starship
 # if command -v starship > /dev/null; then
 #   eval "$(starship init zsh)"
