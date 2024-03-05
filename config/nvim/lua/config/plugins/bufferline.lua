@@ -2,6 +2,19 @@ local M = {
   "akinsho/bufferline.nvim",
   event = "VeryLazy",
   enabled = true,
+  keys = {
+    { "sn", "<Cmd>BufferLineCycleNext<CR>", mode = { "n" } },
+    { "sp", "<Cmd>BufferLineCyclePrev<CR>", mode = { "n" } },
+    {
+      "<Leader>bs",
+      function()
+        vim.ui.select({ "tabs", "directory", "extension" }, { prompt = "Sort by" }, function(choice)
+          require("bufferline").sort_by(choice)
+        end)
+      end,
+    },
+    { "<Leader>bt", "<Cmd>BufferLineTogglePin<CR>", mode = { "n" } },
+  },
 }
 
 M.opts = {
