@@ -64,8 +64,6 @@ function M.config()
           "*.git/*",
           "*/tmp/*",
           "*/node_modules/*",
-          "*/.mind/*",
-          "*/mind.nvim/*",
         },
         db_safe_mode = false,
         auto_validate = true,
