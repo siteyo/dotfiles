@@ -36,6 +36,7 @@ M.opts = {
     show_tab_indicators = true,
     separator_style = "slant",
     always_show_bufferline = true,
+    sort_by = "directory",
   },
   -- highlights = require("catppuccin.groups.integrations.bufferline").get({ styles = { "bold" } }),
   highlights = {
