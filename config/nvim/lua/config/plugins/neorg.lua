@@ -151,7 +151,7 @@ return {
     {
       "<Leader>oe",
       function()
-        vim.ui.select({ "documents", "index" }, { prompt = "Select directory" }, function(choice)
+        vim.ui.select({ "documents", "index", "journal" }, { prompt = "Select directory" }, function(choice)
           create_file("notes", choice, { no_open = false, force = false })
         end)
       end,
