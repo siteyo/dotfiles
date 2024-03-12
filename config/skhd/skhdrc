@@ -9,8 +9,8 @@ alt - k : yabai -m window --focus north || yabai -m display --focus north
 alt - l : yabai -m window --focus east || yabai -m display --focus east
 
 ## Move to monitor
-alt - p : yabai -m window --display prev
-alt - n : yabai -m window --display next
+# alt - p : yabai -m window --display prev
+# alt - n : yabai -m window --display next
 
 ## Move to space
 # cmd + alt - p : yabai -m window --space prev
@@ -33,6 +33,9 @@ alt - d : yabai -m window --toggle zoom-parent
 ## Rotate
 alt - r : yabai -m space --rotate 90
 
+## Toggle split
+alt - s : yabai -m window --toggle split
+
 ## Mirror
 alt - y : yabai -m space --mirror y-axis
 alt - x : yabai -m space --mirror x-axis
@@ -42,20 +45,21 @@ alt - 2 : yabai -m window --space 2
 alt - 3 : yabai -m window --space 3
 alt - 4 : yabai -m window --space 4
 alt - 5 : yabai -m window --space 5
-alt - 9 : yabai -m window --space prev
-alt - 0 : yabai -m window --space next
+alt - 0x21 : yabai -m window --space prev
+alt - 0x1E : yabai -m window --space next
+alt - 0 : yabai -m space --balance
 
 
 # Resize mode
 # :: resize @ : yabai -m space --padding abs:18:18:18:18
 :: resize @ : yabai -m space --gap abs:18
-ctrl - space ; resize
-resize < ctrl - space ; normal
+ctrl - 0x2F ; resize
+resize < ctrl - 0x2F ; normal
 resize < escape ; normal
 
 ## Resize window
-resize < alt - h : yabai -m window --resize left:-20:0 || yabai -m window --resize right:-20:0
-resize < alt - j : yabai -m window --resize bottom:0:20 || yabai -m window --resize top:0:20
-resize < alt - k : yabai -m window --resize top:0:-20 || yabai -m window --resize bottom:0:-20
-resize < alt - l : yabai -m window --resize right:20:0 || yabai -m window --resize left:20:0
-resize < alt - 0 : yabai -m space --balance
+resize < h : yabai -m window --resize left:-20:0 || yabai -m window --resize right:-20:0
+resize < j : yabai -m window --resize bottom:0:20 || yabai -m window --resize top:0:20
+resize < k : yabai -m window --resize top:0:-20 || yabai -m window --resize bottom:0:-20
+resize < l : yabai -m window --resize right:20:0 || yabai -m window --resize left:20:0
+resize < 0 : yabai -m space --balance
