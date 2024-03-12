@@ -1,75 +1,84 @@
-local wezterm = require("wezterm")
+local wez = require("wezterm")
+local color = require("color")
 local keybinds = require("keybinds")
 
------------------------------------------------------------
---- Launch Menu
------------------------------------------------------------
-local launch_menu = {}
--- Windows
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-  table.insert(launch_menu, {
-    label = "PowerShell 7",
-    args = { "pwsh.exe", "-NoLogo" },
-  })
+local config = {}
+if wez.config_builder then
+  config = wez.config_builder()
 end
 
------------------------------------------------------------
---- Default Prog
------------------------------------------------------------
-local default_prog = {}
--- Windows(WSL)
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-  default_prog = { "wsl.exe", "--cd", "~" }
-end
--- macOS
-if wezterm.target_triple == "x86_64-apple-darwin" then
-  default_prog = { os.getenv("SHELL"), "-l" }
-end
-if wezterm.target_triple == "aarch64-apple-darwin" then
-  default_prog = { os.getenv("SHELL"), "-l" }
-end
+-- Events
+require("events")
 
------------------------------------------------------------
---- Font
------------------------------------------------------------
-local font = {}
--- Windows(WSL)
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-  font = {
-    -- "Fira Code",
-    "0xProto",
-    "HackGen Console NF",
-  }
-end
--- macOS
-if wezterm.target_triple == "x86_64-apple-darwin" then
-  font = {
-    -- "Fira Code",
-    "0xProto Nerd Font",
-    "HackGen Console NF",
-  }
-end
-if wezterm.target_triple == "aarch64-apple-darwin" then
-  font = {
-    -- "Fira Code",
-    "0xProto Nerd Font",
-    "HackGen Console NF",
-  }
-end
-
-return {
-  font = wezterm.font_with_fallback(font),
-  font_size = 13.0,
-  default_prog = default_prog,
-  window_background_opacity = 0.95,
-  color_scheme = "iceberg-dark",
-  launch_menu = launch_menu,
-  leader = { key = ";", mods = "CTRL", timeout_milliseconds = 1000 },
-  keys = keybinds.keys,
-  key_tables = keybinds.key_tables,
-  disable_default_key_bindings = true,
-  use_ime = true,
-  hide_tab_bar_if_only_one_tab = true,
-  adjust_window_size_when_changing_font_size = false,
-  window_decorations = "RESIZE",
+-- Keybinds
+config.keys = keybinds.keys
+config.key_tables = keybinds.key_tables
+config.leader = {
+  key = ";",
+  mods = "CTRL",
+  timeout_milliseconds = 1000,
 }
+
+-- Appearance
+config.color_scheme = "Tokyo Night"
+
+-- Font
+config.font = wez.font_with_fallback({
+  "0xProto Nerd Font",
+  "HackGen Console NF",
+})
+config.font_size = 12.0
+config.line_height = 1.0
+
+-- Window
+config.window_background_opacity = 0.85
+config.window_decorations = "RESIZE"
+config.window_padding = { left = 2, top = 10, bottom = 2, right = 2 }
+config.adjust_window_size_when_changing_font_size = false
+config.window_frame = {
+  font = wez.font_with_fallback({
+    { family = "0xProto Nerd Font", weight = "Bold" },
+    { family = "HackGen Console NF", weight = "Bold" },
+  }),
+  active_titlebar_bg = color.background,
+  inactive_titlebar_bg = color.background,
+  font_size = 10.0,
+}
+
+-- Tab bar
+config.hide_tab_bar_if_only_one_tab = false
+config.tab_bar_at_bottom = false
+config.use_fancy_tab_bar = false
+config.show_new_tab_button_in_tab_bar = false
+config.show_tab_index_in_tab_bar = false
+-- config.colors = {
+--   tab_bar = {
+--     background = wez.color.parse("#0000FF"),
+--   },
+-- }
+
+-- Inactive panes
+config.inactive_pane_hsb = {
+  saturation = 0.8,
+  brightness = 0.6,
+}
+
+-- Other
+config.use_ime = true
+
+-- Default Prog
+-- local default_prog = {}
+-- Windows(WSL)
+-- if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+--   default_prog = { "wsl.exe", "--cd", "~" }
+-- end
+-- -- macOS
+-- if wezterm.target_triple == "x86_64-apple-darwin" then
+--   default_prog = { os.getenv("SHELL"), "-l" }
+-- end
+-- if wezterm.target_triple == "aarch64-apple-darwin" then
+--   default_prog = { os.getenv("SHELL"), "-l" }
+-- end
+-- config.default_prog = default_prog
+
+return config
