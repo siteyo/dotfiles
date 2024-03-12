@@ -48,6 +48,12 @@ return {
           DELEGATED = ":foreground #449dab",
         },
         org_capture_templates = {
+          i = {
+            description = "Inbox",
+            template = "* TODO %?\n  %u",
+            target = "~/notes/org/inbox.org",
+            headline = "Inbox",
+          },
           t = "Todo",
           ti = {
             description = "Inbox",
@@ -77,7 +83,7 @@ return {
           s = "Starter",
           si = {
             description = "Inbox template",
-            template = "* Todo\n\n* Plan",
+            template = "* Inbox\n\n* Todo\n\n* Plan",
             target = "~/notes/org/inbox.org",
           },
           sp = {
