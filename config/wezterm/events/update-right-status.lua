@@ -13,7 +13,7 @@ wez.on("update-status", function(window)
     { Text = wez.nerdfonts.pl_right_hard_divider },
     { Background = { Color = colors.scheme.ansi[5] } },
     { Foreground = { Color = colors.scheme.ansi[1] } },
-    { Text = window:active_pane():get_current_working_dir() },
+    { Text = window:active_pane():get_current_working_dir().file_path },
     { Text = wez.nerdfonts.pl_right_soft_divider },
     { Text = date },
     { Text = wez.nerdfonts.pl_right_soft_divider },
