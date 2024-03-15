@@ -1,6 +1,7 @@
 local M = {
   "uga-rosa/ccc.nvim",
   event = "BufReadPost",
+  enabled = false,
 }
 
 M.config = function()
