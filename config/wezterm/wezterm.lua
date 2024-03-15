@@ -1,5 +1,5 @@
 local wez = require("wezterm")
-local color = require("color")
+local colors = require("colors")
 local keybinds = require("keybinds")
 
 local config = {}
@@ -20,8 +20,7 @@ config.leader = {
 }
 
 -- Appearance
-config.color_scheme = "Tokyo Night"
-
+config.color_scheme = colors.scheme_name
 -- Font
 config.font = wez.font_with_fallback({
   "0xProto Nerd Font",
@@ -40,8 +39,8 @@ config.window_frame = {
     { family = "0xProto Nerd Font", weight = "Bold" },
     { family = "HackGen Console NF", weight = "Bold" },
   }),
-  active_titlebar_bg = color.background,
-  inactive_titlebar_bg = color.background,
+  active_titlebar_bg = colors.background,
+  inactive_titlebar_bg = colors.background,
   font_size = 10.0,
 }
 
@@ -51,11 +50,11 @@ config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
 config.show_new_tab_button_in_tab_bar = false
 config.show_tab_index_in_tab_bar = false
--- config.colors = {
---   tab_bar = {
---     background = wez.color.parse("#0000FF"),
---   },
--- }
+config.colors = {
+  tab_bar = {
+    background = wez.color.parse(colors.scheme.background),
+  },
+}
 
 -- Inactive panes
 config.inactive_pane_hsb = {
