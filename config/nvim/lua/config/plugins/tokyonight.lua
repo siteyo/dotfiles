@@ -15,7 +15,7 @@ function M.config()
       functions = { italic = false },
       variables = { italic = false },
     },
-    day_brightness = 0.1,
+    -- day_brightness = 0.4,
   })
   tokyonight.load()
 end
