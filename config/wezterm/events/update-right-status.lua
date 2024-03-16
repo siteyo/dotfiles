@@ -8,6 +8,11 @@ local cat_icon = function(icon, string)
   return " " .. icon .. " " .. string .. " "
 end
 
+-- file_path
+local home = os.getenv("USERPROFILE") or os.getenv("HOME") or wez.home_dir
+local max_length_file_path = 30
+local max_length_dir = 2
+
 ---@return string
 local file_path_gen = function(pane)
   local icon = wez.nerdfonts.cod_folder_opened
@@ -15,10 +20,27 @@ local file_path_gen = function(pane)
   local url = pane:get_current_working_dir()
   if url then
     file_path = url.file_path
+    file_path = file_path:gsub(home .. "(.-)$", "~%1")
+  end
+  if #file_path > max_length_file_path then
+    local split_file_path = {}
+    for dir in file_path:gmatch("([^/]+)") do
+      table.insert(split_file_path, dir)
+    end
+    file_path = ""
+    for idx = 1, #split_file_path - 1 do
+      file_path = file_path .. split_file_path[idx]:sub(1, max_length_dir)
+      if #split_file_path[idx] > max_length_dir then
+        file_path = file_path .. "…"
+      end
+      file_path = file_path .. "/"
+    end
+    file_path = file_path .. split_file_path[#split_file_path]
   end
   return cat_icon(icon, file_path)
 end
 
+-- date
 ---@return string
 local date_gen = function()
   local icon = wez.nerdfonts.cod_calendar
@@ -26,6 +48,7 @@ local date_gen = function()
   return cat_icon(icon, date)
 end
 
+-- battery
 ---@param state string
 ---@param state_of_charge number
 ---@return string
