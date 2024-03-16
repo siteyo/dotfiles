@@ -27,7 +27,7 @@
     swc = switch -c
 [core]
     editor = nvim -c \"set fenc=utf-8\"
-    pager = delta
+    pager = delta --features "$(defaults read -globalDomain AppleInterfaceStyle > /dev/null 2>&1 && echo dark-mode || echo light-mode)"
 [merge]
 	ff = false
     conflictstyle = diff3
@@ -36,14 +36,17 @@
 [rebase]
     autoStash = true
 [interactive]
-    diffFilter = delta --color-only
+    diffFilter = delta --color-only --features "$(defaults read -globalDomain AppleInterfaceStyle > /dev/null 2>&1 && echo dark-mode || echo light-mode)"
 [add.interactive]
     useBuiltin = false
 [delta]
     navigate = true
-    light = false
     line-numbers = true
     side-by-side = true
+[delta "light-mode"]
+    light = true
+[delta "dark-mode"]
+    light = false
 [diff]
     colorMoved = default
 [init]
