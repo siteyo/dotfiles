@@ -92,6 +92,8 @@ return {
             target = "~/notes/org/project.org",
           },
         },
+        org_startup_folded = "content",
+        win_split_mode = { "float", 0.8 },
       })
     end,
     enabled = true,
