@@ -64,6 +64,7 @@ local M = {
         enabled = false,
       },
     },
+    labels = "asdfghjklwertyuiopzxcvbnm",
     label = {
       uppercase = false,
     },
