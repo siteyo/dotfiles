@@ -1,12 +1,6 @@
 local wez = require("wezterm")
 local colors = require("colors")
-
----@param icon string
----@param string string
----@return string
-local cat_icon = function(icon, string)
-  return " " .. icon .. " " .. string .. " "
-end
+local util = require("util")
 
 -- file_path
 local home = os.getenv("USERPROFILE") or os.getenv("HOME") or wez.home_dir
@@ -37,7 +31,7 @@ local file_path_gen = function(pane)
     end
     file_path = file_path .. split_file_path[#split_file_path]
   end
-  return cat_icon(icon, file_path)
+  return util.cat_icon(icon, file_path)
 end
 
 -- date
@@ -45,7 +39,7 @@ end
 local date_gen = function()
   local icon = wez.nerdfonts.cod_calendar
   local date = wez.strftime("%m/%d(%a) %H:%M:%S")
-  return cat_icon(icon, date)
+  return util.cat_icon(icon, date)
 end
 
 -- battery
@@ -77,7 +71,7 @@ local battery_icon_gen = function(state, state_of_charge)
   else
     icon = wez.nerdfonts.md_battery_alert_variant_outline
   end
-  if state == "Charging" or state == "Full" then
+  if state ~= "Discharging" then
     icon = icon .. wez.nerdfonts.md_lightning_bolt
   end
   return icon
@@ -90,7 +84,7 @@ local battery_gen = function()
   for _, b in ipairs(wez.battery_info()) do
     icon = battery_icon_gen(b.state, b.state_of_charge)
     battery = string.format("%.0f%%", b.state_of_charge * 100)
-    battery = cat_icon(icon, string.format("%.0f%%", b.state_of_charge * 100))
+    battery = util.cat_icon(icon, string.format("%.0f%%", b.state_of_charge * 100))
   end
   return battery
 end
