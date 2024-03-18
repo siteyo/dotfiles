@@ -10,8 +10,8 @@ end
 
 -- file_path
 local home = os.getenv("USERPROFILE") or os.getenv("HOME") or wez.home_dir
-local max_length_file_path = 30
-local max_length_dir = 2
+local max_length_file_path = 50
+local max_length_dir = 3
 
 ---@return string
 local file_path_gen = function(pane)
