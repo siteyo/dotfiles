@@ -164,8 +164,23 @@ return {
     -- for Telescope
     { "<Leader>of", "<Cmd>Telescope neorg find_norg_files<CR>", mode = { "n" } },
     { "<Leader>ob", "<Cmd>Telescope neorg find_backlinks<CR>", mode = { "n" } },
-    { "<Leader>olf", "<Cmd>Telescope neorg insert_file_link<CR>", mode = { "n" } },
-    { "<Leader>olh", "<Cmd>Telescope neorg insert_link<CR>", mode = { "n" } },
+    -- { "<Leader>olf", "<Cmd>Telescope neorg insert_file_link<CR>", mode = { "n" } },
+    -- { "<Leader>olh", "<Cmd>Telescope neorg insert_link<CR>", mode = { "n" } },
+    {
+      "<Leader>ol",
+      function()
+        vim.ui.select(
+          { "search_headings", "insert_file_link", "insert_link" },
+          { prompt = "Select command" },
+          function(choice)
+            if choice then
+              vim.cmd("Telescope neorg " .. choice)
+            end
+          end
+        )
+      end,
+      mode = { "n" },
+    },
   },
   enabled = true,
 }
