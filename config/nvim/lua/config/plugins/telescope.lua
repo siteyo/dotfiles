@@ -1,7 +1,7 @@
 local M = {
   "nvim-telescope/telescope.nvim",
   dependencies = {
-    -- "nvim-telescope/telescope-frecency.nvim",
+    "nvim-telescope/telescope-frecency.nvim",
     "kkharji/sqlite.lua",
     "nvim-telescope/telescope-file-browser.nvim",
   },
@@ -12,7 +12,7 @@ local M = {
     { "<Leader>ff", "<Cmd>Telescope fd<CR>", mode = { "n" } },
     { "<Leader>fg", "<Cmd>Telescope git_files<CR>", mode = { "n" } },
     { "<Leader>fb", "<Cmd>Telescope buffers<CR>", mode = { "n" } },
-    -- { "<Leader>fm", "<Cmd>Telescope frecency<CR>", mode = { "n" } },
+    { "<Leader>fm", "<Cmd>Telescope frecency<CR>", mode = { "n" } },
     { "<Leader>fr", "<Cmd>Telescope resume<CR>", mode = { "n" } },
     { "<Leader>fn", "<Cmd>Telescope notify<CR>", mode = { "n" } },
     { "<Leader>fh", "<Cmd>Telescope help_tags<CR>", mode = { "n" } },
@@ -59,20 +59,20 @@ function M.config()
       },
     },
     extensions = {
-      -- frecency = {
-      --   ignore_patterns = {
-      --     "*.git/*",
-      --     "*/tmp/*",
-      --     "*/node_modules/*",
-      --   },
-      --   db_safe_mode = false,
-      --   auto_validate = true,
-      -- },
+      frecency = {
+        ignore_patterns = {
+          "*.git/*",
+          "*/tmp/*",
+          "*/node_modules/*",
+        },
+        db_safe_mode = false,
+        auto_validate = true,
+      },
     },
   })
 
-  -- -- telescope-frecency
-  -- telescope.load_extension("frecency")
+  -- telescope-frecency
+  telescope.load_extension("frecency")
 
   -- telescope-file-browser
   telescope.load_extension("file_browser")
