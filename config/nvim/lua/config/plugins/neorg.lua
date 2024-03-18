@@ -58,7 +58,9 @@ end
 local create_file = function(workspace, directory, opts)
   local prompt = "[" .. workspace .. ":" .. directory .. "] File name"
   vim.ui.input({ prompt = prompt }, function(input)
-    require("neorg").modules.get_module("core.dirman").create_file(directory .. "/" .. input, workspace, opts)
+    if input then
+      require("neorg").modules.get_module("core.dirman").create_file(directory .. "/" .. input, workspace, opts)
+    end
   end)
 end
 
@@ -141,7 +143,9 @@ return {
           { "journal", "design_document", "cornell_method", "index" },
           { prompt = "Select template" },
           function(choice)
-            vim.cmd("Neorg templates fload " .. choice)
+            if choice then
+              vim.cmd("Neorg templates fload " .. choice)
+            end
           end
         )
       end,
@@ -152,7 +156,9 @@ return {
       "<Leader>oe",
       function()
         vim.ui.select({ "documents", "index", "journal" }, { prompt = "Select directory" }, function(choice)
-          create_file("notes", choice, { no_open = false, force = false })
+          if choice then
+            create_file("notes", choice, { no_open = false, force = false })
+          end
         end)
       end,
       mode = { "n" },

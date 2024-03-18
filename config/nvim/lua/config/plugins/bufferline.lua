@@ -9,7 +9,9 @@ local M = {
       "<Leader>bs",
       function()
         vim.ui.select({ "tabs", "directory", "extension" }, { prompt = "Sort by" }, function(choice)
-          require("bufferline").sort_by(choice)
+          if choice then
+            require("bufferline").sort_by(choice)
+          end
         end)
       end,
     },
