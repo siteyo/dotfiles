@@ -12,7 +12,7 @@ local process_icon_gen = function(title)
     icon = wez.nerdfonts.custom_neovim
   elseif title:match(".*yazi.*") then
     icon = wez.nerdfonts.md_folder_multiple
-  elseif title:match(".*lazygit.*") then
+  elseif title:match(".*git.*") then
     icon = wez.nerdfonts.md_git
   elseif title:match(".*lua.*") then
     icon = wez.nerdfonts.md_language_lua
