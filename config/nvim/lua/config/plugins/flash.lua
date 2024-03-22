@@ -9,9 +9,9 @@ end
 local two_chars_format = function(opts)
   return {
     ---@diagnostic disable-next-line: undefined-field
-    { opts.match.label1, "FlashMatch" },
+    { opts.match.label1, "Search" },
     ---@diagnostic disable-next-line: undefined-field
-    { opts.match.label2, "FlashLabel" },
+    { opts.match.label2, "Substitute" },
   }
 end
 
@@ -19,7 +19,6 @@ local two_chars_action = function(match, state)
   state:hide()
   require("flash").jump({
     search = { max_length = 0 },
-    highlight = { matches = false },
     label = { format = two_chars_format },
     matcher = function(win)
       -- limit matches to the current label
@@ -61,12 +60,22 @@ local M = {
         },
       },
       search = {
-        enabled = false,
+        enabled = true,
       },
     },
     labels = "asdfghjklwertyuiopzxcvbnm",
     label = {
       uppercase = false,
+    },
+    highlight = {
+      backdrop = true,
+      matches = false,
+      groups = {
+        match = "Search",
+        current = "IncSearch",
+        backdrop = "Comment",
+        label = "Substitute",
+      },
     },
   },
   keys = {
