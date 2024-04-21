@@ -94,7 +94,7 @@ function M.config()
       { name = "nvim_lua" },
       { name = "path" },
       { name = "emoji", max_item_count = 10 },
-      { name = "neorg" },
+      -- { name = "neorg" },
       { name = "orgmode" },
       { name = "skkeleton", max_item_count = 20 },
     }, {

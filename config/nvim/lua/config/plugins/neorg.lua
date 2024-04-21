@@ -188,5 +188,5 @@ return {
       mode = { "n" },
     },
   },
-  enabled = true,
+  enabled = false,
 }
