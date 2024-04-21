@@ -1,5 +1,6 @@
-local journal_template = [[
+local template = {}
 
+template.journal = [[
 * %<%Y-%m-%d> %<%a>
   %U
 
@@ -9,6 +10,49 @@ local journal_template = [[
    - [ ] Check Slack.
    - [ ] Add tasks to agenda.
 ]]
+
+template.todo = [[
+* TODO %?
+  %U
+]]
+
+template.plan = [[
+* PLAN %?
+  SCHEDULED: %^T
+  %U
+]]
+
+template.document = [[
+* %?
+  %U
+
+** Cue
+
+** Note
+
+** Summary
+]]
+
+template.index = [[
+* %?
+  %U
+]]
+
+template.memo = [[
+* %?      :Memo:
+  %U
+]]
+
+template.note = [[
+* %?
+  %U
+]]
+
+---@param name "journal" | "todo" | "plan" | "document" | "index" | "memo" | "note"
+---@return string
+template.get = function(name)
+  return template[name]
+end
 
 return {
   {
@@ -55,35 +99,40 @@ return {
         org_capture_templates = {
           t = {
             description = "Todo",
-            template = "* TODO %?\n  %U",
+            template = template.get("todo"),
             headline = "Todo",
             target = "~/notes/org/agenda/inbox.org",
           },
           l = {
             description = "Plan",
-            template = "* PLAN %?\n  SCHEDULED: %^T\n  %U",
+            template = template.get("plan"),
             headline = "Plan",
             target = "~/notes/org/agenda/inbox.org",
           },
           j = {
             description = "Journal",
-            template = journal_template,
+            template = template.get("journal"),
             target = "~/notes/org/journal.org",
             datetree = { tree_type = "month" },
           },
           d = {
             description = "Document",
-            template = "* %?\n  %U",
+            template = template.get("document"),
             target = "~/notes/org/documents/inbox.org",
           },
           i = {
             description = "Index",
-            template = "* %?\n  %U",
+            template = template.get("index"),
             target = "~/notes/org/index/inbox.org",
           },
           m = {
             description = "Memo",
-            template = "* %U\n  %U\n  %?",
+            template = template.get("memo"),
+          },
+          n = {
+            description = "Note",
+            template = template.get("note"),
+            target = "~/notes/org/notes/inbox.org",
           },
         },
         org_startup_folded = "content",
