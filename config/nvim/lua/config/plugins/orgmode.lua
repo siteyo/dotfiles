@@ -1,27 +1,32 @@
+local journal_template = [[
+
+* %<%Y-%m-%d> %<%a>
+  %U
+
+** Daily reviews [/]
+   - [ ] Check mail.
+   - [ ] Check schedule.
+   - [ ] Check Slack.
+   - [ ] Add tasks to agenda.
+]]
+
 return {
   {
     "nvim-orgmode/orgmode",
     lazy = false,
     config = function()
-      -- Load custom treesitter grammar for org filetype
-      require("orgmode").setup_ts_grammar()
-
-      -- Treesitter configuration
       require("nvim-treesitter.configs").setup({
-        -- If TS highlights are not enabled at all, or disabled via `disable` prop,
-        -- highlighting will fallback to default Vim syntax highlighting
         highlight = {
           enable = true,
-          -- Required for spellcheck, some LaTex highlights and
-          -- code block highlights that do not have ts grammar
           additional_vim_regex_highlighting = { "org" },
         },
-        ensure_installed = { "org" }, -- Or run :TSUpdate org
+        ensure_installed = { "org" },
       })
 
       require("orgmode").setup({
-        org_agenda_files = { "~/notes/org/**" },
+        org_agenda_files = { "~/notes/org/agenda/**" },
         org_default_notes_file = "~/notes/org/inbox.org",
+        org_archive_location = "~/notes/org/archive/%s_archive::",
         org_todo_keywords = {
           "TODO(t)",
           "NEXT(n)",
@@ -48,52 +53,41 @@ return {
           DELEGATED = ":foreground #449dab",
         },
         org_capture_templates = {
+          t = {
+            description = "Todo",
+            template = "* TODO %?\n  %U",
+            headline = "Todo",
+            target = "~/notes/org/agenda/inbox.org",
+          },
+          l = {
+            description = "Plan",
+            template = "* PLAN %?\n  SCHEDULED: %^T\n  %U",
+            headline = "Plan",
+            target = "~/notes/org/agenda/inbox.org",
+          },
+          j = {
+            description = "Journal",
+            template = journal_template,
+            target = "~/notes/org/journal.org",
+            datetree = { tree_type = "month" },
+          },
+          d = {
+            description = "Document",
+            template = "* %?\n  %U",
+            target = "~/notes/org/documents/inbox.org",
+          },
           i = {
-            description = "Inbox",
-            template = "* TODO %?\n  %u",
-            target = "~/notes/org/inbox.org",
-            headline = "Inbox",
+            description = "Index",
+            template = "* %?\n  %U",
+            target = "~/notes/org/index/inbox.org",
           },
-          t = "Todo",
-          ti = {
-            description = "Inbox",
-            template = "* TODO %?\n  %u",
-            target = "~/notes/org/inbox.org",
-            headline = "Todo",
-          },
-          tp = {
-            description = "Project",
-            template = "* TODO %?\n  %u",
-            target = "~/notes/org/project.org",
-            headline = "Todo",
-          },
-          l = "Plan",
-          li = {
-            description = "Inbox",
-            template = "* PLAN %?\n  %u",
-            target = "~/notes/org/inbox.org",
-            headline = "Plan",
-          },
-          lp = {
-            description = "Project",
-            template = "* PLAN %?\n  %u",
-            target = "~/notes/org/project.org",
-            headline = "Plan",
-          },
-          s = "Starter",
-          si = {
-            description = "Inbox template",
-            template = "* Inbox\n\n* Todo\n\n* Plan",
-            target = "~/notes/org/inbox.org",
-          },
-          sp = {
-            description = "Project template",
-            template = "* Todo\n\n* Plan",
-            target = "~/notes/org/project.org",
+          m = {
+            description = "Memo",
+            template = "* %U\n  %U\n  %?",
           },
         },
         org_startup_folded = "content",
-        win_split_mode = { "float", 0.8 },
+        -- win_split_mode = { "float", 0.8 },
       })
     end,
     enabled = true,
