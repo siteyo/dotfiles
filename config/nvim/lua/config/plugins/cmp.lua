@@ -94,7 +94,6 @@ function M.config()
       { name = "nvim_lua" },
       { name = "path" },
       { name = "emoji", max_item_count = 10 },
-      -- { name = "neorg" },
       { name = "orgmode" },
       { name = "skkeleton", max_item_count = 20 },
     }, {
@@ -180,7 +179,30 @@ function M.config()
   })
 
   cmp.setup.cmdline(":", {
-    mapping = cmp.mapping.preset.cmdline(),
+    -- mapping = cmp.mapping.preset.cmdline(),
+    mapping = {
+      ["<C-n>"] = {
+        c = function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          else
+            fallback()
+          end
+        end,
+      },
+      ["<C-p>"] = {
+        c = function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          else
+            fallback()
+          end
+        end,
+      },
+      ["<C-e>"] = {
+        c = cmp.mapping.abort(),
+      },
+    },
     sources = cmp.config.sources({
       { name = "path" },
     }, {
