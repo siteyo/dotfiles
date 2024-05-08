@@ -20,7 +20,7 @@ local M = {
     { "<Leader>fe", "<Cmd>Telescope file_browser<CR>", mode = { "n" } },
     -- for Git
     { "<Leader>gs", "<Cmd>Telescope git_status<CR>", mode = { "n" } },
-    { "<Leader>gb", "<Cmd>Telescope git_branchs<CR>", mode = { "n" } },
+    { "<Leader>gb", "<Cmd>Telescope git_branches<CR>", mode = { "n" } },
   },
 }
 
