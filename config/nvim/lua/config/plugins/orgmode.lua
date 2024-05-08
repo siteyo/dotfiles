@@ -136,6 +136,7 @@ return {
           },
         },
         org_startup_folded = "content",
+        org_tags_column = 90,
         -- win_split_mode = { "float", 0.8 },
       })
     end,
