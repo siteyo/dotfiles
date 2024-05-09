@@ -22,6 +22,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.conceallevel = 0
 vim.o.wrap = false
+vim.o.inccommand = "split"
 -- vim.o.fileformats = {'unix', 'dos', 'mac'}
 -- vim.o.fileencodings=utf-8,sjis
 vim.o.foldenable = true
