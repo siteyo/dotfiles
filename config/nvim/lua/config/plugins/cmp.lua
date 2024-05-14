@@ -1,6 +1,6 @@
 local M = {
   "hrsh7th/nvim-cmp",
-  event = "VimEnter",
+  event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     "onsails/lspkind-nvim",
     "hrsh7th/cmp-nvim-lsp",

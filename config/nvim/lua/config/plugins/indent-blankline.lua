@@ -24,4 +24,5 @@ return {
     },
   },
   event = { "BufReadPost", "BufNewFile" },
+  enabled = false,
 }

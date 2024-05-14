@@ -2,7 +2,7 @@ return {
   -- common animation
   {
     "echasnovski/mini.animate",
-    event = "VeryLazy",
+    event = "BufReadPre",
     config = function()
       local mouse_scrolled = false
       for _, scroll in ipairs({ "Up", "Down" }) do
@@ -33,7 +33,7 @@ return {
         },
       })
     end,
-    enabled = vim.g.neovide == nil,
+    enabled = false,
   },
 
   -- visualize indent scope
@@ -45,7 +45,7 @@ return {
         symbol = "│",
       })
     end,
-    enabled = vim.g.neovide == nil,
+    enabled = false,
   },
 
   -- buffer Removing

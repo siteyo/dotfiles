@@ -3,8 +3,9 @@ local M = {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  event = "VeryLazy",
-  keys = { { "<Leader>gg", "<Cmd>LazyGit<CR>", mode = { "n" } } },
+  keys = {
+    { "<Leader>gg", "<Cmd>LazyGit<CR>", mode = { "n" }, desc = "Lazygit" },
+  },
 }
 
 return M

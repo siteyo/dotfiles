@@ -1,6 +1,6 @@
 local M = {
   "mfussenegger/nvim-lint",
-  event = "VeryLazy",
+  event = "BufReadPre",
   config = function()
     require("lint").linters_by_ft = {
       typescript = { "eslint" },

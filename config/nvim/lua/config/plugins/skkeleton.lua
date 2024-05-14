@@ -13,7 +13,7 @@ end
 return {
   {
     "vim-skk/skkeleton",
-    event = "VeryLazy",
+    event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
       "vim-denops/denops.vim",
     },
@@ -88,7 +88,7 @@ return {
         zindex = 1050,
       },
     },
-    event = "VeryLazy",
+    event = { "InsertEnter", "CmdlineEnter" },
     enabled = true,
   },
 }

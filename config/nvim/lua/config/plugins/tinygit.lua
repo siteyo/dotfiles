@@ -6,7 +6,7 @@ local M = {
     "nvim-telescope/telescope.nvim", -- either telescope or fzf-lua
     "rcarriga/nvim-notify", -- optional, but will lack some features without it
   },
-  event = "VeryLazy",
+  event = "BufReadPost",
   keys = {
     {
       "<Leader>gc",
@@ -41,6 +41,7 @@ local M = {
       mode = { "n" },
     },
   },
+  enabled = false,
 }
 
 return M

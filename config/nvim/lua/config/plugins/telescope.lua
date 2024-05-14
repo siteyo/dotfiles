@@ -2,10 +2,9 @@ local M = {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-telescope/telescope-frecency.nvim",
-    "kkharji/sqlite.lua",
     "nvim-telescope/telescope-file-browser.nvim",
   },
-  event = "VimEnter",
+  cmd = "Telescope",
   keys = {
     -- for Telescope
     { "<Leader>f<Space>", "<Cmd>Telescope<CR>", mode = { "n" } },
@@ -19,8 +18,8 @@ local M = {
     { "<Leader>fd", "<Cmd>Telescope diagnostics<CR>", mode = { "n" } },
     { "<Leader>fe", "<Cmd>Telescope file_browser<CR>", mode = { "n" } },
     -- for Git
-    { "<Leader>gs", "<Cmd>Telescope git_status<CR>", mode = { "n" } },
-    { "<Leader>gb", "<Cmd>Telescope git_branches<CR>", mode = { "n" } },
+    -- { "<Leader>gs", "<Cmd>Telescope git_status<CR>", mode = { "n" } },
+    -- { "<Leader>gb", "<Cmd>Telescope git_branches<CR>", mode = { "n" } },
   },
 }
 

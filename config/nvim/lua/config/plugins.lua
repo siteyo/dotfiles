@@ -2,12 +2,12 @@ return {
   ------------------------------------------------------------
   --- Library
   ------------------------------------------------------------
-  { "nvim-lua/plenary.nvim" },
-  { "nvim-tree/nvim-web-devicons" },
-  { "MunifTanjim/nui.nvim" },
+  -- { "nvim-lua/plenary.nvim" },
+  -- { "nvim-tree/nvim-web-devicons" },
+  -- { "MunifTanjim/nui.nvim" },
   {
     "vim-jp/vimdoc-ja",
-    event = "VeryLazy",
+    keys = { { "h", mode = "c" } },
     config = function()
       vim.o.helplang = "ja,en"
     end,
@@ -21,16 +21,11 @@ return {
   ------------------------------------------------------------
   --- Filer
   ------------------------------------------------------------
-  { "nvim-tree/nvim-tree.lua", enabled = false },
+  -- { "nvim-tree/nvim-tree.lua" },
 
   ------------------------------------------------------------
   --- Edit
   ------------------------------------------------------------
-  {
-    "kylechui/nvim-surround",
-    config = true,
-    event = "BufReadPost",
-  },
   {
     "numToStr/Comment.nvim",
     config = function()
@@ -71,15 +66,15 @@ return {
     end,
     ft = "markdown",
   },
-  {
-    "3rd/image.nvim",
-    event = "VeryLazy",
-    config = function()
-      package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
-      package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
-      require("image").setup()
-    end,
-  },
+  -- {
+  --   "3rd/image.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
+  --     package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
+  --     require("image").setup()
+  --   end,
+  -- },
   -- { "folke/which-key.nvim", config = true, cmd = "WhichKey" },
   -- { "folke/neodev.nvim", opts = {}, config = true, lazy = false },
 }

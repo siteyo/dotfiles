@@ -57,7 +57,7 @@ end
 return {
   {
     "nvim-orgmode/orgmode",
-    lazy = false,
+    ft = "org",
     config = function()
       require("nvim-treesitter.configs").setup({
         highlight = {
@@ -145,6 +145,6 @@ return {
   {
     "akinsho/org-bullets.nvim",
     config = true,
-    lazy = false,
+    ft = "org",
   },
 }
