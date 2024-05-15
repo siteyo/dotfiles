@@ -1,16 +1,5 @@
 local template = {}
 
-template.journal = [[
-* %<%Y-%m-%d> %<%a>
-  %U
-
-** Daily reviews [/]
-   - [ ] Check mail.
-   - [ ] Check schedule.
-   - [ ] Check Slack.
-   - [ ] Add tasks to agenda.
-]]
-
 template.todo = [[
 * TODO %?
   %U
@@ -22,32 +11,43 @@ template.plan = [[
   %U
 ]]
 
-template.document = [[
-* %?
-  %U
+-- template.journal = [[
+-- * %<%Y-%m-%d> %<%a>
+--   %U
 
-** Cue
+-- ** Daily reviews [/]
+--    - [ ] Check mail.
+--    - [ ] Check schedule.
+--    - [ ] Check Slack.
+--    - [ ] Add tasks to agenda.
+-- ]]
 
-** Note
+-- template.document = [[
+-- * %?
+--   %U
+--
+-- ** Cue
+--
+-- ** Note
+--
+-- ** Summary
+-- ]]
 
-** Summary
-]]
+-- template.index = [[
+-- * %?
+--   %U
+-- ]]
 
-template.index = [[
-* %?
-  %U
-]]
+-- template.memo = [[
+-- * %?      :Memo:
+--   %U
+-- ]]
 
-template.memo = [[
-* %?      :Memo:
-  %U
-]]
-
-template.note = [[
-* %?
-  %U
-]]
-
+-- template.note = [[
+-- * %?
+--   %U
+-- ]]
+--
 ---@param name "journal" | "todo" | "plan" | "document" | "index" | "memo" | "note"
 ---@return string
 template.get = function(name)
@@ -58,6 +58,15 @@ return {
   {
     "nvim-orgmode/orgmode",
     ft = "org",
+    keys = {
+      {
+        "<Leader>oo",
+        function()
+          require("orgmode.api.agenda").agenda({ span = "day" })
+        end,
+        mode = { "n" },
+      },
+    },
     config = function()
       require("nvim-treesitter.configs").setup({
         highlight = {
@@ -109,31 +118,31 @@ return {
             headline = "Plan",
             target = "~/notes/org/agenda/inbox.org",
           },
-          j = {
-            description = "Journal",
-            template = template.get("journal"),
-            target = "~/notes/org/journal.org",
-            datetree = { tree_type = "month" },
-          },
-          d = {
-            description = "Document",
-            template = template.get("document"),
-            target = "~/notes/org/documents/inbox.org",
-          },
-          i = {
-            description = "Index",
-            template = template.get("index"),
-            target = "~/notes/org/index/inbox.org",
-          },
-          m = {
-            description = "Memo",
-            template = template.get("memo"),
-          },
-          n = {
-            description = "Note",
-            template = template.get("note"),
-            target = "~/notes/org/notes/inbox.org",
-          },
+          -- j = {
+          --   description = "Journal",
+          --   template = template.get("journal"),
+          --   target = "~/notes/org/journal.org",
+          --   datetree = { tree_type = "month" },
+          -- },
+          -- d = {
+          --   description = "Document",
+          --   template = template.get("document"),
+          --   target = "~/notes/org/documents/inbox.org",
+          -- },
+          -- i = {
+          --   description = "Index",
+          --   template = template.get("index"),
+          --   target = "~/notes/org/index/inbox.org",
+          -- },
+          -- m = {
+          --   description = "Memo",
+          --   template = template.get("memo"),
+          -- },
+          -- n = {
+          --   description = "Note",
+          --   template = template.get("note"),
+          --   target = "~/notes/org/notes/inbox.org",
+          -- },
         },
         org_startup_folded = "content",
         org_tags_column = 90,
