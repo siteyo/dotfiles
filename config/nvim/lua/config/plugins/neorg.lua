@@ -15,6 +15,7 @@ local setup = function()
       documents = home .. "/notes/neorg/documents",
       index = home .. "/notes/neorg/index",
       templates = home .. "/notes/neorg/templates",
+      notes = home .. "/notes/neorg/notes",
     }
     for _, v in pairs(dir_list) do
       if not exists(v) then
@@ -34,6 +35,7 @@ local setup = function()
       design_document = home .. "/notes/neorg/templates/design_document.norg",
       cornell_method = home .. "/notes/neorg/templates/cornell_method.norg",
       index = home .. "/notes/neorg/templates/index.norg",
+      notes = home .. "/notes/neorg/templates/note.norg",
     }
     for k, v in pairs(template_list) do
       if not exists(v) then
@@ -141,7 +143,7 @@ return {
       "<Leader>ot",
       function()
         vim.ui.select(
-          { "journal", "design_document", "cornell_method", "index" },
+          { "journal", "note", "design_document", "cornell_method", "index" },
           { prompt = "Select template" },
           function(choice)
             if choice then
@@ -156,7 +158,7 @@ return {
     {
       "<Leader>oe",
       function()
-        vim.ui.select({ "documents", "index", "journal" }, { prompt = "Select directory" }, function(choice)
+        vim.ui.select({ "documents", "notes", "index", "journal" }, { prompt = "Select directory" }, function(choice)
           if choice then
             create_file("notes", choice, { no_open = false, force = false })
           end
