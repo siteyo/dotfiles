@@ -66,7 +66,7 @@ end
 
 return {
   "nvim-neorg/neorg",
-  build = { ":Neorg sync-parsers" },
+  -- build = { ":Neorg sync-parsers" },
   opts = {
     load = {
       ["core.defaults"] = {}, -- Loads default behaviour
@@ -126,6 +126,7 @@ return {
   dependencies = {
     { "nvim-neorg/neorg-telescope", dependencies = "nvim-lua/plenary.nvim" },
     { "pysan3/neorg-templates", dependencies = "L3MON4D3/LuaSnip" },
+    { "vhyrro/luarocks.nvim", priority = 1000, config = true },
   },
   ft = "norg",
   cmd = "Neorg",
@@ -188,5 +189,5 @@ return {
       mode = { "n" },
     },
   },
-  enabled = false,
+  enabled = true,
 }
