@@ -36,7 +36,7 @@ local M = {
       desc = "Neogit log",
     },
     {
-      "<Leader>gh",
+      "<Leader>gb",
       function()
         require("neogit").open({ "branch" })
       end,
