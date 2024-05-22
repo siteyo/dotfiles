@@ -97,6 +97,11 @@ if [[ $(uname -r) == *microsoft* ]]; then
   alias whome='cd $(wslpath $(wslvar USERPROFILE))'
 fi
 
+## bat
+if command -v bat > /dev/null; then
+  alias bat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo Nord || echo GitHub)"
+fi
+
 # Other
 # --------------------------------------------------------------------
 
