@@ -13,7 +13,7 @@ alt - l : yabai -m window --focus east || yabai -m display --focus east
 # alt - n : yabai -m window --display next
 
 ## Move to space
-# cmd + alt - p : yabai -m window --space prev
+# cmd + alt - p : yabai -m window --space prevsket
 # cmd + alt - n : yabai -m window --space next
 
 ## Warp windows
@@ -48,16 +48,20 @@ alt - 2 : yabai -m window --space 2
 alt - 3 : yabai -m window --space 3
 alt - 4 : yabai -m window --space 4
 alt - 5 : yabai -m window --space 5
-alt - 0x21 : yabai -m window --space prev
-alt - 0x1E : yabai -m window --space next
+alt - 6 : yabai -m window --space 6
+alt - 7 : yabai -m window --space 7
+alt - 8 : yabai -m window --space 8
+alt - 9 : yabai -m window --space 9
+alt - 0x21 : yabai -m window --space prev   # alt - [
+alt - 0x1E : yabai -m window --space next   # alt - ]
 alt - 0 : yabai -m space --balance
 
 
 # Resize mode
 # :: resize @ : yabai -m space --padding abs:18:18:18:18
 :: resize @ : yabai -m space --gap abs:18
-ctrl - 0x2F ; resize
-resize < ctrl - 0x2F ; normal
+alt - 0x2F ; resize    # alt + .
+resize < alt - 0x2F ; normal    # alt + .
 resize < escape ; normal
 
 ## Resize window
