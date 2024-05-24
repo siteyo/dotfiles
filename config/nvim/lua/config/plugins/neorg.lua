@@ -35,7 +35,7 @@ local setup = function()
       design_document = home .. "/notes/neorg/templates/design_document.norg",
       cornell_method = home .. "/notes/neorg/templates/cornell_method.norg",
       index = home .. "/notes/neorg/templates/index.norg",
-      notes = home .. "/notes/neorg/templates/note.norg",
+      note = home .. "/notes/neorg/templates/note.norg",
     }
     for k, v in pairs(template_list) do
       if not exists(v) then
