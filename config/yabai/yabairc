@@ -30,6 +30,7 @@ yabai -m config external_bar all:0:30
 # rules
 yabai -m rule --add app="^システム環境設定$" manage=off
 yabai -m rule --add app="^システム設定$" manage=off
+yabai -m rule --add app="^アクティビティモニタ$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 
