@@ -99,7 +99,7 @@ return {
           WAITING = ":foreground #ff9e64",
           PROJECT = ":foreground #9d7cd8",
           PLAN = ":foreground #9ece6a",
-          SOMEDAY = ":foreground #7aa2f7",
+          LOG = ":foreground #7aa2f7",
           DONE = ":foreground #449dab",
           TRASH = ":foreground #545c7e",
           CANCELED = ":foreground #545c7e",
@@ -112,7 +112,7 @@ return {
             headline = "Todo",
             target = "~/notes/org/agenda/inbox.org",
           },
-          l = {
+          p = {
             description = "Plan",
             template = template.get("plan"),
             headline = "Plan",
