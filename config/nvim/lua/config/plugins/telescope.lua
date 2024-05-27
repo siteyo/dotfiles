@@ -30,6 +30,7 @@ function M.config()
   local actions = require("telescope.actions")
   telescope.setup({
     defaults = {
+      layout_strategy = "vertical",
       mappings = {
         i = {
           ["<C-j>"] = { "<Plug>(skkeleton-enable)", type = "command" },
