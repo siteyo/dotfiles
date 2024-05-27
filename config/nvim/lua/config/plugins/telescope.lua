@@ -44,11 +44,11 @@ function M.config()
             type = "action",
             opts = { nowait = true, silent = true },
           },
-          ["<C-[>"] = {
-            actions.close,
-            type = "action",
-            opts = { nowait = true, silent = true },
-          },
+          -- ["<C-[>"] = {
+          --   actions.close,
+          --   type = "action",
+          --   opts = { nowait = true, silent = true },
+          -- },
         },
         n = {
           ["q"] = {
