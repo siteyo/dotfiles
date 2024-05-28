@@ -7,7 +7,7 @@ local M = {
   },
   opts = {
     disable_commit_confirmation = true,
-    disable_hint = false,
+    disable_hint = true,
     integrations = {
       diffview = true,
     },

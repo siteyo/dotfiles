@@ -67,7 +67,7 @@ function M.config()
           "*/node_modules/*",
         },
         db_safe_mode = false,
-        auto_validate = true,
+        auto_validate = false,
       },
     },
   })

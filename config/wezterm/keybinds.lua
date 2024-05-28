@@ -168,7 +168,7 @@ return {
     { key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
     { key = "J", mods = "LEADER", action = act.ActivateTabRelative(-1) },
     { key = "K", mods = "LEADER", action = act.ActivateTabRelative(1) },
-    { key = "u", mods = "LEADER", action = act.CharSelect },
+    { key = "e", mods = "LEADER", action = act.CharSelect },
     { key = "p", mods = "LEADER", action = act.PaneSelect },
     { key = "x", mods = "LEADER", action = act.ActivateCopyMode },
     { key = "w", mods = "LEADER", action = act.RotatePanes("Clockwise") },

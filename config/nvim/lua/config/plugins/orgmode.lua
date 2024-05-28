@@ -85,8 +85,8 @@ return {
           "NEXT(n)",
           "WAITING(w)",
           "PROJECT(r)",
-          "PLAN(p)",
-          "LOG(l)",
+          "PLAN(l)",
+          "LOG(o)",
           "|",
           "DONE(d)",
           "TRASH(h)",
@@ -112,7 +112,7 @@ return {
             headline = "Todo",
             target = "~/notes/org/agenda/inbox.org",
           },
-          p = {
+          l = {
             description = "Plan",
             template = template.get("plan"),
             headline = "Plan",
