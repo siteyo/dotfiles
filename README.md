@@ -1,5 +1,8 @@
 # siteyo's dotfiles
 
+[![Audit Dependency](https://github.com/siteyo/dotfiles/actions/workflows/audit-dependency.yml/badge.svg?branch=main)](https://github.com/siteyo/dotfiles/actions/workflows/audit-dependency.yml)
+[![Install Test](https://github.com/siteyo/dotfiles/actions/workflows/install-test.yml/badge.svg?branch=main)](https://github.com/siteyo/dotfiles/actions/workflows/install-test.yml)
+
 ## Contents
 
 * [x] Vim & NeoVim
