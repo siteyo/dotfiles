@@ -30,6 +30,10 @@ github = 'romkatv/powerlevel10k'
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 
+[plugins.zsh-nvim-appname]
+github = "mehalter/zsh-nvim-appname"
+apply = ["source", "PATH", "fpath"]
+
 # [plugins.docker-completion]
 # remote = 'https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker'
 # apply = ["fpath"]
