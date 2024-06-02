@@ -8,6 +8,7 @@ local M = {
       javascript = { "eslint" },
       javascriptreact = { "eslint" },
       python = { "flake8", "mypy" },
+      sql = { "sqlfluff" },
       -- yaml = { "actionlint", "yamllint" },
     }
     vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {
