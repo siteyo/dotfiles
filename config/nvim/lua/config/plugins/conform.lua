@@ -13,6 +13,7 @@ local M = {
       sh = { "shfmt" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
+      sql = { "sqlfluff" },
       yaml = { "yamlfmt" },
       zsh = { "shfmt" },
       ["_"] = { "trim_whitespace" },
