@@ -1,7 +1,7 @@
 local M = {
   "stevearc/oil.nvim",
   opts = {
-    default_file_explorer = false,
+    default_file_explorer = true,
     use_default_keymap = false,
     columns = {
       "permissions",
