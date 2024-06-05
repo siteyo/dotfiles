@@ -51,19 +51,17 @@ return {
   -- buffer Removing
   {
     "echasnovski/mini.bufremove",
-    event = "BufReadPre",
-    config = function()
-      local mb = require("mini.bufremove")
-      mb.setup()
-      -- sd
-      vim.keymap.set("n", "sd", function()
-        mb.delete(0, false)
-      end)
-      -- sq
-      vim.keymap.set("n", "sq", function()
-        mb.unshow()
-      end)
-    end,
+    keys = {
+      {
+        "sd",
+        function()
+          require("mini.bufremove").delete(0, false)
+        end,
+        mode = { "n" },
+        desc = "Delete Buffer",
+      },
+    },
+    config = true,
   },
 
   -- starter

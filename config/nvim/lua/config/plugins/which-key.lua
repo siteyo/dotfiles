@@ -5,9 +5,9 @@ local M = {
     vim.o.timeout = true
     vim.o.timeoutlen = 300
   end,
-  keys = {
-    { "<Leader>w<Leader>", "<Cmd>WhichKey<CR>", mode = { "n" } },
-  },
+  -- keys = {
+  --   { "<Leader>w<Leader>", "<Cmd>WhichKey<CR>", mode = { "n" } },
+  -- },
   opts = {
     -- your configuration comes here
     -- or leave it empty to use the default settings
