@@ -15,7 +15,7 @@ local M = {
   },
   keys = {
     {
-      "<Leader>gs",
+      "<Leader>gg",
       function()
         require("neogit").open()
       end,
@@ -35,13 +35,13 @@ local M = {
       end,
       desc = "Neogit log",
     },
-    {
-      "<Leader>gb",
-      function()
-        require("neogit").open({ "branch" })
-      end,
-      desc = "Neogit branch",
-    },
+    -- {
+    --   "<Leader>gb",
+    --   function()
+    --     require("neogit").open({ "branch" })
+    --   end,
+    --   desc = "Neogit branch",
+    -- },
   },
   enabled = true,
 }

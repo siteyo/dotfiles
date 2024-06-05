@@ -30,7 +30,7 @@ config.font_size = 12.0
 config.line_height = 1.0
 
 -- Window
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.90
 config.window_decorations = "RESIZE"
 config.window_padding = { left = 2, top = 10, bottom = 2, right = 2 }
 config.adjust_window_size_when_changing_font_size = false

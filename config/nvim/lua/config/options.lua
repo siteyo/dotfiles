@@ -1,6 +1,13 @@
+------------------------------------------------------------
+--- options.lua
+------------------------------------------------------------
+-- Global
+vim.g.mapleader = " "
+vim.g.editorconfig = true
+
+-- Options
 vim.o.autoindent = true
 vim.o.smartindent = true
--- vim.o.lazyredraw = true
 vim.o.laststatus = 2
 vim.o.showcmd = true
 vim.o.cursorline = true
@@ -41,6 +48,7 @@ vim.o.scrolloff = 4
 vim.o.signcolumn = "yes"
 vim.o.mouse = "a"
 vim.o.undofile = true
+vim.o.grepprg = "rg --vimgrep"
 
 vim.o.winblend = 15
 vim.o.pumblend = 15
@@ -52,4 +60,4 @@ vim.o.undodir = vim.fn.expand("~/.nvim/undo")
 vim.o.background = require("config.util").appearance()
 
 -- vim.o.spell = true
--- vim.o.spelllang = "en_us,cjk"
+vim.o.spelllang = "en_us,cjk"
