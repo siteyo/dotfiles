@@ -8,25 +8,25 @@ local M = {
   cmd = "Telescope",
   keys = {
     -- for Telescope
-    { "<leader><space>", "<cmd>Telescope<cr>", mode = { "n" }, desc = "Find Files" },
-    { "<leader>/", "<Cmd>Telescope live_grep<cr>", mode = { "n" }, desc = "Grep" },
-    { "<leader>:", "<Cmd>Telescope command_history<cr>", mode = { "n" }, desc = "Command History" },
+    { "<Leader><space>", "<cmd>Telescope<CR>", mode = { "n" }, desc = "Builtin Pickers" },
+    { "<Leader>/", "<Cmd>Telescope live_grep<CR>", mode = { "n" }, desc = "Grep" },
+    { "<Leader>:", "<Cmd>Telescope command_history<CR>", mode = { "n" }, desc = "Command History" },
 
     -- find
-    { "<leader>ff", "<Cmd>Telescope fd<cr>", mode = { "n" } },
-    { "<leader>fg", "<Cmd>Telescope git_files<cr>", mode = { "n" } },
-    { "<leader>fb", "<Cmd>Telescope buffers<cr>", mode = { "n" } },
-    { "<leader>fm", "<Cmd>Telescope frecency<cr>", mode = { "n" } },
-    { "<leader>fr", "<Cmd>Telescope resume<cr>", mode = { "n" } },
-    { "<leader>fn", "<Cmd>Telescope notify<cr>", mode = { "n" } },
-    { "<leader>fh", "<Cmd>Telescope help_tags<cr>", mode = { "n" } },
-    { "<leader>fd", "<Cmd>Telescope diagnostics<cr>", mode = { "n" } },
-    { "<leader>fe", "<Cmd>Telescope file_browser<cr>", mode = { "n" } },
-    { '<leader>f"', "<cmd>Telescope registers<cr>", mode = { "n" } },
+    { "<Leader>ff", "<Cmd>Telescope fd<CR>", mode = { "n" } },
+    { "<Leader>fg", "<Cmd>Telescope git_files<CR>", mode = { "n" } },
+    { "<Leader>fb", "<Cmd>Telescope buffers<CR>", mode = { "n" } },
+    { "<Leader>fm", "<Cmd>Telescope frecency<CR>", mode = { "n" } },
+    { "<Leader>fr", "<Cmd>Telescope resume<CR>", mode = { "n" } },
+    { "<Leader>fn", "<Cmd>Telescope notify<CR>", mode = { "n" } },
+    { "<Leader>fh", "<Cmd>Telescope help_tags<CR>", mode = { "n" } },
+    { "<Leader>fd", "<Cmd>Telescope diagnostics<CR>", mode = { "n" } },
+    { "<Leader>fe", "<Cmd>Telescope file_browser<CR>", mode = { "n" } },
+    { '<Leader>f"', "<cmd>Telescope registers<CR>", mode = { "n" } },
 
     -- for Git
-    { "<leader>gs", "<Cmd>Telescope git_status<cr>", mode = { "n" } },
-    { "<leader>gb", "<Cmd>Telescope git_branches<cr>", mode = { "n" } },
+    { "<Leader>gs", "<Cmd>Telescope git_status<CR>", mode = { "n" } },
+    { "<Leader>gb", "<Cmd>Telescope git_branches<CR>", mode = { "n" } },
   },
 }
 

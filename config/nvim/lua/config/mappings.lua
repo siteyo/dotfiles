@@ -27,44 +27,44 @@ map("n", "sJ", "<C-w>J", { desc = "Move window to Lower" })
 map("n", "sK", "<C-w>K", { desc = "Move window to Upper" })
 map("n", "sL", "<C-w>L", { desc = "Move window to Right" })
 
--- Resize window [<leader>w]
-map_s("n", "<leader>wk", "k", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
-map_s("n", "<leader>wj", "j", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
-map_s("n", "<leader>wh", "h", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
-map_s("n", "<leader>wl", "l", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
-map("n", "<leader>w0", "<C-w>=", { desc = "Equalize Window sizes" })
-map("n", "<leader>w-", "<C-w>_", { desc = "Maximize Window Height" })
-map("n", "<leader>w\\", "<C-w>|", { desc = "Maximize Window Width" })
+-- Resize window [<Leader>w]
+map_s("n", "<Leader>wk", "k", "<Cmd>resize +2<CR>", { desc = "Increase Window Height" })
+map_s("n", "<Leader>wj", "j", "<Cmd>resize -2<CR>", { desc = "Decrease Window Height" })
+map_s("n", "<Leader>wh", "h", "<Cmd>vertical resize -2<CR>", { desc = "Decrease Window Width" })
+map_s("n", "<Leader>wl", "l", "<Cmd>vertical resize +2<CR>", { desc = "Increase Window Width" })
+map("n", "<Leader>w0", "<C-w>=", { desc = "Equalize Window sizes" })
+map("n", "<Leader>w-", "<C-w>_", { desc = "Maximize Window Height" })
+map("n", "<Leader>w\\", "<C-w>|", { desc = "Maximize Window Width" })
 map("n", "s0", "<C-w>=", { desc = "Equalize Window sizes" })
 map("n", "s-", "<C-w>_", { desc = "Maximize Window Height" })
 map("n", "s\\", "<C-w>|", { desc = "Maximize Window Width" })
 
 -- Split window
-map("n", "ss", "<cmd>split<cr>", { desc = "Split window Below" })
-map("n", "sv", "<cmd>vsplit<cr>", { desc = "Split window Right" })
+map("n", "ss", "<Cmd>split<CR>", { desc = "Split window Below" })
+map("n", "sv", "<Cmd>vsplit<CR>", { desc = "Split window Right" })
 
--- Close window [<leader>w]
-map("n", "<leader>wd", "<cmd>close<cr>", { desc = "Close window" })
+-- Close window [<Leader>w]
+map("n", "<Leader>wd", "<Cmd>close<CR>", { desc = "Close window" })
 
--- tabs [<leader>t]
-map("n", "<leader>tl", "<cmd>tablast<cr>", { desc = "Last Tab" })
-map("n", "<leader>tf", "<cmd>tabfirst<cr>", { desc = "First Tab" })
-map("n", "<leader>tt", "<cmd>tabnew<cr>", { desc = "New Tab" })
-map("n", "<leaderrtn", "<cmd>tabnext<cr>", { desc = "Next Tab" })
-map("n", "<leader>tc", "<cmd>tabclose<cr>", { desc = "Close Tab" })
-map("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+-- tabs [<Leader>t]
+map("n", "<Leader>tl", "<Cmd>tablast<CR>", { desc = "Last Tab" })
+map("n", "<Leader>tf", "<Cmd>tabfirst<CR>", { desc = "First Tab" })
+map("n", "<Leader>tt", "<Cmd>tabnew<CR>", { desc = "New Tab" })
+map("n", "<Leaderrtn", "<Cmd>tabnext<CR>", { desc = "Next Tab" })
+map("n", "<Leader>tc", "<Cmd>tabclose<CR>", { desc = "Close Tab" })
+map("n", "<Leader>tp", "<Cmd>tabprevious<CR>", { desc = "Previous Tab" })
 
 -- buffers
-map("n", "sp", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
-map("n", "sn", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-map("n", "sd", "<cmd>bdelete<cr>", { desc = "Delete Buffer" })
-map("n", "sD", "<cmd>bdelete!<cr>", { desc = "Delete Buffer" })
+map("n", "sp", "<Cmd>bprevious<CR>", { desc = "Prev Buffer" })
+map("n", "sn", "<Cmd>bnext<CR>", { desc = "Next Buffer" })
+map("n", "sd", "<Cmd>bdelete<CR>", { desc = "Delete Buffer" })
+map("n", "sD", "<Cmd>bdelete!<CR>", { desc = "Delete Buffer" })
 
--- Move Lines [<leader>m]
-map_s("n", "<leader>mj", "j", "<cmd>m .+1<cr>==", { desc = "Move Down", silent = true })
-map_s("n", "<leader>mk", "k", "<cmd>m .-2<cr>==", { desc = "Move Up", silent = true })
-map_s("v", "<leader>mj", "j", ":m '>+1<cr>gv=gv", { desc = "Move Down", silent = true })
-map_s("v", "<leader>mk", "k", ":m '<-2<cr>gv=gv", { desc = "Move Up", silent = true })
+-- Move Lines [<Leader>m]
+map_s("n", "<Leader>mj", "j", "<Cmd>m .+1<CR>==", { desc = "Move Down", silent = true })
+map_s("n", "<Leader>mk", "k", "<Cmd>m .-2<CR>==", { desc = "Move Up", silent = true })
+map_s("v", "<Leader>mj", "j", ":m '>+1<CR>gv=gv", { desc = "Move Down", silent = true })
+map_s("v", "<Leader>mk", "k", ":m '<-2<CR>gv=gv", { desc = "Move Up", silent = true })
 
 -- Jump in line
 map({ "n", "v", "o" }, "<S-h>", "^")
@@ -74,17 +74,17 @@ map({ "n", "v", "o" }, "<S-l>", "$")
 map("i", "jk", "<ESC>")
 map("i", "j<Space>", "j")
 
--- Clear search [<leader>u]
-map("n", "<leader>ur", "<cmd>noh<cr><C-l>", { desc = "Redraw / Clear hlsearch" })
-map("n", "<C-l>", "<cmd>noh<cr><C-l>", { desc = "Redraw / Clear hlsearch" })
+-- Clear search [<Leader>u]
+map("n", "<Leader>ur", "<Cmd>noh<CR><C-l>", { desc = "Redraw / Clear hlsearch" })
+map("n", "<C-l>", "<Cmd>noh<CR><C-l>", { desc = "Redraw / Clear hlsearch" })
 
 -- stylua: ignore start
 
--- toggle [<leader>u]
-map("n", "<leader>us", function() toggle("spell") end, { desc = "Toggle Spelling" })
-map("n", "<leader>uw", function() toggle("wrap") end, { desc = "Toggle Word Wrap" })
-map("n", "<leader>ul", function() toggle("relativenumber") end, { desc = "Toggle Relative Line Numbers" })
-map("n", "<leader>ub", function() toggle("background", false, { "light", "dark" }) end, { desc = "Toggle Relative Line Numbers" })
+-- toggle [<Leader>u]
+map("n", "<Leader>us", function() toggle("spell") end, { desc = "Toggle Spelling" })
+map("n", "<Leader>uw", function() toggle("wrap") end, { desc = "Toggle Word Wrap" })
+map("n", "<Leader>ul", function() toggle("relativenumber") end, { desc = "Toggle Relative Line Numbers" })
+map("n", "<Leader>ub", function() toggle("background", false, { "light", "dark" }) end, { desc = "Toggle Relative Line Numbers" })
 
 -- stylua: ignore end
 
@@ -101,29 +101,29 @@ map("c", "%<space>", "%")
 map({ "n", "v" }, "x", '"_x')
 
 -- Quickfix
-map("n", "[q", "<cmd>cprevious<cr>", { desc = "Previous Quickfix" })
-map("n", "]q", "<cmd>cnext<cr>", { desc = "Next Quickfix" })
+map("n", "[q", "<Cmd>cprevious<CR>", { desc = "Previous Quickfix" })
+map("n", "]q", "<Cmd>cnext<CR>", { desc = "Next Quickfix" })
 
 -- better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- Jump cursor position
-map("i", "<C-f>", "<right>")
-map("i", "<C-b>", "<left>")
-map("i", "<C-e>", "<esc>A")
-map("i", "<C-a>", "<esc>I")
+map("i", "<C-f>", "<Right>")
+map("i", "<C-b>", "<Left>")
+map("i", "<C-e>", "<ESC>A")
+map("i", "<C-a>", "<ESC>I")
 
 -- new file
-map("n", "se", "<cmd>enew<cr>", { desc = "New File" })
+map("n", "se", "<Cmd>enew<CR>", { desc = "New File" })
 
--- quit [<leader>q]
-map("n", "<leader>qq", "<cmd>aq<cr>", { desc = "quit All" })
-map("n", "sq", "<cmd>q<cr>", { desc = "quit" })
+-- quit [<Leader>q]
+map("n", "<Leader>qq", "<Cmd>aq<CR>", { desc = "quit All" })
+map("n", "sq", "<Cmd>q<CR>", { desc = "quit" })
 
 -- Terminal
 map("t", "<C-n><C-n>", "<C-\\><C-n>", { desc = "Enter Normal Mode" })
-map("t", "<C-h>", "<cmd>wincmd h<cr>", { desc = "Go to Left Window" })
-map("t", "<C-j>", "<cmd>wincmd j<cr>", { desc = "Go to Lower Window" })
-map("t", "<C-k>", "<cmd>wincmd k<cr>", { desc = "Go to Upper Window" })
-map("t", "<C-l>", "<cmd>wincmd l<cr>", { desc = "Go to Right Window" })
+map("t", "<C-h>", "<Cmd>wincmd h<CR>", { desc = "Go to Left Window" })
+map("t", "<C-j>", "<Cmd>wincmd j<CR>", { desc = "Go to Lower Window" })
+map("t", "<C-k>", "<Cmd>wincmd k<CR>", { desc = "Go to Upper Window" })
+map("t", "<C-l>", "<Cmd>wincmd l<CR>", { desc = "Go to Right Window" })

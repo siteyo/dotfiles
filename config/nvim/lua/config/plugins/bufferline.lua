@@ -3,10 +3,10 @@ local M = {
   event = "VeryLazy",
   enabled = true,
   keys = {
-    { "sn", "<cmd>BufferLineCycleNext<cr>", mode = { "n" }, desc = "Next Buffer" },
-    { "sp", "<cmd>BufferLineCyclePrev<cr>", mode = { "n" }, desc = "Prev Buffer" },
-    { "sN", "<cmd>BufferLineMoveNext<cr>", mode = { "n" }, desc = "Move buffer next" },
-    { "sP", "<cmd>BufferLineMovePrev<cr>", mode = { "n" }, desc = "Move buffer prev" },
+    { "sn", "<Cmd>BufferLineCycleNext<CR>", mode = { "n" }, desc = "Next Buffer" },
+    { "sp", "<Cmd>BufferLineCyclePrev<CR>", mode = { "n" }, desc = "Prev Buffer" },
+    { "sN", "<Cmd>BufferLineMoveNext<CR>", mode = { "n" }, desc = "Move buffer next" },
+    { "sP", "<Cmd>BufferLineMovePrev<CR>", mode = { "n" }, desc = "Move buffer prev" },
     {
       "<Leader>bs",
       function()
@@ -19,9 +19,9 @@ local M = {
       mode = { "n" },
       desc = "Select sort method",
     },
-    { "<Leader>bp", "<Cmd>BufferLineTogglePin<cr>", mode = { "n" }, desc = "Toggle Pin" },
-    { "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<cr>", mode = { "n" }, desc = "Delete Non-Pinned Buffers" },
-    { "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", mode = { "n" }, desc = "Delete Other Buffers" },
+    { "<Leader>bp", "<Cmd>bufferLineTogglePin<CR>", mode = { "n" }, desc = "Toggle Pin" },
+    { "<Leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", mode = { "n" }, desc = "Delete Non-Pinned Buffers" },
+    { "<Leader>bo", "<Cmd>BufferLineCloseOthers<CR>", mode = { "n" }, desc = "Delete Other Buffers" },
   },
 }
 
