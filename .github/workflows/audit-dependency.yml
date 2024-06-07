@@ -1,6 +1,11 @@
 name: Audit Dependency
 
-on: [push]
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+
 
 jobs:
   ubuntu:
