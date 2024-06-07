@@ -2,7 +2,7 @@ local M = {
   "stevearc/overseer.nvim",
   config = true,
   cmd = { "OverseerOpen", "OverseerRun" },
-  enabled = false,
+  enabled = true,
 }
 
 return M
