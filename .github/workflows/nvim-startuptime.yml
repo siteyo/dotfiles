@@ -1,6 +1,11 @@
 name: Neovim Startuptime
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+
 
 env:
   GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
