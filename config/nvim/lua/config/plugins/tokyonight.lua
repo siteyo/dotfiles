@@ -8,13 +8,13 @@ function M.config()
   tokyonight.setup({
     style = "night",
     light_style = "day",
-    transparent = (function()
-      if vim.o.background:match(".*light.*") then
-        return false
-      end
-      return true
-    end)(),
-    -- transparent = transparent(),
+    -- transparent = (function()
+    --   if vim.o.background:match(".*light.*") then
+    --     return false
+    --   end
+    --   return true
+    -- end)(),
+    transparent = false,
     styles = {
       comments = { italic = false },
       keywords = { italic = false },

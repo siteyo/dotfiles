@@ -5,7 +5,7 @@ local M = {
     "nvim-telescope/telescope-frecency.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
   },
-  cmd = "Telescope",
+  cmd = { "Telescope", "FrecencyValidate" },
   keys = {
     -- for Telescope
     { "<Leader><space>", "<cmd>Telescope<CR>", mode = { "n" }, desc = "Builtin Pickers" },

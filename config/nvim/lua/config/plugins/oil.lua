@@ -23,8 +23,8 @@ local M = {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   lazy = false,
   keys = {
-    { "<Leader>ee", "<Cmd>Oil<CR>", mode = { "n" } },
-    { "<Leader>ef", "<Cmd>Oil --float<CR>", mode = { "n" } },
+    { "<Leader>ee", "<Cmd>Oil<CR>", mode = { "n" }, desc = "Explorer Oil.nvim" },
+    { "<Leader>ef", "<Cmd>Oil --float<CR>", mode = { "n" }, desc = "Explorer Oil.nvim (float)" },
   },
 }
 

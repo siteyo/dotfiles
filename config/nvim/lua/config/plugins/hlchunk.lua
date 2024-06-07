@@ -3,10 +3,22 @@ local M = {
   event = { "BufReadPost", "BufNewFile" },
   opts = {
     chunk = {
-      enable = true
+      enable = true,
+      style = {
+        { fg = "#336db3" },
+        { fg = "#c21f30" },
+      },
+      use_treesitter = true,
+      chars = {
+        horizontal_line = "━",
+        vertical_line = "┃",
+        left_top = "┏",
+        left_bottom = "┗",
+        right_arrow = "━",
+      },
     },
     indent = {
-      enable = true,
+      enable = false,
       chars = { "│", "¦", "┆", "┊" },
     },
     blank = {

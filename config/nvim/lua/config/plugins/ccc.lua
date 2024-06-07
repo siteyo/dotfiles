@@ -9,6 +9,9 @@ M.config = function()
     highlighter = {
       auto_enable = true,
       lsp = true,
+      excludes = {
+        "lazy",
+      },
     },
   })
 end

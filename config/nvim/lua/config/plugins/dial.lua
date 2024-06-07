@@ -21,6 +21,7 @@ local M = {
         require("dial.map").manipulate("increment", "gnormal", "mygroup")
       end,
       mode = { "n" },
+      desc = "Dial Increment",
     },
     {
       "g<C-x>",
@@ -28,6 +29,7 @@ local M = {
         require("dial.map").manipulate("decrement", "gnormal", "mygroup")
       end,
       mode = { "n" },
+      desc = "Dial Decrement",
     },
     {
       "<C-a>",
@@ -42,7 +44,6 @@ local M = {
         require("dial.map").manipulate("decrement", "visual", "mygroup")
       end,
       mode = { "x" },
-      desc = "Dial decrement",
     },
     {
       "g<C-a>",
@@ -50,6 +51,7 @@ local M = {
         require("dial.map").manipulate("increment", "gvisual", "mygroup")
       end,
       mode = { "x" },
+      desc = "Dial Increment",
     },
     {
       "g<C-x>",
@@ -57,6 +59,7 @@ local M = {
         require("dial.map").manipulate("decrement", "gvisual", "mygroup")
       end,
       mode = { "x" },
+      desc = "Dial Decrement",
     },
   },
   config = function()

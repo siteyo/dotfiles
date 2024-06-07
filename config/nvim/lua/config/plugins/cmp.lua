@@ -31,6 +31,8 @@ function M.config()
     enable_autosnippets = true,
   })
 
+  vim.keymap.set("c", "<Tab>", "<Nop>")
+
   cmp.setup({
     completion = {
       completeopt = "menu,menuone,noselect",

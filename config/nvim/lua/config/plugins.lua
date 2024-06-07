@@ -5,13 +5,6 @@ return {
   -- { "nvim-lua/plenary.nvim" },
   -- { "nvim-tree/nvim-web-devicons" },
   -- { "MunifTanjim/nui.nvim" },
-  {
-    "vim-jp/vimdoc-ja",
-    keys = { { "h", mode = "c" } },
-    config = function()
-      vim.o.helplang = "ja,en"
-    end,
-  },
 
   ------------------------------------------------------------
   --- Colorscheme
@@ -26,16 +19,6 @@ return {
   ------------------------------------------------------------
   --- Edit
   ------------------------------------------------------------
-  {
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup({
-        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-      })
-    end,
-    dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
-    event = "BufReadPre",
-  },
   { "windwp/nvim-autopairs", config = true, event = "BufReadPost" },
 
   ------------------------------------------------------------
@@ -46,34 +29,5 @@ return {
   ------------------------------------------------------------
   --- Util
   ------------------------------------------------------------
-  {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup({
-        "css",
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "html",
-      })
-    end,
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-    ft = "markdown",
-  },
-  {
-    "3rd/image.nvim",
-    event = "VeryLazy",
-    config = function()
-      package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
-      package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
-      require("image").setup()
-    end,
-  },
   -- { "folke/neodev.nvim", opts = {}, config = true, lazy = false },
 }

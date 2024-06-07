@@ -50,9 +50,11 @@ map("n", "<Leader>wd", "<Cmd>close<CR>", { desc = "Close window" })
 map("n", "<Leader>tl", "<Cmd>tablast<CR>", { desc = "Last Tab" })
 map("n", "<Leader>tf", "<Cmd>tabfirst<CR>", { desc = "First Tab" })
 map("n", "<Leader>tt", "<Cmd>tabnew<CR>", { desc = "New Tab" })
-map("n", "<Leaderrtn", "<Cmd>tabnext<CR>", { desc = "Next Tab" })
+map("n", "<Leader>tn", "<Cmd>tabnext<CR>", { desc = "Next Tab" })
 map("n", "<Leader>tc", "<Cmd>tabclose<CR>", { desc = "Close Tab" })
 map("n", "<Leader>tp", "<Cmd>tabprevious<CR>", { desc = "Previous Tab" })
+map("n", "sN", "<Cmd>tabnext<CR>", { desc = " Next Tab" })
+map("n", "sP", "<Cmd>tabprevious<CR>", { desc = "Previous Tab" })
 
 -- buffers
 map("n", "sp", "<Cmd>bprevious<CR>", { desc = "Prev Buffer" })
@@ -118,7 +120,7 @@ map("i", "<C-a>", "<ESC>I")
 map("n", "se", "<Cmd>enew<CR>", { desc = "New File" })
 
 -- quit [<Leader>q]
-map("n", "<Leader>qq", "<Cmd>aq<CR>", { desc = "quit All" })
+map("n", "<Leader>qq", "<Cmd>qa<CR>", { desc = "quit All" })
 map("n", "sq", "<Cmd>q<CR>", { desc = "quit" })
 
 -- Terminal

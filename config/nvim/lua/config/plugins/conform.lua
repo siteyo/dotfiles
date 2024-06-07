@@ -33,7 +33,7 @@ local M = {
       function()
         require("conform").format({ async = true, lsp_fallback = true })
       end,
-      mode = "",
+      mode = "n",
       desc = "Format buffer",
     },
   },
@@ -54,6 +54,7 @@ M.config = function(_, opts)
     end
     require("conform").format({ async = true, lsp_fallback = true, range = range })
   end, { range = true })
+
   vim.api.nvim_create_user_command("ConformDisable", function(args)
     if args.bang then
       ---@diagnostic disable-next-line: inject-field
@@ -62,6 +63,7 @@ M.config = function(_, opts)
       vim.g.disable_autoformat = true
     end
   end, { desc = "Disable autoformat-on-save", bang = true })
+
   vim.api.nvim_create_user_command("ConformEnable", function()
     ---@diagnostic disable-next-line: inject-field
     vim.b.disable_autoformat = false
