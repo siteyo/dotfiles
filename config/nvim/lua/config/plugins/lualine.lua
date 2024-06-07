@@ -35,22 +35,24 @@ M.opts = {
       { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
     },
     lualine_x = {
-      {
-        function()
-          return require("noice").api.status.command.get() or ""
-        end,
-        cond = function()
-          return package.loaded["noice"] and require("noice").api.status.command.has()
-        end,
-      },
-      {
-        function()
-          return require("noice").api.status.mode.get() or ""
-        end,
-        cond = function()
-          return package.loaded["noice"] and require("noice").api.status.mode.has()
-        end,
-      },
+      -- {
+      --   function()
+      --     return require("noice").api.status.command.get() or ""
+      --   end,
+      --   cond = function()
+      --     return package.loaded["noice"] and require("noice").api.status.command.has()
+      --   end,
+      -- },
+      -- {
+      --   function()
+      --     return require("noice").api.status.mode.get() or ""
+      --   end,
+      --   cond = function()
+      --     return package.loaded["noice"] and require("noice").api.status.mode.has()
+      --   end,
+      -- },
+      --
+      "overseer",
       { require("lazy.status").updates, cond = require("lazy.status").has_updates },
       "encoding",
       "fileformat",
