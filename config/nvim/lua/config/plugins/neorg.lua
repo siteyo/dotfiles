@@ -135,9 +135,9 @@ return {
   keys = {
     -- journal
     -- { "<Leader>ot", "<Cmd>Neorg journal toc open<CR>", mode = { "n" } },
-    { "<Leader>on", "<Cmd>Neorg journal tomorrow<CR>", mode = { "n" } },
-    { "<Leader>op", "<Cmd>Neorg journal yesterday<CR>", mode = { "n" } },
-    { "<Leader>oj", "<Cmd>Neorg journal today<CR>", mode = { "n" } },
+    { "<Leader>on", "<Cmd>Neorg journal tomorrow<CR>", mode = { "n" }, desc = "Show tomorrow journal" },
+    { "<Leader>op", "<Cmd>Neorg journal yesterday<CR>", mode = { "n" }, desc = "Show yesterday journal" },
+    { "<Leader>oj", "<Cmd>Neorg journal today<CR>", mode = { "n" }, desc = "Show today journal" },
     -- neorg-templates
     {
       "<Leader>ot",
@@ -165,14 +165,15 @@ return {
         end)
       end,
       mode = { "n" },
+      desc = "Create New Neorg File",
     },
     -- other
     -- { "<Leader>oe", "<Cmd>Neorg export directory neorg markdown<CR>", mode = { "n" } },
-    { "<Leader>oi", "<Cmd>Neorg index<CR>", mode = { "n" } },
-    { "<Leader>om", "<Cmd>Neorg inject-metadata<CR>", mode = { "n" } },
+    { "<Leader>oi", "<Cmd>Neorg index<CR>", mode = { "n" }, desc = "Show Index" },
+    { "<Leader>om", "<Cmd>Neorg inject-metadata<CR>", mode = { "n" }, "Inject Metadata" },
     -- for Telescope
-    { "<Leader>of", "<Cmd>Telescope neorg find_norg_files<CR>", mode = { "n" } },
-    { "<Leader>ob", "<Cmd>Telescope neorg find_backlinks<CR>", mode = { "n" } },
+    { "<Leader>of", "<Cmd>Telescope neorg find_norg_files<CR>", mode = { "n" }, "Find Neorg Files" },
+    { "<Leader>ob", "<Cmd>Telescope neorg find_backlinks<CR>", mode = { "n" }, "Find Backlinks" },
     -- { "<Leader>olf", "<Cmd>Telescope neorg insert_file_link<CR>", mode = { "n" } },
     -- { "<Leader>olh", "<Cmd>Telescope neorg insert_link<CR>", mode = { "n" } },
     {

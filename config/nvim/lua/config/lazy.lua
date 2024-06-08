@@ -21,6 +21,18 @@ require("lazy").setup({
     enabled = true,
     frequency = 10800,
   },
+  rtp = {
+    disabled_plugins = {
+      "gzip",
+      "matchit",
+      "matchparen",
+      "netrwPlugin",
+      "tarPlugin",
+      "tohtml",
+      "tutor",
+      "zipPlugin",
+    },
+  },
   dev = {
     path = "~/.nvim/dev",
   },

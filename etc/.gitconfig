@@ -4,6 +4,7 @@
     bc = branch -c
     bd = branch -d
     cm = commit -m
+    cf = commit --fixup=HEAD^
     d = diff
     dc = diff --cached
     f = fetch

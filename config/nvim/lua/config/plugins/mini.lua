@@ -84,5 +84,6 @@ return {
         },
       })
     end,
+    enabled = false,
   },
 }
