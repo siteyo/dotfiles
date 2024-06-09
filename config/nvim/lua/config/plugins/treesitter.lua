@@ -6,7 +6,6 @@ local M = {
     event = "BufReadPre",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
-      "windwp/nvim-ts-autotag",
     },
     opts = {
       ensure_installed = {
@@ -38,7 +37,7 @@ local M = {
         "yaml",
       },
       highlight = { enable = true },
-      autotag = { enable = true },
+      indent = { enable = true },
       textobjects = {
         select = {
           enable = true,
