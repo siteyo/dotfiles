@@ -88,7 +88,7 @@ local M = {
       end,
     },
     {
-      "fS",
+      "S",
       mode = { "n", "x", "o" },
       function()
         require("flash").treesitter()
