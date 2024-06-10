@@ -9,12 +9,9 @@ local M = {
         { fg = "#c21f30" },
       },
       use_treesitter = true,
-      chars = {
-        horizontal_line = "━",
-        vertical_line = "┃",
-        left_top = "┏",
-        left_bottom = "┗",
-        right_arrow = "━",
+      exclude_filetypes = {
+        oil = true,
+        orgagenda = true,
       },
     },
     indent = {
