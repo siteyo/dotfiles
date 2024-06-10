@@ -30,6 +30,7 @@
   "hlchunk.nvim": { "branch": "main", "commit": "bfda1ab4fe4654f110dcd9d466965155684a0c40" },
   "iceberg.vim": { "branch": "master", "commit": "e01ac08c2202e7544531f4d806f6893539da6471" },
   "image.nvim": { "branch": "master", "commit": "a2a0849e0b3dbed90f9283603cedb683bda5d4d1" },
+  "incline.nvim": { "branch": "main", "commit": "16fc9c073e3ea4175b66ad94375df6d73fc114c0" },
   "indent-blankline.nvim": { "branch": "master", "commit": "d98f537c3492e87b6dc6c2e3f66ac517528f406f" },
   "kanagawa.nvim": { "branch": "master", "commit": "08ed29989834f5f2606cb1ef9d5b24c5ea7b8fa5" },
   "lazy.nvim": { "branch": "main", "commit": "eb4957442e3182f051b0ae11da32e06d22c190e3" },
