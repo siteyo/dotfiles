@@ -9,6 +9,10 @@ local M = {
         { fg = "#c21f30" },
       },
       use_treesitter = true,
+      exclude_filetypes = {
+        oil = true,
+        orgagenda = true,
+      },
     },
     indent = {
       enable = false,
