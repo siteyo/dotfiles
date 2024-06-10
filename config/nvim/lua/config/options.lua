@@ -8,7 +8,7 @@ vim.g.editorconfig = true
 -- Options
 vim.o.autoindent = true
 vim.o.smartindent = true
-vim.o.laststatus = 2
+vim.o.laststatus = 3
 vim.o.showcmd = true
 vim.o.cursorline = true
 vim.o.tabstop = 2
