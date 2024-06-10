@@ -22,6 +22,9 @@ function M.config()
       variables = { italic = false },
     },
     -- day_brightness = 0.4,
+    on_colors = function(colors)
+      colors.border = colors.blue0
+    end,
   })
   tokyonight.load()
 end
