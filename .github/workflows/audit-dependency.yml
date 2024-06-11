@@ -13,6 +13,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts
       - name: Audit Dependency
         run: npm -C config/nvim/lua/config/cli/node_servers audit --omit=dev
 
