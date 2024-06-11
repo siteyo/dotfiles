@@ -19,7 +19,7 @@ local M = {
       mode = { "n" },
       desc = "Select sort method",
     },
-    { "<Leader>bp", "<Cmd>bufferLineTogglePin<CR>", mode = { "n" }, desc = "Toggle Pin" },
+    { "<Leader>bp", "<Cmd>BufferLineTogglePin<CR>", mode = { "n" }, desc = "Toggle Pin" },
     { "<Leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", mode = { "n" }, desc = "Delete Non-Pinned Buffers" },
     { "<Leader>bo", "<Cmd>BufferLineCloseOthers<CR>", mode = { "n" }, desc = "Delete Other Buffers" },
   },
