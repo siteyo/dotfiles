@@ -1,0 +1,4 @@
+abbr -g "git cm"="git commit -m \"%\""
+abbr "cm"="git git commit -m \"%\""
+abbr "gs"="git status --short --branch"
+abbr -g "kk"="**%"
