@@ -39,6 +39,9 @@ indent_size = 2
 [.zshrc]
 indent_size = 2
 
+[*.zsh]
+indent_size = 2
+
 [{.bashrc,.bash_profile,.bashrc.local,.bash_profile.local}]
 indent_size = 2
 
