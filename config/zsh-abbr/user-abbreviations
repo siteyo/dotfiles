@@ -1,4 +1,5 @@
 abbr -g "git cm"="git commit -m \"%\""
-abbr "cm"="git git commit -m \"%\""
-abbr "gs"="git status --short --branch"
 abbr -g "kk"="**%"
+abbr "cm"="git git commit -m \"%\""
+abbr "fzfb"="fzf --preview='bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+abbr "gs"="git status --short --branch"

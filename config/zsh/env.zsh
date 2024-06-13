@@ -38,3 +38,5 @@ export FZF_CTRL_R_OPTS="
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'tree -C {}'"
+
+export FZF_DEFAULT_COMMAND='fd --type f'

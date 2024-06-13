@@ -11,8 +11,9 @@ if command -v aqua >/dev/null; then
 fi
 
 # fzf
-[ -f "${HOME}/.fzf.zsh" ] &&
-  source "${HOME}/.fzf.zsh"
+if command -v fzf >/dev/null; then
+  source <(fzf --zsh)
+fi
 
 ## zoxide
 if command -v zoxide >/dev/null; then
