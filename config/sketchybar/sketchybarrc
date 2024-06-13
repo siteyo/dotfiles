@@ -97,7 +97,10 @@ sketchybar --add item clock right \
            --subscribe volume volume_change \
            --add item battery right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change
+           --subscribe battery system_woke power_source_change \
+           --add item slack right \
+           --set slack update_freq=180 script="$PLUGIN_DIR/slack.sh" \
+           --subscribe slack system_woke
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
