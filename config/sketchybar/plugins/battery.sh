@@ -1,4 +1,8 @@
-#!/bin/sh
+#!/bin/bash
+
+# shellcheck disable=SC1091
+
+source "${CONFIG_DIR}/icons.sh"
 
 PERCENTAGE="$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)"
 CHARGING="$(pmset -g batt | grep 'AC Power')"
@@ -9,22 +13,22 @@ fi
 
 case "${PERCENTAGE}" in
 9[0-9] | 100)
-  ICON=""
+  ICON="${ICONS_BATTERY[4]}"
   ;;
 [6-8][0-9])
-  ICON=""
+  ICON="${ICONS_BATTERY[3]}"
   ;;
 [3-5][0-9])
-  ICON=""
+  ICON="${ICONS_BATTERY[2]}"
   ;;
 [1-2][0-9])
-  ICON=""
+  ICON="${ICONS_BATTERY[1]}"
   ;;
-*) ICON="" ;;
+*) ICON="${ICONS_BATTERY[0]}" ;;
 esac
 
-if "$CHARGING" != ""; then
-  ICON=""
+if [ "$CHARGING" != "" ]; then
+  ICON="$ICON_BATTERY_CHARGING $ICON"
 fi
 
 # The item invoking this script (name $NAME) will get its icon and label

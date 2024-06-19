@@ -1,6 +1,6 @@
 # Normal Mode
 # :: normal : yabai -m space --padding abs:6:6:6:6
-:: normal : yabai -m space --gap abs:6
+:: normal : yabai -m space --gap abs:4
 
 ## Focus
 alt - h : yabai -m window --focus west || yabai -m display --focus west
@@ -59,7 +59,7 @@ alt - 0 : yabai -m space --balance
 
 # Resize mode
 # :: resize @ : yabai -m space --padding abs:18:18:18:18
-:: resize @ : yabai -m space --gap abs:18
+:: resize @ : yabai -m space --gap abs:12
 alt - 0x2F ; resize    # alt + .
 resize < alt - 0x2F ; normal    # alt + .
 resize < escape ; normal
