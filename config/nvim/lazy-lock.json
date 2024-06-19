@@ -70,7 +70,7 @@
   "playground": { "branch": "master", "commit": "ba48c6a62a280eefb7c85725b0915e021a1a0749" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
-  "skkeleton": { "branch": "main", "commit": "1c96108b9ba055f82c458ddb78638ec266c44af5" },
+  "skkeleton": { "branch": "main", "commit": "83c695e55754a747d0c2d3a5fe431e661bd7d307" },
   "skkeleton_pointer.nvim": { "branch": "main", "commit": "8b8040b1b4cb6d57284ccfab172414a0abcecc36" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "a7ab9a957b17199183388c6f357d614fcaa508e5" },
   "telescope-frecency.nvim": { "branch": "master", "commit": "78570e237c8b2494dd74ffe196fbd01d0c9e5460" },
