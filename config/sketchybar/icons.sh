@@ -24,7 +24,7 @@ export ICON_WORD=
 export ICON_POWERPOINT=
 export ICON_ONEDRIVE=
 export ICON_CHROME=
-export ICON_YAZI=
+export ICON_YAZI=󰇥
 
 export ICON_WEATHER=󰖕       # weather
 export ICON_MAIL=󰇮          # mail, outlook
