@@ -63,6 +63,10 @@ use = ["{{ name }}.zsh"]
 local = "~/.config/zsh"
 use = ["env.zsh"]
 
+[plugins.dotfiles-function]
+local = "~/.config/zsh"
+use = ["function.zsh"]
+
 [plugins.dotfiles-alias]
 local = "~/.config/zsh"
 use = ["alias.zsh"]
@@ -74,5 +78,3 @@ use = ["highlighting.zsh"]
 [plugins.dotfiles-tools]
 local = "~/.config/zsh"
 use = ["tools.zsh"]
-
-
