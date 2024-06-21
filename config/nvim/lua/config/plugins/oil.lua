@@ -4,7 +4,6 @@ local M = {
     default_file_explorer = true,
     use_default_keymap = false,
     columns = {
-      "permissions",
       "icon",
     },
     keymaps = {
@@ -17,6 +16,17 @@ local M = {
       ["H"] = "actions.toggle_hidden",
       ["gs"] = "actions.change_sort",
       ["-"] = "actions.open_cwd",
+      ["gd"] = {
+        desc = "Toggle file detail view",
+        callback = function()
+          detail = not detail
+          if detail then
+            require("oil").set_columns({ "icon", "permissions", "size", "mtime" })
+          else
+            require("oil").set_columns({ "icon" })
+          end
+        end,
+      },
     },
   },
   -- Optional dependencies
