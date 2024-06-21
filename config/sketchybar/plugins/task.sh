@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export TASKRC=~/.config/task/.taskrc
+export TASKDATA=~/.local/share/task
 
 PENDING_TASK=$(task +PENDING count)
 OVERDUE_TASK=$(task +OVERDUE count)
