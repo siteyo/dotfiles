@@ -45,7 +45,7 @@ export ICON_PREVIEW=󰋲       # screenshot, preview
 export ICON_REMOTEDESKTOP=󰢹 # vmware, utm
 
 export ICON_CLOCK=    # clock, timewarrior, tty-clock
-export ICON_CALENDAR=󰃭 # calendar
+export ICON_CALENDAR= # calendar
 
 export ICON_WIFI=󰖩
 export ICON_WIFI_OFF=󰖪
