@@ -17,8 +17,10 @@ if [[ $STATUS_LABEL =~ \"label\"=\"([^\"]*)\" ]]; then
   else
     exit 0
   fi
+  sketchybar --set "${NAME}" icon="${ICON_SLACK}" label="${LABEL}" icon.color="${ICON_COLOR}" drawing=on
 else
+  sketchybar --set "${NAME}" drawing=off
   exit 0
 fi
 
-sketchybar --set "${NAME}" icon="${ICON_SLACK}" label="${LABEL}" icon.color="${ICON_COLOR}"
+# sketchybar --set "${NAME}" icon="${ICON_SLACK}" label="${LABEL}" icon.color="${ICON_COLOR}"

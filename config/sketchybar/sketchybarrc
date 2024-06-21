@@ -36,7 +36,7 @@ default=(
 
   icon.font="0xProto Nerd Font:Regular:14.0"
   icon.align=center
-  icon.color=$COLOR_BLUE
+  icon.color=$COLOR_CYAN
   icon.padding_left=6
   icon.padding_right=2
 
@@ -61,7 +61,7 @@ for i in "${!ICONS_SPACE[@]}"; do
         icon.y_offset=5
         icon.padding_left=7
         icon.padding_right=7
-        background.color=$COLOR_BLUE
+        background.color=$COLOR_CYAN
         background.corner_radius=5
         background.height=3
         background.y_offset=-12
@@ -76,8 +76,9 @@ done
 # We add some regular items to the left side of the bar, where
 # only the properties deviating from the current defaults need to be set
 
-sketchybar --add item front_app center \
-           --set front_app icon.drawing=off \
+sketchybar --add item front_app left \
+           --set front_app icon=󰍹 \
+                           padding_left=30 \
                            label.padding_left=12 \
                            label.padding_right=12 \
                            script="$PLUGIN_DIR/front_app.sh" \
@@ -94,19 +95,33 @@ sketchybar --add item front_app center \
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
 
-sketchybar --add item clock right \
-           --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh" \
-           --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
-           --subscribe volume volume_change \
-           --add item battery right \
+sketchybar --add item clock right                                        \
+           --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh"      \
+                                                                         \
+           --add item timewarrior right                                  \
+           --set      timewarrior script="$PLUGIN_DIR/timew.sh"     \
+                                  update_freq=120                        \
+                                  icon=$ICON_CLOCK                       \
+                                                                         \
+           --add item taskwarrior right                                  \
+           --set      taskwarrior script="$PLUGIN_DIR/task.sh"           \
+                                  update_freq=120                        \
+                                  icon=$ICON_LIST                        \
+                                                                         \
+           --add item volume right                                       \
+           --set volume script="$PLUGIN_DIR/volume.sh"                   \
+           --subscribe volume volume_change                              \
+                                                                         \
+           --add item battery right                                      \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change \
-           --add item slack right \
-           --set slack update_freq=180 script="$PLUGIN_DIR/slack.sh" \
-           --subscribe slack system_woke \
-           --add item brew right \
-           --set brew update_freq=43200 script="$PLUGIN_DIR/brew.sh" \
+           --subscribe battery system_woke power_source_change           \
+                                                                         \
+           --add item slack right                                        \
+           --set slack update_freq=180 script="$PLUGIN_DIR/slack.sh"     \
+           --subscribe slack system_woke                                 \
+                                                                         \
+           --add item brew right                                         \
+           --set brew update_freq=43200 script="$PLUGIN_DIR/brew.sh"     \
            --subscribe brew system_woke
 
 ##### Force all scripts to run the first time (never do this in a script) #####
