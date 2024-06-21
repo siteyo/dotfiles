@@ -18,4 +18,5 @@ return {
     })
   end,
   event = "BufReadPre",
+  cmd = "ProjectRoot",
 }
