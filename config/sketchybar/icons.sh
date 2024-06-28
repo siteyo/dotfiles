@@ -13,7 +13,7 @@ export ICON_PACKAGE= # brew
 export ICON_DEV=     # xcode, vscode
 export ICON_FILE=    # ranger, finder
 export ICON_GIT=󰊢     # lazygit
-export ICON_LIST=󱃔    # taskwarrior, taskwarrior-tui, reminders, onenote
+# export ICON_LIST=󱃔    # taskwarrior, taskwarrior-tui, reminders, onenote
 
 export ICON_FINDER=
 export ICON_NEOVIM=

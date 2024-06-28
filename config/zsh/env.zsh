@@ -41,6 +41,6 @@ export FZF_ALT_C_OPTS="
 
 export FZF_DEFAULT_COMMAND='fd --type f'
 
-## Taskwarrior
-export TASKRC=~/.config/task/.taskrc
-export TASKDATA=~/.local/share/task
+# ## Taskwarrior
+# export TASKRC=~/.config/task/.taskrc
+# export TASKDATA=~/.local/share/task
