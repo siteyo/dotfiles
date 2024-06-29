@@ -42,6 +42,7 @@ github = "zsh-users/zsh-completions"
 
 [plugins.zsh-nvim-appname]
 github = "mehalter/zsh-nvim-appname"
+apply = ["source", "fpath"]
 
 [plugins.fzf-zsh-completions]
 github = "chitoku-k/fzf-zsh-completions"
