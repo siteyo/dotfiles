@@ -98,16 +98,6 @@ sketchybar --add item front_app left \
 sketchybar --add item clock right                                        \
            --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh"      \
                                                                          \
-           --add item timewarrior right                                  \
-           --set      timewarrior script="$PLUGIN_DIR/timew.sh"     \
-                                  update_freq=120                        \
-                                  icon=$ICON_CLOCK                       \
-                                                                         \
-           --add item taskwarrior right                                  \
-           --set      taskwarrior script="$PLUGIN_DIR/task.sh"           \
-                                  update_freq=120                        \
-                                  icon=$ICON_LIST                        \
-                                                                         \
            --add item volume right                                       \
            --set volume script="$PLUGIN_DIR/volume.sh"                   \
            --subscribe volume volume_change                              \

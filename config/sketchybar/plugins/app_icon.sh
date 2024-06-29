@@ -16,9 +16,9 @@ case "$1" in
   if grep -q "lazygit" <<<"$2"; then
     RESULT=$ICON_GIT
   fi
-  if grep -q "taskwarrior-tui" <<<"$2"; then
-    RESULT=$ICON_LIST
-  fi
+  # if grep -q "taskwarrior-tui" <<<"$2"; then
+  #   RESULT=$ICON_LIST
+  # fi
   if grep -q "bat" <<<"$2"; then
     RESULT=$ICON_NOTE
   fi
