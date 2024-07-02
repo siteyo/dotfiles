@@ -17,6 +17,18 @@ M.appearance = function()
   end
 end
 
+-- Determine if the directory exists
+--- @param name string
+M.exists = function(name)
+  local f = io.open(name, "r")
+  if f ~= nil then
+    io.close(f)
+    return true
+  else
+    return false
+  end
+end
+
 -- Set submode mapping
 ---@param mode string | string[]
 ---@param lhs string
