@@ -11,43 +11,6 @@ template.plan = [[
   %U
 ]]
 
--- template.journal = [[
--- * %<%Y-%m-%d> %<%a>
---   %U
-
--- ** Daily reviews [/]
---    - [ ] Check mail.
---    - [ ] Check schedule.
---    - [ ] Check Slack.
---    - [ ] Add tasks to agenda.
--- ]]
-
--- template.document = [[
--- * %?
---   %U
---
--- ** Cue
---
--- ** Note
---
--- ** Summary
--- ]]
-
--- template.index = [[
--- * %?
---   %U
--- ]]
-
--- template.memo = [[
--- * %?      :Memo:
---   %U
--- ]]
-
--- template.note = [[
--- * %?
---   %U
--- ]]
---
 ---@param name "journal" | "todo" | "plan" | "document" | "index" | "memo" | "note"
 ---@return string
 template.get = function(name)
@@ -109,31 +72,6 @@ return {
           headline = "Plan",
           target = "~/notes/org/agenda/inbox.org",
         },
-        -- j = {
-        --   description = "Journal",
-        --   template = template.get("journal"),
-        --   target = "~/notes/org/journal.org",
-        --   datetree = { tree_type = "month" },
-        -- },
-        -- d = {
-        --   description = "Document",
-        --   template = template.get("document"),
-        --   target = "~/notes/org/documents/inbox.org",
-        -- },
-        -- i = {
-        --   description = "Index",
-        --   template = template.get("index"),
-        --   target = "~/notes/org/index/inbox.org",
-        -- },
-        -- m = {
-        --   description = "Memo",
-        --   template = template.get("memo"),
-        -- },
-        -- n = {
-        --   description = "Note",
-        --   template = template.get("note"),
-        --   target = "~/notes/org/notes/inbox.org",
-        -- },
       },
       org_startup_folded = "content",
       org_tags_column = 90,
