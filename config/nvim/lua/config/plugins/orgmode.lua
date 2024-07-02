@@ -11,43 +11,6 @@ template.plan = [[
   %U
 ]]
 
--- template.journal = [[
--- * %<%Y-%m-%d> %<%a>
---   %U
-
--- ** Daily reviews [/]
---    - [ ] Check mail.
---    - [ ] Check schedule.
---    - [ ] Check Slack.
---    - [ ] Add tasks to agenda.
--- ]]
-
--- template.document = [[
--- * %?
---   %U
---
--- ** Cue
---
--- ** Note
---
--- ** Summary
--- ]]
-
--- template.index = [[
--- * %?
---   %U
--- ]]
-
--- template.memo = [[
--- * %?      :Memo:
---   %U
--- ]]
-
--- template.note = [[
--- * %?
---   %U
--- ]]
---
 ---@param name "journal" | "todo" | "plan" | "document" | "index" | "memo" | "note"
 ---@return string
 template.get = function(name)
@@ -109,38 +72,84 @@ return {
           headline = "Plan",
           target = "~/notes/org/agenda/inbox.org",
         },
-        -- j = {
-        --   description = "Journal",
-        --   template = template.get("journal"),
-        --   target = "~/notes/org/journal.org",
-        --   datetree = { tree_type = "month" },
-        -- },
-        -- d = {
-        --   description = "Document",
-        --   template = template.get("document"),
-        --   target = "~/notes/org/documents/inbox.org",
-        -- },
-        -- i = {
-        --   description = "Index",
-        --   template = template.get("index"),
-        --   target = "~/notes/org/index/inbox.org",
-        -- },
-        -- m = {
-        --   description = "Memo",
-        --   template = template.get("memo"),
-        -- },
-        -- n = {
-        --   description = "Note",
-        --   template = template.get("note"),
-        --   target = "~/notes/org/notes/inbox.org",
-        -- },
       },
       org_startup_folded = "content",
       org_tags_column = 90,
       -- win_split_mode = { "float", 0.8 },
     },
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function(_, opts)
       require("orgmode").setup(opts)
+
+      local dir = vim.fn.stdpath("data") .. "/orgmode/"
+      -- Create dest dir
+      if not require("config.util").exists(dir) then
+        vim.fn.jobstart({ "mkdir", "-p", dir }, {
+          on_exit = function()
+            vim.notify("Create directory: ", dir)
+          end,
+        })
+      end
+
+      ---@param org_file OrgApiFile
+      local org_to_json = function(org_file)
+        local org_data = { todo = {}, plan = {} }
+        for _, headline in ipairs(org_file.headlines) do
+          if headline.level == 2 then
+            local item = {
+              title = headline.title,
+              todo_value = headline.todo_value,
+              todo_type = headline.todo_type,
+              scheduled_today = headline.scheduled and headline.scheduled:is_today(),
+              scheduled_overdue = headline.scheduled and headline.scheduled:is_past("day"),
+              deadline_today = headline.deadline and headline.deadline:is_today(),
+              deadline_overdue = headline.deadline and headline.deadline:is_past("day"),
+              clocked_in = headline._section:is_clocked_in(),
+              is_archived = headline.is_archived,
+            }
+            if item.todo_value == "PLAN" then
+              table.insert(org_data.plan, item)
+            else
+              table.insert(org_data.todo, item)
+            end
+          end
+        end
+
+        local filename = string.match(org_file.filename, "^.*/(.*).org$") .. ".json"
+        vim.fn.writefile({ vim.json.encode(org_data) }, dir .. filename)
+      end
+
+      ---@param filename string
+      local load_org = function(filename)
+        local org_file = require("orgmode.api").load(filename)
+        org_to_json(org_file)
+      end
+
+      local load_all_org = function()
+        local org_files = require("orgmode.api").load()
+        for _, org_file in ipairs(org_files) do
+          org_to_json(org_file)
+        end
+      end
+
+      local async = require("plenary.async")
+      local async_load_org = async.wrap(load_org, 1)
+      local async_load_all_org = async.wrap(load_all_org, 0)
+
+      async.void(function()
+        async_load_all_org()
+      end)()
+
+      local org_json = vim.api.nvim_create_augroup("org_json", { clear = true })
+      vim.api.nvim_create_autocmd("BufWritePost", {
+        pattern = { "*.org" },
+        group = org_json,
+        callback = function(event)
+          async.void(function()
+            async_load_org(vim.fn.fnamemodify(event.file, ":p"))
+          end)()
+        end,
+      })
     end,
     enabled = true,
   },

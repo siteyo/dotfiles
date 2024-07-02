@@ -1,15 +1,6 @@
+local exists = require("config.util").exists
 local setup = function()
   local home = vim.fn.expand("$HOME")
-  local exists = function(name)
-    local f = io.open(name, "r")
-    if f ~= nil then
-      io.close(f)
-      return true
-    else
-      return false
-    end
-  end
-
   local setup_directory = function()
     local dir_list = {
       documents = home .. "/notes/neorg/documents",
