@@ -8,4 +8,4 @@ dependencies = [
     "yamllint>=1.35.1",
     "sqlfluff>=3.0.7",
 ]
-requires-python = ">= 3.8"
+requires-python = ">= 3.12"

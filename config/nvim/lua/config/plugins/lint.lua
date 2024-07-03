@@ -7,7 +7,7 @@ local M = {
       typescriptreact = { "eslint" },
       javascript = { "eslint" },
       javascriptreact = { "eslint" },
-      python = { "flake8", "mypy" },
+      python = { "mypy" },
       sql = { "sqlfluff" },
       -- yaml = { "actionlint", "yamllint" },
     }
