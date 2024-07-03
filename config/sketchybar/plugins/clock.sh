@@ -8,4 +8,4 @@
 
 source "${CONFIG_DIR}/icons.sh"
 
-sketchybar --set "$NAME" icon="${ICON_CALENDAR}" label="$(date '+%Y/%m/%d(%a) %H:%M')"
+sketchybar --set "$NAME" icon="$ICON_CLOCK" label="$(date '+%Y/%m/%d(%a) %H:%M')"
