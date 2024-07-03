@@ -16,6 +16,7 @@ export ICON_GIT=󰊢      # lazygit
 export ICON_LIST=     # orgmode
 export ICON_TASK=     # ormode
 export ICON_DEADLINE= # orgmode
+export ICON_PEN=      # orgmode
 
 export ICON_FINDER=
 export ICON_NEOVIM=
