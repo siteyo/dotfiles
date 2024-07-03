@@ -10,11 +10,7 @@ DEADLINE_OVERDUE=$(jq '[.todo[] | select(.deadline_overdue and .todo_type == "TO
 PENDING=$((DEADLINE_TODAY + DEADLINE_OVERDUE))
 
 if [[ $PENDING == 0 ]]; then
-  sketchybar --set "$NAME" \
-    label.drawing=off \
-    icon.drawing=off \
-    icon.padding_left=4 \
-    icon.padding_right=4
+  sketchybar --set "$NAME" drawing=off
 else
   if [[ $DEADLINE_OVERDUE == 0 ]]; then
     LABEL=$PENDING

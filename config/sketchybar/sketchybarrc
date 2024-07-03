@@ -106,21 +106,25 @@ sketchybar --add item clock right                                        \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change           \
                                                                          \
-           --add item org_deadline right                                \
+           --add item org_clock right                                    \
+           --set org_clock update_freq=600 script="$PLUGIN_DIR/org_clock.sh" \
+           --subscribe org_clock system_woke                             \
+                                                                         \
+           --add item org_deadline right                                 \
            --set org_deadline update_freq=600 script="$PLUGIN_DIR/org_deadline.sh" \
-           --subscribe org_deadline system_woke                         \
+           --subscribe org_deadline system_woke                          \
                                                                          \
            --add item org_scheduled right                                \
            --set org_scheduled update_freq=600 script="$PLUGIN_DIR/org_scheduled.sh" \
            --subscribe org_scheduled system_woke                         \
                                                                          \
-           --add item org_plan right                                \
-           --set org_plan update_freq=600 script="$PLUGIN_DIR/org_plan.sh" \
-           --subscribe org_plan system_woke                         \
-                                                                         \
            --add item org_total right                                    \
            --set org_total update_freq=600 script="$PLUGIN_DIR/org_total.sh" \
            --subscribe org_total system_woke                             \
+                                                                         \
+           --add item org_plan right                                     \
+           --set org_plan update_freq=600 script="$PLUGIN_DIR/org_plan.sh" \
+           --subscribe org_plan system_woke                              \
                                                                          \
            --add item slack right                                        \
            --set slack update_freq=180 script="$PLUGIN_DIR/slack.sh"     \
