@@ -5,8 +5,8 @@
 source "${CONFIG_DIR}/icons.sh"
 
 ORG_JSON_DIR="$HOME/.local/share/nvim/orgmode"
-PLAN_TODAY=$(jq '[.plan[] | select(.scheduled_today and .todo_type == "TODO" and .is_archived == false)]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
-PLAN_OVERDUE=$(jq '[.plan[] | select(.scheduled_overdue and .todo_type == "TODO" and .is_archived == false)]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
+PLAN_TODAY=$(jq '[.plan[] | select(.scheduled_today and .todo_type == "TODO" and .todo_value != "LOG" and .is_archived == false)]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
+PLAN_OVERDUE=$(jq '[.plan[] | select(.scheduled_overdue and .todo_type == "TODO" and .todo_value != "LOG" and .is_archived == false)]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
 
 PENDING=$((PLAN_TODAY + PLAN_OVERDUE))
 
