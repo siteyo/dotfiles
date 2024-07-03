@@ -5,8 +5,8 @@
 source "${CONFIG_DIR}/icons.sh"
 
 ORG_JSON_DIR="$HOME/.local/share/nvim/orgmode"
-DEADLINE_TODAY=$(jq '[.todo[] | select(.deadline_today and .todo_type == "TODO" and .is_archived == false)]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
-DEADLINE_OVERDUE=$(jq '[.todo[] | select(.deadline_overdue and .todo_type == "TODO" and .is_archived == false)]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
+DEADLINE_TODAY=$(jq '[.todo[] | select(.deadline_today and .todo_type == "TODO and .todo_value != "LOG"" and .is_archived == false)]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
+DEADLINE_OVERDUE=$(jq '[.todo[] | select(.deadline_overdue and .todo_type == "TODO" and .todo_value != "LOG" and .is_archived == false)]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
 PENDING=$((DEADLINE_TODAY + DEADLINE_OVERDUE))
 
 if [[ $PENDING == 0 ]]; then
