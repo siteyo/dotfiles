@@ -34,6 +34,7 @@ return {
       org_agenda_files = { "~/notes/org/agenda/**" },
       org_default_notes_file = "~/notes/org/inbox.org",
       org_archive_location = "~/notes/org/archive/%s_archive::",
+      org_deadline_warning_days = 14,
       org_todo_keywords = {
         "TODO(t)",
         "NEXT(n)",
@@ -93,6 +94,9 @@ return {
 
       ---@param org_file OrgApiFile
       local org_to_json = function(org_file)
+        local datetime = os.time() + (opts.org_deadline_warning_days * 86400) -- 3600sec/hour * 24h = 86400sec
+        local timestamp = os.date(datetime)
+
         local org_data = { todo = {}, plan = {} }
         for _, headline in ipairs(org_file.headlines) do
           if headline.level == 2 then
@@ -102,7 +106,7 @@ return {
               todo_type = headline.todo_type,
               scheduled_today = headline.scheduled and headline.scheduled:is_today(),
               scheduled_overdue = headline.scheduled and headline.scheduled:is_past("day"),
-              deadline_today = headline.deadline and headline.deadline:is_today(),
+              deadline_warning = headline.deadline and (headline.deadline.timestamp - timestamp) < 0,
               deadline_overdue = headline.deadline and headline.deadline:is_past("day"),
               clocked_in = headline._section:is_clocked_in(),
               is_archived = headline.is_archived,
