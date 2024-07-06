@@ -27,6 +27,7 @@ function M.config()
     end,
   })
   tokyonight.load()
+  vim.o.background = require("config.util").appearance()
 end
 
 return M

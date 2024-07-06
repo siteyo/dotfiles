@@ -43,7 +43,6 @@ vim.o.updatetime = 300
 vim.o.cmdheight = 2
 -- vim.o.shortmess+=c
 vim.o.showtabline = 2
-vim.o.background = "dark"
 vim.o.scrolloff = 4
 vim.o.signcolumn = "yes"
 vim.o.mouse = "a"
