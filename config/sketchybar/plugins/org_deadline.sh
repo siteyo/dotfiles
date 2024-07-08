@@ -19,8 +19,7 @@ else
   sketchybar --set "$NAME" \
     icon="$ICON_DEADLINE" \
     label="$LABEL" \
-    icon.drawing=on \
-    label.drawing=on \
+    drawing=on \
     icon.padding_left=6 \
     icon.padding_right=2
 fi

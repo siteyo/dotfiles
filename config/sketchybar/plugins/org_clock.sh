@@ -19,8 +19,7 @@ else
   sketchybar --set "$NAME" \
     icon="$ICON_PEN" \
     label="$CLOCKIN_TITLE" \
-    icon.drawing=on \
-    label.drawing=on \
+    drawing=on \
     icon.padding_left=6 \
     icon.padding_right=2
 fi
