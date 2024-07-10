@@ -48,6 +48,13 @@ local setup = function()
   end, {})
 end
 
+local neorg = vim.api.nvim_create_augroup("neorg", { clear = true })
+vim.api.nvim_create_autocmd({ "BufReadPre" }, {
+  pattern = "*.norg",
+  group = neorg,
+  command = "setlocal conceallevel=2",
+})
+
 local create_file = function(workspace, directory, opts)
   local prompt = "[" .. workspace .. ":" .. directory .. "] File name"
   vim.ui.input({ prompt = prompt }, function(input)
