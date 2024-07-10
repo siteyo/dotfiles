@@ -11,7 +11,7 @@ template.plan = [[
   %U
 ]]
 
----@param name "journal" | "todo" | "plan" | "document" | "index" | "memo" | "note"
+---@param name "todo" | "plan"
 ---@return string
 template.get = function(name)
   return template[name]
@@ -99,7 +99,7 @@ return {
 
         local org_data = { todo = {}, plan = {} }
         for _, headline in ipairs(org_file.headlines) do
-          if headline.level == 2 then
+          if headline.todo_value then
             local item = {
               title = headline.title,
               todo_value = headline.todo_value,
@@ -146,7 +146,7 @@ return {
 
       local org_json = vim.api.nvim_create_augroup("org_json", { clear = true })
       vim.api.nvim_create_autocmd("BufWritePost", {
-        pattern = { "*.org" },
+        pattern = { "[^0-9]*.org" },
         group = org_json,
         callback = function(event)
           async.void(function()
