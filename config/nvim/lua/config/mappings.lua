@@ -84,6 +84,12 @@ map("i", "j<Space>", "j")
 map("n", "<Leader>ur", "<Cmd>noh<CR><C-l>", { desc = "Redraw / Clear hlsearch" })
 map("n", "<C-l>", "<Cmd>noh<CR><C-l>", { desc = "Redraw / Clear hlsearch" })
 
+-- Yank the full path of the current file [<Leader>u]
+map("n", "<Leader>up", function()
+  vim.cmd("let @* = expand('%:p')")
+  vim.notify("Yanked file path.")
+end, { desc = "Yank file path" })
+
 -- stylua: ignore start
 
 -- toggle [<Leader>u]
