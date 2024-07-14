@@ -29,6 +29,8 @@ return {
         end,
         mode = { "n" },
       },
+      { "<Leader>oc", mode = "n" },
+      { "<Leader>oa", mode = "n" },
     },
     opts = {
       org_agenda_files = { "~/notes/org/agenda/**" },
