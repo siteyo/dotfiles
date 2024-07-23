@@ -14,8 +14,8 @@ map({ "n", "i", "v", "x", "o", "c" }, ";", ":")
 map({ "n", "i", "v", "x", "o", "c" }, ":", ";")
 
 -- visually up/down
-map_s({ "n", "x" }, "gj", "gj", "j", { desc = "Visually Down", silent = true })
-map_s({ "n", "x" }, "gk", "gk", "k", { desc = "Visually Up", silent = true })
+map_s({ "n", "x" }, "gj", "j", "gj", { desc = "Visually Down", silent = true })
+map_s({ "n", "x" }, "gk", "k", "gk", { desc = "Visually Up", silent = true })
 
 -- Move to window
 map("n", "sh", "<C-w>h", { desc = "Go to Left Window" })
