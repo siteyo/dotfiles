@@ -4,6 +4,7 @@
 local map = vim.keymap.set
 local map_s = require("config.util").map_submode
 local toggle = require("config.util").toggle
+local is_binary_file = require("config.util").is_binary_file
 
 -- for utility
 map("n", "s", "<Nop>")
@@ -99,6 +100,24 @@ map("n", "<Leader>ul", function() toggle("relativenumber") end, { desc = "Toggle
 map("n", "<Leader>ub", function() toggle("background", false, { "light", "dark" }) end, { desc = "Toggle Relative Line Numbers" })
 
 -- stylua: ignore end
+
+-- open a file in path
+map("n", "<CR>", function()
+  local line = vim.api.nvim_get_current_line()
+  local url_match = line:match("https?://[%w-_%.%?%.:/%+=&]+")
+  local file_path_match = line:match("%/?[^%s]+")
+  if url_match then
+    vim.ui.open(url_match)
+  elseif file_path_match then
+    if is_binary_file(file_path_match) then
+      vim.ui.open(file_path_match)
+    else
+      vim.cmd.edit(file_path_match)
+    end
+  else
+    vim.notify("There is no URL or file path on this line.")
+  end
+end, { desc = "Open a file in path" })
 
 -- Backslash
 map("c", "<C-k>", "\\")

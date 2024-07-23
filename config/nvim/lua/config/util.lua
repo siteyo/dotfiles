@@ -70,4 +70,17 @@ M.toggle = function(option, silent, values)
   end
 end
 
+-- Check file type
+---@param filepath string
+---@return boolean
+M.is_binary_file = function(filepath)
+  local handle = io.popen("file --mime " .. filepath)
+  if handle then
+    local result = handle:read("*a")
+    handle:close()
+    return string.match(result, "charset=binary") ~= nil
+  end
+  return false
+end
+
 return M
