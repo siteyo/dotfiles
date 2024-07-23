@@ -44,7 +44,6 @@ M.map_submode = function(mode, lhs, repeat_key, rhs, opts)
   end
   vim.keymap.set(mode, lhs, rhs .. plug_name, opts)
   vim.keymap.set(mode, plug_name .. repeat_key, rhs .. plug_name)
-  -- code
 end
 
 -- Toggle option
