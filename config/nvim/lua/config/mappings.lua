@@ -4,7 +4,7 @@
 local map = vim.keymap.set
 local map_s = require("config.util").map_submode
 local toggle = require("config.util").toggle
-local is_binary_file = require("config.util").is_binary_file
+local util = require("config.util")
 
 -- for utility
 map("n", "s", "<Nop>")
@@ -104,20 +104,27 @@ map("n", "<Leader>ub", function() toggle("background", false, { "light", "dark" 
 -- open a file in path
 map("n", "<CR>", function()
   local line = vim.api.nvim_get_current_line()
+
   local url_match = line:match("https?://[%w-_%.%?%.:/%+=&]+")
-  local file_path_match = line:match("%/?[^%s]+")
   if url_match then
     vim.ui.open(url_match)
-  elseif file_path_match then
-    if is_binary_file(file_path_match) then
-      vim.ui.open(file_path_match)
-    else
-      vim.cmd.edit(file_path_match)
-    end
-  else
-    vim.notify("There is no URL or file path on this line.")
+    return
   end
-end, { desc = "Open a file in path" })
+
+  for file_path in line:gmatch("[/.]?[^%s]+") do
+    if util.exists(file_path) then
+      if util.is_binary_file(file_path) then
+        vim.ui.open(file_path)
+      else
+        vim.cmd.edit(file_path)
+      end
+      return
+    end
+  end
+
+  local key_cr = vim.api.nvim_replace_termcodes("<CR>", true, false, true)
+  vim.api.nvim_feedkeys(key_cr, "n", false)
+end, { desc = "Open a file in line" })
 
 -- Backslash
 map("c", "<C-k>", "\\")
