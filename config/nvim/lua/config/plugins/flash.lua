@@ -60,7 +60,7 @@ local M = {
         },
       },
       search = {
-        enabled = true,
+        enabled = false,
       },
     },
     labels = "asdfghjklwertyuiopzxcvbnm",
@@ -88,8 +88,15 @@ local M = {
       end,
     },
     {
-      "S",
-      mode = { "n", "x", "o" },
+      "fe",
+      mode = { "n", "o" },
+      function()
+        require("flash").treesitter()
+      end,
+    },
+    {
+      "s",
+      mode = { "x" },
       function()
         require("flash").treesitter()
       end,
