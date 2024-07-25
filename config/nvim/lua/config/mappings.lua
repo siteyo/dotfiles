@@ -101,6 +101,9 @@ map("n", "<Leader>ub", function() toggle("background", false, { "light", "dark" 
 
 -- stylua: ignore end
 
+-- open terminal
+map("n", "<Leader>ut", "<Cmd>vsplit<CR><C-w>w<Cmd>terminal<CR>", { desc = "Open Terminal" })
+
 -- open a file in path
 map("n", "<CR>", function()
   local line = vim.api.nvim_get_current_line()
