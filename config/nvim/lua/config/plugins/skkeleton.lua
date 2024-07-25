@@ -18,7 +18,7 @@ return {
       "vim-denops/denops.vim",
     },
     keys = {
-      { "<C-j>", "<Plug>(skkeleton-enable)", mode = { "i", "c" } },
+      { "<C-j>", "<Plug>(skkeleton-enable)", mode = { "i", "c", "t" } },
       { "<C-j>", "a<Plug>(skkeleton-enable)", mode = { "n" } },
     },
     config = function()
@@ -78,17 +78,11 @@ return {
       "vim-skk/skkeleton",
     },
     opts = {
-      mode = {
-        latin = "",
-      },
-      mode_win_opts = {
-        zindex = 1050,
-      },
-      state_win_opts = {
-        zindex = 1050,
-      },
+      mode = { latin = "" },
+      mode_win_opts = { zindex = 1050 },
+      state_win_opts = { zindex = 1050 },
     },
-    event = { "InsertEnter", "CmdlineEnter" },
+    event = { "InsertEnter", "CmdlineEnter", "TermOpen" },
     enabled = true,
   },
 }
