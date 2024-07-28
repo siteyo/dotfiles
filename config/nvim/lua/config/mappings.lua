@@ -105,7 +105,7 @@ map("n", "<Leader>ub", function() toggle("background", false, { "light", "dark" 
 map("n", "<Leader>ut", "<Cmd>vsplit<CR><C-w>w<Cmd>terminal<CR>", { desc = "Open Terminal" })
 
 -- open a file in path
-map("n", "<CR>", function()
+map("n", "<C-k>", function()
   local line = vim.api.nvim_get_current_line()
 
   local url_match = line:match("https?://[%w-_%.%?%.:/%+=&]+")
@@ -125,7 +125,7 @@ map("n", "<CR>", function()
     end
   end
 
-  local key_cr = vim.api.nvim_replace_termcodes("<CR>", true, false, true)
+  local key_cr = vim.api.nvim_replace_termcodes("<C-k>", true, false, true)
   vim.api.nvim_feedkeys(key_cr, "n", false)
 end, { desc = "Open a file in line" })
 
