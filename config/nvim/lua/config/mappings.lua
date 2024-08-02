@@ -149,6 +149,10 @@ map("n", "]q", "<Cmd>cnext<CR>", { desc = "Next Quickfix" })
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+-- better scroll
+map({ "n", "v" }, "<C-y>", "5<C-y>")
+map({ "n", "v" }, "<C-e>", "5<C-e>")
+
 -- Jump cursor position
 map("i", "<C-f>", "<Right>")
 map("i", "<C-b>", "<Left>")
