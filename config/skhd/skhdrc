@@ -21,6 +21,10 @@ cmd + alt - h : yabai -m window --warp west || yabai -m window --display west
 cmd + alt - j : yabai -m window --warp south || yabai -m window --display south
 cmd + alt - k : yabai -m window --warp north || yabai -m window --display north
 cmd + alt - l : yabai -m window --warp east || yabai -m window --display east
+alt - left :  yabai -m window --warp west || yabai -m window --display west
+alt - down : yabai -m window --warp south || yabai -m window --display south
+alt - up : yabai -m window --warp north || yabai -m window --display north
+alt - right : yabai -m window --warp east || yabai -m window --display east
 
 ## Swap windows
 alt - v : yabai -m window --swap recent
