@@ -1,7 +1,7 @@
 # HHKB Studio Setting
 
 ## Standard Mappings
-![HHKB Studio Standard](./HHKB_Studio_Setting-Fn3.png)
+![HHKB Studio Standard](./HHKB_Studio_Setting-Standard.png)
 
 ## Fn1 mappings
 ![HHKB Studio Fn1](./HHKB_Studio_Setting-Fn1.png)
