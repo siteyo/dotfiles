@@ -1,6 +1,7 @@
 # siteyo's dotfiles
 
-[![Install Test](https://github.com/siteyo/dotfiles/actions/workflows/install-test.yml/badge.svg?branch=main)](https://github.com/siteyo/dotfiles/actions/workflows/install-test.yml)
+[![Install Test (Ubuntu)](https://github.com/siteyo/dotfiles/actions/workflows/install-test-ubuntu.yml/badge.svg)](https://github.com/siteyo/dotfiles/actions/workflows/install-test-ubuntu.yml)
+[![Install Test (Darwin)](https://github.com/siteyo/dotfiles/actions/workflows/install-test-darwin.yml/badge.svg)](https://github.com/siteyo/dotfiles/actions/workflows/install-test-darwin.yml)
 [![Audit Dependency](https://github.com/siteyo/dotfiles/actions/workflows/audit-dependency.yml/badge.svg?branch=main)](https://github.com/siteyo/dotfiles/actions/workflows/audit-dependency.yml)
 [![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fsiteyo%2F093763e63c107ab23ebef0133c42e039%2Fraw%2Fvim-startuptime.json&style=flat)](https://github.com/siteyo/dotfiles/actions/workflows/nvim-startuptime.yml?query=branch%3Amain)
 
