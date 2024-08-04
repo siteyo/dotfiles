@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - 'main'
+    paths:
+      - 'etc/Brewfile-Linux'
   pull_request:
     paths:
       - 'etc/Brewfile-Linux'

@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - 'main'
+    paths:
+      - 'etc/Brewfile-Darwin'
   pull_request:
     paths:
       - 'etc/Brewfile-Darwin'
