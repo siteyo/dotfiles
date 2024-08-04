@@ -41,6 +41,7 @@ set showtabline=2
 set background=dark
 set scrolloff=4
 set signcolumn=yes
+set nowrap
 
 if has('nvim')
   set winblend=15

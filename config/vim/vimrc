@@ -19,38 +19,38 @@ endif
 " Provider configuration
 " ------------------------------------------------------------------------
 if has('nvim')
-  source ~/dotfiles/vim/provider.rc.vim
+  source ~/.config/vim/provider.rc.vim
 endif
 
 " ------------------------------------------------------------------------
 " Basic settings
 " ------------------------------------------------------------------------
-source ~/dotfiles/vim/basic.rc.vim
+source ~/.config/vim/basic.rc.vim
 
 " ------------------------------------------------------------------------
 " Plugin manager
 " ------------------------------------------------------------------------
-source ~/dotfiles/vim/vim-plug.rc.vim
+source ~/.config/vim/vim-plug.rc.vim
 
 " ------------------------------------------------------------------------
 " Key mappings
 " ------------------------------------------------------------------------
-source ~/dotfiles/vim/mappings.rc.vim
+source ~/.config/vim/mappings.rc.vim
 
 " ------------------------------------------------------------------------
 " Color settings
 " ------------------------------------------------------------------------
-source ~/dotfiles/vim/color.rc.vim
+source ~/.config/vim/color.rc.vim
 
 " ------------------------------------------------------------------------
 " Commands
 " ------------------------------------------------------------------------
-source ~/dotfiles/vim/commands.rc.vim
+source ~/.config/vim/commands.rc.vim
 
 " ------------------------------------------------------------------------
 " Autocmd
 " ------------------------------------------------------------------------
-source ~/dotfiles/vim/autocmd.rc.vim
+source ~/.config/vim/autocmd.rc.vim
 
 " ------------------------------------------------------------------------
 " Load local settings
