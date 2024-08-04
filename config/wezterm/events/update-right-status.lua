@@ -35,12 +35,12 @@ local file_path_gen = function(pane)
 end
 
 -- date
----@return string
-local date_gen = function()
-  local icon = wez.nerdfonts.cod_calendar
-  local date = wez.strftime("%m/%d(%a) %H:%M:%S")
-  return util.cat_icon(icon, date)
-end
+-- ---@return string
+-- local date_gen = function()
+--   local icon = wez.nerdfonts.cod_calendar
+--   local date = wez.strftime("%m/%d(%a) %H:%M:%S")
+--   return util.cat_icon(icon, date)
+-- end
 
 -- -- battery
 -- ---@param state string
@@ -92,33 +92,33 @@ end
 wez.on("update-status", function(window)
   local pane = window:active_pane()
 
-  local fg = wez.color.parse(colors.scheme.ansi[1])
-  local bg = wez.color.parse(colors.scheme.ansi[5])
-  local bg_colors = { bg:lighten(0.25), bg:lighten(0.15), bg, bg:darken(0.15) }
-  local tab_bg = wez.color.parse(colors.scheme.background)
+  -- local fg = wez.color.parse(colors.scheme.ansi[1])
+  -- local bg = wez.color.parse(colors.scheme.ansi[5])
+  -- local bg_colors = { bg:lighten(0.25), bg:lighten(0.15), bg, bg:darken(0.15) }
+  -- local tab_bg = wez.color.parse(colors.scheme.background)
 
   local file_path = file_path_gen(pane)
-  local date = date_gen()
+  -- local date = date_gen()
   -- local bat = battery_gen()
 
   local div_icon = wez.nerdfonts.pl_right_hard_divider
 
   window:set_right_status(wez.format({
-    { Background = { Color = tab_bg } },
-    { Foreground = { Color = bg_colors[1] } },
+    { Background = { Color = colors.scheme.ansi[1] } },
+    { Foreground = { Color = colors.scheme.ansi[5] } },
     { Text = div_icon },
 
-    { Background = { Color = bg_colors[1] } },
-    { Foreground = { Color = fg } },
+    { Background = { Color = colors.scheme.ansi[5] } },
+    { Foreground = { Color = colors.scheme.ansi[1] } },
     { Text = file_path },
 
-    { Background = { Color = bg_colors[1] } },
-    { Foreground = { Color = bg_colors[2] } },
-    { Text = div_icon },
+    -- { Background = { Color = bg_colors[1] } },
+    -- { Foreground = { Color = bg_colors[2] } },
+    -- { Text = div_icon },
 
-    { Background = { Color = bg_colors[2] } },
-    { Foreground = { Color = fg } },
-    { Text = date },
+    -- { Background = { Color = bg_colors[2] } },
+    -- { Foreground = { Color = fg } },
+    -- { Text = date },
     --
     -- { Background = { Color = bg_colors[2] } },
     -- { Foreground = { Color = bg_colors[3] } },
