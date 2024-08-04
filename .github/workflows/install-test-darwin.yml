@@ -1,0 +1,24 @@
+name: Install Test (Darwin)
+
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    paths:
+      - 'etc/Brewfile-Darwin'
+
+jobs:
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dotfiles
+        run: make install
+        shell: zsh {0}
+      - name: Source zshenv
+        run: source ~/.zshenv
+        shell: zsh {0}
+      - name: Clean dotfiles
+        run: make clean
+        shell: zsh {0}
