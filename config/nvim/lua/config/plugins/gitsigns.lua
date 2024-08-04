@@ -3,8 +3,18 @@ local M = {
   event = "BufReadPre",
   enabled = true,
   keys = {
-    { "n", "<Leader>ur", "<Cmd>noh<CR><Cmd>Gitsigns refresh<CR><C-l>", { desc = "Redraw / Clear hlsearch" } },
-    { "n", "<C-l>", "<Cmd>noh<CR><Cmd>Gitsigns refresh<CR><C-l>", { desc = "Redraw / Clear hlsearch" } },
+    {
+      "<Leader>ur",
+      "<Cmd>noh<CR><Cmd>Gitsigns refresh<CR><C-l>",
+      mode = { "n" },
+      { desc = "Redraw / Refresh Gitsigns / Clear hlsearch" },
+    },
+    {
+      "<C-l>",
+      "<Cmd>noh<CR><Cmd>Gitsigns refresh<CR><C-l>",
+      mode = { "n" },
+      { desc = "Redraw / Refresh Gitsigns / Clear hlsearch" },
+    },
   },
 }
 
