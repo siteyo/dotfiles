@@ -69,3 +69,8 @@ Check out the following sites
 
 * [for macOS](https://docs.brew.sh/Installation#macos-requirements)
 * [for Linux](https://docs.brew.sh/Homebrew-on-Linux#requirements)
+
+## HHKB Settings
+
+See [here](./etc/hhkb/README.md) for HHKB mapping settings.
+
