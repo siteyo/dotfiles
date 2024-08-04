@@ -2,6 +2,10 @@ local M = {
   "lewis6991/gitsigns.nvim",
   event = "BufReadPre",
   enabled = true,
+  keys = {
+    { "n", "<Leader>ur", "<Cmd>noh<CR><Cmd>Gitsigns refresh<CR><C-l>", { desc = "Redraw / Clear hlsearch" } },
+    { "n", "<C-l>", "<Cmd>noh<CR><Cmd>Gitsigns refresh<CR><C-l>", { desc = "Redraw / Clear hlsearch" } },
+  },
 }
 
 function M.config()
