@@ -50,12 +50,12 @@ endif
 
 set tags=.tags;~
 
-let &backupdir = expand(g:vim_home . '/backup')
-let &directory = expand(g:vim_home . '/swap')
+let &backupdir = expand(g:vim_data . '/backup')
+let &directory = expand(g:vim_data . '/swap')
 
 set noundofile
 if has('persistent_undo')
-  let &undodir = expand(g:vim_home . '/undo')
+  let &undodir = expand(g:vim_data . '/undo')
   set undofile
 endif
 
