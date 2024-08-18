@@ -40,10 +40,6 @@ inline = '[ -f "${ZDOTDIR}/.p10k.zsh" ] && source "${ZDOTDIR}/.p10k.zsh"'
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 
-[plugins.zsh-nvim-appname]
-github = "mehalter/zsh-nvim-appname"
-apply = ["source", "fpath"]
-
 [plugins.fzf-zsh-completions]
 github = "chitoku-k/fzf-zsh-completions"
 use = ["{{ name }}.plugin.zsh"]
@@ -71,6 +67,10 @@ use = ["function.zsh"]
 [plugins.dotfiles-alias]
 local = "~/.config/zsh"
 use = ["alias.zsh"]
+
+[plugins.dotfiles-bindkey]
+local = "~/.config/zsh"
+use = ["bindkey.zsh"]
 
 [plugins.dotfiles-highlighting]
 local = "~/.config/zsh"
