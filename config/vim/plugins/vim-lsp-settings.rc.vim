@@ -1,4 +1,4 @@
-let g:lsp_settings_servers_dir = fnamemodify(g:vim_home . '/vim-lsp-settings/servers', ':p')
+let g:lsp_settings_servers_dir = fnamemodify(g:vim_data . '/vim-lsp-settings/servers', ':p')
 let g:lsp_settings_filetype_javascript = ['typescript-language-server', 'eslint-language-server']
 let g:lsp_settings_filetype_javascriptreact = ['typescript-language-server', 'eslint-language-server']
 let g:lsp_settings_filetype_typescript = ['typescript-language-server', 'eslint-language-server']

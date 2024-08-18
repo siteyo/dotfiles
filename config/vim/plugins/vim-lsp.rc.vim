@@ -24,7 +24,7 @@ let g:lsp_diagnostics_echo_cursor = 0
 let g:lsp_diagnostics_float_cursor = 0
 let g:lsp_documentation_float = 1
 let g:lsp_log_verbose = 1
-let g:lsp_log_file = expand(g:vim_home . '/vim-lsp.log')
+let g:lsp_log_file = expand(g:vim_data . '/vim-lsp.log')
 
 let g:lsp_diagnostics_signs_error = {'text': '✗'}
 let g:lsp_diagnostics_signs_warning = {'text': '‼'}

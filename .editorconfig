@@ -12,6 +12,9 @@ max_line_length = 100
 indent_style = tab
 indent_size = 4
 
+[*.vim]
+indent_size = 2
+
 [*.lua]
 indent_size = 2
 

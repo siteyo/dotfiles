@@ -9,52 +9,42 @@ augroup vimrc
   autocmd!
 augroup END
 
-if has('nvim')
-  let g:vim_home = expand('~/.nvim')
-else
-  let g:vim_home = expand('~/.vim')
-endif
-
-" ------------------------------------------------------------------------
-" Provider configuration
-" ------------------------------------------------------------------------
-if has('nvim')
-  source ~/.config/vim/provider.rc.vim
-endif
+let g:vim_data = expand('$XDG_DATA_HOME') . '/vim'
+let g:vim_config = expand('$XDG_CONFIG_HOME') . '/vim'
 
 " ------------------------------------------------------------------------
 " Basic settings
 " ------------------------------------------------------------------------
-source ~/.config/vim/basic.rc.vim
+execute 'source' expand(g:vim_config . '/basic.rc.vim')
 
 " ------------------------------------------------------------------------
 " Plugin manager
 " ------------------------------------------------------------------------
-source ~/.config/vim/vim-plug.rc.vim
+execute 'source' expand(g:vim_config . '/vim-plug.rc.vim')
 
 " ------------------------------------------------------------------------
 " Key mappings
 " ------------------------------------------------------------------------
-source ~/.config/vim/mappings.rc.vim
+execute 'source' expand(g:vim_config . '/mappings.rc.vim')
 
 " ------------------------------------------------------------------------
 " Color settings
 " ------------------------------------------------------------------------
-source ~/.config/vim/color.rc.vim
+execute 'source' expand(g:vim_config . '/color.rc.vim')
 
 " ------------------------------------------------------------------------
 " Commands
 " ------------------------------------------------------------------------
-source ~/.config/vim/commands.rc.vim
+execute 'source' expand(g:vim_config . '/commands.rc.vim')
 
 " ------------------------------------------------------------------------
 " Autocmd
 " ------------------------------------------------------------------------
-source ~/.config/vim/autocmd.rc.vim
+execute 'source' expand(g:vim_config . '/autocmd.rc.vim')
 
 " ------------------------------------------------------------------------
 " Load local settings
 " ------------------------------------------------------------------------
-if filereadable(expand(g:vim_home . '/local_vimrc.vim'))
-  execute 'source' expand(g:vim_home . '/local_vimrc.vim')
+if filereadable(expand(g:vim_data . '/local_vimrc.vim'))
+  execute 'source' expand(g:vim_data . '/local_vimrc.vim')
 endif

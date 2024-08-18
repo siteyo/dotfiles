@@ -1,9 +1,9 @@
 " ========================================================================
 " INSTALL VIM-PLUG
 " ========================================================================
-let s:plug_dir = expand(g:vim_home . '/vim-plug')
+let s:plug_dir = expand(g:vim_data . '/vim-plug')
 let s:plug_autoload_dir = expand(s:plug_dir . '/autoload')
-let s:plug_repo_dir = expand(g:vim_home . '/plugins')
+let s:plug_repo_dir = expand(g:vim_data . '/plugins')
 
 if has('vim_starting')
   let &runtimepath = s:plug_dir . ',' . &runtimepath
@@ -43,10 +43,6 @@ Plug 'AndrewRadev/linediff.vim', {'on': 'Linediff'}
 Plug 'tpope/vim-repeat'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'machakann/vim-highlightedyank'
-
-" if has('nvim')
-"   Plug 'numToStr/Comment.nvim'
-" endif
 
 " ------------------------------------------------------------------------
 " Completion
@@ -94,9 +90,6 @@ Plug 'sbdchd/neoformat'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'sheerun/vim-polyglot'
 Plug 'ap/vim-css-color', {'for': ['css']}
-" if has('nvim')
-"   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" endif
 
 " ------------------------------------------------------------------------
 " Util
@@ -134,10 +127,8 @@ Plug 'joshdick/onedark.vim'
 " ------------------------------------------------------------------------
 " Other
 " ------------------------------------------------------------------------
-if !has('nvim')
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 call plug#end()
 
@@ -162,7 +153,7 @@ endif
 " ------------------------------------------------------------------------
 " fern
 if has_key(g:plugs, 'fern.vim')
-  source ~/.config/vim/plugins/fern.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/fern.rc.vim')
 endif
 
 " ------------------------------------------------------------------------
@@ -170,7 +161,7 @@ endif
 " ------------------------------------------------------------------------
 " easyalign
 if has_key(g:plugs, 'vim-easy-align')
-  source ~/.config/vim/plugins/easyalign.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/easyalign.rc.vim')
 endif
 
 " auto-pairs
@@ -180,7 +171,7 @@ endif
 
 " Comment.nvim
 if has_key(g:plugs, 'Comment.nvim')
-  source ~/.config/vim/plugins/comment.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/comment.rc.vim')
 endif
 
 " ------------------------------------------------------------------------
@@ -188,17 +179,17 @@ endif
 " ------------------------------------------------------------------------
 " coc
 if has_key(g:plugs, 'coc.nvim')
-  source ~/.config/vim/plugins/coc.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/coc.rc.vim')
 endif
 
 " deoplete
 if has_key(g:plugs, 'deoplete.nvim')
-  source ~/.config/vim/plugins/deoplete.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/deoplete.rc.vim')
 endif
 
 " asyncomplete
 if has_key(g:plugs, 'asyncomplete.vim')
-  source ~/.config/vim/plugins/asyncomplete.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/asyncomplete.rc.vim')
 endif
 
 " asyncomplete-emmet
@@ -246,16 +237,16 @@ endif
 
 " vim-lsp
 if has_key(g:plugs, 'vim-lsp')
-  source ~/.config/vim/plugins/vim-lsp.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/vim-lsp.rc.vim')
 endif
 
 " vim-lsp-settings
 if has_key(g:plugs, 'vim-lsp-settings')
-  source ~/.config/vim/plugins/vim-lsp-settings.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/vim-lsp-settings.rc.vim')
 endif
 
 if has_key(g:plugs, 'vim-vsnip')
-  source ~/.config/vim/plugins/vim-vsnip.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/vim-vsnip.rc.vim')
 endif
 
 " ------------------------------------------------------------------------
@@ -263,17 +254,17 @@ endif
 " ------------------------------------------------------------------------
 " fzf
 if has_key(g:plugs, 'fzf.vim')
-  source ~/.config/vim/plugins/fzf.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/fzf.rc.vim')
 endif
 
 " ctrlp
 if has_key(g:plugs, 'ctrlp.vim')
-  source ~/.config/vim/plugins/ctrlp.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/ctrlp.rc.vim')
 endif
 
 " vim-airline
 if has_key(g:plugs, 'vim-airline')
-  source ~/.config/vim/plugins/vim-airline.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/vim-airline.rc.vim')
 endif
 
 " vim-airline-themes
@@ -293,7 +284,7 @@ endif
 
 " limelight
 if has_key(g:plugs, 'limelight.vim')
-  source ~/.config/vim/plugins/limelight.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/limelight.rc.vim')
 endif
 
 " ------------------------------------------------------------------------
@@ -301,12 +292,12 @@ endif
 " ------------------------------------------------------------------------
 " ale
 if has_key(g:plugs, 'ale')
-  source ~/.config/vim/plugins/ale.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/ale.rc.vim')
 endif
 
 " Neoformat
 if has_key(g:plugs, 'neoformat')
-  source ~/.config/vim/plugins/neoformat.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/neoformat.rc.vim')
 endif
 
 " ------------------------------------------------------------------------
@@ -319,7 +310,7 @@ endif
 
 " nvim-treesitter
 if has_key(g:plugs, 'nvim-treesitter')
-  source ~/.config/vim/plugins/nvim-treesitter.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/nvim-treesitter.rc.vim')
 endif
 
 " ------------------------------------------------------------------------
@@ -327,7 +318,7 @@ endif
 " ------------------------------------------------------------------------
 " emmet-vim
 if has_key(g:plugs, 'emmet-vim')
-  source ~/.config/vim/plugins/emmet.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/emmet.rc.vim')
 endif
 
 " vim-table-mode
@@ -337,8 +328,8 @@ endif
 
 if has_key(g:plugs, 'vim-sonictemplate')
   let g:sonictemplate_vim_template_dir = [
-    \ expand(g:vim_home . '/plugins/vim-sonictemplate/template'),
-    \ expand('~/.config/vim/templates'),
+    \ expand(g:vim_data . '/plugins/vim-sonictemplate/template'),
+    \ expand(g:vim_config . '/templates'),
     \ ]
 endif
 
@@ -347,12 +338,12 @@ endif
 " ------------------------------------------------------------------------
 " vim-submode
 if has_key(g:plugs, 'vim-submode')
-  source ~/.config/vim/plugins/submode.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/submode.rc.vim')
 endif
 
 " vim-easymotion
 if has_key(g:plugs, 'vim-easymotion')
-  source ~/.config/vim/plugins/easymotion.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/easymotion.rc.vim')
 endif
 
 " vim-edgemotion
@@ -369,12 +360,12 @@ nmap <Space>g [GitPlug]
 
 " vim-fugitive
 if has_key(g:plugs, 'vim-fugitive')
-  source ~/.config/vim/plugins/fugitive.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/fugitive.rc.vim')
 endif
 
 " vim-gitgutter
 if has_key(g:plugs, 'vim-gitgutter')
-  source ~/.config/vim/plugins/gitgutter.rc.vim
+  execute 'source' expand(g:vim_config . '/plugins/gitgutter.rc.vim')
 endif
 
 " gv.vim
