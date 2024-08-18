@@ -44,10 +44,6 @@ Plug 'tpope/vim-repeat'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'machakann/vim-highlightedyank'
 
-" if has('nvim')
-"   Plug 'numToStr/Comment.nvim'
-" endif
-
 " ------------------------------------------------------------------------
 " Completion
 " ------------------------------------------------------------------------
@@ -94,9 +90,6 @@ Plug 'sbdchd/neoformat'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'sheerun/vim-polyglot'
 Plug 'ap/vim-css-color', {'for': ['css']}
-" if has('nvim')
-"   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" endif
 
 " ------------------------------------------------------------------------
 " Util
@@ -134,10 +127,8 @@ Plug 'joshdick/onedark.vim'
 " ------------------------------------------------------------------------
 " Other
 " ------------------------------------------------------------------------
-if !has('nvim')
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 call plug#end()
 
