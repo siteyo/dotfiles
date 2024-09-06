@@ -26,7 +26,7 @@ local M = {
     end,
   },
   event = { "BufWritePre" },
-  cmd = { "ConformInfo", "ConformEnable", "ConformDisable" },
+  cmd = { "ConformInfo", "ConformEnable", "ConformDisable", "Format" },
   keys = {
     {
       "<Leader>lf",
