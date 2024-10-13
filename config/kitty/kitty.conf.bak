@@ -239,7 +239,8 @@ font_size 12.0
 #: }}}
 
 #: Text cursor customization {{{
-# cursor #cccccc
+
+cursor #cccccc
 
 #: Default text cursor color. If set to the special value none the
 #: cursor will be rendered with a "reverse video" effect. Its color
@@ -250,7 +251,8 @@ font_size 12.0
 #: background and foreground colors have very low contrast. Note that
 #: some themes set this value, so if you want to override it, place
 #: your value after the lines where the theme file is included.
-# cursor_text_color #111111
+
+cursor_text_color #111111
 
 #: The color of text under the cursor. If you want it rendered with
 #: the background color of the cell underneath instead, use the
@@ -2588,9 +2590,3 @@ hide_window_decorations titlebar-and-corners
 #: }}}
 
 #: }}}
-
-
-# BEGIN_KITTY_THEME
-# Tokyo Night
-include current-theme.conf
-# END_KITTY_THEME
