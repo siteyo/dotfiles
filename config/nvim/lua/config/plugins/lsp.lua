@@ -55,11 +55,11 @@ return {
         jsonls = true,
         -- marksman = true,
         -- pylsp = true,
-        ruff_lsp = true,
+        ruff = true,
         pyright = true,
         rust_analyzer = true,
         sqlls = true,
-        tsserver = true,
+        ts_ls = true,
         lua_ls = {
           settings = {
             Lua = {
