@@ -64,8 +64,8 @@ map("n", "sP", "<Cmd>tabprevious<CR>", { desc = "Previous Tab" })
 -- Buffers
 map("n", "sp", "<Cmd>bprevious<CR>", { desc = "Prev Buffer" })
 map("n", "sn", "<Cmd>bnext<CR>", { desc = "Next Buffer" })
-map("n", "sd", "<Cmd>bdelete<CR>", { desc = "Delete Buffer" })
-map("n", "sD", "<Cmd>bdelete!<CR>", { desc = "Delete Buffer" })
+-- map("n", "sd", "<Cmd>bdelete<CR>", { desc = "Delete Buffer" })
+-- map("n", "sD", "<Cmd>bdelete!<CR>", { desc = "Delete Buffer" })
 
 -- Move Lines [<Leader>m]
 map_s("n", "<Leader>mj", "j", "<Cmd>m .+1<CR>==", { desc = "Move Down", silent = true })
