@@ -77,6 +77,7 @@
   "skkeleton": { "branch": "main", "commit": "2cdd414c1bfa8c363505b8dfc9f50ef2f446ea61" },
   "skkeleton_indicator.nvim": { "branch": "v2", "commit": "d9b649d734ca7d3871c4f124004771d0213dc747" },
   "skkeleton_pointer.nvim": { "branch": "main", "commit": "bbf441328bf7e9af74402d52a6a58e9f92f03e45" },
+  "snacks.nvim": { "branch": "main", "commit": "da53742d238abda7167d3609567095109073faa3" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "626998e5c1b71c130d8bc6cf7abb6709b98287bb" },
   "telescope-frecency.nvim": { "branch": "master", "commit": "872602fad676f735424341bb8e2064a191083423" },
   "telescope.nvim": { "branch": "master", "commit": "85922dde3767e01d42a08e750a773effbffaea3e" },
