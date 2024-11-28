@@ -58,10 +58,10 @@ return {
           require("mini.bufremove").delete(0, false)
         end,
         mode = { "n" },
-        desc = "Delete Buffer",
+        desc = "Delete Buffer(mini.bufremove)",
       },
     },
-    config = true,
+    config = false,
   },
 
   -- starter
