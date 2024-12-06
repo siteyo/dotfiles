@@ -15,7 +15,7 @@ packages:
 - name: JohnnyMorganz/StyLua@v2.0.1
 - name: mvdan/sh@v3.10.0
 - name: koalaman/shellcheck@v0.10.0
-- name: LuaLS/lua-language-server@3.13.2
+- name: LuaLS/lua-language-server@3.13.3
 - name: rust-lang/rust-analyzer@2023-11-20
 - name: rhysd/actionlint@v1.7.4
 - name: google/yamlfmt@v0.14.0
