@@ -51,7 +51,7 @@ map("n", "sv", "<Cmd>vsplit<CR>", { desc = "Split window Right" })
 -- Close window [<Leader>w]
 map("n", "<Leader>wd", "<Cmd>close<CR>", { desc = "Close window" })
 
--- tabs [<Leader>t]
+-- Tabs [<Leader>t]
 map("n", "<Leader>tl", "<Cmd>tablast<CR>", { desc = "Last Tab" })
 map("n", "<Leader>tf", "<Cmd>tabfirst<CR>", { desc = "First Tab" })
 map("n", "<Leader>tt", "<Cmd>tabnew<CR>", { desc = "New Tab" })
@@ -61,7 +61,7 @@ map("n", "<Leader>tp", "<Cmd>tabprevious<CR>", { desc = "Previous Tab" })
 map("n", "sN", "<Cmd>tabnext<CR>", { desc = " Next Tab" })
 map("n", "sP", "<Cmd>tabprevious<CR>", { desc = "Previous Tab" })
 
--- buffers
+-- Buffers
 map("n", "sp", "<Cmd>bprevious<CR>", { desc = "Prev Buffer" })
 map("n", "sn", "<Cmd>bnext<CR>", { desc = "Next Buffer" })
 map("n", "sd", "<Cmd>bdelete<CR>", { desc = "Delete Buffer" })
@@ -93,7 +93,7 @@ end, { desc = "Yank file path" })
 
 -- stylua: ignore start
 
--- toggle [<Leader>u]
+-- Toggle [<Leader>u]
 map("n", "<Leader>us", function() toggle("spell") end, { desc = "Toggle Spelling" })
 map("n", "<Leader>uw", function() toggle("wrap") end, { desc = "Toggle Word Wrap" })
 map("n", "<Leader>ul", function() toggle("relativenumber") end, { desc = "Toggle Relative Line Numbers" })
@@ -101,10 +101,10 @@ map("n", "<Leader>ub", function() toggle("background", false, { "light", "dark" 
 
 -- stylua: ignore end
 
--- open terminal
+-- Open terminal
 map("n", "<Leader>ut", "<Cmd>vsplit<CR><C-w>w<Cmd>terminal<CR>", { desc = "Open Terminal" })
 
--- open a file in path
+-- Open a file in path
 map("n", "<C-k>", function()
   local line = vim.api.nvim_get_current_line()
 
@@ -145,11 +145,11 @@ map({ "n", "v" }, "x", '"_x')
 map("n", "[q", "<Cmd>cprevious<CR>", { desc = "Previous Quickfix" })
 map("n", "]q", "<Cmd>cnext<CR>", { desc = "Next Quickfix" })
 
--- better indenting
+-- Better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
--- better scroll
+-- Better scroll
 map({ "n", "v" }, "<C-y>", "5<C-y>")
 map({ "n", "v" }, "<C-e>", "5<C-e>")
 
@@ -158,13 +158,20 @@ map("i", "<C-f>", "<Right>")
 map("i", "<C-b>", "<Left>")
 map("i", "<C-e>", "<ESC>A")
 map("i", "<C-a>", "<ESC>I")
+map("n", "M", "%")
 
--- new file
+-- Redo
+map("n", "U", "<C-r>")
+
+-- New file
 map("n", "se", "<Cmd>enew<CR>", { desc = "New File" })
 
--- quit [<Leader>q]
+-- Quit [<Leader>q]
 map("n", "<Leader>qq", "<Cmd>qa<CR>", { desc = "quit All" })
 map("n", "sq", "<Cmd>q<CR>", { desc = "quit" })
+
+-- Text objects
+map({ "o", "x" }, "i<Space>", "iW")
 
 -- Terminal
 map("t", "<C-n><C-n>", "<C-\\><C-n>", { desc = "Enter Normal Mode" })
