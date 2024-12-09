@@ -56,8 +56,8 @@ M.opts = {
       opts = { skip = true },
     },
     {
-      view = "notify",
-      filter = { event = "msg_showmode" },
+      view = "virtualtext",
+      filter = { event = "msg_show", kind = "search_count" },
     },
     {
       view = "mini",
@@ -71,6 +71,22 @@ M.opts = {
           { event = "msg_show", find = "^Hunk %d+ of %d+$" },
           { event = "msg_show", kind = "emsg", find = "E%d+:" },
           { event = "msg_show", kind = "wmsg", find = "search hit .* continuing at" },
+        },
+      },
+    },
+    {
+      view = "notify",
+      filter = {
+        event = "msg_show",
+        kind = { "", "echo", "echomsg", "lua_print", "list_cmd" },
+      },
+      opts = { replace = true, merge = true, title = "Messages" },
+    },
+    {
+      view = "notify",
+      filter = {
+        any = {
+          { event = "msg_show", find = "[orgmode].*" },
         },
       },
     },
