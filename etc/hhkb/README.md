@@ -1,16 +1,30 @@
 # HHKB Studio Setting
 
-## Standard Mappings
-![HHKB Studio Standard](./HHKB_Studio//HHKB_Studio_Setting-Standard.png)
+## Profile1
+### Standard Mappings
+![HHKB Studio Standard](./HHKB_Studio/HHKB_Studio_Setting-P1-Standard.png)
 
-## Fn1 mappings
-![HHKB Studio Fn1](./HHKB_Studio/HHKB_Studio_Setting-Fn1.png)
+### Fn1 Mappings
+![HHKB Studio Fn1](./HHKB_Studio/HHKB_Studio_Setting-P1-Fn1.png)
 
-## Fn2 mappings
-![HHKB Studio Fn2](./HHKB_Studio/HHKB_Studio_Setting-Fn2.png)
+### Fn2 Mappings
+![HHKB Studio Fn2](./HHKB_Studio/HHKB_Studio_Setting-P1-Fn2.png)
 
-## Fn3 mappings
-![HHKB Studio Fn3](./HHKB_Studio/HHKB_Studio_Setting-Fn3.png)
+### Fn3 Mappings
+![HHKB Studio Fn3](./HHKB_Studio/HHKB_Studio_Setting-P1-Fn3.png)
+
+## Profile2
+### Standard Mappings
+![HHKB Studio Standard](./HHKB_Studio/HHKB_Studio_Setting-P2-Standard.png)
+
+### Fn1 Mappings
+![HHKB Studio Fn1](./HHKB_Studio/HHKB_Studio_Setting-P2-Fn1.png)
+
+### Fn2 Mappings
+![HHKB Studio Fn2](./HHKB_Studio/HHKB_Studio_Setting-P2-Fn2.png)
+
+### Fn3 Mappings
+![HHKB Studio Fn3](./HHKB_Studio/HHKB_Studio_Setting-P2-Fn3.png)
 
 # HHKB Hybrid
 
