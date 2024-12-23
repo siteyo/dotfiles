@@ -3,10 +3,11 @@ local M = {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  keys = {
-    { "<Leader>gg", "<Cmd>LazyGit<CR>", mode = { "n" }, desc = "Lazygit" },
-  },
-  enabled = false,
+  -- keys = {
+  --   { "<Leader>gg", "<Cmd>LazyGit<CR>", mode = { "n" }, desc = "Lazygit" },
+  -- },
+  cmd = "LazyGit",
+  enabled = true,
 }
 
 return M

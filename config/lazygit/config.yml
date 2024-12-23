@@ -2,3 +2,7 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
+  allBranchesLogCmd: git log --graph --color=always --pretty=format:'-> %Cred%h%Creset %s%n  %C(yellow)%d%Creset %C(bold blue)<%an>%Creset %C(cyan)[%ad]%Creset %Cgreen(%cr)%n' --abbrev-commit --date=format:'%Y/%m/%d %H:%M:%S' --
+  branchLogCmd: git log --graph --color=always --pretty=format:'-> %Cred%h%Creset %s%n  %C(yellow)%d%Creset %C(bold blue)<%an>%Creset %C(cyan)[%ad]%Creset %Cgreen(%cr)%n' --abbrev-commit --date=format:'%Y/%m/%d %H:%M:%S' --
+gui:
+  nerdFontsVersion: "3"
