@@ -32,6 +32,7 @@ local M = {
     end,
   },
   event = "VeryLazy",
+  enabled = true,
 }
 
 return M
