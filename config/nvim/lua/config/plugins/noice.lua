@@ -5,29 +5,29 @@ local M = {
     "rcarriga/nvim-notify",
   },
   event = "VeryLazy",
-  keys = {
-    {
-      "<Leader>nl",
-      function()
-        require("noice").cmd("last")
-      end,
-      mode = { "n" },
-    },
-    {
-      "<Leader>nt",
-      function()
-        require("noice").cmd("telescope")
-      end,
-      mode = { "n" },
-    },
-    {
-      "<Leader>ne",
-      function()
-        require("noice").cmd("errors")
-      end,
-      mode = { "n" },
-    },
-  },
+  -- keys = {
+  --   {
+  --     "<Leader>nl",
+  --     function()
+  --       require("noice").cmd("last")
+  --     end,
+  --     mode = { "n" },
+  --   },
+  --   {
+  --     "<Leader>nt",
+  --     function()
+  --       require("noice").cmd("telescope")
+  --     end,
+  --     mode = { "n" },
+  --   },
+  --   {
+  --     "<Leader>ne",
+  --     function()
+  --       require("noice").cmd("errors")
+  --     end,
+  --     mode = { "n" },
+  --   },
+  -- },
 }
 
 M.opts = {
