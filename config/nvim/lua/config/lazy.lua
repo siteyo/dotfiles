@@ -33,6 +33,9 @@ require("lazy").setup({
       "zipPlugin",
     },
   },
+  rocks = {
+    hererocks = true,
+  },
   dev = {
     path = "~/.nvim/dev",
   },
