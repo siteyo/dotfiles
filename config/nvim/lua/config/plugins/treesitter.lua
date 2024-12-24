@@ -18,6 +18,7 @@ local M = {
         "gitcommit",
         "gitignore",
         "html",
+        "http",
         "javascript",
         "json",
         "lua",

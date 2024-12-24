@@ -96,6 +96,7 @@ function M.config()
       { name = "emoji", max_item_count = 10 },
       { name = "orgmode" },
       { name = "skkeleton", max_item_count = 20 },
+      { name = "lazydev" },
     }, {
       { name = "buffer" },
       { name = "calc" },

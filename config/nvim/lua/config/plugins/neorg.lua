@@ -126,17 +126,9 @@ return {
   dependencies = {
     { "nvim-neorg/neorg-telescope", dependencies = "nvim-lua/plenary.nvim" },
     { "pysan3/neorg-templates", dependencies = "L3MON4D3/LuaSnip" },
-    { "vhyrro/luarocks.nvim", priority = 1000, config = true },
   },
   ft = "norg",
   cmd = "Neorg",
-  rocks = {
-    "nvim-nio ~> 1.7",
-    "lua-utils.nvim == 1.0.2",
-    "plenary.nvim == 0.1.4",
-    "nui.nvim == 0.3.0",
-    "pathlib.nvim ~> 2.2",
-  },
   build = false,
   keys = {
     -- journal
