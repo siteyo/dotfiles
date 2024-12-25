@@ -31,6 +31,7 @@ M.opts = {
     },
     lualine_x = {
       -- "overseer",
+      "rest",
       { require("lazy.status").updates, cond = require("lazy.status").has_updates },
       "encoding",
       "fileformat",
