@@ -61,7 +61,8 @@ return {
         desc = "Delete Buffer(mini.bufremove)",
       },
     },
-    config = false,
+    config = true,
+    enabled = false,
   },
 
   -- starter
