@@ -57,7 +57,12 @@ M.opts = {
     },
     {
       view = "virtualtext",
-      filter = { event = "msg_show", kind = "search_count" },
+      filter = {
+        any = {
+          { event = "msg_show", kind = "search_count" },
+          { event = "msg_showmode", find = "recording @.$" },
+        },
+      },
     },
     {
       view = "mini",

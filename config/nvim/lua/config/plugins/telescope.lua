@@ -4,6 +4,8 @@ local M = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-frecency.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
+    "danielfalk/smart-open.nvim",
+    "kkharji/sqlite.lua",
   },
   cmd = { "Telescope", "FrecencyValidate" },
   keys = {
@@ -86,6 +88,9 @@ function M.config()
 
   -- nvim-notify
   telescope.load_extension("notify")
+
+  -- smart-open.nvim
+  telescope.load_extension("smart_open")
 
   -- for git
   -- local previewers = require("telescope.previewers")
