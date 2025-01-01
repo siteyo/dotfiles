@@ -15,6 +15,7 @@ local M = {
   },
   config = function(_, opts)
     require("no-neck-pain").setup(opts)
+    vim.opt.sessionoptions:remove("blank")
 
     local map_s = require("config.util").map_submode
     map_s("n", "<Leader>nk", "k", "<Cmd>NoNeckPainWidthUp<CR>", { desc = "NoNeckPainWidthUp" })
