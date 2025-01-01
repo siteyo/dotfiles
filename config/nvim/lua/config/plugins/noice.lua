@@ -51,10 +51,10 @@ M.opts = {
     long_message_to_split = true,
   },
   routes = {
-    {
-      filter = { event = "msg_showmode", find = "--%s%p*%a+%p*%s--" },
-      opts = { skip = true },
-    },
+    -- {
+    --   filter = { event = "msg_showmode", find = "--%s%p*%a+%p*%s--" },
+    --   opts = { skip = true },
+    -- },
     {
       view = "virtualtext",
       filter = {
