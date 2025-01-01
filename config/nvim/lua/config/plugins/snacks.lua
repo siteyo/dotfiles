@@ -1,7 +1,7 @@
 local M = {
   "folke/snacks.nvim",
-  lazh = false,
-  otps = {
+  lazy = false,
+  opts = {
     bigfile = { enabled = true },
   },
   keys = {
