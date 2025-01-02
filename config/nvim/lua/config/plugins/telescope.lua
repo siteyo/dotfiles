@@ -32,6 +32,15 @@ local M = {
     -- for Git
     { "<Leader>gs", "<Cmd>Telescope git_status<CR>", mode = { "n" }, desc = "Git Status" },
     { "<Leader>gb", "<Cmd>Telescope git_branches<CR>", mode = { "n" }, desc = "Git Branches" },
+
+    -- util
+    {
+      "<Leader>uc",
+      function()
+        require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
+      end,
+      desc = "Config Files",
+    },
   },
 }
 
