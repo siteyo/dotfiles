@@ -18,20 +18,20 @@ local M = {
     { "<Leader>:", "<Cmd>Telescope command_history<CR>", mode = { "n" }, desc = "Command History" },
 
     -- find
-    { "<Leader>ff", "<Cmd>Telescope fd<CR>", mode = { "n" } },
-    { "<Leader>fg", "<Cmd>Telescope git_files<CR>", mode = { "n" } },
-    { "<Leader>fb", "<Cmd>Telescope buffers<CR>", mode = { "n" } },
-    { "<Leader>fm", "<Cmd>Telescope smart_open<CR>", mode = { "n" } },
-    { "<Leader>fr", "<Cmd>Telescope resume<CR>", mode = { "n" } },
-    { "<Leader>fn", "<Cmd>Telescope notify<CR>", mode = { "n" } },
-    { "<Leader>fh", "<Cmd>Telescope help_tags<CR>", mode = { "n" } },
-    { "<Leader>fd", "<Cmd>Telescope diagnostics<CR>", mode = { "n" } },
-    { "<Leader>fe", "<Cmd>Telescope file_browser<CR>", mode = { "n" } },
-    { '<Leader>f"', "<cmd>Telescope registers<CR>", mode = { "n" } },
+    { "<Leader>ff", "<Cmd>Telescope fd<CR>", mode = { "n" }, desc = "Find Files" },
+    { "<Leader>fg", "<Cmd>Telescope git_files<CR>", mode = { "n" }, desc = "Git Files" },
+    { "<Leader>fb", "<Cmd>Telescope buffers<CR>", mode = { "n" }, desc = "Buffers" },
+    { "<Leader>fm", "<Cmd>Telescope smart_open<CR>", mode = { "n" }, desc = "Smart Open" },
+    { "<Leader>fr", "<Cmd>Telescope resume<CR>", mode = { "n" }, desc = "Resume" },
+    { "<Leader>fn", "<Cmd>Telescope notify<CR>", mode = { "n" }, desc = "Notify" },
+    { "<Leader>fh", "<Cmd>Telescope help_tags<CR>", mode = { "n" }, desc = "Help Tags" },
+    { "<Leader>fd", "<Cmd>Telescope diagnostics<CR>", mode = { "n" }, desc = "Diagnostics" },
+    { "<Leader>fe", "<Cmd>Telescope file_browser<CR>", mode = { "n" }, desc = "File Browser" },
+    { '<Leader>f"', "<cmd>Telescope registers<CR>", mode = { "n" }, desc = "Registers" },
 
     -- for Git
-    { "<Leader>gs", "<Cmd>Telescope git_status<CR>", mode = { "n" } },
-    { "<Leader>gb", "<Cmd>Telescope git_branches<CR>", mode = { "n" } },
+    { "<Leader>gs", "<Cmd>Telescope git_status<CR>", mode = { "n" }, desc = "Git Status" },
+    { "<Leader>gb", "<Cmd>Telescope git_branches<CR>", mode = { "n" }, desc = "Git Branches" },
   },
 }
 
