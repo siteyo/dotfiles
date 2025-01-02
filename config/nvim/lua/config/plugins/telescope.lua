@@ -2,12 +2,15 @@ local M = {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope-frecency.nvim",
+    -- "nvim-telescope/telescope-frecency.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
     "danielfalk/smart-open.nvim",
     "kkharji/sqlite.lua",
   },
-  cmd = { "Telescope", "FrecencyValidate" },
+  cmd = {
+    "Telescope",
+    -- "FrecencyValidate",
+  },
   keys = {
     -- for Telescope
     { "<Leader><space>", "<cmd>Telescope<CR>", mode = { "n" }, desc = "Builtin Pickers" },
@@ -68,20 +71,20 @@ function M.config()
       },
     },
     extensions = {
-      frecency = {
-        ignore_patterns = {
-          "*.git/*",
-          "*/tmp/*",
-          "*/node_modules/*",
-        },
-        db_safe_mode = false,
-        auto_validate = false,
-      },
+      -- frecency = {
+      --   ignore_patterns = {
+      --     "*.git/*",
+      --     "*/tmp/*",
+      --     "*/node_modules/*",
+      --   },
+      --   db_safe_mode = false,
+      --   auto_validate = false,
+      -- },
     },
   })
 
   -- telescope-frecency
-  telescope.load_extension("frecency")
+  -- telescope.load_extension("frecency")
 
   -- telescope-file-browser
   telescope.load_extension("file_browser")
