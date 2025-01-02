@@ -1,7 +1,7 @@
 local M = {
   "goolord/alpha-nvim",
   event = "VimEnter",
-  enabled = true,
+  enabled = false,
   keys = {
     { "<Leader>ua", "<Cmd>Alpha<CR>", mode = { "n" }, desc = "Open Dashboard" },
   },

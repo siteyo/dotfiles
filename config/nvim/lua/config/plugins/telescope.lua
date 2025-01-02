@@ -2,12 +2,15 @@ local M = {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope-frecency.nvim",
+    -- "nvim-telescope/telescope-frecency.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
     "danielfalk/smart-open.nvim",
     "kkharji/sqlite.lua",
   },
-  cmd = { "Telescope", "FrecencyValidate" },
+  cmd = {
+    "Telescope",
+    -- "FrecencyValidate",
+  },
   keys = {
     -- for Telescope
     { "<Leader><space>", "<cmd>Telescope<CR>", mode = { "n" }, desc = "Builtin Pickers" },
@@ -15,20 +18,29 @@ local M = {
     { "<Leader>:", "<Cmd>Telescope command_history<CR>", mode = { "n" }, desc = "Command History" },
 
     -- find
-    { "<Leader>ff", "<Cmd>Telescope fd<CR>", mode = { "n" } },
-    { "<Leader>fg", "<Cmd>Telescope git_files<CR>", mode = { "n" } },
-    { "<Leader>fb", "<Cmd>Telescope buffers<CR>", mode = { "n" } },
-    { "<Leader>fm", "<Cmd>Telescope frecency<CR>", mode = { "n" } },
-    { "<Leader>fr", "<Cmd>Telescope resume<CR>", mode = { "n" } },
-    { "<Leader>fn", "<Cmd>Telescope notify<CR>", mode = { "n" } },
-    { "<Leader>fh", "<Cmd>Telescope help_tags<CR>", mode = { "n" } },
-    { "<Leader>fd", "<Cmd>Telescope diagnostics<CR>", mode = { "n" } },
-    { "<Leader>fe", "<Cmd>Telescope file_browser<CR>", mode = { "n" } },
-    { '<Leader>f"', "<cmd>Telescope registers<CR>", mode = { "n" } },
+    { "<Leader>ff", "<Cmd>Telescope fd<CR>", mode = { "n" }, desc = "Find Files" },
+    { "<Leader>fg", "<Cmd>Telescope git_files<CR>", mode = { "n" }, desc = "Git Files" },
+    { "<Leader>fb", "<Cmd>Telescope buffers<CR>", mode = { "n" }, desc = "Buffers" },
+    { "<Leader>fm", "<Cmd>Telescope smart_open<CR>", mode = { "n" }, desc = "Smart Open" },
+    { "<Leader>fr", "<Cmd>Telescope resume<CR>", mode = { "n" }, desc = "Resume" },
+    { "<Leader>fn", "<Cmd>Telescope notify<CR>", mode = { "n" }, desc = "Notify" },
+    { "<Leader>fh", "<Cmd>Telescope help_tags<CR>", mode = { "n" }, desc = "Help Tags" },
+    { "<Leader>fd", "<Cmd>Telescope diagnostics<CR>", mode = { "n" }, desc = "Diagnostics" },
+    { "<Leader>fe", "<Cmd>Telescope file_browser<CR>", mode = { "n" }, desc = "File Browser" },
+    { '<Leader>f"', "<cmd>Telescope registers<CR>", mode = { "n" }, desc = "Registers" },
 
     -- for Git
-    { "<Leader>gs", "<Cmd>Telescope git_status<CR>", mode = { "n" } },
-    { "<Leader>gb", "<Cmd>Telescope git_branches<CR>", mode = { "n" } },
+    { "<Leader>gs", "<Cmd>Telescope git_status<CR>", mode = { "n" }, desc = "Git Status" },
+    { "<Leader>gb", "<Cmd>Telescope git_branches<CR>", mode = { "n" }, desc = "Git Branches" },
+
+    -- util
+    {
+      "<Leader>uc",
+      function()
+        require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })
+      end,
+      desc = "Config Files",
+    },
   },
 }
 
@@ -68,20 +80,20 @@ function M.config()
       },
     },
     extensions = {
-      frecency = {
-        ignore_patterns = {
-          "*.git/*",
-          "*/tmp/*",
-          "*/node_modules/*",
-        },
-        db_safe_mode = false,
-        auto_validate = false,
-      },
+      -- frecency = {
+      --   ignore_patterns = {
+      --     "*.git/*",
+      --     "*/tmp/*",
+      --     "*/node_modules/*",
+      --   },
+      --   db_safe_mode = false,
+      --   auto_validate = false,
+      -- },
     },
   })
 
   -- telescope-frecency
-  telescope.load_extension("frecency")
+  -- telescope.load_extension("frecency")
 
   -- telescope-file-browser
   telescope.load_extension("file_browser")

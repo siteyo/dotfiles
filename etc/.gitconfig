@@ -23,7 +23,7 @@
     rh = reset --hard
     rpo = remote prune origin
     rs = reset --soft
-    s = status --short --branch
+    s = status --short --branch --renames
     sw = switch
     swc = switch -c
 [core]

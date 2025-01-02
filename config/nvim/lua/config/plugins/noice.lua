@@ -5,29 +5,15 @@ local M = {
     "rcarriga/nvim-notify",
   },
   event = "VeryLazy",
-  -- keys = {
-  --   {
-  --     "<Leader>nl",
-  --     function()
-  --       require("noice").cmd("last")
-  --     end,
-  --     mode = { "n" },
-  --   },
-  --   {
-  --     "<Leader>nt",
-  --     function()
-  --       require("noice").cmd("telescope")
-  --     end,
-  --     mode = { "n" },
-  --   },
-  --   {
-  --     "<Leader>ne",
-  --     function()
-  --       require("noice").cmd("errors")
-  --     end,
-  --     mode = { "n" },
-  --   },
-  -- },
+  keys = {
+    -- stylua: ignore start
+    { "<Leader>il", function() require("noice").cmd("last") end, mode = { "n" } },
+    { "<Leader>it", function() require("noice").cmd("telescope") end, mode = { "n" } },
+    { "<Leader>ie", function() require("noice").cmd("errors") end, mode = { "n" } },
+    { "<Leader>un", function() require("noice").cmd("dismiss") end, mode = {"n"}, desc = "Dismiss All Notifications"},
+    { "<S-Enter>", function () require("noice").redirect(vim.fn.getcmdline()) end, mode = {"c"}, desc = "Redirect Cmdline" },
+    -- stylua: ignore end
+  },
 }
 
 M.opts = {
@@ -73,11 +59,14 @@ M.opts = {
           { event = "msg_show", find = "more line" },
           { event = "msg_show", find = "line less" },
           { event = "msg_show", find = "fewer line" },
-          { event = "msg_show", find = "^Hunk %d+ of %d+$" },
-          { event = "msg_show", kind = "emsg", find = "E%d+:" },
+          -- { event = "msg_show", kind = "emsg", find = "E%d+:" },
           { event = "msg_show", kind = "wmsg", find = "search hit .* continuing at" },
         },
       },
+    },
+    {
+      view = "confirm",
+      filter = { event = "msg_show", kind = "confirm" },
     },
     {
       view = "notify",
@@ -86,14 +75,6 @@ M.opts = {
         kind = { "", "echo", "echomsg", "lua_print", "list_cmd" },
       },
       opts = { replace = true, merge = true, title = "Messages" },
-    },
-    {
-      view = "notify",
-      filter = {
-        any = {
-          { event = "msg_show", find = "[orgmode].*" },
-        },
-      },
     },
     {
       view = "split",
