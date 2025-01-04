@@ -17,5 +17,5 @@ packages:
 - name: koalaman/shellcheck@v0.10.0
 - name: LuaLS/lua-language-server@3.13.5
 - name: rust-lang/rust-analyzer@2023-11-20
-- name: rhysd/actionlint@v1.7.5
+- name: rhysd/actionlint@v1.7.6
 - name: google/yamlfmt@v0.14.0
