@@ -57,6 +57,9 @@ tags
 # Zsh completion-optimization dumpfile
 *zcompdump*
 
+# Zsh completion cachefile
+*zcompcache*
+
 # Zsh history
 .zsh_history
 
