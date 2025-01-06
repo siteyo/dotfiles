@@ -6,9 +6,13 @@ on:
       - 'main'
     paths:
       - 'etc/Brewfile-Linux'
+      - 'Makefile'
+      - 'scripts/*'
   pull_request:
     paths:
       - 'etc/Brewfile-Linux'
+      - 'Makefile'
+      - 'scripts/*'
 
 jobs:
   ubuntu:
