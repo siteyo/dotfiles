@@ -1,9 +1,7 @@
 #!/bin/bash
 
-main() {
-  set -euo pipefail
-  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
-  print_info 'Install Homebrew ...'
+install_bundle() {
+  print_info 'Install Homebrew bundle ...'
 
   local current_dir dotfiles_dir
 
@@ -17,23 +15,45 @@ main() {
     sudo apt install build-essential procps curl file git
   fi
 
+  [ -f "${HOME}/.Brewfile" ] && brew bundle --global || true
+
+  print_sucess "Installation is complete."
+}
+
+install_brew() {
+  print_info 'Install Homebrew ...'
+
   command -v brew 1>/dev/null 2>&1 ||
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  print_default ''
 
-  if [ "$(uname)" == 'Linux' ]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  elif [ "$(uname)" == 'Darwin' ]; then
-    if [ -f '/opt/homebrew/bin/brew' ]; then
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-    elif [ -f '/usr/local/bin/brew' ]; then
-      eval "$(/usr/local/bin/brew shellenv)"
-    fi
-  fi
+  # if [ "$(uname)" == 'Linux' ]; then
+  #   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  # elif [ "$(uname)" == 'Darwin' ]; then
+  #   if [ -f '/opt/homebrew/bin/brew' ]; then
+  #     eval "$(/opt/homebrew/bin/brew shellenv)"
+  #   elif [ -f '/usr/local/bin/brew' ]; then
+  #     eval "$(/usr/local/bin/brew shellenv)"
+  #   fi
+  # fi
 
-  [ -f "${HOME}/.Brewfile" ] && brew bundle --global || true
+  print_sucess "Installation is complete."
+}
+
+main() {
+  set -euo pipefail
+  source "$(git rev-parse --show-toplevel)/scripts/util.sh"
+
+  while [ $# -gt 0 ]; do
+    case ${1} in
+    --bundle) install_bundle ;;
+    *)
+      install_brew
+      ;;
+    esac
+    shift
+  done
 
   print_done
 }
 
-main
+main "$@"

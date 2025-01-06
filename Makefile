@@ -4,7 +4,7 @@ DOTPATH := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 
 .PHONY: install
 install: preinstall ## Install all dotfiles in this repo.
-	@bash $(DOTPATH)/scripts/install-brew.sh
+	@bash $(DOTPATH)/scripts/install-brew.sh --bundle
 	@bash $(DOTPATH)/scripts/install-nvim.sh
 	@bash $(DOTPATH)/scripts/install-gitconfig.sh
 	@bash $(DOTPATH)/scripts/install-bash.sh
@@ -18,6 +18,7 @@ install: preinstall ## Install all dotfiles in this repo.
 .PHONY: preinstall
 preinstall: ## Setup symbolic link to ~/.config.
 	@bash $(DOTPATH)/scripts/install-config.sh
+	@bash $(DOTPATH)/scripts/install-brew.sh
 
 .PHONY: reinstall
 reinstall: uninstall install ## Run 'make clean' and 'make install'.
