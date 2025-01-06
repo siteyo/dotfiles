@@ -17,7 +17,7 @@ install_bundle() {
 
   [ -f "${HOME}/.Brewfile" ] && brew bundle --global || true
 
-  print_sucess "Installation is complete."
+  print_success "Installation is complete."
 }
 
 install_brew() {
@@ -36,7 +36,7 @@ install_brew() {
   #   fi
   # fi
 
-  print_sucess "Installation is complete."
+  print_success "Installation is complete."
 }
 
 main() {
