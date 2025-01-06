@@ -6,9 +6,13 @@ on:
       - 'main'
     paths:
       - 'etc/Brewfile-Darwin'
+      - 'Makefile'
+      - 'scripts/*'
   pull_request:
     paths:
       - 'etc/Brewfile-Darwin'
+      - 'Makefile'
+      - 'scripts/*'
 
 jobs:
   macos:
