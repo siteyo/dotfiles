@@ -46,8 +46,8 @@ main() {
   while [ $# -gt 0 ]; do
     case ${1} in
     --bundle) install_bundle ;;
+    --brew) install_brew ;;
     *)
-      install_brew
       ;;
     esac
     shift
