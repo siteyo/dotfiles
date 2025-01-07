@@ -5,35 +5,75 @@
 #   pre: false
 #   features: []
 #   all-features: false
+#   with-sources: false
+#   generate-hashes: false
+#   universal: false
 
 -e file:.
 appdirs==1.4.4
+    # via sqlfluff
 attrs==23.1.0
+    # via cattrs
+    # via lsprotocol
 cattrs==23.2.2
+    # via lsprotocol
 chardet==5.2.0
+    # via diff-cover
+    # via sqlfluff
 click==8.1.7
+    # via sqlfluff
 colorama==0.4.6
+    # via sqlfluff
 diff-cover==9.0.0
+    # via sqlfluff
 iniconfig==2.0.0
+    # via pytest
 jinja2==3.1.4
+    # via diff-cover
+    # via sqlfluff
 lsprotocol==2023.0.0
+    # via pygls
+    # via ruff-lsp
 markupsafe==2.1.5
+    # via jinja2
 nodeenv==1.8.0
+    # via pyright
 packaging==23.2
+    # via pytest
+    # via ruff-lsp
 pathspec==0.12.1
+    # via sqlfluff
+    # via yamllint
 pluggy==1.5.0
+    # via diff-cover
+    # via pytest
 pygls==1.2.0
+    # via ruff-lsp
 pygments==2.18.0
+    # via diff-cover
 pyright==1.1.336
+    # via python-tools
 pytest==8.2.1
+    # via sqlfluff
 pyyaml==6.0.1
+    # via sqlfluff
+    # via yamllint
 regex==2024.5.15
+    # via sqlfluff
 ruff==0.1.6
+    # via python-tools
+    # via ruff-lsp
 ruff-lsp==0.0.45
-sqlfluff==3.0.7
-tblib==3.0.0
-tqdm==4.66.4
-typing-extensions==4.8.0
-yamllint==1.35.1
-# The following packages are considered to be unsafe in a requirements file:
+    # via python-tools
 setuptools==69.0.1
+    # via nodeenv
+sqlfluff==3.0.7
+    # via python-tools
+tblib==3.0.0
+    # via sqlfluff
+tqdm==4.66.4
+    # via sqlfluff
+typing-extensions==4.8.0
+    # via ruff-lsp
+yamllint==1.35.1
+    # via python-tools
