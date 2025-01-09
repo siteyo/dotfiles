@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # shellcheck disable=SC1091
-#
 source "$CONFIG_DIR/icons.sh"
 
 # The $SELECTED variable is available for space components and indicates if

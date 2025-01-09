@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export TASKRC=~/.config/task/.taskrc
 export TASKDATA=~/.local/share/task
