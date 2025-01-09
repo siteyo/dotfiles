@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 IS_ACTIVE=$(timew get dom.active)
 

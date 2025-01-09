@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # shellcheck disable=SC1091
-
 source "$CONFIG_DIR/icons.sh"
 
 case "$1" in
