@@ -25,9 +25,9 @@ local M = {
     -- package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
     require("image").setup(opts)
   end,
-  rocks = {
-    "magick",
-  },
+  -- rocks = {
+  --   "magick",
+  -- },
   -- build = false,
 }
 

@@ -33,10 +33,18 @@ main() {
   fi
 
   # Setup aquaskk
+  # if [ "$(uname)" == 'Darwin' ]; then
+  #   # ln -sfv "${dotfiles_dir}/config/etc/skk/azik_us.rule" "${HOME}/Library/Application Support/AquaSKK/azik_us.rule"
+  #   ln -sfv "${dotfiles_dir}/etc/kana-rule.conf" "${HOME}/Library/Application Support/AquaSKK/kana-rule.conf"
+  #   ln -sfv "${dotfiles_dir}/etc/aquaskk-keymap.conf" "${HOME}/Library/Application Support/AquaSKK/keymap.conf"
+  # fi
+
+  # Setup macskk
   if [ "$(uname)" == 'Darwin' ]; then
     # ln -sfv "${dotfiles_dir}/config/etc/skk/azik_us.rule" "${HOME}/Library/Application Support/AquaSKK/azik_us.rule"
-    ln -sfv "${dotfiles_dir}/etc/kana-rule.conf" "${HOME}/Library/Application Support/AquaSKK/kana-rule.conf"
-    ln -sfv "${dotfiles_dir}/etc/aquaskk-keymap.conf" "${HOME}/Library/Application Support/AquaSKK/keymap.conf"
+    local dest_dir="${HOME}/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Settings"
+    [ ! -d "${dest_dir}" ] && mkdir -pv "${dest_dir}"
+    cp "${dotfiles_dir}/etc/kana-rule.conf" "${dest_dir}"
   fi
 
   print_done

@@ -48,7 +48,7 @@ indent_size = 2
 [{.bashrc,.bash_profile,.bashrc.local,.bash_profile.local}]
 indent_size = 2
 
-[{azik_us*.rule,kana-rule.conf}]
+[{azik_us*.rule}]
 charset = euc-jp
 end_of_line = lf
 

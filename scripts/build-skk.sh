@@ -2,8 +2,7 @@
 
 azik2kanarule() {
   local dotfiles_dir=$1
-  jq -r '. | to_entries[] | [.key, .value.hira, .value.katakana, .value.hankatakana] | join(",")' "${dotfiles_dir}/etc/azik_us.json" |
-    iconv -f utf8 -t eucjp >"${dotfiles_dir}/etc/kana-rule.conf"
+  jq -r '. | to_entries[] | [.key, .value.hira] | join(",")' "${dotfiles_dir}/etc/azik_us.json" >"${dotfiles_dir}/etc/kana-rule.conf"
 }
 
 azik2skkeleton() {
