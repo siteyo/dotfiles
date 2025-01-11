@@ -14,7 +14,7 @@ function M.config()
     --   end
     --   return true
     -- end)(),
-    transparent = false,
+    transparent = true,
     styles = {
       comments = { italic = false },
       keywords = { italic = false },
@@ -27,7 +27,7 @@ function M.config()
     end,
   })
   tokyonight.load()
-  -- vim.o.background = require("config.util").appearance()
+  vim.o.background = require("config.util").appearance()
 end
 
 return M
