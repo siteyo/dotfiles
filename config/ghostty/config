@@ -26,9 +26,6 @@ mouse-hide-while-typing = true
 unfocused-split-fill = #24283b
 
 ## Keybind
-# Leader
-keybind = ctrl+j=ignore
-
 # Window
 keybind = ctrl+;>n=new_window
 
