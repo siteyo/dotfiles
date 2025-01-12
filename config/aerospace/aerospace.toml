@@ -105,7 +105,7 @@ outer.right =      6
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 alt-t = 'layout floating tiling'
-alt-f = 'fullscreen'
+alt-semicolon = 'fullscreen'
 alt-r = 'flatten-workspace-tree'
 
 # Focus Window
@@ -154,8 +154,14 @@ alt-rightSquareBracket = 'move-node-to-workspace --focus-follows-window next'
 alt-tab = 'workspace-back-and-forth'
 
 # Move xxx to Monitor
-alt-s = 'move-workspace-to-monitor --wrap-around next'
-alt-d = 'move-node-to-monitor --wrap-around next'
+alt-v = 'move-workspace-to-monitor --wrap-around next'
+alt-p = 'move-node-to-monitor --wrap-around next --focus-follows-window'
+
+# Join
+alt-s = 'join-with left'
+alt-d = 'join-with down'
+alt-e = 'join-with up'
+alt-f = 'join-with right'
 
 # Focus Monitor
 alt-n = 'focus-monitor --wrap-around next'
@@ -179,8 +185,4 @@ alt-period = 'mode service'
 esc = 'mode main'
 period = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-backspace = ['close-all-windows-but-current', 'mode main']
-h = ['join-with left', 'mode main']
-j = ['join-with down', 'mode main']
-k = ['join-with up', 'mode main']
-l = ['join-with right', 'mode main']
+o = ['close-all-windows-but-current', 'mode main']
