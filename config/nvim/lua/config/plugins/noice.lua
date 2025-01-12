@@ -59,7 +59,7 @@ M.opts = {
           { event = "msg_show", find = "more line" },
           { event = "msg_show", find = "line less" },
           { event = "msg_show", find = "fewer line" },
-          -- { event = "msg_show", kind = "emsg", find = "E%d+:" },
+          { event = "msg_show", kind = "emsg", find = "E%d+:" },
           { event = "msg_show", kind = "wmsg", find = "search hit .* continuing at" },
         },
       },
