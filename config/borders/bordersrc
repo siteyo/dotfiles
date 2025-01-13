@@ -5,6 +5,7 @@ options=(
     width=4.0
     hidpi=off
     active_color=0xff7dcfff
+    blacklist="iPhone Mirroring"
 )
 
 borders "${options[@]}"
