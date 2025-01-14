@@ -412,3 +412,4 @@ config/configstore/
 dev.lua
 config/raycast
 config/gh/hosts.yml
+kitty.conf.bak
