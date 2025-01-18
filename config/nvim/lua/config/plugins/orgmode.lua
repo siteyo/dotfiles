@@ -23,14 +23,15 @@ return {
     ft = "org",
     keys = {
       {
-        "<Leader>oo",
+        "<Leader>o<Leader>",
         function()
           require("orgmode.api.agenda").agenda({ span = "day" })
         end,
         mode = { "n" },
+        desc = "Agenda view (today)",
       },
-      { "<Leader>oc", mode = "n" },
-      { "<Leader>oa", mode = "n" },
+      { "<Leader>oc", mode = "n", desc = "Capture" },
+      { "<Leader>oa", mode = "n", desc = "Agenda view" },
     },
     opts = {
       org_agenda_files = { "~/notes/org/agenda/**" },
