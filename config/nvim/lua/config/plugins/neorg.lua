@@ -151,6 +151,7 @@ return {
         )
       end,
       mode = { "n" },
+      desc = "Load template",
     },
     -- dirman
     {
@@ -168,13 +169,13 @@ return {
     -- other
     -- { "<Leader>oe", "<Cmd>Neorg export directory neorg markdown<CR>", mode = { "n" } },
     { "<Leader>oi", "<Cmd>Neorg index<CR>", mode = { "n" }, desc = "Show Index" },
-    { "<Leader>om", "<Cmd>Neorg inject-metadata<CR>", mode = { "n" }, "Inject Metadata" },
+    { "<Leader>om", "<Cmd>Neorg inject-metadata<CR>", mode = { "n" }, desc = "Inject Metadata" },
     -- for Telescope
-    { "<Leader>of", "<Cmd>Telescope neorg find_norg_files<CR>", mode = { "n" }, "Find Neorg Files" },
-    { "<Leader>ob", "<Cmd>Telescope neorg find_backlinks<CR>", mode = { "n" }, "Find Backlinks" },
+    { "<Leader>of", "<Cmd>Telescope neorg find_norg_files<CR>", mode = { "n" }, desc = "Find Neorg Files" },
+    { "<Leader>ob", "<Cmd>Telescope neorg find_backlinks<CR>", mode = { "n" }, desc = "Find Backlinks" },
     -- { "<Leader>olf", "<Cmd>Telescope neorg insert_file_link<CR>", mode = { "n" } },
     -- { "<Leader>olh", "<Cmd>Telescope neorg insert_link<CR>", mode = { "n" } },
-    { "<Leader>ol", "<Cmd>Telescope neorg search_headings<CR>", mode = { "n" } },
+    { "<Leader>ol", "<Cmd>Telescope neorg search_headings<CR>", mode = { "n" }, desc = "Find Neorg Headings" },
     {
       "<C-l>",
       function()
@@ -187,6 +188,7 @@ return {
         end)
       end,
       mode = { "i" },
+      desc = "Insert file/heading link",
     },
   },
   enabled = true,
