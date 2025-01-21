@@ -9,7 +9,7 @@ local M = {
   opts = {
     width = 140,
     autocmds = {
-      enableOnVimEnter = true,
+      -- enableOnVimEnter = true,
       enableOnTabEnter = true,
     },
   },
