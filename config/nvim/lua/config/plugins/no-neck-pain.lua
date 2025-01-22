@@ -7,7 +7,7 @@ local M = {
     { "<Leader>nh", "<Cmd>NoNeckPainToggleLeftSide<CR>", mode = { "n" }, desc = "NoNeckPainToggleLeftSide" },
   },
   opts = {
-    width = 140,
+    width = 100,
     autocmds = {
       -- enableOnVimEnter = true,
       enableOnTabEnter = true,
