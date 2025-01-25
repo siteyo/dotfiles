@@ -52,3 +52,8 @@ if command -v yazi >/dev/null; then
     rm -f -- "$tmp"
   }
 fi
+
+## psql (PostgreSQL Client)
+if [ -d "$(brew --prefix)/opt/libpq/bin" ]; then
+  export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
+fi

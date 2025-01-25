@@ -18,6 +18,7 @@ local M = {
     -- "f3fora/cmp-spell",
     "lukas-reineke/cmp-rg",
     "ray-x/cmp-treesitter",
+    "kristijanhusak/vim-dadbod-completion",
   },
 }
 
@@ -97,6 +98,7 @@ function M.config()
       { name = "orgmode" },
       { name = "skkeleton", max_item_count = 20 },
       { name = "lazydev" },
+      { name = "vim-dadbod-completion" },
     }, {
       { name = "buffer" },
       { name = "calc" },
