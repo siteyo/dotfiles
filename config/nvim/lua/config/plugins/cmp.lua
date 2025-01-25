@@ -94,16 +94,16 @@ function M.config()
       { name = "luasnip" },
       { name = "nvim_lua" },
       { name = "path" },
-      { name = "emoji", max_item_count = 10 },
       { name = "orgmode" },
-      { name = "skkeleton", max_item_count = 20 },
-      { name = "lazydev" },
-      { name = "vim-dadbod-completion" },
+      { name = "skkeleton", max_item_count = 10 },
+      { name = "emoji", max_item_count = 5 },
+      { name = "lazydev", keyword_length = 4 },
     }, {
-      { name = "buffer" },
+      { name = "buffer", keyword_length = 4 },
       { name = "calc" },
       { name = "treesitter" },
-      { name = "rg", keyword_length = 3 },
+      { name = "rg", keyword_length = 4 },
+      { name = "vim-dadbod-completion" },
       -- {
       --   name = "spell",
       --   entry_filter = function(entry, _)
