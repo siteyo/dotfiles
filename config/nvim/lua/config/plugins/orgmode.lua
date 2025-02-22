@@ -67,13 +67,13 @@ return {
         t = {
           description = "Todo",
           template = template.get("todo"),
-          headline = "Todo",
+          -- headline = "Todo",
           target = "~/notes/org/agenda/inbox.org",
         },
         l = {
           description = "Plan",
           template = template.get("plan"),
-          headline = "Plan",
+          -- headline = "Plan",
           target = "~/notes/org/agenda/inbox.org",
         },
       },
