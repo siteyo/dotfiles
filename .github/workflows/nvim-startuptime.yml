@@ -20,7 +20,7 @@ jobs:
         uses: thinca/action-setup-vim@v2
         with:
           vim_version: 'stable'
-          vim_type: 'neovim'
+          vim_type: 'Neovim'
       - name: Show Vim version
         run: |
           ${{ steps.neovim.outputs.executable }} --version
