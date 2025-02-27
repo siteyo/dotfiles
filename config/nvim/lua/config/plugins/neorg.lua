@@ -3,10 +3,12 @@ local setup = function()
   local home = vim.fn.expand("$HOME")
   local setup_directory = function()
     local dir_list = {
-      documents = home .. "/notes/neorg/documents",
-      index = home .. "/notes/neorg/index",
+      fleeting_notes = home .. "/notes/neorg/fleeting_notes",
+      literature_notes = home .. "/notes/neorg/literature_notes",
+      permanent_notes = home .. "/notes/neorg/permanent_notes",
+      structure_notes = home .. "/notes/neorg/structure_notes",
       templates = home .. "/notes/neorg/templates",
-      notes = home .. "/notes/neorg/notes",
+      index = home .. "/notes/neorg/index",
     }
     for _, v in pairs(dir_list) do
       if not exists(v) then
@@ -56,10 +58,13 @@ vim.api.nvim_create_autocmd({ "BufReadPre" }, {
 })
 
 local create_file = function(workspace, directory, opts)
+  local datetime = os.date("%Y%m%d%H%M%S")
   local prompt = "[" .. workspace .. ":" .. directory .. "] File name"
   vim.ui.input({ prompt = prompt }, function(input)
     if input then
-      require("neorg").modules.get_module("core.dirman").create_file(directory .. "/" .. input, workspace, opts)
+      require("neorg").modules
+        .get_module("core.dirman")
+        .create_file(directory .. "/" .. datetime .. "__" .. input, workspace, opts)
     end
   end)
 end
@@ -157,7 +162,13 @@ return {
     {
       "<Leader>oe",
       function()
-        vim.ui.select({ "documents", "notes", "index", "journal" }, { prompt = "Select directory" }, function(choice)
+        vim.ui.select({
+          "fleeting_notes",
+          "literature_notes",
+          "permanent_notes",
+          "structure_notes",
+          "index",
+        }, { prompt = "Select directory" }, function(choice)
           if choice then
             create_file("notes", choice, { no_open = false, force = false })
           end

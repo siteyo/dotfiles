@@ -21,7 +21,13 @@ local M = {
         callback = function()
           detail = not detail
           if detail then
-            require("oil").set_columns({ "icon", "permissions", "size", { "mtime", format = "%Y-%m-%d %H:%M" } })
+            require("oil").set_columns({
+              "icon",
+              "permissions",
+              "size",
+              { "ctime", format = " %Y-%m-%d %H:%M " },
+              { "mtime", format = " %Y-%m-%d %H:%M " },
+            })
           else
             require("oil").set_columns({ "icon" })
           end
