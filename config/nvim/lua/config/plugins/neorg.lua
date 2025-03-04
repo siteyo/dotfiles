@@ -59,14 +59,15 @@ vim.api.nvim_create_autocmd({ "BufReadPre" }, {
 
 local create_file = function(workspace, directory, opts)
   local datetime = os.date("%Y%m%d%H%M%S")
-  local prompt = "[" .. workspace .. ":" .. directory .. "] File name"
-  vim.ui.input({ prompt = prompt }, function(input)
-    if input then
-      require("neorg").modules
-        .get_module("core.dirman")
-        .create_file(directory .. "/" .. datetime .. "__" .. input, workspace, opts)
-    end
-  end)
+  -- local prompt = "[" .. workspace .. ":" .. directory .. "] File name"
+  -- vim.ui.input({ prompt = prompt }, function(input)
+  --   if input then
+  --     require("neorg").modules
+  --       .get_module("core.dirman")
+  --       .create_file(directory .. "/" .. datetime .. "__" .. input, workspace, opts)
+  --   end
+  -- end)
+  require("neorg").modules.get_module("core.dirman").create_file(directory .. "/" .. datetime, workspace, opts)
 end
 
 return {
