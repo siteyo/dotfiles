@@ -5,10 +5,10 @@ local setup = function()
     local dir_list = {
       inbox = home .. "/notes/neorg/inbox",
       search = home .. "/notes/neorg/search",
-      evergreen = home .. "/notes/neorg/permanent_notes",
+      evergreen = home .. "/notes/neorg/evergreen",
+      project = home .. "/notes/neorg/project",
       mocs = home .. "/notes/neorg/mocs",
       templates = home .. "/notes/neorg/templates",
-      -- index = home .. "/notes/neorg/index",
     }
     for _, v in pairs(dir_list) do
       if not exists(v) then
@@ -164,11 +164,11 @@ return {
       "<Leader>oe",
       function()
         vim.ui.select({
-          "fleeting_notes",
-          "literature_notes",
-          "permanent_notes",
-          "structure_notes",
-          "index",
+          "inbox",
+          "search",
+          "evergreen",
+          "mocs",
+          "project",
         }, { prompt = "Select directory" }, function(choice)
           if choice then
             create_file("notes", choice, { no_open = false, force = false })
