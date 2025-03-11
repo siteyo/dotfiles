@@ -3,12 +3,12 @@ local setup = function()
   local home = vim.fn.expand("$HOME")
   local setup_directory = function()
     local dir_list = {
-      fleeting_notes = home .. "/notes/neorg/fleeting_notes",
-      literature_notes = home .. "/notes/neorg/literature_notes",
-      permanent_notes = home .. "/notes/neorg/permanent_notes",
-      structure_notes = home .. "/notes/neorg/structure_notes",
+      inbox = home .. "/notes/neorg/inbox",
+      search = home .. "/notes/neorg/search",
+      evergreen = home .. "/notes/neorg/permanent_notes",
+      mocs = home .. "/notes/neorg/mocs",
       templates = home .. "/notes/neorg/templates",
-      index = home .. "/notes/neorg/index",
+      -- index = home .. "/notes/neorg/index",
     }
     for _, v in pairs(dir_list) do
       if not exists(v) then
@@ -27,7 +27,7 @@ local setup = function()
       journal = home .. "/notes/neorg/templates/journal.norg",
       design_document = home .. "/notes/neorg/templates/design_document.norg",
       cornell_method = home .. "/notes/neorg/templates/cornell_method.norg",
-      index = home .. "/notes/neorg/templates/index.norg",
+      -- index = home .. "/notes/neorg/templates/index.norg",
       note = home .. "/notes/neorg/templates/note.norg",
     }
     for k, v in pairs(template_list) do
@@ -83,7 +83,7 @@ return {
             notes = "~/notes/neorg",
           },
           default_workspace = "notes",
-          index = "inbox.norg",
+          index = "home.norg",
         },
       },
       ["core.export"] = {
@@ -147,7 +147,7 @@ return {
       "<Leader>ot",
       function()
         vim.ui.select(
-          { "journal", "note", "design_document", "cornell_method", "index" },
+          { "journal", "note", "design_document", "cornell_method" },
           { prompt = "Select template" },
           function(choice)
             if choice then
@@ -185,13 +185,11 @@ return {
     -- for Telescope
     { "<Leader>of", "<Cmd>Telescope neorg find_norg_files<CR>", mode = { "n" }, desc = "Find Neorg Files" },
     { "<Leader>ob", "<Cmd>Telescope neorg find_backlinks<CR>", mode = { "n" }, desc = "Find Backlinks" },
-    -- { "<Leader>olf", "<Cmd>Telescope neorg insert_file_link<CR>", mode = { "n" } },
-    -- { "<Leader>olh", "<Cmd>Telescope neorg insert_link<CR>", mode = { "n" } },
-    { "<Leader>ol", "<Cmd>Telescope neorg search_headings<CR>", mode = { "n" }, desc = "Find Neorg Headings" },
+    { "<Leader>ol", "<Cmd>Telescope neorg find_linkable<CR>", mode = { "n" }, desc = "Find Neorg Headings" },
     {
       "<C-l>",
       function()
-        vim.ui.select({ "file", "heading" }, { prompt = "Insert link" }, function(choice)
+        vim.ui.select({ "heading", "file" }, { prompt = "Insert link" }, function(choice)
           if choice == "file" then
             vim.cmd("Telescope neorg insert_file_link")
           elseif choice == "heading" then
