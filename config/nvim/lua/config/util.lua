@@ -83,4 +83,15 @@ M.is_binary_file = function(filepath)
   return false
 end
 
+-- Get table keys
+---@param t table
+---@return table
+M.get_table_keys = function(t)
+  local keys = {}
+  for key, _ in pairs(t) do
+    table.insert(keys, key)
+  end
+  return keys
+end
+
 return M

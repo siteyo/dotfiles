@@ -104,6 +104,7 @@ function M.config()
       { name = "treesitter" },
       { name = "rg", keyword_length = 4 },
       { name = "vim-dadbod-completion" },
+      { name = "neorg" },
       -- {
       --   name = "spell",
       --   entry_filter = function(entry, _)
