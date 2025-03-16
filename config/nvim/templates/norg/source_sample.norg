@@ -3,9 +3,10 @@ title: {TITLE_INPUT}
 description:
 authors: {AUTHOR}
 categories: [
-  💡 idea
-  💬 talk
-  📝 memo
+  🔍 sources
+  🌱 seedling
+  🌿 budding
+  🌲 evergreen
 ]
 created: {TODAY}
 updated: {TODAY}

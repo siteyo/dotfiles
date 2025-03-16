@@ -1,55 +1,55 @@
-local exists = require("config.util").exists
-local setup = function()
-  local home = vim.fn.expand("$HOME")
-  local setup_directory = function()
-    local dir_list = {
-      inbox = home .. "/notes/neorg/inbox",
-      search = home .. "/notes/neorg/search",
-      evergreen = home .. "/notes/neorg/evergreen",
-      project = home .. "/notes/neorg/project",
-      mocs = home .. "/notes/neorg/mocs",
-      templates = home .. "/notes/neorg/templates",
-    }
-    for _, v in pairs(dir_list) do
-      if not exists(v) then
-        vim.fn.jobstart({ "mkdir", "-p", v }, {
-          on_exit = function()
-            vim.notify("Create directory in Neorg workspace(notes): ", v)
-          end,
-        })
-      end
+-- Util
+local util = require("config.util")
+
+-- Common path
+local home = vim.fn.expand("$HOME")
+local notes_workspace = home .. "/notes/neorg"
+local templates_sample_dir = vim.fn.stdpath("config") .. "/templates/norg"
+local templates_dir = home .. "/notes/neorg_templates"
+
+-- Direcctory setup
+local dir_table = {
+  encounters = notes_workspace .. "/encounters",
+  atlas = notes_workspace .. "/atlas",
+  cards = notes_workspace .. "/cards",
+  sources = notes_workspace .. "/sources",
+  spaces = notes_workspace .. "/spaces",
+  efforts = notes_workspace .. "/efforts",
+}
+local dir_list = util.get_table_keys(dir_table)
+
+local setup_directory = function()
+  for _, v in pairs(dir_table) do
+    if not util.exists(v) then
+      vim.fn.jobstart({ "mkdir", "-p", v })
     end
   end
-
-  local setup_template_file = function()
-    local templates_dir = vim.fn.stdpath("config") .. "/templates/norg/"
-    local template_list = {
-      journal = home .. "/notes/neorg/templates/journal.norg",
-      design_document = home .. "/notes/neorg/templates/design_document.norg",
-      cornell_method = home .. "/notes/neorg/templates/cornell_method.norg",
-      -- index = home .. "/notes/neorg/templates/index.norg",
-      note = home .. "/notes/neorg/templates/note.norg",
-    }
-    for k, v in pairs(template_list) do
-      if not exists(v) then
-        vim.fn.jobstart({ "cp", "-n", templates_dir .. k .. "_sample.norg", v })
-      end
-    end
-  end
-
-  local clean_template_file = function()
-    local dir = vim.fn.expand("$HOME") .. "/notes/neorg/templates"
-    vim.fn.jobstart({ "rm", "-rf", dir })
-  end
-
-  setup_directory()
-  setup_template_file()
-
-  vim.api.nvim_create_user_command("CleanNeorgTemplates", function()
-    clean_template_file()
-  end, {})
 end
 
+-- Template setup
+local template_list = {}
+local setup_templates = function()
+  -- Template directory
+  vim.fn.jobstart({ "mkdir", "-p", templates_dir })
+
+  -- Template files
+  local files = vim.fn.readdir(templates_sample_dir)
+  for _, file in pairs(files) do
+    local source_file = templates_sample_dir .. "/" .. file
+    local destination_file = templates_dir .. "/" .. string.gsub(file, "_sample", "")
+    if not util.exists(destination_file) then
+      vim.fn.jobstart({ "cp", "-n", source_file, destination_file })
+    end
+  end
+
+  -- Create template list
+  for _, file in pairs(vim.fn.readdir(templates_dir)) do
+    local file_noext = file:gsub(".norg", "")
+    table.insert(template_list, file_noext)
+  end
+end
+
+-- Autocmd
 local neorg = vim.api.nvim_create_augroup("neorg", { clear = true })
 vim.api.nvim_create_autocmd({ "BufReadPre" }, {
   pattern = "*.norg",
@@ -57,17 +57,25 @@ vim.api.nvim_create_autocmd({ "BufReadPre" }, {
   command = "setlocal conceallevel=2",
 })
 
+-- Custom create_file function
+--- @param workspace string
+--- @param directory string
+--- @param opts core.dirman.create_file_opts
 local create_file = function(workspace, directory, opts)
   local datetime = os.date("%Y%m%d%H%M%S")
-  -- local prompt = "[" .. workspace .. ":" .. directory .. "] File name"
-  -- vim.ui.input({ prompt = prompt }, function(input)
-  --   if input then
-  --     require("neorg").modules
-  --       .get_module("core.dirman")
-  --       .create_file(directory .. "/" .. datetime .. "__" .. input, workspace, opts)
-  --   end
-  -- end)
-  require("neorg").modules.get_module("core.dirman").create_file(directory .. "/" .. datetime, workspace, opts)
+  local prompt = "[" .. workspace .. ":" .. directory .. "] File name"
+  local last_dir = vim.fn.chdir(dir_table[directory])
+  vim.ui.input({ prompt = prompt, completion = "dir" }, function(input)
+    local neorg_create_file = require("neorg").modules.get_module("core.dirman").create_file
+    local path = vim.fn.fnamemodify(input, ":h")
+    local file = vim.fn.fnamemodify(input, ":t")
+    if file == "" then
+      neorg_create_file(directory .. "/" .. path .. "/" .. datetime, workspace, opts)
+    elseif file ~= "v:null" then
+      neorg_create_file(directory .. "/" .. path .. "/" .. datetime .. "__" .. file, workspace, opts)
+    end
+    vim.fn.chdir(last_dir)
+  end)
 end
 
 return {
@@ -77,6 +85,7 @@ return {
     load = {
       ["core.defaults"] = {}, -- Loads default behaviour
       ["core.concealer"] = {}, -- Adds pretty icons to your documents
+      ["core.summary"] = {},
       ["core.dirman"] = { -- Manages Neorg workspaces
         config = {
           workspaces = {
@@ -103,7 +112,7 @@ return {
       ["core.integrations.telescope"] = {},
       ["external.templates"] = {
         config = {
-          templates_dir = { vim.fn.expand("$HOME") .. "/notes/neorg/templates" },
+          templates_dir = { vim.fn.expand("$HOME") .. "/notes/neorg_templates" },
           keywords = {
             YESTERDAY_OF_DAY = function()
               local ls = require("luasnip")
@@ -126,8 +135,9 @@ return {
     },
   },
   config = function(_, opts)
+    setup_directory()
+    setup_templates()
     require("neorg").setup(opts)
-    setup()
   end,
   dependencies = {
     { "nvim-neorg/neorg-telescope", dependencies = "nvim-lua/plenary.nvim" },
@@ -146,15 +156,11 @@ return {
     {
       "<Leader>ot",
       function()
-        vim.ui.select(
-          { "journal", "note", "design_document", "cornell_method" },
-          { prompt = "Select template" },
-          function(choice)
-            if choice then
-              vim.cmd("Neorg templates fload " .. choice)
-            end
+        vim.ui.select(template_list, { prompt = "Select template" }, function(choice)
+          if choice then
+            vim.cmd("Neorg templates fload " .. choice)
           end
-        )
+        end)
       end,
       mode = { "n" },
       desc = "Load template",
@@ -163,13 +169,7 @@ return {
     {
       "<Leader>oe",
       function()
-        vim.ui.select({
-          "inbox",
-          "search",
-          "evergreen",
-          "mocs",
-          "project",
-        }, { prompt = "Select directory" }, function(choice)
+        vim.ui.select(dir_list, { prompt = "Select directory" }, function(choice)
           if choice then
             create_file("notes", choice, { no_open = false, force = false })
           end
@@ -180,8 +180,9 @@ return {
     },
     -- other
     -- { "<Leader>oe", "<Cmd>Neorg export directory neorg markdown<CR>", mode = { "n" } },
-    { "<Leader>oi", "<Cmd>Neorg index<CR>", mode = { "n" }, desc = "Show Index" },
-    { "<Leader>om", "<Cmd>Neorg inject-metadata<CR>", mode = { "n" }, desc = "Inject Metadata" },
+    { "<Leader>oh", "<Cmd>Neorg index<CR>", mode = { "n" }, desc = "Show Index" },
+    { "<Leader>oi", "<Cmd>Neorg inject-metadata<CR>", mode = { "n" }, desc = "Inject Metadata" },
+    { "<Leader>ou", "<Cmd>Neorg update-metadata<CR>", mode = { "n" }, desc = "Update Metadata" },
     -- for Telescope
     { "<Leader>of", "<Cmd>Telescope neorg find_norg_files<CR>", mode = { "n" }, desc = "Find Neorg Files" },
     { "<Leader>ob", "<Cmd>Telescope neorg find_backlinks<CR>", mode = { "n" }, desc = "Find Backlinks" },
