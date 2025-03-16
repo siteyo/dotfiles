@@ -15,7 +15,6 @@ local dir_table = {
   sources = notes_workspace .. "/sources",
   spaces = notes_workspace .. "/spaces",
   efforts = notes_workspace .. "/efforts",
-  templates = templates_dir,
 }
 local dir_list = util.get_table_keys(dir_table)
 
@@ -29,7 +28,11 @@ end
 
 -- Template setup
 local template_list = {}
-local setup_template_file = function()
+local setup_templates = function()
+  -- Template directory
+  vim.fn.jobstart({ "mkdir", "-p", templates_dir })
+
+  -- Template files
   local files = vim.fn.readdir(templates_sample_dir)
   for _, file in pairs(files) do
     local source_file = templates_sample_dir .. "/" .. file
@@ -39,6 +42,7 @@ local setup_template_file = function()
     end
   end
 
+  -- Create template list
   for _, file in pairs(vim.fn.readdir(templates_dir)) do
     local file_noext = file:gsub(".norg", "")
     table.insert(template_list, file_noext)
@@ -125,7 +129,7 @@ return {
   },
   config = function(_, opts)
     setup_directory()
-    setup_template_file()
+    setup_templates()
     require("neorg").setup(opts)
   end,
   dependencies = {
