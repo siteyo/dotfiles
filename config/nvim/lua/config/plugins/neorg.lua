@@ -57,17 +57,24 @@ vim.api.nvim_create_autocmd({ "BufReadPre" }, {
   command = "setlocal conceallevel=2",
 })
 
+-- Custom create_file function
+--- @param workspace string
+--- @param directory string
+--- @param opts core.dirman.create_file_opts
 local create_file = function(workspace, directory, opts)
   local datetime = os.date("%Y%m%d%H%M%S")
   local prompt = "[" .. workspace .. ":" .. directory .. "] File name"
-  vim.ui.input({ prompt = prompt }, function(input)
-    if input == "" then
-      require("neorg").modules.get_module("core.dirman").create_file(directory .. "/" .. datetime, workspace, opts)
-    else
-      require("neorg").modules
-        .get_module("core.dirman")
-        .create_file(directory .. "/" .. datetime .. "__" .. input, workspace, opts)
+  local last_dir = vim.fn.chdir(dir_table[directory])
+  vim.ui.input({ prompt = prompt, completion = "dir" }, function(input)
+    local neorg_create_file = require("neorg").modules.get_module("core.dirman").create_file
+    local path = vim.fn.fnamemodify(input, ":h")
+    local file = vim.fn.fnamemodify(input, ":t")
+    if file == "" then
+      neorg_create_file(directory .. "/" .. path .. "/" .. datetime, workspace, opts)
+    elseif file ~= "v:null" then
+      neorg_create_file(directory .. "/" .. path .. "/" .. datetime .. "__" .. file, workspace, opts)
     end
+    vim.fn.chdir(last_dir)
   end)
 end
 
