@@ -1,8 +1,9 @@
 @document.meta
-title: {TITLE_INPUT}
+title: {TITLE_NODATE}
 description:
 authors: {AUTHOR}
 categories: [
+  📇 cards
   🌱 seedling
   🌿 budding
   🌲 evergreen
@@ -12,4 +13,5 @@ updated: {TODAY}
 version: 1.1.1
 @end
 
-* {CURSOR}
+* {TITLE_NODATE}
+  {CURSOR}

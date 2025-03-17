@@ -129,6 +129,12 @@ return {
               local s = require("neorg.modules.external.templates.default_snippets")
               return ls.text_node(s.parse_date(1, s.file_tree_date(), [[%Y/%m/%d]]))
             end,
+            TITLE_NODATE = function()
+              local ls = require("luasnip")
+              local s = require("neorg.modules.external.templates.default_snippets")
+              local title = s.file_title():gsub("%d+__", "")
+              return ls.text_node(title)
+            end,
           },
         },
       },
