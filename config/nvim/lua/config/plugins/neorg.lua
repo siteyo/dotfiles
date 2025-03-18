@@ -72,9 +72,37 @@ local create_file = function(workspace, directory, opts)
     if file == "" then
       neorg_create_file(directory .. "/" .. path .. "/" .. datetime, workspace, opts)
     elseif file ~= "v:null" then
-      neorg_create_file(directory .. "/" .. path .. "/" .. datetime .. "__" .. file, workspace, opts)
+      neorg_create_file(directory .. "/" .. path .. "/" .. file, workspace, opts)
     end
     vim.fn.chdir(last_dir)
+  end)
+end
+
+-- Insert file link
+local insert_file_reference = function()
+  vim.ui.select(dir_list, { prompt = "Select directory" }, function(directory)
+    if not directory then
+      return
+    end
+
+    local last_dir = vim.fn.chdir(dir_table[directory])
+
+    vim.ui.input({ prompt = "Input filename (without extension)", completion = "dir" }, function(filename)
+      if not filename or filename == "" then
+        vim.fn.chdir(last_dir)
+        return
+      end
+
+      vim.ui.input({ prompt = "Input title" }, function(title)
+        vim.fn.chdir(last_dir)
+        if not title or title == "" then
+          return
+        end
+
+        local link = string.format("{:$/%s/%s:}[%s]", directory, filename, title)
+        vim.api.nvim_put({ link }, "c", true, true)
+      end)
+    end)
   end)
 end
 
@@ -196,11 +224,13 @@ return {
     {
       "<C-l>",
       function()
-        vim.ui.select({ "heading", "file" }, { prompt = "Insert link" }, function(choice)
+        vim.ui.select({ "heading", "file", "reference" }, { prompt = "Insert link" }, function(choice)
           if choice == "file" then
             vim.cmd("Telescope neorg insert_file_link")
           elseif choice == "heading" then
             vim.cmd("Telescope neorg insert_link")
+          elseif choice == "reference" then
+            insert_file_reference()
           end
         end)
       end,
