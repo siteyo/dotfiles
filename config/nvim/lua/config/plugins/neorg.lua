@@ -13,7 +13,6 @@ local dir_table = {
   atlas = notes_workspace .. "/atlas",
   cards = notes_workspace .. "/cards",
   sources = notes_workspace .. "/sources",
-  spaces = notes_workspace .. "/spaces",
   efforts = notes_workspace .. "/efforts",
 }
 local dir_list = util.get_table_keys(dir_table)
@@ -120,7 +119,7 @@ return {
             notes = "~/notes/neorg",
           },
           default_workspace = "notes",
-          index = "home.norg",
+          index = "inbox.norg",
         },
       },
       ["core.export"] = {
