@@ -3,10 +3,10 @@ title: {TITLE_NODATE}
 description:
 authors: {AUTHOR}
 categories: [
-  📇 cards
-  🌱 seedling
-  🌿 budding
-  🌲 evergreen
+  cards
+  seedling
+  budding
+  evergreen
 ]
 created: {TODAY}
 updated: {TODAY}
