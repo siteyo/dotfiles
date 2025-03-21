@@ -2,7 +2,7 @@
 title: {TODAY_OF_FILETREE}
 description:
 authors: {AUTHOR}
-categories: 📆 journal
+categories: journal
 created: {TODAY_OF_FILETREE}
 updated: {TODAY}
 version: 1.1.1
@@ -12,3 +12,4 @@ version: 1.1.1
   {{:$notes/journal/{YESTERDAY_OF_DAY}:}}[Yesterday] - {{:$notes/journal/{TOMORROW_OF_DAY}:}}[Tomorrow]
 
 * Memo
+  {CURSOR}

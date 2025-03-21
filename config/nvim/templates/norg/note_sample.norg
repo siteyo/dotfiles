@@ -3,9 +3,9 @@ title: {TITLE_NODATE}
 description:
 authors: {AUTHOR}
 categories: [
-  💡 idea
-  💬 talk
-  📝 memo
+  idea
+  talk
+  memo
 ]
 created: {TODAY}
 updated: {TODAY}
