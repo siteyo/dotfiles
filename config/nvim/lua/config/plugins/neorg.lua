@@ -73,7 +73,7 @@ local create_file = function(workspace, directory, opts)
     if file == "" then
       neorg_create_file(directory .. "/" .. path .. "/" .. datetime, workspace, opts)
     elseif file ~= "v:null" then
-      neorg_create_file(directory .. "/" .. path .. "/" .. file, workspace, opts)
+      neorg_create_file(directory .. "/" .. path .. "/" .. file .. "__" .. datetime, workspace, opts)
     end
     vim.fn.chdir(last_dir)
   end)
@@ -115,6 +115,12 @@ return {
       ["core.defaults"] = {}, -- Loads default behaviour
       ["core.concealer"] = {}, -- Adds pretty icons to your documents
       ["core.summary"] = {},
+      ["core.journal"] = {
+        config = {
+          journal_folder = "calendar",
+          strategy = "flat",
+        },
+      },
       ["core.dirman"] = { -- Manages Neorg workspaces
         config = {
           workspaces = {
@@ -163,7 +169,7 @@ return {
             TITLE_NODATE = function()
               local ls = require("luasnip")
               local s = require("neorg.modules.external.templates.default_snippets")
-              local title = s.file_title():gsub("%d+__", "")
+              local title = s.file_title():gsub("__%d+", "")
               return ls.text_node(title)
             end,
           },

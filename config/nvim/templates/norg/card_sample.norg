@@ -3,10 +3,9 @@ title: {TITLE_NODATE}
 description:
 authors: {AUTHOR}
 categories: [
-  cards
-  seedling
-  budding
-  evergreen
+  cards/seedling
+  cards/budding
+  cards/evergreen
 ]
 created: {TODAY}
 updated: {TODAY}
