@@ -4,6 +4,8 @@ local util = require("config.util")
 -- Common path
 local home = vim.fn.expand("$HOME")
 local notes_workspace = home .. "/notes/neorg"
+local archives_workspace = home .. "/notes/neorg_archives"
+local sandbox_workspace = home .. "/notes/neorg_sandbox"
 local templates_sample_dir = vim.fn.stdpath("config") .. "/templates/norg"
 local templates_dir = home .. "/notes/neorg_templates"
 
@@ -61,7 +63,7 @@ vim.api.nvim_create_autocmd({ "BufReadPre" }, {
 --- @param directory string
 --- @param opts core.dirman.create_file_opts
 local create_file = function(workspace, directory, opts)
-  local datetime = os.date("%Y%m%d%H%M%S")
+  local datetime = os.date("%Y%m%d%H%M")
   local prompt = "[" .. workspace .. ":" .. directory .. "] File name"
   local last_dir = vim.fn.chdir(dir_table[directory])
   vim.ui.input({ prompt = prompt, completion = "dir" }, function(input)
@@ -71,7 +73,7 @@ local create_file = function(workspace, directory, opts)
     if file == "" then
       neorg_create_file(directory .. "/" .. path .. "/" .. datetime, workspace, opts)
     elseif file ~= "v:null" then
-      neorg_create_file(directory .. "/" .. path .. "/" .. file, workspace, opts)
+      neorg_create_file(directory .. "/" .. path .. "/" .. file .. "__" .. datetime, workspace, opts)
     end
     vim.fn.chdir(last_dir)
   end)
@@ -113,10 +115,18 @@ return {
       ["core.defaults"] = {}, -- Loads default behaviour
       ["core.concealer"] = {}, -- Adds pretty icons to your documents
       ["core.summary"] = {},
+      ["core.journal"] = {
+        config = {
+          journal_folder = "calendar",
+          strategy = "flat",
+        },
+      },
       ["core.dirman"] = { -- Manages Neorg workspaces
         config = {
           workspaces = {
-            notes = "~/notes/neorg",
+            notes = notes_workspace,
+            archives = archives_workspace,
+            sandbox = sandbox_workspace,
           },
           default_workspace = "notes",
           index = "inbox.norg",
@@ -159,7 +169,7 @@ return {
             TITLE_NODATE = function()
               local ls = require("luasnip")
               local s = require("neorg.modules.external.templates.default_snippets")
-              local title = s.file_title():gsub("%d+__", "")
+              local title = s.file_title():gsub("__%d+", "")
               return ls.text_node(title)
             end,
           },

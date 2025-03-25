@@ -2,7 +2,9 @@
 title: {TITLE_NODATE}
 description:
 authors: {AUTHOR}
-categories: 🔍 sources
+categories: [
+  sources
+]
 created: {TODAY}
 updated: {TODAY}
 version: 1.1.1

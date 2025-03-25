@@ -3,11 +3,10 @@ title: {TITLE_NODATE}
 description:
 authors: {AUTHOR}
 categories: [
-  💪 efforts
-  🔥 on
-  🍳 ongoing
-  🍲 simmering
-  💤 sleeping
+  efforts/on
+  efforts/ongoing
+  efforts/simmering
+  efforts/sleeping
 ]
 created: {TODAY}
 updated: {TODAY}
