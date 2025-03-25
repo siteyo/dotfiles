@@ -24,6 +24,7 @@ function M.config()
     -- day_brightness = 0.4,
     on_colors = function(colors)
       colors.border = colors.blue0
+      colors.fg_gutter = colors.dark3
     end,
   })
   tokyonight.load()
