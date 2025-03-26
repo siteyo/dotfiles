@@ -31,6 +31,9 @@ function M.config()
         fg = c.blue6,
         underline = true,
       }
+      hl["diffAdded"] = {
+        fg = hl["diffAdded"].fg,
+      }
     end,
   })
   tokyonight.load()
