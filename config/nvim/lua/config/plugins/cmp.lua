@@ -206,13 +206,9 @@ function M.config()
       ["<C-e>"] = {
         c = cmp.mapping.abort(),
       },
-      ["<Tab>"] = {
-        c = cmp.mapping.confirm({ select = true }),
-      },
     },
     sources = cmp.config.sources({
       { name = "path" },
-      { name = "emoji", max_item_count = 5 },
     }, {
       { name = "cmdline", max_item_count = 10 },
     }, {
