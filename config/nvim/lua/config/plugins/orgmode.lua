@@ -22,19 +22,20 @@ return {
     "nvim-orgmode/orgmode",
     ft = "org",
     keys = {
-      {
-        "<Leader>o<Leader>",
-        function()
-          require("orgmode.api.agenda").agenda({ span = "day" })
-        end,
-        mode = { "n" },
-        desc = "Agenda view (today)",
-      },
+      -- {
+      --   "<Leader>o<Leader>",
+      --   function()
+      --     require("orgmode.api.agenda").agenda({ span = "day" })
+      --   end,
+      --   mode = { "n" },
+      --   desc = "Agenda view (today)",
+      -- },
       { "<Leader>oc", mode = "n", desc = "Capture" },
       { "<Leader>oa", mode = "n", desc = "Agenda view" },
     },
     opts = {
-      org_agenda_files = { "~/notes/org/agenda/**" },
+      org_agenda_files = { "~/notes/org/agenda/**/*" },
+      org_agenda_span = "day",
       org_default_notes_file = "~/notes/org/inbox.org",
       org_archive_location = "~/notes/org/archive/%s_archive::",
       org_deadline_warning_days = 14,
@@ -80,6 +81,29 @@ return {
       org_startup_folded = "content",
       org_tags_column = 90,
       -- win_split_mode = { "float", 0.8 },
+      org_agenda_custom_commands = {
+        d = {
+          description = "Combined view",
+          types = {
+            {
+              type = "tags_todo",
+              match = '+PRIORITY="A"',
+              org_agenda_overriding_header = "High priority todos",
+              org_agenda_todo_ignore_deadlines = "far",
+            },
+            {
+              type = "agenda",
+              org_agenda_overriding_header = "Daily agenda",
+              org_agenda_span = "day",
+            },
+          },
+        },
+      },
+      ui = {
+        input = {
+          use_vim_ui = true,
+        },
+      },
     },
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function(_, opts)
