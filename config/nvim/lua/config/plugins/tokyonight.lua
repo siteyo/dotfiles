@@ -31,7 +31,7 @@ function M.config()
         fg = c.blue6,
         underline = true,
       }
-      hl["diffAdded"] = {
+      hl["@org.agenda.scheduled"] = {
         fg = hl["diffAdded"].fg,
       }
     end,
