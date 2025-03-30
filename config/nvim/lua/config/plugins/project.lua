@@ -14,6 +14,7 @@ return {
         "Makefile",
         "package.json",
         ".venv",
+        ".obsidian",
       },
     })
   end,

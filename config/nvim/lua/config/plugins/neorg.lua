@@ -247,5 +247,5 @@ return {
       desc = "Insert file/heading link",
     },
   },
-  enabled = true,
+  enabled = false,
 }
