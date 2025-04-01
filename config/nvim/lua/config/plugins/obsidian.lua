@@ -35,41 +35,59 @@ local dir_list = {
   "Calendar",
 }
 
-local create_note = function()
-  local client = require("obsidian").get_client()
-  vim.ui.select(dir_list, { prompt = "Select directory" }, function(choice)
-    if not choice then
-      vim.notify("Aborted")
-      return
-    end
-
-    local dir = client.dir.filename .. "/" .. choice .. "/"
-    if not util.exists(dir) then
-      vim.system({ "mdkir", "-p", dir })
-    end
-
-    local prompt = "[" .. choice .. "] Enter title or path"
-    local last_dir = vim.fn.chdir(dir)
-    local title = require("obsidian.util").input(prompt, { completion = "dir" })
-    vim.fn.chdir(last_dir)
-
-    if title and vim.fn.fnamemodify(title, ":t") ~= "" then
-      local note = client:create_note({ title = title, dir = dir })
-      client:open_note(note, { sync = true })
-      client:write_note_to_buffer(note)
-    else
-      vim.notify("Aborted")
-    end
-  end)
-end
-
 -- Autocmd
-local obsidian = vim.api.nvim_create_augroup("obdisian", { clear = true })
-vim.api.nvim_create_autocmd({ "BufReadPre" }, {
-  pattern = "*.md",
-  group = obsidian,
-  command = "setlocal conceallevel=2",
-})
+local setup_autocmd = function()
+  local obsidian = vim.api.nvim_create_augroup("obdisian", { clear = true })
+  vim.api.nvim_create_autocmd({ "BufReadPre" }, {
+    pattern = "*.md",
+    group = obsidian,
+    command = "setlocal conceallevel=2",
+  })
+
+  local update_link = function(action)
+    local with = require("plenary.context_manager").with
+    local open = require("plenary.context_manager").open
+    local Path = require("plenary.path")
+
+    local client = require("obsidian").get_client()
+    local workspace_path = Path:new(client.dir.filename)
+    local new_path = action.dest_url:gsub("^oil://", "")
+    local new_link = Path:new(new_path):make_relative(workspace_path.filename)
+    local old_path = action.src_url:gsub("^oil://", "")
+    local old_link = Path:new(old_path):make_relative(workspace_path.filename)
+
+    vim.system({ "rg", "-l", old_link, workspace_path.filename }, {}, function(obj)
+      if obj.stdout == "" then
+        vim.notify("test1")
+        return
+      end
+      for target in obj.stdout:gmatch("[^\n]+") do
+        local content
+        with(open(target, "r"), function(reader)
+          content = reader:read("*a")
+        end)
+        local replaced_content = content:gsub("%[%[" .. old_link .. "%|(.*)%]%]", "[[" .. new_link .. "|%1]]")
+        with(open(target, "w"), function(writer)
+          writer:write(replaced_content)
+        end)
+      end
+    end)
+  end
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "OilActionsPost",
+    callback = function(args)
+      if args.data.err then
+        vim.print("ERROR", args.data.err)
+        return
+      end
+      for _, action in ipairs(args.data.actions) do
+        if action.type == "move" then
+          update_link(action)
+        end
+      end
+    end,
+  })
+end
 
 local M = {
   -- "epwalsh/obsidian.nvim"
@@ -119,6 +137,10 @@ local M = {
       vim.fn.jobstart({ "open", url })
     end,
     new_notes_location = "notes_subdir",
+    wiki_link_func = function(opts)
+      return require("obsidian.util").wiki_link_path_prefix(opts)
+    end,
+    preferred_link_style = "wiki",
     note_path_func = function(spec)
       return spec.title
     end,
@@ -131,6 +153,7 @@ local M = {
   },
   config = function(_, opts)
     setup_workspaces(opts)
+    setup_autocmd()
     require("obsidian").setup(opts)
   end,
 }
