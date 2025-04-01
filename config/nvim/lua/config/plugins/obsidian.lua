@@ -25,16 +25,6 @@ local setup_workspaces = function(opts)
   opts.workspaces = #external_config.workspaces == 0 and default_workspace or external_config.workspaces
 end
 
--- Create note
-local dir_list = {
-  "Encounters",
-  "Atlas",
-  "Cards",
-  "Sources",
-  "Efforts",
-  "Calendar",
-}
-
 -- Autocmd
 local setup_autocmd = function()
   local obsidian = vim.api.nvim_create_augroup("obdisian", { clear = true })
@@ -95,7 +85,6 @@ local M = {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  lazy = false,
   ft = "markdown",
   keys = {
     { "<Leader>or", "<Cmd>ObsidianRename<CR>", mode = { "n" }, "[Obsidian] Rename Note" },
@@ -108,9 +97,10 @@ local M = {
     { "<Leader>op", "<Cmd>ObsidianYesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Yesterday Calendar Note" },
     { "<Leader>off", "<Cmd>ObsidianQuickSwitch<CR>", mode = { "n" }, "[Obsidian] Search Notes" },
     { "<Leader>oft", "<Cmd>ObsidianTags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
+    { "<Leader>oo", "<Cmd>ObsidianOpen<CR>", mode = { "n" }, desc = "[Obsidian] Open Obsidian App" },
   },
   opts = {
-    notes_subdir = "Encounters",
+    notes_subdir = "Inbox",
     daily_notes = {
       folder = "Calendar",
       default_tags = { "Calendar" },
@@ -145,6 +135,21 @@ local M = {
     preferred_link_style = "wiki",
     note_path_func = function(spec)
       return spec.title
+    end,
+    note_frontmatter_func = function(note)
+      if note.title then
+        note:add_alias(note.title)
+      end
+
+      local out = { aliases = note.aliases, tags = note.tags }
+
+      if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+        for k, v in pairs(note.metadata) do
+          out[k] = v
+        end
+      end
+
+      return out
     end,
     attachments = {
       img_folder = "Extras/Images",
