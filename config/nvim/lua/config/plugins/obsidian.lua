@@ -89,17 +89,40 @@ local M = {
   },
   ft = "markdown",
   keys = {
-    { "<Leader>or", "<Cmd>ObsidianRename<CR>", mode = { "n" }, "[Obsidian] Rename Note" },
-    { "<Leader>oh", "<Cmd>ObsidianQuickSwitch home<CR>", mode = { "n" }, "[Obsidian] Show Home Note" },
-    { "<Leader>ob", "<Cmd>ObsidianBacklinks<CR>", mode = { "n" }, "[Obsidian] Find Backlinks" },
+    { "<Leader>or", "<Cmd>ObsidianRename<CR>", mode = { "n" }, desc = "[Obsidian] Rename Note" },
+    { "<Leader>oh", "<Cmd>ObsidianQuickSwitch home<CR>", mode = { "n" }, desc = "[Obsidian] Show Home Note" },
+    { "<Leader>ob", "<Cmd>ObsidianBacklinks<CR>", mode = { "n" }, desc = "[Obsidian] Find Backlinks" },
     { "<Leader>oe", "<Cmd>ObsidianNewFromTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
     { "<Leader>ot", "<Cmd>ObsidianTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
     { "<Leader>oj", "<Cmd>ObsidianToday<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
     { "<Leader>on", "<Cmd>ObsidianTomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
     { "<Leader>op", "<Cmd>ObsidianYesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Yesterday Calendar Note" },
-    { "<Leader>off", "<Cmd>ObsidianQuickSwitch<CR>", mode = { "n" }, "[Obsidian] Search Notes" },
+    { "<Leader>off", "<Cmd>ObsidianQuickSwitch<CR>", mode = { "n" }, desc = "[Obsidian] Search Notes" },
     { "<Leader>oft", "<Cmd>ObsidianTags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
     { "<Leader>oo", "<Cmd>ObsidianOpen<CR>", mode = { "n" }, desc = "[Obsidian] Open Obsidian App" },
+    { "<Leader>os", "<Cmd>ObsidianSearch<CR>", mode = { "n" }, desc = "[Obsidian] Search" },
+    {
+      "<C-l>",
+      function()
+        return vim.ui.select(
+          { "tags", "file", "search" },
+          { prompt = "Insert tags/file/search result" },
+          function(choice)
+            if choice == "tags" then
+              vim.cmd("ObsidianTags")
+            elseif choice == "file" then
+              vim.cmd("ObsidianQuickSwitch")
+            elseif choice == "search" then
+              vim.cmd("ObsidianSearch")
+            else
+              vim.notify("Aborted")
+            end
+          end
+        )
+      end,
+      mode = { "i" },
+      desc = "[Obsidian] Search and Insert",
+    },
   },
   opts = {
     notes_subdir = "Inbox",
