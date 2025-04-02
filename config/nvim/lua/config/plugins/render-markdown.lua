@@ -1,6 +1,9 @@
 local M = {
   "MeanderingProgrammer/render-markdown.nvim",
-  opts = {},
+  opts = {
+    heading = { position = "inline" },
+    bullet = { right_pad = 1 },
+  },
   ft = "markdown",
 }
 

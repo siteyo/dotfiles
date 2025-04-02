@@ -93,12 +93,11 @@ local M = {
     { "<Leader>oh", "<Cmd>ObsidianQuickSwitch home<CR>", mode = { "n" }, desc = "[Obsidian] Show Home Note" },
     { "<Leader>ob", "<Cmd>ObsidianBacklinks<CR>", mode = { "n" }, desc = "[Obsidian] Find Backlinks" },
     { "<Leader>oe", "<Cmd>ObsidianNewFromTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
-    { "<Leader>ot", "<Cmd>ObsidianTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
     { "<Leader>oj", "<Cmd>ObsidianToday<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
     { "<Leader>on", "<Cmd>ObsidianTomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
     { "<Leader>op", "<Cmd>ObsidianYesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Yesterday Calendar Note" },
-    { "<Leader>off", "<Cmd>ObsidianQuickSwitch<CR>", mode = { "n" }, desc = "[Obsidian] Search Notes" },
-    { "<Leader>oft", "<Cmd>ObsidianTags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
+    { "<Leader>of", "<Cmd>ObsidianQuickSwitch<CR>", mode = { "n" }, desc = "[Obsidian] Search Notes" },
+    { "<Leader>ot", "<Cmd>ObsidianTags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
     { "<Leader>oo", "<Cmd>ObsidianOpen<CR>", mode = { "n" }, desc = "[Obsidian] Open Obsidian App" },
     { "<Leader>os", "<Cmd>ObsidianSearch<CR>", mode = { "n" }, desc = "[Obsidian] Search" },
     {
@@ -166,7 +165,7 @@ local M = {
         note:add_alias(note.title)
       end
 
-      local out = { aliases = note.aliases, tags = note.tags }
+      local out = { title = note.title, aliases = note.aliases, tags = note.tags }
 
       if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
         for k, v in pairs(note.metadata) do
