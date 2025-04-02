@@ -48,7 +48,7 @@ local setup_autocmd = function()
 
     vim.system({ "rg", "-l", old_link, workspace_path.filename }, {}, function(obj)
       if obj.stdout == "" then
-        vim.notify("test1")
+        vim.notify("[Obsidian] No link updates.")
         return
       end
       for target in obj.stdout:gmatch("[^\n]+") do
@@ -61,6 +61,7 @@ local setup_autocmd = function()
         with(open(target, "w"), function(writer)
           writer:write(replaced_content)
         end)
+        vim.notify("[Obsidian] Update links")
       end
     end)
   end
