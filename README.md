@@ -14,6 +14,7 @@ The maintained contents are listed below.
 
 * Terminal
   * [Wezterm](https://wezfurlong.org/wezterm/index.html)
+  * [kitty](https://sw.kovidgoyal.net/kitty/)
 * Editor
   * [Neovim](https://neovim.io/)
   * [LazyVim](https://www.lazyvim.org/)
@@ -28,8 +29,7 @@ The maintained contents are listed below.
   * [Sheldon](https://github.com/rossmacarthur/sheldon)
   * [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 * Window Manager
-  * [yabai](https://github.com/koekeishiya/yabai)
-  * [skhd](https://github.com/koekeishiya/skhd)
+  * [AeroSpace](https://github.com/nikitabobko/AeroSpace)
 * Others
   * [Git](https://www.git-scm.com/)
   * [Sketchybar](https://felixkratz.github.io/SketchyBar/)
