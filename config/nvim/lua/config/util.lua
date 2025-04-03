@@ -94,4 +94,9 @@ M.get_table_keys = function(t)
   return keys
 end
 
+---@param text string
+M.escape = function(text)
+  return text:gsub("([%^$()%.%[%]*+%-?])", "%%%1")
+end
+
 return M
