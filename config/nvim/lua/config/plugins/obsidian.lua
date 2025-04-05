@@ -97,7 +97,8 @@ local M = {
     { "<Leader>on", "<Cmd>ObsidianTomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
     { "<Leader>op", "<Cmd>ObsidianYesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Yesterday Calendar Note" },
     { "<Leader>of", "<Cmd>ObsidianQuickSwitch<CR>", mode = { "n" }, desc = "[Obsidian] Search Notes" },
-    { "<Leader>ot", "<Cmd>ObsidianTags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
+    { "<Leader>og", "<Cmd>ObsidianTags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
+    { "<Leader>og", "<Cmd>ObsidianTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
     { "<Leader>oo", "<Cmd>ObsidianOpen<CR>", mode = { "n" }, desc = "[Obsidian] Open Obsidian App" },
     { "<Leader>os", "<Cmd>ObsidianSearch<CR>", mode = { "n" }, desc = "[Obsidian] Search" },
     {
@@ -127,7 +128,7 @@ local M = {
     notes_subdir = "Inbox",
     daily_notes = {
       folder = "Calendar",
-      default_tags = { "Calendar" },
+      default_tags = { "📆Calendar" },
       template = "calendar.md",
     },
     templates = {

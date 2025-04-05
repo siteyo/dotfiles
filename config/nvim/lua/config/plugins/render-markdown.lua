@@ -3,6 +3,7 @@ local M = {
   opts = {
     heading = { position = "inline" },
     bullet = { right_pad = 1 },
+    checkbox = { right_pad = 5 },
   },
   ft = "markdown",
 }
