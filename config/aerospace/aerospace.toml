@@ -172,8 +172,8 @@ alt-n = 'focus-monitor --wrap-around next'
 alt-m = 'move-mouse --fail-if-noop window-lazy-center'
 
 # Resize
-alt-minus = 'resize smart -50'
-alt-equal = 'resize smart +50'
+alt-minus = 'resize smart -100'
+alt-equal = 'resize smart +100'
 alt-0 = 'balance-sizes'
 
 # Close
