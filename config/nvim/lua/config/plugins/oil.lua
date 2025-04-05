@@ -2,6 +2,8 @@ local M = {
   "stevearc/oil.nvim",
   opts = {
     default_file_explorer = true,
+    delete_to_trash = true,
+    skip_confirm_for_simple_edits = true,
     use_default_keymap = false,
     columns = {
       "icon",
