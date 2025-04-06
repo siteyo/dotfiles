@@ -181,7 +181,7 @@ local M = {
           suffix = suffix .. string.char(math.random(65, 90))
         end
       end
-      return tostring(os.time()) .. "-" .. suffix
+      return tostring(os.date("%Y%m%dT%H%M%S")) .. "-" .. suffix
     end,
     note_path_func = function(spec)
       local path = spec.dir / tostring(spec.id)
