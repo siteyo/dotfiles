@@ -128,7 +128,7 @@ local M = {
     notes_subdir = "Inbox",
     daily_notes = {
       folder = "Calendar",
-      default_tags = { "📆Calendar" },
+      default_tags = { "Calendar" },
       template = "calendar.md",
     },
     templates = {
@@ -181,7 +181,7 @@ local M = {
           suffix = suffix .. string.char(math.random(65, 90))
         end
       end
-      return tostring(os.date("%Y%m%dT%H%M%S")) .. "-" .. suffix
+      return tostring(os.time()) .. "-" .. suffix
     end,
     note_path_func = function(spec)
       local path = spec.dir / tostring(spec.id)
@@ -193,7 +193,17 @@ local M = {
         note:add_alias(note.title)
       end
 
-      local out = { title = note.title, aliases = note.aliases, tags = note.tags }
+      local current_datetime = os.date("%Y-%m-%d %H:%M:%S")
+      if not note.created_at then
+        note.created_at = current_datetime
+      end
+
+      local out = {
+        title = note.title,
+        aliases = note.aliases,
+        tags = note.tags,
+        created_at = note.created_at,
+      }
 
       if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
         for k, v in pairs(note.metadata) do
