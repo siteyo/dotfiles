@@ -145,9 +145,20 @@ local M = {
       },
       ["<CR>"] = {
         action = function()
-          return require("obsidian").util.smart_action()
+          if require("obsidian").util.cursor_on_markdown_link(nil, nil, true) then
+            return "<Cmd>ObsidianFollowLink<CR>"
+          end
+          if require("obsidian").util.cursor_tag(nil, nil) then
+            return "<Cmd>ObsidianTags<CR>"
+          end
+          return "<CR>"
         end,
         opts = { buffer = true, expr = true },
+      },
+      ["<Leader><CR>"] = {
+        action = function()
+          return require("obsidian").util.smart_action()
+        end,
       },
     },
     follow_url_func = function(url)
@@ -158,8 +169,24 @@ local M = {
       return require("obsidian.util").wiki_link_path_prefix(opts)
     end,
     preferred_link_style = "wiki",
+    note_id_func = function(title)
+      local suffix = ""
+      if title ~= nil then
+        -- If title is given, transform it into valid file name.
+        suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+      end
+      if suffix == "" then
+        -- If title is empty, just add 4 random uppercase letters to the suffix.
+        for _ = 1, 4 do
+          suffix = suffix .. string.char(math.random(65, 90))
+        end
+      end
+      return tostring(os.date("%Y%m%dT%H%M%S")) .. "-" .. suffix
+    end,
     note_path_func = function(spec)
-      return spec.title
+      local path = spec.dir / tostring(spec.id)
+      return path:with_suffix(".md")
+      -- return spec.title
     end,
     note_frontmatter_func = function(note)
       if note.title then
