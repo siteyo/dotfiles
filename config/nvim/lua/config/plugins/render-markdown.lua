@@ -1,9 +1,22 @@
 local M = {
   "MeanderingProgrammer/render-markdown.nvim",
   opts = {
-    heading = { position = "inline" },
-    bullet = { right_pad = 1 },
-    checkbox = { right_pad = 5 },
+    render_modes = true,
+    heading = {
+      position = "inline",
+      icons = { "◉ ", "◎ ", "○ ", "✺ ", "▶ ", "⤷ " },
+    },
+    bullet = {
+      right_pad = 1,
+      icons = { "•", "◦" },
+    },
+    checkbox = {
+      right_pad = 5,
+    },
+    indent = {
+      enabled = true,
+      skip_heading = true,
+    },
   },
   ft = "markdown",
 }
