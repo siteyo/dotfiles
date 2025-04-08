@@ -96,7 +96,7 @@ local M = {
     { "<Leader>oj", "<Cmd>ObsidianToday<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
     { "<Leader>on", "<Cmd>ObsidianTomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
     { "<Leader>op", "<Cmd>ObsidianYesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Yesterday Calendar Note" },
-    { "<Leader>of", "<Cmd>ObsidianQuickSwitch<CR>", mode = { "n" }, desc = "[Obsidian] Search Notes" },
+    { "<Leader>of", "<Cmd>ObsidianLinks<CR>", mode = { "n" }, desc = "[Obsidian] Find Forwardlinks" },
     { "<Leader>og", "<Cmd>ObsidianTags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
     { "<Leader>ot", "<Cmd>ObsidianTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
     { "<Leader>oo", "<Cmd>ObsidianOpen<CR>", mode = { "n" }, desc = "[Obsidian] Open Obsidian App" },
