@@ -97,8 +97,8 @@ local M = {
     { "<Leader>on", "<Cmd>ObsidianTomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
     { "<Leader>op", "<Cmd>ObsidianYesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Yesterday Calendar Note" },
     { "<Leader>of", "<Cmd>ObsidianLinks<CR>", mode = { "n" }, desc = "[Obsidian] Find Forwardlinks" },
-    { "<Leader>og", "<Cmd>ObsidianTags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
-    { "<Leader>ot", "<Cmd>ObsidianTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
+    { "<Leader>ot", "<Cmd>ObsidianTags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
+    -- { "<Leader>ot", "<Cmd>ObsidianTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
     { "<Leader>oo", "<Cmd>ObsidianOpen<CR>", mode = { "n" }, desc = "[Obsidian] Open Obsidian App" },
     { "<Leader>os", "<Cmd>ObsidianSearch<CR>", mode = { "n" }, desc = "[Obsidian] Search" },
     {
@@ -217,7 +217,7 @@ local M = {
     ui = {
       checkboxes = {
         [" "] = { order = 1 },
-        ["-"] = { order = 2 },
+        ["/"] = { order = 2 },
         ["x"] = { order = 3 },
       },
     },

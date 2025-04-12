@@ -1,5 +1,12 @@
-local nvim_terminal = vim.api.nvim_create_augroup("nvim_terminal", { clear = false })
+local terminal = vim.api.nvim_create_augroup("nvim_terminal", { clear = true })
 vim.api.nvim_create_autocmd({ "TermOpen" }, {
-  group = nvim_terminal,
+  group = terminal,
   command = "setlocal nonumber norelativenumber",
+})
+
+local filetypes = vim.api.nvim_create_augroup("nvim_filetypes", { clear = true })
+vim.api.nvim_create_autocmd({ "BufReadPre" }, {
+  group = filetypes,
+  pattern = "*.md",
+  command = "setlocal wrap",
 })
