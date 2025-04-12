@@ -185,7 +185,7 @@ alt-equal = 'resize smart +100'
 alt-0 = 'balance-sizes'
 
 # Close
-alt-q = 'close'
+alt-c = 'close'
 
 # Mode transition
 alt-period = 'mode service'
