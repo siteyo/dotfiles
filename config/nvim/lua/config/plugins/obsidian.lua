@@ -139,9 +139,9 @@ local M = {
     mappings = {
       ["<C-Space>"] = {
         action = function()
-          return require("obsidian").util.toggle_checkbox()
+          return "<Cmd>ObsidianToggleCheckbox<CR>"
         end,
-        opts = { buffer = true },
+        opts = { buffer = true, expr = true },
       },
       ["<CR>"] = {
         action = function()
@@ -159,6 +159,7 @@ local M = {
         action = function()
           return require("obsidian").util.smart_action()
         end,
+        opts = { buffer = true, expr = true },
       },
     },
     follow_url_func = function(url)
@@ -213,6 +214,13 @@ local M = {
 
       return out
     end,
+    ui = {
+      checkboxes = {
+        [" "] = { order = 1 },
+        ["-"] = { order = 2 },
+        ["x"] = { order = 3 },
+      },
+    },
     attachments = {
       img_folder = "Extras/Images",
       img_name_func = function()
