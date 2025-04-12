@@ -11,7 +11,11 @@ local M = {
       icons = { "•", "◦" },
     },
     checkbox = {
-      right_pad = 5,
+      enabled = true,
+      right_pad = 1,
+      custom = {
+        todo = { raw = "[-]", rendered = "󰥔 ", highlight = "RenderMarkdownTodo", scope_highlight = nil },
+      },
     },
     indent = {
       enabled = true,
