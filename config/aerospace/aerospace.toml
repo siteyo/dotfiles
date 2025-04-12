@@ -104,7 +104,7 @@ outer.right =      6
 # Layout
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
-# alt-t = 'layout floating tiling'
+alt-t = 'layout floating tiling'
 alt-f = 'fullscreen'
 # alt-r = 'flatten-workspace-tree'
 
