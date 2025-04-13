@@ -45,6 +45,7 @@ vim.o.cmdheight = 2
 -- vim.o.shortmess+=c
 vim.o.showtabline = 2
 vim.o.scrolloff = 4
+vim.o.sidescrolloff = 5
 vim.o.signcolumn = "yes"
 vim.o.mouse = "a"
 vim.o.undofile = true
