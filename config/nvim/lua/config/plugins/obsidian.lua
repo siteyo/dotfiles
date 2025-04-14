@@ -171,18 +171,19 @@ local M = {
     end,
     preferred_link_style = "wiki",
     note_id_func = function(title)
-      local suffix = ""
-      if title ~= nil then
-        -- If title is given, transform it into valid file name.
-        suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-      end
-      if suffix == "" then
-        -- If title is empty, just add 4 random uppercase letters to the suffix.
-        for _ = 1, 4 do
-          suffix = suffix .. string.char(math.random(65, 90))
-        end
-      end
-      return tostring(os.date("%Y%m%dT%H%M%S")) .. "-" .. suffix
+      -- local suffix = ""
+      -- if title ~= nil then
+      --   -- If title is given, transform it into valid file name.
+      --   suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+      -- end
+      -- if suffix == "" then
+      --   -- If title is empty, just add 4 random uppercase letters to the suffix.
+      --   for _ = 1, 4 do
+      --     suffix = suffix .. string.char(math.random(65, 90))
+      --   end
+      -- end
+      -- return tostring(os.date("%Y%m%dT%H%M%S")) .. "-" .. suffix
+      return tostring(os.date("%Y%m%dT%H%M%S"))
     end,
     note_path_func = function(spec)
       local path = spec.dir / tostring(spec.id)
