@@ -13,8 +13,29 @@ local M = {
     checkbox = {
       enabled = true,
       -- right_pad = 1,
+      unchecked = {
+        icon = "󰄱 ",
+        highlight = "RenderMarkdownUnchecked",
+        scope_highlight = nil,
+      },
+      checked = {
+        icon = "󰱒 ",
+        highlight = "RenderMarkdownChecked",
+        scope_highlight = "@markup.strikethrough",
+      },
       custom = {
-        todo = { raw = "[/]", rendered = "󰥔 ", highlight = "RenderMarkdownTodo", scope_highlight = nil },
+        todo = {
+          raw = "[/]",
+          rendered = "󰥔 ",
+          highlight = "RenderMarkdownTodo",
+          scope_highlight = nil,
+        },
+        cancel = {
+          raw = "[-]",
+          rendered = "󰜺 ",
+          highlight = "RenderMarkdownWarn",
+          scope_highlight = "@markup.strikethrough",
+        },
       },
     },
     indent = {
