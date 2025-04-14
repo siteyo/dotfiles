@@ -57,7 +57,7 @@ local setup_autocmd = function()
           content = reader:read("*a")
         end)
         local replaced_content =
-          content:gsub("%[%[" .. util.escape(old_link) .. "%|(.*)%]%]", "[[" .. util.escape(new_link) .. "|%1]]")
+          content:gsub("%[%[" .. util.escape(old_link) .. "%|(.-)%]%]", "[[" .. util.escape(new_link) .. "|%1]]")
         with(open(target, "w"), function(writer)
           writer:write(replaced_content)
         end)
