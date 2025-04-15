@@ -95,7 +95,7 @@ local M = {
     { "<Leader>oe", "<Cmd>ObsidianNewFromTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
     { "<Leader>oj", "<Cmd>ObsidianToday<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
     { "<Leader>on", "<Cmd>ObsidianTomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
-    { "<Leader>op", "<Cmd>ObsidianYesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Yesterday Calendar Note" },
+    { "<Leader>op", "<Cmd>ObsidianPasteImg<CR>", mode = { "n" }, desc = "[Obsidian] Paste Image" },
     { "<Leader>of", "<Cmd>ObsidianLinks<CR>", mode = { "n" }, desc = "[Obsidian] Find Forwardlinks" },
     { "<Leader>ot", "<Cmd>ObsidianTags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
     -- { "<Leader>ot", "<Cmd>ObsidianTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
@@ -170,19 +170,7 @@ local M = {
       return require("obsidian.util").wiki_link_path_prefix(opts)
     end,
     preferred_link_style = "wiki",
-    note_id_func = function(title)
-      -- local suffix = ""
-      -- if title ~= nil then
-      --   -- If title is given, transform it into valid file name.
-      --   suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-      -- end
-      -- if suffix == "" then
-      --   -- If title is empty, just add 4 random uppercase letters to the suffix.
-      --   for _ = 1, 4 do
-      --     suffix = suffix .. string.char(math.random(65, 90))
-      --   end
-      -- end
-      -- return tostring(os.date("%Y%m%dT%H%M%S")) .. "-" .. suffix
+    note_id_func = function(_)
       return tostring(os.date("%Y%m%dT%H%M%S"))
     end,
     note_path_func = function(spec)

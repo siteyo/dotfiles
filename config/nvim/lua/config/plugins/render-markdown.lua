@@ -7,8 +7,8 @@ local M = {
       icons = { "◉ ", "◎ ", "○ ", "✺ ", "▶ ", "⤷ " },
     },
     bullet = {
-      -- right_pad = 1,
-      icons = { "•", "◦" },
+      right_pad = 1,
+      -- icons = { "•", "◦" },
     },
     checkbox = {
       enabled = true,

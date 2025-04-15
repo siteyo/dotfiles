@@ -1,4 +1,9 @@
 local M = {}
-M.workspaces = {}
+M.workspaces = {
+  -- {
+  --   name = "workspace",
+  --   path = "/path/to/your/vault",
+  -- },
+}
 
 return M
