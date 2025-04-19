@@ -161,6 +161,26 @@ local M = {
         end,
         opts = { buffer = true, expr = true },
       },
+      ["<C-CR>"] = {
+        action = function()
+          if require("obsidian").util.cursor_on_markdown_link(nil, nil, true) then
+            return "<Cmd>ObsidianFollowLink vsplit<CR>"
+          else
+            return "<C-CR>"
+          end
+        end,
+        opts = { buffer = true, expr = true },
+      },
+      ["<S-CR>"] = {
+        action = function()
+          if require("obsidian").util.cursor_on_markdown_link(nil, nil, true) then
+            return "<Cmd>ObsidianFollowLink hsplit<CR>"
+          else
+            return "<S-CR>"
+          end
+        end,
+        opts = { buffer = true, expr = true },
+      },
     },
     follow_url_func = function(url)
       vim.fn.jobstart({ "open", url })
