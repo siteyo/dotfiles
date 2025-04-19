@@ -12,7 +12,7 @@ local M = {
     },
     checkbox = {
       enabled = true,
-      -- right_pad = 1,
+      right_pad = 0,
       unchecked = {
         icon = "󰄱 ",
         highlight = "RenderMarkdownUnchecked",
