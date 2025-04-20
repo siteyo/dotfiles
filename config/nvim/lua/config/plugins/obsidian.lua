@@ -125,7 +125,7 @@ local M = {
     },
   },
   opts = {
-    notes_subdir = "Inbox",
+    notes_subdir = "Encounters",
     daily_notes = {
       folder = "Calendar",
       default_tags = { "Calendar" },
