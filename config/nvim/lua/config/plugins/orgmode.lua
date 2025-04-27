@@ -1,3 +1,5 @@
+local enabled = false
+
 local template = {}
 
 template.todo = [[
@@ -182,11 +184,12 @@ return {
         end,
       })
     end,
-    enabled = true,
+    enabled = enabled,
   },
   {
     "akinsho/org-bullets.nvim",
     config = true,
     ft = "org",
+    enabled = enabled,
   },
 }
