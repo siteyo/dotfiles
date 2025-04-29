@@ -203,9 +203,8 @@ local M = {
         note:add_alias(note.title)
       end
 
-      local current_datetime = os.date("%Y-%m-%d %H:%M:%S")
       if not note.created_at then
-        note.created_at = current_datetime
+        note.created_at = os.date("%Y-%m-%d")
       end
 
       local out = {

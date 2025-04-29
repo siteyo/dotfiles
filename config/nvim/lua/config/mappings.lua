@@ -158,7 +158,7 @@ map("i", "<C-f>", "<Right>")
 map("i", "<C-b>", "<Left>")
 map("i", "<C-e>", "<ESC>A")
 map("i", "<C-a>", "<ESC>I")
-map("n", "M", "%")
+map({ "n", "v" }, "M", "%")
 
 -- Redo
 map("n", "U", "<C-r>")

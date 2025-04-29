@@ -14,7 +14,7 @@ function M.config()
     --   end
     --   return true
     -- end)(),
-    transparent = true,
+    transparent = false,
     styles = {
       comments = { italic = false },
       keywords = { italic = false },
@@ -26,15 +26,15 @@ function M.config()
       colors.border = colors.blue0
       colors.fg_gutter = colors.dark3
     end,
-    on_highlights = function(hl, c)
-      hl["@markup.link.url"] = {
-        fg = c.blue6,
-        underline = true,
-      }
-      hl["@org.agenda.scheduled"] = {
-        fg = hl["diffAdded"].fg,
-      }
-    end,
+    -- on_highlights = function(hl, c)
+    --   hl["@markup.link.url"] = {
+    --     fg = c.blue6,
+    --     underline = true,
+    --   }
+    --   hl["@org.agenda.scheduled"] = {
+    --     fg = hl["diffAdded"].fg,
+    --   }
+    -- end,
   })
   tokyonight.load()
   vim.o.background = require("config.util").appearance()
