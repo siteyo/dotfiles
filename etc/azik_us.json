@@ -3214,11 +3214,6 @@
     "katakana": "）",
     "hankatakana": "）"
   },
-  "z-": {
-    "hira": "-",
-    "katakana": "-",
-    "hankatakana": "-"
-  },
   "z.": {
     "hira": "…",
     "katakana": "…",
@@ -3253,11 +3248,6 @@
     "hira": "~",
     "katakana": "~",
     "hankatakana": "~"
-  },
-  "-": {
-    "hira": "ー",
-    "katakana": "ー",
-    "hankatakana": "-"
   },
   "~": {
     "hira": "〜",
