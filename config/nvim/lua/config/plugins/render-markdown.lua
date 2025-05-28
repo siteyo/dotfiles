@@ -36,6 +36,18 @@ local M = {
           highlight = "RenderMarkdownWarn",
           scope_highlight = "@markup.strikethrough",
         },
+        forward = {
+          raw = "[>]",
+          rendered = " ",
+          highlight = "RenderMarkdownWarn",
+          scope_highlight = "@markup.strikethrough",
+        },
+        delegate = {
+          raw = "[<]",
+          rendered = "󰙊 ",
+          highlight = "RenderMarkdownWarn",
+          scope_highlight = "@markup.strikethrough",
+        },
       },
     },
     indent = {
