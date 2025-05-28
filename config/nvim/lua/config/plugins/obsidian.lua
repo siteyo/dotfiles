@@ -95,10 +95,11 @@ local M = {
     { "<Leader>oe", "<Cmd>ObsidianNewFromTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
     { "<Leader>oj", "<Cmd>ObsidianToday<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
     { "<Leader>on", "<Cmd>ObsidianTomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
-    { "<Leader>op", "<Cmd>ObsidianPasteImg<CR>", mode = { "n" }, desc = "[Obsidian] Paste Image" },
+    { "<Leader>op", "<Cmd>ObsidianYesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
+    { "<Leader>ov", "<Cmd>ObsidianPasteImg<CR>", mode = { "n" }, desc = "[Obsidian] Paste Image" },
     { "<Leader>of", "<Cmd>ObsidianLinks<CR>", mode = { "n" }, desc = "[Obsidian] Find Forwardlinks" },
     { "<Leader>ot", "<Cmd>ObsidianTags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
-    -- { "<Leader>ot", "<Cmd>ObsidianTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
+    { "<Leader>om", "<Cmd>ObsidianTemplate<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
     { "<Leader>oo", "<Cmd>ObsidianOpen<CR>", mode = { "n" }, desc = "[Obsidian] Open Obsidian App" },
     { "<Leader>os", "<Cmd>ObsidianSearch<CR>", mode = { "n" }, desc = "[Obsidian] Search" },
     {
@@ -125,7 +126,7 @@ local M = {
     },
   },
   opts = {
-    notes_subdir = "Encounters",
+    notes_subdir = "Inbox",
     daily_notes = {
       folder = "Calendar",
       default_tags = { "Calendar" },
@@ -228,6 +229,8 @@ local M = {
         ["/"] = { order = 2 },
         ["x"] = { order = 3 },
         ["-"] = { order = 4 },
+        [">"] = { order = 5 },
+        ["<"] = { order = 6 },
       },
     },
     attachments = {
