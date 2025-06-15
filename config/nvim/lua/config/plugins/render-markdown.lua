@@ -39,13 +39,13 @@ local M = {
         forward = {
           raw = "[>]",
           rendered = " ",
-          highlight = "RenderMarkdownWarn",
+          highlight = "RenderMarkdownChecked",
           scope_highlight = "@markup.strikethrough",
         },
         delegate = {
           raw = "[<]",
           rendered = "󰙊 ",
-          highlight = "RenderMarkdownWarn",
+          highlight = "RenderMarkdownChecked",
           scope_highlight = "@markup.strikethrough",
         },
       },
