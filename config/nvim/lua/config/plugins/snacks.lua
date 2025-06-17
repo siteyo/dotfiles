@@ -89,6 +89,10 @@ local M = {
         end,
       },
     },
+    image = {},
+    input = {},
+    scroll = {},
+    statuscolumn = {},
   },
   keys = {
     -- stylua: ignore start

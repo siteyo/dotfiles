@@ -37,6 +37,7 @@ local M = {
   --   "magick",
   -- },
   -- build = false,
+  enabled = false,
 }
 
 return M
