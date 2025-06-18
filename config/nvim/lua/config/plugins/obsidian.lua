@@ -103,28 +103,6 @@ local M = {
     { "<Leader>om", "<Cmd>Obsidian template<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
     { "<Leader>oo", "<Cmd>Obsidian open<CR>", mode = { "n" }, desc = "[Obsidian] Open Obsidian App" },
     { "<Leader>os", "<Cmd>Obsidian search<CR>", mode = { "n" }, desc = "[Obsidian] Search" },
-    {
-      "<C-l>",
-      function()
-        return vim.ui.select(
-          { "tags", "file", "search" },
-          { prompt = "Insert tags/file/search result" },
-          function(choice)
-            if choice == "tags" then
-              vim.cmd("ObsidianTags")
-            elseif choice == "file" then
-              vim.cmd("ObsidianQuickSwitch")
-            elseif choice == "search" then
-              vim.cmd("ObsidianSearch")
-            else
-              vim.notify("Aborted")
-            end
-          end
-        )
-      end,
-      mode = { "i" },
-      desc = "[Obsidian] Search and Insert",
-    },
   },
   opts = {
     notes_subdir = "Inbox",
