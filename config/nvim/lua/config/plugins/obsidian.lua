@@ -111,6 +111,10 @@ local M = {
       default_tags = { "Calendar" },
       template = "calendar.md",
     },
+    completion = {
+      nvim_cmp = true,
+      create_new = true,
+    },
     templates = {
       folder = "Extras/Templates",
       date_format = "%Y-%m-%d",
