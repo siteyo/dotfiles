@@ -202,15 +202,8 @@ local M = {
 
       return out
     end,
-    ui = {
-      checkboxes = {
-        [" "] = { order = 1 },
-        ["/"] = { order = 2 },
-        ["x"] = { order = 3 },
-        ["-"] = { order = 4 },
-        [">"] = { order = 5 },
-        ["<"] = { order = 6 },
-      },
+    checkbox = {
+      order = { " ", "/", "x", "-", ">", "<" },
     },
     attachments = {
       img_folder = "Extras/Images",
