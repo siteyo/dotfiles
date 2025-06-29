@@ -79,6 +79,35 @@ local setup_autocmd = function()
       end
     end,
   })
+
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "ObsidianNoteEnter",
+    callback = function(args)
+      vim.keymap.set("n", "<C-Space>", "<Cmd>Obsidian toggle_checkbox<CR>", {
+        buffer = args.buf,
+        desc = "[Obsidian] Toggle checkbox",
+      })
+    end,
+  })
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "ObsidianNoteEnter",
+    callback = function(args)
+      vim.keymap.set("n", "<CR>", "<Cmd>Obsidian follow_link<CR>", {
+        buffer = args.buf,
+        desc = "[Obsidian] Follow link",
+      })
+    end,
+  })
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "ObsidianNoteEnter",
+    callback = function(args)
+      vim.keymap.set("n", "<Leader><CR>", require("obsidian.builtin").smart_action, {
+        expr = true,
+        buffer = args.buf,
+        desc = "[Obsidian] Smart action",
+      })
+    end,
+  })
 end
 
 local M = {
@@ -119,52 +148,6 @@ local M = {
       folder = "Extras/Templates",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M:%S",
-    },
-    mappings = {
-      ["<C-Space>"] = {
-        action = function()
-          return "<Cmd>ObsidianToggleCheckbox<CR>"
-        end,
-        opts = { buffer = true, expr = true },
-      },
-      ["<CR>"] = {
-        action = function()
-          if require("obsidian").util.cursor_on_markdown_link(nil, nil, true) then
-            return "<Cmd>ObsidianFollowLink<CR>"
-          end
-          if require("obsidian").util.cursor_tag(nil, nil) then
-            return "<Cmd>ObsidianTags<CR>"
-          end
-          return "<CR>"
-        end,
-        opts = { buffer = true, expr = true },
-      },
-      ["<Leader><CR>"] = {
-        action = function()
-          return require("obsidian").util.smart_action()
-        end,
-        opts = { buffer = true, expr = true },
-      },
-      ["<C-CR>"] = {
-        action = function()
-          if require("obsidian").util.cursor_on_markdown_link(nil, nil, true) then
-            return "<Cmd>ObsidianFollowLink vsplit<CR>"
-          else
-            return "<C-CR>"
-          end
-        end,
-        opts = { buffer = true, expr = true },
-      },
-      ["<S-CR>"] = {
-        action = function()
-          if require("obsidian").util.cursor_on_markdown_link(nil, nil, true) then
-            return "<Cmd>ObsidianFollowLink hsplit<CR>"
-          else
-            return "<S-CR>"
-          end
-        end,
-        opts = { buffer = true, expr = true },
-      },
     },
     follow_url_func = function(url)
       vim.fn.jobstart({ "open", url })
