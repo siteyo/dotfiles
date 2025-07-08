@@ -192,6 +192,9 @@ local M = {
     checkbox = {
       order = { " ", "/", "x", "-", ">", "<" },
     },
+    ui = {
+      enable = false,
+    },
     attachments = {
       img_folder = "Extras/Images",
       img_name_func = function()

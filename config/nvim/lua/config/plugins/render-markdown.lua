@@ -12,39 +12,39 @@ local M = {
     },
     checkbox = {
       enabled = true,
-      right_pad = 0,
+      right_pad = 1,
       unchecked = {
-        icon = "󰄱 ",
+        icon = "󰄱",
         highlight = "RenderMarkdownUnchecked",
         scope_highlight = nil,
       },
       checked = {
-        icon = "󰱒 ",
+        icon = "󰱒",
         highlight = "RenderMarkdownChecked",
         scope_highlight = "@markup.strikethrough",
       },
       custom = {
         todo = {
           raw = "[/]",
-          rendered = "󰥔 ",
+          rendered = "󰥔",
           highlight = "RenderMarkdownTodo",
           scope_highlight = nil,
         },
         cancel = {
           raw = "[-]",
-          rendered = "󰜺 ",
+          rendered = "󰜺",
           highlight = "RenderMarkdownWarn",
           scope_highlight = "@markup.strikethrough",
         },
         forward = {
           raw = "[>]",
-          rendered = " ",
+          rendered = "",
           highlight = "RenderMarkdownChecked",
           scope_highlight = "@markup.strikethrough",
         },
         delegate = {
           raw = "[<]",
-          rendered = "󰙊 ",
+          rendered = "󰙊",
           highlight = "RenderMarkdownChecked",
           scope_highlight = "@markup.strikethrough",
         },
