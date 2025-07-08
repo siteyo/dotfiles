@@ -134,6 +134,7 @@ local M = {
     { "<Leader>os", "<Cmd>Obsidian search<CR>", mode = { "n" }, desc = "[Obsidian] Search" },
   },
   opts = {
+    legacy_commands = false,
     notes_subdir = "Inbox",
     daily_notes = {
       folder = "Calendar",
@@ -191,6 +192,9 @@ local M = {
     end,
     checkbox = {
       order = { " ", "/", "x", "-", ">", "<" },
+    },
+    ui = {
+      enable = false,
     },
     attachments = {
       img_folder = "Extras/Images",
