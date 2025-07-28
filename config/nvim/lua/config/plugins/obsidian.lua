@@ -98,16 +98,6 @@ local setup_autocmd = function()
       })
     end,
   })
-  vim.api.nvim_create_autocmd("User", {
-    pattern = "ObsidianNoteEnter",
-    callback = function(args)
-      vim.keymap.set("n", "<Leader><CR>", require("obsidian.builtin").smart_action, {
-        expr = true,
-        buffer = args.buf,
-        desc = "[Obsidian] Smart action",
-      })
-    end,
-  })
 end
 
 local M = {
