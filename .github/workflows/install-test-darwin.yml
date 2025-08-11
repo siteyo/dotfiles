@@ -18,7 +18,7 @@ jobs:
   macos:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install dotfiles
         run: make install
         shell: zsh {0}
