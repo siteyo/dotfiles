@@ -110,7 +110,9 @@ local M = {
   cmd = "Obsidian",
   keys = {
     { "<Leader>or", "<Cmd>Obsidian rename<CR>", mode = { "n" }, desc = "[Obsidian] Rename Note" },
+    { "<Leader>oq", "<Cmd>Obsidian quick_switch<CR>", mode = { "n" }, desc = "[Obsidian] Quick Switch" },
     { "<Leader>oh", "<Cmd>Obsidian quick_switch home<CR>", mode = { "n" }, desc = "[Obsidian] Show Home Note" },
+    { "<Leader>oi", "<Cmd>Obsidian quick_switch inbox<CR>", mode = { "n" }, desc = "[Obsidian] Show GTD Inbox Note" },
     { "<Leader>ob", "<Cmd>Obsidian backlinks<CR>", mode = { "n" }, desc = "[Obsidian] Find Backlinks" },
     { "<Leader>oe", "<Cmd>Obsidian new_from_template<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
     { "<Leader>oj", "<Cmd>Obsidian today<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
@@ -140,9 +142,6 @@ local M = {
       date_format = "%Y-%m-%d",
       time_format = "%H:%M:%S",
     },
-    follow_url_func = function(url)
-      vim.fn.jobstart({ "open", url })
-    end,
     new_notes_location = "notes_subdir",
     wiki_link_func = function(opts)
       return require("obsidian.util").wiki_link_path_prefix(opts)
@@ -189,8 +188,9 @@ local M = {
     attachments = {
       img_folder = "Extras/Images",
       img_name_func = function()
-        return os.date("%Y%m%dT%H%M%S-")
+        return os.date("%Y%m%dT%H%M%S")
       end,
+      confirm_img_paste = false,
     },
   },
   config = function(_, opts)
