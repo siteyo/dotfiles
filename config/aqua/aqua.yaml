@@ -19,3 +19,4 @@ packages:
 - name: rust-lang/rust-analyzer@2023-11-20
 - name: rhysd/actionlint@v1.7.7
 - name: google/yamlfmt@v0.17.2
+- name: sqls-server/sqls@v0.2.27
