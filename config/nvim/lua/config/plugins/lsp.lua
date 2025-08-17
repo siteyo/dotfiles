@@ -57,7 +57,8 @@ return {
         ruff = true,
         pyright = true,
         rust_analyzer = true,
-        sqlls = true,
+        -- sqlls = true,
+        sqls = true,
         ts_ls = true,
         lua_ls = {
           settings = {
