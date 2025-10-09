@@ -50,6 +50,8 @@ vim.o.signcolumn = "yes"
 vim.o.mouse = "a"
 vim.o.undofile = true
 vim.o.grepprg = "rg --vimgrep"
+vim.o.splitbelow = true
+vim.o.splitright = true
 
 vim.o.winblend = 15
 vim.o.pumblend = 15
