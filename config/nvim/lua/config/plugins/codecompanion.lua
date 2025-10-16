@@ -51,6 +51,7 @@ local M = {
       desc = "CodeCompanion Actions",
     },
   },
+  enabled = false,
 }
 
 return M
