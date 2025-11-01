@@ -34,51 +34,51 @@ local setup_autocmd = function()
     command = "setlocal conceallevel=2",
   })
 
-  local update_link = function(action)
-    local with = require("plenary.context_manager").with
-    local open = require("plenary.context_manager").open
-    local Path = require("plenary.path")
-
-    local client = require("obsidian").get_client()
-    local workspace_path = Path:new(client.dir.filename)
-    local new_path = action.dest_url:gsub("^oil://", "")
-    local new_link = Path:new(new_path):make_relative(workspace_path.filename)
-    local old_path = action.src_url:gsub("^oil://", "")
-    local old_link = Path:new(old_path):make_relative(workspace_path.filename)
-
-    vim.system({ "rg", "-l", old_link, workspace_path.filename }, {}, function(obj)
-      if obj.stdout == "" then
-        vim.notify("[Obsidian] No link updates.")
-        return
-      end
-      for target in obj.stdout:gmatch("[^\n]+") do
-        local content
-        with(open(target, "r"), function(reader)
-          content = reader:read("*a")
-        end)
-        local replaced_content =
-          content:gsub("%[%[" .. util.escape(old_link) .. "%|(.-)%]%]", "[[" .. util.escape(new_link) .. "|%1]]")
-        with(open(target, "w"), function(writer)
-          writer:write(replaced_content)
-        end)
-        vim.notify("[Obsidian] Update links")
-      end
-    end)
-  end
-  vim.api.nvim_create_autocmd("User", {
-    pattern = "OilActionsPost",
-    callback = function(args)
-      if args.data.err then
-        vim.print("ERROR", args.data.err)
-        return
-      end
-      for _, action in ipairs(args.data.actions) do
-        if action.type == "move" then
-          update_link(action)
-        end
-      end
-    end,
-  })
+  -- local update_link = function(action)
+  --   local with = require("plenary.context_manager").with
+  --   local open = require("plenary.context_manager").open
+  --   local Path = require("plenary.path")
+  --
+  --   local client = require("obsidian").get_client()
+  --   local workspace_path = Path:new(client.dir.filename)
+  --   local new_path = action.dest_url:gsub("^oil://", "")
+  --   local new_link = Path:new(new_path):make_relative(workspace_path.filename)
+  --   local old_path = action.src_url:gsub("^oil://", "")
+  --   local old_link = Path:new(old_path):make_relative(workspace_path.filename)
+  --
+  --   vim.system({ "rg", "-l", old_link, workspace_path.filename }, {}, function(obj)
+  --     if obj.stdout == "" then
+  --       vim.notify("[Obsidian] No link updates.")
+  --       return
+  --     end
+  --     for target in obj.stdout:gmatch("[^\n]+") do
+  --       local content
+  --       with(open(target, "r"), function(reader)
+  --         content = reader:read("*a")
+  --       end)
+  --       local replaced_content =
+  --         content:gsub("%[%[" .. util.escape(old_link) .. "%|(.-)%]%]", "[[" .. util.escape(new_link) .. "|%1]]")
+  --       with(open(target, "w"), function(writer)
+  --         writer:write(replaced_content)
+  --       end)
+  --       vim.notify("[Obsidian] Update links")
+  --     end
+  --   end)
+  -- end
+  -- vim.api.nvim_create_autocmd("User", {
+  --   pattern = "OilActionsPost",
+  --   callback = function(args)
+  --     if args.data.err then
+  --       vim.print("ERROR", args.data.err)
+  --       return
+  --     end
+  --     for _, action in ipairs(args.data.actions) do
+  --       if action.type == "move" then
+  --         update_link(action)
+  --       end
+  --     end
+  --   end,
+  -- })
 
   vim.api.nvim_create_autocmd("User", {
     pattern = "ObsidianNoteEnter",
@@ -112,7 +112,7 @@ local M = {
     { "<Leader>or", "<Cmd>Obsidian rename<CR>", mode = { "n" }, desc = "[Obsidian] Rename Note" },
     { "<Leader>oq", "<Cmd>Obsidian quick_switch<CR>", mode = { "n" }, desc = "[Obsidian] Quick Switch" },
     { "<Leader>oh", "<Cmd>Obsidian quick_switch home<CR>", mode = { "n" }, desc = "[Obsidian] Show Home Note" },
-    { "<Leader>oi", "<Cmd>Obsidian quick_switch inbox<CR>", mode = { "n" }, desc = "[Obsidian] Show GTD Inbox Note" },
+    -- { "<Leader>oi", "<Cmd>Obsidian quick_switch inbox<CR>", mode = { "n" }, desc = "[Obsidian] Show GTD Inbox Note" },
     { "<Leader>ob", "<Cmd>Obsidian backlinks<CR>", mode = { "n" }, desc = "[Obsidian] Find Backlinks" },
     { "<Leader>oe", "<Cmd>Obsidian new_from_template<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
     { "<Leader>oj", "<Cmd>Obsidian today<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
@@ -143,9 +143,9 @@ local M = {
       time_format = "%H:%M:%S",
     },
     new_notes_location = "notes_subdir",
-    wiki_link_func = function(opts)
-      return require("obsidian.util").wiki_link_path_prefix(opts)
-    end,
+    -- wiki_link_func = function(opts)
+    --   return require("obsidian.util").wiki_link_path_prefix(opts)
+    -- end,
     preferred_link_style = "wiki",
     note_id_func = function(_)
       return tostring(os.date("%Y%m%dT%H%M%S"))
@@ -155,30 +155,34 @@ local M = {
       return path:with_suffix(".md")
       -- return spec.title
     end,
-    note_frontmatter_func = function(note)
-      if note.title then
-        note:add_alias(note.title)
-      end
-
-      if not note.created_at then
-        note.created_at = os.date("%Y-%m-%d")
-      end
-
-      local out = {
-        title = note.title,
-        aliases = note.aliases,
-        tags = note.tags,
-        created_at = note.created_at,
-      }
-
-      if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-        for k, v in pairs(note.metadata) do
-          out[k] = v
+    frontmatter = {
+      enabled = true,
+      func = function(note)
+        if note.title then
+          note:add_alias(note.title)
         end
-      end
 
-      return out
-    end,
+        if not note.created_at then
+          note.created_at = os.date("%Y-%m-%d")
+        end
+
+        local out = {
+          title = note.title,
+          aliases = note.aliases,
+          tags = note.tags,
+          created_at = note.created_at,
+        }
+
+        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+          for k, v in pairs(note.metadata) do
+            out[k] = v
+          end
+        end
+
+        return out
+      end,
+      sort = { "id", "aliases", "tags" },
+    },
     checkbox = {
       order = { " ", "/", "x", "-", ">", "<" },
     },
