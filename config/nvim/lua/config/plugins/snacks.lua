@@ -98,6 +98,7 @@ local M = {
     scroll = {},
     statuscolumn = {},
     picker = {},
+    notifier = {},
   },
   keys = {
     -- stylua: ignore start
