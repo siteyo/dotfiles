@@ -15,10 +15,10 @@ M.config = function(spec)
     args = { "sync" },
     cwd = dir,
     on_start = function()
-      vim.notify("[Python Tools] Installing...")
+      Snacks.notify("[Python Tools] Installing...")
     end,
     on_exit = function()
-      vim.notify("[Python Tools] Tools have been installed.")
+      Snacks.notify("[Python Tools] Tools have been installed.")
     end,
   })
 

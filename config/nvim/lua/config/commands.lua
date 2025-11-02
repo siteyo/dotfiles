@@ -3,7 +3,7 @@ if vim.fn.has("mac") then
   vim.api.nvim_create_user_command("OpenFinder", function()
     vim.fn.jobstart({ "open", vim.fn.expand("%:h") }, {
       on_exit = function()
-        vim.notify("Open Finder")
+        Snacks.notify("Open Finder")
       end,
     })
   end, {})
