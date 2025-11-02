@@ -74,6 +74,7 @@
   "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "render-markdown.nvim": { "branch": "main", "commit": "10126effbafb74541b69219711dfb2c631e7ebf8" },
   "rest.nvim": { "branch": "main", "commit": "5466d1e447fc4b038ef511a7a2c4c7cbb13da01a" },
+  "sidekick.nvim": { "branch": "main", "commit": "c2bdf8cfcd87a6be5f8b84322c1b5052e78e302e" },
   "skkeleton": { "branch": "main", "commit": "71178b6debd9f1b3bb00abfd865ca642e82e24c7" },
   "skkeleton_pointer.nvim": { "branch": "main", "commit": "bbf441328bf7e9af74402d52a6a58e9f92f03e45" },
   "smart-open.nvim": { "branch": "main", "commit": "f079c3201a0a62b1582563bd5ce4256c253634d4" },

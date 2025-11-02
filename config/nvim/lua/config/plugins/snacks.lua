@@ -97,11 +97,16 @@ local M = {
     input = {},
     scroll = {},
     statuscolumn = {},
+    picker = {},
+    notifier = {},
+    gh = {},
   },
   keys = {
     -- stylua: ignore start
     { "sd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
     { "sD", function() Snacks.bufdelete.delete({ force = true, wipe = false }) end, desc = "Delete Buffer(force)" },
+    { "<leader>gI", function() Snacks.picker.gh_issue() end, desc = "GitHub Issues" },
+    { "<leader>gP", function() Snacks.picker.gh_pr() end, desc = "GitHub Pull Requests" },
     -- stylua: ignore end
   },
 }

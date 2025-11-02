@@ -57,15 +57,15 @@ M.toggle = function(option, silent, values)
     else
       vim.opt_local[option] = values[1]
     end
-    vim.notify("Set " .. option .. " to " .. vim.opt_local[option]:get())
+    Snacks.notify("Set " .. option .. " to " .. vim.opt_local[option]:get())
     return
   end
   vim.opt_local[option] = not vim.opt_local[option]:get()
   if not silent then
     if vim.opt_local[option]:get() then
-      vim.notify("Enabled " .. option)
+      Snacks.notify("Enabled " .. option)
     else
-      vim.notify("Disabled " .. option)
+      Snacks.notify("Disabled " .. option)
     end
   end
 end

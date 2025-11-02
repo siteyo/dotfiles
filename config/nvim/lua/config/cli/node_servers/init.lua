@@ -15,10 +15,10 @@ M.config = function(spec)
     args = { "install" },
     cwd = dir,
     on_start = function()
-      vim.notify("[Node Servers] Installing...")
+      Snacks.notify("[Node Servers] Installing...")
     end,
     on_exit = function()
-      vim.notify("[Node Servers] Node Servers have been installed.")
+      Snacks.notify("[Node Servers] Node Servers have been installed.")
     end,
   })
 
