@@ -7,8 +7,17 @@ local M = {
           skkeleton = { "<C-j>", "<Plug>(skkeleton-enable)" },
         },
       },
+      prompts = {
+        changes = "変更内容をレビューしてください。",
+        diagnostics = "{file}のDiagnosticsを修正するのを手伝ってください。\n{diagnostics}",
+        diagnostics_all = "これらのDiagnosticsを修正するのと手伝ってください。\n{diagnostics_all}",
+      },
     },
   },
+  config = function(_, opts)
+    opts = require("config.private").merge("sidekick", opts)
+    require("sidekick").setup(opts)
+  end,
   cmd = { "SidekicSidekickk" },
   keys = {
     {

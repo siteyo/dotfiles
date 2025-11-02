@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
+require("config.private").setup()
+
 require("lazy").setup({
   defaults = { lazy = true },
   spec = {
