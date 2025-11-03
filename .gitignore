@@ -413,3 +413,7 @@ dev.lua
 config/raycast
 config/gh/hosts.yml
 kitty.conf.bak
+
+# GitHub Copilot
+config/github-copilot/
+config/.copilot/
