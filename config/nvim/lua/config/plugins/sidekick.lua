@@ -21,6 +21,16 @@ local M = {
   cmd = { "SidekicSidekickk" },
   keys = {
     {
+      "<tab>",
+      function()
+        if not require("sidekick").nes_jump_or_apply() then
+          return "<Tab>" -- fallback to normal tab
+        end
+      end,
+      expr = true,
+      desc = "Goto/Apply Next Edit Suggestion",
+    },
+    {
       "<c-.>",
       function()
         require("sidekick.cli").toggle()
