@@ -1,16 +1,13 @@
-local uv = vim.loop
-
 ---@param fname string
 ---@return string
 local file_read = function(fname)
-  local fd = assert(uv.fs_open(fname, "r", 292))
-  local stat = assert(uv.fs_fstat(fd))
-  local buffer = assert(uv.fs_read(fd, stat.size, 0))
-  assert(uv.fs_close(fd))
-  return buffer
+  local file = assert(io.open(fname, "r"))
+  local content = file:read("*a")
+  file:close()
+  return content
 end
 
-return {
+local M = {
   {
     "vim-skk/skkeleton",
     event = { "InsertEnter", "CmdlineEnter" },
@@ -86,3 +83,5 @@ return {
     enabled = true,
   },
 }
+
+return M
