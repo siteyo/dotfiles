@@ -6,8 +6,6 @@ local M = {
   },
   cmd = { "CodeCompanion" },
   opts = {
-    ---@module "codecompanion"
-    ---@type CodeCompanion
     adapters = {
       acp = {
         gemini_cli = function()
