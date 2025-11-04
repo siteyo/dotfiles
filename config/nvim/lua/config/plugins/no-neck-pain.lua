@@ -1,6 +1,6 @@
 local M = {
   "shortcuts/no-neck-pain.nvim",
-  lazy = false,
+  cmd = "NoNeckPain",
   keys = {
     { "<Leader>np", "<Cmd>NoNeckPain<CR>", mode = { "n" }, desc = "NoNeckPain" },
     { "<Leader>nl", "<Cmd>NoNeckPainToggleRightSide<CR>", mode = { "n" }, desc = "NoNeckPainToggleRightSide" },

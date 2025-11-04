@@ -91,7 +91,7 @@ return {
               type = "tags_todo",
               match = '+PRIORITY="A"',
               org_agenda_overriding_header = "High priority todos",
-              org_agenda_todo_ignore_deadlines = "far",
+              -- org_agenda_todo_ignore_deadlines = "far",
             },
             {
               type = "agenda",
@@ -116,12 +116,11 @@ return {
       if not require("config.util").exists(dir) then
         vim.fn.jobstart({ "mkdir", "-p", dir }, {
           on_exit = function()
-            vim.notify("Create directory: ", dir)
+            Snacks.notify("Create directory: ", dir)
           end,
         })
       end
 
-      ---@param org_file OrgApiFile
       local org_to_json = function(org_file)
         local datetime = os.time() + (opts.org_deadline_warning_days * 86400) -- 3600sec/hour * 24h = 86400sec
         local timestamp = os.date(datetime)
