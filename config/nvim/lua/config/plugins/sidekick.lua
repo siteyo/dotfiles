@@ -20,6 +20,7 @@ local M = {
       },
     },
   },
+  dependencies = { "vim-skk/skkeleton" },
   config = function(_, opts)
     opts = require("config.private").merge("sidekick", opts)
     require("sidekick").setup(opts)

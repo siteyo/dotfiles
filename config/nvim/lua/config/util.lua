@@ -4,6 +4,7 @@
 local M = {}
 
 -- Get appearance mode
+---@return string
 M.appearance = function()
   if vim.fn.has("mac") then
     local color = vim.fn.system("defaults read -g AppleInterfaceStyle")
@@ -19,6 +20,7 @@ end
 
 -- Determine if the directory exists
 --- @param name string
+--- @return boolean
 M.exists = function(name)
   local f = io.open(name, "r")
   if f ~= nil then
@@ -95,6 +97,7 @@ M.get_table_keys = function(t)
 end
 
 ---@param text string
+---@return string, integer
 M.escape = function(text)
   return text:gsub("([%^$()%.%[%]*+%-?])", "%%%1")
 end
