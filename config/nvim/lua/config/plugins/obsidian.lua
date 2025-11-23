@@ -79,7 +79,7 @@ local M = {
       create_new = true,
     },
     templates = {
-      folder = "Extras/Templates",
+      folder = "Extras/Templates/obsidian.nvim",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M:%S",
     },
