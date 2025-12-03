@@ -19,6 +19,7 @@ local M = {
     "lukas-reineke/cmp-rg",
     "ray-x/cmp-treesitter",
     "kristijanhusak/vim-dadbod-completion",
+    "windwp/nvim-autopairs",
   },
 }
 
@@ -102,9 +103,9 @@ function M.config()
       { name = "buffer", keyword_length = 4 },
       { name = "calc" },
       { name = "treesitter" },
-      { name = "rg", keyword_length = 4 },
+      { name = "rg", keyword_length = 4, max_item_count = 10 },
       { name = "vim-dadbod-completion" },
-      { name = "neorg" },
+      -- { name = "neorg" },
       -- {
       --   name = "spell",
       --   entry_filter = function(entry, _)
@@ -215,6 +216,9 @@ function M.config()
       { name = "cmdline_history", max_item_count = 5 },
     }),
   })
+
+  local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+  cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 end
 
 return M
