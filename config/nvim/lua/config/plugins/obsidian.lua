@@ -69,6 +69,9 @@ local M = {
   opts = {
     legacy_commands = false,
     notes_subdir = "Inbox",
+    picker = {
+      name = "snacks.pick",
+    },
     daily_notes = {
       folder = "Calendar",
       default_tags = { "Calendar" },
