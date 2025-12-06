@@ -42,6 +42,7 @@ local M = {
       desc = "Config Files",
     },
   },
+  enabled = false,
 }
 
 function M.config()
