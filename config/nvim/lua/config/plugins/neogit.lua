@@ -23,20 +23,20 @@ local M = {
       end,
       desc = "Neogit status",
     },
-    {
-      "<Leader>gc",
-      function()
-        require("neogit").open({ "commit" })
-      end,
-      desc = "Neogit commit",
-    },
-    {
-      "<Leader>gl",
-      function()
-        require("neogit").open({ "log" })
-      end,
-      desc = "Neogit log",
-    },
+    -- {
+    --   "<Leader>gc",
+    --   function()
+    --     require("neogit").open({ "commit" })
+    --   end,
+    --   desc = "Neogit commit",
+    -- },
+    -- {
+    --   "<Leader>gl",
+    --   function()
+    --     require("neogit").open({ "log" })
+    --   end,
+    --   desc = "Neogit log",
+    -- },
     -- {
     --   "<Leader>gb",
     --   function()
