@@ -97,7 +97,23 @@ local M = {
     input = {},
     scroll = {},
     statuscolumn = {},
-    picker = {},
+    picker = {
+      win = {
+        input = {
+          keys = {
+            ["<C-j>"] = {
+              "<C-j>",
+              function()
+                local key = vim.keycode("<Plug>(skkeleton-enable)")
+                vim.api.nvim_feedkeys(key, "n", false)
+              end,
+              mode = { "i" },
+            },
+            ["<C-k>"] = false,
+          },
+        },
+      },
+    },
     notifier = {},
     gh = {},
   },
