@@ -3,14 +3,16 @@ local M = {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "sindrets/diffview.nvim",
-    "nvim-telescope/telescope.nvim",
+    "folke/snacks.nvim",
+    -- "nvim-telescope/telescope.nvim",
   },
   opts = {
     disable_commit_confirmation = true,
     disable_hint = true,
     integrations = {
-      telescope = true,
+      -- telescope = true,
       diffview = true,
+      snacks = true,
     },
     kind = "tab",
     graph_style = "unicode",
