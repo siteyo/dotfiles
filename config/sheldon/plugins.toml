@@ -14,9 +14,12 @@ shell = "zsh"
 
 [plugins]
 
-# [plugins.aqua]
-# local = '~/.config/zsh'
-# use = ["aqua.zsh"]
+[plugins.aqua]
+local = '~/.config/zsh'
+use = ["aqua.zsh"]
+
+[plugins.zeno]
+github = "yuki-yano/zeno.zsh"
 
 [plugins.vim-mode]
 inline = 'bindkey -v'
@@ -24,12 +27,6 @@ inline = 'bindkey -v'
 [plugins.zsh-autosuggestions]
 github = 'zsh-users/zsh-autosuggestions'
 use = ['{{ name }}.zsh']
-
-# [plugins.zsh-syntax-highlighting]
-# github = 'zsh-users/zsh-syntax-highlighting'
-
-# [plugins.zsh-syntax-highlighting_config]
-# inline = 'ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)'
 
 [plugins.powerlevel10k]
 github = 'romkatv/powerlevel10k'
@@ -40,25 +37,9 @@ inline = '[ -f "${ZDOTDIR}/.p10k.zsh" ] && source "${ZDOTDIR}/.p10k.zsh"'
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 
-[plugins.fzf-zsh-completions]
-github = "chitoku-k/fzf-zsh-completions"
-use = ["{{ name }}.plugin.zsh"]
-
 [plugins.fast-syntax-highlighting]
 github = "zdharma-continuum/fast-syntax-highlighting"
 use = ['{{ name }}.plugin.zsh']
-
-[plugins.zsh-abbr]
-github = "olets/zsh-abbr"
-use = ["{{ name }}.zsh"]
-
-# [plugins.docker-completion]
-# remote = 'https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker'
-# apply = ["fpath"]
-
-[plugins.dotfiles-env]
-local = "~/.config/zsh"
-use = ["env.zsh"]
 
 [plugins.dotfiles-function]
 local = "~/.config/zsh"
