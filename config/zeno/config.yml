@@ -3,15 +3,38 @@ completions:
     patterns:
       - "^nb e( .*)? $"
       - "^nb edit( .*)? $"
-    sourceCommand: "nb ls --no-color | grep -E '^\\[[0-9]+\\]'"
+    sourceCommand: "nb ls --no-color | rg -e '^\\[[0-9]+\\]'"
     options:
-      --ansi: true # ← ANSIカラー有効
+      --ansi: true
       --prompt: "'nb edit >'"
       --preview: "echo {} | sed -E 's/^\\[([0-9]+)\\].*/\\1/' | xargs nb show"
     callback: "sed -E 's/^\\[([0-9]+)\\].*/\\1/'"
+  - name: nb subcommands
+    patterns:
+      - ^\s*nb\s*$
+      - ^\s*nb\s+help\s*$
+    sourceCommand: nb subcommands
+    options:
+      --prompt: "'nb subcommand >'"
 
 snippets:
   # snippet and keyword abbrev
   - name: git status
     keyword: gs
     snippet: git status --short --branch
+
+  - name: Edit Note
+    keyword: ne
+    snippet: nb edit
+
+  - name: List Note
+    keyword: nl
+    snippet: nb ls --limit 20
+
+  - name: List All Note
+    keyword: nla
+    snippet: nb ls --all
+
+  - name: nb search
+    keyword: ng
+    snippet: rg "{{keyword}}" "$(nb notebooks current --path)"
