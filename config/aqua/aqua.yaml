@@ -18,5 +18,5 @@ packages:
 - name: LuaLS/lua-language-server@3.16.4
 - name: rust-lang/rust-analyzer@2023-11-20
 - name: rhysd/actionlint@v1.7.10
-- name: google/yamlfmt@v0.20.0
+- name: google/yamlfmt@v0.21.0
 - name: sqls-server/sqls@v0.2.35
