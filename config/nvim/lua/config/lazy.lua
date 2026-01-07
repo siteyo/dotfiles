@@ -17,7 +17,6 @@ require("lazy").setup({
   defaults = { lazy = true },
   spec = {
     { import = "config.plugins" },
-    { import = "config.cli" },
   },
   checker = {
     enabled = true,
@@ -39,6 +38,6 @@ require("lazy").setup({
     hererocks = true,
   },
   dev = {
-    path = "~/.nvim/dev",
+    path = "~/ghq/github.com/siteyo",
   },
 })

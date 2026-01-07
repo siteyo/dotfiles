@@ -19,7 +19,7 @@
 * Package Manager
   * [Homebrew](https://brew.sh/)
   * [npm](https://www.npmjs.com/) (for neovim)
-  * [rye](https://github.com/astral-sh/rye) (for neovim)
+  * [uv](https://docs.astral.sh/uv/)
   * [aqua](https://aquaproj.github.io/)
 * Shell
   * bash
