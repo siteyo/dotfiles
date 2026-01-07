@@ -60,9 +60,10 @@ vim.o.encoding = "utf-8"
 vim.o.backup = true
 vim.o.swapfile = false
 vim.o.undofile = true
-vim.o.backupdir = vim.fn.expand("~/.nvim/backup")
-vim.o.directory = vim.fn.expand("~/.nvim/swap")
-vim.o.undodir = vim.fn.expand("~/.nvim/undo")
+
+vim.o.backupdir = vim.fn.expand("$XDG_DATA_HOME/nvim/backup")
+vim.o.directory = vim.fn.expand("$XDG_DATA_HOME/nvim/swap")
+vim.o.undodir = vim.fn.expand("$XDG_DATA_HOME/nvim/undo")
 -- vim.o.fileformats = {'unix', 'dos', 'mac'}
 -- vim.o.fileencodings=utf-8,sjis
 
