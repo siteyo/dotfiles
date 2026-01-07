@@ -6,12 +6,12 @@ main() {
   print_info '==> Install nvim ...'
 
   # Create directories
-  mkdir -pv "${XDG_DATA_HOME}/nvim/backup"
-  mkdir -pv "${XDG_DATA_HOME}/nvim/swap"
-  mkdir -pv "${XDG_DATA_HOME}/nvim/undo"
+  mkdir -pv "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/backup"
+  mkdir -pv "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/swap"
+  mkdir -pv "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/undo"
 
   # Create a local setting file
-  # touch "${XDG_DATA_HOME}/nvim/local_init.lua"
+  # touch "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/local_init.lua"
 
   # for Telescope frecency
   if uname -a | grep -q -e 'microsoft' -e 'Ubuntu'; then
