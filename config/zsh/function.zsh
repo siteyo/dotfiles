@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # _task_add_nvim() {
 #   local file desc
 #   file="${TASKDATA:-$XDG_DATA_HOME/task/}/Add.task"

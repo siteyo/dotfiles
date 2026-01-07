@@ -47,6 +47,7 @@ local M = {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
+  version = "*",
   ft = "markdown",
   cmd = "Obsidian",
   keys = {
@@ -146,6 +147,7 @@ local M = {
     setup_autocmd()
     require("obsidian").setup(opts)
   end,
+  enabled = false,
 }
 
 return M

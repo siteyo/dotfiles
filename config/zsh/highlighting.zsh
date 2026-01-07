@@ -1,6 +1,3 @@
-
-#!/bin/zsh
-
 ## fast-syntax-highlighting
 chroma_single_word() {
   (( next_word = 2 | 8192 ))
@@ -27,10 +24,10 @@ register_single_word_chroma() {
   return 0
 }
 
-if [[ -n $FAST_HIGHLIGHT ]]; then
-  for abbr in ${(f)"$(abbr list-abbreviations)"}; do
-    if [[ $abbr != *' '* ]]; then
-      register_single_word_chroma ${(Q)abbr}
-    fi
-  done
-fi
+# if [[ -n $FAST_HIGHLIGHT ]]; then
+#   for abbr in ${(f)"$(abbr list-abbreviations)"}; do
+#     if [[ $abbr != *' '* ]]; then
+#       register_single_word_chroma ${(Q)abbr}
+#     fi
+#   done
+# fi

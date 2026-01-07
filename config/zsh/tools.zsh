@@ -54,6 +54,20 @@ if command -v yazi >/dev/null; then
 fi
 
 ## psql (PostgreSQL Client)
-if [ -d "$(brew --prefix)/opt/libpq/bin" ]; then
-  export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
+if [ -d "${HOMEBREW_PREFIX}/opt/libpq/bin" ]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/libpq/bin:$PATH"
+fi
+
+if [[ -n $ZENO_LOADED ]]; then
+  bindkey ' ' zeno-auto-snippet
+  bindkey '^m' zeno-auto-snippet-and-accept-line
+  bindkey '^i' zeno-completion
+  bindkey '^xx' zeno-insert-snippet
+
+  bindkey '^x ' zeno-insert-space
+  bindkey '^x^m' accept-line
+  bindkey '^x^z' zeno-toggle-auto-snippet
+
+  bindkey '^xp' zeno-preprompt
+  bindkey '^xs' zeno-preprompt-snippet
 fi
