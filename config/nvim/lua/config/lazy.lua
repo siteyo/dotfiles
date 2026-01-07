@@ -17,7 +17,6 @@ require("lazy").setup({
   defaults = { lazy = true },
   spec = {
     { import = "config.plugins" },
-    { import = "config.cli" },
   },
   checker = {
     enabled = true,
