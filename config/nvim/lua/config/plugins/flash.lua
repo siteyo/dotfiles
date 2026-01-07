@@ -96,14 +96,14 @@ local M = {
     },
     {
       "s",
-      mode = { "x" },
+      mode = { "x", "o" },
       function()
         require("flash").treesitter()
       end,
     },
     {
       "r",
-      mode = "o",
+      mode = { "x", "o" },
       function()
         require("flash").remote()
       end,

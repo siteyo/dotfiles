@@ -38,6 +38,6 @@ require("lazy").setup({
     hererocks = true,
   },
   dev = {
-    path = "~/.nvim/dev",
+    path = "~/ghq/github.com/siteyo",
   },
 })
