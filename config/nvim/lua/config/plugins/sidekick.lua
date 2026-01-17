@@ -4,7 +4,8 @@ local M = {
     cli = {
       win = {
         keys = {
-          skkeleton = { "<C-j>", "<Plug>(skkeleton-enable)", mode = "nt" },
+          skkeleton_j = { "<C-j>", "<Plug>(skkeleton-enable)", mode = "nt" },
+          skkeleton_0 = { "<C-0>", "<Plug>(skkeleton-enable)", mode = "nt" },
         },
       },
       prompts = {
