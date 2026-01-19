@@ -104,6 +104,7 @@ local M = {
       desc = "Sidekick Select Prompt",
     },
   },
+  enabled = true,
 }
 
 return M

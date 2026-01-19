@@ -6,6 +6,7 @@ local M = {
   cmd = "Copilot",
   event = "InsertEnter",
   opts = {},
+  enabled = true,
 }
 
 return M
