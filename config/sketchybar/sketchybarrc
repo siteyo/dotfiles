@@ -133,11 +133,11 @@ sketchybar --add item clock right \
     \
     --add item slack right \
     --set slack update_freq=180 script="$PLUGIN_DIR/slack.sh" \
-    --subscribe slack system_woke \
-    \
-    --add item brew right \
-    --set brew update_freq=43200 script="$PLUGIN_DIR/brew.sh" \
-    --subscribe brew system_woke
+    --subscribe slack system_woke
+# \
+# --add item brew right \
+# --set brew update_freq=43200 script="$PLUGIN_DIR/brew.sh" \
+# --subscribe brew system_woke
 
 # sketchybar --add item clock right \
 #     --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh" \
