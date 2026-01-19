@@ -11,8 +11,9 @@ local M = {
   keys = {
     { "<Leader>oq", "<Cmd>Nb notes<CR>", mode = { "n" } },
     { "<Leader>ot", "<Cmd>Nb tags notes<CR>", mode = { "n" } },
+    { "<Leader>os", "<Cmd>Nb search<CR>", mode = { "n" } },
   },
-  dev = true,
+  dev = false,
 }
 
 return M
