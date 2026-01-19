@@ -46,7 +46,7 @@ zle -N _nb_notes
 
 ## nb tags
 _nb_tags() {
-  local tags=$(nb --no-color --tags | sed 's/^#//g')
+  local tags=$(nb list --no-color --tags | sed 's/^#//g')
   local selected_tag=$(echo "$tags" | fzf --prompt="Select tag > " --layout="reverse")
   if [ -z "$selected_tag" ]; then
     echo "No tag selected"
@@ -68,3 +68,18 @@ _nb_tags() {
   zle clear-screen
 }
 zle -N _nb_tags
+
+## nb notebooks
+_nb_notebooks() {
+  local selected_notebook=$(nb notebooks --no-color --name | fzf --prompt="Select notebook > " --layout="reverse")
+  if [ -z "$selected_notebook" ]; then
+    echo "No notebook selected"
+    zle reset-prompt
+    return 1
+  fi
+
+  BUFFER="nb notebooks use $selected_notebook"
+  zle accept-line
+  zle clear-screenn
+}
+zle -N _nb_notebooks
