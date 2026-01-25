@@ -1,0 +1,8 @@
+heading_completions = false
+title_headings = false
+unresolved_diagnostics = true
+semantic_tokens = true
+include_md_extension_md_link = true
+include_md_extension_wikilink = false
+tags_in_codeblocks = false
+references_in_codeblocks = false

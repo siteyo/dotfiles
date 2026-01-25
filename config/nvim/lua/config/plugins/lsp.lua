@@ -36,6 +36,7 @@ local M = {
             },
           },
         },
+        markdown_oxide = true,
       },
       setup = {
         -- tsserver = function(_, opts)
