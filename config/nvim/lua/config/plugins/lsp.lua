@@ -36,7 +36,14 @@ local M = {
             },
           },
         },
-        markdown_oxide = true,
+        markdown_oxide = {
+          on_attach = function(client)
+            vim.api.nvim_create_user_command("Daily", function(args)
+              local input = args.args
+              client:exec_cmd({ command = "jump", arguments = { input } })
+            end, { desc = "Open daily note", nargs = "*" })
+          end,
+        },
       },
       setup = {
         -- tsserver = function(_, opts)
