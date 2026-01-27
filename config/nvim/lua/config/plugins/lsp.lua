@@ -24,15 +24,20 @@ local M = {
         lua_ls = {
           settings = {
             Lua = {
+              runtime = {
+                version = "LuaJIT",
+                path = vim.split(package.path, ";"),
+              },
               workspace = {
+                library = { vim.env.VIMRUNTIME },
                 checkThirdParty = false,
               },
               completion = {
                 callSnippet = "Replace",
               },
-              -- diagnostics = {
-              --   globals = { "vim" },
-              -- },
+              diagnostics = {
+                globals = { "vim" },
+              },
             },
           },
         },
