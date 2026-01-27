@@ -53,8 +53,6 @@ local M = {
   keys = {
     { "<Leader>or", "<Cmd>Obsidian rename<CR>", mode = { "n" }, desc = "[Obsidian] Rename Note" },
     { "<Leader>oq", "<Cmd>Obsidian quick_switch<CR>", mode = { "n" }, desc = "[Obsidian] Quick Switch" },
-    { "<Leader>oh", "<Cmd>Obsidian quick_switch home<CR>", mode = { "n" }, desc = "[Obsidian] Show Home Note" },
-    -- { "<Leader>oi", "<Cmd>Obsidian quick_switch inbox<CR>", mode = { "n" }, desc = "[Obsidian] Show GTD Inbox Note" },
     { "<Leader>ob", "<Cmd>Obsidian backlinks<CR>", mode = { "n" }, desc = "[Obsidian] Find Backlinks" },
     { "<Leader>oe", "<Cmd>Obsidian new_from_template<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
     { "<Leader>oj", "<Cmd>Obsidian today<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
@@ -66,6 +64,7 @@ local M = {
     { "<Leader>om", "<Cmd>Obsidian template<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
     { "<Leader>oo", "<Cmd>Obsidian open<CR>", mode = { "n" }, desc = "[Obsidian] Open Obsidian App" },
     { "<Leader>os", "<Cmd>Obsidian search<CR>", mode = { "n" }, desc = "[Obsidian] Search" },
+    { "<Leader>ow", "<Cmd>Obsidian workspaceCR>", mode = { "n" }, desc = "[Obsidian]" },
   },
   opts = {
     legacy_commands = false,
@@ -83,22 +82,28 @@ local M = {
       create_new = true,
     },
     templates = {
-      folder = "Extras/Templates/obsidian.nvim",
+      folder = "Extras/Templates",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M:%S",
+      substitutions = {
+        title = function(ctx)
+          local disp_name = ctx.partial_note:display_name()
+          local title = disp_name:gsub("^%d%d%d%d%-%d%d%-%d%d__", "")
+          return title
+        end,
+      },
     },
-    new_notes_location = "notes_subdir",
-    -- wiki_link_func = function(opts)
-    --   return require("obsidian.util").wiki_link_path_prefix(opts)
-    -- end,
+    new_notes_location = "current_dir",
+    wiki_link_func = function(opts)
+      return require("obsidian.builtin").wiki_link_id_prefix(opts)
+    end,
     preferred_link_style = "wiki",
-    note_id_func = function(_)
-      return tostring(os.date("%Y%m%dT%H%M%S"))
+    note_id_func = function(title)
+      return tostring(os.date("%Y-%m-%d__")) .. title
     end,
     note_path_func = function(spec)
       local path = spec.dir / tostring(spec.id)
       return path:with_suffix(".md")
-      -- return spec.title
     end,
     frontmatter = {
       enabled = true,
@@ -135,9 +140,9 @@ local M = {
       enable = false,
     },
     attachments = {
-      img_folder = "Extras/Images",
+      folder = "Extras/Attachments",
       img_name_func = function()
-        return os.date("%Y%m%dT%H%M%S")
+        return string.format("Pasted image %s", os.date("%Y%m%d%H%M%S"))
       end,
       confirm_img_paste = false,
     },
@@ -147,7 +152,7 @@ local M = {
     setup_autocmd()
     require("obsidian").setup(opts)
   end,
-  enabled = false,
+  enabled = true,
 }
 
 return M
