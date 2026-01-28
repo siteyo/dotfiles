@@ -11,9 +11,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-require("config.private").setup()
+local private = require("config.private")
+private.setup()
 
-require("lazy").setup({
+local opts = {
   defaults = { lazy = true },
   spec = {
     { import = "config.plugins" },
@@ -37,7 +38,8 @@ require("lazy").setup({
   rocks = {
     hererocks = true,
   },
-  dev = {
-    path = "~/ghq/github.com/siteyo",
-  },
-})
+}
+
+opts = private.merge("lazy", opts)
+
+require("lazy").setup(opts)
