@@ -68,10 +68,10 @@ map("n", "sn", "<Cmd>bnext<CR>", { desc = "Next Buffer" })
 -- map("n", "sD", "<Cmd>bdelete!<CR>", { desc = "Delete Buffer" })
 
 -- Move Lines [<Leader>m]
-map_s("n", "<Leader>mj", "j", "<Cmd>m .+1<CR>==", { desc = "Move Down", silent = true })
-map_s("n", "<Leader>mk", "k", "<Cmd>m .-2<CR>==", { desc = "Move Up", silent = true })
-map_s("v", "<Leader>mj", "j", ":m '>+1<CR>gv=gv", { desc = "Move Down", silent = true })
-map_s("v", "<Leader>mk", "k", ":m '<-2<CR>gv=gv", { desc = "Move Up", silent = true })
+-- map_s("n", "<Leader>mj", "j", "<Cmd>m .+1<CR>==", { desc = "Move Down", silent = true })
+-- map_s("n", "<Leader>mk", "k", "<Cmd>m .-2<CR>==", { desc = "Move Up", silent = true })
+-- map_s("v", "<Leader>mj", "j", ":m '>+1<CR>gv=gv", { desc = "Move Down", silent = true })
+-- map_s("v", "<Leader>mk", "k", ":m '<-2<CR>gv=gv", { desc = "Move Up", silent = true })
 
 -- Jump in line
 map({ "n", "v", "o" }, "<S-h>", "^")
