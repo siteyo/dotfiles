@@ -8,7 +8,7 @@
 #   - all
 registries:
 - type: standard
-  ref: v4.463.0 # renovate: depName=aquaproj/aqua-registry
+  ref: v4.464.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: denoland/deno@v2.6.7
 - name: mitsuhiko/rye@0.44.0
