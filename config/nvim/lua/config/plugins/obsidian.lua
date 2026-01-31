@@ -86,10 +86,10 @@ local M = {
       date_format = "%Y-%m-%d",
       time_format = "%H:%M:%S",
       substitutions = {
-        title = function(ctx)
+        name = function(ctx)
           local disp_name = ctx.partial_note:display_name()
-          local title = disp_name:gsub("^%d%d%d%d%-%d%d%-%d%d__", "")
-          return title
+          local name = disp_name:gsub("^%d%d%d%d%-%d%d%-%d%d__", "")
+          return name
         end,
       },
     },
