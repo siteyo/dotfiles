@@ -3,7 +3,7 @@ local M = {
   event = "VeryLazy",
   init = function()
     vim.o.timeout = true
-    vim.o.timeoutlen = 300
+    vim.o.timeoutlen = 500
   end,
   -- keys = {
   --   { "<Leader>w<Leader>", "<Cmd>WhichKey<CR>", mode = { "n" } },
