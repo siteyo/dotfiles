@@ -43,7 +43,7 @@
   "lspsaga.nvim": { "branch": "main", "commit": "8efe00d6aed9db6449969f889170f1a7e43101a1" },
   "lualine.nvim": { "branch": "master", "commit": "47f91c416daef12db467145e16bed5bbfe00add8" },
   "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
-  "md-tasks.nvim": { "branch": "main", "commit": "811dc7b8aff0d0b3c5a7f7800e83daefd68d7204" },
+  "md-tasks.nvim": { "branch": "main", "commit": "f59b53651729ee6305ce7696dade0968b628e40e" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "f3df514fff2bdd4318127c40470984137f87b62e" },
   "neogit": { "branch": "master", "commit": "73870229977fdd8747025820e15e98cfde787b9c" },
   "neorg": { "branch": "main", "commit": "f8c932adf75ba65cd015cdbcf9ed1b96814cf55e" },
@@ -91,5 +91,5 @@
   "vimdoc-ja": { "branch": "master", "commit": "6612db35af2291b7eb9ee4efb7dba24bd8818746" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
   "yanky.nvim": { "branch": "main", "commit": "04fc42b94305d94948c9c197f679336668af3292" },
-  "yazi.nvim": { "branch": "main", "commit": "4a8bd3284708e11e48bcd865892902a46abdcce0" }
+  "yazi.nvim": { "branch": "main", "commit": "1874d812de12881d1da8c19c8ce2f94f36d00a6b" }
 }
