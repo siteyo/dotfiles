@@ -1,6 +1,7 @@
 local M = {
   "folke/snacks.nvim",
   lazy = false,
+  priority = 1000,
   opts = {
     bigfile = { enabled = true },
     dashboard = {
@@ -117,6 +118,8 @@ local M = {
     },
     notifier = {},
     gh = {},
+    workds = {},
+    quickfile = {},
   },
   keys = {
     -- stylua: ignore start

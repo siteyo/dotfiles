@@ -2,6 +2,10 @@ local M = {
   "folke/sidekick.nvim",
   opts = {
     cli = {
+      mux = {
+        backend = "zellij",
+        enabled = false,
+      },
       win = {
         keys = {
           skkeleton_j = { "<C-j>", "<Plug>(skkeleton-enable)", mode = "nt" },
