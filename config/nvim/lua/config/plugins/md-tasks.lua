@@ -22,7 +22,7 @@ local M = {
     {
       "<Leader>mf",
       function()
-        require("md-tasks.actions").show_task_files({ "undone", "progress" })
+        require("md-tasks.actions").show_files({ "undone", "progress" })
       end,
       mode = { "n" },
       desc = "[MdTasks] Show undone and in-progress task files",
@@ -30,7 +30,7 @@ local M = {
     {
       "<Leader>mm",
       function()
-        require("md-tasks.actions").show_task_files()
+        require("md-tasks.actions").show_task_files({ "undone", "progress" })
       end,
       mode = { "n" },
       desc = "[MdTasks] Show all task files",

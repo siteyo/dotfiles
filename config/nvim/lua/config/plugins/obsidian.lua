@@ -54,9 +54,15 @@ local M = {
     { "<Leader>or", "<Cmd>Obsidian rename<CR>", mode = { "n" }, desc = "[Obsidian] Rename Note" },
     { "<Leader>oq", "<Cmd>Obsidian quick_switch<CR>", mode = { "n" }, desc = "[Obsidian] Quick Switch" },
     { "<Leader>ob", "<Cmd>Obsidian backlinks<CR>", mode = { "n" }, desc = "[Obsidian] Find Backlinks" },
-    { "<Leader>oe", "<Cmd>Obsidian new_from_template<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
+    {
+      "<Leader>oe",
+      "<Cmd>Obsidian new_from_template<CR>",
+      mode = { "n" },
+      desc = "[Obsidian] Create New Note From Template",
+    },
     { "<Leader>oj", "<Cmd>Obsidian today<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
-    { "<Leader>on", "<Cmd>Obsidian tomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
+    -- { "<Leader>on", "<Cmd>Obsidian tomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
+    { "<Leader>on", "<Cmd>Obsidian new<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
     { "<Leader>op", "<Cmd>Obsidian yesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
     { "<Leader>ov", "<Cmd>Obsidian paste_img<CR>", mode = { "n" }, desc = "[Obsidian] Paste Image" },
     { "<Leader>of", "<Cmd>Obsidian links<CR>", mode = { "n" }, desc = "[Obsidian] Find Forwardlinks" },
@@ -99,7 +105,7 @@ local M = {
     end,
     preferred_link_style = "wiki",
     note_id_func = function(title)
-      return tostring(os.date("%Y-%m-%d__")) .. title
+      return tostring(os.date("%Y-%m-%d__")) .. string.gsub(title, "[:%s]+", "_")
     end,
     note_path_func = function(spec)
       local path = spec.dir / tostring(spec.id)
