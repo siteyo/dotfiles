@@ -1,6 +1,6 @@
 [tools]
 node = "lts"
-python = ["3.14.2", "3.12"]
+python = ["3.14.3", "3.12"]
 
 # [settings]
 # plugin_autoupdate_last_check_duration = '1 week'
