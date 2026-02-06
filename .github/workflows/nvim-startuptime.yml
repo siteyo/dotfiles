@@ -10,7 +10,7 @@ env:
   GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
 
 jobs:
-  macos:
+  ubuntu:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
