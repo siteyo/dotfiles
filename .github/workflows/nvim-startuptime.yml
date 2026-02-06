@@ -10,8 +10,8 @@ env:
   GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
 
 jobs:
-  macos:
-    runs-on: macos-latest
+  ubuntu:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - name: Setup Neovim
@@ -39,8 +39,8 @@ jobs:
         run: |
           vim-startuptime \
             -vimpath "${{ steps.neovim.outputs.executable }}" \
-            -count 300 \
-            -warmup 50 \
+            -count 100 \
+            -warmup 10 \
             -script \
             >> output.txt
           echo "total_average_time=$(grep 'Total Average:' output.txt | awk '{printf "%.2f %s", $3, $4}')" >> "$GITHUB_ENV"
