@@ -20,6 +20,14 @@ if command -v zoxide >/dev/null; then
   eval "$(zoxide init zsh)"
 fi
 
+## zellij
+if command -v zellij >/dev/null; then
+  eval "$(zellij setup --generate-auto-start zsh)"
+  # source <(zellij setup --generate-completion zsh)
+  [ ! -f "{COMPLETIONS_PATH}/_zellij" ] &&
+    $(command -v zellij) setup --generate-completion zsh >"${COMPLETIONS_PATH}/_zellij"
+fi
+
 ## cargo (Rust)
 if [ -d "${HOME}/.cargo" ]; then
   source "${HOME}/.cargo/env"

@@ -5,3 +5,6 @@ snippets:
   - name: git status
     keyword: gs
     snippet: git status --short --branch
+  - name: zellij
+    keyword: zj
+    snippet: zellij
