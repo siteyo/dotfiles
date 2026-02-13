@@ -1,3 +1,17 @@
+local installed = {}
+-- local queries = {}
+
+local function get_installed(update)
+  if update then
+    -- installed, queries = {}, {}
+    installed = {}
+    for _, lang in ipairs(require("nvim-treesitter").get_installed("parsers")) do
+      installed[lang] = true
+    end
+  end
+  return installed or {}
+end
+
 local M = {
   -- treesitter
   {
@@ -72,15 +86,15 @@ local M = {
       -- },
     },
     config = function(_, opts)
-      local ts = require("config.treesitter")
+      -- local ts = require("config.treesitter")
       require("nvim-treesitter").setup(opts)
-      ts.get_installed(true)
+      get_installed(true)
       local install = vim.tbl_filter(function(what)
         local lang = vim.treesitter.language.get_lang(what)
-        return not ts.get_installed()[lang]
+        return not get_installed()[lang]
       end, opts.ensure_installed or {})
       require("nvim-treesitter").install(install, { summary = true }):await(function()
-        ts.get_installed(true)
+        get_installed(true)
       end)
 
       vim.api.nvim_create_autocmd("FileType", {

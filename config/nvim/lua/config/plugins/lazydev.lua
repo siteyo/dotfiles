@@ -1,7 +1,11 @@
 local M = {
   "folke/lazydev.nvim",
   ft = "lua",
-  config = true,
+  opts = {
+    library = {
+      { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+    },
+  },
 }
 
 return M

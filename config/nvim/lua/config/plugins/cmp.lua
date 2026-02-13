@@ -21,6 +21,7 @@ local M = {
     "kristijanhusak/vim-dadbod-completion",
     "windwp/nvim-autopairs",
   },
+  enabled = false,
 }
 
 function M.config()
