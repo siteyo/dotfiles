@@ -68,14 +68,14 @@ fi
 
 if [[ -n $ZENO_LOADED ]]; then
   bindkey ' ' zeno-auto-snippet
-  bindkey '^f' zeno-auto-snippet-and-accept-line
+  bindkey '^m' accept-line
   bindkey '^i' zeno-completion
 
-  bindkey '^m' accept-line
-  bindkey '^x ' zeno-insert-space
-  bindkey '^s' zeno-insert-snippet
-  bindkey '^x^x' zeno-toggle-auto-snippet
+  bindkey '^e^m' zeno-auto-snippet-and-accept-line
+  bindkey '^e ' zeno-insert-space
+  bindkey '^es' zeno-insert-snippet
+  bindkey '^eo' zeno-toggle-auto-snippet
 
-  bindkey '^x^p' zeno-preprompt
-  bindkey '^xs' zeno-preprompt-snippet
+  bindkey '^ep' zeno-preprompt
+  bindkey '^es' zeno-preprompt-snippet
 fi
