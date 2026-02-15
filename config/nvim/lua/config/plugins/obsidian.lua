@@ -84,7 +84,7 @@ local M = {
       template = "calendar.md",
     },
     completion = {
-      nvim_cmp = true,
+      blink = true,
       create_new = true,
     },
     templates = {
@@ -105,7 +105,8 @@ local M = {
     end,
     preferred_link_style = "wiki",
     note_id_func = function(title)
-      return tostring(os.date("%Y-%m-%d__")) .. string.gsub(title, "[:%s]+", "_")
+      local processed_title = string.gsub(title, "%.", "-")
+      return tostring(os.date("%Y-%m-%d__")) .. string.gsub(processed_title, "[:%s]+", "_")
     end,
     note_path_func = function(spec)
       local path = spec.dir / tostring(spec.id)

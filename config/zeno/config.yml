@@ -1,7 +1,33 @@
 completions:
+  - name: zellij attach
+    patterns:
+      - "^zellij a $"
+      - "^zellij attach $"
+    sourceCommand: "zellij list-sessions --short"
+    optinos:
+      --prompt: "zellij attach >"
+  - name: zellij delete-session
+    patterns:
+      - "^zellij d $"
+      - "^zellij delete-session $"
+    sourceCommand: "zellij list-sessions --short"
+    optinos:
+      --prompt: "zellij delete-session >"
 
 snippets:
   # snippet and keyword abbrev
   - name: git status
     keyword: gs
     snippet: git status --short --branch
+  - name: restart shell (login)
+    keyword: rlsh
+    snippet: exec $SHELL -l
+  - name: zellij
+    keyword: zj
+    snippet: zellij
+  - name: zellij delete-all-sessions
+    keyword: zjda
+    snippet: zellij delete-all-sessions --yes
+  - name: zellij delete-session
+    keyword: zjd
+    snippet: zellij delete-session
