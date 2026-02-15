@@ -62,8 +62,8 @@ M.opts = {
           { event = "msg_show", find = "more line" },
           { event = "msg_show", find = "line less" },
           { event = "msg_show", find = "fewer line" },
-          { event = "msg_show", kind = "emsg", find = "E%d+:" },
-          { event = "msg_show", kind = "wmsg", find = "search hit .* continuing at" },
+          -- { event = "msg_show", kind = "emsg", find = "E%d+:" },
+          -- { event = "msg_show", kind = "wmsg", find = "search hit .* continuing at" },
         },
       },
     },
@@ -72,17 +72,17 @@ M.opts = {
       filter = { event = "msg_show", kind = "confirm" },
     },
     {
-      view = "notify",
+      view = "split",
       filter = {
         event = "msg_show",
-        kind = { "", "echo", "echomsg", "lua_print", "list_cmd" },
+        kind = { "lua_print", "list_cmd" },
       },
-      opts = { replace = true, merge = true, title = "Messages" },
+      -- opts = { replace = true, merge = true, title = "Messages" },
     },
-    {
-      view = "split",
-      filter = { event = "msg_show", cmdline = true },
-    },
+    -- {
+    --   view = "split",
+    --   filter = { event = "msg_show", cmdline = true },
+    -- },
   },
 }
 
