@@ -52,7 +52,6 @@ keybinds clear-defaults=true {
         bind "s" { ToggleActiveSyncTab; SwitchToMode "normal"; }
         bind "Ctrl t" { SwitchToMode "normal"; }
         bind "x" { CloseTab; SwitchToMode "normal"; }
-        bind "c" { CloseTab; SwitchToMode "normal"; }
         bind "tab" { ToggleTab; }
     }
     resize {
@@ -140,8 +139,10 @@ keybinds clear-defaults=true {
         bind "Alt '" { TogglePaneInGroup; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
-        bind "Alt o" { MoveTab "left"; }
-        bind "Alt p" { MoveTab "right"; }
+        bind "Alt o" { GoToNextTab; }
+        bind "Super Alt o" { MoveTab "left"; }
+        bind "Alt p" { GoToPreviousTab; }
+        bind "Super Alt p" { MoveTab "right"; }
         bind "Alt Shift p" { ToggleGroupMarking; }
         bind "Ctrl q" { Quit; }
         bind "Ctrl enter" { SwitchToMode "locked"; }
