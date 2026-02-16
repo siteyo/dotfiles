@@ -21,6 +21,13 @@ local M = {
         rust_analyzer = true,
         sqls = true,
         ts_ls = true,
+        markdown_oxide = {
+          workspace = {
+            didChangeWatchedFiles = {
+              dynamicRegistration = true,
+            },
+          },
+        },
         lua_ls = {
           settings = {
             Lua = {
