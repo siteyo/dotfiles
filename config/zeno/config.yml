@@ -1,4 +1,5 @@
 completions:
+  # zellij
   - name: zellij attach
     patterns:
       - "^zellij a $"
@@ -22,13 +23,17 @@ completions:
       --prompt: "'zellij layout >'"
 
 snippets:
-  # snippet and keyword abbrev
+  # Git
   - name: git status
     keyword: gs
     snippet: git status --short --branch
+
+  # Shell
   - name: restart shell (login)
     keyword: rlsh
     snippet: exec $SHELL -l
+
+  # zellij
   - name: zellij
     keyword: j
     snippet: zellij
@@ -47,3 +52,6 @@ snippets:
   - name: zellj attach
     keyword: ja
     snippet: zellij attach
+  - name: zellij delete
+    keyword: jd
+    snippet: zellij delete
