@@ -13,6 +13,13 @@ completions:
     sourceCommand: "zellij list-sessions --short"
     optinos:
       --prompt: "zellij delete-session >"
+  - name: zellij layout
+    patterns:
+      - "^zellij --layout $"
+    sourceCommand: |
+      eza -1 ${XDG_CONFIG_HOME}/zellij/layouts | sed 's/\.[^.]*$//'
+    options:
+      --prompt: "zellijlayout >"
 
 snippets:
   # snippet and keyword abbrev
@@ -34,3 +41,6 @@ snippets:
   - name: zellij run
     keyword: jr
     snippet: zellij run -c --
+  - name: zellij layout
+    keyword: jl
+    snippet: zellij --layout
