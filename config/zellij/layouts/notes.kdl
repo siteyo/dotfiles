@@ -1,0 +1,15 @@
+layout {
+    tab name="Notes" {
+        pane size=1 borderless=true {
+            plugin location="tab-bar"
+        }
+        pane command="nvim" {
+            name "Notes"
+            cwd "~/notes"
+        }
+        pane size=1 borderless=true {
+            plugin location="status-bar"
+        }
+    }
+}
+

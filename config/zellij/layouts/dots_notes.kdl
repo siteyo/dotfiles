@@ -1,17 +1,18 @@
 layout {
-    tab name="Note Taking" {
+    tab name="Dots & Notes" {
         pane size=1 borderless=true {
             plugin location="tab-bar"
         }
         pane split_direction="vertical" {
             pane command="nvim" {
-                name "dotfiles"
+                name "Dots"
                 cwd "~/dotfiles"
             }
             pane command="nvim" {
-                name "notes"
+                name "Notes"
                 cwd "~/notes"
                 size "40%"
+                focus true
             }
         }
         pane size=1 borderless=true {
