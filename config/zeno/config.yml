@@ -46,6 +46,9 @@ snippets:
   - name: zellij run
     keyword: jr
     snippet: zellij run -c --
+  - name: zellij list-sessions
+    keyword: jls
+    snippet: zellij list-sessions
   - name: zellij layout
     keyword: jl
     snippet: zellij --layout
