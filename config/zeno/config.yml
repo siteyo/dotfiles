@@ -23,11 +23,14 @@ snippets:
     keyword: rlsh
     snippet: exec $SHELL -l
   - name: zellij
-    keyword: zj
+    keyword: j
     snippet: zellij
   - name: zellij delete-all-sessions
-    keyword: zjda
+    keyword: jda
     snippet: zellij delete-all-sessions --yes
   - name: zellij delete-session
-    keyword: zjd
+    keyword: jd
     snippet: zellij delete-session
+  - name: zellij run
+    keyword: jr
+    snippet: zellij run -c --
