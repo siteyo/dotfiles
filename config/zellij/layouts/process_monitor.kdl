@@ -21,3 +21,4 @@ layout {
         plugin location="status-bar"
     }
 }
+
