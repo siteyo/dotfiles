@@ -4,22 +4,22 @@ completions:
       - "^zellij a $"
       - "^zellij attach $"
     sourceCommand: "zellij list-sessions --short"
-    optinos:
-      --prompt: "zellij attach >"
+    options:
+      --prompt: "'zellij attach >'"
   - name: zellij delete-session
     patterns:
       - "^zellij d $"
       - "^zellij delete-session $"
     sourceCommand: "zellij list-sessions --short"
-    optinos:
-      --prompt: "zellij delete-session >"
+    options:
+      --prompt: "'zellij delete-session >'"
   - name: zellij layout
     patterns:
       - "^zellij --layout $"
     sourceCommand: |
       eza -1 ${XDG_CONFIG_HOME}/zellij/layouts | sed 's/\.[^.]*$//'
     options:
-      --prompt: "zellijlayout >"
+      --prompt: "'zellij layout >'"
 
 snippets:
   # snippet and keyword abbrev
@@ -44,3 +44,6 @@ snippets:
   - name: zellij layout
     keyword: jl
     snippet: zellij --layout
+  - name: zellj attach
+    keyword: ja
+    snippet: zellij attach
