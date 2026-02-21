@@ -11,10 +11,10 @@ local M = {
         severity_sort = true,
       },
       servers = {
-        bashls = true,
+        bashls = false,
         cssls = true,
         dockerls = true,
-        emmet_ls = true,
+        emmet_language_server = true,
         jsonls = true,
         ruff = true,
         pyright = true,

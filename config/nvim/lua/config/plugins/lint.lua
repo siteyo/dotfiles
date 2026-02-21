@@ -9,7 +9,8 @@ local M = {
       javascriptreact = { "eslint" },
       python = { "mypy" },
       sql = { "sqlfluff" },
-      -- yaml = { "actionlint", "yamllint" },
+      sh = { "shellcheck" },
+      yaml = { "actionlint", "yamllint" },
     }
     vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {
       callback = function()
