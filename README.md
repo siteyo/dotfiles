@@ -13,6 +13,7 @@
 * Terminal
   * [Wezterm](https://wezfurlong.org/wezterm/index.html)
   * [kitty](https://sw.kovidgoyal.net/kitty/)
+  - [Ghostty](https://ghostty.org/)
 * Editor
   * [Neovim](https://neovim.io/)
   * [LazyVim](https://www.lazyvim.org/)
@@ -33,6 +34,7 @@
   * [Sketchybar](https://felixkratz.github.io/SketchyBar/)
   * [Raycast](https://www.raycast.com/) (script commands only)
   * [aquaskk](https://github.com/codefirst/aquaskk)
+  - [yazi](https://yazi-rs.github.io/)
 
 
 ## Font

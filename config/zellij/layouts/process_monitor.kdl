@@ -1,0 +1,29 @@
+layout {
+    tab name="Process Monitor" {
+        pane size=1 borderless=true {
+            plugin location="tab-bar"
+        }
+        pane split_direction="horizontal" {
+            pane split_direction="vertical" {
+                pane command="btm" {
+                    name "Widgets"
+                    close_on_exit true
+                }
+                pane command="fastfetch" {
+                    name "System Info"
+                    size "30%"
+                }
+            }
+            pane command="btm" {
+                name "Basic"
+                args "--basic"
+                close_on_exit true
+                focus true
+            }
+        }
+        pane size=1 borderless=true {
+            plugin location="status-bar"
+        }
+    }
+}
+

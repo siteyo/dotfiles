@@ -1,33 +1,60 @@
 completions:
+  # zellij
   - name: zellij attach
     patterns:
       - "^zellij a $"
       - "^zellij attach $"
     sourceCommand: "zellij list-sessions --short"
-    optinos:
-      --prompt: "zellij attach >"
+    options:
+      --prompt: "'zellij attach >'"
   - name: zellij delete-session
     patterns:
       - "^zellij d $"
       - "^zellij delete-session $"
     sourceCommand: "zellij list-sessions --short"
-    optinos:
-      --prompt: "zellij delete-session >"
+    options:
+      --prompt: "'zellij delete-session >'"
+  - name: zellij layout
+    patterns:
+      - "^zellij --layout $"
+    sourceCommand: |
+      eza -1 ${XDG_CONFIG_HOME}/zellij/layouts | sed 's/\.[^.]*$//'
+    options:
+      --prompt: "'zellij layout >'"
 
 snippets:
-  # snippet and keyword abbrev
+  # Git
   - name: git status
     keyword: gs
     snippet: git status --short --branch
+
+  # Shell
   - name: restart shell (login)
     keyword: rlsh
     snippet: exec $SHELL -l
+
+  # zellij
   - name: zellij
-    keyword: zj
+    keyword: j
     snippet: zellij
   - name: zellij delete-all-sessions
-    keyword: zjda
+    keyword: jda
     snippet: zellij delete-all-sessions --yes
   - name: zellij delete-session
-    keyword: zjd
+    keyword: jd
     snippet: zellij delete-session
+  - name: zellij run
+    keyword: jr
+    snippet: zellij run -c --
+  - name: zellij list-sessions
+    keyword: jls
+    snippet: zellij list-sessions
+  - name: zellij layout
+    keyword: jl
+    snippet: zellij --layout
+  - name: zellj attach
+    keyword: ja
+    snippet: zellij attach
+  - name: zellij delete
+    keyword: jd
+    snippet: zellij delete

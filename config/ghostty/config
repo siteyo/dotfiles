@@ -1,15 +1,20 @@
-# Font
-font-family = "0xProto Nerd Font"
+## Font
+# font-family = "0xProto Nerd Font"
 font-family = "HackGen Console NF"
+font-thicken = true
+font-thicken-strength = 100
+font-size = 12
 
-# Theme
-theme = light:tokyonight-day,dark:tokyonight
+## Theme
+theme = light:TokyoNight Day,dark:TokyoNight
 
-# Window
+## Window
 macos-titlebar-style = hidden
 quit-after-last-window-closed = true
 
+## Shell Integration
 shell-integration = zsh
+shell-integration-features = no-cursor
 
 ## Background
 background-opacity = 0.9
@@ -18,7 +23,6 @@ background-blur-radius = 20
 ## Cursor
 cursor-style = block
 cursor-style-blink = false
-shell-integration-features = no-cursor
 
 ## Mouse
 mouse-hide-while-typing = true
@@ -27,20 +31,11 @@ mouse-hide-while-typing = true
 unfocused-split-fill = #24283b
 
 ## Keybind
-# Window
 keybind = ctrl+;>n=new_window
-
-# Split
-keybind = ctrl+;>v=new_split:right
-keybind = ctrl+;>s=new_split:down
-keybind = ctrl+;>h=goto_split:left
-keybind = ctrl+;>j=goto_split:bottom
-keybind = ctrl+;>k=goto_split:top
-keybind = ctrl+;>l=goto_split:right
-keybind = ctrl+;>d=toggle_split_zoom
-keybind = ctrl+;>zero=equalize_splits
-
-# Font
 keybind = ctrl+equal=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
-keybind = ctrl+zero=reset_font_size
+keybind = ctrl+;>zero=reset_font_size
+keybind = ctrl+;>.=reload_config
+
+## macos
+macos-option-as-alt = true

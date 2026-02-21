@@ -11,16 +11,23 @@ local M = {
         severity_sort = true,
       },
       servers = {
-        bashls = true,
+        bashls = false,
         cssls = true,
         dockerls = true,
-        emmet_ls = true,
+        emmet_language_server = true,
         jsonls = true,
         ruff = true,
         pyright = true,
         rust_analyzer = true,
         sqls = true,
         ts_ls = true,
+        markdown_oxide = {
+          workspace = {
+            didChangeWatchedFiles = {
+              dynamicRegistration = true,
+            },
+          },
+        },
         lua_ls = {
           settings = {
             Lua = {
