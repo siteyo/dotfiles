@@ -6,21 +6,21 @@ completions:
       - "^zellij attach $"
     sourceCommand: "zellij list-sessions --short"
     options:
-      --prompt: "'zellij attach >'"
+      --prompt: "'zellij attach > '"
   - name: zellij delete-session
     patterns:
       - "^zellij d $"
       - "^zellij delete-session $"
     sourceCommand: "zellij list-sessions --short"
     options:
-      --prompt: "'zellij delete-session >'"
+      --prompt: "'zellij delete-session > '"
   - name: zellij layout
     patterns:
       - "^zellij --layout $"
     sourceCommand: |
       eza -1 ${XDG_CONFIG_HOME}/zellij/layouts | sed 's/\.[^.]*$//'
     options:
-      --prompt: "'zellij layout >'"
+      --prompt: "'zellij layout > '"
 
 snippets:
   # Git
