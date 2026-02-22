@@ -23,6 +23,13 @@ completions:
       --prompt: "'zellij layout > '"
 
 snippets:
+  # sh
+  - name: "null"
+    keyword: "null"
+    snippet: ">/dev/null 2>&1"
+    context:
+      lbuffer: '.+\s'
+
   # Git
   - name: git status
     keyword: gs
