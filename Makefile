@@ -9,7 +9,6 @@ install: preinstall ## Install all dotfiles in this repo.
 	@bash $(DOTPATH)/scripts/install-zsh.sh
 	@bash $(DOTPATH)/scripts/install-brew.sh --bundle
 	@bash $(DOTPATH)/scripts/install-nvim.sh
-	@bash $(DOTPATH)/scripts/install-tmux.sh
 	@bash $(DOTPATH)/scripts/install-wezterm.sh
 
 	@printf 'You can change to Bash or Zsh.\n'
