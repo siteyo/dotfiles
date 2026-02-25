@@ -12,6 +12,7 @@ fi
 
 # fzf
 if command -v fzf >/dev/null; then
+  export FZF_CTRL_T_COMMAND=""
   source <(fzf --zsh)
 fi
 
@@ -21,12 +22,12 @@ if command -v zoxide >/dev/null; then
 fi
 
 ## zellij
-if command -v zellij >/dev/null; then
-  eval "$(zellij setup --generate-auto-start zsh)"
-  # source <(zellij setup --generate-completion zsh)
-  [ ! -f "{COMPLETIONS_PATH}/_zellij" ] &&
-    $(command -v zellij) setup --generate-completion zsh >"${COMPLETIONS_PATH}/_zellij"
-fi
+# if command -v zellij >/dev/null; then
+#   eval "$(zellij setup --generate-auto-start zsh)"
+#   # source <(zellij setup --generate-completion zsh)
+#   [ ! -f "{COMPLETIONS_PATH}/_zellij" ] &&
+#     $(command -v zellij) setup --generate-completion zsh >"${COMPLETIONS_PATH}/_zellij"
+# fi
 
 ## cargo (Rust)
 if [ -d "${HOME}/.cargo" ]; then
@@ -52,7 +53,7 @@ fi
 ## yazi
 if command -v yazi >/dev/null; then
   function ya() {
-    local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
     yazi "$@" --cwd-file="$tmp"
     if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
       cd -- "$cwd"

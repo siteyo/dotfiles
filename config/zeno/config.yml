@@ -1,4 +1,19 @@
 completions:
+  # tmux
+  - name: tmux attach
+    patterns:
+      - "^tmux a -t $"
+      - "^tmux attach -t $"
+    sourceCommand: "tmux list-sessions -F '#{session_name}'"
+    options:
+      --prompt: "'tmux attach > '"
+  - name: tmux kill-session
+    patterns:
+      - "^tmux kill-session -t $"
+    sourceCommand: "tmux list-sessions -F '#{session_name}'"
+    options:
+      --prompt: "'tmux kill-session > '"
+
   # zellij
   - name: zellij attach
     patterns:
@@ -6,32 +21,54 @@ completions:
       - "^zellij attach $"
     sourceCommand: "zellij list-sessions --short"
     options:
-      --prompt: "'zellij attach >'"
+      --prompt: "'zellij attach > '"
   - name: zellij delete-session
     patterns:
       - "^zellij d $"
       - "^zellij delete-session $"
     sourceCommand: "zellij list-sessions --short"
     options:
-      --prompt: "'zellij delete-session >'"
+      --prompt: "'zellij delete-session > '"
   - name: zellij layout
     patterns:
       - "^zellij --layout $"
     sourceCommand: |
       eza -1 ${XDG_CONFIG_HOME}/zellij/layouts | sed 's/\.[^.]*$//'
     options:
-      --prompt: "'zellij layout >'"
+      --prompt: "'zellij layout > '"
 
 snippets:
+  # Shell
+  - name: "null"
+    keyword: "null"
+    snippet: ">/dev/null 2>&1"
+    context:
+      lbuffer: '.+\s'
+  - name: restart shell (login)
+    keyword: rlsh
+    snippet: exec $SHELL -l
+
   # Git
   - name: git status
     keyword: gs
     snippet: git status --short --branch
 
-  # Shell
-  - name: restart shell (login)
-    keyword: rlsh
-    snippet: exec $SHELL -l
+  # tmux
+  - name: tmux
+    keyword: t
+    snippet: tmux
+  - name: tmux list-sessions
+    keyword: tls
+    snippet: tmux list-sessions
+  - name: tmux attach
+    keyword: ta
+    snippet: tmux attach -t
+  - name: tmux kill-session
+    keyword: tk
+    snippet: tmux kill-session -t
+  - name: tmux kill-session (all)
+    keyword: tka
+    snippet: tmux kill-session -a
 
   # zellij
   - name: zellij

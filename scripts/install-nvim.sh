@@ -13,10 +13,10 @@ main() {
   # Create a local setting file
   # touch "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/local_init.lua"
 
-  # for Telescope frecency
-  if uname -a | grep -q -e 'microsoft' -e 'Ubuntu'; then
-    sudo apt-get install sqlite3 libsqlite3-dev
-  fi
+  # # for Telescope frecency
+  # if uname -a | grep -q -e 'microsoft' -e 'Ubuntu'; then
+  #   sudo apt-get install sqlite3 libsqlite3-dev
+  # fi
 
   print_done
 }

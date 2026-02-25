@@ -22,10 +22,6 @@ function M.config()
       variables = { italic = false },
     },
     -- day_brightness = 0.4,
-    on_colors = function(colors)
-      colors.border = colors.blue0
-      colors.fg_gutter = colors.dark3
-    end,
     -- on_highlights = function(hl, c)
     --   hl["@markup.link.url"] = {
     --     fg = c.blue6,
