@@ -99,7 +99,7 @@ local M = {
         end,
       },
     },
-    new_notes_location = "current_dir",
+    new_notes_location = "notes_subdir",
     wiki_link_func = function(opts)
       return require("obsidian.builtin").wiki_link_id_prefix(opts)
     end,
