@@ -74,7 +74,7 @@ local M = {
   },
   opts = {
     legacy_commands = false,
-    notes_subdir = "Inbox",
+    notes_subdir = "Encounters",
     picker = {
       name = "snacks.pick",
     },
