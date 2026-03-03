@@ -29,7 +29,7 @@ local M = {
       show_help = "<f1>",
     },
   },
-  enabled = false,
+  enabled = true,
 }
 
 return M

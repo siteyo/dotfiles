@@ -105,8 +105,7 @@ local M = {
     end,
     preferred_link_style = "wiki",
     note_id_func = function(title)
-      local processed_title = string.gsub(title, "%.", "-")
-      return tostring(os.date("%Y-%m-%d__")) .. string.gsub(processed_title, "[:%s]+", "_")
+      return tostring(os.date("%Y-%m-%d__")) .. string.gsub(title, "[.:%s]+", "-")
     end,
     note_path_func = function(spec)
       local path = spec.dir / tostring(spec.id)
