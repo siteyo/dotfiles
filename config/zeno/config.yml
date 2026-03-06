@@ -95,3 +95,11 @@ snippets:
   - name: zellij delete
     keyword: jd
     snippet: zellij delete
+
+  # convmv
+  - name: "convmv (dryrun)"
+    keyword: cmd
+    snippet: convmv -f utf-8 -t utf-8 --nfc --nosmart -r .
+  - name: "convmv (notest)"
+    keyword: cmn
+    snippet: convmv -f utf-8 -t utf-8 --nfc --nosmart -r . --notest
