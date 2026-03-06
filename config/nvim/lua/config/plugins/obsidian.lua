@@ -74,12 +74,12 @@ local M = {
   },
   opts = {
     legacy_commands = false,
-    notes_subdir = "Inbox",
+    notes_subdir = "LYT/Encounters",
     picker = {
       name = "snacks.pick",
     },
     daily_notes = {
-      folder = "Calendar",
+      folder = "LYT/Calendar",
       default_tags = { "Calendar" },
       template = "calendar.md",
     },
@@ -99,14 +99,13 @@ local M = {
         end,
       },
     },
-    new_notes_location = "current_dir",
+    new_notes_location = "notes_subdir",
     wiki_link_func = function(opts)
       return require("obsidian.builtin").wiki_link_id_prefix(opts)
     end,
     preferred_link_style = "wiki",
     note_id_func = function(title)
-      local processed_title = string.gsub(title, "%.", "-")
-      return tostring(os.date("%Y-%m-%d__")) .. string.gsub(processed_title, "[:%s]+", "_")
+      return tostring(os.date("%Y-%m-%d__")) .. string.gsub(title, "[.:%s]+", "-")
     end,
     note_path_func = function(spec)
       local path = spec.dir / tostring(spec.id)
