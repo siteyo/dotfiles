@@ -12,6 +12,9 @@ local M = {
           skkeleton_0 = { "<C-0>", "<Plug>(skkeleton-enable)", mode = "nt" },
         },
       },
+      tools = {
+        gemini = { cmd = { "gemini", "--sandbox", "--yolo" } },
+      },
       prompts = {
         changes = "変更内容をレビューしてください。",
         diagnostics = "{file} のDiagnosticsを修正するのを手伝ってください。\n{diagnostics}",
