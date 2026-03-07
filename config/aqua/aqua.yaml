@@ -12,7 +12,7 @@ registries:
 packages:
 - name: denoland/deno@v2.7.4
 - name: mitsuhiko/rye@0.44.0
-- name: JohnnyMorganz/StyLua@v2.3.1
+- name: JohnnyMorganz/StyLua@v2.4.0
 - name: mvdan/sh@v3.12.0
 - name: koalaman/shellcheck@v0.11.0
 - name: LuaLS/lua-language-server@3.17.1
