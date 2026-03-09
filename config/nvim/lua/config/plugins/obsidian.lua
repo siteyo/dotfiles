@@ -70,7 +70,7 @@ local M = {
     { "<Leader>om", "<Cmd>Obsidian template<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
     { "<Leader>oo", "<Cmd>Obsidian open<CR>", mode = { "n" }, desc = "[Obsidian] Open Obsidian App" },
     { "<Leader>os", "<Cmd>Obsidian search<CR>", mode = { "n" }, desc = "[Obsidian] Search" },
-    { "<Leader>ow", "<Cmd>Obsidian workspaceCR>", mode = { "n" }, desc = "[Obsidian]" },
+    { "<Leader>ow", "<Cmd>Obsidian workspace<CR>", mode = { "n" }, desc = "[Obsidian]" },
   },
   opts = {
     legacy_commands = false,
