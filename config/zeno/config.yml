@@ -103,3 +103,29 @@ snippets:
   - name: "convmv (notest)"
     keyword: cmn
     snippet: convmv -f utf-8 -t utf-8 --nfc --nosmart -r . --notest
+
+# # eza
+# - name: list
+#   keyword: ls
+#   snippet: eza --icons --git
+# - name: list long
+#   keyword: ll
+#   snippet: eza --icons --git -l
+# - name: long list (sort) changed
+#   keyword: llc
+#   snippet: eza --icons --git -l -s changed
+# - name: list all
+#   keyword: la
+#   snippet: eza --icons --git -a
+# - name: list all long
+#   keyword: lal
+#   snippet: eza --icons --git -al
+# - name: list all long (sort) changed
+#   keyword: lalc
+#   snippet: eza --icons --git -al -s changed
+# - name: list tree
+#   keyword: lt
+#   snippet: eza -T -L 3 -a -I "node_modules|.git|.cache" --icons
+# - name: list tree long
+#   keyword: ltl
+#   snippet: eza -T -L 3 -a -I "node_modules|.git|.cache" -l --icons

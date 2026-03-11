@@ -74,12 +74,12 @@ local M = {
   },
   opts = {
     legacy_commands = false,
-    notes_subdir = "LYT/Encounters",
+    notes_subdir = "Encounters",
     picker = {
       name = "snacks.pick",
     },
     daily_notes = {
-      folder = "LYT/Calendar",
+      folder = "Calendar",
       default_tags = { "Calendar" },
       template = "calendar.md",
     },
@@ -88,7 +88,7 @@ local M = {
       create_new = true,
     },
     templates = {
-      folder = "Extras/Templates",
+      folder = "+Extras/Templates",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M:%S",
       substitutions = {
