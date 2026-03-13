@@ -105,7 +105,15 @@ local M = {
     end,
     preferred_link_style = "wiki",
     note_id_func = function(title, dir)
-      return require("obsidian.builtin").title_id(title, dir)
+      local Path = require("obsidian.path")
+      local base_dir = Path.new(dir)
+      local candidate = string.gsub(title, "[.:%s]+", "-")
+      local idx = 2
+      while (base_dir / candidate):with_suffix(".md", true):exists() do
+        candidate = string.format("%s-%d", candidate, idx)
+        idx = idx + 1
+      end
+      return candidate
     end,
     note_path_func = function(spec)
       local path = spec.dir / tostring(spec.id)
