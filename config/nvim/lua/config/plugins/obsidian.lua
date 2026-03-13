@@ -74,12 +74,12 @@ local M = {
   },
   opts = {
     legacy_commands = false,
-    notes_subdir = "Encounters",
+    notes_subdir = "+",
     picker = {
       name = "snacks.pick",
     },
     daily_notes = {
-      folder = "Calendar",
+      folder = "Calendar/Notes",
       default_tags = { "Calendar" },
       template = "calendar.md",
     },
@@ -88,7 +88,7 @@ local M = {
       create_new = true,
     },
     templates = {
-      folder = "+Extras/Templates",
+      folder = "x/Templates",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M:%S",
       substitutions = {
@@ -104,8 +104,8 @@ local M = {
       return require("obsidian.builtin").wiki_link_id_prefix(opts)
     end,
     preferred_link_style = "wiki",
-    note_id_func = function(title)
-      return tostring(os.date("%Y-%m-%d__")) .. string.gsub(title, "[.:%s]+", "-")
+    note_id_func = function(title, dir)
+      return require("obsidian.builtin").title_id(title, dir)
     end,
     note_path_func = function(spec)
       local path = spec.dir / tostring(spec.id)
@@ -146,7 +146,7 @@ local M = {
       enable = false,
     },
     attachments = {
-      folder = "Extras/Attachments",
+      folder = "x/Attachments",
       img_name_func = function()
         return string.format("Pasted image %s", os.date("%Y%m%d%H%M%S"))
       end,
