@@ -107,7 +107,7 @@ local M = {
     note_id_func = function(title, dir)
       local Path = require("obsidian.path")
       local base_dir = Path.new(dir)
-      local candidate = string.gsub(title, "[.:]+", "-")
+      local candidate = string.gsub(title, "[:]+", "-")
       local idx = 2
       while (base_dir / candidate):with_suffix(".md", true):exists() do
         candidate = string.format("%s-%d", candidate, idx)
@@ -122,16 +122,16 @@ local M = {
     frontmatter = {
       enabled = true,
       func = function(note)
-        if note.title then
-          note:add_alias(note.title)
-        end
+        -- if note.title then
+        --   note:add_alias(note.title)
+        -- end
 
         if not note.created_at then
           note.created_at = os.date("%Y-%m-%d")
         end
 
         local out = {
-          title = note.title,
+          -- title = note.title,
           aliases = note.aliases,
           tags = note.tags,
           created_at = note.created_at,
