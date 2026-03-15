@@ -21,6 +21,7 @@ local M = {
     map_s("n", "<Leader>nk", "k", "<Cmd>NoNeckPainWidthUp<CR>", { desc = "NoNeckPainWidthUp" })
     map_s("n", "<Leader>nj", "j", "<Cmd>NoNeckPainWidthDown<CR>", { desc = "NoNeckPainWidthUp" })
   end,
+  enabled = false,
 }
 
 return M
