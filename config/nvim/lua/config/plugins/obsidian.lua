@@ -70,16 +70,16 @@ local M = {
     { "<Leader>om", "<Cmd>Obsidian template<CR>", mode = { "n" }, desc = "[Obsidian] Insert Template" },
     { "<Leader>oo", "<Cmd>Obsidian open<CR>", mode = { "n" }, desc = "[Obsidian] Open Obsidian App" },
     { "<Leader>os", "<Cmd>Obsidian search<CR>", mode = { "n" }, desc = "[Obsidian] Search" },
-    { "<Leader>ow", "<Cmd>Obsidian workspaceCR>", mode = { "n" }, desc = "[Obsidian]" },
+    { "<Leader>ow", "<Cmd>Obsidian workspace<CR>", mode = { "n" }, desc = "[Obsidian]" },
   },
   opts = {
     legacy_commands = false,
-    notes_subdir = "LYT/Encounters",
+    notes_subdir = "+",
     picker = {
       name = "snacks.pick",
     },
     daily_notes = {
-      folder = "LYT/Calendar",
+      folder = "Calendar/Notes",
       default_tags = { "Calendar" },
       template = "calendar.md",
     },
@@ -88,7 +88,7 @@ local M = {
       create_new = true,
     },
     templates = {
-      folder = "Extras/Templates",
+      folder = "x/Templates",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M:%S",
       substitutions = {
@@ -104,8 +104,16 @@ local M = {
       return require("obsidian.builtin").wiki_link_id_prefix(opts)
     end,
     preferred_link_style = "wiki",
-    note_id_func = function(title)
-      return tostring(os.date("%Y-%m-%d__")) .. string.gsub(title, "[.:%s]+", "-")
+    note_id_func = function(title, dir)
+      local Path = require("obsidian.path")
+      local base_dir = Path.new(dir)
+      local candidate = string.gsub(title, "[:]+", "-")
+      local idx = 2
+      while (base_dir / candidate):with_suffix(".md", true):exists() do
+        candidate = string.format("%s-%d", candidate, idx)
+        idx = idx + 1
+      end
+      return candidate
     end,
     note_path_func = function(spec)
       local path = spec.dir / tostring(spec.id)
@@ -114,16 +122,16 @@ local M = {
     frontmatter = {
       enabled = true,
       func = function(note)
-        if note.title then
-          note:add_alias(note.title)
-        end
+        -- if note.title then
+        --   note:add_alias(note.title)
+        -- end
 
         if not note.created_at then
           note.created_at = os.date("%Y-%m-%d")
         end
 
         local out = {
-          title = note.title,
+          -- title = note.title,
           aliases = note.aliases,
           tags = note.tags,
           created_at = note.created_at,
@@ -146,7 +154,7 @@ local M = {
       enable = false,
     },
     attachments = {
-      folder = "Extras/Attachments",
+      folder = "x/Attachments",
       img_name_func = function()
         return string.format("Pasted image %s", os.date("%Y%m%d%H%M%S"))
       end,
