@@ -107,7 +107,7 @@ local M = {
     note_id_func = function(title, dir)
       local Path = require("obsidian.path")
       local base_dir = Path.new(dir)
-      local candidate = string.gsub(title, "[:]+", "-")
+      local candidate = string.gsub(title, "[ :]+", " ")
       local idx = 2
       while (base_dir / candidate):with_suffix(".md", true):exists() do
         candidate = string.format("%s-%d", candidate, idx)
