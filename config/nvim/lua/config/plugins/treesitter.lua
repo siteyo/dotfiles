@@ -32,6 +32,7 @@ local M = {
         "http",
         "javascript",
         "json",
+        "latex",
         "lua",
         "luadoc",
         "make",
