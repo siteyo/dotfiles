@@ -126,15 +126,15 @@ local M = {
         --   note:add_alias(note.title)
         -- end
 
-        if not note.created_at then
-          note.created_at = os.date("%Y-%m-%d")
+        if not note.created then
+          note.created = os.date("%Y-%m-%d")
         end
 
         local out = {
           -- title = note.title,
           aliases = note.aliases,
           tags = note.tags,
-          created_at = note.created_at,
+          created = note.created,
         }
 
         if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
