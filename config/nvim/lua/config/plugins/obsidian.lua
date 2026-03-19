@@ -80,7 +80,7 @@ local M = {
     },
     daily_notes = {
       folder = "Calendar/Notes",
-      default_tags = { "Calendar" },
+      default_tags = { "calendar" },
       template = "calendar.md",
     },
     completion = {
