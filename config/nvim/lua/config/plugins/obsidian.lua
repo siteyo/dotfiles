@@ -100,10 +100,10 @@ local M = {
       },
     },
     new_notes_location = "notes_subdir",
-    wiki_link_func = function(opts)
-      return require("obsidian.builtin").wiki_link_id_prefix(opts)
-    end,
-    preferred_link_style = "wiki",
+    link = {
+      style = "wiki",
+      format = "shortest",
+    },
     note_id_func = function(title, dir)
       local Path = require("obsidian.path")
       local base_dir = Path.new(dir)
