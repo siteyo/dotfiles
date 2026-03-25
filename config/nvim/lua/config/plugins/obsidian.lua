@@ -145,7 +145,7 @@ local M = {
 
         return out
       end,
-      sort = { "id", "aliases", "tags" },
+      sort = { "up", "aliases", "tags", "created" },
     },
     checkbox = {
       order = { " ", "/", "x", "-", ">", "<" },

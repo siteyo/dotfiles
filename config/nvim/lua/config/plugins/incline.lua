@@ -31,6 +31,16 @@ local M = {
       }
     end,
   },
+  keys = {
+    {
+      "<Leader>ui",
+      function()
+        require("incline").toggle()
+      end,
+      mode = { "n" },
+      desc = "[incline] Toggle",
+    },
+  },
   event = "VeryLazy",
   enabled = true,
 }
