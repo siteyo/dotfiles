@@ -40,7 +40,7 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 0
 vim.o.expandtab = true
 vim.o.smarttab = true
-vim.o.virtualedit = "onemore,block"
+vim.o.virtualedit = "block"
 vim.o.mouse = "a"
 vim.o.inccommand = "split"
 

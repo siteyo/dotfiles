@@ -60,6 +60,8 @@ local M = {
       mode = { "n" },
       desc = "[Obsidian] Create New Note From Template",
     },
+    { "<Leader>ol", ":Obsidian extract_note<CR>", mode = { "v" }, desc = "[Obsidian] Extract Note" },
+    { "<C-l>", "<Cmd>Obsidian link<CR>", mode = { "v" }, desc = "[Obsidian] Insert Link" },
     { "<Leader>oj", "<Cmd>Obsidian today<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
     -- { "<Leader>on", "<Cmd>Obsidian tomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
     { "<Leader>on", "<Cmd>Obsidian new<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
