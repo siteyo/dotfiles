@@ -60,6 +60,8 @@ local M = {
       mode = { "n" },
       desc = "[Obsidian] Create New Note From Template",
     },
+    { "<Leader>ol", ":Obsidian extract_note<CR>", mode = { "v" }, desc = "[Obsidian] Extract Note" },
+    { "<C-l>", "<Cmd>Obsidian link<CR>", mode = { "v" }, desc = "[Obsidian] Insert Link" },
     { "<Leader>oj", "<Cmd>Obsidian today<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
     -- { "<Leader>on", "<Cmd>Obsidian tomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
     { "<Leader>on", "<Cmd>Obsidian new<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
@@ -80,7 +82,7 @@ local M = {
     },
     daily_notes = {
       folder = "Calendar/Notes",
-      default_tags = { "Calendar" },
+      default_tags = { "calendar" },
       template = "calendar.md",
     },
     completion = {
@@ -100,14 +102,14 @@ local M = {
       },
     },
     new_notes_location = "notes_subdir",
-    wiki_link_func = function(opts)
-      return require("obsidian.builtin").wiki_link_id_prefix(opts)
-    end,
-    preferred_link_style = "wiki",
+    link = {
+      style = "wiki",
+      format = "shortest",
+    },
     note_id_func = function(title, dir)
       local Path = require("obsidian.path")
       local base_dir = Path.new(dir)
-      local candidate = string.gsub(title, "[:]+", "-")
+      local candidate = string.gsub(title, "[ :]+", " ")
       local idx = 2
       while (base_dir / candidate):with_suffix(".md", true):exists() do
         candidate = string.format("%s-%d", candidate, idx)
@@ -126,15 +128,15 @@ local M = {
         --   note:add_alias(note.title)
         -- end
 
-        if not note.created_at then
-          note.created_at = os.date("%Y-%m-%d")
+        if not note.created then
+          note.created = os.date("%Y-%m-%d")
         end
 
         local out = {
           -- title = note.title,
           aliases = note.aliases,
           tags = note.tags,
-          created_at = note.created_at,
+          created = note.created,
         }
 
         if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
@@ -145,7 +147,7 @@ local M = {
 
         return out
       end,
-      sort = { "id", "aliases", "tags" },
+      sort = { "up", "aliases", "tags", "created" },
     },
     checkbox = {
       order = { " ", "/", "x", "-", ">", "<" },

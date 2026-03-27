@@ -57,6 +57,9 @@ snippets:
   - name: tmux
     keyword: t
     snippet: tmux
+  - name: tmux new
+    keyword: tn
+    snippet: tmux new
   - name: tmux list-sessions
     keyword: tls
     snippet: tmux list-sessions
