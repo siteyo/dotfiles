@@ -57,7 +57,12 @@ local M = {
           },
         },
       },
-      cmdline = { enabled = false },
+      cmdline = {
+        keymap = {
+          ["<Tab>"] = { "show", "accept" },
+        },
+        completion = { menu = { auto_show = true } },
+      },
       completion = {
         documentation = {
           auto_show = true,
