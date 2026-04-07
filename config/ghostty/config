@@ -36,7 +36,7 @@ keybind = ctrl+equal=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
 keybind = ctrl+;>zero=reset_font_size
 keybind = ctrl+;>.=reload_config
-keybind = ctrl+0=ignore
+keybind = ctrl+j=ignore
 
 ## macos
 macos-option-as-alt = true
