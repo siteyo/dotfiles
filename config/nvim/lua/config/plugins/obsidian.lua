@@ -168,7 +168,7 @@ local M = {
     setup_autocmd()
     require("obsidian").setup(opts)
   end,
-  enabled = true,
+  enabled = false,
 }
 
 return M
