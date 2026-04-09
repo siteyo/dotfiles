@@ -41,8 +41,9 @@ local M = {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   lazy = false,
   keys = {
-    { "<Leader>ee", "<Cmd>Oil<CR>", mode = { "n" }, desc = "Explorer Oil.nvim" },
-    { "<Leader>ef", "<Cmd>Oil --float<CR>", mode = { "n" }, desc = "Explorer Oil.nvim (float)" },
+    { "<Leader>ee", "<Cmd>Oil<CR>", mode = { "n" }, desc = "[Oil] Open directory of current file" },
+    { "<Leader>e.", "<Cmd>Oil .<CR>", mode = { "n" }, desc = "[Oil] Open current working directory" },
+    { "<Leader>ef", "<Cmd>Oil --float<CR>", mode = { "n" }, desc = "[Oil] Open oil in float" },
   },
 }
 

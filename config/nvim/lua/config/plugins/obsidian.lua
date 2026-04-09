@@ -86,7 +86,7 @@ local M = {
       template = "Calendar.md",
     },
     completion = {
-      blink = true,
+      blink = false,
       create_new = true,
     },
     templates = {
