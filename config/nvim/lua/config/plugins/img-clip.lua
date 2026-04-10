@@ -10,6 +10,7 @@ local M = {
       desc = "Paste Image",
     },
   },
+  enabled = false,
 }
 
 return M

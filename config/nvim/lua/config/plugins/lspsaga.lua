@@ -7,8 +7,8 @@ local M = {
     -- gx
     { "gh", "<Cmd>Lspsaga finder<CR>", mode = { "n" } },
     { "gn", "<Cmd>Lspsaga rename<CR>", mode = { "n" } },
-    { "gD", "<Cmd>Lspsaga peek_definition<CR>", mode = { "n" } },
-    { "gd", "<Cmd>Lspsaga goto_definition<CR>", mode = { "n" } },
+    { "gd", "<Cmd>Lspsaga peek_definition<CR>", mode = { "n" } },
+    { "gD", "<Cmd>Lspsaga goto_definition<CR>", mode = { "n" } },
     -- <Leaader>lx
     { "<Leader>la", "<Cmd>Lspsaga code_action<CR>", mode = { "n", "v" } },
     { "<Leader>lo", "<Cmd>Lspsaga outline<CR>", mode = { "n" } },
