@@ -7,6 +7,7 @@ local M = {
   end,
   dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
   event = "BufReadPre",
+  enabled = false
 }
 
 return M

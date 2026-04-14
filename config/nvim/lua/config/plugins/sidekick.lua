@@ -9,7 +9,6 @@ local M = {
       win = {
         keys = {
           skkeleton_j = { "<C-j>", "<Plug>(skkeleton-enable)", mode = "nt" },
-          skkeleton_0 = { "<C-0>", "<Plug>(skkeleton-enable)", mode = "nt" },
         },
       },
       tools = {

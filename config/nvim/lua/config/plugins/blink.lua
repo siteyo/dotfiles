@@ -55,6 +55,11 @@ local M = {
               return vim.tbl_contains({ "gitcommit", "markdown" }, vim.o.filetype)
             end,
           },
+          snippets = {
+            opts = {
+              search_paths = { vim.fn.expand("$HOME/.nvim") .. "/snippets" },
+            },
+          },
         },
       },
       cmdline = {

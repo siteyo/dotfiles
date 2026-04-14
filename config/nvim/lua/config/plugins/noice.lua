@@ -6,13 +6,38 @@ local M = {
   },
   event = "VeryLazy",
   keys = {
-    -- stylua: ignore start
-    { "<Leader>il", function() require("noice").cmd("last") end, mode = { "n" } },
-    { "<Leader>it", function() require("noice").cmd("telescope") end, mode = { "n" } },
-    { "<Leader>ie", function() require("noice").cmd("errors") end, mode = { "n" } },
-    { "<Leader>un", function() require("noice").cmd("dismiss") end, mode = {"n"}, desc = "Dismiss All Notifications"},
-    { "<S-Enter>", function () require("noice").redirect(vim.fn.getcmdline()) end, mode = {"c"}, desc = "Redirect Cmdline" },
-    -- stylua: ignore end
+    {
+      "<Leader>nl",
+      function()
+        require("noice").cmd("last")
+      end,
+      mode = { "n" },
+      desc = "[Noice] Show the last message",
+    },
+    {
+      "<Leader>ne",
+      function()
+        require("noice").cmd("errors")
+      end,
+      mode = { "n" },
+      desc = "[Noice] Show errors",
+    },
+    {
+      "<Leader>un",
+      function()
+        require("noice").cmd("dismiss")
+      end,
+      mode = { "n" },
+      desc = "Dismiss All Notifications",
+    },
+    {
+      "<S-Enter>",
+      function()
+        require("noice").redirect(vim.fn.getcmdline())
+      end,
+      mode = { "c" },
+      desc = "Redirect Cmdline",
+    },
   },
 }
 

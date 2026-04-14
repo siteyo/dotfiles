@@ -1,9 +1,15 @@
 local M = {
   "gbprod/yanky.nvim",
+  dependencies = { "folke/snacks.nvim" },
   opts = {},
   keys = {
-    -- stylua: ignore start
-    { "<leader>p", function() require("telescope").extensions.yank_history.yank_history({}) end, desc = "Open Yank History" },
+    {
+      "<leader>p",
+      function()
+        Snacks.picker.yanky()
+      end,
+      desc = "Open Yank History",
+    },
     { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank text" },
     { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor" },
     { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put yanked text before cursor" },
@@ -21,7 +27,6 @@ local M = {
     { "<P", "<Plug>(YankyPutIndentBeforeShiftLeft)", desc = "Put before and indent left" },
     { "=p", "<Plug>(YankyPutAfterFilter)", desc = "Put after applying a filter" },
     { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put before applying a filter" },
-    -- stylua: ignore end
   },
 }
 

@@ -27,6 +27,9 @@ local M = {
               dynamicRegistration = true,
             },
           },
+          on_attach = function(client, _)
+            client.server_capabilities.definitionProvider = false
+          end,
         },
         lua_ls = {
           settings = {

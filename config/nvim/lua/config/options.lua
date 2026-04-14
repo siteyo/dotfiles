@@ -76,6 +76,9 @@ vim.o.undodir = vim.fn.expand("$XDG_DATA_HOME/nvim/undo")
 ------------------------------------------------------------
 vim.o.foldenable = true
 vim.o.foldlevelstart = 99
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldtext = ""
 
 ------------------------------------------------------------
 -- Spelling

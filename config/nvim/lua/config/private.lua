@@ -3,7 +3,7 @@ local util = require("config.util")
 local M = {}
 
 M.config = {
-  filepath = vim.fn.stdpath("data") .. "/private.lua",
+  filepath = vim.fn.expand("$HOME/.nvim") .. "/private.lua",
   template = [[
 local M = {}
 
