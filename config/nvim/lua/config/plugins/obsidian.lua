@@ -44,9 +44,6 @@ end
 local M = {
   -- "epwalsh/obsidian.nvim"
   "obsidian-nvim/obsidian.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-  },
   version = "*",
   ft = "markdown",
   cmd = "Obsidian",
