@@ -6,22 +6,22 @@ local M = {
   },
   event = "VeryLazy",
   keys = {
-    {
-      "<Leader>nl",
-      function()
-        require("noice").cmd("last")
-      end,
-      mode = { "n" },
-      desc = "[Noice] Show the last message",
-    },
-    {
-      "<Leader>ne",
-      function()
-        require("noice").cmd("errors")
-      end,
-      mode = { "n" },
-      desc = "[Noice] Show errors",
-    },
+    -- {
+    --   "<Leader>nl",
+    --   function()
+    --     require("noice").cmd("last")
+    --   end,
+    --   mode = { "n" },
+    --   desc = "[Noice] Show the last message",
+    -- },
+    -- {
+    --   "<Leader>ne",
+    --   function()
+    --     require("noice").cmd("errors")
+    --   end,
+    --   mode = { "n" },
+    --   desc = "[Noice] Show errors",
+    -- },
     {
       "<Leader>un",
       function()

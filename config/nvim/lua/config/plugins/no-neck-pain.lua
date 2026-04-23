@@ -10,10 +10,11 @@ local M = {
     width = 100,
     autocmds = {
       -- enableOnVimEnter = true,
-      enableOnTabEnter = true,
+      enableOnTabEnter = false,
     },
   },
   config = function(_, opts)
+    opts = require("config.private").merge("no-neck-pain", opts)
     require("no-neck-pain").setup(opts)
     vim.opt.sessionoptions:remove("blank")
 
@@ -21,7 +22,7 @@ local M = {
     map_s("n", "<Leader>nk", "k", "<Cmd>NoNeckPainWidthUp<CR>", { desc = "NoNeckPainWidthUp" })
     map_s("n", "<Leader>nj", "j", "<Cmd>NoNeckPainWidthDown<CR>", { desc = "NoNeckPainWidthUp" })
   end,
-  enabled = false,
+  enabled = true,
 }
 
 return M

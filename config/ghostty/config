@@ -3,7 +3,7 @@
 font-family = "HackGen Console NF"
 font-thicken = true
 font-thicken-strength = 100
-font-size = 12
+font-size = 14
 
 ## Theme
 theme = light:TokyoNight Day,dark:TokyoNight
@@ -36,7 +36,17 @@ keybind = ctrl+equal=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
 keybind = ctrl+;>zero=reset_font_size
 keybind = ctrl+;>.=reload_config
-keybind = ctrl+j=ignore
+# keybind = ctrl+j=ignore
+keybind = ctrl+zero=ignore
+
+## notify
+notify-on-command-finish = unfocused
+notify-on-command-finish-after = 5s
+notify-on-command-finish-action = no-bell,notify
 
 ## macos
 macos-option-as-alt = true
+desktop-notifications = true
+bell-features = audio
+bell-audio-path = /System/Library/Sounds/Ping.aiff
+bell-audio-volume = 0.8
