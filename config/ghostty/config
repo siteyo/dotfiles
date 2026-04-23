@@ -3,7 +3,7 @@
 font-family = "HackGen Console NF"
 font-thicken = true
 font-thicken-strength = 100
-font-size = 12
+font-size = 14
 
 ## Theme
 theme = light:TokyoNight Day,dark:TokyoNight
@@ -34,9 +34,10 @@ unfocused-split-fill = #24283b
 keybind = ctrl+;>n=new_window
 keybind = ctrl+equal=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
-keybind = ctrl+;>zero=reset_font_size
+keybind = ctrl+zero=reset_font_size
 keybind = ctrl+;>.=reload_config
-keybind = ctrl+j=ignore
+# keybind = ctrl+j=ignore
 
 ## macos
 macos-option-as-alt = true
+desktop-notifications = true
