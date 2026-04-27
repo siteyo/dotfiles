@@ -5,11 +5,11 @@
   "app": {
     // "appearance": "system",
     //     "appIcon" : "automatic",
-    //     "commandPaletteSearchesAllSurfaces" : false,
+    "commandPaletteSearchesAllSurfaces": true,
     //     "focusPaneOnFirstClick" : false,
     //     "keepWorkspaceOpenWhenClosingLastSurface" : false,
     //     "language" : "system",
-    "minimalMode": true,
+    "minimalMode": false,
     //     "newWorkspacePlacement" : "afterCurrent",
     "preferredEditor": "nvim",
     //     "renameSelectsExistingName" : true,
@@ -90,28 +90,28 @@
   //     ]
   //   },
 
-  //   "browser" : {
-  //     "defaultSearchEngine" : "google",
-  //     "hostsToOpenInEmbeddedBrowser" : [
-  //
-  //     ],
-  //     "insecureHttpHostsAllowedInEmbeddedBrowser" : [
-  //       "localhost",
-  //       "127.0.0.1",
-  //       "::1",
-  //       "0.0.0.0",
-  //       "*.localtest.me"
-  //     ],
-  //     "interceptTerminalOpenCommandInCmuxBrowser" : true,
-  //     "openTerminalLinksInCmuxBrowser" : true,
-  //     "reactGrabVersion" : "0.1.29",
-  //     "showImportHintOnBlankTabs" : true,
-  //     "showSearchSuggestions" : true,
-  //     "theme" : "system",
-  //     "urlsToAlwaysOpenExternally" : [
-  //
-  //     ]
-  //   },
+  "browser": {
+    //     "defaultSearchEngine" : "google",
+    //     "hostsToOpenInEmbeddedBrowser" : [
+    //
+    //     ],
+    //     "insecureHttpHostsAllowedInEmbeddedBrowser" : [
+    //       "localhost",
+    //       "127.0.0.1",
+    //       "::1",
+    //       "0.0.0.0",
+    //       "*.localtest.me"
+    //     ],
+    //     "interceptTerminalOpenCommandInCmuxBrowser" : true,
+    "openTerminalLinksInCmuxBrowser": false
+    //     "reactGrabVersion" : "0.1.29",
+    //     "showImportHintOnBlankTabs" : true,
+    //     "showSearchSuggestions" : true,
+    //     "theme" : "system",
+    //     "urlsToAlwaysOpenExternally" : [
+    //
+    //     ]
+  },
 
   "shortcuts": {
     "bindings": {
