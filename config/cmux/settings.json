@@ -10,7 +10,7 @@
     //     "keepWorkspaceOpenWhenClosingLastSurface" : false,
     //     "language" : "system",
     "minimalMode": false,
-    //     "newWorkspacePlacement" : "afterCurrent",
+    "newWorkspacePlacement": "end",
     "preferredEditor": "nvim",
     //     "renameSelectsExistingName" : true,
     //     "reorderOnNotification" : true,
