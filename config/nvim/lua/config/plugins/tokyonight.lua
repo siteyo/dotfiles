@@ -14,7 +14,7 @@ function M.config()
     --   end
     --   return true
     -- end)(),
-    transparent = true,
+    transparent = false,
     styles = {
       comments = { italic = false },
       keywords = { italic = false },
