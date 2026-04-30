@@ -13,7 +13,7 @@
     "newWorkspacePlacement": "end",
     "preferredEditor": "nvim",
     //     "renameSelectsExistingName" : true,
-    //     "reorderOnNotification" : true,
+    "reorderOnNotification": false,
     "sendAnonymousTelemetry": false,
     "warnBeforeQuit": false
   },

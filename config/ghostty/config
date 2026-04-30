@@ -37,7 +37,7 @@ keybind = ctrl+minus=decrease_font_size:1
 keybind = ctrl+;>zero=reset_font_size
 keybind = ctrl+;>.=reload_config
 # keybind = ctrl+j=ignore
-keybind = ctrl+zero=ignore
+# keybind = ctrl+zero=ignore
 
 ## notify
 notify-on-command-finish = unfocused
