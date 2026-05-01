@@ -60,6 +60,9 @@ snippets:
   - name: tmux new
     keyword: tn
     snippet: tmux new
+  - name: tmux new session
+    keyword: tna
+    snippet: tmux new -A -s
   - name: tmux list-sessions
     keyword: tls
     snippet: tmux list-sessions

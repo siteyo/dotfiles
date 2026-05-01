@@ -1,2 +1,5 @@
 nerdfont: true
-agent: gemini
+status_icons:
+  working: 
+  waiting: 
+  done: 
