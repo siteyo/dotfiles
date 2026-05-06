@@ -6,14 +6,11 @@ local M = {
         backend = "tmux",
         enabled = true,
       },
-      win = {
-        keys = {
-          skkeleton_j = { "<C-j>", "<Plug>(skkeleton-enable)", mode = "nt" },
-        },
-      },
-      tools = {
-        gemini = { cmd = { "gemini", "--sandbox", "--yolo" } },
-      },
+      -- win = {
+      --   keys = {
+      --     skkeleton_j = { "<C-j>", "<Plug>(skkeleton-enable)", mode = "nt" },
+      --   },
+      -- },
       prompts = {
         changes = "変更内容をレビューしてください。",
         diagnostics = "{file} のDiagnosticsを修正するのを手伝ってください。\n{diagnostics}",
@@ -27,10 +24,10 @@ local M = {
       },
     },
   },
-  dependencies = {
-    "vim-skk/skkeleton",
-    "vim-denops/denops.vim",
-  },
+  -- dependencies = {
+  --   "vim-skk/skkeleton",
+  --   "vim-denops/denops.vim",
+  -- },
   config = function(_, opts)
     opts = require("config.private").merge("sidekick", opts)
     require("sidekick").setup(opts)

@@ -15,6 +15,7 @@ vim.g.loaded_ruby_provider = 0
 vim.o.laststatus = 3
 vim.o.showcmd = true
 vim.o.cursorline = true
+vim.o.cursorcolumn = true
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.showtabline = 2

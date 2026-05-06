@@ -80,3 +80,8 @@ if [[ -n $ZENO_LOADED ]]; then
   bindkey '^ep' zeno-preprompt
   bindkey '^ee' zeno-preprompt-snippet
 fi
+
+## workmux
+if command -v workmux >/dev/null; then
+  eval "$(workmux completions zsh)"
+fi

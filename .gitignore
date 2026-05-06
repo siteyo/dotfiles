@@ -417,3 +417,6 @@ kitty.conf.bak
 # GitHub Copilot
 config/github-copilot/
 config/.copilot/
+
+# workmux
+.workmux.yaml
