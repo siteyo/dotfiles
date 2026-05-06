@@ -80,6 +80,9 @@ snippets:
   - name: workmux
     keyword: wm
     snippet: workmux
+  - name: workmux list
+    keyword: wls
+    snippet: workmux list
 
 # # zellij
 # - name: zellij

@@ -3,3 +3,6 @@ status_icons:
   working: 
   waiting: 
   done: 
+theme: glacier-signal
+sidebar:
+  width: "10%"
