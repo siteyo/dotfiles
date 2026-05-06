@@ -84,39 +84,39 @@ snippets:
     keyword: wls
     snippet: workmux list
 
-# # zellij
-# - name: zellij
-#   keyword: j
-#   snippet: zellij
-# - name: zellij delete-all-sessions
-#   keyword: jda
-#   snippet: zellij delete-all-sessions --yes
-# - name: zellij delete-session
-#   keyword: jd
-#   snippet: zellij delete-session
-# - name: zellij run
-#   keyword: jr
-#   snippet: zellij run -c --
-# - name: zellij list-sessions
-#   keyword: jls
-#   snippet: zellij list-sessions
-# - name: zellij layout
-#   keyword: jl
-#   snippet: zellij --layout
-# - name: zellj attach
-#   keyword: ja
-#   snippet: zellij attach
-# - name: zellij delete
-#   keyword: jd
-#   snippet: zellij delete
-#
-# # convmv
-# - name: "convmv (dryrun)"
-#   keyword: cmd
-#   snippet: convmv -f utf-8 -t utf-8 --nfc --nosmart -r .
-# - name: "convmv (notest)"
-#   keyword: cmn
-#   snippet: convmv -f utf-8 -t utf-8 --nfc --nosmart -r . --notest
+  # # zellij
+  # - name: zellij
+  #   keyword: j
+  #   snippet: zellij
+  # - name: zellij delete-all-sessions
+  #   keyword: jda
+  #   snippet: zellij delete-all-sessions --yes
+  # - name: zellij delete-session
+  #   keyword: jd
+  #   snippet: zellij delete-session
+  # - name: zellij run
+  #   keyword: jr
+  #   snippet: zellij run -c --
+  # - name: zellij list-sessions
+  #   keyword: jls
+  #   snippet: zellij list-sessions
+  # - name: zellij layout
+  #   keyword: jl
+  #   snippet: zellij --layout
+  # - name: zellj attach
+  #   keyword: ja
+  #   snippet: zellij attach
+  # - name: zellij delete
+  #   keyword: jd
+  #   snippet: zellij delete
+
+  # convmv
+  - name: "convmv (dryrun)"
+    keyword: cmd
+    snippet: convmv -f utf-8 -t utf-8 --nfc --nosmart -r .
+  - name: "convmv (notest)"
+    keyword: cmn
+    snippet: convmv -f utf-8 -t utf-8 --nfc --nosmart -r . --notest
 
 # # eza
 # - name: list
