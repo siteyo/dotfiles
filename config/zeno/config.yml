@@ -75,6 +75,9 @@ snippets:
   - name: tmux kill-session (all)
     keyword: tka
     snippet: tmux kill-session -a
+  - name: tmux source
+    keyword: ts
+    snippet: tmux source-file ~/.config/tmux/tmux.conf
 
   # workmux
   - name: workmux

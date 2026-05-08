@@ -5,6 +5,7 @@ local M = {
   opts = {
     bigfile = { enabled = true },
     dashboard = {
+      enabled = false,
       preset = {
         pick = nil,
         keys = {
