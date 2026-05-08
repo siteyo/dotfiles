@@ -1,4 +1,7 @@
+# Project Tools
+
 [tools]
+deno = "latest"
 node = "lts"
 python = ["3.14.4", "3.12"]
 

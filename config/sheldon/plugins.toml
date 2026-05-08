@@ -14,9 +14,13 @@ shell = "zsh"
 
 [plugins]
 
-[plugins.aqua]
-local = '~/.config/zsh'
-use = ["aqua.zsh"]
+# [plugins.aqua]
+# local = '~/.config/zsh'
+# use = ["aqua.zsh"]
+
+[plugins.dotfiles-tools]
+local = "~/.config/zsh"
+use = ["tools.zsh"]
 
 [plugins.zeno]
 github = "yuki-yano/zeno.zsh"
@@ -56,7 +60,3 @@ use = ["bindkey.zsh"]
 [plugins.dotfiles-highlighting]
 local = "~/.config/zsh"
 use = ["highlighting.zsh"]
-
-[plugins.dotfiles-tools]
-local = "~/.config/zsh"
-use = ["tools.zsh"]
