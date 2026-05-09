@@ -11,7 +11,7 @@ local M = {
         severity_sort = true,
       },
       servers = {
-        bashls = false,
+        bashls = true,
         cssls = true,
         -- dockerls = true,
         emmet_language_server = true,
@@ -19,7 +19,7 @@ local M = {
         ruff = true,
         pyright = true,
         rust_analyzer = true,
-        sqls = true,
+        -- sqls = true,
         ts_ls = true,
         markdown_oxide = {
           workspace = {

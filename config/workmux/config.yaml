@@ -6,3 +6,4 @@ status_icons:
 theme: glacier-signal
 sidebar:
   width: "10%"
+worktree_dir: .worktrees

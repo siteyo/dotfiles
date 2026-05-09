@@ -3,6 +3,7 @@ local M = {
   dir = vim.fn.fnamemodify(debug.getinfo(1).source:sub(2), ":h"),
   dependencies = { "nvim-lua/plenary.nvim" },
   event = "VeryLazy",
+  enabled = false,
 }
 
 M.config = function(spec)
