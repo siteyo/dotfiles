@@ -7,8 +7,6 @@ declare -a ACTIONS=(
   "Attach session (popup):attach-session-popup"
   "Neovim (popup):neovim-popup"
   "Join pane:join-pane"
-  "Workmux Add:workmux-add"
-  "Workmux Add (Gemini):workmux-add-gemini"
 )
 
 action=$(printf '%s\n' "${ACTIONS[@]}" | cut -d: -f1 |
@@ -70,14 +68,6 @@ join-pane)
   [ -z "$sel" ] && exit 0
   target=$(echo "$sel" | cut -d"|" -f1)
   tmux join-pane -s "$target"
-  ;;
-workmux-add)
-  workmux add -A
-  ;;
-workmux-add-gemini)
-  read -rp "Branch name: " branch_name
-  [ -z "$branch_name" ] && exit 0
-  workmux add -a gemini "$branch_name"
   ;;
 *)
   tmux display-message "Unknown action: $action_cmd"
