@@ -2,7 +2,7 @@
 
 cur=$(tmux display-message -p '#S')
 sel=$(tmux ls -F '#S' | grep -vFx "$cur" |
-  fzf -m --reverse --ansi --prompt='kill> ' \
+  fzf -m --reverse --ansi --prompt='Kill> ' \
     --header='Tab = multi-select, Enter = kill' \
     --preview 'tmux capture-pane -ep -t {}' \
     --preview-window=down:70%)

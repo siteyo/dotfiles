@@ -1,12 +1,12 @@
 #!/bin/bash
 
 declare -a ACTIONS=(
-  "Kill window(s):kill-windows"
-  "Kill pane(s):kill-panes"
+  "Kill window:kill-window"
+  "Kill pane:kill-pane"
 )
 
 action=$(printf '%s\n' "${ACTIONS[@]}" | cut -d: -f1 |
-  fzf --reverse --ansi --prompt='Select Action> ' --no-info)
+  fzf --reverse --ansi --prompt='Action> ' --no-info)
 
 [ -z "$action" ] && exit 0
 
@@ -21,10 +21,10 @@ done
 [ -z "$action_cmd" ] && exit 1
 
 case "$action_cmd" in
-kill-windows)
+kill-window)
   tmux kill-window
   ;;
-kill-panes)
+kill-pane)
   tmux kill-pane
   ;;
 *)

@@ -9,7 +9,7 @@ declare -a ACTIONS=(
 )
 
 action=$(printf '%s\n' "${ACTIONS[@]}" | cut -d: -f1 |
-  fzf --reverse --ansi --prompt='Select Action> ' --no-info)
+  fzf --reverse --ansi --prompt='Action> ' --no-info)
 
 [ -z "$action" ] && exit 0
 
@@ -41,7 +41,7 @@ join-pane)
   cur=$(tmux display -p "#{session_name}:#{window_index}.#{pane_index}")
   sel=$(tmux list-panes -a -F "#{session_name}:#{window_index}.#{pane_index}|#{session_name} / #{window_name} (#{pane_current_command})" |
     grep -vF "$cur|" |
-    fzf --reverse --ansi --prompt="pane> " \
+    fzf --reverse --ansi --prompt="Pane> " \
       --delimiter="|" --with-nth=2 \
       --preview "tmux capture-pane -ep -t {1}" \
       --preview-window=down:70%)
