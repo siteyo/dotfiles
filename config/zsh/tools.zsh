@@ -51,20 +51,6 @@ if [ -d "${HOMEBREW_PREFIX}/opt/libpq/bin" ]; then
   export PATH="${HOMEBREW_PREFIX}/opt/libpq/bin:$PATH"
 fi
 
-if [[ -n $ZENO_LOADED ]]; then
-  bindkey ' ' zeno-auto-snippet
-  bindkey '^m' zeno-auto-snippet-and-accept-line
-  bindkey '^i' zeno-completion
-
-  bindkey '^e^m' accept-line
-  bindkey '^e ' zeno-insert-space
-  bindkey '^es' zeno-insert-snippet
-  bindkey '^eo' zeno-toggle-auto-snippet
-
-  bindkey '^ep' zeno-preprompt
-  bindkey '^ee' zeno-preprompt-snippet
-fi
-
 ## workmux
 if command -v workmux >/dev/null; then
   eval "$(workmux completions zsh)"
