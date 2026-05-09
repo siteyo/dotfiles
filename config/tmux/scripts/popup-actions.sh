@@ -3,9 +3,12 @@
 declare -a ACTIONS=(
   "New session:new-session"
   "New session (popup):new-session-popup"
+  "Move window to new session:move-window-to-new-session"
+  "Attach session (popup):attach-session-popup"
   "Neovim (popup):neovim-popup"
   "Join pane:join-pane"
-  "workmux Add:workmux-add"
+  "Workmux Add:workmux-add"
+  "Workmux Add (Gemini):workmux-add-gemini"
 )
 
 action=$(printf '%s\n' "${ACTIONS[@]}" | cut -d: -f1 |
@@ -25,14 +28,33 @@ done
 
 case "$action_cmd" in
 new-session)
-  session_name=$(date +%s)
+  read -rp "Session name: " session_name
+  [ -z "$session_name" ] && exit 0
   tmux new-session -d -s "$session_name"
   tmux switch-client -t "$session_name"
   ;;
 new-session-popup)
-  session_name=$(date +%s)
+  read -rp "Session name: " session_name
+  [ -z "$session_name" ] && exit 0
   tmux new-session -d -s "$session_name"
   tmux attach-session -t "$session_name"
+  ;;
+move-window-to-new-session)
+  read -rp "Session name: " session_name
+  [ -z "$session_name" ] && exit 0
+  window_name=$(tmux display -p "#{window_name}")
+  tmux new-session -d -s "$session_name"
+  tmux move-window -s "$window_name" -t "$session_name"
+  tmux switch-client -t "$session_name"
+  ;;
+attach-session-popup)
+  cur=$(tmux display -p "#{session_name}")
+  sel=$(tmux ls -F '#S' | grep -v "^${cur}$" |
+    fzf --reverse --ansi --prompt='Session> ' \
+      --preview 'tmux capture-pane -ep -t {}' \
+      --preview-window=down:70%)
+  [ -z "$sel" ] && exit 0
+  tmux attach-session -t "$sel"
   ;;
 neovim-popup)
   nvim
@@ -51,6 +73,11 @@ join-pane)
   ;;
 workmux-add)
   workmux add -A
+  ;;
+workmux-add-gemini)
+  read -rp "Branch name: " branch_name
+  [ -z "$branch_name" ] && exit 0
+  workmux add -a gemini "$branch_name"
   ;;
 *)
   tmux display-message "Unknown action: $action_cmd"

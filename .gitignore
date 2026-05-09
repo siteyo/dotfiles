@@ -420,3 +420,4 @@ config/.copilot/
 
 # workmux
 .workmux.yaml
+.worktrees
