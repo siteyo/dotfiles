@@ -11,7 +11,7 @@ local M = {
         severity_sort = true,
       },
       servers = {
-        bashls = false,
+        bashls = true,
         cssls = true,
         -- dockerls = true,
         emmet_language_server = true,

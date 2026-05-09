@@ -13,8 +13,7 @@ setopt auto_cd
 # --------------------------------------------------------------------
 for dir in \
   "$HOMEBREW_PREFIX/share/zsh/site-functions" \
-  "$COMPLETIONS_PATH"
-do
+  "$COMPLETIONS_PATH"; do
   [[ -d $dir && ${FPATH[(Ie)$dir]} -eq 0 ]] && FPATH="$dir:$FPATH"
 done
 
