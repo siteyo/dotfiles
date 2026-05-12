@@ -4,7 +4,6 @@ declare -a ACTIONS=(
   "New session:new-session"
   "New session (popup):new-session-popup"
   "Move window to new session:move-window-to-new-session"
-  "Attach session (popup):attach-session-popup"
   "Neovim (popup):neovim-popup"
   "Join pane:join-pane"
 )
@@ -44,15 +43,6 @@ move-window-to-new-session)
   tmux new-session -d -s "$session_name"
   tmux move-window -s "$window_name" -t "$session_name"
   tmux switch-client -t "$session_name"
-  ;;
-attach-session-popup)
-  cur=$(tmux display -p "#{session_name}")
-  sel=$(tmux ls -F '#S' | grep -v "^${cur}$" |
-    fzf --reverse --ansi --prompt='Session> ' \
-      --preview 'tmux capture-pane -ep -t {}' \
-      --preview-window=down:70%)
-  [ -z "$sel" ] && exit 0
-  tmux attach-session -t "$sel"
   ;;
 neovim-popup)
   nvim
