@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-export TASKRC=~/.config/task/.taskrc
-export TASKDATA=~/.local/share/task
+# shellcheck disable=SC1091
+source "$CONFIG_DIR/icons.sh"
 
 PENDING_TASK=$(task +PENDING count)
 OVERDUE_TASK=$(task +OVERDUE count)
@@ -17,7 +17,9 @@ else
     LABEL="!$OVERDUE_TASK/$PENDING_TASK"
   fi
 
-  sketchybar --set "$NAME" label="${LABEL}" \
+  sketchybar --set "$NAME" \
+    icon="$ICON_LIST" \
+    label="${LABEL}" \
     label.drawing=on \
     icon.padding_left=6 \
     icon.padding_right=2
