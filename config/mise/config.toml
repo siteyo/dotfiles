@@ -4,7 +4,6 @@
 deno = "latest"
 node = "lts"
 "npm:@olrtg/emmet-language-server" = "latest"
-"npm:hunkdiff" = "latest"
 python = ["3.14.5", "3.12"]
 
 # [settings]
