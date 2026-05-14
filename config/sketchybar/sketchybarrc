@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=SC1091
 source "$CONFIG_DIR/color.sh"
 source "$CONFIG_DIR/icons.sh"
 
@@ -15,7 +16,7 @@ sketchybar --hotload true
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
 sketchybar --bar position=bottom \
-    color=$COLOR_BG \
+    color="$COLOR_BG" \
     height=32 \
     margin=10 \
     corner_radius=8 \
@@ -134,7 +135,6 @@ sketchybar --add item clock right \
     --add item slack right \
     --set slack update_freq=180 script="$PLUGIN_DIR/slack.sh" \
     --subscribe slack system_woke
-# \
 # --add item brew right \
 # --set brew update_freq=43200 script="$PLUGIN_DIR/brew.sh" \
 # --subscribe brew system_woke

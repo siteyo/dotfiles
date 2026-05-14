@@ -189,6 +189,6 @@ return {
     "akinsho/org-bullets.nvim",
     config = true,
     ft = "org",
-    enabled = enabled,
+    enabled = false,
   },
 }
