@@ -29,6 +29,7 @@
 [core]
     editor = nvim -c \"set fenc=utf-8\"
     pager = delta --features "$(defaults read -globalDomain AppleInterfaceStyle > /dev/null 2>&1 && echo dark-mode || echo light-mode)"
+    quotepath = false
 [merge]
 	ff = false
     conflictstyle = diff3

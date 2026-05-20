@@ -78,8 +78,8 @@ local M = {
       name = "snacks.pick",
     },
     daily_notes = {
-      folder = "Calendar/Notes",
-      default_tags = { "calendar/log" },
+      folder = "Calendar",
+      default_tags = { "calendar/daily" },
       template = "Daily.md",
     },
     completion = {
@@ -87,7 +87,7 @@ local M = {
       create_new = true,
     },
     templates = {
-      folder = "x/Templates",
+      folder = "x/Templates/obsidian.nvim/",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M:%S",
       substitutions = {
