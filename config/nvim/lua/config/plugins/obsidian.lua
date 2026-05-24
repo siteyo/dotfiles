@@ -78,7 +78,7 @@ local M = {
       name = "snacks.pick",
     },
     daily_notes = {
-      folder = "Calendar",
+      folder = "Calendar/Notes",
       default_tags = { "calendar/daily" },
       template = "Daily.md",
     },
