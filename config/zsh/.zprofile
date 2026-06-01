@@ -57,6 +57,5 @@ export ZENO_HOME="${XDG_CONFIG_HOME}/zeno"
 export ZENO_GIT_CAT="bat --color=always"
 export ZENO_GIT_TREE="eza --tree"
 
-## nb
-# --------------------------------------------------------------------
-export NBRC_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/nb/.nbrc"
+## Added by Obsidian
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"

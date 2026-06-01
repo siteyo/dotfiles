@@ -51,8 +51,8 @@ local M = {
       },
     },
     indent = {
-      enabled = true,
-      skip_heading = true,
+      enabled = false,
+      skip_heading = false,
     },
   },
   ft = "markdown",
