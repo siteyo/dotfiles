@@ -4,7 +4,7 @@
 deno = "latest"
 node = "lts"
 "npm:@olrtg/emmet-language-server" = "latest"
-python = ["3.14.5", "3.12"]
+python = ["3.14.6", "3.12"]
 
 # [settings]
 # plugin_autoupdate_last_check_duration = '1 week'
