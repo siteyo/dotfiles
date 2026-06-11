@@ -121,19 +121,9 @@ local M = {
     frontmatter = {
       enabled = true,
       func = function(note)
-        -- if note.title then
-        --   note:add_alias(note.title)
-        -- end
-
-        if not note.created then
-          note.created = os.date("%Y-%m-%d")
-        end
-
         local out = {
-          -- title = note.title,
           aliases = note.aliases,
           tags = note.tags,
-          created = note.created,
         }
 
         if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
@@ -144,7 +134,7 @@ local M = {
 
         return out
       end,
-      sort = { "up", "aliases", "tags", "created" },
+      sort = { "aliases", "tags" },
     },
     checkbox = {
       order = { " ", "/", "x", "-", ">", "<" },
