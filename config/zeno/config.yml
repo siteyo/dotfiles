@@ -99,3 +99,6 @@ snippets:
   - name: herdr
     keyword: h
     snippet: herdr
+  - name: herdr server stop
+    keyword: hss
+    snippet: herdr server stop
