@@ -421,3 +421,6 @@ config/.copilot/
 # workmux
 .workmux.yaml
 .worktrees
+
+# herdr
+session.json
