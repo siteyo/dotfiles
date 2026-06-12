@@ -1,6 +1,9 @@
 " Clipboard
 set clipboard=unnamed
 
+nnoremap j gj
+nnoremap k gk
+
 " Utility
 nunmap s
 vunmap s
@@ -10,6 +13,8 @@ unmap <Space>
 " Swap : and ;
 nnoremap ; :
 nnoremap : :
+vnoremap ; :
+vnoremap : :
 
 " Jump in line
 nnoremap H ^
@@ -45,6 +50,7 @@ exmap surround_brackets surround ( )
 exmap surround_square_brackets surround [ ]
 exmap surround_curly_brackets surround { }
 vmap Sl :surround_wiki<CR>
+nmap Sl :surround_wiki<CR>
 vmap S" :surround_double_quote<CR>
 vmap S' :surround_single_quote<CR>
 vmap S` :surround_backticks<CR>
@@ -58,6 +64,9 @@ vmap S{ :surround_curly_brackets<CR>
 " Follow link
 nnoremap <CR> :obcommand<Space>editor:follow-link<CR>
 
+" Toggle Pin
+nnoremap <Space>p :obcommand<Space>workspace:toggle-pin<CR>
+
 " Sidebar
 nnoremap <Space>e :obcommand<Space>file-explorer:open<CR>
 nnoremap <Space>h :obcommand<Space>app:toggle-left-sidebar<CR>
@@ -65,13 +74,22 @@ nnoremap <Space>l :obcommand<Space>app:toggle-right-sidebar<CR>
 
 " Obsidian
 nnoremap <Space>oj :obcommand<Space>daily-notes<CR>
-nnoremap <Space>or :obcommand<Space>workspace:edit-file-title<CR>
+nnoremap <Space>on :obcommand<Space>workspace:edit-file-title<CR>
 nnoremap <Space>oq :obcommand<Space>switcher:open<CR>
 nnoremap <Space>od :obcommand<Space>insert-current-date<CR>
 nnoremap <Space>om :obcommand<Space>insert-template<CR>
 
 " QuickAdd
 nnoremap <Space>oe :obcommand<Space>quickadd:runQuickAdd<CR>
+
+" Quick Switcher++
+nnoremap <Space>or :obcommand<Space>darlal-switcher-plus:switcher-plus:open-related-items-active<CR>
+
+" Jump to link
+nnoremap <Space>of :obcommand<Space>mrj-jump-to-link:activate-jump-to-link<CR>
+
+" Various Complements
+imap<C-e> <Esc>:obcommand<Space>various-complements:hide-suggestions<CR>a
 
 " Clear search
 nnoremap <C-l> :noh<CR><C-l>

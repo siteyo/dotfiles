@@ -14,12 +14,12 @@ end
 
 -- Autocmd
 local setup_autocmd = function()
-  local obsidian = vim.api.nvim_create_augroup("obdisian", { clear = true })
-  vim.api.nvim_create_autocmd({ "BufReadPre" }, {
-    pattern = "*.md",
-    group = obsidian,
-    command = "setlocal conceallevel=2",
-  })
+  -- local obsidian = vim.api.nvim_create_augroup("obdisian", { clear = true })
+  -- vim.api.nvim_create_autocmd({ "BufReadPre" }, {
+  --   pattern = "*.md",
+  --   group = obsidian,
+  --   command = "setlocal conceallevel=2",
+  -- })
 
   vim.api.nvim_create_autocmd("User", {
     pattern = "ObsidianNoteEnter",
@@ -78,7 +78,7 @@ local M = {
       name = "snacks.pick",
     },
     daily_notes = {
-      folder = "Calendar/Notes",
+      folder = "Calendar",
       default_tags = { "calendar/daily" },
       template = "Daily.md",
     },
@@ -87,7 +87,7 @@ local M = {
       create_new = true,
     },
     templates = {
-      folder = "x/Templates/obsidian.nvim/",
+      folder = "x/Templates/",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M:%S",
       substitutions = {
@@ -157,7 +157,7 @@ local M = {
       img_name_func = function()
         return string.format("Pasted image %s", os.date("%Y%m%d%H%M%S"))
       end,
-      confirm_img_paste = false,
+      confirm_img_paste = true,
     },
   },
   config = function(_, opts)
