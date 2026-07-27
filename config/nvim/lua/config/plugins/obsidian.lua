@@ -79,11 +79,13 @@ local M = {
     },
     daily_notes = {
       folder = "Calendar",
-      default_tags = { "calendar/daily" },
+      default_tags = { "daily" },
       template = "Daily.md",
     },
     completion = {
-      blink = false,
+      -- blink = false,
+      min_chars = 2,
+      match_case = true,
       create_new = true,
     },
     templates = {
