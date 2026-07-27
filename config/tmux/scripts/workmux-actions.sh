@@ -2,7 +2,6 @@
 
 declare -a ACTIONS=(
   "Add:add-auto-name"
-  "Add (Gemini):add-gemini"
 )
 
 action=$(printf '%s\n' "${ACTIONS[@]}" | cut -d: -f1 |
@@ -23,11 +22,6 @@ done
 case "$action_cmd" in
 add-auto-name)
   workmux add -A
-  ;;
-add-gemini)
-  read -rp "Branch name: " branch_name
-  [ -z "$branch_name" ] && exit 0
-  workmux add -a gemini "$branch_name"
   ;;
 *)
   tmux display-message "Unknown action: $action_cmd"
