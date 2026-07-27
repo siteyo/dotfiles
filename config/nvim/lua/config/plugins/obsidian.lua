@@ -62,7 +62,7 @@ local M = {
     { "<Leader>oj", "<Cmd>Obsidian today<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
     -- { "<Leader>on", "<Cmd>Obsidian tomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
     { "<Leader>on", "<Cmd>Obsidian new<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
-    { "<Leader>op", "<Cmd>Obsidian yesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
+    -- { "<Leader>op", "<Cmd>Obsidian yesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Yesterday Calendar Note" },
     { "<Leader>ov", "<Cmd>Obsidian paste_img<CR>", mode = { "n" }, desc = "[Obsidian] Paste Image" },
     { "<Leader>of", "<Cmd>Obsidian links<CR>", mode = { "n" }, desc = "[Obsidian] Find Forwardlinks" },
     { "<Leader>ot", "<Cmd>Obsidian tags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
@@ -79,11 +79,13 @@ local M = {
     },
     daily_notes = {
       folder = "Calendar",
-      default_tags = { "calendar/daily" },
+      default_tags = { "daily" },
       template = "Daily.md",
     },
     completion = {
-      blink = false,
+      -- blink = false,
+      min_chars = 2,
+      match_case = true,
       create_new = true,
     },
     templates = {
@@ -121,19 +123,9 @@ local M = {
     frontmatter = {
       enabled = true,
       func = function(note)
-        -- if note.title then
-        --   note:add_alias(note.title)
-        -- end
-
-        if not note.created then
-          note.created = os.date("%Y-%m-%d")
-        end
-
         local out = {
-          -- title = note.title,
           aliases = note.aliases,
           tags = note.tags,
-          created = note.created,
         }
 
         if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
@@ -144,7 +136,7 @@ local M = {
 
         return out
       end,
-      sort = { "up", "aliases", "tags", "created" },
+      sort = { "aliases", "tags" },
     },
     checkbox = {
       order = { " ", "/", "x", "-", ">", "<" },

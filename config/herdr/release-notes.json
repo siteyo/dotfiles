@@ -1,0 +1,6 @@
+{
+  "version": "0.6.10",
+  "body": "This is a hotfix release for v0.6.9. See the v0.6.9 notes for the full feature release.\n\n### Fixed\n- Lifecycle-authority agent integrations such as Pi and OpenCode no longer trigger a repeated detection reset loop that could flood logs, drive high CPU, and make the UI lag or stop responding. (#560, #565, thanks @dzevs)",
+  "show_on_startup": true
+}
+
