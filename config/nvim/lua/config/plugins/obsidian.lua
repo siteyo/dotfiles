@@ -62,7 +62,7 @@ local M = {
     { "<Leader>oj", "<Cmd>Obsidian today<CR>", mode = { "n" }, desc = "[Obsidian] Show Today Calendar Note" },
     -- { "<Leader>on", "<Cmd>Obsidian tomorrow<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
     { "<Leader>on", "<Cmd>Obsidian new<CR>", mode = { "n" }, desc = "[Obsidian] Create New Note" },
-    { "<Leader>op", "<Cmd>Obsidian yesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Tomorrow Calendar Note" },
+    -- { "<Leader>op", "<Cmd>Obsidian yesterday<CR>", mode = { "n" }, desc = "[Obsidian] Show Yesterday Calendar Note" },
     { "<Leader>ov", "<Cmd>Obsidian paste_img<CR>", mode = { "n" }, desc = "[Obsidian] Paste Image" },
     { "<Leader>of", "<Cmd>Obsidian links<CR>", mode = { "n" }, desc = "[Obsidian] Find Forwardlinks" },
     { "<Leader>ot", "<Cmd>Obsidian tags<CR>", mode = { "n" }, desc = "[Obsidian] Find Tags" },
