@@ -16,6 +16,7 @@ local M = {
   -- treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
     build = ":TSUpdate",
     event = { "VeryLazy" },
     opts = {
