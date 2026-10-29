@@ -75,7 +75,7 @@ local M = {
     legacy_commands = false,
     notes_subdir = "+",
     picker = {
-      name = "snacks.pick",
+      name = "snacks.picker",
     },
     daily_notes = {
       folder = "Calendar",
