@@ -4,6 +4,7 @@ local M = {
   config = function()
     vim.o.helplang = "ja,en"
   end,
+  enabled = false,
 }
 
 return M
