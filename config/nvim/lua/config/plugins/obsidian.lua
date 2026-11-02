@@ -128,11 +128,12 @@ local M = {
           tags = note.tags,
         }
 
-        -- if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-        --   for k, v in pairs(note.metadata) do
-        --     out[k] = v
-        --   end
-        -- end
+        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+          note.metadata.id = nil
+          for k, v in pairs(note.metadata) do
+            out[k] = v
+          end
+        end
 
         return out
       end,
