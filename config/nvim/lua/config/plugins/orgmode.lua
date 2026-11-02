@@ -1,4 +1,4 @@
-local enabled = false
+local enabled = true
 
 local template = {}
 

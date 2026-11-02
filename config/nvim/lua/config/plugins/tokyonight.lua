@@ -22,15 +22,15 @@ function M.config()
       variables = { italic = false },
     },
     -- day_brightness = 0.4,
-    -- on_highlights = function(hl, c)
-    --   hl["@markup.link.url"] = {
-    --     fg = c.blue6,
-    --     underline = true,
-    --   }
-    --   hl["@org.agenda.scheduled"] = {
-    --     fg = hl["diffAdded"].fg,
-    --   }
-    -- end,
+    on_highlights = function(hl, _)
+      --   hl["@markup.link.url"] = {
+      --     fg = c.blue6,
+      --     underline = true,
+      --   }
+      hl["@org.agenda.scheduled"] = {
+        fg = hl["diffAdded"].fg,
+      }
+    end,
   })
   tokyonight.load()
   vim.o.background = require("config.util").appearance()
