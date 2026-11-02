@@ -2,7 +2,7 @@
   "name": "node_servers",
   "dependencies": {
     "@olrtg/emmet-language-server": "^2.0.0",
-    "bash-language-server": "^5.3.4",
+    "bash-language-server": "^3.3.1",
     "typescript-language-server": "^6.0.0",
     "vim-language-server": "^2.3.1",
     "vscode-langservers-extracted": "^4.8.0"

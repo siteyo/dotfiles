@@ -21,6 +21,7 @@ local M = {
     event = { "VeryLazy" },
     opts = {
       ensure_installed = {
+        "apex",
         "bash",
         "c",
         "css",
