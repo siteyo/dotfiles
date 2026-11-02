@@ -27,6 +27,7 @@ local M = {
         per_filetype = {
           lua = { inherit_defaults = true, "lazydev" },
           sql = { "snippets", "dadbod", "buffer" },
+          org = { inherit_defaults = true, "orgmode" },
         },
         providers = {
           lazydev = {
@@ -59,6 +60,11 @@ local M = {
             opts = {
               search_paths = { vim.fn.expand("$HOME/.nvim") .. "/snippets" },
             },
+          },
+          orgmode = {
+            name = "Orgmode",
+            module = "orgmode.org.autocompletion.blink",
+            fallbacks = { "buffer" },
           },
         },
       },
