@@ -19,19 +19,17 @@ template.get = function(name)
   return template[name]
 end
 
+local setup_workspace = function(opts)
+  opts = require("config.private").merge("orgmode", opts)
+  opts.workspaces = #opts.workspaces == 0 and default_workspace or opts.workspaces
+  return opts
+end
+
 return {
   {
     "nvim-orgmode/orgmode",
     ft = "org",
     keys = {
-      -- {
-      --   "<Leader>o<Leader>",
-      --   function()
-      --     require("orgmode.api.agenda").agenda({ span = "day" })
-      --   end,
-      --   mode = { "n" },
-      --   desc = "Agenda view (today)",
-      -- },
       { "<Leader>oc", mode = "n", desc = "Capture" },
       { "<Leader>oa", mode = "n", desc = "Agenda view" },
     },
@@ -70,13 +68,11 @@ return {
         t = {
           description = "Todo",
           template = template.get("todo"),
-          -- headline = "Todo",
           target = "~/notes/org/agenda/inbox.org",
         },
         l = {
           description = "Plan",
           template = template.get("plan"),
-          -- headline = "Plan",
           target = "~/notes/org/agenda/inbox.org",
         },
       },
@@ -85,18 +81,17 @@ return {
       -- win_split_mode = { "float", 0.8 },
       org_agenda_custom_commands = {
         d = {
-          description = "Combined view",
+          description = "Daily",
           types = {
             {
-              type = "tags_todo",
-              match = '+PRIORITY="A"',
-              org_agenda_overriding_header = "High priority todos",
-              -- org_agenda_todo_ignore_deadlines = "far",
+              type = "agenda",
+              org_agenda_overriding_header = "Daily",
+              org_agenda_span = "day",
             },
             {
-              type = "agenda",
-              org_agenda_overriding_header = "Daily agenda",
-              org_agenda_span = "day",
+              type = "tags_todo",
+              match = '+TODO="NEXT"',
+              org_agenda_overriding_header = "Next Actions",
             },
           },
         },
@@ -109,6 +104,7 @@ return {
     },
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function(_, opts)
+      opts = setup_workspace(opts)
       require("orgmode").setup(opts)
 
       local dir = vim.fn.stdpath("data") .. "/orgmode/"
