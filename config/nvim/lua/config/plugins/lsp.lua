@@ -51,6 +51,7 @@ local M = {
             },
           },
         },
+        org = true,
       },
       -- setup = {
       --   -- tsserver = function(_, opts)

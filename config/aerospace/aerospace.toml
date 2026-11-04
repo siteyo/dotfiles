@@ -201,3 +201,10 @@ period = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 o = ['close-all-windows-but-current', 'mode main']
 t = ['layout floating tiling', 'mode main']
+
+# Environment
+[exec.env-vars]
+LANG = 'en_US.UTF-8'
+LC_ALL = 'en_US.UTF-8'
+PATH = '/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}'
+

@@ -9,9 +9,8 @@ CLOCKIN_TITLE=$(jq -r '.todo + .plan | .[] | select(.clocked_in) | .title' "$ORG
 
 TITLE_MAX_LEN=15
 if [ ${#CLOCKIN_TITLE} -gt $TITLE_MAX_LEN ]; then
-  CLOCKIN_TITLE=$(echo "$CLOCKIN_TITLE" | cut -c 1-"$TITLE_MAX_LEN")~~
+  CLOCKIN_TITLE=$(echo "$CLOCKIN_TITLE" | cut -c 1-"$TITLE_MAX_LEN")…
 fi
-echo "$CLOCKIN_TITLE"
 
 if [[ ${#CLOCKIN_TITLE} == 0 ]]; then
   sketchybar --set "$NAME" drawing=off
