@@ -19,12 +19,6 @@ template.get = function(name)
   return template[name]
 end
 
-local setup_workspace = function(opts)
-  opts = require("config.private").merge("orgmode", opts)
-  opts.workspaces = #opts.workspaces == 0 and default_workspace or opts.workspaces
-  return opts
-end
-
 return {
   {
     "nvim-orgmode/orgmode",
@@ -102,7 +96,7 @@ return {
     },
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function(_, opts)
-      opts = setup_workspace(opts)
+      opts = require("config.private").merge("orgmode", opts)
       require("orgmode").setup(opts)
 
       local dir = vim.fn.stdpath("data") .. "/orgmode/"
