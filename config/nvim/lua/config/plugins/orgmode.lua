@@ -7,12 +7,6 @@ template.todo = [[
   %U
 ]]
 
-template.plan = [[
-* PLAN %?
-  SCHEDULED: %^T
-  %U
-]]
-
 ---@param name "todo" | "plan"
 ---@return string
 template.get = function(name)
@@ -32,29 +26,27 @@ return {
       org_agenda_span = "day",
       org_default_notes_file = "~/notes/org/inbox.org",
       org_archive_location = "~/notes/org/archive/%s_archive::",
-      org_deadline_warning_days = 14,
+      org_deadline_warning_days = 7,
       org_todo_keywords = {
         "TODO(t)",
         "NEXT(n)",
         "WAIT(w)",
-        "PROJ(r)",
-        "PLAN(l)",
+        -- "PROJ(r)",
+        -- "PLAN(l)",
         "SOMEDAY(s)",
         "|",
         "DONE(d)",
         "CANCELED(c)",
-        "DELEGATED(g)",
       },
       org_todo_keyword_faces = {
         TODO = ":foreground #db4b4b",
         NEXT = ":foreground #e0af68",
         WAIT = ":foreground #ff9e64",
-        PROJ = ":foreground #9d7cd8",
-        PLAN = ":foreground #9ece6a",
-        SOMEDAY = ":foreground #7aa2f7",
+        -- PROJ = ":foreground #7aa2f7",
+        -- PLAN = ":foreground #9ece6a",
+        SOMEDAY = ":foreground #9d7cd8",
         DONE = ":foreground #449dab",
         CANCELED = ":foreground #545c7e",
-        DELEGATED = ":foreground #449dab",
       },
       org_capture_templates = {
         t = {
