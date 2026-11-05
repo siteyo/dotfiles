@@ -43,7 +43,7 @@ return {
         },
         l = {
           description = "Plan",
-          template = "* %?\n  SCHEDULED: %^T\n  %U\n",
+          template = "* %?\n  %^T\n  %U\n",
           target = "~/org/agenda/inbox.org",
         },
       },
