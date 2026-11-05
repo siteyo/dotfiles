@@ -1,18 +1,5 @@
 local enabled = true
 
-local template = {}
-
-template.todo = [[
-* TODO %?
-  %U
-]]
-
----@param name "todo" | "plan"
----@return string
-template.get = function(name)
-  return template[name]
-end
-
 return {
   {
     "nvim-orgmode/orgmode",
@@ -22,10 +9,10 @@ return {
       { "<Leader>oa", mode = "n", desc = "Agenda view" },
     },
     opts = {
-      org_agenda_files = { "~/notes/org/agenda/**/*" },
+      org_agenda_files = { "~/org/agenda/**/*" },
       org_agenda_span = "day",
-      org_default_notes_file = "~/notes/org/inbox.org",
-      org_archive_location = "~/notes/org/archive/%s_archive::",
+      org_default_notes_file = "~/org/inbox.org",
+      org_archive_location = "~/org/archive/%s_archive::",
       org_deadline_warning_days = 7,
       org_todo_keywords = {
         "TODO(t)",
@@ -50,14 +37,14 @@ return {
       },
       org_capture_templates = {
         t = {
-          description = "Todo",
-          template = template.get("todo"),
-          target = "~/notes/org/agenda/inbox.org",
+          description = "Task",
+          template = "* TODO %?\n  %U",
+          target = "~/org/agenda/inbox.org",
         },
         l = {
           description = "Plan",
-          template = template.get("plan"),
-          target = "~/notes/org/agenda/inbox.org",
+          template = "* %?\n  SCHEDULED: %^T\n  %U\n",
+          target = "~/org/agenda/inbox.org",
         },
       },
       org_startup_folded = "content",
