@@ -1,30 +1,5 @@
 local enabled = true
 
-local template = {}
-
-template.todo = [[
-* TODO %?
-  %U
-]]
-
-template.plan = [[
-* PLAN %?
-  SCHEDULED: %^T
-  %U
-]]
-
----@param name "todo" | "plan"
----@return string
-template.get = function(name)
-  return template[name]
-end
-
-local setup_workspace = function(opts)
-  opts = require("config.private").merge("orgmode", opts)
-  opts.workspaces = #opts.workspaces == 0 and default_workspace or opts.workspaces
-  return opts
-end
-
 return {
   {
     "nvim-orgmode/orgmode",
@@ -34,44 +9,42 @@ return {
       { "<Leader>oa", mode = "n", desc = "Agenda view" },
     },
     opts = {
-      org_agenda_files = { "~/notes/org/agenda/**/*" },
+      org_agenda_files = { "~/org/agenda/**/*" },
       org_agenda_span = "day",
-      org_default_notes_file = "~/notes/org/inbox.org",
-      org_archive_location = "~/notes/org/archive/%s_archive::",
-      org_deadline_warning_days = 14,
+      org_default_notes_file = "~/org/inbox.org",
+      org_archive_location = "~/org/archive/%s_archive::",
+      org_deadline_warning_days = 7,
       org_todo_keywords = {
         "TODO(t)",
         "NEXT(n)",
         "WAIT(w)",
-        "PROJ(r)",
-        "PLAN(l)",
+        -- "PROJ(r)",
+        -- "PLAN(l)",
         "SOMEDAY(s)",
         "|",
         "DONE(d)",
         "CANCELED(c)",
-        "DELEGATED(g)",
       },
       org_todo_keyword_faces = {
         TODO = ":foreground #db4b4b",
         NEXT = ":foreground #e0af68",
         WAIT = ":foreground #ff9e64",
-        PROJ = ":foreground #9d7cd8",
-        PLAN = ":foreground #9ece6a",
-        SOMEDAY = ":foreground #7aa2f7",
+        -- PROJ = ":foreground #7aa2f7",
+        -- PLAN = ":foreground #9ece6a",
+        SOMEDAY = ":foreground #9d7cd8",
         DONE = ":foreground #449dab",
         CANCELED = ":foreground #545c7e",
-        DELEGATED = ":foreground #449dab",
       },
       org_capture_templates = {
         t = {
-          description = "Todo",
-          template = template.get("todo"),
-          target = "~/notes/org/agenda/inbox.org",
+          description = "Task",
+          template = "* TODO %?\n  %U",
+          target = "~/org/agenda/inbox.org",
         },
         l = {
           description = "Plan",
-          template = template.get("plan"),
-          target = "~/notes/org/agenda/inbox.org",
+          template = "* %?\n  %^T\n  %U\n",
+          target = "~/org/agenda/inbox.org",
         },
       },
       org_startup_folded = "content",
@@ -102,7 +75,7 @@ return {
     },
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function(_, opts)
-      opts = setup_workspace(opts)
+      opts = require("config.private").merge("orgmode", opts)
       require("orgmode").setup(opts)
 
       local dir = vim.fn.stdpath("data") .. "/orgmode/"
