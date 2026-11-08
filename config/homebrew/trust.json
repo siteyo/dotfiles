@@ -1,0 +1,16 @@
+{
+  "trustedtaps": [
+    "beeftornado/rmtree"
+  ],
+  "trustedformulae": [
+    "felixkratz/formulae/borders",
+    "felixkratz/formulae/sketchybar",
+    "hougesen/tap/kdlfmt",
+    "modem-dev/tap/hunk",
+    "raine/workmux/workmux"
+  ],
+  "trustedcasks": [
+    "mtgto/macskk/macskk",
+    "nikitabobko/tap/aerospace"
+  ]
+}
