@@ -1,4 +1,4 @@
-local enabled = true
+local orgmode_enabled = true
 
 return {
   {
@@ -112,79 +112,96 @@ return {
       opts = require("config.private").merge("orgmode", opts)
       require("orgmode").setup(opts)
 
-      local dir = vim.fn.stdpath("data") .. "/orgmode/"
+      local org_json_dir = vim.fn.stdpath("data") .. "/orgmode/"
       -- Create dest dir
-      if not require("config.util").exists(dir) then
-        vim.fn.jobstart({ "mkdir", "-p", dir }, {
+      if not require("config.util").exists(org_json_dir) then
+        vim.fn.jobstart({ "mkdir", "-p", org_json_dir }, {
           on_exit = function()
-            Snacks.notify("Create directory: ", dir)
+            Snacks.notify("Create directory: ", org_json_dir)
           end,
         })
       end
 
-      local org_to_json = function(org_file)
-        local datetime = os.time() + (opts.org_deadline_warning_days * 86400) -- 3600sec/hour * 24h = 86400sec
-        local timestamp = os.date(datetime)
+      local export_org_file_to_json = function(parsed_org_file)
+        local deadline_threshold = os.time() + (opts.org_deadline_warning_days * 86400) -- 3600sec/hour * 24h = 86400sec
+        local deadline_threshold_timestamp = os.date(deadline_threshold)
 
-        local org_data = { todo = {}, plan = {} }
-        for _, headline in ipairs(org_file.headlines) do
+        local task_data = { todo = {}, plan = {} }
+        for _, headline in ipairs(parsed_org_file.headlines) do
+          local has_active_date_today = false
+          for _, date in ipairs(headline.dates or {}) do
+            has_active_date_today = has_active_date_today or date:is_today()
+          end
+
           if headline.todo_value then
-            local item = {
+            table.insert(task_data.todo, {
               title = headline.title,
               todo_value = headline.todo_value,
               todo_type = headline.todo_type,
               scheduled_today = headline.scheduled and headline.scheduled:is_today(),
               scheduled_overdue = headline.scheduled and headline.scheduled:is_past("day"),
-              deadline_warning = headline.deadline and (headline.deadline.timestamp - timestamp) < 0,
+              deadline_warning = headline.deadline and (headline.deadline.timestamp - deadline_threshold_timestamp) < 0,
               deadline_overdue = headline.deadline and headline.deadline:is_past("day"),
               clocked_in = headline._section:is_clocked_in(),
               is_archived = headline.is_archived,
-            }
-            if item.todo_value == "PLAN" then
-              table.insert(org_data.plan, item)
-            else
-              table.insert(org_data.todo, item)
-            end
+            })
+          elseif #(headline.dates or {}) > 0 then
+            table.insert(task_data.plan, {
+              title = headline.title,
+              date_today = has_active_date_today,
+              clocked_in = headline._section:is_clocked_in(),
+              is_archived = headline.is_archived,
+            })
           end
         end
 
-        local filename = string.match(org_file.filename, "^.*/(.*).org$") .. ".json"
-        vim.fn.writefile({ vim.json.encode(org_data) }, dir .. filename)
+        local json_filename = string.match(parsed_org_file.filename, "^.*/(.*).org$") .. ".json"
+        vim.fn.writefile({ vim.json.encode(task_data) }, org_json_dir .. json_filename)
       end
 
-      ---@param filename string
-      local load_org = function(filename)
-        local org_file = require("orgmode.api").load(filename)
-        org_to_json(org_file)
+      ---@param org_filename string
+      local load_org_file = function(org_filename)
+        local parsed_org_file = require("orgmode.api").load(org_filename)
+        export_org_file_to_json(parsed_org_file)
       end
 
-      local load_all_org = function()
+      local load_all_org_files = function()
         local org_files = require("orgmode.api").load()
-        for _, org_file in ipairs(org_files) do
-          org_to_json(org_file)
+        local expected_json_files = {}
+        for _, parsed_org_file in ipairs(org_files) do
+          local json_filename = string.match(parsed_org_file.filename, "^.*/(.*).org$") .. ".json"
+          expected_json_files[json_filename] = true
+          export_org_file_to_json(parsed_org_file)
+        end
+
+        for _, json_path in ipairs(vim.fn.globpath(org_json_dir, "*.json", false, true)) do
+          local json_filename = vim.fn.fnamemodify(json_path, ":t")
+          if not expected_json_files[json_filename] and vim.fn.delete(json_path) ~= 0 then
+            vim.notify("Failed to delete stale Org JSON file: " .. json_path, vim.log.levels.WARN)
+          end
         end
       end
 
       local async = require("plenary.async")
-      local async_load_org = async.wrap(load_org, 1)
-      local async_load_all_org = async.wrap(load_all_org, 0)
+      local async_load_org_file = async.wrap(load_org_file, 1)
+      local async_load_all_org_files = async.wrap(load_all_org_files, 0)
 
       async.void(function()
-        async_load_all_org()
+        async_load_all_org_files()
       end)()
 
-      local org_json = vim.api.nvim_create_augroup("org_json", { clear = true })
+      local org_json_augroup = vim.api.nvim_create_augroup("org_json", { clear = true })
       vim.api.nvim_create_autocmd("BufWritePost", {
         pattern = { "[^0-9]*.org" },
-        group = org_json,
+        group = org_json_augroup,
         callback = function(event)
           async.void(function()
-            async_load_org(vim.fn.fnamemodify(event.file, ":p"))
+            async_load_org_file(vim.fn.fnamemodify(event.file, ":p"))
           end)()
         end,
       })
     end,
-    enabled = enabled,
+    enabled = orgmode_enabled,
   },
   {
     "akinsho/org-bullets.nvim",

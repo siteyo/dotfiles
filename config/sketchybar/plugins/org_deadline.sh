@@ -5,8 +5,8 @@
 source "${CONFIG_DIR}/icons.sh"
 
 ORG_JSON_DIR="$HOME/.local/share/nvim/orgmode"
-DEADLINE_WARN=$(jq '[.todo[] | select(.deadline_warning and .todo_type == "TODO" and .todo_value != "LOG" and .is_archived == false)]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
-DEADLINE_OVERDUE=$(jq '[.todo[] | select(.deadline_overdue and .todo_type == "TODO" and .todo_value != "LOG" and .is_archived == false)]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
+DEADLINE_WARN=$(jq '[.todo[] | select(.deadline_warning and .todo_type == "TODO" and .is_archived == false)]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
+DEADLINE_OVERDUE=$(jq '[.todo[] | select(.deadline_overdue and .todo_type == "TODO" and .is_archived == false)]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
 
 if [[ $DEADLINE_WARN == 0 ]]; then
   sketchybar --set "$NAME" drawing=off

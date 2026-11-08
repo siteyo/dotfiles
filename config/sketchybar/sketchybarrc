@@ -152,6 +152,10 @@ sketchybar --add item clock right \
     --set org_plan update_freq=600 script="$PLUGIN_DIR/org_plan.sh" \
     --subscribe org_plan system_woke \
     \
+    --add item org_inbox right \
+    --set org_inbox update_freq=600 script="$PLUGIN_DIR/org_inbox.sh" \
+    --subscribe org_inbox system_woke \
+    \
     --add item slack right \
     --set slack update_freq=180 script="$PLUGIN_DIR/slack.sh" \
     --subscribe slack system_woke
