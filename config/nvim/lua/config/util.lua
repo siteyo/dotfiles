@@ -102,4 +102,9 @@ M.escape = function(text)
   return text:gsub("([%^$()%.%[%]*+%-?])", "%%%1")
 end
 
+---@param msg string
+M.error = function(msg)
+  vim.notify(msg, vim.log.levels.ERROR)
+end
+
 return M

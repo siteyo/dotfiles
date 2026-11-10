@@ -47,6 +47,7 @@ local M = {
     },
   },
   dev = false,
+  enabled = false,
 }
 
 return M
