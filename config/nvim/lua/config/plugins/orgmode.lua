@@ -93,6 +93,11 @@ return {
               match = '+TODO="WAIT"',
               org_agenda_overriding_header = "Waiting for",
             },
+          },
+        },
+        d = {
+          description = "Someday",
+          types = {
             {
               type = "tags_todo",
               match = '+TODO="SOMEDAY"',
