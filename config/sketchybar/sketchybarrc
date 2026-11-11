@@ -144,6 +144,10 @@ sketchybar --add item clock right \
     --set org_scheduled update_freq=600 script="$PLUGIN_DIR/org_scheduled.sh" \
     --subscribe org_scheduled system_woke \
     \
+    --add item org_someday right \
+    --set org_someday update_freq=600 script="$PLUGIN_DIR/org_someday.sh" \
+    --subscribe org_someday system_woke \
+    \
     --add item org_total right \
     --set org_total update_freq=600 script="$PLUGIN_DIR/org_total.sh" \
     --subscribe org_total system_woke \

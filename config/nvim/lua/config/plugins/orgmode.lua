@@ -72,7 +72,7 @@ return {
               type = "tags",
               match = "Project",
               org_agenda_overriding_header = "Projects",
-              org_agenda_remove_tags = true,
+              -- org_agenda_remove_tags = true,
             },
             {
               type = "tags_todo",
