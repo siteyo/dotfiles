@@ -17,6 +17,7 @@ export ICON_INBOX=    # orgmode
 export ICON_LIST=     # orgmode
 export ICON_TASK=     # orgmode
 export ICON_DEADLINE= # orgmode
+export ICON_SOMEDAY=󰃰  # orgmode someday list
 export ICON_PEN=      # orgmode
 
 export ICON_FINDER=
