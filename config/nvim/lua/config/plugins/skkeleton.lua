@@ -43,7 +43,7 @@ local M = {
         markerHenkanSelect = "",
       })
     end,
-    enabled = true,
+    enabled = false,
   },
   {
     "delphinus/skkeleton_indicator.nvim",
@@ -81,7 +81,7 @@ local M = {
       state_win_opts = { zindex = 1050 },
     },
     event = { "InsertEnter", "CmdlineEnter", "TermOpen" },
-    enabled = true,
+    enabled = false,
   },
 }
 
