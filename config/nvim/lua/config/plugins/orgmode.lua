@@ -18,7 +18,7 @@ return {
         "TODO(t)",
         "NEXT(n)",
         "WAIT(w)",
-        "SOMEDAY(s)",
+        -- "SOMEDAY(s)",
         "|",
         "DONE(d)",
         "CANCELED(c)",
@@ -27,7 +27,7 @@ return {
         TODO = ":foreground #db4b4b",
         NEXT = ":foreground #e0af68",
         WAIT = ":foreground #ff9e64",
-        SOMEDAY = ":foreground #9d7cd8",
+        -- SOMEDAY = ":foreground #9d7cd8",
         DONE = ":foreground #449dab",
         CANCELED = ":foreground #545c7e",
       },
@@ -45,7 +45,7 @@ return {
         },
       },
       org_startup_indented = true,
-      org_startup_folded = "content",
+      org_startup_folded = "overview",
       org_tags_column = 90,
       -- win_split_mode = { "float", 0.8 },
       org_agenda_custom_commands = {
@@ -54,12 +54,12 @@ return {
           types = {
             {
               type = "tags_todo",
-              match = '+TODO="NEXT"',
+              match = '-Someday+TODO="NEXT"',
               org_agenda_overriding_header = "All",
             },
             {
               type = "tags_todo",
-              match = '+TODO="NEXT"',
+              match = '-Someday+TODO="NEXT"',
               org_agenda_overriding_header = "Unscheduled",
               org_agenda_todo_ignore_scheduled = "all",
             },
@@ -76,14 +76,14 @@ return {
             },
             {
               type = "tags_todo",
-              match = '-Project+TODO="TODO"',
+              match = '-Project-Someday+TODO="TODO"',
               org_agenda_overriding_header = "Todos",
               org_agenda_todo_ignore_scheduled = "past",
               org_agenda_todo_ignore_deadlines = "far",
             },
             {
               type = "tags_todo",
-              match = '+TODO="NEXT"',
+              match = '-Project-Someday+TODO="NEXT"',
               org_agenda_overriding_header = "Next Actions",
               org_agenda_todo_ignore_scheduled = "past",
               org_agenda_todo_ignore_deadlines = "far",
@@ -99,8 +99,8 @@ return {
           description = "Someday",
           types = {
             {
-              type = "tags_todo",
-              match = '+TODO="SOMEDAY"',
+              type = "tags",
+              match = "Someday",
               org_agenda_overriding_header = "Someday",
             },
           },
@@ -143,6 +143,7 @@ return {
               title = headline.title,
               todo_value = headline.todo_value,
               todo_type = headline.todo_type,
+              tags = headline.tags,
               scheduled_today = headline.scheduled and headline.scheduled:is_today(),
               scheduled_overdue = headline.scheduled and headline.scheduled:is_past("day"),
               deadline_warning = headline.deadline and (headline.deadline.timestamp - deadline_threshold_timestamp) < 0,
@@ -156,6 +157,7 @@ return {
               date_today = has_active_date_today,
               clocked_in = headline._section:is_clocked_in(),
               is_archived = headline.is_archived,
+              tags = headline.tags,
             })
           end
         end

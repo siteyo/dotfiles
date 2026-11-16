@@ -5,7 +5,7 @@
 source "${CONFIG_DIR}/icons.sh"
 
 ORG_JSON_DIR="$HOME/.local/share/nvim/orgmode"
-SOMEDAY=$(jq '[.todo[] | select(.todo_value == "SOMEDAY")]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
+SOMEDAY=$(jq '[.todo[] | select((.tags // []) | index("Someday"))]' "$ORG_JSON_DIR"/*.json | jq -s 'flatten | length')
 
 if [[ $SOMEDAY == 0 ]]; then
   sketchybar --set "$NAME" drawing=off
