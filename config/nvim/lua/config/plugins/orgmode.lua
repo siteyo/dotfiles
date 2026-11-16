@@ -143,7 +143,7 @@ return {
               title = headline.title,
               todo_value = headline.todo_value,
               todo_type = headline.todo_type,
-              tags = headline.tags,
+              tags = headline.all_tags,
               scheduled_today = headline.scheduled and headline.scheduled:is_today(),
               scheduled_overdue = headline.scheduled and headline.scheduled:is_past("day"),
               deadline_warning = headline.deadline and (headline.deadline.timestamp - deadline_threshold_timestamp) < 0,
@@ -157,7 +157,7 @@ return {
               date_today = has_active_date_today,
               clocked_in = headline._section:is_clocked_in(),
               is_archived = headline.is_archived,
-              tags = headline.tags,
+              tags = headline.all_tags,
             })
           end
         end
