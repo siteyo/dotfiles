@@ -35,12 +35,12 @@ return {
       org_capture_templates = {
         t = {
           description = "Task",
-          template = "* TODO %?\n%U",
+          template = "* TODO %?",
           target = "~/org/agenda/inbox.org",
         },
         l = {
           description = "Plan",
-          template = "* %?\n%^T\n%U\n",
+          template = "* %?\n%^T",
           target = "~/org/agenda/inbox.org",
         },
       },

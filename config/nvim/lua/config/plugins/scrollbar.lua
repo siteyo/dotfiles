@@ -3,17 +3,19 @@ return {
   config = function()
     local colors = require("tokyonight.colors").setup()
     require("scrollbar").setup({
-      handle = {
-        color = colors.bg_highlight,
-      },
-      excluded_filetypes = { "noice" },
+      exclude = { filetypes = { "noice" } },
       marks = {
-        Search = { color = colors.orange },
-        Error = { color = colors.error },
-        Warn = { color = colors.warning },
-        Info = { color = colors.info },
-        Hint = { color = colors.hint },
-        Misc = { color = colors.purple },
+        Search = { highlight = { fg = colors.orange } },
+        Error = { highlight = { fg = colors.error } },
+        Warn = { highlight = { fg = colors.warning } },
+        Info = { highlight = { fg = colors.info } },
+        Hint = { highlight = { fg = colors.hint } },
+        Misc = { highlight = { fg = colors.purple } },
+      },
+      scrollbar = {
+        thumb = {
+          highlight = { bg = colors.bg_highlight },
+        },
       },
     })
   end,
