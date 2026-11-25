@@ -68,7 +68,7 @@ return {
           types = {
             {
               type = "tags",
-              match = "Project",
+              match = "Project-Someday",
               org_agenda_overriding_header = "Projects",
               -- org_agenda_remove_tags = true,
             },
