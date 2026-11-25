@@ -160,6 +160,32 @@ sketchybar --add item clock right \
     --set org_inbox update_freq=600 script="$PLUGIN_DIR/org_inbox.sh" \
     --subscribe org_inbox system_woke \
     \
+    --add item separator1 right \
+    --set separator1 icon="/" \
+    \
+    --add item effort_sleeping right \
+    --set effort_sleeping update_freq=600 script="$PLUGIN_DIR/effort_sleeping.sh" \
+    --subscribe effort system_woke \
+    \
+    --add item effort_simmering right \
+    --set effort_simmering update_freq=600 script="$PLUGIN_DIR/effort_simmering.sh" \
+    --subscribe effort system_woke \
+    \
+    --add item effort_ongoing right \
+    --set effort_ongoing update_freq=600 script="$PLUGIN_DIR/effort_ongoing.sh" \
+    --subscribe effort system_woke \
+    \
+    --add item effort_on right \
+    --set effort_on update_freq=600 script="$PLUGIN_DIR/effort_on.sh" \
+    --subscribe effort system_woke \
+    \
+    --add item inbox right \
+    --set inbox update_freq=600 script="$PLUGIN_DIR/inbox.sh" \
+    --subscribe effort system_woke \
+    \
+    --add item separator2 right \
+    --set separator2 icon="/" \
+    \
     --add item slack right \
     --set slack update_freq=180 script="$PLUGIN_DIR/slack.sh" \
     --subscribe slack system_woke
