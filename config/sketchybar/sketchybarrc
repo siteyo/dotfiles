@@ -40,6 +40,7 @@ default=(
     background.corner_radius=5
 
     icon.font="0xProto Nerd Font:Regular:14.0"
+    icon.font.size=18
     icon.align=center
     icon.color="$COLOR_CYAN"
     icon.padding_left=6
@@ -82,7 +83,7 @@ sketchybar --add event aerospace_workspace_change
 for sid in $(aerospace list-workspaces --all); do
     space=(
         icon="${ICONS_SPACE[sid - 1]}"
-        icon.font.size=18
+        icon.font.size=20
         icon.y_offset=2
         icon.padding_left=7
         icon.padding_right=7
@@ -184,14 +185,14 @@ sketchybar --add item clock right \
     \
     --add item inbox right \
     --set inbox update_freq=600 script="$PLUGIN_DIR/inbox.sh" \
-    --subscribe effort system_woke \
-    \
-    --add item separator3 right \
-    --set separator3 icon="/" \
-    \
-    --add item slack right \
-    --set slack update_freq=180 script="$PLUGIN_DIR/slack.sh" \
-    --subscribe slack system_woke
+    --subscribe effort system_woke
+# \
+# --add item separator3 right \
+# --set separator3 icon="/"
+# \
+# --add item slack right \
+# --set slack update_freq=180 script="$PLUGIN_DIR/slack.sh" \
+# --subscribe slack system_woke
 # \
 # --add item brew right \
 # --set brew update_freq=43200 script="$PLUGIN_DIR/brew.sh" \
