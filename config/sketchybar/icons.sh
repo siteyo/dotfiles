@@ -7,18 +7,22 @@ export ICON_CHART= # activity monitor, btop
 
 export ICONS_SPACE=(󰎤 󰎧 󰎪 󰎭 󰎱 󰎳 󰎶 󰎹 󰎼 󰽽)
 
-export ICON_APP=      # fallback app
-export ICON_TERM=     # fallback terminal app, terminal, warp, iterm2
-export ICON_PACKAGE=  # brew
-export ICON_DEV=      # xcode, vscode
-export ICON_FILE=     # ranger, finder
-export ICON_GIT=      # lazygit
-export ICON_INBOX=    # orgmode
-export ICON_LIST=     # orgmode
-export ICON_TASK=     # orgmode
-export ICON_DEADLINE= # orgmode
-export ICON_SOMEDAY=󰃰  # orgmode someday list
-export ICON_PEN=      # orgmode
+export ICON_APP=       # fallback app
+export ICON_TERM=      # fallback terminal app, terminal, warp, iterm2
+export ICON_PACKAGE=   # brew
+export ICON_DEV=       # xcode, vscode
+export ICON_FILE=      # ranger, finder
+export ICON_GIT=       # lazygit
+export ICON_INBOX=󰋻     # orgmode
+export ICON_LIST=      # orgmode
+export ICON_SCHEDULED=󰃭 # orgmode
+export ICON_DEADLINE=  # orgmode
+export ICON_SOMEDAY=󰽥   # orgmode someday list
+export ICON_PEN=       # orgmode
+export ICON_ON=󰈸        # PKM
+export ICON_ONGOING=󰓞   # PKM
+export ICON_SIMMERING=󰙚 # PKM
+export ICON_SLEEPING=󰒲  # PKM
 
 export ICON_FINDER=
 export ICON_NEOVIM=

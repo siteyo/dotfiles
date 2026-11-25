@@ -18,7 +18,6 @@ return {
         "TODO(t)",
         "NEXT(n)",
         "WAIT(w)",
-        -- "SOMEDAY(s)",
         "|",
         "DONE(d)",
         "CANCELED(c)",
@@ -27,7 +26,6 @@ return {
         TODO = ":foreground #db4b4b",
         NEXT = ":foreground #e0af68",
         WAIT = ":foreground #ff9e64",
-        -- SOMEDAY = ":foreground #9d7cd8",
         DONE = ":foreground #449dab",
         CANCELED = ":foreground #545c7e",
       },
@@ -70,7 +68,7 @@ return {
           types = {
             {
               type = "tags",
-              match = "Project",
+              match = "Project-Someday",
               org_agenda_overriding_header = "Projects",
               -- org_agenda_remove_tags = true,
             },

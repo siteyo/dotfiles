@@ -40,6 +40,7 @@ default=(
     background.corner_radius=5
 
     icon.font="0xProto Nerd Font:Regular:14.0"
+    icon.font.size=18
     icon.align=center
     icon.color="$COLOR_CYAN"
     icon.padding_left=6
@@ -82,7 +83,7 @@ sketchybar --add event aerospace_workspace_change
 for sid in $(aerospace list-workspaces --all); do
     space=(
         icon="${ICONS_SPACE[sid - 1]}"
-        icon.font.size=18
+        icon.font.size=20
         icon.y_offset=2
         icon.padding_left=7
         icon.padding_right=7
@@ -132,6 +133,9 @@ sketchybar --add item clock right \
     --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
     --subscribe battery system_woke power_source_change \
     \
+    --add item separator1 right \
+    --set separator1 icon="/" \
+    \
     --add item org_clock right \
     --set org_clock update_freq=600 script="$PLUGIN_DIR/org_clock.sh" \
     --subscribe org_clock system_woke \
@@ -160,9 +164,35 @@ sketchybar --add item clock right \
     --set org_inbox update_freq=600 script="$PLUGIN_DIR/org_inbox.sh" \
     --subscribe org_inbox system_woke \
     \
-    --add item slack right \
-    --set slack update_freq=180 script="$PLUGIN_DIR/slack.sh" \
-    --subscribe slack system_woke
+    --add item separator2 right \
+    --set separator2 icon="/" \
+    \
+    --add item effort_sleeping right \
+    --set effort_sleeping update_freq=600 script="$PLUGIN_DIR/effort_sleeping.sh" \
+    --subscribe effort system_woke \
+    \
+    --add item effort_simmering right \
+    --set effort_simmering update_freq=600 script="$PLUGIN_DIR/effort_simmering.sh" \
+    --subscribe effort system_woke \
+    \
+    --add item effort_ongoing right \
+    --set effort_ongoing update_freq=600 script="$PLUGIN_DIR/effort_ongoing.sh" \
+    --subscribe effort system_woke \
+    \
+    --add item effort_on right \
+    --set effort_on update_freq=600 script="$PLUGIN_DIR/effort_on.sh" \
+    --subscribe effort system_woke \
+    \
+    --add item inbox right \
+    --set inbox update_freq=600 script="$PLUGIN_DIR/inbox.sh" \
+    --subscribe effort system_woke
+# \
+# --add item separator3 right \
+# --set separator3 icon="/"
+# \
+# --add item slack right \
+# --set slack update_freq=180 script="$PLUGIN_DIR/slack.sh" \
+# --subscribe slack system_woke
 # \
 # --add item brew right \
 # --set brew update_freq=43200 script="$PLUGIN_DIR/brew.sh" \

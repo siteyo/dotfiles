@@ -18,7 +18,7 @@ else
     LABEL="!$SCHEDULED_OVERDUE/$PENDING"
   fi
   sketchybar --set "$NAME" \
-    icon="$ICON_TASK" \
+    icon="$ICON_SCHEDULED" \
     label="$LABEL" \
     drawing=on \
     icon.padding_left=6 \
