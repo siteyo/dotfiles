@@ -92,13 +92,6 @@ local M = {
       folder = "x/Templates/",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M:%S",
-      substitutions = {
-        name = function(ctx)
-          local disp_name = ctx.partial_note:display_name()
-          local name = disp_name:gsub("^%d%d%d%d%-%d%d%-%d%d__", "")
-          return name
-        end,
-      },
     },
     new_notes_location = "notes_subdir",
     link = {
