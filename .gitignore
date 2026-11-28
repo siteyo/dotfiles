@@ -424,3 +424,7 @@ config/.copilot/
 
 # herdr
 session.json
+
+# qmd
+config/qmd/index.yml
+config/qmd/*.lock.sqlite

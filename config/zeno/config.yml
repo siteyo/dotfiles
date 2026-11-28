@@ -95,10 +95,10 @@ snippets:
     keyword: cmn
     snippet: convmv -f utf-8 -t utf-8 --nfc --nosmart -r . --notest
 
-  # herdr
-  - name: herdr
-    keyword: h
-    snippet: herdr
-  - name: herdr server stop
-    keyword: hss
-    snippet: herdr server stop
+  # qmd
+  - name: qmd lite-maintenance
+    keyword: ql
+    snippet: qmd update && qmd embed
+  - name: qmd full-maintenance
+    keyword: qf
+    snippet: qmd update && qmd embed && qmd cleanup

@@ -4,6 +4,7 @@
 deno = "latest"
 node = "lts"
 "npm:@olrtg/emmet-language-server" = "latest"
+"npm:@tobilu/qmd" = "latest"
 python = ["3.15.2", "3.12"]
 
 # [settings]

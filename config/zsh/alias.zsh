@@ -28,9 +28,9 @@ if [[ $(uname -r) == *microsoft* ]]; then
 fi
 
 ## bat
-if command -v bat >/dev/null; then
-  alias bat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo Nord || echo GitHub)"
-fi
+# if command -v bat >/dev/null; then
+#   alias bat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo Nord || echo GitHub)"
+# fi
 
 # ## taskwarrior-tui
 # if command -v taskwarrior-tui >/dev/null; then
